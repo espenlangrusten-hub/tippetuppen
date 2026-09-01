@@ -1,0 +1,40 @@
+{
+  "id": "2026-06-16-irq-nor",
+  "date": "2026-06-16",
+  "competition": "world-cup",
+  "stage": "VM 2026, gruppe I",
+  "opponent": "Irak",
+  "opponentCode": "IRQ",
+  "norwayHome": false,
+  "score": [4, 1],
+  "venue": "Gillette Stadium",
+  "city": "Boston",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 4,
+  "tags": ["vm", "vm-2026"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.whoscored.com/news/IASCFTpfp0ugbaVK5Vi52g/show/20260616-iraq-vs-norway-confirmed-lineup-1781644137", "title": "Iraq vs Norway Confirmed Lineups – WhoScored", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/760430/norway-iraq", "title": "Iraq 1-4 Norway (Jun 16, 2026) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norges første VM-kamp på 28 år. Haaland scoret to i VM-debuten. Målliste ufullstendig.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 16, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland" },
+    { "team": "norway", "name": "Erling Haaland" }
+  ]
+}

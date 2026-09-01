@@ -1,0 +1,40 @@
+{
+  "id": "2024-09-09-nor-aut",
+  "date": "2024-09-09",
+  "competition": "nations-league",
+  "stage": "Nations League 2024/25, liga B",
+  "opponent": "Østerrike",
+  "opponentCode": "AUT",
+  "norwayHome": true,
+  "score": [2, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": ["nations-league"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.sportsmole.co.uk/football/lineups/norway-vs-austria_game_19085411_sl.html", "title": "Lineups for Norway 2-1 Austria – Sports Mole", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.espn.co.uk/football/match/_/gameId/698924/austria-norway", "title": "Norway 2-1 Austria (9 Sep, 2024) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Felix Horn Myhre scoret sitt første landslagsmål før Haaland avgjorde ti minutter før slutt.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "RM", "captain": true },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Felix Horn Myhre", "no": 22, "pos": "LM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Felix Horn Myhre", "minute": 9 },
+    { "team": "opponent", "scorer": "Marcel Sabitzer", "minute": 37 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 80 }
+  ]
+}

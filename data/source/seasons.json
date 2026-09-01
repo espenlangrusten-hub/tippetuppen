@@ -1,0 +1,1795 @@
+[
+ {
+  "id": "eliteserien-1990",
+  "competition": "eliteserien",
+  "year": 1990,
+  "name": "Eliteserien 1990",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1990_Tippeligaen",
+    "title": "1990 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 44
+   },
+   {
+    "club": "tromso",
+    "points": 42
+   },
+   {
+    "club": "molde",
+    "points": 40
+   },
+   {
+    "club": "brann",
+    "points": 39
+   },
+   {
+    "club": "viking",
+    "points": 35
+   },
+   {
+    "club": "start",
+    "points": 31
+   },
+   {
+    "club": "fyllingen",
+    "points": 28
+   },
+   {
+    "club": "kongsvinger",
+    "points": 27
+   },
+   {
+    "club": "stromsgodset",
+    "points": 27
+   },
+   {
+    "club": "lillestrom",
+    "points": 25,
+    "outcome": "playoff"
+   },
+   {
+    "club": "valerenga",
+    "points": 16
+   },
+   {
+    "club": "moss",
+    "points": 13
+   }
+  ],
+  "relegated": [
+   "valerenga",
+   "moss"
+  ]
+ },
+ {
+  "id": "eliteserien-1991",
+  "competition": "eliteserien",
+  "year": 1991,
+  "name": "Tippeligaen 1991",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1991_Tippeligaen",
+    "title": "1991 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "viking",
+    "points": 41
+   },
+   {
+    "club": "rosenborg",
+    "points": 36
+   },
+   {
+    "club": "start",
+    "points": 34
+   },
+   {
+    "club": "lyn",
+    "points": 34
+   },
+   {
+    "club": "lillestrom",
+    "points": 31
+   },
+   {
+    "club": "tromso",
+    "points": 31
+   },
+   {
+    "club": "molde",
+    "points": 27
+   },
+   {
+    "club": "kongsvinger",
+    "points": 27
+   },
+   {
+    "club": "sogndal",
+    "points": 27
+   },
+   {
+    "club": "brann",
+    "points": 26,
+    "outcome": "playoff"
+   },
+   {
+    "club": "fyllingen",
+    "points": 25
+   },
+   {
+    "club": "stromsgodset",
+    "points": 21
+   }
+  ],
+  "relegated": [
+   "fyllingen",
+   "stromsgodset"
+  ]
+ },
+ {
+  "id": "eliteserien-1992",
+  "competition": "eliteserien",
+  "year": 1992,
+  "name": "Tippeligaen 1992",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1992_Tippeligaen",
+    "title": "1992 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 46
+   },
+   {
+    "club": "kongsvinger",
+    "points": 40
+   },
+   {
+    "club": "start",
+    "points": 39
+   },
+   {
+    "club": "lillestrom",
+    "points": 38
+   },
+   {
+    "club": "lyn",
+    "points": 37
+   },
+   {
+    "club": "molde",
+    "points": 36
+   },
+   {
+    "club": "brann",
+    "points": 24
+   },
+   {
+    "club": "tromso",
+    "points": 24
+   },
+   {
+    "club": "viking",
+    "points": 21
+   },
+   {
+    "club": "hamkam",
+    "points": 20,
+    "outcome": "playoff"
+   },
+   {
+    "club": "sogndal",
+    "points": 20
+   },
+   {
+    "club": "mjondalen",
+    "points": 18
+   }
+  ],
+  "relegated": [
+   "sogndal",
+   "mjondalen"
+  ]
+ },
+ {
+  "id": "eliteserien-1993",
+  "competition": "eliteserien",
+  "year": 1993,
+  "name": "Tippeligaen 1993",
+  "status": "single_source",
+  "membershipOnly": false,
+  "sources": [
+   {
+    "url": "https://globalsportsarchive.com/en/soccer/competition/tippeligaen-1993/1001",
+    "title": "Tippeligaen 1993 – Global Sports Archive",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Order 1-8 and 10-12 in search excerpt; 9th (Viking) inferred as the only remaining club"
+   }
+  ],
+  "table": [
+   "rosenborg",
+   "bodo-glimt",
+   "lillestrom",
+   "brann",
+   "tromso",
+   "hamkam",
+   "start",
+   "kongsvinger",
+   "viking",
+   "molde",
+   "lyn",
+   "fyllingen"
+  ],
+  "relegated": [
+   "molde",
+   "lyn",
+   "fyllingen"
+  ]
+ },
+ {
+  "id": "eliteserien-1994",
+  "competition": "eliteserien",
+  "year": 1994,
+  "name": "Tippeligaen 1994",
+  "status": "single_source",
+  "membershipOnly": false,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1994_Tippeligaen",
+    "title": "1994 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table with points in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 49
+   },
+   {
+    "club": "lillestrom",
+    "points": 41
+   },
+   {
+    "club": "viking",
+    "points": 39
+   },
+   {
+    "club": "start",
+    "points": 35
+   },
+   {
+    "club": "kongsvinger",
+    "points": 35
+   },
+   {
+    "club": "brann",
+    "points": 31
+   },
+   {
+    "club": "tromso",
+    "points": 28
+   },
+   {
+    "club": "hamkam",
+    "points": 26
+   },
+   {
+    "club": "valerenga",
+    "points": 22
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 22
+   },
+   {
+    "club": "sogndal",
+    "points": 22
+   },
+   {
+    "club": "stromsgodset",
+    "points": 15
+   }
+  ],
+  "relegated": [
+   "sogndal",
+   "stromsgodset"
+  ]
+ },
+ {
+  "id": "eliteserien-1995",
+  "competition": "eliteserien",
+  "year": 1995,
+  "name": "Tippeligaen 1995",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1995_Tippeligaen",
+    "title": "1995 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top four, bottom three and membership confirmed; positions 5-11 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 62
+   },
+   {
+    "club": "molde",
+    "points": 47
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 43
+   },
+   {
+    "club": "lillestrom",
+    "points": 41
+   },
+   "viking",
+   "brann",
+   "start",
+   "tromso",
+   "valerenga",
+   "kongsvinger",
+   "stabaek",
+   {
+    "club": "hodd",
+    "points": 28
+   },
+   {
+    "club": "hamkam",
+    "points": 27
+   },
+   {
+    "club": "strindheim",
+    "points": 17
+   }
+  ],
+  "relegated": [
+   "hodd",
+   "hamkam",
+   "strindheim"
+  ]
+ },
+ {
+  "id": "eliteserien-1996",
+  "competition": "eliteserien",
+  "year": 1996,
+  "name": "Tippeligaen 1996",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://globalsportsarchive.com/en/soccer/competition/tippeligaen-1996/998",
+    "title": "Tippeligaen 1996 – Global Sports Archive",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top six, bottom three and membership confirmed; positions 7-11 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 59
+   },
+   {
+    "club": "lillestrom",
+    "points": 46
+   },
+   {
+    "club": "viking",
+    "points": 43
+   },
+   {
+    "club": "brann",
+    "points": 42
+   },
+   {
+    "club": "tromso",
+    "points": 41
+   },
+   "stabaek",
+   "bodo-glimt",
+   "molde",
+   "kongsvinger",
+   "stromsgodset",
+   "skeid",
+   {
+    "club": "moss",
+    "points": 29
+   },
+   {
+    "club": "valerenga",
+    "points": 27
+   },
+   {
+    "club": "start",
+    "points": 18
+   }
+  ],
+  "relegated": [
+   "moss",
+   "valerenga",
+   "start"
+  ]
+ },
+ {
+  "id": "eliteserien-1997",
+  "competition": "eliteserien",
+  "year": 1997,
+  "name": "Tippeligaen 1997",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1997_Tippeligaen",
+    "title": "1997 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 61
+   },
+   {
+    "club": "brann",
+    "points": 50
+   },
+   {
+    "club": "stromsgodset",
+    "points": 46
+   },
+   {
+    "club": "molde",
+    "points": 45
+   },
+   {
+    "club": "stabaek",
+    "points": 43
+   },
+   {
+    "club": "kongsvinger",
+    "points": 38
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 37
+   },
+   {
+    "club": "viking",
+    "points": 34
+   },
+   {
+    "club": "haugesund",
+    "points": 32
+   },
+   {
+    "club": "lillestrom",
+    "points": 32
+   },
+   {
+    "club": "sogndal",
+    "points": 29
+   },
+   {
+    "club": "tromso",
+    "points": 28,
+    "outcome": "playoff"
+   },
+   {
+    "club": "lyn",
+    "points": 17
+   },
+   {
+    "club": "skeid",
+    "points": 13
+   }
+  ],
+  "relegated": [
+   "lyn",
+   "skeid"
+  ]
+ },
+ {
+  "id": "eliteserien-1998",
+  "competition": "eliteserien",
+  "year": 1998,
+  "name": "Tippeligaen 1998",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1998_Tippeligaen",
+    "title": "1998 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top five, relegated clubs and membership confirmed; positions 6-12 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 63
+   },
+   {
+    "club": "molde",
+    "points": 54
+   },
+   {
+    "club": "stabaek",
+    "points": 53
+   },
+   {
+    "club": "viking",
+    "points": 46
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 36
+   },
+   "brann",
+   "lillestrom",
+   "stromsgodset",
+   "valerenga",
+   "tromso",
+   "kongsvinger",
+   "moss",
+   "sogndal",
+   "haugesund"
+  ],
+  "relegated": [
+   "sogndal",
+   "haugesund"
+  ]
+ },
+ {
+  "id": "eliteserien-1999",
+  "competition": "eliteserien",
+  "year": 1999,
+  "name": "Tippeligaen 1999",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/1999_Tippeligaen",
+    "title": "1999 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top four, 6th, bottom two and membership confirmed; other positions not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 56
+   },
+   {
+    "club": "molde",
+    "points": 50
+   },
+   {
+    "club": "brann",
+    "points": 49
+   },
+   {
+    "club": "lillestrom",
+    "points": 48
+   },
+   "stabaek",
+   "tromso",
+   "viking",
+   "bodo-glimt",
+   "odd",
+   "valerenga",
+   "moss",
+   "stromsgodset",
+   {
+    "club": "skeid",
+    "points": 23
+   },
+   {
+    "club": "kongsvinger",
+    "points": 20
+   }
+  ],
+  "relegated": [
+   "stromsgodset",
+   "skeid",
+   "kongsvinger"
+  ]
+ },
+ {
+  "id": "eliteserien-2000",
+  "competition": "eliteserien",
+  "year": 2000,
+  "name": "Tippeligaen 2000",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2000_Tippeligaen",
+    "title": "2000 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 54
+   },
+   {
+    "club": "brann",
+    "points": 47
+   },
+   {
+    "club": "viking",
+    "points": 45
+   },
+   {
+    "club": "tromso",
+    "points": 44
+   },
+   {
+    "club": "stabaek",
+    "points": 42
+   },
+   {
+    "club": "lillestrom",
+    "points": 40
+   },
+   {
+    "club": "molde",
+    "points": 40
+   },
+   {
+    "club": "odd",
+    "points": 38
+   },
+   {
+    "club": "moss",
+    "points": 32
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 28
+   },
+   {
+    "club": "bryne",
+    "points": 27
+   },
+   {
+    "club": "valerenga",
+    "points": 24
+   },
+   {
+    "club": "start",
+    "points": 21
+   },
+   {
+    "club": "haugesund",
+    "points": 19
+   }
+  ],
+  "relegated": [
+   "valerenga",
+   "start",
+   "haugesund"
+  ]
+ },
+ {
+  "id": "eliteserien-2001",
+  "competition": "eliteserien",
+  "year": 2001,
+  "name": "Tippeligaen 2001",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2001_Tippeligaen",
+    "title": "2001 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top seven, relegated clubs and membership confirmed; positions 8-12 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 57
+   },
+   {
+    "club": "lillestrom",
+    "points": 56
+   },
+   {
+    "club": "viking",
+    "points": 49
+   },
+   {
+    "club": "stabaek",
+    "points": 45
+   },
+   {
+    "club": "molde",
+    "points": 44
+   },
+   {
+    "club": "odd",
+    "points": 42
+   },
+   {
+    "club": "brann",
+    "points": 41
+   },
+   "bodo-glimt",
+   "moss",
+   "sogndal",
+   "lyn",
+   "bryne",
+   "stromsgodset",
+   "tromso"
+  ],
+  "relegated": [
+   "stromsgodset",
+   "tromso"
+  ]
+ },
+ {
+  "id": "eliteserien-2002",
+  "competition": "eliteserien",
+  "year": 2002,
+  "name": "Tippeligaen 2002",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2002_Tippeligaen",
+    "title": "2002 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top seven, relegated clubs and membership confirmed; positions 8-12 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 56
+   },
+   {
+    "club": "molde",
+    "points": 50
+   },
+   {
+    "club": "lyn",
+    "points": 47
+   },
+   {
+    "club": "viking",
+    "points": 44
+   },
+   {
+    "club": "stabaek",
+    "points": 42
+   },
+   {
+    "club": "odd",
+    "points": 41
+   },
+   {
+    "club": "lillestrom",
+    "points": 36
+   },
+   "bodo-glimt",
+   "valerenga",
+   "sogndal",
+   "brann",
+   "bryne",
+   "moss",
+   "start"
+  ],
+  "relegated": [
+   "moss",
+   "start"
+  ]
+ },
+ {
+  "id": "eliteserien-2003",
+  "competition": "eliteserien",
+  "year": 2003,
+  "name": "Tippeligaen 2003",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2003_Tippeligaen",
+    "title": "2003 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top six and membership confirmed; relegated clubs (Bryne, Aalesund) from the 2004 membership chain"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 61
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 47
+   },
+   {
+    "club": "stabaek",
+    "points": 42
+   },
+   {
+    "club": "odd",
+    "points": 38
+   },
+   {
+    "club": "viking",
+    "points": 37
+   },
+   {
+    "club": "brann",
+    "points": 37
+   },
+   "lillestrom",
+   "sogndal",
+   "molde",
+   "valerenga",
+   "lyn",
+   "tromso",
+   "aalesund",
+   "bryne"
+  ],
+  "relegated": [
+   "aalesund",
+   "bryne"
+  ]
+ },
+ {
+  "id": "eliteserien-2004",
+  "competition": "eliteserien",
+  "year": 2004,
+  "name": "Tippeligaen 2004",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2004_Tippeligaen",
+    "title": "2004 Tippeligaen – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Top four, relegated clubs and membership confirmed; positions 5-12 not verified"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "points": 48
+   },
+   {
+    "club": "valerenga",
+    "points": 48
+   },
+   {
+    "club": "brann",
+    "points": 40
+   },
+   {
+    "club": "tromso",
+    "points": 40
+   },
+   "lyn",
+   "odd",
+   "viking",
+   "lillestrom",
+   "fredrikstad",
+   "molde",
+   "hamkam",
+   "bodo-glimt",
+   "stabaek",
+   "sogndal"
+  ],
+  "relegated": [
+   "stabaek",
+   "sogndal"
+  ]
+ },
+ {
+  "id": "eliteserien-2005",
+  "competition": "eliteserien",
+  "year": 2005,
+  "name": "Tippeligaen 2005",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://www.rsssf.org/tablesn/noo05.html",
+    "title": "Norway 2005 – RSSSF",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Full table in search excerpt"
+   }
+  ],
+  "table": [
+   {
+    "club": "valerenga",
+    "points": 46
+   },
+   {
+    "club": "start",
+    "points": 45
+   },
+   {
+    "club": "lyn",
+    "points": 44
+   },
+   {
+    "club": "lillestrom",
+    "points": 42
+   },
+   {
+    "club": "viking",
+    "points": 41
+   },
+   {
+    "club": "brann",
+    "points": 37
+   },
+   {
+    "club": "rosenborg",
+    "points": 34
+   },
+   {
+    "club": "tromso",
+    "points": 34
+   },
+   {
+    "club": "odd",
+    "points": 33
+   },
+   {
+    "club": "hamkam",
+    "points": 31
+   },
+   {
+    "club": "fredrikstad",
+    "points": 31
+   },
+   {
+    "club": "molde",
+    "points": 30,
+    "outcome": "playoff"
+   },
+   {
+    "club": "aalesund",
+    "points": 27
+   },
+   {
+    "club": "bodo-glimt",
+    "points": 24
+   }
+  ],
+  "relegated": [
+   "aalesund",
+   "bodo-glimt"
+  ]
+ },
+ {
+  "id": "eliteserien-2006",
+  "competition": "eliteserien",
+  "year": 2006,
+  "name": "Tippeligaen 2006",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2006_Tippeligaen",
+    "title": "Tippeligaen 2006 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion"
+   },
+   {
+    "club": "hamkam",
+    "outcome": "relegated"
+   },
+   {
+    "club": "molde",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "hamkam",
+   "molde"
+  ]
+ },
+ {
+  "id": "eliteserien-2007",
+  "competition": "eliteserien",
+  "year": 2007,
+  "name": "Tippeligaen 2007",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2007_Tippeligaen",
+    "title": "Tippeligaen 2007 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "brann",
+    "outcome": "champion"
+   },
+   {
+    "club": "odd",
+    "outcome": "relegated",
+    "points": 27
+   },
+   {
+    "club": "start",
+    "outcome": "relegated",
+    "points": 26
+   },
+   {
+    "club": "sandefjord",
+    "outcome": "relegated",
+    "points": 16
+   }
+  ],
+  "relegated": [
+   "odd",
+   "start",
+   "sandefjord"
+  ]
+ },
+ {
+  "id": "eliteserien-2008",
+  "competition": "eliteserien",
+  "year": 2008,
+  "name": "Tippeligaen 2008",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2008_Tippeligaen",
+    "title": "Tippeligaen 2008 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "stabaek",
+    "outcome": "champion"
+   },
+   {
+    "club": "hamkam",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "hamkam"
+  ]
+ },
+ {
+  "id": "eliteserien-2009",
+  "competition": "eliteserien",
+  "year": 2009,
+  "name": "Tippeligaen 2009",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2009_Tippeligaen",
+    "title": "Tippeligaen 2009 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion"
+   },
+   {
+    "club": "fredrikstad",
+    "outcome": "relegated"
+   },
+   {
+    "club": "bodo-glimt",
+    "outcome": "relegated"
+   },
+   {
+    "club": "lyn",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "fredrikstad",
+   "bodo-glimt",
+   "lyn"
+  ]
+ },
+ {
+  "id": "eliteserien-2010",
+  "competition": "eliteserien",
+  "year": 2010,
+  "name": "Tippeligaen 2010",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2010_Tippeligaen",
+    "title": "Tippeligaen 2010 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion",
+    "points": 68
+   },
+   {
+    "club": "valerenga",
+    "points": 61
+   },
+   {
+    "club": "tromso",
+    "points": 50
+   },
+   {
+    "club": "stabaek",
+    "points": 42
+   },
+   {
+    "club": "sandefjord",
+    "outcome": "relegated"
+   },
+   {
+    "club": "kongsvinger",
+    "outcome": "relegated"
+   },
+   {
+    "club": "honefoss",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "sandefjord",
+   "kongsvinger",
+   "honefoss"
+  ]
+ },
+ {
+  "id": "eliteserien-2011",
+  "competition": "eliteserien",
+  "year": 2011,
+  "name": "Tippeligaen 2011",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2011_Tippeligaen",
+    "title": "Tippeligaen 2011 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "molde",
+    "outcome": "champion"
+   },
+   {
+    "club": "start",
+    "outcome": "relegated"
+   },
+   {
+    "club": "sarpsborg-08",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "start",
+   "sarpsborg-08"
+  ]
+ },
+ {
+  "id": "eliteserien-2012",
+  "competition": "eliteserien",
+  "year": 2012,
+  "name": "Tippeligaen 2012",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2012_Tippeligaen",
+    "title": "Tippeligaen 2012 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "molde",
+    "outcome": "champion",
+    "points": 62
+   },
+   {
+    "club": "stromsgodset",
+    "points": 58
+   },
+   {
+    "club": "rosenborg",
+    "points": 55
+   },
+   {
+    "club": "tromso",
+    "points": 49
+   },
+   {
+    "club": "viking",
+    "points": 49
+   },
+   {
+    "club": "brann",
+    "points": 42
+   },
+   {
+    "club": "fredrikstad",
+    "outcome": "relegated"
+   },
+   {
+    "club": "stabaek",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "fredrikstad",
+   "stabaek"
+  ]
+ },
+ {
+  "id": "eliteserien-2013",
+  "competition": "eliteserien",
+  "year": 2013,
+  "name": "Tippeligaen 2013",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2013_Tippeligaen",
+    "title": "Tippeligaen 2013 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "stromsgodset",
+    "outcome": "champion"
+   },
+   {
+    "club": "tromso",
+    "outcome": "relegated"
+   },
+   {
+    "club": "honefoss",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "tromso",
+   "honefoss"
+  ]
+ },
+ {
+  "id": "eliteserien-2014",
+  "competition": "eliteserien",
+  "year": 2014,
+  "name": "Tippeligaen 2014",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2014_Tippeligaen",
+    "title": "Tippeligaen 2014 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "molde",
+    "outcome": "champion",
+    "points": 71
+   },
+   {
+    "club": "rosenborg",
+    "points": 60
+   },
+   {
+    "club": "odd",
+    "points": 58
+   },
+   {
+    "club": "brann",
+    "outcome": "relegated"
+   },
+   {
+    "club": "sogndal",
+    "outcome": "relegated"
+   },
+   {
+    "club": "sandnes-ulf",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "brann",
+   "sogndal",
+   "sandnes-ulf"
+  ]
+ },
+ {
+  "id": "eliteserien-2015",
+  "competition": "eliteserien",
+  "year": 2015,
+  "name": "Tippeligaen 2015",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2015_Tippeligaen",
+    "title": "Tippeligaen 2015 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion",
+    "points": 69
+   },
+   {
+    "club": "mjondalen",
+    "outcome": "relegated"
+   },
+   {
+    "club": "sandefjord",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "mjondalen",
+   "sandefjord"
+  ]
+ },
+ {
+  "id": "eliteserien-2016",
+  "competition": "eliteserien",
+  "year": 2016,
+  "name": "Tippeligaen 2016",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2016_Tippeligaen",
+    "title": "Tippeligaen 2016 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion"
+   },
+   {
+    "club": "bodo-glimt",
+    "outcome": "relegated"
+   },
+   {
+    "club": "start",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "bodo-glimt",
+   "start"
+  ]
+ },
+ {
+  "id": "eliteserien-2017",
+  "competition": "eliteserien",
+  "year": 2017,
+  "name": "Eliteserien 2017",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2017_Eliteserien",
+    "title": "Eliteserien 2017 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion"
+   },
+   {
+    "club": "sogndal",
+    "outcome": "relegated"
+   },
+   {
+    "club": "aalesund",
+    "outcome": "relegated"
+   },
+   {
+    "club": "viking",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "sogndal",
+   "aalesund",
+   "viking"
+  ]
+ },
+ {
+  "id": "eliteserien-2018",
+  "competition": "eliteserien",
+  "year": 2018,
+  "name": "Eliteserien 2018",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2018_Eliteserien",
+    "title": "Eliteserien 2018 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "rosenborg",
+    "outcome": "champion"
+   },
+   {
+    "club": "sandefjord",
+    "outcome": "relegated"
+   },
+   {
+    "club": "start",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "sandefjord",
+   "start"
+  ]
+ },
+ {
+  "id": "eliteserien-2019",
+  "competition": "eliteserien",
+  "year": 2019,
+  "name": "Eliteserien 2019",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2019_Eliteserien",
+    "title": "Eliteserien 2019 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "molde",
+    "outcome": "champion"
+   },
+   {
+    "club": "lillestrom",
+    "outcome": "relegated"
+   },
+   {
+    "club": "tromso",
+    "outcome": "relegated"
+   },
+   {
+    "club": "ranheim",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "lillestrom",
+   "tromso",
+   "ranheim"
+  ]
+ },
+ {
+  "id": "eliteserien-2020",
+  "competition": "eliteserien",
+  "year": 2020,
+  "name": "Eliteserien 2020",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2020_Eliteserien",
+    "title": "Eliteserien 2020 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "bodo-glimt",
+    "outcome": "champion"
+   },
+   {
+    "club": "aalesund",
+    "outcome": "relegated"
+   },
+   {
+    "club": "start",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "aalesund",
+   "start"
+  ]
+ },
+ {
+  "id": "eliteserien-2021",
+  "competition": "eliteserien",
+  "year": 2021,
+  "name": "Eliteserien 2021",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2021_Eliteserien",
+    "title": "Eliteserien 2021 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "bodo-glimt",
+    "outcome": "champion"
+   },
+   {
+    "club": "brann",
+    "outcome": "relegated"
+   },
+   {
+    "club": "stabaek",
+    "outcome": "relegated"
+   },
+   {
+    "club": "mjondalen",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "brann",
+   "stabaek",
+   "mjondalen"
+  ]
+ },
+ {
+  "id": "eliteserien-2022",
+  "competition": "eliteserien",
+  "year": 2022,
+  "name": "Eliteserien 2022",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2022_Eliteserien",
+    "title": "Eliteserien 2022 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "molde",
+    "outcome": "champion"
+   },
+   {
+    "club": "kristiansund",
+    "outcome": "relegated"
+   },
+   {
+    "club": "jerv",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "kristiansund",
+   "jerv"
+  ]
+ },
+ {
+  "id": "eliteserien-2023",
+  "competition": "eliteserien",
+  "year": 2023,
+  "name": "Eliteserien 2023",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2023_Eliteserien",
+    "title": "Eliteserien 2023 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "bodo-glimt",
+    "outcome": "champion"
+   },
+   {
+    "club": "valerenga",
+    "outcome": "relegated"
+   },
+   {
+    "club": "stabaek",
+    "outcome": "relegated"
+   },
+   {
+    "club": "aalesund",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "valerenga",
+   "stabaek",
+   "aalesund"
+  ]
+ },
+ {
+  "id": "eliteserien-2024",
+  "competition": "eliteserien",
+  "year": 2024,
+  "name": "Eliteserien 2024",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2024_Eliteserien",
+    "title": "Eliteserien 2024 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "bodo-glimt",
+    "outcome": "champion"
+   },
+   {
+    "club": "lillestrom",
+    "outcome": "relegated"
+   },
+   {
+    "club": "odd",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "lillestrom",
+   "odd"
+  ]
+ },
+ {
+  "id": "eliteserien-2025",
+  "competition": "eliteserien",
+  "year": 2025,
+  "name": "Eliteserien 2025",
+  "status": "single_source",
+  "membershipOnly": true,
+  "sources": [
+   {
+    "url": "https://en.wikipedia.org/wiki/2025_Eliteserien",
+    "title": "Eliteserien 2025 – Wikipedia",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Champion and relegated clubs confirmed in search excerpt; table partial"
+   }
+  ],
+  "table": [
+   {
+    "club": "viking",
+    "outcome": "champion"
+   },
+   {
+    "club": "bryne",
+    "outcome": "relegated"
+   },
+   {
+    "club": "stromsgodset",
+    "outcome": "relegated"
+   },
+   {
+    "club": "haugesund",
+    "outcome": "relegated"
+   }
+  ],
+  "relegated": [
+   "bryne",
+   "stromsgodset",
+   "haugesund"
+  ]
+ }
+]

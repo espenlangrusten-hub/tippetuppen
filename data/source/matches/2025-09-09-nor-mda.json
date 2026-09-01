@@ -1,0 +1,49 @@
+{
+  "id": "2025-09-09-nor-mda",
+  "date": "2025-09-09",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2026, gruppe I",
+  "opponent": "Moldova",
+  "opponentCode": "MDA",
+  "norwayHome": true,
+  "score": [11, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-4-2",
+  "importance": 4,
+  "tags": ["kvalik", "rekord"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.espn.com/soccer/match/_/gameId/725008/moldova-norway", "title": "Norway v Moldova – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.thestar.com.my/sport/football/2025/09/10/soccer-haaland-hits-five-as-norway-thrash-moldova-11-1-in-world-cup-qualifier", "title": "Haaland hits five as Norway thrash Moldova 11-1 – Reuters/The Star", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norges største landslagsseier noensinne. Haaland scoret fem, innbytter Thelo Aasgaard fire. Målliste ufullstendig.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "RM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Felix Horn Myhre", "no": 11, "pos": "CM" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LM" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Thelo Aasgaard", "pos": "CM" }],
+  "goals": [
+    { "team": "norway", "name": "Felix Horn Myhre", "minute": 6 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 11 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 36 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 43 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 52 },
+    { "team": "norway", "name": "Erling Haaland" },
+    { "team": "norway", "name": "Thelo Aasgaard" },
+    { "team": "norway", "name": "Thelo Aasgaard" },
+    { "team": "norway", "name": "Thelo Aasgaard" },
+    { "team": "norway", "name": "Thelo Aasgaard" }
+  ]
+}

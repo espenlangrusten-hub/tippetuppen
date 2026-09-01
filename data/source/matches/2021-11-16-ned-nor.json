@@ -1,0 +1,39 @@
+{
+  "id": "2021-11-16-ned-nor",
+  "date": "2021-11-16",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2022, gruppe G",
+  "opponent": "Nederland",
+  "opponentCode": "NED",
+  "norwayHome": false,
+  "score": [0, 2],
+  "venue": "De Kuip",
+  "city": "Rotterdam",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 3,
+  "tags": ["kvalik", "avgjørende"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.co.uk/football/report/_/gameId/590211", "title": "Netherlands 2-0 Norway (16 Nov, 2021) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
+    { "url": "https://www.skysports.com/football/netherlands-vs-norway/teams/441769", "title": "Starting Lineups – Netherlands vs Norway | 16.11.2021 – Sky Sports", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Uten Haaland holdt Norge 0–0 til det 84. minutt bak lukkede dører i Rotterdam. VM-drømmen røk på tampen.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "no": 22, "pos": "RB" },
+    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Morten Thorsby", "no": 2, "pos": "CM" },
+    { "name": "Mathias Normann", "no": 6, "pos": "CM" },
+    { "name": "Mohamed Elyounoussi", "no": 11, "pos": "RW" },
+    { "name": "Alexander Sørloth", "no": 9, "pos": "CF" },
+    { "name": "Ola Solbakken", "no": 17, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "Steven Bergwijn", "minute": 84 },
+    { "team": "opponent", "scorer": "Memphis Depay", "minute": 91 }
+  ]
+}

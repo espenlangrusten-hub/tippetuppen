@@ -1,0 +1,39 @@
+{
+  "id": "2021-09-01-nor-ned",
+  "date": "2021-09-01",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2022, gruppe G",
+  "opponent": "Nederland",
+  "opponentCode": "NED",
+  "norwayHome": true,
+  "score": [1, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-5-1",
+  "importance": 3,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/match/_/gameId/590363", "title": "Norway 1-1 Netherlands (Sep 1, 2021) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://int.soccerway.com/matches/2021/09/01/europe/wc-qualifying-europe/norway/netherlands/3430159/", "title": "Norway vs. Netherlands – 1 September 2021 – Soccerway", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Haaland ga ledelsen mot van Gaals Nederland før Klaassen utlignet.",
+  "lineup": [
+    { "name": "André Hansen", "no": 1, "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "no": 22, "pos": "RB" },
+    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
+    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Mohamed Elyounoussi", "no": 11, "pos": "RM" },
+    { "name": "Mathias Normann", "no": 6, "pos": "CM" },
+    { "name": "Morten Thorsby", "no": 2, "pos": "CM" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "AM", "captain": true },
+    { "name": "Jens Petter Hauge", "no": 15, "pos": "LM" },
+    { "name": "Erling Haaland", "no": 23, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 20 },
+    { "team": "opponent", "scorer": "Davy Klaassen", "minute": 37 }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "2015-09-06-nor-cro",
+  "date": "2015-09-06",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 2016, gruppe H",
+  "opponent": "Kroatia",
+  "opponentCode": "CRO",
+  "norwayHome": true,
+  "score": [2, 0],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Per-Mathias Høgmo",
+  "formation": "4-5-1",
+  "importance": 4,
+  "tags": ["kvalik", "ikonisk"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://hns.team/en/news/12196/norway-beats-croatia-20-in-oslo/", "title": "Norway beats Croatia 2:0 in Oslo – Croatian Football Federation", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.uefa.com/uefaeuro/match/2014003--norway-vs-croatia/", "title": "Norway 2-0 Croatia | UEFA EURO 2016", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Jo Inge Berget scoret og tvang fram Ćorlukas selvmål. Kroatias første tap i kvaliken.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "no": 2, "pos": "RB" },
+    { "name": "Even Hovland", "no": 5, "pos": "CB" },
+    { "name": "Vegard Forren", "no": 3, "pos": "CB" },
+    { "name": "Tom Høgli", "no": 17, "pos": "LB" },
+    { "name": "Jo Inge Berget", "no": 21, "pos": "RM" },
+    { "name": "Markus Henriksen", "no": 7, "pos": "CM" },
+    { "name": "Alexander Tettey", "no": 4, "pos": "CM" },
+    { "name": "Per Ciljan Skjelbred", "no": 15, "pos": "CM", "captain": true },
+    { "name": "Stefan Johansen", "no": 6, "pos": "LM" },
+    { "name": "Alexander Søderlund", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Jo Inge Berget", "minute": 51 },
+    { "team": "norway", "name": "Vedran Ćorluka", "minute": 79, "kind": "og" }
+  ]
+}

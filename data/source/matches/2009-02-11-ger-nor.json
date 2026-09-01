@@ -1,0 +1,35 @@
+{
+  "id": "2009-02-11-ger-nor",
+  "date": "2009-02-11",
+  "competition": "friendly",
+  "opponent": "Tyskland",
+  "opponentCode": "GER",
+  "norwayHome": false,
+  "score": [1, 0],
+  "venue": "LTU Arena",
+  "city": "Düsseldorf",
+  "manager": "Egil Olsen",
+  "formation": "4-5-1",
+  "importance": 4,
+  "tags": ["privatlandskamp", "drillo-comeback", "ikonisk"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2009.html", "title": "Norway International Matches – Details 2009 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Formation, goalkeeper, back four, Braaten and Grindheim confirmed in search excerpt" },
+    { "url": "https://www.skysports.com/football/germany-vs-norway/teams/13365", "title": "Starting Lineups – Germany vs Norway | 11.02.2009 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Skjelbred, Andresen, Riise and Pedersen confirmed in search excerpt; the two excerpts together cover all eleven. Positions in midfield are approximate." }
+  ],
+  "notes": "Drillos første kamp i comebacket – og Tysklands første tap på hjemmebane på 17 år. Grindheim scoret.",
+  "lineup": [
+    { "name": "Rune Almenning Jarstein", "no": 12, "pos": "GK" },
+    { "name": "Tom Høgli", "no": 2, "pos": "RB" },
+    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
+    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
+    { "name": "Trond Erik Bertelsen", "no": 20, "pos": "LB" },
+    { "name": "Daniel Braaten", "no": 6, "pos": "RM" },
+    { "name": "Christian Grindheim", "no": 16, "pos": "CM" },
+    { "name": "Per Ciljan Skjelbred", "no": 8, "pos": "CM" },
+    { "name": "Martin Andresen", "no": 10, "pos": "CM" },
+    { "name": "John Arne Riise", "no": 7, "pos": "LM" },
+    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "CF" }
+  ],
+  "goals": [{ "team": "norway", "name": "Christian Grindheim", "minute": 63 }]
+}

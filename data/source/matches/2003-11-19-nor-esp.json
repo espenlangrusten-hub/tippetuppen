@@ -1,0 +1,37 @@
+{
+  "id": "2003-11-19-nor-esp",
+  "date": "2003-11-19",
+  "competition": "playoff",
+  "stage": "EM 2004-playoff, returkamp",
+  "opponent": "Spania",
+  "opponentCode": "ESP",
+  "norwayHome": true,
+  "score": [0, 3],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Åge Hareide",
+  "formation": "4-4-2",
+  "importance": 2,
+  "tags": ["playoff"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.skysports.com/football/norway-vs-spain/teams/40795", "title": "Starting Lineups – Norway vs Spain | 19.11.2003 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers and captain confirmed in search excerpt" },
+    { "url": "https://www.11v11.com/matches/norway-v-spain-19-november-2003-252317/", "title": "Norway v Spain, 19 November 2003 – 11v11", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Spania vant 5–1 sammenlagt. Hareides første store skuffelse som landslagssjef.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
+    { "name": "Erik Hagen", "no": 3, "pos": "CB" },
+    { "name": "Claus Lundekvam", "no": 4, "pos": "CB", "captain": true },
+    { "name": "John Arne Riise", "no": 5, "pos": "LB" },
+    { "name": "Jan Gunnar Solli", "no": 7, "pos": "RM" },
+    { "name": "Tommy Svindal Larsen", "no": 9, "pos": "CM" },
+    { "name": "Magne Hoseth", "no": 8, "pos": "CM" },
+    { "name": "Jan Derek Sørensen", "no": 6, "pos": "LM" },
+    { "name": "Steffen Iversen", "no": 11, "pos": "CF" },
+    { "name": "John Carew", "no": 10, "pos": "CF" }
+  ],
+  "goals": []
+}

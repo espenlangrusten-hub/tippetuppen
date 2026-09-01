@@ -1,0 +1,40 @@
+{
+  "id": "2023-06-17-nor-sco",
+  "date": "2023-06-17",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 2024, gruppe A",
+  "opponent": "Skottland",
+  "opponentCode": "SCO",
+  "norwayHome": true,
+  "score": [1, 2],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 3,
+  "tags": ["kvalik", "kollaps"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/report/_/gameId/655309", "title": "Norway 1-2 Scotland (Jun 17, 2023) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.uefa.com/european-qualifiers/match/2036336--norway-vs-scotland/", "title": "Norway-Scotland | European Qualifiers 2024 | UEFA", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Haaland scoret på straffe og ble byttet ut – så scoret Skottland to ganger på tre minutter.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Leo Østigård", "no": 15, "pos": "CB" },
+    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 16, "pos": "CM" },
+    { "name": "Ola Solbakken", "no": 17, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 19, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 61, "kind": "pen" },
+    { "team": "opponent", "scorer": "Lyndon Dykes", "minute": 87 },
+    { "team": "opponent", "scorer": "Kenny McLean", "minute": 89 }
+  ]
+}

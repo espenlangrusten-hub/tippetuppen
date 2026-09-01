@@ -1,0 +1,40 @@
+{
+  "id": "1998-06-23-bra-nor",
+  "date": "1998-06-23",
+  "competition": "world-cup",
+  "stage": "VM 1998, gruppe A",
+  "opponent": "Brasil",
+  "opponentCode": "BRA",
+  "norwayHome": false,
+  "score": [2, 1],
+  "venue": "Stade Vélodrome",
+  "city": "Marseille",
+  "manager": "Egil Olsen",
+  "formation": "4-5-1",
+  "importance": 5,
+  "tags": ["vm", "ikonisk", "brasil"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.national-football-teams.com/matches/report/11584/Brazil_Norway.html", "title": "Brazil vs. Norway 1998-06-23 – National Football Teams", "kind": "web", "accessed": "2026-09-01", "note": "Lineup confirmed via search excerpt (10 of 11 named; Mykland confirmed in R16/Scotland excerpts and squad records)" },
+    { "url": "https://en.wikipedia.org/wiki/1998_FIFA_World_Cup_Group_A", "title": "1998 FIFA World Cup Group A – Wikipedia", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norges største landslagsseier: regjerende verdensmester Brasil slått i Marseille, og Norge gikk videre fra gruppen.",
+  "lineup": [
+    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
+    { "name": "Henning Berg", "no": 4, "pos": "RB" },
+    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
+    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "CM" },
+    { "name": "Vidar Riseth", "no": 21, "pos": "LM" },
+    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "Bebeto", "minute": 78 },
+    { "team": "norway", "name": "Tore André Flo", "minute": 83 },
+    { "team": "norway", "name": "Kjetil Rekdal", "minute": 89, "kind": "pen" }
+  ]
+}

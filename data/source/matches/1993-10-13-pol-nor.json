@@ -1,0 +1,41 @@
+{
+  "id": "1993-10-13-pol-nor",
+  "date": "1993-10-13",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 1994, gruppe 2",
+  "opponent": "Polen",
+  "opponentCode": "POL",
+  "norwayHome": false,
+  "score": [3, 0],
+  "venue": "Stadion Miejski",
+  "city": "Poznań",
+  "manager": "Egil Olsen",
+  "formation": "4-5-1",
+  "importance": 4,
+  "tags": ["kvalik", "vm-billett"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://eu-football.info/_match.php?id=9865", "title": "Poland vs Norway, 13 October 1993 – eu-football.info", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, subs and scorers confirmed in search excerpt" },
+    { "url": "http://www.rsssf.no/1993/National.html", "title": "Norwegian national team 1993 – RSSSF Norway", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Seieren i Poznań sikret Norges første VM-plass siden 1938. Innbytter Ronny Johnsen scoret sitt første landslagsmål.",
+  "lineup": [
+    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
+    { "name": "Henning Berg", "no": 2, "pos": "RB" },
+    { "name": "Tore Pedersen", "no": 3, "pos": "CB" },
+    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Jostein Flo", "no": 7, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Lars Bohinen", "no": 8, "pos": "CM" },
+    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM" },
+    { "name": "Gunnar Halle", "no": 11, "pos": "LM", "off": 81 },
+    { "name": "Jan Åge Fjørtoft", "no": 9, "pos": "CF", "off": 73 }
+  ],
+  "subs": [{ "name": "Ronny Johnsen", "no": 14, "pos": "CF", "on": 73, "for": "Jan Åge Fjørtoft" }, { "name": "Jan Ove Jakobsen", "no": 15, "pos": "LM", "on": 81, "for": "Gunnar Halle" }],
+  "goals": [
+    { "team": "norway", "name": "Jostein Flo", "minute": 61 },
+    { "team": "norway", "name": "Jan Åge Fjørtoft", "minute": 63 },
+    { "team": "norway", "name": "Ronny Johnsen", "minute": 89 }
+  ]
+}

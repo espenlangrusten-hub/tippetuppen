@@ -1,0 +1,40 @@
+{
+  "id": "1991-06-05-nor-ita",
+  "date": "1991-06-05",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 1992, gruppe 3",
+  "opponent": "Italia",
+  "opponentCode": "ITA",
+  "norwayHome": true,
+  "score": [2, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Egil Olsen",
+  "importance": 4,
+  "tags": ["kvalik", "ikonisk", "italia"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.11v11.com/matches/norway-v-italy-05-june-1991-242951/", "title": "Norway v Italy, 05 June 1991 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt (Fjørtoft substitute)" },
+    { "url": "http://soccernostalgia.blogspot.com/2012/08/june-5-1991-norway-2-italy-1.html", "title": "Soccer Nostalgia: June 5, 1991 – Norway 2 Italy 1", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Italias første tap i en EM-kvalik på fire år. Dahlum etter fire minutter og Bohinen etter 25.",
+  "lineup": [
+    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
+    { "name": "Karl Petter Løken", "no": 2, "pos": "RB" },
+    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
+    { "name": "Tore Pedersen", "no": 3, "pos": "CB" },
+    { "name": "Pål Lydersen", "no": 5, "pos": "LB" },
+    { "name": "Kåre Ingebrigtsen", "no": 7, "pos": "RM" },
+    { "name": "Per Egil Ahlsen", "no": 6, "pos": "CM" },
+    { "name": "Lars Bohinen", "no": 8, "pos": "CM" },
+    { "name": "Jan Ove Jakobsen", "no": 11, "pos": "LM" },
+    { "name": "Tore André Dahlum", "no": 10, "pos": "CF" },
+    { "name": "Gøran Sørloth", "no": 9, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Jan Åge Fjørtoft", "no": 14, "pos": "CF" }],
+  "goals": [
+    { "team": "norway", "name": "Tore André Dahlum", "minute": 4 },
+    { "team": "norway", "name": "Lars Bohinen", "minute": 25 },
+    { "team": "opponent", "scorer": "Salvatore Schillaci", "minute": 78 }
+  ]
+}

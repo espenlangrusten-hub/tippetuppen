@@ -1,0 +1,38 @@
+{
+  "id": "2006-09-02-hun-nor",
+  "date": "2006-09-02",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 2008, gruppe C",
+  "opponent": "Ungarn",
+  "opponentCode": "HUN",
+  "norwayHome": false,
+  "score": [4, 1],
+  "venue": "Szusza Ferenc Stadion",
+  "city": "Budapest",
+  "manager": "Åge Hareide",
+  "formation": "4-2-3-1",
+  "importance": 3,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2006.html", "title": "Norway International Matches – Details 2006 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation and captain confirmed in search excerpt" },
+    { "url": "https://www.national-football-teams.com/matches/report/1738/Hungary_Norway.html", "title": "Hungary vs. Norway 2006-09-02 – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norges største borteseier i en kvalik siden 2001. Målscorere ikke registrert.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "Anders Rambekk", "no": 17, "pos": "RB" },
+    { "name": "Erik Hagen", "no": 3, "pos": "CB" },
+    { "name": "Brede Hangeland", "no": 5, "pos": "CB" },
+    { "name": "Marius Johnsen", "no": 15, "pos": "LB" },
+    { "name": "Martin Andresen", "no": 8, "pos": "DM", "captain": true },
+    { "name": "Kristofer Hæstad", "no": 22, "pos": "DM" },
+    { "name": "Fredrik Strømstad", "no": 7, "pos": "RW" },
+    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "AM" },
+    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "LW" },
+    { "name": "John Carew", "no": 10, "pos": "CF", "off": 76 }
+  ],
+  "subs": [{ "name": "Steffen Iversen", "no": 9, "pos": "CF", "on": 76, "for": "John Carew" }],
+  "goals": []
+}

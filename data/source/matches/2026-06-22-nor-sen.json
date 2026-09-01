@@ -1,0 +1,43 @@
+{
+  "id": "2026-06-22-nor-sen",
+  "date": "2026-06-22",
+  "competition": "world-cup",
+  "stage": "VM 2026, gruppe I",
+  "opponent": "Senegal",
+  "opponentCode": "SEN",
+  "norwayHome": true,
+  "score": [3, 2],
+  "venue": "MetLife Stadium",
+  "city": "New Jersey",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 4,
+  "tags": ["vm", "vm-2026"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.italiansoccerseriea.com/2026-fifa-world-cup/norway-vs-senegal-official-lineups-monday-22-june-2026-world-cup-group-i/", "title": "Norway vs Senegal Official Lineups, 22 June 2026", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt; Holmgren Pedersen listed as substitute and scored" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/760454/senegal-norway", "title": "Norway 3-2 Senegal (Jun 22, 2026) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Seieren som sikret avansement. Innbytter Holmgren Pedersen og to Haaland-mål mot to fra Ismaïla Sarr.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 16, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LW" }
+  ],
+  "subs": [{ "name": "Marcus Holmgren Pedersen", "no": 2, "pos": "RB" }],
+  "goals": [
+    { "team": "norway", "name": "Marcus Holmgren Pedersen", "minute": 43 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 48 },
+    { "team": "opponent", "scorer": "Ismaïla Sarr", "minute": 53 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 58 },
+    { "team": "opponent", "scorer": "Ismaïla Sarr", "minute": 93 }
+  ]
+}

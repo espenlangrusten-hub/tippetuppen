@@ -1,0 +1,39 @@
+{
+  "id": "2006-08-16-nor-bra",
+  "date": "2006-08-16",
+  "competition": "friendly",
+  "opponent": "Brasil",
+  "opponentCode": "BRA",
+  "norwayHome": true,
+  "score": [1, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Åge Hareide",
+  "formation": "4-2-3-1",
+  "importance": 4,
+  "tags": ["privatlandskamp", "brasil"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2006.html", "title": "Norway International Matches – Details 2006 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation and captain confirmed in search excerpt" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/198248/brazil-norway", "title": "Norway 1-1 Brazil (Aug 16, 2006) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norge fortsatt ubeseiret mot Brasil: Gamst Pedersen ga ledelsen før Daniel Carvalho utlignet.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "Jon Inge Høiland", "no": 4, "pos": "RB" },
+    { "name": "Erik Hagen", "no": 3, "pos": "CB" },
+    { "name": "Brede Hangeland", "no": 5, "pos": "CB" },
+    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
+    { "name": "Martin Andresen", "no": 8, "pos": "DM", "captain": true },
+    { "name": "Tommy Svindal Larsen", "no": 2, "pos": "DM" },
+    { "name": "Fredrik Strømstad", "no": 7, "pos": "RW" },
+    { "name": "Frode Johnsen", "no": 9, "pos": "AM" },
+    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "LW" },
+    { "name": "John Carew", "no": 10, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Daniel Braaten", "pos": "CF", "for": "John Carew" }],
+  "goals": [
+    { "team": "norway", "name": "Morten Gamst Pedersen" },
+    { "team": "opponent", "scorer": "Daniel Carvalho" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "2026-07-05-bra-nor",
+  "date": "2026-07-05",
+  "competition": "world-cup",
+  "stage": "VM 2026, åttedelsfinale",
+  "opponent": "Brasil",
+  "opponentCode": "BRA",
+  "norwayHome": false,
+  "score": [2, 1],
+  "venue": "MetLife Stadium",
+  "city": "New Jersey",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 5,
+  "tags": ["vm", "sluttspill", "brasil", "ikonisk"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/story/_/id/49278406/brazil-vs-norway-live-world-cup-2026-updates-score-commentary-result", "title": "Brazil 1-2 Norway: Haaland scores brace – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
+    { "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-norway-match-report-highlights", "title": "Brazil 1-2 Norway | Match report & highlights | FIFA", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "To sene Haaland-mål sendte Norge til VM-kvartfinale for første gang. Brasil slått igjen, 28 år etter Marseille.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 79 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 90 },
+    { "team": "opponent", "scorer": "Neymar", "minute": 100, "kind": "pen" }
+  ]
+}

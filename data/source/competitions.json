@@ -1,0 +1,11 @@
+[
+  { "id": "world-cup", "name": "VM", "kind": "tournament" },
+  { "id": "euro", "name": "EM", "kind": "tournament" },
+  { "id": "wc-qual", "name": "VM-kvalifisering", "kind": "qualifier" },
+  { "id": "euro-qual", "name": "EM-kvalifisering", "kind": "qualifier" },
+  { "id": "nations-league", "name": "Nations League", "kind": "nations-league" },
+  { "id": "playoff", "name": "Playoff", "kind": "playoff" },
+  { "id": "friendly", "name": "Privatlandskamp", "kind": "friendly" },
+  { "id": "eliteserien", "name": "Eliteserien", "kind": "league" },
+  { "id": "nm-cup", "name": "NM (cupen)", "kind": "cup" }
+]

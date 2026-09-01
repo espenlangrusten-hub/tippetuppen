@@ -1,0 +1,35 @@
+{
+  "id": "2014-09-03-eng-nor",
+  "date": "2014-09-03",
+  "competition": "friendly",
+  "opponent": "England",
+  "opponentCode": "ENG",
+  "norwayHome": false,
+  "score": [0, 1],
+  "venue": "Wembley",
+  "city": "London",
+  "manager": "Per-Mathias Høgmo",
+  "formation": "4-4-2",
+  "importance": 2,
+  "tags": ["privatlandskamp", "england", "wembley"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.thefa.com/news/2014/sep/03/norway-wembley-match-report", "title": "England 1-0 Norway: Match Report – The FA", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.skysports.com/football/england-vs-norway/teams/323759", "title": "Starting Lineups – England vs Norway | 03.09.2014 – Sky Sports", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Rooneys straffe avgjorde en glissen Wembley-kveld. Posisjonene er tilordnet etter spillernes vanlige roller.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "no": 16, "pos": "RB" },
+    { "name": "Håvard Nordtveit", "no": 8, "pos": "CB" },
+    { "name": "Vegard Forren", "no": 23, "pos": "CB" },
+    { "name": "Martin Linnes", "no": 17, "pos": "LB" },
+    { "name": "Tarik Elyounoussi", "no": 10, "pos": "RM" },
+    { "name": "Per Ciljan Skjelbred", "no": 15, "pos": "CM", "captain": true },
+    { "name": "Ruben Yttergård Jenssen", "no": 19, "pos": "CM" },
+    { "name": "Mats Møller Dæhli", "no": 20, "pos": "LM" },
+    { "name": "Stefan Johansen", "no": 6, "pos": "AM" },
+    { "name": "Joshua King", "no": 7, "pos": "CF" }
+  ],
+  "goals": [{ "team": "opponent", "scorer": "Wayne Rooney", "minute": 68, "kind": "pen" }]
+}

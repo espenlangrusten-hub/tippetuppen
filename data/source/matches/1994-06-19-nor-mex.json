@@ -1,0 +1,36 @@
+{
+  "id": "1994-06-19-nor-mex",
+  "date": "1994-06-19",
+  "competition": "world-cup",
+  "stage": "VM 1994, gruppe E",
+  "opponent": "Mexico",
+  "opponentCode": "MEX",
+  "norwayHome": true,
+  "score": [1, 0],
+  "venue": "RFK Stadium",
+  "city": "Washington",
+  "manager": "Egil Olsen",
+  "importance": 5,
+  "tags": ["vm", "ikonisk"],
+  "status": "uncertain",
+  "sources": [
+    { "url": "https://www.worldfootball.net/match-report/co139/fifa-world-cup/ma137266/norway_mexico/lineup/", "title": "Norway against Mexico – Lineup – worldfootball.net", "kind": "web", "accessed": "2026-09-01", "note": "Search excerpt lists Thorstvedt, Bratseth, Bjørnebye, A-I Håland, Berg, J. Flo, Mykland, Leonhardsen, Jakobsen, Bohinen, Fjørtoft as starters and implies Rekdal/Halle came on" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/198051/mexico-norway", "title": "Norway 1-0 Mexico (Jun 19, 1994) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Excerpt lists Halle and Rekdal among the XI – conflicts with worldfootball. Resolve against a primary source before release." }
+  ],
+  "notes": "Norges første VM-kamp siden 1938. Rekdal avgjorde fem minutter før slutt. Kildene er uenige om hvem som startet (Rekdal/Halle vs. Jakobsen/Bohinen) – oppstillingen holdes utenfor rotasjonen inntil avklart.",
+  "lineup": [
+    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
+    { "name": "Alf-Inge Håland", "no": 2, "pos": "RB" },
+    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
+    { "name": "Henning Berg", "no": 3, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Jostein Flo", "no": 7, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Lars Bohinen", "no": 15, "pos": "CM" },
+    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "LM" },
+    { "name": "Jan Ove Jakobsen", "no": 11, "pos": "SS" },
+    { "name": "Jan Åge Fjørtoft", "no": 9, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Kjetil Rekdal", "no": 10, "pos": "CM" }, { "name": "Gunnar Halle", "no": 13, "pos": "RB" }],
+  "goals": [{ "team": "norway", "name": "Kjetil Rekdal", "minute": 85 }]
+}

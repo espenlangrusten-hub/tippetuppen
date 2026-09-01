@@ -1,0 +1,39 @@
+{
+  "id": "1998-06-16-sco-nor",
+  "date": "1998-06-16",
+  "competition": "world-cup",
+  "stage": "VM 1998, gruppe A",
+  "opponent": "Skottland",
+  "opponentCode": "SCO",
+  "norwayHome": false,
+  "score": [1, 1],
+  "venue": "Parc Lescure",
+  "city": "Bordeaux",
+  "manager": "Egil Olsen",
+  "formation": "4-5-1",
+  "importance": 3,
+  "tags": ["vm"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.11v11.com/matches/scotland-v-norway-16-june-1998-265579/", "title": "Scotland v Norway, 16 June 1998 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt (incl. Solbakken and Roar Strand)" },
+    { "url": "https://www.national-football-teams.com/matches/report/32839/Scotland_Norway.html", "title": "Scotland vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Tore André Flo ga Norge ledelsen rett etter pause før Craig Burley utlignet.",
+  "lineup": [
+    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
+    { "name": "Henning Berg", "no": 4, "pos": "RB" },
+    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
+    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
+    { "name": "Ståle Solbakken", "no": 14, "pos": "CM" },
+    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Roar Strand", "no": 7, "pos": "CM" },
+    { "name": "Vidar Riseth", "no": 21, "pos": "LM" },
+    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Tore André Flo", "minute": 46 },
+    { "team": "opponent", "scorer": "Craig Burley", "minute": 66 }
+  ]
+}

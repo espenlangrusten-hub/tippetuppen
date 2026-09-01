@@ -1,0 +1,36 @@
+{
+  "id": "2000-06-21-svn-nor",
+  "date": "2000-06-21",
+  "competition": "euro",
+  "stage": "EM 2000, gruppe C",
+  "opponent": "Slovenia",
+  "opponentCode": "SVN",
+  "norwayHome": false,
+  "score": [0, 0],
+  "venue": "GelreDome",
+  "city": "Arnhem",
+  "manager": "Nils Johan Semb",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": ["em"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.national-football-teams.com/matches/report/564/Slovenia_Norway.html", "title": "Slovenia vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698413", "title": "Slovenia – Norge 21.06.2000 – Norges Fotballforbund", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "0–0 i Arnhem var ikke nok: Spania snudde mot Jugoslavia på overtid, og Norge røk ut på målforskjell.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
+    { "name": "Bjørn Otto Bragstad", "no": 15, "pos": "CB" },
+    { "name": "Dan Eggen", "no": 4, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Ståle Solbakken", "no": 14, "pos": "CM", "captain": true },
+    { "name": "Steffen Iversen", "no": 10, "pos": "LM" },
+    { "name": "Tore André Flo", "no": 9, "pos": "CF" },
+    { "name": "John Carew", "no": 11, "pos": "CF" }
+  ],
+  "goals": []
+}

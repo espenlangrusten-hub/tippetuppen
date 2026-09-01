@@ -1,0 +1,44 @@
+{
+  "id": "2023-11-19-sco-nor",
+  "date": "2023-11-19",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 2024, gruppe A",
+  "opponent": "Skottland",
+  "opponentCode": "SCO",
+  "norwayHome": false,
+  "score": [3, 3],
+  "venue": "Hampden Park",
+  "city": "Glasgow",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 2,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.vavel.com/en-us/soccer/2023/11/19/1163415-scotland-vs-norway-live-updates-score-stream-info-lineups-and-how-to-watch-euro-qualifiers-2023-match.html", "title": "Scotland 3-3 Norway – VAVEL", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
+    { "url": "https://www.uefa.com/uefaeuro/match/2036498--scotland-vs-norway/", "title": "Scotland 3-3 Norway | UEFA EURO 2024", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Seks mål på Hampden uten Haaland og Ødegaard. Elyounoussi reddet ett poeng på tampen.",
+  "lineup": [
+    { "name": "Egil Selvik", "no": 12, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Leo Østigård", "no": 15, "pos": "CB" },
+    { "name": "Fredrik Bjørkan", "no": 5, "pos": "LB" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 16, "pos": "CM" },
+    { "name": "Oscar Bobb", "no": 11, "pos": "RW" },
+    { "name": "Jørgen Strand Larsen", "no": 19, "pos": "CF" },
+    { "name": "Aron Dønnum", "no": 7, "pos": "LW" }
+  ],
+  "subs": [{ "name": "Mohamed Elyounoussi", "no": 20, "pos": "LW" }],
+  "goals": [
+    { "team": "norway", "name": "Aron Dønnum", "minute": 4 },
+    { "team": "opponent", "scorer": "John McGinn", "minute": 30, "kind": "pen" },
+    { "team": "norway", "name": "Jørgen Strand Larsen", "minute": 45 },
+    { "team": "opponent", "scorer": "Leo Østigård (selvmål)", "minute": 51 },
+    { "team": "opponent", "scorer": "Stuart Armstrong", "minute": 55 },
+    { "team": "norway", "name": "Mohamed Elyounoussi", "minute": 87 }
+  ]
+}

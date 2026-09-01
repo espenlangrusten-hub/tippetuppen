@@ -1,0 +1,41 @@
+{
+  "id": "2020-10-08-nor-srb",
+  "date": "2020-10-08",
+  "competition": "playoff",
+  "stage": "EM 2020-playoff, semifinale",
+  "opponent": "Serbia",
+  "opponentCode": "SRB",
+  "norwayHome": true,
+  "score": [1, 2],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Lars Lagerbäck",
+  "formation": "4-4-2",
+  "importance": 4,
+  "tags": ["playoff", "skuffelse"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.sportsmole.co.uk/football/european-championship-qualifying/norway-vs-serbia_game_119519.html", "title": "Norway 1-2 Serbia – Euro Champ Qualifying Playoff – Sports Mole", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/560000/serbia-norway", "title": "Norway 1-2 Serbia (Oct 8, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Tom Ullevaal under pandemien. Normann utlignet, men Milinković-Savić avgjorde i ekstraomgangene.",
+  "lineup": [
+    { "name": "Rune Almenning Jarstein", "no": 1, "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "no": 2, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Tore Reginiussen", "no": 4, "pos": "CB" },
+    { "name": "Haitam Aleesami", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "RM" },
+    { "name": "Markus Henriksen", "no": 7, "pos": "CM" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Stefan Johansen", "no": 6, "pos": "LM", "captain": true },
+    { "name": "Erling Haaland", "no": 23, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 9, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Mathias Normann", "no": 21, "pos": "CM" }],
+  "goals": [
+    { "team": "opponent", "scorer": "Sergej Milinković-Savić", "minute": 81 },
+    { "team": "norway", "name": "Mathias Normann", "minute": 88 },
+    { "team": "opponent", "scorer": "Sergej Milinković-Savić", "minute": 102 }
+  ]
+}

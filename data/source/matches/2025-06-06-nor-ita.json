@@ -1,0 +1,40 @@
+{
+  "id": "2025-06-06-nor-ita",
+  "date": "2025-06-06",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2026, gruppe I",
+  "opponent": "Italia",
+  "opponentCode": "ITA",
+  "norwayHome": true,
+  "score": [3, 0],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-4-2",
+  "importance": 5,
+  "tags": ["kvalik", "ikonisk", "italia"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/match/_/gameId/724951/italy-norway", "title": "Norway 3-0 Italy (Jun 6, 2025) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_qualification_%E2%80%93_UEFA_Group_I", "title": "2026 FIFA World Cup qualification – UEFA Group I – Wikipedia", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Tre mål før pause i regnet på Ullevaal. Sørloth, Nusa og Haaland senket Italia.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 2, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 5, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 15, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 3, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "RM", "captain": true },
+    { "name": "Sander Berge", "no": 6, "pos": "CM" },
+    { "name": "Morten Thorsby", "no": 8, "pos": "CM" },
+    { "name": "Antonio Nusa", "no": 7, "pos": "LM" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 11, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Alexander Sørloth", "minute": 14 },
+    { "team": "norway", "name": "Antonio Nusa", "minute": 34 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 42 }
+  ]
+}

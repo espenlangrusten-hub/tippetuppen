@@ -1,0 +1,42 @@
+{
+  "id": "2025-11-13-nor-est",
+  "date": "2025-11-13",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2026, gruppe I",
+  "opponent": "Estland",
+  "opponentCode": "EST",
+  "norwayHome": true,
+  "score": [4, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 3,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.beinsports.com/en-us/soccer/uefa-world-cup-qualifiers/articles/norway-4-1-estonia-haaland-and-sorloth-braces-all-but-secure-world-cup-qualification-2025-11-13", "title": "Norway 4-1 Estonia: Haaland and Sorloth braces – beIN SPORTS", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.fifa.com/en/match-centre/match/520/288329/288330/400019222", "title": "Norway v Estonia 4-1 | FIFA World Cup 2026 UEFA Qualifiers", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Fire mål på tolv minutter etter pause gjorde VM-plassen så godt som sikker.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Morten Thorsby", "no": 18, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Alexander Sørloth", "minute": 50 },
+    { "team": "norway", "name": "Alexander Sørloth", "minute": 52 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 56 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 62 },
+    { "team": "opponent", "scorer": "Robi Saarma", "minute": 64 }
+  ]
+}

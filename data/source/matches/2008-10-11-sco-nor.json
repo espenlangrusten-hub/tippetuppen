@@ -1,0 +1,39 @@
+{
+  "id": "2008-10-11-sco-nor",
+  "date": "2008-10-11",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2010, gruppe 9",
+  "opponent": "Skottland",
+  "opponentCode": "SCO",
+  "norwayHome": false,
+  "score": [0, 0],
+  "venue": "Hampden Park",
+  "city": "Glasgow",
+  "manager": "Åge Hareide",
+  "formation": "4-4-2",
+  "importance": 2,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2008.html", "title": "Norway International Matches – Details 2008 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, formation, captain and substitutions confirmed in search excerpt" }
+  ],
+  "notes": "Målløst på Hampden foran 51 300. Hareides nest siste kvalikkamp som landslagssjef.",
+  "lineup": [
+    { "name": "Jon Knudsen", "no": 1, "pos": "GK" },
+    { "name": "Jon Inge Høiland", "no": 2, "pos": "RB" },
+    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
+    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
+    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
+    { "name": "Bjørn Helge Riise", "no": 7, "pos": "RM", "off": 56 },
+    { "name": "Fredrik Winsnes", "no": 4, "pos": "CM" },
+    { "name": "Christian Grindheim", "no": 8, "pos": "CM" },
+    { "name": "Fredrik Strømstad", "no": 11, "pos": "LM", "off": 77 },
+    { "name": "Steffen Iversen", "no": 9, "pos": "CF" },
+    { "name": "John Carew", "no": 10, "pos": "CF" }
+  ],
+  "subs": [
+    { "name": "Daniel Braaten", "no": 16, "pos": "RM", "on": 56, "for": "Bjørn Helge Riise" },
+    { "name": "Morten Gamst Pedersen", "no": 17, "pos": "LM", "on": 77, "for": "Fredrik Strømstad" }
+  ],
+  "goals": []
+}

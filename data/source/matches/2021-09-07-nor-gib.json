@@ -1,0 +1,43 @@
+{
+  "id": "2021-09-07-nor-gib",
+  "date": "2021-09-07",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2022, gruppe G",
+  "opponent": "Gibraltar",
+  "opponentCode": "GIB",
+  "norwayHome": true,
+  "score": [5, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-4-2",
+  "importance": 2,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.vavel.com/en-us/soccer/2021/09/07/1085033-norway-vs-gibraltar-live-stream-score-updates-and-how-to-watch-fifa-2022-world-cup-qualifiers-match.html", "title": "Norway 5-1 Gibraltar – VAVEL", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://africa.espn.com/football/match/_/gameId/590311", "title": "Norway v Gibraltar – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Haaland-hat-trick, og Thorstvedt og Sørloth scoret også.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "no": 22, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Mohamed Elyounoussi", "no": 11, "pos": "RM" },
+    { "name": "Patrick Berg", "no": 8, "pos": "CM" },
+    { "name": "Kristian Thorstvedt", "no": 19, "pos": "CM" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "LM", "captain": true },
+    { "name": "Erling Haaland", "no": 23, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 27 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 39 },
+    { "team": "norway", "name": "Kristian Thorstvedt" },
+    { "team": "norway", "name": "Alexander Sørloth" },
+    { "team": "norway", "name": "Erling Haaland", "minute": 91 }
+  ]
+}

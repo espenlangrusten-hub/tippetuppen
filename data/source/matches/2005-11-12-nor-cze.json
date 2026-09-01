@@ -1,0 +1,36 @@
+{
+  "id": "2005-11-12-nor-cze",
+  "date": "2005-11-12",
+  "competition": "playoff",
+  "stage": "VM 2006-playoff, første kamp",
+  "opponent": "Tsjekkia",
+  "opponentCode": "CZE",
+  "norwayHome": true,
+  "score": [0, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Åge Hareide",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": ["playoff"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://english.radio.cz/czech-republic-beats-norway-advance-world-cup-8625644", "title": "Czech Republic beats Norway to advance to World Cup – Radio Prague", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.worldfootball.net/competition/co1093/fifa-wc-qualifiers-play-offs/se1313/2005/matches-and-results/", "title": "WC Qualifiers Play-offs 2005 – worldfootball.net", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Šmicer avgjorde på Ullevaal, og Tsjekkia tok VM-plassen.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
+    { "name": "Erik Hagen", "no": 3, "pos": "CB" },
+    { "name": "Brede Hangeland", "no": 4, "pos": "CB" },
+    { "name": "John Arne Riise", "no": 5, "pos": "LB" },
+    { "name": "Jan Gunnar Solli", "no": 6, "pos": "RM" },
+    { "name": "Kristofer Hæstad", "no": 7, "pos": "CM" },
+    { "name": "Christian Grindheim", "no": 8, "pos": "CM" },
+    { "name": "Morten Gamst Pedersen", "no": 9, "pos": "LM" },
+    { "name": "John Carew", "no": 10, "pos": "CF" },
+    { "name": "Steffen Iversen", "no": 11, "pos": "CF" }
+  ],
+  "goals": [{ "team": "opponent", "scorer": "Vladimír Šmicer", "minute": 31 }]
+}

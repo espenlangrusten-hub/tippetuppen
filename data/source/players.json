@@ -1,0 +1,997 @@
+[
+  {
+    "id": "jan-ove-jakobsen",
+    "fullName": "Jan Ove Jakobsen",
+    "displayName": "Mini Jakobsen",
+    "surname": "Jakobsen",
+    "aliases": [
+      "Mini",
+      "Mini Jakobsen"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "tore-pedersen",
+    "fullName": "Tore Pedersen",
+    "surname": "Pedersen",
+    "aliases": [
+      "Tore André Pedersen"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "erling-haaland",
+    "fullName": "Erling Haaland",
+    "surname": "Haaland",
+    "aliases": [
+      "Erling Braut Haaland",
+      "Håland",
+      "Erling Braut Håland"
+    ],
+    "fame": 5
+  },
+  {
+    "id": "david-moller-wolfe",
+    "fullName": "David Møller Wolfe",
+    "surname": "Møller Wolfe",
+    "aliases": [
+      "Wolfe",
+      "David Wolfe"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "jorgen-strand-larsen",
+    "fullName": "Jørgen Strand Larsen",
+    "surname": "Strand Larsen",
+    "aliases": [
+      "Larsen",
+      "Strand-Larsen"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "orjan-nyland",
+    "fullName": "Ørjan Nyland",
+    "surname": "Nyland",
+    "aliases": [
+      "Ørjan Håskjold Nyland"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "kristoffer-ajer",
+    "fullName": "Kristoffer Ajer",
+    "surname": "Ajer",
+    "aliases": [
+      "Kristoffer Vassbakk Ajer"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "john-carew",
+    "fullName": "John Carew",
+    "surname": "Carew",
+    "aliases": [
+      "John Alieu Carew"
+    ],
+    "fame": 5,
+    "caps": 91
+  },
+  {
+    "id": "thomas-myhre",
+    "fullName": "Thomas Myhre",
+    "surname": "Myhre",
+    "aliases": [
+      "Thomas Harald Myhre"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "ole-gunnar-solskjaer",
+    "fullName": "Ole Gunnar Solskjær",
+    "surname": "Solskjær",
+    "aliases": [
+      "OGS"
+    ],
+    "fame": 5
+  },
+  {
+    "id": "tore-andre-flo",
+    "fullName": "Tore André Flo",
+    "surname": "Flo",
+    "aliases": [
+      "TAF"
+    ],
+    "fame": 5
+  },
+  {
+    "id": "kjetil-rekdal",
+    "fullName": "Kjetil Rekdal",
+    "surname": "Rekdal",
+    "fame": 5,
+    "caps": 83
+  },
+  {
+    "id": "erik-mykland",
+    "fullName": "Erik Mykland",
+    "surname": "Mykland",
+    "aliases": [
+      "Myggen"
+    ],
+    "fame": 5
+  },
+  {
+    "id": "martin-odegaard",
+    "fullName": "Martin Ødegaard",
+    "surname": "Ødegaard",
+    "fame": 5
+  },
+  {
+    "id": "rune-bratseth",
+    "fullName": "Rune Bratseth",
+    "surname": "Bratseth",
+    "fame": 5
+  },
+  {
+    "id": "erik-thorstvedt",
+    "fullName": "Erik Thorstvedt",
+    "surname": "Thorstvedt",
+    "fame": 5,
+    "caps": 97
+  },
+  {
+    "id": "henning-berg",
+    "fullName": "Henning Berg",
+    "surname": "Berg",
+    "fame": 5,
+    "caps": 100
+  },
+  {
+    "id": "stig-inge-bjornebye",
+    "fullName": "Stig Inge Bjørnebye",
+    "surname": "Bjørnebye",
+    "fame": 5,
+    "caps": 75
+  },
+  {
+    "id": "jan-age-fjortoft",
+    "fullName": "Jan Åge Fjørtoft",
+    "surname": "Fjørtoft",
+    "fame": 5
+  },
+  {
+    "id": "antonio-nusa",
+    "fullName": "Antonio Nusa",
+    "surname": "Nusa",
+    "fame": 4
+  },
+  {
+    "id": "alexander-sorloth",
+    "fullName": "Alexander Sørloth",
+    "surname": "Sørloth",
+    "fame": 5
+  },
+  {
+    "id": "felix-horn-myhre",
+    "fullName": "Felix Horn Myhre",
+    "surname": "Myhre",
+    "aliases": [
+      "Horn Myhre",
+      "Felix Myhre"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "alf-inge-haland",
+    "fullName": "Alf-Inge Håland",
+    "surname": "Håland",
+    "aliases": [
+      "Alfie Haaland",
+      "Alf Inge Haaland",
+      "Alf-Inge Haaland"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "erland-johnsen",
+    "fullName": "Erland Johnsen",
+    "surname": "Johnsen",
+    "fame": 3
+  },
+  {
+    "id": "andreas-schjelderup",
+    "fullName": "Andreas Schjelderup",
+    "surname": "Schjelderup",
+    "fame": 3
+  },
+  {
+    "id": "thelo-aasgaard",
+    "fullName": "Thelo Aasgaard",
+    "surname": "Aasgaard",
+    "aliases": [
+      "Åsgård"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "gunnar-halle",
+    "fullName": "Gunnar Halle",
+    "surname": "Halle",
+    "fame": 4
+  },
+  {
+    "id": "oyvind-leonhardsen",
+    "fullName": "Øyvind Leonhardsen",
+    "surname": "Leonhardsen",
+    "fame": 5,
+    "caps": 86
+  },
+  {
+    "id": "lars-bohinen",
+    "fullName": "Lars Bohinen",
+    "surname": "Bohinen",
+    "fame": 4
+  },
+  {
+    "id": "jostein-flo",
+    "fullName": "Jostein Flo",
+    "surname": "Flo",
+    "fame": 4
+  },
+  {
+    "id": "havard-flo",
+    "fullName": "Håvard Flo",
+    "surname": "Flo",
+    "fame": 3
+  },
+  {
+    "id": "goran-sorloth",
+    "fullName": "Gøran Sørloth",
+    "surname": "Sørloth",
+    "fame": 3
+  },
+  {
+    "id": "john-arne-riise",
+    "fullName": "John Arne Riise",
+    "surname": "Riise",
+    "aliases": [
+      "JA Riise",
+      "J.A. Riise"
+    ],
+    "fame": 5,
+    "caps": 110
+  },
+  {
+    "id": "bjorn-helge-riise",
+    "fullName": "Bjørn Helge Riise",
+    "surname": "Riise",
+    "aliases": [
+      "BH Riise",
+      "B.H. Riise"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "morten-gamst-pedersen",
+    "fullName": "Morten Gamst Pedersen",
+    "surname": "Gamst Pedersen",
+    "aliases": [
+      "Gamst",
+      "Pedersen",
+      "Morten Pedersen"
+    ],
+    "fame": 5,
+    "caps": 83
+  },
+  {
+    "id": "brede-hangeland",
+    "fullName": "Brede Hangeland",
+    "surname": "Hangeland",
+    "fame": 5,
+    "caps": 91
+  },
+  {
+    "id": "jon-knudsen",
+    "fullName": "Jon Knudsen",
+    "surname": "Knudsen",
+    "fame": 2
+  },
+  {
+    "id": "tom-hogli",
+    "fullName": "Tom Høgli",
+    "surname": "Høgli",
+    "fame": 2
+  },
+  {
+    "id": "kjetil-waehler",
+    "fullName": "Kjetil Wæhler",
+    "surname": "Wæhler",
+    "fame": 2
+  },
+  {
+    "id": "christian-grindheim",
+    "fullName": "Christian Grindheim",
+    "surname": "Grindheim",
+    "fame": 3
+  },
+  {
+    "id": "magne-hoseth",
+    "fullName": "Magne Hoseth",
+    "surname": "Hoseth",
+    "fame": 3
+  },
+  {
+    "id": "erik-huseklepp",
+    "fullName": "Erik Huseklepp",
+    "surname": "Huseklepp",
+    "fame": 3
+  },
+  {
+    "id": "leo-ostigard",
+    "fullName": "Leo Østigård",
+    "surname": "Østigård",
+    "aliases": [
+      "Leo Skiri Østigård"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "andreas-hanche-olsen",
+    "fullName": "Andreas Hanche-Olsen",
+    "surname": "Hanche-Olsen",
+    "aliases": [
+      "Hanche Olsen",
+      "Hanche"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "patrick-berg",
+    "fullName": "Patrick Berg",
+    "surname": "Berg",
+    "fame": 4
+  },
+  {
+    "id": "sander-berge",
+    "fullName": "Sander Berge",
+    "surname": "Berge",
+    "fame": 4
+  },
+  {
+    "id": "julian-ryerson",
+    "fullName": "Julian Ryerson",
+    "surname": "Ryerson",
+    "fame": 4
+  },
+  {
+    "id": "torbjorn-heggem",
+    "fullName": "Torbjørn Heggem",
+    "surname": "Heggem",
+    "fame": 3
+  },
+  {
+    "id": "marcus-holmgren-pedersen",
+    "fullName": "Marcus Holmgren Pedersen",
+    "surname": "Holmgren Pedersen",
+    "aliases": [
+      "Pedersen",
+      "Marcus Pedersen",
+      "Holmgren"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "fredrik-aursnes",
+    "fullName": "Fredrik Aursnes",
+    "surname": "Aursnes",
+    "fame": 3
+  },
+  {
+    "id": "oscar-bobb",
+    "fullName": "Oscar Bobb",
+    "surname": "Bobb",
+    "fame": 4
+  },
+  {
+    "id": "morten-thorsby",
+    "fullName": "Morten Thorsby",
+    "surname": "Thorsby",
+    "fame": 3
+  },
+  {
+    "id": "ola-solbakken",
+    "fullName": "Ola Solbakken",
+    "surname": "Solbakken",
+    "fame": 2
+  },
+  {
+    "id": "stale-solbakken",
+    "fullName": "Ståle Solbakken",
+    "surname": "Solbakken",
+    "fame": 4
+  },
+  {
+    "id": "stefan-strandberg",
+    "fullName": "Stefan Strandberg",
+    "surname": "Strandberg",
+    "fame": 2
+  },
+  {
+    "id": "birger-meling",
+    "fullName": "Birger Meling",
+    "surname": "Meling",
+    "fame": 2
+  },
+  {
+    "id": "steffen-iversen",
+    "fullName": "Steffen Iversen",
+    "surname": "Iversen",
+    "fame": 5
+  },
+  {
+    "id": "andre-bergdolmo",
+    "fullName": "André Bergdølmo",
+    "surname": "Bergdølmo",
+    "aliases": [
+      "Andre Bergdolmo"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "bjorn-otto-bragstad",
+    "fullName": "Bjørn Otto Bragstad",
+    "surname": "Bragstad",
+    "fame": 2
+  },
+  {
+    "id": "eirik-bakke",
+    "fullName": "Eirik Bakke",
+    "surname": "Bakke",
+    "fame": 3
+  },
+  {
+    "id": "roar-strand",
+    "fullName": "Roar Strand",
+    "surname": "Strand",
+    "fame": 4
+  },
+  {
+    "id": "dan-eggen",
+    "fullName": "Dan Eggen",
+    "surname": "Eggen",
+    "fame": 4
+  },
+  {
+    "id": "ronny-johnsen",
+    "fullName": "Ronny Johnsen",
+    "surname": "Johnsen",
+    "fame": 5
+  },
+  {
+    "id": "frode-grodas",
+    "fullName": "Frode Grodås",
+    "surname": "Grodås",
+    "aliases": [
+      "Grodas"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "vidar-riseth",
+    "fullName": "Vidar Riseth",
+    "surname": "Riseth",
+    "fame": 3
+  },
+  {
+    "id": "fredrik-bjorkan",
+    "fullName": "Fredrik Bjørkan",
+    "surname": "Bjørkan",
+    "aliases": [
+      "Fredrik André Bjørkan"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "mats-moller-daehli",
+    "fullName": "Mats Møller Dæhli",
+    "surname": "Dæhli",
+    "aliases": [
+      "Daehli",
+      "Møller Dæhli",
+      "Mats Dæhli"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "rune-almenning-jarstein",
+    "fullName": "Rune Almenning Jarstein",
+    "surname": "Jarstein",
+    "aliases": [
+      "Rune Jarstein"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "haitam-aleesami",
+    "fullName": "Haitam Aleesami",
+    "surname": "Aleesami",
+    "fame": 2
+  },
+  {
+    "id": "tore-reginiussen",
+    "fullName": "Tore Reginiussen",
+    "surname": "Reginiussen",
+    "fame": 2
+  },
+  {
+    "id": "omar-elabdellaoui",
+    "fullName": "Omar Elabdellaoui",
+    "surname": "Elabdellaoui",
+    "fame": 3
+  },
+  {
+    "id": "stefan-johansen",
+    "fullName": "Stefan Johansen",
+    "surname": "Johansen",
+    "fame": 3
+  },
+  {
+    "id": "markus-henriksen",
+    "fullName": "Markus Henriksen",
+    "surname": "Henriksen",
+    "fame": 3
+  },
+  {
+    "id": "mathias-normann",
+    "fullName": "Mathias Normann",
+    "surname": "Normann",
+    "fame": 2
+  },
+  {
+    "id": "andre-hansen",
+    "fullName": "André Hansen",
+    "surname": "Hansen",
+    "aliases": [
+      "Andre Hansen"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "jens-petter-hauge",
+    "fullName": "Jens Petter Hauge",
+    "surname": "Hauge",
+    "fame": 3
+  },
+  {
+    "id": "mohamed-elyounoussi",
+    "fullName": "Mohamed Elyounoussi",
+    "surname": "Elyounoussi",
+    "aliases": [
+      "Moi",
+      "Moi Elyounoussi"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "erik-hagen",
+    "fullName": "Erik Hagen",
+    "surname": "Hagen",
+    "fame": 2
+  },
+  {
+    "id": "jan-gunnar-solli",
+    "fullName": "Jan Gunnar Solli",
+    "surname": "Solli",
+    "fame": 2
+  },
+  {
+    "id": "kristofer-haestad",
+    "fullName": "Kristofer Hæstad",
+    "surname": "Hæstad",
+    "aliases": [
+      "Haestad"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "egil-selvik",
+    "fullName": "Egil Selvik",
+    "surname": "Selvik",
+    "fame": 2
+  },
+  {
+    "id": "aron-donnum",
+    "fullName": "Aron Dønnum",
+    "surname": "Dønnum",
+    "aliases": [
+      "Donnum"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "claus-lundekvam",
+    "fullName": "Claus Lundekvam",
+    "surname": "Lundekvam",
+    "fame": 3
+  },
+  {
+    "id": "tommy-svindal-larsen",
+    "fullName": "Tommy Svindal Larsen",
+    "surname": "Svindal Larsen",
+    "aliases": [
+      "Larsen",
+      "Svindal"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "jan-derek-sorensen",
+    "fullName": "Jan Derek Sørensen",
+    "surname": "Sørensen",
+    "fame": 2
+  },
+  {
+    "id": "kristian-thorstvedt",
+    "fullName": "Kristian Thorstvedt",
+    "surname": "Thorstvedt",
+    "fame": 3
+  },
+  {
+    "id": "havard-nordtveit",
+    "fullName": "Håvard Nordtveit",
+    "surname": "Nordtveit",
+    "fame": 3
+  },
+  {
+    "id": "ole-selnaes",
+    "fullName": "Ole Selnæs",
+    "surname": "Selnæs",
+    "aliases": [
+      "Selnaes"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "joshua-king",
+    "fullName": "Joshua King",
+    "surname": "King",
+    "aliases": [
+      "Josh King"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "roger-nilsen",
+    "fullName": "Roger Nilsen",
+    "surname": "Nilsen",
+    "fame": 2
+  },
+  {
+    "id": "kare-ingebrigtsen",
+    "fullName": "Kåre Ingebrigtsen",
+    "surname": "Ingebrigtsen",
+    "fame": 3
+  },
+  {
+    "id": "tarik-elyounoussi",
+    "fullName": "Tarik Elyounoussi",
+    "surname": "Elyounoussi",
+    "fame": 3
+  },
+  {
+    "id": "per-ciljan-skjelbred",
+    "fullName": "Per Ciljan Skjelbred",
+    "surname": "Skjelbred",
+    "aliases": [
+      "Per Skjelbred"
+    ],
+    "fame": 4
+  },
+  {
+    "id": "martin-linnes",
+    "fullName": "Martin Linnes",
+    "surname": "Linnes",
+    "fame": 2
+  },
+  {
+    "id": "ruben-yttergard-jenssen",
+    "fullName": "Ruben Yttergård Jenssen",
+    "surname": "Jenssen",
+    "aliases": [
+      "Yttergård Jenssen",
+      "Ruben Jenssen"
+    ],
+    "fame": 2
+  },
+  {
+    "id": "vegard-forren",
+    "fullName": "Vegard Forren",
+    "surname": "Forren",
+    "fame": 3
+  },
+  {
+    "id": "even-hovland",
+    "fullName": "Even Hovland",
+    "surname": "Hovland",
+    "fame": 2
+  },
+  {
+    "id": "alexander-tettey",
+    "fullName": "Alexander Tettey",
+    "surname": "Tettey",
+    "fame": 3
+  },
+  {
+    "id": "jo-inge-berget",
+    "fullName": "Jo Inge Berget",
+    "surname": "Berget",
+    "fame": 3
+  },
+  {
+    "id": "alexander-soderlund",
+    "fullName": "Alexander Søderlund",
+    "surname": "Søderlund",
+    "aliases": [
+      "Soderlund"
+    ],
+    "fame": 3
+  },
+  {
+    "id": "harald-brattbakk",
+    "fullName": "Harald Brattbakk",
+    "surname": "Brattbakk",
+    "fame": 5
+  },
+  {
+    "id": "sigurd-rushfeldt",
+    "fullName": "Sigurd Rushfeldt",
+    "surname": "Rushfeldt",
+    "fame": 4
+  },
+  {
+    "id": "thorstein-helstad",
+    "fullName": "Thorstein Helstad",
+    "surname": "Helstad",
+    "fame": 4
+  },
+  {
+    "id": "frode-johnsen",
+    "fullName": "Frode Johnsen",
+    "surname": "Johnsen",
+    "fame": 4
+  },
+  {
+    "id": "tore-andre-dahlum",
+    "fullName": "Tore André Dahlum",
+    "surname": "Dahlum",
+    "fame": 2
+  },
+  {
+    "id": "karl-petter-loken",
+    "fullName": "Karl Petter Løken",
+    "surname": "Løken",
+    "fame": 2
+  },
+  {
+    "id": "kjell-roar-kaasa",
+    "fullName": "Kjell Roar Kaasa",
+    "surname": "Kaasa",
+    "fame": 2
+  },
+  {
+    "id": "mons-ivar-mjelde",
+    "fullName": "Mons Ivar Mjelde",
+    "surname": "Mjelde",
+    "fame": 3
+  },
+  {
+    "id": "rune-lange",
+    "fullName": "Rune Lange",
+    "surname": "Lange",
+    "fame": 3
+  },
+  {
+    "id": "clayton-zane",
+    "fullName": "Clayton Zane",
+    "surname": "Zane",
+    "fame": 2
+  },
+  {
+    "id": "ole-martin-arst",
+    "fullName": "Ole Martin Årst",
+    "surname": "Årst",
+    "fame": 3
+  },
+  {
+    "id": "daniel-nannskog",
+    "fullName": "Daniel Nannskog",
+    "surname": "Nannskog",
+    "fame": 3
+  },
+  {
+    "id": "rade-prica",
+    "fullName": "Rade Prica",
+    "surname": "Prica",
+    "fame": 3
+  },
+  {
+    "id": "baye-djiby-fall",
+    "fullName": "Baye Djiby Fall",
+    "surname": "Fall",
+    "fame": 2,
+    "aliases": [
+      "Djiby Fall"
+    ]
+  },
+  {
+    "id": "peter-kovacs",
+    "fullName": "Péter Kovács",
+    "surname": "Kovács",
+    "fame": 2,
+    "aliases": [
+      "Peter Kovacs"
+    ]
+  },
+  {
+    "id": "zdenek-ondrasek",
+    "fullName": "Zdeněk Ondrášek",
+    "surname": "Ondrášek",
+    "fame": 2,
+    "aliases": [
+      "Ondrasek",
+      "Zdenek Ondrasek"
+    ]
+  },
+  {
+    "id": "vidar-orn-kjartansson",
+    "fullName": "Viðar Örn Kjartansson",
+    "surname": "Kjartansson",
+    "fame": 3,
+    "aliases": [
+      "Kjartansson",
+      "Vidar Kjartansson"
+    ]
+  },
+  {
+    "id": "christian-gytkjaer",
+    "fullName": "Christian Gytkjær",
+    "surname": "Gytkjær",
+    "fame": 3,
+    "aliases": [
+      "Gytkjaer"
+    ]
+  },
+  {
+    "id": "nicklas-bendtner",
+    "fullName": "Nicklas Bendtner",
+    "surname": "Bendtner",
+    "fame": 4
+  },
+  {
+    "id": "franck-boli",
+    "fullName": "Franck Boli",
+    "surname": "Boli",
+    "fame": 2
+  },
+  {
+    "id": "torgeir-borven",
+    "fullName": "Torgeir Børven",
+    "surname": "Børven",
+    "fame": 3
+  },
+  {
+    "id": "kasper-junker",
+    "fullName": "Kasper Junker",
+    "surname": "Junker",
+    "fame": 3
+  },
+  {
+    "id": "ohi-omoijuanfo",
+    "fullName": "Ohi Omoijuanfo",
+    "surname": "Omoijuanfo",
+    "fame": 3,
+    "aliases": [
+      "Ohi"
+    ]
+  },
+  {
+    "id": "amahl-pellegrino",
+    "fullName": "Amahl Pellegrino",
+    "surname": "Pellegrino",
+    "fame": 4
+  },
+  {
+    "id": "trond-erik-bertelsen",
+    "fullName": "Trond Erik Bertelsen",
+    "surname": "Bertelsen",
+    "fame": 2
+  },
+  {
+    "id": "daniel-braaten",
+    "fullName": "Daniel Braaten",
+    "surname": "Braaten",
+    "fame": 3
+  },
+  {
+    "id": "martin-andresen",
+    "fullName": "Martin Andresen",
+    "surname": "Andresen",
+    "fame": 3
+  },
+  {
+    "id": "anders-rambekk",
+    "fullName": "Anders Rambekk",
+    "surname": "Rambekk",
+    "fame": 1
+  },
+  {
+    "id": "marius-johnsen",
+    "fullName": "Marius Johnsen",
+    "surname": "Johnsen",
+    "fame": 2
+  },
+  {
+    "id": "fredrik-stromstad",
+    "fullName": "Fredrik Strømstad",
+    "surname": "Strømstad",
+    "fame": 2
+  },
+  {
+    "id": "pal-lydersen",
+    "fullName": "Pål Lydersen",
+    "surname": "Lydersen",
+    "fame": 2
+  },
+  {
+    "id": "per-egil-ahlsen",
+    "fullName": "Per Egil Ahlsen",
+    "surname": "Ahlsen",
+    "aliases": [
+      "Per-Egil Ahlsen"
+    ],
+    "fame": 1
+  },
+  {
+    "id": "stian-gregersen",
+    "fullName": "Stian Gregersen",
+    "surname": "Gregersen",
+    "fame": 2
+  },
+  {
+    "id": "jon-inge-hoiland",
+    "fullName": "Jon Inge Høiland",
+    "surname": "Høiland",
+    "fame": 2
+  },
+  {
+    "id": "fredrik-winsnes",
+    "fullName": "Fredrik Winsnes",
+    "surname": "Winsnes",
+    "fame": 2
+  },
+  {
+    "id": "espen-johnsen",
+    "fullName": "Espen Johnsen",
+    "surname": "Johnsen",
+    "fame": 2
+  },
+  {
+    "id": "christer-basma",
+    "fullName": "Christer Basma",
+    "surname": "Basma",
+    "fame": 3
+  },
+  {
+    "id": "petter-rudi",
+    "fullName": "Petter Rudi",
+    "surname": "Rudi",
+    "fame": 3
+  },
+  {
+    "id": "henning-hauger",
+    "fullName": "Henning Hauger",
+    "surname": "Hauger",
+    "fame": 2
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "id": "1992-10-14-eng-nor",
+  "date": "1992-10-14",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 1994, gruppe 2",
+  "opponent": "England",
+  "opponentCode": "ENG",
+  "norwayHome": false,
+  "score": [1, 1],
+  "venue": "Wembley",
+  "city": "London",
+  "manager": "Egil Olsen",
+  "importance": 4,
+  "tags": ["england", "kvalik", "wembley"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.englandstats.com/matches.php?mid=690", "title": "England 1-1 Norway, 14 October 1992 – englandstats.com", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.national-football-teams.com/matches/report/30171/England_Norway.html", "title": "England vs. Norway 1992-10-14 – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Rekdal utlignet med et venstrebeinsskudd fra 20 meter på Wembley. Posisjonene i forsvaret er ikke kildebelagt i detalj.",
+  "lineup": [
+    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
+    { "name": "Gunnar Halle", "no": 2, "pos": "RB" },
+    { "name": "Tore Pedersen", "no": 3, "pos": "CB" },
+    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
+    { "name": "Roger Nilsen", "no": 5, "pos": "LB" },
+    { "name": "Kåre Ingebrigtsen", "no": 7, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM" },
+    { "name": "Stig Inge Bjørnebye", "no": 11, "pos": "LM" },
+    { "name": "Jan Ove Jakobsen", "no": 8, "pos": "SS" },
+    { "name": "Gøran Sørloth", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "David Platt", "minute": 56 },
+    { "team": "norway", "name": "Kjetil Rekdal", "minute": 77 }
+  ]
+}

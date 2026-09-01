@@ -1,0 +1,37 @@
+{
+  "id": "2000-06-13-esp-nor",
+  "date": "2000-06-13",
+  "competition": "euro",
+  "stage": "EM 2000, gruppe C",
+  "opponent": "Spania",
+  "opponentCode": "ESP",
+  "norwayHome": false,
+  "score": [1, 0],
+  "venue": "De Kuip",
+  "city": "Rotterdam",
+  "manager": "Nils Johan Semb",
+  "formation": "4-4-2",
+  "importance": 5,
+  "tags": ["em", "ikonisk", "spania"],
+  "status": "recall",
+  "sources": [
+    { "url": "https://www.11v11.com/matches/spain-v-norway-13-june-2000-268894/", "title": "Spain v Norway, 13 June 2000 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Search excerpt lists ten starters (Myhre; Bergdølmo, Eggen, Bragstad, Bjørnebye; Iversen, Mykland, Solbakken (c), Solskjær; Carew) and subs Bakke 61, Strand 82. Eleventh starter (Tore André Flo) from recall – verify." },
+    { "url": "https://www.uefa.com/uefaeuro/match/64858--spain-vs-norway/lineups/", "title": "Spain 0-1 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Iversens hodestøt etter Myhres lange utspark ga Norges eneste EM-seier noensinne.",
+  "lineup": [
+    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
+    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
+    { "name": "Dan Eggen", "no": 4, "pos": "CB" },
+    { "name": "Bjørn Otto Bragstad", "no": 15, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Ståle Solbakken", "no": 14, "pos": "CM", "captain": true },
+    { "name": "Steffen Iversen", "no": 10, "pos": "LM" },
+    { "name": "Tore André Flo", "no": 9, "pos": "CF" },
+    { "name": "John Carew", "no": 11, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Eirik Bakke", "no": 8, "pos": "CM", "on": 61 }, { "name": "Roar Strand", "no": 7, "pos": "CM", "on": 82 }],
+  "goals": [{ "team": "norway", "name": "Steffen Iversen", "minute": 66 }]
+}

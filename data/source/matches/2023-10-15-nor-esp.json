@@ -1,0 +1,36 @@
+{
+  "id": "2023-10-15-nor-esp",
+  "date": "2023-10-15",
+  "competition": "euro-qual",
+  "stage": "EM-kvalifisering 2024, gruppe A",
+  "opponent": "Spania",
+  "opponentCode": "ESP",
+  "norwayHome": true,
+  "score": [0, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 3,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/match/_/gameId/655413/spain-norway", "title": "Norway 0-1 Spain (Oct 15, 2023) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.uefa.com/european-qualifiers/match/2036452--norway-vs-spain/", "title": "Norway-Spain | European Qualifiers 2024 | UEFA", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Gavi avgjorde, og EM-drømmen for Haaland og Ødegaard røk i praksis.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Leo Østigård", "no": 15, "pos": "CB" },
+    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 7, "pos": "CM" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "RW", "captain": true },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Oscar Bobb", "no": 17, "pos": "LW" }
+  ],
+  "goals": [{ "team": "opponent", "scorer": "Gavi", "minute": 49 }]
+}

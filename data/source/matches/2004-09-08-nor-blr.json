@@ -1,0 +1,43 @@
+{
+  "id": "2004-09-08-nor-blr",
+  "date": "2004-09-08",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2006, gruppe 5",
+  "opponent": "Hviterussland",
+  "opponentCode": "BLR",
+  "norwayHome": true,
+  "score": [1, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Åge Hareide",
+  "formation": "4-2-3-1",
+  "importance": 2,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2004.html", "title": "Norway International Matches – Details 2004 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation, captain, substitutions and scorers (Riseth 39, Kutuzov 78) confirmed in search excerpt. The search summary mislabelled the opponent; the date and the Belarusian scorer identify the match as Norway–Belarus." }
+  ],
+  "notes": "Riseth ga ledelsen, men Kutuzov utlignet for Hviterussland.",
+  "lineup": [
+    { "name": "Espen Johnsen", "no": 1, "pos": "GK" },
+    { "name": "Christer Basma", "no": 2, "pos": "RB" },
+    { "name": "Vidar Riseth", "no": 3, "pos": "CB" },
+    { "name": "Claus Lundekvam", "no": 4, "pos": "CB" },
+    { "name": "John Arne Riise", "no": 5, "pos": "LB" },
+    { "name": "Martin Andresen", "no": 7, "pos": "DM", "captain": true },
+    { "name": "Magne Hoseth", "no": 8, "pos": "DM", "off": 90 },
+    { "name": "Jan Derek Sørensen", "no": 6, "pos": "RW", "off": 87 },
+    { "name": "Frode Johnsen", "no": 9, "pos": "AM" },
+    { "name": "Petter Rudi", "no": 11, "pos": "LW" },
+    { "name": "John Carew", "no": 10, "pos": "CF", "off": 74 }
+  ],
+  "subs": [
+    { "name": "Sigurd Rushfeldt", "no": 18, "pos": "CF", "on": 74, "for": "John Carew" },
+    { "name": "Morten Gamst Pedersen", "no": 17, "pos": "RW", "on": 87, "for": "Jan Derek Sørensen" },
+    { "name": "Jan Gunnar Solli", "no": 16, "pos": "DM", "on": 90, "for": "Magne Hoseth" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Vidar Riseth", "minute": 39 },
+    { "team": "opponent", "scorer": "Vitaly Kutuzov", "minute": 78 }
+  ]
+}

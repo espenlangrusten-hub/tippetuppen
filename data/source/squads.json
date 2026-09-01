@@ -1,0 +1,148 @@
+[
+ {
+  "tournament": "wc-2026",
+  "name": "VM 2026",
+  "status": "single_source",
+  "sources": [
+   {
+    "url": "https://heavy.com/sports/soccer/world-cup/norway-world-cup-squad-2026-clubs/",
+    "title": "Norway World Cup Squad 2026: All 26 Players and Their Clubs – Heavy",
+    "kind": "web",
+    "accessed": "2026-09-01",
+    "note": "Numbers and clubs from search excerpt; several names were garbled by the search summary and normalised to the players' documented names"
+   }
+  ],
+  "players": [
+   {
+    "name": "Ørjan Nyland",
+    "no": 1,
+    "club": "Sevilla"
+   },
+   {
+    "name": "Egil Selvik",
+    "no": 12,
+    "club": "Watford"
+   },
+   {
+    "name": "Sander Tangvik",
+    "no": 23,
+    "club": "Hamburger SV"
+   },
+   {
+    "name": "Julian Ryerson",
+    "no": 2,
+    "club": "Borussia Dortmund"
+   },
+   {
+    "name": "Marcus Holmgren Pedersen",
+    "no": 3,
+    "club": "Torino"
+   },
+   {
+    "name": "Kristoffer Ajer",
+    "no": 4,
+    "club": "Brentford"
+   },
+   {
+    "name": "Leo Østigård",
+    "no": 5,
+    "club": "Genoa"
+   },
+   {
+    "name": "Fredrik Bjørkan",
+    "no": 6,
+    "club": "Bodø/Glimt"
+   },
+   {
+    "name": "Torbjørn Heggem",
+    "no": 15,
+    "club": "Bologna"
+   },
+   {
+    "name": "David Møller Wolfe",
+    "no": 18,
+    "club": "Wolverhampton"
+   },
+   {
+    "name": "Sondre Langås",
+    "no": 19,
+    "club": "Derby County"
+   },
+   {
+    "name": "Henrik Falchener",
+    "no": 22,
+    "club": "Viking"
+   },
+   {
+    "name": "Antonio Nusa",
+    "no": 7,
+    "club": "RB Leipzig"
+   },
+   {
+    "name": "Sander Berge",
+    "no": 8,
+    "club": "Fulham"
+   },
+   {
+    "name": "Martin Ødegaard",
+    "no": 10,
+    "club": "Arsenal"
+   },
+   {
+    "name": "Andreas Schjelderup",
+    "no": 11,
+    "club": "Benfica"
+   },
+   {
+    "name": "Kristian Thorstvedt",
+    "no": 13,
+    "club": "Sassuolo"
+   },
+   {
+    "name": "Fredrik Aursnes",
+    "no": 14,
+    "club": "Benfica"
+   },
+   {
+    "name": "Patrick Berg",
+    "no": 16,
+    "club": "Bodø/Glimt"
+   },
+   {
+    "name": "Oscar Bobb",
+    "no": 17,
+    "club": "Fulham"
+   },
+   {
+    "name": "Morten Thorsby",
+    "no": 20,
+    "club": "Cremonese"
+   },
+   {
+    "name": "Thelo Aasgaard",
+    "no": 21,
+    "club": "Rangers"
+   },
+   {
+    "name": "Jens Petter Hauge",
+    "no": 24,
+    "club": "Bodø/Glimt"
+   },
+   {
+    "name": "Erling Haaland",
+    "no": 9,
+    "club": "Manchester City"
+   },
+   {
+    "name": "Alexander Sørloth",
+    "no": 25,
+    "club": "Atlético Madrid"
+   },
+   {
+    "name": "Jørgen Strand Larsen",
+    "no": 26,
+    "club": "Crystal Palace"
+   }
+  ]
+ }
+]

@@ -1,0 +1,39 @@
+{
+  "id": "1998-06-10-mar-nor",
+  "date": "1998-06-10",
+  "competition": "world-cup",
+  "stage": "VM 1998, gruppe A",
+  "opponent": "Marokko",
+  "opponentCode": "MAR",
+  "norwayHome": false,
+  "score": [2, 2],
+  "venue": "Stade de la Mosson",
+  "city": "Montpellier",
+  "manager": "Egil Olsen",
+  "importance": 3,
+  "tags": ["vm"],
+  "status": "recall",
+  "sources": [
+    { "url": "https://www.worldfootball.net/match-report/co139/world-cup/ma137293/morocco_norway/lineup/", "title": "Morocco against Norway – Lineup – worldfootball.net", "kind": "web", "accessed": "2026-09-01", "note": "Ten starters confirmed in search excerpt: Grodås, Johnsen, Berg, Bjørnebye, Eggen, Mykland, Leonhardsen, Rekdal, T.A. Flo, Solskjær. Eleventh (Håvard Flo) from recall – verify." }
+  ],
+  "notes": "Norges åpningskamp i VM 1998. Chippo-selvmål og Dan Eggen sørget for 2–2.",
+  "lineup": [
+    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
+    { "name": "Henning Berg", "no": 4, "pos": "RB" },
+    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
+    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
+    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
+    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
+    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "LM" },
+    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "CF" },
+    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "Mustapha Hadji", "minute": 38 },
+    { "team": "norway", "name": "Youssef Chippo", "minute": 45, "kind": "og" },
+    { "team": "opponent", "scorer": "Abdeljalil Hadda", "minute": 59 },
+    { "team": "norway", "name": "Dan Eggen", "minute": 60 }
+  ]
+}

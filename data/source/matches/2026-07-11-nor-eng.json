@@ -1,0 +1,40 @@
+{
+  "id": "2026-07-11-nor-eng",
+  "date": "2026-07-11",
+  "competition": "world-cup",
+  "stage": "VM 2026, kvartfinale",
+  "opponent": "England",
+  "opponentCode": "ENG",
+  "norwayHome": true,
+  "score": [1, 2],
+  "venue": "Miami Stadium",
+  "city": "Miami",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 5,
+  "tags": ["vm", "sluttspill", "england", "ikonisk"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.olympics.com/en/news/fifa-world-cup-2026-norway-vs-england-quarter-final-score-lineups-live-updates", "title": "Jude Bellingham rescues England against Norway – Olympics.com", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
+    { "url": "https://www.fifa.com/en/match-centre/match/17/285023/289289/400021539", "title": "Norway v England 1-2 | Quarter-final | FIFA World Cup 2026", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Norges første VM-kvartfinale. Schjelderup ga ledelsen før Bellingham utlignet på overtid i første omgang og avgjorde i ekstraomgangene.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Andreas Schjelderup", "no": 15, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Andreas Schjelderup", "minute": 36 },
+    { "team": "opponent", "scorer": "Jude Bellingham", "minute": 45 },
+    { "team": "opponent", "scorer": "Jude Bellingham", "minute": 93 }
+  ]
+}

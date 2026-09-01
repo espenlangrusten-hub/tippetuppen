@@ -1,0 +1,42 @@
+{
+  "id": "2024-11-17-nor-kaz",
+  "date": "2024-11-17",
+  "competition": "nations-league",
+  "stage": "Nations League 2024/25, liga B",
+  "opponent": "Kasakhstan",
+  "opponentCode": "KAZ",
+  "norwayHome": true,
+  "score": [5, 0],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-2-3-1",
+  "importance": 3,
+  "tags": ["nations-league", "opprykk"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.footballcritic.com/uefa-nations-league-norway-kazakhstan/lineups/3277668", "title": "Norway vs Kazakhstan (5-0) Nov 17, 2024 Lineups – FootballCritic", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI and scorers confirmed in search excerpt" },
+    { "url": "https://www.skysports.com/football/norway-vs-kazakhstan/teams/503663", "title": "Starting Lineups – Norway vs Kazakhstan | 17.11.2024 – Sky Sports", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Haaland-hat-trick, og Norge sikret gruppeseier og opprykk til liga A.",
+  "lineup": [
+    { "name": "Egil Selvik", "no": 12, "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "no": 2, "pos": "RB" },
+    { "name": "Stian Gregersen", "no": 3, "pos": "CB" },
+    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "LB" },
+    { "name": "Kristian Thorstvedt", "no": 19, "pos": "DM" },
+    { "name": "Sander Berge", "no": 8, "pos": "DM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
+    { "name": "Morten Thorsby", "no": 18, "pos": "AM" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 24 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 38 },
+    { "team": "norway", "name": "Alexander Sørloth", "minute": 42 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 72 },
+    { "team": "norway", "name": "Antonio Nusa", "minute": 77 }
+  ]
+}

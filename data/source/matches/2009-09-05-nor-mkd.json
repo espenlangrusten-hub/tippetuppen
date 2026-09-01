@@ -1,0 +1,40 @@
+{
+  "id": "2009-09-05-nor-mkd",
+  "date": "2009-09-05",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2010, gruppe 9",
+  "opponent": "Makedonia",
+  "opponentCode": "MKD",
+  "norwayHome": true,
+  "score": [2, 1],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Egil Olsen",
+  "formation": "4-4-2",
+  "importance": 2,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "goalsPartial": true,
+  "sources": [
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2009.html", "title": "Norway International Matches – Details 2009 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, formation, captain, substitutes and scorers confirmed in search excerpt (minutes not captured)" }
+  ],
+  "notes": "Helstad og John Arne Riise scoret i Drillos VM-kvalik.",
+  "lineup": [
+    { "name": "Jon Knudsen", "no": 1, "pos": "GK" },
+    { "name": "Jon Inge Høiland", "no": 2, "pos": "RB" },
+    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
+    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
+    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
+    { "name": "Bjørn Helge Riise", "no": 7, "pos": "RM" },
+    { "name": "Henning Hauger", "no": 4, "pos": "CM" },
+    { "name": "Christian Grindheim", "no": 8, "pos": "CM" },
+    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "LM" },
+    { "name": "Thorstein Helstad", "no": 9, "pos": "CF" },
+    { "name": "John Carew", "no": 10, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Fredrik Winsnes", "pos": "CM", "on": 71 }, { "name": "Morten Moldskred", "pos": "RM", "on": 76 }, { "name": "Daniel Braaten", "pos": "CF", "on": 84 }],
+  "goals": [
+    { "team": "norway", "name": "Thorstein Helstad" },
+    { "team": "norway", "name": "John Arne Riise" }
+  ]
+}

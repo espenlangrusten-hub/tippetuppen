@@ -1,0 +1,42 @@
+{
+  "id": "2025-10-11-nor-isr",
+  "date": "2025-10-11",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2026, gruppe I",
+  "opponent": "Israel",
+  "opponentCode": "ISR",
+  "norwayHome": true,
+  "score": [5, 0],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": ["kvalik"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.aljazeera.com/sports/2025/10/12/haaland-scores-three-as-norway-crush-israel-amid-pro-palestinian-protest", "title": "Haaland scores three as Norway crush Israel – Al Jazeera", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/724844/israel-norway", "title": "Norway 5-0 Israel (Oct 11, 2025) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Haaland bommet på to straffer, men scoret hat-trick. To selvmål på ti minutter.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
+    { "name": "Oscar Bobb", "no": 11, "pos": "RM" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "LM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Anan Khalaili", "minute": 18, "kind": "og" },
+    { "team": "norway", "name": "Erling Haaland", "minute": 27 },
+    { "team": "norway", "name": "Idan Nachmias", "minute": 28, "kind": "og" },
+    { "team": "norway", "name": "Erling Haaland", "minute": 63 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 72 }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "2024-10-10-nor-svn",
+  "date": "2024-10-10",
+  "competition": "nations-league",
+  "stage": "Nations League 2024/25, liga B",
+  "opponent": "Slovenia",
+  "opponentCode": "SVN",
+  "norwayHome": true,
+  "score": [3, 0],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Ståle Solbakken",
+  "formation": "3-5-2",
+  "importance": 4,
+  "tags": ["nations-league", "rekord"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.beinsports.com/en-us/soccer/uefa-nations-league/articles/haaland-becomes-norways-record-scorer-with-slovenia-brace-2024-10-10", "title": "Haaland becomes Norway's record scorer with Slovenia brace – beIN SPORTS", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt; formation inferred (three centre-backs)" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/698942/slovenia-norway", "title": "Norway 3-0 Slovenia (Oct 10, 2024) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Kvelden Haaland passerte Jørgen Juves 87 år gamle rekord som Norges mestscorende.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
+    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RWB" },
+    { "name": "David Møller Wolfe", "no": 5, "pos": "LWB" },
+    { "name": "Morten Thorsby", "no": 18, "pos": "CM" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Antonio Nusa", "no": 20, "pos": "CM" },
+    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Erling Haaland", "minute": 7 },
+    { "team": "norway", "name": "Alexander Sørloth", "minute": 52 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 61 }
+  ]
+}

@@ -1,0 +1,443 @@
+[
+  {
+    "id": "rosenborg",
+    "name": "Rosenborg",
+    "fullName": "Rosenborg BK",
+    "city": "Trondheim",
+    "aliases": [
+      "RBK",
+      "Rosenborg Ballklub",
+      "Rosenborg BK"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "molde",
+    "name": "Molde",
+    "fullName": "Molde FK",
+    "city": "Molde",
+    "aliases": [
+      "MFK",
+      "Molde FK"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "brann",
+    "name": "Brann",
+    "fullName": "SK Brann",
+    "city": "Bergen",
+    "aliases": [
+      "SK Brann",
+      "Brann Bergen"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "viking",
+    "name": "Viking",
+    "fullName": "Viking FK",
+    "city": "Stavanger",
+    "aliases": [
+      "Viking FK",
+      "Viking Stavanger"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "valerenga",
+    "name": "Vålerenga",
+    "fullName": "Vålerenga Fotball",
+    "city": "Oslo",
+    "aliases": [
+      "VIF",
+      "Vålerengen",
+      "Vålerenga IF",
+      "Valerenga",
+      "Enga"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "lillestrom",
+    "name": "Lillestrøm",
+    "fullName": "Lillestrøm SK",
+    "city": "Lillestrøm",
+    "aliases": [
+      "LSK",
+      "Lillestrøm SK",
+      "Lillestrom"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "bodo-glimt",
+    "name": "Bodø/Glimt",
+    "fullName": "FK Bodø/Glimt",
+    "city": "Bodø",
+    "aliases": [
+      "Glimt",
+      "Bodø Glimt",
+      "Bodo/Glimt",
+      "Bodø-Glimt",
+      "FK Bodø/Glimt",
+      "Bodø"
+    ],
+    "fame": 5,
+    "status": "verified"
+  },
+  {
+    "id": "stabaek",
+    "name": "Stabæk",
+    "fullName": "Stabæk Fotball",
+    "city": "Bærum",
+    "aliases": [
+      "Stabæk IF",
+      "Stabaek"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "tromso",
+    "name": "Tromsø",
+    "fullName": "Tromsø IL",
+    "city": "Tromsø",
+    "aliases": [
+      "TIL",
+      "Tromsø IL",
+      "Tromso"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "stromsgodset",
+    "name": "Strømsgodset",
+    "fullName": "Strømsgodset IF",
+    "city": "Drammen",
+    "aliases": [
+      "SIF",
+      "Godset",
+      "Strømsgodset IF",
+      "Stromsgodset"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "odd",
+    "name": "Odd",
+    "fullName": "Odds BK",
+    "city": "Skien",
+    "aliases": [
+      "Odd Grenland",
+      "Odds BK",
+      "Odds Ballklubb",
+      "Odd Skien"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "start",
+    "name": "Start",
+    "fullName": "IK Start",
+    "city": "Kristiansand",
+    "aliases": [
+      "IK Start",
+      "Start Kristiansand"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "lyn",
+    "name": "Lyn",
+    "fullName": "FC Lyn Oslo",
+    "city": "Oslo",
+    "aliases": [
+      "Lyn Oslo",
+      "FC Lyn",
+      "Lyn Fotball"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "kongsvinger",
+    "name": "Kongsvinger",
+    "fullName": "Kongsvinger IL",
+    "city": "Kongsvinger",
+    "aliases": [
+      "KIL",
+      "Kongsvinger IL"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "sogndal",
+    "name": "Sogndal",
+    "fullName": "Sogndal Fotball",
+    "city": "Sogndal",
+    "aliases": [
+      "Sogndal IL",
+      "Sogndal Fotball"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "hamkam",
+    "name": "HamKam",
+    "fullName": "Hamarkameratene",
+    "city": "Hamar",
+    "aliases": [
+      "Ham-Kam",
+      "Hamarkameratene",
+      "Ham Kam",
+      "Hamkam"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "moss",
+    "name": "Moss",
+    "fullName": "Moss FK",
+    "city": "Moss",
+    "aliases": [
+      "Moss FK",
+      "MFK Moss"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "fyllingen",
+    "name": "Fyllingen",
+    "fullName": "Fyllingen Fotball",
+    "city": "Bergen",
+    "aliases": [
+      "Fyllingen IL",
+      "Fyllingen Fotball"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "mjondalen",
+    "name": "Mjøndalen",
+    "fullName": "Mjøndalen IF",
+    "city": "Mjøndalen",
+    "aliases": [
+      "MIF",
+      "Mjøndalen IF",
+      "Mjondalen",
+      "Bruntøyene"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "haugesund",
+    "name": "Haugesund",
+    "fullName": "FK Haugesund",
+    "city": "Haugesund",
+    "aliases": [
+      "FKH",
+      "FK Haugesund"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "skeid",
+    "name": "Skeid",
+    "fullName": "Skeid Fotball",
+    "city": "Oslo",
+    "aliases": [
+      "Skeid Fotball",
+      "Skeid Oslo"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "strindheim",
+    "name": "Strindheim",
+    "fullName": "Strindheim IL",
+    "city": "Trondheim",
+    "aliases": [
+      "Strindheim IL"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "hodd",
+    "name": "Hødd",
+    "fullName": "IL Hødd",
+    "city": "Ulsteinvik",
+    "aliases": [
+      "IL Hødd",
+      "Hodd"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "bryne",
+    "name": "Bryne",
+    "fullName": "Bryne FK",
+    "city": "Bryne",
+    "aliases": [
+      "Bryne FK"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "aalesund",
+    "name": "Aalesund",
+    "fullName": "Aalesunds FK",
+    "city": "Ålesund",
+    "aliases": [
+      "AaFK",
+      "Aalesunds FK",
+      "Ålesund",
+      "Aalesunds"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "fredrikstad",
+    "name": "Fredrikstad",
+    "fullName": "Fredrikstad FK",
+    "city": "Fredrikstad",
+    "aliases": [
+      "FFK",
+      "Fredrikstad FK"
+    ],
+    "fame": 4,
+    "status": "verified"
+  },
+  {
+    "id": "sandefjord",
+    "name": "Sandefjord",
+    "fullName": "Sandefjord Fotball",
+    "city": "Sandefjord",
+    "aliases": [
+      "Sandefjord Fotball",
+      "SF"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "sarpsborg-08",
+    "name": "Sarpsborg 08",
+    "fullName": "Sarpsborg 08 FF",
+    "city": "Sarpsborg",
+    "aliases": [
+      "Sarpsborg",
+      "S08",
+      "Sarpsborg 08 FF"
+    ],
+    "fame": 3,
+    "status": "verified"
+  },
+  {
+    "id": "kristiansund",
+    "name": "Kristiansund",
+    "fullName": "Kristiansund BK",
+    "city": "Kristiansund",
+    "aliases": [
+      "KBK",
+      "Kristiansund BK"
+    ],
+    "fame": 2,
+    "status": "verified"
+  },
+  {
+    "id": "sandnes-ulf",
+    "name": "Sandnes Ulf",
+    "fullName": "Sandnes Ulf",
+    "city": "Sandnes",
+    "aliases": [
+      "Ulf",
+      "Sandnes"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "ranheim",
+    "name": "Ranheim",
+    "fullName": "Ranheim Fotball",
+    "city": "Trondheim",
+    "aliases": [
+      "Ranheim IL",
+      "Ranheim Fotball"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "jerv",
+    "name": "Jerv",
+    "fullName": "FK Jerv",
+    "city": "Grimstad",
+    "aliases": [
+      "FK Jerv"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "kfum-oslo",
+    "name": "KFUM Oslo",
+    "fullName": "KFUM-Kameratene Oslo",
+    "city": "Oslo",
+    "aliases": [
+      "KFUM",
+      "KFUM-Kameratene",
+      "Kåffa"
+    ],
+    "fame": 1,
+    "status": "verified"
+  },
+  {
+    "id": "eik-tonsberg",
+    "name": "Eik-Tønsberg",
+    "fullName": "Eik-Tønsberg",
+    "city": "Tønsberg",
+    "aliases": [
+      "Eik",
+      "Eik Tønsberg",
+      "EIK"
+    ],
+    "fame": 1,
+    "status": "recall"
+  },
+  {
+    "id": "honefoss",
+    "name": "Hønefoss",
+    "fullName": "Hønefoss BK",
+    "city": "Hønefoss",
+    "aliases": [
+      "Hønefoss BK",
+      "Honefoss"
+    ],
+    "fame": 1,
+    "status": "verified"
+  }
+]

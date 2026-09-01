@@ -1,0 +1,43 @@
+{
+  "id": "2025-11-16-ita-nor",
+  "date": "2025-11-16",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2026, gruppe I",
+  "opponent": "Italia",
+  "opponentCode": "ITA",
+  "norwayHome": false,
+  "score": [4, 1],
+  "venue": "San Siro",
+  "city": "Milano",
+  "manager": "Ståle Solbakken",
+  "formation": "4-1-4-1",
+  "importance": 5,
+  "tags": ["kvalik", "ikonisk", "italia", "vm-billett"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://www.espn.com/soccer/match/_/gameId/724906/norway-italy", "title": "Italy 1-4 Norway (Nov 16, 2025) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-1-4-1) confirmed in search excerpt" },
+    { "url": "https://www.beinsports.com/en-us/soccer/uefa-world-cup-qualifiers/articles/italy-1-4-norway-haaland-double-caps-world-cup-qualification-in-style-2025-11-16", "title": "Italy 1-4 Norway: Haaland double caps World Cup qualification – beIN SPORTS", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Kvelden Norge sikret VM-plass for første gang siden 1998. To Haaland-mål på 90 sekunder på San Siro.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 2, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 5, "pos": "CB" },
+    { "name": "Torbjørn Heggem", "no": 15, "pos": "CB" },
+    { "name": "David Møller Wolfe", "no": 3, "pos": "LB" },
+    { "name": "Sander Berge", "no": 6, "pos": "DM" },
+    { "name": "Alexander Sørloth", "no": 11, "pos": "RM" },
+    { "name": "Patrick Berg", "no": 4, "pos": "CM" },
+    { "name": "Kristian Thorstvedt", "no": 14, "pos": "CM" },
+    { "name": "Antonio Nusa", "no": 7, "pos": "LM" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" }
+  ],
+  "subs": [{ "name": "Jørgen Strand Larsen", "no": 19, "pos": "CF" }],
+  "goals": [
+    { "team": "opponent", "scorer": "Francesco Pio Esposito", "minute": 11 },
+    { "team": "norway", "name": "Antonio Nusa", "minute": 63 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 78 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 79 },
+    { "team": "norway", "name": "Jørgen Strand Larsen", "minute": 93 }
+  ]
+}

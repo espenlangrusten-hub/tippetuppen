@@ -1,0 +1,40 @@
+{
+  "id": "2020-09-04-nor-aut",
+  "date": "2020-09-04",
+  "competition": "nations-league",
+  "stage": "Nations League 2020/21, liga B",
+  "opponent": "Østerrike",
+  "opponentCode": "AUT",
+  "norwayHome": true,
+  "score": [1, 2],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Lars Lagerbäck",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": ["nations-league", "haaland-debutmål"],
+  "status": "single_source",
+  "sources": [
+    { "url": "https://int.soccerway.com/matches/2020/09/04/europe/uefa-nations-league/norway/austria/3243375/", "title": "Norway vs. Austria – 4 September 2020 – Soccerway", "kind": "web", "accessed": "2026-09-01", "note": "Confirmed Norway XI in search excerpt (Ødegaard out injured; King started)" },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/570779/austria-norway", "title": "Austria 2-1 Norway (Sep 4, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+  ],
+  "notes": "Erling Haalands første mål for Norge, i en tom Ullevaal under pandemien.",
+  "lineup": [
+    { "name": "Rune Almenning Jarstein", "no": 1, "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "no": 2, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Tore Reginiussen", "no": 4, "pos": "CB" },
+    { "name": "Haitam Aleesami", "no": 5, "pos": "LB" },
+    { "name": "Morten Thorsby", "no": 18, "pos": "RM" },
+    { "name": "Mathias Normann", "no": 6, "pos": "CM" },
+    { "name": "Sander Berge", "no": 8, "pos": "CM" },
+    { "name": "Stefan Johansen", "no": 10, "pos": "LM", "captain": true },
+    { "name": "Erling Haaland", "no": 23, "pos": "CF" },
+    { "name": "Joshua King", "no": 7, "pos": "CF" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "Michael Gregoritsch", "minute": 35 },
+    { "team": "opponent", "scorer": "Marcel Sabitzer", "minute": 54, "kind": "pen" },
+    { "team": "norway", "name": "Erling Haaland", "minute": 66 }
+  ]
+}
