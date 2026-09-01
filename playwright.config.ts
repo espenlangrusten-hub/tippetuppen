@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const executablePath = process.env.PW_CHROMIUM_PATH;
 
 export default defineConfig({
   testDir: "./e2e",
@@ -11,7 +10,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     trace: "retain-on-failure",
-    launchOptions: { args: ["--no-sandbox"], ...(executablePath ? { executablePath } : {}) },
+    launchOptions: { args: ["--no-sandbox"] },
   },
   projects: [
     { name: "iphone", use: { ...devices["iPhone 13"] } },

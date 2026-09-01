@@ -993,5 +993,23 @@
     "fullName": "Henning Hauger",
     "surname": "Hauger",
     "fame": 2
+  },
+  {
+    "id": "trond-andersen",
+    "fullName": "Trond Andersen",
+    "surname": "Andersen",
+    "fame": 2
+  },
+  {
+    "id": "stale-stensaas",
+    "fullName": "Ståle Stensaas",
+    "surname": "Stensaas",
+    "fame": 2
+  },
+  {
+    "id": "raymond-kvisvik",
+    "fullName": "Raymond Kvisvik",
+    "surname": "Kvisvik",
+    "fame": 2
   }
 ]
