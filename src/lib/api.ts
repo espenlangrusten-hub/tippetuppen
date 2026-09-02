@@ -6,8 +6,8 @@
  * NEXT_PUBLIC_API_URL is the function's base URL, e.g.
  *   https://<project-ref>.supabase.co/functions/v1/api
  */
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "/api").replace(/\/$/, "");
-const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api").replace(/\/$/, "");
+const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 function headers(extra: Record<string, string> = {}): Record<string, string> {
   // The anon key is public by design; the function itself does not require it, but

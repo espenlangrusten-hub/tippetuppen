@@ -6,7 +6,7 @@ import type { NextConfig } from "next";
  * (see src/lib/api.ts). NEXT_PUBLIC_BASE_PATH is "/<repo>" on a github.io URL and
  * empty on a custom domain.
  */
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nextConfig: NextConfig = {
   output: "export",

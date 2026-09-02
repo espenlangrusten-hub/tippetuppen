@@ -25,8 +25,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  preflight:
+    name: Check configuration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Required secrets and variables are present
+        run: |
+          missing=""
+          [ -n "${{ secrets.SUPABASE_ACCESS_TOKEN }}" ] || missing="$missing\n  secret  SUPABASE_ACCESS_TOKEN  (supabase.com/dashboard/account/tokens)"
+          [ -n "${{ secrets.SUPABASE_PROJECT_REF }}" ]  || missing="$missing\n  secret  SUPABASE_PROJECT_REF   (the ref in your Supabase project URL)"
+          [ -n "${{ vars.NEXT_PUBLIC_API_URL }}" ]      || missing="$missing\n  var     NEXT_PUBLIC_API_URL    (https://<ref>.supabase.co/functions/v1/api)"
+          [ -n "${{ vars.NEXT_PUBLIC_SITE_URL }}" ]     || missing="$missing\n  var     NEXT_PUBLIC_SITE_URL   (public URL of the site)"
+          if [ -n "$missing" ]; then
+            echo "::error::Deploy is not configured yet. Add these under Settings → Secrets and variables → Actions:"
+            printf "%b\n" "$missing"
+            echo "See docs/RUNBOOK.md for the full list."
+            exit 1
+          fi
+          echo "Configuration looks complete."
+
   function:
     name: Deploy Edge Function
+    needs: preflight
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,6 +60,7 @@ jobs:
 
   site:
     name: Build and publish site
+    needs: preflight
     runs-on: ubuntu-latest
     environment:
       name: github-pages

@@ -1,6 +1,14 @@
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME ?? "Tippetuppen";
-export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
+/**
+ * Build-time configuration.
+ *
+ * These read `||` rather than `??` on purpose: GitHub Actions passes an *empty
+ * string* for a variable that has not been set, which `??` would happily keep and
+ * which then breaks things far from the cause (an empty SITE_URL used to crash the
+ * build inside `new URL()`).
+ */
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Tippetuppen";
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3200").replace(/\/$/, "");
 export const SITE_TAGLINE = "Dagens norske fotballspill";
 
 export const GAME_META = {
