@@ -8,7 +8,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"]],
   use: {
-    baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
+    baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3200",
     trace: "retain-on-failure",
     launchOptions: { args: ["--no-sandbox"] },
   },
@@ -16,7 +16,7 @@ export default defineConfig({
     { name: "iphone", use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" } },
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
   ],
-  webServer: process.env.E2E_BASE_URL
-    ? undefined
-    : { command: "npm run dev", url: "http://localhost:3000", reuseExistingServer: true, timeout: 120000 },
+  // The site is a static export; e2e runs against `npx serve out` plus the local
+  // dev stack (scripts/dev-stack.sh) standing in for Supabase.
+  webServer: undefined,
 });

@@ -1,24 +1,24 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
 import { SITE_URL } from "@/lib/site";
-import { listArchive } from "@/server/queries";
 
-export const dynamic = "force-dynamic";
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [mxi, mal] = await Promise.all([listArchive("mangler-xi", { limit: 1000 }), listArchive("maalloes", { limit: 1000 })]);
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/`, changeFrequency: "daily", priority: 1 },
-    { url: `${SITE_URL}/mangler-xi`, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/maalloes`, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/arkiv`, changeFrequency: "daily", priority: 0.6 },
-    { url: `${SITE_URL}/arkiv/mangler-xi`, changeFrequency: "daily", priority: 0.5 },
-    { url: `${SITE_URL}/arkiv/maalloes`, changeFrequency: "daily", priority: 0.5 },
-    { url: `${SITE_URL}/om`, changeFrequency: "monthly", priority: 0.3 },
-    { url: `${SITE_URL}/personvern`, changeFrequency: "monthly", priority: 0.2 },
-  ];
+/**
+ * Static sitemap. Individual archive rounds live behind ?nr= on the game pages, so
+ * the crawlable surface is the landing pages; the daily games are the point.
+ */
+export default function sitemap(): MetadataRoute.Sitemap {
+  const page = (path: string, priority: number, changeFrequency: "daily" | "monthly") => ({
+    url: `${SITE_URL}${path}`,
+    changeFrequency,
+    priority,
+  });
   return [
-    ...staticPages,
-    ...mxi.map((r) => ({ url: `${SITE_URL}/mangler-xi/${r.number}`, lastModified: r.date, changeFrequency: "yearly" as const, priority: 0.4 })),
-    ...mal.map((r) => ({ url: `${SITE_URL}/maalloes/${r.number}`, lastModified: r.date, changeFrequency: "yearly" as const, priority: 0.4 })),
+    page("/", 1, "daily"),
+    page("/mangler-xi/", 0.9, "daily"),
+    page("/maalloes/", 0.9, "daily"),
+    page("/arkiv/", 0.6, "daily"),
+    page("/om/", 0.3, "monthly"),
+    page("/personvern/", 0.2, "monthly"),
   ];
 }

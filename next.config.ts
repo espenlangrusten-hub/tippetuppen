@@ -1,24 +1,20 @@
 import type { NextConfig } from "next";
 
+/**
+ * The site is exported as static files and served by GitHub Pages, so it has no
+ * server of its own: every dynamic read goes to the Supabase Edge Function
+ * (see src/lib/api.ts). NEXT_PUBLIC_BASE_PATH is "/<repo>" on a github.io URL and
+ * empty on a custom domain.
+ */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath: basePath || undefined,
+  trailingSlash: true, // GitHub Pages serves /path/ → /path/index.html
   reactStrictMode: true,
-  serverExternalPackages: ["@electric-sql/pglite", "postgres"],
-  // Ship the football source data with the server bundle so the admin can seed a
-  // fresh database without shell access (needed on Vercel and other serverless hosts).
-  outputFileTracingIncludes: { "/admin": ["./data/source/**/*"] },
   poweredByHeader: false,
-  devIndicators: false,
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: [
-        { key: "X-Content-Type-Options", value: "nosniff" },
-        { key: "X-Frame-Options", value: "SAMEORIGIN" },
-        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-      ],
-    },
-  ],
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

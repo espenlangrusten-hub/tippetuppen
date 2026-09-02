@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { getVisitorFlags, setVisitorFlags } from "@/lib/storage";
+import { apiBeacon } from "@/lib/api";
 
 export type EventName =
   | "page_view"
@@ -26,16 +27,10 @@ function isFirstVisit(): boolean {
   return firstVisitFlag;
 }
 
-/** Fire-and-forget, cookieless analytics. The server derives an anonymous daily visitor hash. */
+/** Fire-and-forget, cookieless analytics. The Edge Function derives an anonymous daily visitor hash. */
 export function track(p: Payload) {
   if (typeof window === "undefined") return;
-  const body = JSON.stringify({ ...p, path: window.location.pathname, isNew: isFirstVisit() });
-  try {
-    if (navigator.sendBeacon) navigator.sendBeacon("/api/events", new Blob([body], { type: "application/json" }));
-    else fetch("/api/events", { method: "POST", body, headers: { "content-type": "application/json" }, keepalive: true }).catch(() => {});
-  } catch {
-    /* ignore */
-  }
+  apiBeacon({ ...p, path: window.location.pathname, isNew: isFirstVisit() });
 }
 
 export function PageViewBeacon() {

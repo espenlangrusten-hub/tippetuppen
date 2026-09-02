@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ManglerXiPage } from "./ManglerXiPage";
+import { Suspense } from "react";
+import { ManglerXiScreen } from "./ManglerXiScreen";
+import { GameSkeleton } from "@/components/GameLoader";
 
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Mangler XI – gjett Norges startellever",
   description: "Daglig fotballquiz: fyll ut Norges startellever fra en historisk landskamp, bokstav for bokstav. Nytt lag hver dag kl. 00:00.",
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ManglerXiPage />;
+  return (
+    <Suspense fallback={<GameSkeleton />}>
+      <ManglerXiScreen />
+    </Suspense>
+  );
 }

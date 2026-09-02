@@ -1,8 +1,10 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import type { MaskedPuzzle, MaskedPlayer } from "@/server/manglerXi";
+import type { MaskedPuzzle, MaskedPlayer } from "@/lib/gameTypes";
 import { keyboardStates, MAX_TRIES, type TileState } from "@/lib/tiles";
+import { apiPost } from "@/lib/api";
+import { POSITION_LABEL } from "@/lib/positions";
 import { loadProgress, saveProgress, addRecord, getVisitorFlags, setVisitorFlags } from "@/lib/storage";
 import { manglerXiShareText, shareOrCopy, type ShareRow } from "@/lib/share";
 import { track } from "@/components/analytics/Beacon";
@@ -25,7 +27,7 @@ type GameState = {
   notes: string | null;
 };
 
-const POS_LABEL: Record<string, string> = { GK: "Keeper", RB: "Høyreback", CB: "Midtstopper", LB: "Venstreback", RWB: "Høyre wingback", LWB: "Venstre wingback", DM: "Defensiv midtbane", CM: "Sentral midtbane", RM: "Høyre midtbane", LM: "Venstre midtbane", AM: "Offensiv midtbane", RW: "Høyre ving", LW: "Venstre ving", SS: "Hengende spiss", CF: "Spiss" };
+const POS_LABEL = POSITION_LABEL;
 
 function initState(p: MaskedPuzzle): GameState {
   return { v: 1, puzzleId: p.puzzleId, players: p.players.map(() => ({ guesses: [], tiles: [], solved: false, failed: false })), active: null, finished: false, gaveUp: false, startedAt: null, finishedAt: null, revealed: null, notes: null };
@@ -110,8 +112,11 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     setBusy(true);
     try {
       if (!state.startedAt) track({ name: "game_start", game: "mangler-xi", puzzleId: puzzle.puzzleId, archive: isArchive });
-      const res = await fetch("/api/mangler-xi/guess", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId, index: state.active, guess }) });
-      const data = (await res.json()) as { ok: boolean; tiles?: TileState[]; solved?: boolean; name?: string; guess?: string; error?: string };
+      const data = await apiPost<{ ok: boolean; tiles?: TileState[]; solved?: boolean; name?: string; guess?: string; error?: string }>("/guess", {
+        puzzleId: puzzle.puzzleId,
+        index: state.active,
+        guess,
+      });
       if (!data.ok || !data.tiles) {
         showToast("Noe gikk galt – prøv igjen");
         return;
@@ -132,8 +137,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       else if (ps.failed) showToast("Ingen forsøk igjen");
       if (allDone) {
         // Fetch names for failed players.
-        const r = await fetch("/api/mangler-xi/reveal", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId }) });
-        const rev = (await r.json()) as { ok: boolean; players?: { name: string; answer: string }[]; notes?: string | null };
+        const rev = await apiPost<{ ok: boolean; players?: { name: string; answer: string }[]; notes?: string | null }>("/reveal", { puzzleId: puzzle.puzzleId });
         const withNames = players.map((p, j) => (p.name ? p : { ...p, name: rev.players?.[j]?.name }));
         finish({ ...next, players: withNames }, false, rev.players ?? null, rev.notes ?? null);
       } else if (ps.solved || ps.failed) {
@@ -182,8 +186,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     if (triesUsed(activeState) >= MAX_TRIES - 1) return showToast("Ikke nok forsøk igjen");
     setBusy(true);
     try {
-      const r = await fetch("/api/mangler-xi/reveal", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId, index: state.active, hint: true }) });
-      const d = (await r.json()) as { ok: boolean; letter?: string };
+      const d = await apiPost<{ ok: boolean; letter?: string }>("/reveal", { puzzleId: puzzle.puzzleId, index: state.active, hint: true });
       if (d.ok && d.letter) {
         const i = state.active;
         setState({ ...state, players: state.players.map((p, j) => (j === i ? { ...p, hint: d.letter } : p)), startedAt: state.startedAt ?? new Date().toISOString() });
@@ -198,8 +201,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     if (!state) return;
     setBusy(true);
     try {
-      const r = await fetch("/api/mangler-xi/reveal", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId }) });
-      const rev = (await r.json()) as { ok: boolean; players?: { name: string; answer: string }[]; notes?: string | null };
+      const rev = await apiPost<{ ok: boolean; players?: { name: string; answer: string }[]; notes?: string | null }>("/reveal", { puzzleId: puzzle.puzzleId });
       const players = state.players.map((p, j) => (p.solved ? p : { ...p, failed: true, name: rev.players?.[j]?.name }));
       finish({ ...state, players }, true, rev.players ?? null, rev.notes ?? null);
     } finally {
@@ -488,7 +490,7 @@ function ResultCard({ puzzle, state, rows, found, tries, isArchive, today }: { p
       {!isArchive && puzzle.date === today && countdown && <p className="mt-3 text-center text-sm text-mist">Nytt Mangler XI om {countdown}</p>}
       {isArchive && (
         <p className="mt-3 text-center text-sm text-mist">
-          <Link href="/arkiv/mangler-xi" className="underline">
+          <Link href="/arkiv/?game=mangler-xi" className="underline">
             Flere fra arkivet
           </Link>
         </p>

@@ -7,7 +7,7 @@ test.describe("Tippetuppen smoke", () => {
     await page.screenshot({ path: `e2e/screenshots/home-${testInfo.project.name}.png`, fullPage: true });
     await expect(page.getByRole("link", { name: /Spill|Se resultat/ }).first()).toBeVisible();
 
-    await page.goto("/mangler-xi");
+    await page.goto("/mangler-xi/");
     // Intro modal on first visit
     await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 8000 }).catch(() => {});
     await expect(page.getByText("Trykk på en drakt for å gjette spilleren.")).toBeVisible();
@@ -52,7 +52,7 @@ test.describe("Tippetuppen smoke", () => {
 });
 
 test("Målløs plays end-to-end with valid, invalid and duplicate answers", async ({ page }, testInfo) => {
-  await page.goto("/maalloes");
+  await page.goto("/maalloes/");
   await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 8000 }).catch(() => {});
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 2 }).first()).toBeVisible();
@@ -74,7 +74,7 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
   const candidates = ["Rosenborg", "Molde", "Brann", "Haaland", "Ødegaard", "Solskjær", "Rekdal", "Egil Olsen", "Viking", "Lillestrøm", "Bratseth", "Sørloth", "Vålerenga", "Bodø/Glimt", "Fjørtoft"];
   let valid: string | null = null;
   for (const c of candidates) {
-    const r = await page.request.post("/api/maalloes/answer", { data: { puzzleId, text: c, taken: [] } });
+    const r = await page.request.post(`${process.env.E2E_API_URL ?? "http://localhost:8000/api"}/maalloes/answer`, { data: { puzzleId, text: c, taken: [] } });
     const j = (await r.json()) as { ok: boolean };
     if (j.ok) {
       valid = c;
@@ -103,10 +103,10 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
 });
 
 test("archive and stats pages render", async ({ page }) => {
-  await page.goto("/arkiv");
+  await page.goto("/arkiv/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Arkiv");
-  await page.goto("/statistikk");
+  await page.goto("/statistikk/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Statistikk");
-  await page.goto("/personvern");
+  await page.goto("/personvern/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Personvern");
 });

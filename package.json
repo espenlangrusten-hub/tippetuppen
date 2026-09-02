@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve out -l 3000",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
@@ -21,7 +21,10 @@
     "data:runway": "tsx scripts/runway.ts",
     "data:export": "tsx scripts/export-data.ts",
     "sync:shared": "tsx scripts/sync-shared.ts",
-    "functions:deploy": "supabase functions deploy api --project-ref $SUPABASE_PROJECT_REF"
+    "functions:deploy": "supabase functions deploy api --project-ref $SUPABASE_PROJECT_REF",
+    "prebuild": "tsx scripts/write-ads-txt.ts",
+    "check:deno": "deno check --config supabase/functions/deno.json supabase/functions/api/index.ts",
+    "dev:stack": "bash scripts/dev-stack.sh"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",

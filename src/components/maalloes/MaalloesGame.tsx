@@ -4,10 +4,12 @@ import Link from "next/link";
 import { loadProgress, saveProgress, addRecord, getVisitorFlags, setVisitorFlags } from "@/lib/storage";
 import { maalloesShareText, shareOrCopy } from "@/lib/share";
 import { track } from "@/components/analytics/Beacon";
+import { apiPost } from "@/lib/api";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
 
-export type MaalloesPublic = { puzzleId: string; number: number; date: string; question: string; intro: string; category: string; answerKind: "club" | "player" | "person"; answerCount: number; status: string };
+import type { MaalloesPublic } from "@/lib/gameTypes";
+export type { MaalloesPublic };
 
 type Entry = { text: string; id: string | null; label: string | null; score: number; fact: string | null };
 type Final = {
@@ -64,8 +66,11 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
     setBusy(true);
     try {
       if (!state.startedAt) track({ name: "game_start", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive });
-      const res = await fetch("/api/maalloes/answer", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId, text: t, taken: state.entries.map((e) => e.id).filter(Boolean) }) });
-      const d = (await res.json()) as { ok: boolean; reason?: string; id?: string; label?: string; score?: number; fact?: string | null };
+      const d = await apiPost<{ ok: boolean; reason?: string; id?: string; label?: string; score?: number; fact?: string | null }>("/maalloes/answer", {
+        puzzleId: puzzle.puzzleId,
+        text: t,
+        taken: state.entries.map((e) => e.id).filter(Boolean),
+      });
       if (!d.ok && d.reason === "duplicate") {
         showToast(`${d.label} er allerede brukt`);
         return;
@@ -75,8 +80,10 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
       setText("");
       const next: GameState = { ...state, entries, startedAt: state.startedAt ?? new Date().toISOString() };
       if (entries.length >= ANSWERS) {
-        const r = await fetch("/api/maalloes/submit", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ puzzleId: puzzle.puzzleId, answers: entries.map((e) => ({ id: e.id, text: e.text })) }) });
-        const f = (await r.json()) as { ok: boolean } & Final;
+        const f = await apiPost<{ ok: boolean } & Final>("/maalloes/submit", {
+          puzzleId: puzzle.puzzleId,
+          answers: entries.map((e) => ({ id: e.id, text: e.text })),
+        });
         if (f.ok) {
           const done: GameState = { ...next, final: f, finishedAt: new Date().toISOString(), entries: entries.map((e, i) => ({ ...e, score: f.scores[i] })) };
           setState(done);
@@ -233,7 +240,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
             </p>
             {isArchive && (
               <p className="mt-2 text-sm">
-                <Link href="/arkiv/maalloes" className="underline">
+                <Link href="/arkiv/?game=maalloes" className="underline">
                   Flere fra arkivet
                 </Link>
               </p>
