@@ -51,7 +51,7 @@ export function resolveAnswer(payload: MaalloesPayload, text: string): MaalloesA
 export function scoreFor(answer: MaalloesAnswer, counts: Map<string, number>, respondents: number): number {
   const c = counts.get(answer.id) ?? 0;
   if (respondents >= CROWD_ONLY_AT) return Math.round((100 * c) / respondents);
-  if (c === 0 && answer.prior <= 8) return 0;
+  if (c === 0 && answer.prior <= 12) return 0;
   const est = (100 * (PRIOR_WEIGHT * (answer.prior / 100) + c)) / (PRIOR_WEIGHT + respondents);
   return Math.max(1, Math.min(100, Math.round(est)));
 }

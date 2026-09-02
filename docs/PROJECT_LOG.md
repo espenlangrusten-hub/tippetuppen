@@ -19,6 +19,12 @@ Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 - **Konsekvens:** innholdsrekkevidden er begrenset i første versjon. Wikipedia-importøren (`scripts/import/wikipedia.ts`) er skrevet og enhetstestet, men må kjøres fra en maskin med normal internettilgang.
 - **Supabase:** kontoen har to prosjekter (gratisnivåets grense). Nytt prosjekt for Tippetuppen krever eierens valg (betale eller gjenbruke/pause et eksisterende).
 
+### Status ved slutten av økten
+- Kamper i databasen: 47 (44 kvalifisert for rotasjon, 1 usikker, 2 fra hukommelse). Målløs-puslespill: 34 (33 kvalifisert).
+- Innholdsrekkevidde: Mangler XI 43 dager, Målløs 33 dager. Wikipedia-importøren er veien til flere hundre kamper (krever kjøring utenfor byggemiljøet).
+- Tester: 25 enhetstester (navn, datoer/DST, brikker, rekker, wikitext-parser) og 3 Playwright-flyter på iPhone-visning grønne. Lint, typecheck og produksjonsbygg grønne.
+- Søkebudsjettet (200 søk) ble brukt opp på kildeverifisering; flere kamper med delvis bekreftelse ligger i notatene per kamp.
+
 ### Milepæler
 - Pipeline: validering, seed, puslespillgenerering, planlegger med variasjonsstyring (oppstillingslikhet, motstander, tiår, vanskelighetsgrad), innholdsrekkevidde.
 - Mangler XI og Målløs spillbare ende-til-ende, arkiv, statistikk, deling, admin, analyse, samtykke, SEO-metadata.

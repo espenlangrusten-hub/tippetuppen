@@ -7,14 +7,14 @@ export function Header() {
         <Link href="/" className="font-display text-2xl font-bold uppercase tracking-wide">
           <span className="text-flag">Tippe</span>tuppen
         </Link>
-        <nav className="flex items-center gap-1 text-sm font-semibold">
-          <Link href="/mangler-xi" className="rounded-lg px-2.5 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">
+        <nav className="flex items-center gap-0.5 text-[13px] font-semibold sm:gap-1 sm:text-sm">
+          <Link href="/mangler-xi" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
             Mangler XI
           </Link>
-          <Link href="/maalloes" className="rounded-lg px-2.5 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">
+          <Link href="/maalloes" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
             Målløs
           </Link>
-          <Link href="/arkiv" className="rounded-lg px-2.5 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">
+          <Link href="/arkiv" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
             Arkiv
           </Link>
           <Link href="/statistikk" aria-label="Statistikk" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">

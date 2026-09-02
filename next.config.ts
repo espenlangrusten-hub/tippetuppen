@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   serverExternalPackages: ["@electric-sql/pglite", "postgres"],
   poweredByHeader: false,
+  devIndicators: false,
   headers: async () => [
     {
       source: "/(.*)",

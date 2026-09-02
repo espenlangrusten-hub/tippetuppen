@@ -13,7 +13,7 @@ export default defineConfig({
     launchOptions: { args: ["--no-sandbox"] },
   },
   projects: [
-    { name: "iphone", use: { ...devices["iPhone 13"] } },
+    { name: "iphone", use: { ...devices["iPhone 13"], defaultBrowserType: "chromium" } },
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
   ],
   webServer: process.env.E2E_BASE_URL

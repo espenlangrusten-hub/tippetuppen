@@ -6,7 +6,6 @@ import { maalloesShareText, shareOrCopy } from "@/lib/share";
 import { track } from "@/components/analytics/Beacon";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
-import { formatDateNo } from "@/lib/dates";
 
 export type MaalloesPublic = { puzzleId: string; number: number; date: string; question: string; intro: string; category: string; answerKind: "club" | "player" | "person"; answerCount: number; status: string };
 

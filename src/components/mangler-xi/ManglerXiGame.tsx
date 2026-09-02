@@ -243,8 +243,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         </div>
         <div className="mt-1 font-display text-3xl font-bold uppercase leading-none sm:text-4xl">{scoreline}</div>
         <div className="mt-1 text-sm text-mist">
-          {puzzle.competition}
-          {puzzle.stage && puzzle.stage !== puzzle.competition ? ` · ${puzzle.stage}` : ""}
+          {puzzle.stage ?? puzzle.competition}
           {puzzle.venue ? ` · ${puzzle.venue}` : ""}
           {puzzle.city ? `, ${puzzle.city}` : ""}
         </div>

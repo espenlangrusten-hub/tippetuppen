@@ -9,9 +9,8 @@ test.describe("Tippetuppen smoke", () => {
 
     await page.goto("/mangler-xi");
     // Intro modal on first visit
-    const start = page.getByRole("button", { name: "Kjør!" });
-    if (await start.isVisible()) await start.click();
-    await expect(page.getByText(/Trykk på en drakt/)).toBeVisible();
+    await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 8000 }).catch(() => {});
+    await expect(page.getByText("Trykk på en drakt for å gjette spilleren.")).toBeVisible();
     await page.screenshot({ path: `e2e/screenshots/mxi-pitch-${testInfo.project.name}.png`, fullPage: true });
 
     // Pick the goalkeeper (first shirt in the last row) and make a wrong guess of the right length.
@@ -54,8 +53,8 @@ test.describe("Tippetuppen smoke", () => {
 
 test("Målløs plays end-to-end with valid, invalid and duplicate answers", async ({ page }, testInfo) => {
   await page.goto("/maalloes");
-  const start = page.getByRole("button", { name: "Kjør!" });
-  if (await start.isVisible()) await start.click();
+  await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 8000 }).catch(() => {});
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 2 }).first()).toBeVisible();
   await page.screenshot({ path: `e2e/screenshots/mal-question-${testInfo.project.name}.png`, fullPage: true });
 
