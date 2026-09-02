@@ -4,7 +4,7 @@
 
 | Variabel | Påkrevd | Beskrivelse |
 | --- | --- | --- |
-| `DATABASE_URL` | prod | Postgres-tilkobling (Supabase «Transaction pooler»-URL fungerer). Tom lokalt → PGlite i `.data/pglite`. |
+| `DATABASE_URL` | prod | Postgres-tilkobling (Supabase «Transaction pooler»-URL). Tom lokalt → PGlite i `.data/pglite`. I produksjon stopper appen med en tydelig feilmelding hvis den mangler. |
 | `ADMIN_PASSWORD` | prod | Passord til `/admin`. |
 | `ADMIN_SESSION_SECRET` | prod | ≥16 tilfeldige tegn; signerer admin-cookien. |
 | `ANALYTICS_SALT` | prod | Tilfeldig streng for den daglige anonyme besøksnøkkelen. |
@@ -41,6 +41,10 @@ Databasen ligger i sitt eget Postgres-skjema (`tippetuppen`), så den kan dele i
 ## Innholdsrekkevidde
 
 `npm run data:runway` eller Admin → Oversikt. Tall: kvalifiserte puslespill, publiserte, planlagte, ubrukte, dager igjen.
+
+## Hosting
+
+Appen krever en Node-server (databaseoppslag, API-ruter for gjetting og server actions i admin). Statisk hosting som GitHub Pages fungerer **ikke**. Vercel er enklest: importer GitHub-repoet, sett miljøvariablene, og velg riktig produksjonsgren under Settings → Git hvis koden ikke ligger på `main`.
 
 ## Feilsøking
 

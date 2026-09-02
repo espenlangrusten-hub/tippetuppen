@@ -12,6 +12,14 @@ export const PGLITE_DIR = process.env.PGLITE_DIR ?? ".data/pglite";
 
 async function open(): Promise<Handle> {
   const url = process.env.DATABASE_URL;
+  // In production the embedded database is never right: serverless filesystems are
+  // read-only and each instance would get its own empty copy. Fail loudly instead.
+  if (!url && process.env.NODE_ENV === "production" && process.env.ALLOW_PGLITE_IN_PRODUCTION !== "1") {
+    throw new Error(
+      "DATABASE_URL is not set. Set it to a Postgres connection string (Supabase → Settings → Database → Transaction pooler). " +
+        "Set ALLOW_PGLITE_IN_PRODUCTION=1 only for a local production build against the embedded database.",
+    );
+  }
   if (url) {
     const postgres = (await import("postgres")).default;
     const client = postgres(url, { max: 5, prepare: false, idle_timeout: 20 });
