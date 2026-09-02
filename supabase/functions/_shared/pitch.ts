@@ -1,3 +1,4 @@
+// GENERATED FILE – do not edit. Source: src/lib/<name>. Run `npm run sync:shared`.
 import type { Position } from "./positions.ts";
 
 /** Row index from the goalkeeper (0) towards the attack. */

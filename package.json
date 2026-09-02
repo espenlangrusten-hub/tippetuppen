@@ -19,7 +19,9 @@
     "data:validate": "tsx scripts/validate-data.ts",
     "data:schedule": "tsx scripts/schedule.ts",
     "data:runway": "tsx scripts/runway.ts",
-    "data:export": "tsx scripts/export-data.ts"
+    "data:export": "tsx scripts/export-data.ts",
+    "sync:shared": "tsx scripts/sync-shared.ts",
+    "functions:deploy": "supabase functions deploy api --project-ref $SUPABASE_PROJECT_REF"
   },
   "dependencies": {
     "@electric-sql/pglite": "0.5.8",
@@ -33,11 +35,13 @@
     "zod": "4.5.4"
   },
   "devDependencies": {
+    "@electric-sql/pglite-socket": "^0.2.11",
     "@playwright/test": "^1.56.1",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "deno": "^2.9.6",
     "drizzle-kit": "0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",

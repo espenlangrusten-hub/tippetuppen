@@ -12,6 +12,10 @@ import {
   uniqueIndex,
   index,
 } from "drizzle-orm/pg-core";
+import { POSITIONS, type Position } from "@/lib/positions";
+
+export { POSITIONS };
+export type { Position };
 
 /** All Tippetuppen tables live in their own schema so the app can share a Postgres instance with other apps. */
 export const tt = pgSchema("tippetuppen");
@@ -113,9 +117,6 @@ export const matches = tt.table(
   },
   (t) => [index("matches_date").on(t.date)],
 );
-
-export const POSITIONS = ["GK", "RB", "CB", "LB", "RWB", "LWB", "DM", "CM", "RM", "LM", "AM", "RW", "LW", "SS", "CF"] as const;
-export type Position = (typeof POSITIONS)[number];
 
 export const appearances = tt.table(
   "appearances",

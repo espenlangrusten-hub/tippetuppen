@@ -1,0 +1,6 @@
+project_id = "tippetuppen"
+
+[functions.api]
+# The game API is called from a static site with no login, so no JWT is required.
+# Authorisation for the admin routes is a separate ADMIN_KEY header checked in code.
+verify_jwt = false

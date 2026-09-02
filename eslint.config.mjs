@@ -4,7 +4,7 @@ import nextTs from "eslint-config-next/typescript";
 const config = [
   ...nextConfig,
   ...nextTs,
-  { ignores: [".next/**", ".data/**", "drizzle/**", "playwright-report/**", "test-results/**"] },
+  { ignores: [".next/**", ".data/**", "drizzle/**", "playwright-report/**", "test-results/**", "supabase/**", "out/**"] },
   {
     rules: {
       // Game state, streaks and consent live in localStorage and are read after mount on purpose
