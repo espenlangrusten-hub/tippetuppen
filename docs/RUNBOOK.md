@@ -24,7 +24,7 @@ Databasen ligger i sitt eget Postgres-skjema (`tippetuppen`), så den kan dele i
 4. Sjekk Oversikt: begge spill skal ha «I dag» og «I morgen».
 
 **Med terminal:** `npm run db:migrate && npm run db:seed && npm run data:schedule -- --days 400`, så deploy.
-4. AdSense: legg til nettstedet i AdSense, aktiver «Privacy & messaging» (EU-melding), sett `NEXT_PUBLIC_ADSENSE_CLIENT` og `NEXT_PUBLIC_CMP=funding-choices`, opprett annonseenheter og legg inn slot-ID-ene.
+4. AdSense: legg til nettstedet i AdSense, aktiver «Privacy & messaging» (EU-melding), sett `NEXT_PUBLIC_ADSENSE_CLIENT` og `NEXT_PUBLIC_CMP=funding-choices`, opprett annonseenheter og legg inn slot-ID-ene. `/ads.txt` genereres automatisk fra publisher-ID-en – sjekk at `https://<domenet>/ads.txt` svarer før du ber om godkjenning.
 
 ## Daglig drift
 

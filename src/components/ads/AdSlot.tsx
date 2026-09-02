@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { useConsent } from "@/components/consent/ConsentProvider";
+import { ADSENSE_CLIENT, adsEnabled } from "./adsenseConfig";
+
+export { ADSENSE_CLIENT, adsEnabled };
 
 export type AdPlacement = "home-below-games" | "result" | "archive" | "sidebar";
 
@@ -19,8 +22,7 @@ const SIZE: Record<AdPlacement, { minHeight: number; format: string }> = {
   sidebar: { minHeight: 600, format: "vertical" },
 };
 
-export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT || "";
-export const adsEnabled = ADSENSE_CLIENT.startsWith("ca-pub-");
+
 
 /**
  * Advertising abstraction. Renders a mock placeholder in development or when
