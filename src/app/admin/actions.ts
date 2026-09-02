@@ -7,6 +7,7 @@ import { requireAdmin, checkPassword, setAdminCookie, clearAdminCookie } from "@
 import { extendSchedule, clearFutureSchedule, getRotationPolicy, DEFAULT_ROTATION } from "@/server/puzzles/scheduler";
 import { buildManglerXiPuzzles } from "@/server/puzzles/manglerXi";
 import { buildMaalloesPuzzles } from "@/server/puzzles/maalloes";
+import { seedFromSource } from "@/server/seed";
 import { osloDateKey, addDays } from "@/lib/dates";
 import { normalizeName } from "@/lib/names";
 import { DATA_STATUSES } from "@/db/schema";
@@ -90,6 +91,20 @@ export async function regenerate(days = 400, clearFuture = false) {
   await audit("regenerate", { days, clearFuture, puzzles: rows.length });
   revalidatePath("/admin");
   revalidatePath("/admin/schedule");
+}
+
+/**
+ * One-click bootstrap for a fresh database: load data/source/*.json, then build
+ * puzzles and the daily schedule. Safe to re-run (all writes are upserts).
+ */
+export async function seedAndSchedule() {
+  await requireAdmin();
+  const db = await getDb();
+  const r = await seedFromSource(db);
+  await audit("seed_from_source", { ...r, problems: r.problems.length });
+  await regenerate(400, false);
+  revalidatePath("/admin");
+  revalidatePath("/");
 }
 
 export async function setRotationPolicy(formData: FormData) {

@@ -1,12 +1,12 @@
 {
-  "id": "0b683860-8507-4761-9fa4-6d6c40705fbb",
+  "id": "b56978e3-6854-4947-8d3f-93a42f67fc3e",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.admin_audit": {
+    "tippetuppen.admin_audit": {
       "name": "admin_audit",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -43,9 +43,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.appearances": {
+    "tippetuppen.appearances": {
       "name": "appearances",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -159,6 +159,7 @@
           "name": "appearances_match_id_matches_id_fk",
           "tableFrom": "appearances",
           "tableTo": "matches",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "match_id"
           ],
@@ -172,6 +173,7 @@
           "name": "appearances_player_id_players_id_fk",
           "tableFrom": "appearances",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -188,9 +190,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.clubs": {
+    "tippetuppen.clubs": {
       "name": "clubs",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -252,9 +254,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.competitions": {
+    "tippetuppen.competitions": {
       "name": "competitions",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -283,9 +285,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.events": {
+    "tippetuppen.events": {
       "name": "events",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -403,9 +405,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.goals": {
+    "tippetuppen.goals": {
       "name": "goals",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -473,6 +475,7 @@
           "name": "goals_match_id_matches_id_fk",
           "tableFrom": "goals",
           "tableTo": "matches",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "match_id"
           ],
@@ -486,6 +489,7 @@
           "name": "goals_player_id_players_id_fk",
           "tableFrom": "goals",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -502,9 +506,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.honours": {
+    "tippetuppen.honours": {
       "name": "honours",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -597,6 +601,7 @@
           "name": "honours_club_id_clubs_id_fk",
           "tableFrom": "honours",
           "tableTo": "clubs",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "club_id"
           ],
@@ -610,6 +615,7 @@
           "name": "honours_player_id_players_id_fk",
           "tableFrom": "honours",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -626,9 +632,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.maalloes_answer_counts": {
+    "tippetuppen.maalloes_answer_counts": {
       "name": "maalloes_answer_counts",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "puzzle_id": {
           "name": "puzzle_id",
@@ -656,6 +662,7 @@
           "name": "maalloes_answer_counts_puzzle_id_puzzles_id_fk",
           "tableFrom": "maalloes_answer_counts",
           "tableTo": "puzzles",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "puzzle_id"
           ],
@@ -680,9 +687,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.matches": {
+    "tippetuppen.matches": {
       "name": "matches",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -840,6 +847,7 @@
           "name": "matches_competition_id_competitions_id_fk",
           "tableFrom": "matches",
           "tableTo": "competitions",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "competition_id"
           ],
@@ -856,9 +864,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.player_aliases": {
+    "tippetuppen.player_aliases": {
       "name": "player_aliases",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -941,6 +949,7 @@
           "name": "player_aliases_player_id_players_id_fk",
           "tableFrom": "player_aliases",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -957,9 +966,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.player_club_spells": {
+    "tippetuppen.player_club_spells": {
       "name": "player_club_spells",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1043,6 +1052,7 @@
           "name": "player_club_spells_player_id_players_id_fk",
           "tableFrom": "player_club_spells",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -1056,6 +1066,7 @@
           "name": "player_club_spells_club_id_clubs_id_fk",
           "tableFrom": "player_club_spells",
           "tableTo": "clubs",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "club_id"
           ],
@@ -1072,9 +1083,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.players": {
+    "tippetuppen.players": {
       "name": "players",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1173,9 +1184,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.puzzle_stats": {
+    "tippetuppen.puzzle_stats": {
       "name": "puzzle_stats",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "puzzle_id": {
           "name": "puzzle_id",
@@ -1218,6 +1229,7 @@
           "name": "puzzle_stats_puzzle_id_puzzles_id_fk",
           "tableFrom": "puzzle_stats",
           "tableTo": "puzzles",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "puzzle_id"
           ],
@@ -1234,9 +1246,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.puzzles": {
+    "tippetuppen.puzzles": {
       "name": "puzzles",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1361,7 +1373,7 @@
               "nulls": "last"
             }
           ],
-          "isUnique": true,
+          "isUnique": false,
           "concurrently": false,
           "method": "btree",
           "with": {}
@@ -1374,9 +1386,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.schedule": {
+    "tippetuppen.schedule": {
       "name": "schedule",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "game": {
           "name": "game",
@@ -1466,6 +1478,7 @@
           "name": "schedule_puzzle_id_puzzles_id_fk",
           "tableFrom": "schedule",
           "tableTo": "puzzles",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "puzzle_id"
           ],
@@ -1490,9 +1503,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.season_entries": {
+    "tippetuppen.season_entries": {
       "name": "season_entries",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1559,6 +1572,7 @@
           "name": "season_entries_season_id_seasons_id_fk",
           "tableFrom": "season_entries",
           "tableTo": "seasons",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "season_id"
           ],
@@ -1572,6 +1586,7 @@
           "name": "season_entries_club_id_clubs_id_fk",
           "tableFrom": "season_entries",
           "tableTo": "clubs",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "club_id"
           ],
@@ -1588,9 +1603,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.seasons": {
+    "tippetuppen.seasons": {
       "name": "seasons",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1643,6 +1658,7 @@
           "name": "seasons_competition_id_competitions_id_fk",
           "tableFrom": "seasons",
           "tableTo": "competitions",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "competition_id"
           ],
@@ -1659,9 +1675,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.settings": {
+    "tippetuppen.settings": {
       "name": "settings",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "key": {
           "name": "key",
@@ -1684,9 +1700,9 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.squad_members": {
+    "tippetuppen.squad_members": {
       "name": "squad_members",
-      "schema": "",
+      "schema": "tippetuppen",
       "columns": {
         "id": {
           "name": "id",
@@ -1754,6 +1770,7 @@
           "name": "squad_members_player_id_players_id_fk",
           "tableFrom": "squad_members",
           "tableTo": "players",
+          "schemaTo": "tippetuppen",
           "columnsFrom": [
             "player_id"
           ],
@@ -1772,7 +1789,9 @@
     }
   },
   "enums": {},
-  "schemas": {},
+  "schemas": {
+    "tippetuppen": "tippetuppen"
+  },
   "sequences": {},
   "roles": {},
   "policies": {},

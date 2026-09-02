@@ -15,9 +15,15 @@
 
 ## Første gangs oppsett i produksjon
 
-1. Opprett Postgres (Supabase). Legg inn `DATABASE_URL` i deploy-miljøet **og** lokalt i `.env` for seeding.
-2. `npm run db:migrate && npm run db:seed && npm run data:schedule -- --days 400`
-3. Deploy. Sjekk `/admin` → Oversikt: begge spill skal ha «I dag» og «I morgen».
+Databasen ligger i sitt eget Postgres-skjema (`tippetuppen`), så den kan dele instans med andre apper.
+
+**Uten terminal (anbefalt):**
+1. Sett miljøvariablene i deploy-miljøet (minst `DATABASE_URL`, `ADMIN_PASSWORD`, `ADMIN_SESSION_SECRET`, `ANALYTICS_SALT`, `NEXT_PUBLIC_SITE_URL`).
+2. Kjør migrasjonene én gang mot databasen (SQL-en ligger i `drizzle/0000_init.sql`; kan limes inn i Supabase SQL Editor).
+3. Deploy. Logg inn på `/admin` og trykk **«Last inn kildedata + planlegg»**. Den leser `data/source/*.json`, fyller databasen og planlegger 400 dager.
+4. Sjekk Oversikt: begge spill skal ha «I dag» og «I morgen».
+
+**Med terminal:** `npm run db:migrate && npm run db:seed && npm run data:schedule -- --days 400`, så deploy.
 4. AdSense: legg til nettstedet i AdSense, aktiver «Privacy & messaging» (EU-melding), sett `NEXT_PUBLIC_ADSENSE_CLIENT` og `NEXT_PUBLIC_CMP=funding-choices`, opprett annonseenheter og legg inn slot-ID-ene.
 
 ## Daglig drift

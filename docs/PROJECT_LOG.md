@@ -2,6 +2,12 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-02 – Produksjonsdatabase og førstegangsoppsett
+
+- **Supabase:** gjenbruker prosjektet `dommer` (eier valgte dette framfor nytt prosjekt). Prosjektet er gjenopprettet fra pause.
+- **Skjema-isolasjon:** alle Tippetuppen-tabeller flyttet til Postgres-skjemaet `tippetuppen`, slik at de ikke kolliderer med dommer-tabellene (`clubs` og `matches` fantes fra før i `public`). Migrasjonen er kjørt mot Supabase, og Drizzle-journalen er registrert slik at `db:migrate` ikke kjører den på nytt.
+- **Førstegangsoppsett uten terminal:** seed-logikken er flyttet til `src/server/seed.ts` og eksponert som en admin-handling («Last inn kildedata + planlegg»). `outputFileTracingIncludes` sørger for at `data/source` følger med serverbunten. Eieren trenger derfor ikke kjøre kommandoer for å fylle databasen.
+
 ## 2026-09-01 – Første byggeøkt (autonom)
 
 ### Beslutninger

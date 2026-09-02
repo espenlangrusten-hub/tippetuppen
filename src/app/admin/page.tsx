@@ -5,7 +5,7 @@ import { getScheduled } from "@/server/queries";
 import { runwayFor, getRotationPolicy } from "@/server/puzzles/scheduler";
 import { summary } from "@/server/analytics";
 import { osloDateKey, addDays } from "@/lib/dates";
-import { regenerate, setRotationPolicy, logout } from "./actions";
+import { regenerate, seedAndSchedule, setRotationPolicy, logout } from "./actions";
 import { DATA_STATUSES } from "@/db/schema";
 import { sql } from "drizzle-orm";
 
@@ -107,6 +107,9 @@ export default async function Page() {
           </form>
           <form action={regenClear}>
             <button className="btn btn-secondary">Regenerer og nullstill ulåst framtid</button>
+          </form>
+          <form action={seedAndSchedule}>
+            <button className="btn btn-primary">Last inn kildedata + planlegg (førstegangsoppsett)</button>
           </form>
         </div>
         <p className="mt-2 text-xs text-mist">Kampdata: {matchStatus.map((m) => `${m.status} ${m.n}`).join(" · ")}</p>

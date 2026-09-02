@@ -1,11 +1,13 @@
-CREATE TABLE "admin_audit" (
+CREATE SCHEMA "tippetuppen";
+--> statement-breakpoint
+CREATE TABLE "tippetuppen"."admin_audit" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"ts" timestamp with time zone DEFAULT now() NOT NULL,
 	"action" text NOT NULL,
 	"details" jsonb DEFAULT '{}'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "appearances" (
+CREATE TABLE "tippetuppen"."appearances" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"match_id" text NOT NULL,
 	"player_id" text NOT NULL,
@@ -19,7 +21,7 @@ CREATE TABLE "appearances" (
 	"answer_key" text
 );
 --> statement-breakpoint
-CREATE TABLE "clubs" (
+CREATE TABLE "tippetuppen"."clubs" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"full_name" text NOT NULL,
@@ -30,13 +32,13 @@ CREATE TABLE "clubs" (
 	"sources" jsonb DEFAULT '[]'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "competitions" (
+CREATE TABLE "tippetuppen"."competitions" (
 	"id" text PRIMARY KEY NOT NULL,
 	"name" text NOT NULL,
 	"kind" text NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "events" (
+CREATE TABLE "tippetuppen"."events" (
 	"id" bigserial PRIMARY KEY NOT NULL,
 	"ts" timestamp with time zone DEFAULT now() NOT NULL,
 	"day" text NOT NULL,
@@ -49,7 +51,7 @@ CREATE TABLE "events" (
 	"props" jsonb DEFAULT '{}'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "goals" (
+CREATE TABLE "tippetuppen"."goals" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"match_id" text NOT NULL,
 	"team" text NOT NULL,
@@ -59,7 +61,7 @@ CREATE TABLE "goals" (
 	"kind" text DEFAULT 'goal' NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "honours" (
+CREATE TABLE "tippetuppen"."honours" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"kind" text NOT NULL,
 	"year" integer NOT NULL,
@@ -72,14 +74,14 @@ CREATE TABLE "honours" (
 	"sources" jsonb DEFAULT '[]'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "maalloes_answer_counts" (
+CREATE TABLE "tippetuppen"."maalloes_answer_counts" (
 	"puzzle_id" text NOT NULL,
 	"answer_id" text NOT NULL,
 	"count" integer DEFAULT 0 NOT NULL,
 	CONSTRAINT "maalloes_answer_counts_puzzle_id_answer_id_pk" PRIMARY KEY("puzzle_id","answer_id")
 );
 --> statement-breakpoint
-CREATE TABLE "matches" (
+CREATE TABLE "tippetuppen"."matches" (
 	"id" text PRIMARY KEY NOT NULL,
 	"date" text NOT NULL,
 	"competition_id" text NOT NULL,
@@ -103,7 +105,7 @@ CREATE TABLE "matches" (
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "player_aliases" (
+CREATE TABLE "tippetuppen"."player_aliases" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"player_id" text NOT NULL,
 	"alias" text NOT NULL,
@@ -112,7 +114,7 @@ CREATE TABLE "player_aliases" (
 	"source" text DEFAULT 'seed' NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "player_club_spells" (
+CREATE TABLE "tippetuppen"."player_club_spells" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"player_id" text NOT NULL,
 	"club_id" text NOT NULL,
@@ -122,7 +124,7 @@ CREATE TABLE "player_club_spells" (
 	"sources" jsonb DEFAULT '[]'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "players" (
+CREATE TABLE "tippetuppen"."players" (
 	"id" text PRIMARY KEY NOT NULL,
 	"full_name" text NOT NULL,
 	"display_name" text NOT NULL,
@@ -139,7 +141,7 @@ CREATE TABLE "players" (
 	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "puzzle_stats" (
+CREATE TABLE "tippetuppen"."puzzle_stats" (
 	"puzzle_id" text PRIMARY KEY NOT NULL,
 	"respondents" integer DEFAULT 0 NOT NULL,
 	"starts" integer DEFAULT 0 NOT NULL,
@@ -147,7 +149,7 @@ CREATE TABLE "puzzle_stats" (
 	"score_sum" integer DEFAULT 0 NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "puzzles" (
+CREATE TABLE "tippetuppen"."puzzles" (
 	"id" text PRIMARY KEY NOT NULL,
 	"game" text NOT NULL,
 	"kind" text NOT NULL,
@@ -164,7 +166,7 @@ CREATE TABLE "puzzles" (
 	"created_at" timestamp with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "schedule" (
+CREATE TABLE "tippetuppen"."schedule" (
 	"game" text NOT NULL,
 	"date" text NOT NULL,
 	"number" integer NOT NULL,
@@ -174,7 +176,7 @@ CREATE TABLE "schedule" (
 	CONSTRAINT "schedule_game_date_pk" PRIMARY KEY("game","date")
 );
 --> statement-breakpoint
-CREATE TABLE "season_entries" (
+CREATE TABLE "tippetuppen"."season_entries" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"season_id" text NOT NULL,
 	"club_id" text NOT NULL,
@@ -183,7 +185,7 @@ CREATE TABLE "season_entries" (
 	"outcome" text
 );
 --> statement-breakpoint
-CREATE TABLE "seasons" (
+CREATE TABLE "tippetuppen"."seasons" (
 	"id" text PRIMARY KEY NOT NULL,
 	"competition_id" text NOT NULL,
 	"year" integer NOT NULL,
@@ -193,12 +195,12 @@ CREATE TABLE "seasons" (
 	"sources" jsonb DEFAULT '[]'::jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "settings" (
+CREATE TABLE "tippetuppen"."settings" (
 	"key" text PRIMARY KEY NOT NULL,
 	"value" jsonb NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE "squad_members" (
+CREATE TABLE "tippetuppen"."squad_members" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"tournament_id" text NOT NULL,
 	"player_id" text NOT NULL,
@@ -207,37 +209,37 @@ CREATE TABLE "squad_members" (
 	"status" text DEFAULT 'recall' NOT NULL
 );
 --> statement-breakpoint
-ALTER TABLE "appearances" ADD CONSTRAINT "appearances_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "public"."matches"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "appearances" ADD CONSTRAINT "appearances_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "goals" ADD CONSTRAINT "goals_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "public"."matches"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "goals" ADD CONSTRAINT "goals_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "honours" ADD CONSTRAINT "honours_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "public"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "honours" ADD CONSTRAINT "honours_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "maalloes_answer_counts" ADD CONSTRAINT "maalloes_answer_counts_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "public"."puzzles"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "matches" ADD CONSTRAINT "matches_competition_id_competitions_id_fk" FOREIGN KEY ("competition_id") REFERENCES "public"."competitions"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "player_aliases" ADD CONSTRAINT "player_aliases_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "player_club_spells" ADD CONSTRAINT "player_club_spells_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "player_club_spells" ADD CONSTRAINT "player_club_spells_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "public"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "puzzle_stats" ADD CONSTRAINT "puzzle_stats_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "public"."puzzles"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "schedule" ADD CONSTRAINT "schedule_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "public"."puzzles"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "season_entries" ADD CONSTRAINT "season_entries_season_id_seasons_id_fk" FOREIGN KEY ("season_id") REFERENCES "public"."seasons"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "season_entries" ADD CONSTRAINT "season_entries_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "public"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "seasons" ADD CONSTRAINT "seasons_competition_id_competitions_id_fk" FOREIGN KEY ("competition_id") REFERENCES "public"."competitions"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "squad_members" ADD CONSTRAINT "squad_members_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "public"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-CREATE UNIQUE INDEX "appearances_unique" ON "appearances" USING btree ("match_id","player_id");--> statement-breakpoint
-CREATE INDEX "appearances_match" ON "appearances" USING btree ("match_id");--> statement-breakpoint
-CREATE INDEX "events_day_name" ON "events" USING btree ("day","name");--> statement-breakpoint
-CREATE INDEX "events_visitor" ON "events" USING btree ("day","visitor");--> statement-breakpoint
-CREATE INDEX "goals_match" ON "goals" USING btree ("match_id");--> statement-breakpoint
-CREATE INDEX "honours_kind_year" ON "honours" USING btree ("kind","year");--> statement-breakpoint
-CREATE INDEX "matches_date" ON "matches" USING btree ("date");--> statement-breakpoint
-CREATE UNIQUE INDEX "player_aliases_unique" ON "player_aliases" USING btree ("player_id","normalized");--> statement-breakpoint
-CREATE INDEX "player_aliases_norm" ON "player_aliases" USING btree ("normalized");--> statement-breakpoint
-CREATE INDEX "spells_player" ON "player_club_spells" USING btree ("player_id");--> statement-breakpoint
-CREATE INDEX "spells_club" ON "player_club_spells" USING btree ("club_id");--> statement-breakpoint
-CREATE INDEX "puzzles_game" ON "puzzles" USING btree ("game");--> statement-breakpoint
-CREATE UNIQUE INDEX "puzzles_game_fp" ON "puzzles" USING btree ("game","fingerprint");--> statement-breakpoint
-CREATE UNIQUE INDEX "schedule_game_puzzle" ON "schedule" USING btree ("game","puzzle_id");--> statement-breakpoint
-CREATE UNIQUE INDEX "schedule_game_number" ON "schedule" USING btree ("game","number");--> statement-breakpoint
-CREATE UNIQUE INDEX "season_entries_unique" ON "season_entries" USING btree ("season_id","club_id");--> statement-breakpoint
-CREATE UNIQUE INDEX "squad_members_unique" ON "squad_members" USING btree ("tournament_id","player_id");
+ALTER TABLE "tippetuppen"."appearances" ADD CONSTRAINT "appearances_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "tippetuppen"."matches"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."appearances" ADD CONSTRAINT "appearances_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."goals" ADD CONSTRAINT "goals_match_id_matches_id_fk" FOREIGN KEY ("match_id") REFERENCES "tippetuppen"."matches"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."goals" ADD CONSTRAINT "goals_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."honours" ADD CONSTRAINT "honours_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "tippetuppen"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."honours" ADD CONSTRAINT "honours_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."maalloes_answer_counts" ADD CONSTRAINT "maalloes_answer_counts_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "tippetuppen"."puzzles"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."matches" ADD CONSTRAINT "matches_competition_id_competitions_id_fk" FOREIGN KEY ("competition_id") REFERENCES "tippetuppen"."competitions"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."player_aliases" ADD CONSTRAINT "player_aliases_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."player_club_spells" ADD CONSTRAINT "player_club_spells_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."player_club_spells" ADD CONSTRAINT "player_club_spells_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "tippetuppen"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."puzzle_stats" ADD CONSTRAINT "puzzle_stats_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "tippetuppen"."puzzles"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."schedule" ADD CONSTRAINT "schedule_puzzle_id_puzzles_id_fk" FOREIGN KEY ("puzzle_id") REFERENCES "tippetuppen"."puzzles"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."season_entries" ADD CONSTRAINT "season_entries_season_id_seasons_id_fk" FOREIGN KEY ("season_id") REFERENCES "tippetuppen"."seasons"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."season_entries" ADD CONSTRAINT "season_entries_club_id_clubs_id_fk" FOREIGN KEY ("club_id") REFERENCES "tippetuppen"."clubs"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."seasons" ADD CONSTRAINT "seasons_competition_id_competitions_id_fk" FOREIGN KEY ("competition_id") REFERENCES "tippetuppen"."competitions"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "tippetuppen"."squad_members" ADD CONSTRAINT "squad_members_player_id_players_id_fk" FOREIGN KEY ("player_id") REFERENCES "tippetuppen"."players"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+CREATE UNIQUE INDEX "appearances_unique" ON "tippetuppen"."appearances" USING btree ("match_id","player_id");--> statement-breakpoint
+CREATE INDEX "appearances_match" ON "tippetuppen"."appearances" USING btree ("match_id");--> statement-breakpoint
+CREATE INDEX "events_day_name" ON "tippetuppen"."events" USING btree ("day","name");--> statement-breakpoint
+CREATE INDEX "events_visitor" ON "tippetuppen"."events" USING btree ("day","visitor");--> statement-breakpoint
+CREATE INDEX "goals_match" ON "tippetuppen"."goals" USING btree ("match_id");--> statement-breakpoint
+CREATE INDEX "honours_kind_year" ON "tippetuppen"."honours" USING btree ("kind","year");--> statement-breakpoint
+CREATE INDEX "matches_date" ON "tippetuppen"."matches" USING btree ("date");--> statement-breakpoint
+CREATE UNIQUE INDEX "player_aliases_unique" ON "tippetuppen"."player_aliases" USING btree ("player_id","normalized");--> statement-breakpoint
+CREATE INDEX "player_aliases_norm" ON "tippetuppen"."player_aliases" USING btree ("normalized");--> statement-breakpoint
+CREATE INDEX "spells_player" ON "tippetuppen"."player_club_spells" USING btree ("player_id");--> statement-breakpoint
+CREATE INDEX "spells_club" ON "tippetuppen"."player_club_spells" USING btree ("club_id");--> statement-breakpoint
+CREATE INDEX "puzzles_game" ON "tippetuppen"."puzzles" USING btree ("game");--> statement-breakpoint
+CREATE INDEX "puzzles_game_fp" ON "tippetuppen"."puzzles" USING btree ("game","fingerprint");--> statement-breakpoint
+CREATE UNIQUE INDEX "schedule_game_puzzle" ON "tippetuppen"."schedule" USING btree ("game","puzzle_id");--> statement-breakpoint
+CREATE UNIQUE INDEX "schedule_game_number" ON "tippetuppen"."schedule" USING btree ("game","number");--> statement-breakpoint
+CREATE UNIQUE INDEX "season_entries_unique" ON "tippetuppen"."season_entries" USING btree ("season_id","club_id");--> statement-breakpoint
+CREATE UNIQUE INDEX "squad_members_unique" ON "tippetuppen"."squad_members" USING btree ("tournament_id","player_id");

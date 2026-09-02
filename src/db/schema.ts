@@ -1,5 +1,5 @@
 import {
-  pgTable,
+  pgSchema,
   text,
   integer,
   boolean,
@@ -12,6 +12,9 @@ import {
   uniqueIndex,
   index,
 } from "drizzle-orm/pg-core";
+
+/** All Tippetuppen tables live in their own schema so the app can share a Postgres instance with other apps. */
+export const tt = pgSchema("tippetuppen");
 
 /**
  * Data-confidence model. Only `verified` and `single_source` records enter the
@@ -32,7 +35,7 @@ export type SourceRef = { url?: string; title: string; kind: "web" | "book" | "e
 // Reference entities
 // ---------------------------------------------------------------------------
 
-export const players = pgTable("players", {
+export const players = tt.table("players", {
   id: text("id").primaryKey(), // slug, e.g. "ole-gunnar-solskjaer"
   fullName: text("full_name").notNull(),
   displayName: text("display_name").notNull(), // as shown to users
@@ -49,7 +52,7 @@ export const players = pgTable("players", {
   updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
-export const playerAliases = pgTable(
+export const playerAliases = tt.table(
   "player_aliases",
   {
     id: serial("id").primaryKey(),
@@ -62,7 +65,7 @@ export const playerAliases = pgTable(
   (t) => [uniqueIndex("player_aliases_unique").on(t.playerId, t.normalized), index("player_aliases_norm").on(t.normalized)],
 );
 
-export const clubs = pgTable("clubs", {
+export const clubs = tt.table("clubs", {
   id: text("id").primaryKey(), // slug "rosenborg"
   name: text("name").notNull(), // "Rosenborg"
   fullName: text("full_name").notNull(), // "Rosenborg BK"
@@ -73,7 +76,7 @@ export const clubs = pgTable("clubs", {
   sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
 });
 
-export const competitions = pgTable("competitions", {
+export const competitions = tt.table("competitions", {
   id: text("id").primaryKey(), // "world-cup", "eliteserien", "nm-cup"
   name: text("name").notNull(),
   kind: text("kind").notNull(), // tournament | qualifier | friendly | nations-league | league | cup
@@ -83,7 +86,7 @@ export const competitions = pgTable("competitions", {
 // Norway national team matches and lineups (Mangler XI)
 // ---------------------------------------------------------------------------
 
-export const matches = pgTable(
+export const matches = tt.table(
   "matches",
   {
     id: text("id").primaryKey(), // "1998-06-23-bra-nor"
@@ -114,7 +117,7 @@ export const matches = pgTable(
 export const POSITIONS = ["GK", "RB", "CB", "LB", "RWB", "LWB", "DM", "CM", "RM", "LM", "AM", "RW", "LW", "SS", "CF"] as const;
 export type Position = (typeof POSITIONS)[number];
 
-export const appearances = pgTable(
+export const appearances = tt.table(
   "appearances",
   {
     id: serial("id").primaryKey(),
@@ -132,7 +135,7 @@ export const appearances = pgTable(
   (t) => [uniqueIndex("appearances_unique").on(t.matchId, t.playerId), index("appearances_match").on(t.matchId)],
 );
 
-export const goals = pgTable(
+export const goals = tt.table(
   "goals",
   {
     id: serial("id").primaryKey(),
@@ -150,7 +153,7 @@ export const goals = pgTable(
 // Norwegian club football (Målløs)
 // ---------------------------------------------------------------------------
 
-export const seasons = pgTable("seasons", {
+export const seasons = tt.table("seasons", {
   id: text("id").primaryKey(), // "eliteserien-1995"
   competitionId: text("competition_id").notNull().references(() => competitions.id),
   year: integer("year").notNull(),
@@ -160,7 +163,7 @@ export const seasons = pgTable("seasons", {
   sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
 });
 
-export const seasonEntries = pgTable(
+export const seasonEntries = tt.table(
   "season_entries",
   {
     id: serial("id").primaryKey(),
@@ -174,7 +177,7 @@ export const seasonEntries = pgTable(
 );
 
 /** Generic honours: league titles, cup wins, top scorers, awards, managers. */
-export const honours = pgTable(
+export const honours = tt.table(
   "honours",
   {
     id: serial("id").primaryKey(),
@@ -192,7 +195,7 @@ export const honours = pgTable(
 );
 
 /** Tournament squads (e.g. "wc-1998"). */
-export const squadMembers = pgTable(
+export const squadMembers = tt.table(
   "squad_members",
   {
     id: serial("id").primaryKey(),
@@ -206,7 +209,7 @@ export const squadMembers = pgTable(
 );
 
 /** Player–club spells, used for "played for X" style questions. */
-export const playerClubSpells = pgTable(
+export const playerClubSpells = tt.table(
   "player_club_spells",
   {
     id: serial("id").primaryKey(),
@@ -227,7 +230,7 @@ export const playerClubSpells = pgTable(
 export const GAMES = ["mangler-xi", "maalloes"] as const;
 export type GameId = (typeof GAMES)[number];
 
-export const puzzles = pgTable(
+export const puzzles = tt.table(
   "puzzles",
   {
     id: text("id").primaryKey(),
@@ -248,7 +251,7 @@ export const puzzles = pgTable(
   (t) => [index("puzzles_game").on(t.game), index("puzzles_game_fp").on(t.game, t.fingerprint)],
 );
 
-export const schedule = pgTable(
+export const schedule = tt.table(
   "schedule",
   {
     game: text("game").$type<GameId>().notNull(),
@@ -265,7 +268,7 @@ export const schedule = pgTable(
 // Live state: Målløs crowd answers, analytics, admin
 // ---------------------------------------------------------------------------
 
-export const maalloesAnswerCounts = pgTable(
+export const maalloesAnswerCounts = tt.table(
   "maalloes_answer_counts",
   {
     puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
@@ -275,7 +278,7 @@ export const maalloesAnswerCounts = pgTable(
   (t) => [primaryKey({ columns: [t.puzzleId, t.answerId] })],
 );
 
-export const puzzleStats = pgTable("puzzle_stats", {
+export const puzzleStats = tt.table("puzzle_stats", {
   puzzleId: text("puzzle_id").primaryKey().references(() => puzzles.id, { onDelete: "cascade" }),
   respondents: integer("respondents").notNull().default(0), // Målløs: completed submissions
   starts: integer("starts").notNull().default(0),
@@ -283,7 +286,7 @@ export const puzzleStats = pgTable("puzzle_stats", {
   scoreSum: integer("score_sum").notNull().default(0),
 });
 
-export const events = pgTable(
+export const events = tt.table(
   "events",
   {
     id: bigserial("id", { mode: "number" }).primaryKey(),
@@ -300,14 +303,14 @@ export const events = pgTable(
   (t) => [index("events_day_name").on(t.day, t.name), index("events_visitor").on(t.day, t.visitor)],
 );
 
-export const adminAudit = pgTable("admin_audit", {
+export const adminAudit = tt.table("admin_audit", {
   id: serial("id").primaryKey(),
   ts: timestamp("ts", { withTimezone: true }).notNull().defaultNow(),
   action: text("action").notNull(),
   details: jsonb("details").$type<Record<string, unknown>>().notNull().default({}),
 });
 
-export const settings = pgTable("settings", {
+export const settings = tt.table("settings", {
   key: text("key").primaryKey(),
   value: jsonb("value").$type<unknown>().notNull(),
 });

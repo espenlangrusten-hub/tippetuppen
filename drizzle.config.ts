@@ -4,5 +4,6 @@ export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./drizzle",
   dialect: "postgresql",
+  schemaFilter: ["tippetuppen"],
   dbCredentials: { url: process.env.DATABASE_URL ?? "postgres://localhost/unused" },
 });
