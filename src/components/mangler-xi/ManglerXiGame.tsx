@@ -393,16 +393,28 @@ function composeDisplay(typed: string, wordLengths: number[]) {
 
 function TileRow({ letters, states, small, activeIndex, hint }: { letters: string; states: TileState[] | null; small?: boolean; activeIndex?: number; hint?: string }) {
   let letterIdx = 0;
+  // Scale the tiles down so the whole answer fits the screen: an eleven-letter
+  // name at full size is wider than a phone, which used to push the last letters
+  // off the edge where they could not be seen.
+  const n = letters.length;
+  const gap = small ? 0.125 : 0.25;
+  const cap = small ? "1.5rem" : "2.35rem";
+  const style = {
+    "--tile-w": `min(${cap}, calc((100vw - 1.5rem - ${((n - 1) * gap).toFixed(3)}rem) / ${n}))`,
+  } as React.CSSProperties;
   return (
-    <div className={`flex ${small ? "gap-0.5" : "gap-1"}`} aria-label={states ? `Forsøk: ${letters}` : "Ditt forsøk"}>
+    <div className={`flex ${small ? "gap-0.5" : "gap-1"}`} style={style} aria-label={states ? `Forsøk: ${letters}` : "Ditt forsøk"}>
       {letters.split("").map((c, i) => {
-        if (c === " ") return <div key={i} className={`tile tile-space ${small ? "!h-6" : ""}`} />;
+        if (c === " ") return <div key={i} className="tile tile-space" />;
         const st = states?.[i];
         const isCursor = activeIndex != null && letterIdx === activeIndex;
         const isHint = hint && letterIdx === 0 && !states;
         letterIdx++;
         return (
-          <div key={i} className={`tile ${st ? `tile-${st}` : ""} ${isCursor ? "tile-active" : ""} ${isHint ? "tile-correct" : ""} ${small ? "!h-6 !w-6 !text-sm" : ""} ${c !== "·" && !states ? "tile-pop" : ""}`}>
+          <div
+            key={i}
+            className={`tile ${st ? `tile-${st}` : ""} ${isCursor ? "tile-active" : ""} ${isHint ? "tile-correct" : ""} ${c !== "·" && !states ? "tile-pop" : ""}`}
+          >
             {c === "·" ? "" : c}
           </div>
         );
