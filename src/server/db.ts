@@ -22,7 +22,16 @@ async function open(): Promise<Handle> {
   }
   if (url) {
     const postgres = (await import("postgres")).default;
-    const client = postgres(url, { max: 5, prepare: false, idle_timeout: 20 });
+    // One connection is enough: the scripts are sequential. A bigger pool only risks
+    // stalling behind Supabase's transaction pooler. The timeouts turn a stuck
+    // connection into a clear error instead of a job that hangs for hours.
+    const client = postgres(url, {
+      max: Number(process.env.DB_POOL_MAX || 1),
+      prepare: false,
+      idle_timeout: 20,
+      connect_timeout: Number(process.env.DB_CONNECT_TIMEOUT || 30),
+      connection: { statement_timeout: Number(process.env.DB_STATEMENT_TIMEOUT_MS || 120_000) },
+    });
     return { db: drizzlePostgres(client, { schema }), kind: "postgres", close: () => client.end() };
   }
   const { PGlite } = await import("@electric-sql/pglite");

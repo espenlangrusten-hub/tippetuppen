@@ -106,18 +106,18 @@ function makePuzzle(opts: {
 const INTRO = "Fem svar. Jo færre andre som svarer det samme, jo bedre.";
 
 export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]> {
-  const [clubs, players, aliases, seasons, entries, honours, squads, matches, apps, goals] = await Promise.all([
-    db.select().from(s.clubs),
-    db.select().from(s.players),
-    db.select().from(s.playerAliases),
-    db.select().from(s.seasons),
-    db.select().from(s.seasonEntries),
-    db.select().from(s.honours),
-    db.select().from(s.squadMembers),
-    db.select().from(s.matches),
-    db.select().from(s.appearances),
-    db.select().from(s.goals),
-  ]);
+  // Sequential on purpose: a pooled connection (Supabase's transaction pooler) will
+  // stall if a burst of concurrent queries exceeds the pool, and these are cheap reads.
+  const clubs = await db.select().from(s.clubs);
+  const players = await db.select().from(s.players);
+  const aliases = await db.select().from(s.playerAliases);
+  const seasons = await db.select().from(s.seasons);
+  const entries = await db.select().from(s.seasonEntries);
+  const honours = await db.select().from(s.honours);
+  const squads = await db.select().from(s.squadMembers);
+  const matches = await db.select().from(s.matches);
+  const apps = await db.select().from(s.appearances);
+  const goals = await db.select().from(s.goals);
   const ctx: Ctx = {
     clubs: new Map(clubs.map((c) => [c.id, c])),
     players: new Map(players.map((p) => [p.id, p])),

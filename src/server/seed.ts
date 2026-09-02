@@ -47,16 +47,21 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
         updatedAt: new Date(),
       };
       await tx.insert(s.players).values(row).onConflictDoUpdate({ target: s.players.id, set: row });
-      // Seed aliases; keep admin-added aliases (source != 'seed').
-      await tx.delete(s.playerAliases).where(sql`${s.playerAliases.playerId} = ${p.id} and ${s.playerAliases.source} = 'seed'`);
-      const existing = await tx.select({ n: s.playerAliases.normalized }).from(s.playerAliases).where(eq(s.playerAliases.playerId, p.id));
-      const have = new Set(existing.map((e) => e.n));
-      const rows = p.aliases
-        .map((a) => ({ playerId: p.id, alias: a.alias, normalized: normalizeName(a.alias), kind: a.kind, source: "seed" }))
-        .filter((r) => r.normalized && !have.has(r.normalized));
-      if (rows.length) await tx.insert(s.playerAliases).values(rows);
     }
-  
+
+    // Aliases are rebuilt in bulk rather than per player: three round trips each is
+    // fine against an embedded database but painfully slow over a network connection.
+    // Admin-added aliases (source != 'seed') are preserved.
+    await tx.delete(s.playerAliases).where(eq(s.playerAliases.source, "seed"));
+    const kept = await tx.select({ playerId: s.playerAliases.playerId, n: s.playerAliases.normalized }).from(s.playerAliases);
+    const keptKeys = new Set(kept.map((k) => `${k.playerId}|${k.n}`));
+    const aliasRows = [...ds.players.values()].flatMap((p) =>
+      p.aliases
+        .map((a) => ({ playerId: p.id, alias: a.alias, normalized: normalizeName(a.alias), kind: a.kind, source: "seed" }))
+        .filter((r) => r.normalized && !keptKeys.has(`${r.playerId}|${r.normalized}`)),
+    );
+    for (let i = 0; i < aliasRows.length; i += 500) await tx.insert(s.playerAliases).values(aliasRows.slice(i, i + 500));
+
     for (const m of ds.matches) {
       const row = {
         id: m.id,

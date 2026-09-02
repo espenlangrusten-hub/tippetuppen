@@ -28,6 +28,7 @@ jobs:
   preflight:
     name: Check configuration
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Required secrets and variables are present
         run: |
@@ -48,6 +49,7 @@ jobs:
     name: Deploy Edge Function
     needs: preflight
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: supabase/setup-cli@v1
@@ -62,6 +64,7 @@ jobs:
     name: Build and publish site
     needs: preflight
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
