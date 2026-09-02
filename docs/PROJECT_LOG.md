@@ -2,6 +2,20 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-02 (kveld) – Arkitekturskifte: bare GitHub og Supabase
+
+Eieren vil ikke bruke Vercel eller andre leverandører. GitHub Pages serverer bare statiske filer, og det kolliderer med at fasiten aldri skal ligge i nettleseren. Løsningen:
+
+- **Statisk nettsted** på GitHub Pages (`output: "export"`, `basePath` styrt av miljøvariabel).
+- **Supabase Edge Function** (`supabase/functions/api`, Deno) eier all logikk som ser fasiten: maskerte puslespill, gjettevurdering, hint, Målløs-poeng og innsending, anonym statistikk og admin-rutene bak `ADMIN_KEY`.
+- **GitHub Actions** er «serveren» for data: `data.yml` importerer `data/source` og forlenger dagsplanen, ukentlig og på knappetrykk.
+- **Delt regel-kode:** `src/lib` kopieres til funksjonen av `scripts/sync-shared.ts`, og en test feiler hvis kopiene kommer ut av takt. Da kan ikke nettleseren og serveren regne ulikt.
+- **Admin** ble en klientkonsoll som autentiserer med en nøkkel i sessionStorage. Datarettinger gjøres i repoets JSON-filer, som gir versjonskontroll på kjøpet.
+
+Verifisert lokalt ved å kjøre PGlite over Postgres-protokollen, funksjonen under Deno og den statiske eksporten samtidig; Playwright spiller begge spillene gjennom hele stacken.
+
+Merk: repoet må gjøres offentlig for at GitHub Pages skal være gratis.
+
 ## 2026-09-02 – Produksjonsdatabase og førstegangsoppsett
 
 - **Supabase:** gjenbruker prosjektet `dommer` (eier valgte dette framfor nytt prosjekt). Prosjektet er gjenopprettet fra pause.

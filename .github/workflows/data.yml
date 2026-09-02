@@ -1,0 +1,52 @@
+name: Oppdater data
+
+# Applies the football data in data/source to the database and keeps the daily
+# schedule topped up. This is the project's "server": there is no other process
+# that writes puzzles.
+#
+# Requires secrets.DATABASE_URL (Supabase → Settings → Database → Transaction pooler).
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days of schedule to keep filled"
+        default: "400"
+        required: false
+      reseed:
+        description: "Also re-import data/source into the database"
+        type: boolean
+        default: true
+  schedule:
+    # 03:15 UTC every Monday: tops the schedule up long before it can run out.
+    - cron: "15 3 * * 1"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate source data
+        run: npm run data:validate
+      - name: Apply migrations
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npm run db:migrate
+      - name: Seed source data
+        if: ${{ github.event_name == 'schedule' || inputs.reseed }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npm run db:seed
+      - name: Generate puzzles and extend the schedule
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npx tsx scripts/schedule.ts --days "${{ inputs.days || '400' }}"
+      - name: Content runway
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npm run data:runway
