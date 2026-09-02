@@ -45,6 +45,24 @@ jobs:
           fi
           echo "Configuration looks complete."
 
+      - name: Base path matches the site URL
+        run: |
+          url="${{ vars.NEXT_PUBLIC_SITE_URL }}"
+          base="${{ vars.NEXT_PUBLIC_BASE_PATH }}"
+          case "$url" in
+            *github.io*)
+              if [ -z "$base" ]; then
+                echo "::error::NEXT_PUBLIC_SITE_URL points at github.io, so NEXT_PUBLIC_BASE_PATH must be /<repo> (e.g. /tippetuppen)."
+                exit 1
+              fi ;;
+            *)
+              if [ -n "$base" ]; then
+                echo "::error::NEXT_PUBLIC_SITE_URL is a custom domain, so NEXT_PUBLIC_BASE_PATH must be empty. Delete the variable, otherwise every link and asset gets a /$base prefix that does not exist."
+                exit 1
+              fi ;;
+          esac
+          echo "Base path is consistent with the site URL."
+
   function:
     name: Deploy Edge Function
     needs: preflight

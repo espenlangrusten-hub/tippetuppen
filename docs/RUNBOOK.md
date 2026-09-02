@@ -57,14 +57,30 @@ Ingenting må gjøres daglig. Planen ligger i databasen, og **Oppdater data** kj
 - **Bytte ut eller skru av et puslespill:** åpne `/admin` på nettstedet, lim inn `ADMIN_KEY`, og bruk knappene. Endringer gjelder umiddelbart.
 - **Innholdsrekkevidde:** `/admin` viser hvor mange dager som er planlagt framover. Nærmer det seg 30, legg til flere kamper.
 
-## 5. Annonser (AdSense)
+## 5. Eget domene
+
+GitHub Pages støtter eget domene gratis, også med HTTPS.
+
+1. Kjøp domenet hos en registrar (Domeneshop, domene.no, Namecheap …).
+2. Hos registraren, sett DNS:
+   - **Toppdomene** (`tippetuppen.no`): fire A-poster til `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+   - **www**: én CNAME-post til `espenlangrusten-hub.github.io`.
+3. GitHub → Settings → Pages → *Custom domain* → skriv inn domenet → Save. Huk av **Enforce HTTPS** når sertifikatet er klart (kan ta en time).
+4. Endre GitHub-variablene:
+   - `NEXT_PUBLIC_SITE_URL` = `https://tippetuppen.no`
+   - `NEXT_PUBLIC_BASE_PATH` = **slett variabelen** (den skal være tom uten `github.io`)
+5. Kjør Deploy.
+
+Ved utrulling fra GitHub Actions trengs ingen CNAME-fil i repoet – GitHub ignorerer den og bruker innstillingen. Deploy stopper med en tydelig feilmelding hvis `NEXT_PUBLIC_BASE_PATH` og domenet ikke henger sammen.
+
+## 6. Annonser (AdSense)
 
 1. Legg til nettstedet i AdSense.
 2. Sett variabelen `NEXT_PUBLIC_ADSENSE_CLIENT` til `ca-pub-…` og deploy. Da genereres også `/ads.txt`, som Google krever. Sjekk at den svarer.
 3. Slå på «Privacy & messaging» i AdSense (Googles sertifiserte CMP, påkrevd for personlige annonser i EØS) og sett `NEXT_PUBLIC_CMP=funding-choices`.
 4. Etter godkjenning: opprett annonseenheter og legg slot-ID-ene i `NEXT_PUBLIC_ADSENSE_SLOT_*`.
 
-## 6. Feilsøking
+## 7. Feilsøking
 
 - **«Fikk ikke kontakt»** på spillsiden: Edge-funksjonen svarer ikke. Sjekk Supabase → Edge Functions → Logs, og at `NEXT_PUBLIC_API_URL` peker riktig.
 - **«Ikke klart ennå»:** ingen plan for dagens Oslo-dato. Kjør **Oppdater data**.
