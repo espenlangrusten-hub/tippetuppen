@@ -175,8 +175,9 @@ Deno.serve(async (req) => {
       const a = resolveAnswer(payload, text);
       if (!a) return json({ ok: false, reason: "unknown" });
       if (Array.isArray(taken) && taken.includes(a.id)) return json({ ok: false, reason: "duplicate", label: a.label });
-      const { counts: c, respondents } = await counts(puzzleId);
-      return json({ ok: true, id: a.id, label: a.label, score: scoreFor(a, c, respondents), fact: a.fact ?? null, respondents });
+      // Deliberately no score here: knowing how a guess did before the round is over
+      // would let a player steer the remaining four. Scores only exist in /submit.
+      return json({ ok: true, id: a.id, label: a.label });
     }
 
     if (req.method === "POST" && route === "/maalloes/submit") {

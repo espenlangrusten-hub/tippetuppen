@@ -11,7 +11,9 @@ import { useMidnightCountdown } from "@/hooks/useCountdown";
 import type { MaalloesPublic } from "@/lib/gameTypes";
 export type { MaalloesPublic };
 
-type Entry = { text: string; id: string | null; label: string | null; score: number; fact: string | null };
+// score and fact stay null until the round is over: the whole point of the game is
+// choosing five answers without knowing how the earlier ones did.
+type Entry = { text: string; id: string | null; label: string | null; score: number | null; fact: string | null };
 type Final = {
   scores: number[];
   total: number;
@@ -66,7 +68,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
     setBusy(true);
     try {
       if (!state.startedAt) track({ name: "game_start", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive });
-      const d = await apiPost<{ ok: boolean; reason?: string; id?: string; label?: string; score?: number; fact?: string | null }>("/maalloes/answer", {
+      const d = await apiPost<{ ok: boolean; reason?: string; id?: string; label?: string }>("/maalloes/answer", {
         puzzleId: puzzle.puzzleId,
         text: t,
         taken: state.entries.map((e) => e.id).filter(Boolean),
@@ -75,7 +77,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
         showToast(`${d.label} er allerede brukt`);
         return;
       }
-      const entry: Entry = d.ok ? { text: t, id: d.id!, label: d.label!, score: d.score!, fact: d.fact ?? null } : { text: t, id: null, label: null, score: 100, fact: null };
+      const entry: Entry = d.ok ? { text: t, id: d.id!, label: d.label!, score: null, fact: null } : { text: t, id: null, label: null, score: null, fact: null };
       const entries = [...state.entries, entry];
       setText("");
       const next: GameState = { ...state, entries, startedAt: state.startedAt ?? new Date().toISOString() };
@@ -85,7 +87,13 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
           answers: entries.map((e) => ({ id: e.id, text: e.text })),
         });
         if (f.ok) {
-          const done: GameState = { ...next, final: f, finishedAt: new Date().toISOString(), entries: entries.map((e, i) => ({ ...e, score: f.scores[i] })) };
+          // Everything is revealed at once, here.
+          const done: GameState = {
+            ...next,
+            final: f,
+            finishedAt: new Date().toISOString(),
+            entries: entries.map((e, i) => ({ ...e, score: f.scores[i], fact: f.board.find((b) => b.id === e.id)?.fact ?? null })),
+          };
           setState(done);
           addRecord("maalloes", { date: puzzle.date, completedAt: done.finishedAt!, score: f.total, won: f.tier.key !== "relegation", archive: isArchive });
           track({ name: "game_complete", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive, props: { total: f.total, tier: f.tier.key, shield: f.shield } });
@@ -94,8 +102,8 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
         }
       }
       setState(next);
-      if (!d.ok) showToast("Ikke et gyldig svar – 100 poeng");
-      else if (d.score === 0) showToast("MÅLLØS! Ingen andre har svart det 🥅");
+      if (!d.ok) showToast("Ikke et gyldig svar");
+      else showToast(`${d.label} – låst inn`);
       window.setTimeout(() => inputRef.current?.focus(), 0);
     } finally {
       setBusy(false);
@@ -179,7 +187,13 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
                       <div className="truncate font-semibold">{e.label ?? e.text}</div>
                       <div className="truncate text-xs text-mist">{e.label ? (e.fact ?? "") : "Ikke et gyldig svar"}</div>
                     </div>
-                    <span className={`rounded-lg px-2.5 py-1 font-display text-xl font-bold ${scoreColor(e.score)}`}>{e.score === 0 ? "MÅLLØS" : e.score}</span>
+                    {e.score == null ? (
+                      <span className="rounded-lg bg-ink-2 px-2.5 py-1 text-xs font-semibold text-mist" aria-label="Poeng vises når alle fem svar er gitt">
+                        🔒 Låst
+                      </span>
+                    ) : (
+                      <span className={`rounded-lg px-2.5 py-1 font-display text-xl font-bold ${scoreColor(e.score)}`}>{e.score === 0 ? "MÅLLØS" : e.score}</span>
+                    )}
                   </>
                 ) : (
                   <span className="text-sm text-fog">{i === state.entries.length ? "Ditt neste svar" : ""}</span>
@@ -213,7 +227,11 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
             </button>
           </form>
         )}
-        {!f && <p className="mt-2 text-xs text-fog">Etternavn holder for spillere. Svaret låses når du trykker Svar.</p>}
+        {!f && (
+          <p className="mt-2 text-xs text-fog">
+            Etternavn holder for spillere. Svaret låses når du trykker Svar, og poengene vises først når alle fem er gitt.
+          </p>
+        )}
       </div>
 
       {f && (
