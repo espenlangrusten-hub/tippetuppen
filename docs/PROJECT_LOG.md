@@ -61,4 +61,6 @@ Rapportert: lagoppstillingen på banen og draktnumrene stemte ikke med virkeligh
 
 **Nye regler i `validate-data`,** slik at dette ikke kan gjenoppstå: formasjonen må gå opp i elleve, banen som tegnes må være lik den oppgitte formasjonen, ingen forsvarer kan havne i en annen linje enn baklinjen (wingbacks unntatt – de hører til begge), en offensiv midtbanespiller kan ikke stå på spisslinjen (da er han hengende spiss), ingen duplikate eller delvise draktnumre, og samme spiller kan ikke ha to numre i kamper under ti dager fra hverandre. Alle seks er verifisert ved å innføre feilen i en kopi av datasettet. `tests/pitch.test.ts` låser formasjonene som var feil.
 
+**Planleggeren slipper nedgraderte kamper.** `extendSchedule` beholdt eksisterende dager, så en kamp som ble nedgradert etter at den var satt opp ble servert likevel – en datarettelse hadde altså ingen effekt på dager som allerede var fylt. Nå fjernes de, og resten av den ulåste fremtiden bygges om bak dem så det ikke blir hull i kalenderen. Låste dager røres ikke. Verifisert: 1994-kampen lå på 20.09.2026, forsvant ved nedgradering, og kalenderen ble 43 sammenhengende dager uten hull.
+
 **Rekkevidde etter endringen:** Mangler XI 42 dager (43 kvalifiserte kamper), Målløs 32 dager.

@@ -85,6 +85,16 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   const policy = await getRotationPolicy(db);
   const all = await db.select().from(s.puzzles).where(and(eq(s.puzzles.game, game), eq(s.puzzles.enabled, true), eq(s.puzzles.eligible, true)));
   const eligible = all.filter((p) => policy.statuses.includes(String((p.payload as { status?: string }).status ?? "verified")));
+
+  // A puzzle that has since been disabled or downgraded must leave the schedule, not
+  // just stop being picked: without this, correcting bad data has no effect on days
+  // that were already filled. Dropping only the bad day would leave the game with
+  // nothing to show on it, so the rest of the unlocked future is rebuilt behind it
+  // and closes the gap. Locked days are the editor's choice and stay put.
+  const eligibleIds = new Set(eligible.map((p) => p.id));
+  const future = await db.select().from(s.schedule).where(and(eq(s.schedule.game, game), gte(s.schedule.date, fromDate), eq(s.schedule.locked, false)));
+  if (future.some((e) => !eligibleIds.has(e.puzzleId))) await clearFutureSchedule(db, game, fromDate);
+
   const existing = await db.select().from(s.schedule).where(eq(s.schedule.game, game)).orderBy(asc(s.schedule.date));
   const used = new Set(existing.map((e) => e.puzzleId));
   const byDate = new Map(existing.map((e) => [e.date, e]));
