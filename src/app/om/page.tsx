@@ -13,9 +13,9 @@ export default function Page() {
         <b className="text-snow">Mangler XI</b> gir deg en ekte landskamp for Norges herrelandslag (1989–i dag). Du ser motstander, resultat og posisjoner – og skal finne alle elleve i startelleveren, bokstav for bokstav.
       </p>
       <p className="text-mist">
-        <b className="text-snow">Målløs</b> stiller ett spørsmål om norsk fotball. Du gir fem svar, og hvert svar får poeng etter hvor mange andre spillere som svarte det samme. Sjeldne svar er gull.
+        <b className="text-snow">Målløs</b> stiller ett spørsmål om norsk fotball. Du gir fem svar, og hvert svar får poeng etter hvor mange andre spillere som svarte det samme. Sjeldne svar er gull. Poengene holdes skjult til alle fem svarene er gitt, slik at ingen kan justere kursen underveis.
       </p>
-      <h2 className="font-display text-2xl font-bold uppertext">Data og kilder</h2>
+      <h2 className="font-display text-2xl font-bold uppercase">Data og kilder</h2>
       <p className="text-mist">
         Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/personvern" className="underline">kontaktinformasjonen</Link>.
       </p>
