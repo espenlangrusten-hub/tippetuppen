@@ -20,17 +20,17 @@
   ],
   "notes": "Haaland-hat-trick, og Norge sikret gruppeseier og opprykk til liga A.",
   "lineup": [
-    { "name": "Egil Selvik", "no": 12, "pos": "GK" },
-    { "name": "Marcus Holmgren Pedersen", "no": 2, "pos": "RB" },
-    { "name": "Stian Gregersen", "no": 3, "pos": "CB" },
-    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
-    { "name": "Julian Ryerson", "no": 14, "pos": "LB" },
-    { "name": "Kristian Thorstvedt", "no": 19, "pos": "DM" },
-    { "name": "Sander Berge", "no": 8, "pos": "DM" },
-    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
-    { "name": "Morten Thorsby", "no": 18, "pos": "AM" },
-    { "name": "Antonio Nusa", "no": 20, "pos": "LW" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+    { "name": "Egil Selvik", "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB" },
+    { "name": "Stian Gregersen", "pos": "CB" },
+    { "name": "Leo Østigård", "pos": "CB" },
+    { "name": "Julian Ryerson", "pos": "LB" },
+    { "name": "Kristian Thorstvedt", "pos": "DM" },
+    { "name": "Sander Berge", "pos": "DM" },
+    { "name": "Alexander Sørloth", "pos": "RW" },
+    { "name": "Morten Thorsby", "pos": "AM" },
+    { "name": "Antonio Nusa", "pos": "LW" },
+    { "name": "Erling Haaland", "pos": "CF", "captain": true }
   ],
   "goals": [
     { "team": "norway", "name": "Erling Haaland", "minute": 24 },

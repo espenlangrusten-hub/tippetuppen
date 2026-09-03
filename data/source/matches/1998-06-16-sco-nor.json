@@ -20,17 +20,17 @@
   ],
   "notes": "Tore André Flo ga Norge ledelsen rett etter pause før Craig Burley utlignet.",
   "lineup": [
-    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
-    { "name": "Henning Berg", "no": 4, "pos": "RB" },
-    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
-    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
-    { "name": "Ståle Solbakken", "no": 14, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
-    { "name": "Roar Strand", "no": 7, "pos": "CM" },
-    { "name": "Vidar Riseth", "no": 21, "pos": "LM" },
-    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+    { "name": "Frode Grodås", "pos": "GK" },
+    { "name": "Henning Berg", "pos": "RB" },
+    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Ronny Johnsen", "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Håvard Flo", "pos": "RM" },
+    { "name": "Ståle Solbakken", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM", "captain": true },
+    { "name": "Roar Strand", "pos": "CM" },
+    { "name": "Vidar Riseth", "pos": "LM" },
+    { "name": "Tore André Flo", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "Tore André Flo", "minute": 46 },

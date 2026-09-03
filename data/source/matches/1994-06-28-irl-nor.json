@@ -12,24 +12,24 @@
   "manager": "Egil Olsen",
   "importance": 3,
   "tags": ["vm"],
-  "status": "single_source",
+  "status": "uncertain",
   "sources": [
     { "url": "https://www.11v11.com/matches/republic-of-ireland-v-norway-28-june-1994-245151/", "title": "Republic of Ireland v Norway, 28 June 1994 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
     { "url": "http://www.planetworldcup.com/CUPS/1994/groupe_ire_v_nor.html", "title": "Planet World Cup – 1994 – Group E – Republic of Ireland v Norway", "kind": "web", "accessed": "2026-09-01" }
   ],
-  "notes": "0–0 var ikke nok: alle fire lag i gruppe E endte på fire poeng, og Norge røk ut på målforskjell.",
+  "notes": "0–0 var ikke nok: alle fire lag i gruppe E endte på fire poeng, og Norge røk ut på målforskjell. Posisjonene er usikre: kildene beskriver Egil Olsens 4-5-1 med Jostein Flo som bred høyreside, mens de registrerte rollene gir fem forsvarere og to spisser. Holdes utenfor rotasjon til oppstillingen er bekreftet.",
   "lineup": [
-    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
-    { "name": "Gunnar Halle", "no": 2, "pos": "RB" },
-    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
-    { "name": "Henning Berg", "no": 3, "pos": "CB" },
-    { "name": "Erland Johnsen", "no": 14, "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM" },
-    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "LM" },
-    { "name": "Jostein Flo", "no": 7, "pos": "RW" },
-    { "name": "Gøran Sørloth", "no": 9, "pos": "CF" }
+    { "name": "Erik Thorstvedt", "pos": "GK" },
+    { "name": "Gunnar Halle", "pos": "RB" },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
+    { "name": "Henning Berg", "pos": "CB" },
+    { "name": "Erland Johnsen", "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM" },
+    { "name": "Øyvind Leonhardsen", "pos": "LM" },
+    { "name": "Jostein Flo", "pos": "RW" },
+    { "name": "Gøran Sørloth", "pos": "CF" }
   ],
   "goals": []
 }

@@ -20,17 +20,17 @@
   ],
   "notes": "Haaland bommet på to straffer, men scoret hat-trick. To selvmål på ti minutter.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
-    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
-    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
-    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
-    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
-    { "name": "Oscar Bobb", "no": 11, "pos": "RM" },
-    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
-    { "name": "Sander Berge", "no": 8, "pos": "CM" },
-    { "name": "Antonio Nusa", "no": 20, "pos": "LM" },
-    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Julian Ryerson", "pos": "RB" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Torbjørn Heggem", "pos": "CB" },
+    { "name": "David Møller Wolfe", "pos": "LB" },
+    { "name": "Oscar Bobb", "pos": "RM" },
+    { "name": "Patrick Berg", "pos": "CM" },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Antonio Nusa", "pos": "LM" },
+    { "name": "Alexander Sørloth", "pos": "CF" },
+    { "name": "Erling Haaland", "pos": "CF", "captain": true }
   ],
   "goals": [
     { "team": "norway", "name": "Anan Khalaili", "minute": 18, "kind": "og" },

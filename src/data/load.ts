@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { slugify, defaultAliases, toTileString, normalizeName } from "@/lib/names";
+import { layoutPitch, parseFormation, positionKind } from "@/lib/pitch";
 import * as S from "./schema";
 import type { DataStatus, Position } from "@/db/schema";
 
@@ -153,6 +154,45 @@ export function loadDataset(): Dataset {
     if (m.status === "single_source" && m.sources.filter((s) => s.kind !== "editorial").length < 1)
       problems.push(`${m.id}: status single_source requires a documented source`);
 
+    // Shirt numbers are shown on the pitch, so they have to be a real set of numbers.
+    const numbered = starters.filter((s) => s.no != null);
+    const byNumber = new Map<number, string[]>();
+    for (const s of numbered) {
+      if (s.no! < 1 || s.no! > 30) problems.push(`${m.id}: implausible shirt number ${s.no} for ${s.name}`);
+      byNumber.set(s.no!, [...(byNumber.get(s.no!) ?? []), s.name]);
+    }
+    for (const [no, who] of byNumber) if (who.length > 1) problems.push(`${m.id}: shirt number ${no} used by ${who.join(" and ")}`);
+    if (numbered.length > 0 && numbered.length < starters.length)
+      problems.push(`${m.id}: ${starters.length - numbered.length} starter(s) without a shirt number while others have one`);
+
+    // The pitch is drawn from the formation, so a formation that does not describe
+    // this lineup would put players in lines they never played in.
+    if (m.formation) {
+      const outfield = starters.filter((s) => s.pos !== "GK").length;
+      const bands = parseFormation(m.formation, outfield);
+      if (!bands) {
+        problems.push(`${m.id}: formation "${m.formation}" does not describe ${outfield} outfield players`);
+      } else {
+        const rows = layoutPitch(starters.map((s, i) => ({ pos: s.pos, order: i })), m.formation).rows;
+        const shape = rows.slice(1).map((r) => r.length).join("-");
+        if (shape !== m.formation) problems.push(`${m.id}: formation "${m.formation}" but the pitch lays out as ${shape}`);
+        for (const row of rows.slice(1)) {
+          const pos = row.map((slot) => starters[slot.index].pos);
+          // A defender drawn outside the back line is the tell that the formation does
+          // not describe this lineup - "3-5-2" over four defenders pushes a full-back
+          // into midfield. Wing-backs are exempt: they belong to the back five's defence
+          // or the back three's midfield, so they sit with either.
+          const kinds = new Set(pos.map(positionKind).filter((k) => k !== "wingback"));
+          if (kinds.has("defence") && kinds.size > 1)
+            problems.push(`${m.id}: formation "${m.formation}" draws a defender in the same line as ${[...kinds].filter((k) => k !== "defence").join(" and ")} (${pos.join("/")})`);
+          // Someone level with the striker is a second striker, not an attacking midfielder;
+          // an AM in the front line means the formation and the positions disagree.
+          if (pos.includes("AM") && (pos.includes("CF") || pos.includes("SS")))
+            problems.push(`${m.id}: formation "${m.formation}" puts an AM in the forward line (${pos.join("/")}) – use SS, or a formation with a line behind the striker`);
+        }
+      }
+    }
+
     // Answer-key collisions: same surname tile string among starters → use initials.
     const tileCounts = new Map<string, number>();
     const starterPlayers = starters.map((s) => ensurePlayer(s.name));
@@ -206,6 +246,28 @@ export function loadDataset(): Dataset {
         ensurePlayer(g.name);
       }
       goals.push({ matchId: m.id, team: g.team, playerId, scorerName: g.scorer ?? (g.team === "norway" && g.kind === "og" ? g.name ?? null : null), minute: g.minute ?? null, kind: g.kind });
+    }
+  }
+
+  // A squad keeps its numbers for the whole international window, so the same player
+  // wearing two numbers days apart means at least one of them was never on a shirt.
+  const numberByPlayer = new Map<string, { date: string; no: number; match: string; name: string }[]>();
+  for (const m of matches) {
+    for (const st of m.lineup) {
+      if (st.no == null) continue;
+      const key = normalizeName(st.name);
+      numberByPlayer.set(key, [...(numberByPlayer.get(key) ?? []), { date: m.date, no: st.no, match: m.id, name: st.name }]);
+    }
+  }
+  const WINDOW_DAYS = 10;
+  for (const [, worn] of numberByPlayer) {
+    const sorted = worn.slice().sort((a, b) => a.date.localeCompare(b.date));
+    for (let i = 0; i < sorted.length - 1; i++) {
+      const a = sorted[i];
+      const b = sorted[i + 1];
+      const apart = (Date.parse(b.date) - Date.parse(a.date)) / 86_400_000;
+      if (apart <= WINDOW_DAYS && a.no !== b.no)
+        problems.push(`${b.match}: ${b.name} wears ${b.no}, but ${a.no} in ${a.match} ${Math.round(apart)} days earlier – one squad window, one number`);
     }
   }
 

@@ -20,17 +20,17 @@
   ],
   "notes": "Jo Inge Berget scoret og tvang fram Ćorlukas selvmål. Kroatias første tap i kvaliken.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
-    { "name": "Omar Elabdellaoui", "no": 2, "pos": "RB" },
-    { "name": "Even Hovland", "no": 5, "pos": "CB" },
-    { "name": "Vegard Forren", "no": 3, "pos": "CB" },
-    { "name": "Tom Høgli", "no": 17, "pos": "LB" },
-    { "name": "Jo Inge Berget", "no": 21, "pos": "RM" },
-    { "name": "Markus Henriksen", "no": 7, "pos": "CM" },
-    { "name": "Alexander Tettey", "no": 4, "pos": "CM" },
-    { "name": "Per Ciljan Skjelbred", "no": 15, "pos": "CM", "captain": true },
-    { "name": "Stefan Johansen", "no": 6, "pos": "LM" },
-    { "name": "Alexander Søderlund", "no": 9, "pos": "CF" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "pos": "RB" },
+    { "name": "Even Hovland", "pos": "CB" },
+    { "name": "Vegard Forren", "pos": "CB" },
+    { "name": "Tom Høgli", "pos": "LB" },
+    { "name": "Jo Inge Berget", "pos": "RM" },
+    { "name": "Markus Henriksen", "pos": "CM" },
+    { "name": "Alexander Tettey", "pos": "CM" },
+    { "name": "Per Ciljan Skjelbred", "pos": "CM", "captain": true },
+    { "name": "Stefan Johansen", "pos": "LM" },
+    { "name": "Alexander Søderlund", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "Jo Inge Berget", "minute": 51 },

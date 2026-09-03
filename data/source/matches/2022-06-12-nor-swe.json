@@ -20,17 +20,17 @@
   ],
   "notes": "Andre seier over Sverige på en uke. Haaland scoret to, Sørloth avgjorde.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
-    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
-    { "name": "Leo Østigård", "no": 15, "pos": "CB" },
-    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
-    { "name": "Fredrik Bjørkan", "no": 3, "pos": "LB" },
-    { "name": "Martin Ødegaard", "no": 10, "pos": "RM", "captain": true },
-    { "name": "Sander Berge", "no": 8, "pos": "CM" },
-    { "name": "Morten Thorsby", "no": 18, "pos": "CM" },
-    { "name": "Mats Møller Dæhli", "no": 20, "pos": "LM" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
-    { "name": "Alexander Sørloth", "no": 19, "pos": "CF" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Julian Ryerson", "pos": "RB" },
+    { "name": "Leo Østigård", "pos": "CB" },
+    { "name": "Stefan Strandberg", "pos": "CB" },
+    { "name": "Fredrik Bjørkan", "pos": "LB" },
+    { "name": "Martin Ødegaard", "pos": "RM", "captain": true },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Morten Thorsby", "pos": "CM" },
+    { "name": "Mats Møller Dæhli", "pos": "LM" },
+    { "name": "Erling Haaland", "pos": "CF" },
+    { "name": "Alexander Sørloth", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "Erling Haaland", "minute": 10 },

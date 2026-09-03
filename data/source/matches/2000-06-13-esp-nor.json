@@ -20,18 +20,18 @@
   ],
   "notes": "Iversens hodestøt etter Myhres lange utspark ga Norges eneste EM-seier noensinne.",
   "lineup": [
-    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
-    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
-    { "name": "Dan Eggen", "no": 4, "pos": "CB" },
-    { "name": "Bjørn Otto Bragstad", "no": 15, "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "RM" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Ståle Solbakken", "no": 14, "pos": "CM", "captain": true },
-    { "name": "Steffen Iversen", "no": 10, "pos": "LM" },
-    { "name": "Tore André Flo", "no": 9, "pos": "CF" },
-    { "name": "John Carew", "no": 11, "pos": "CF" }
+    { "name": "Thomas Myhre", "pos": "GK" },
+    { "name": "André Bergdølmo", "pos": "RB" },
+    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Bjørn Otto Bragstad", "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Ole Gunnar Solskjær", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Ståle Solbakken", "pos": "CM", "captain": true },
+    { "name": "Steffen Iversen", "pos": "LM" },
+    { "name": "Tore André Flo", "pos": "CF" },
+    { "name": "John Carew", "pos": "CF" }
   ],
-  "subs": [{ "name": "Eirik Bakke", "no": 8, "pos": "CM", "on": 61 }, { "name": "Roar Strand", "no": 7, "pos": "CM", "on": 82 }],
+  "subs": [{ "name": "Eirik Bakke", "pos": "CM", "on": 61 }, { "name": "Roar Strand", "pos": "CM", "on": 82 }],
   "goals": [{ "team": "norway", "name": "Steffen Iversen", "minute": 66 }]
 }

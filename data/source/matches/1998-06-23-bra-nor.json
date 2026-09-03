@@ -20,17 +20,17 @@
   ],
   "notes": "Norges største landslagsseier: regjerende verdensmester Brasil slått i Marseille, og Norge gikk videre fra gruppen.",
   "lineup": [
-    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
-    { "name": "Henning Berg", "no": 4, "pos": "RB" },
-    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
-    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
-    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "CM" },
-    { "name": "Vidar Riseth", "no": 21, "pos": "LM" },
-    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+    { "name": "Frode Grodås", "pos": "GK" },
+    { "name": "Henning Berg", "pos": "RB" },
+    { "name": "Ronny Johnsen", "pos": "CB" },
+    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Håvard Flo", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM", "captain": true },
+    { "name": "Øyvind Leonhardsen", "pos": "CM" },
+    { "name": "Vidar Riseth", "pos": "LM" },
+    { "name": "Tore André Flo", "pos": "CF" }
   ],
   "goals": [
     { "team": "opponent", "scorer": "Bebeto", "minute": 78 },

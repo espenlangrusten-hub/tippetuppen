@@ -1,30 +1,42 @@
 // GENERATED FILE – do not edit. Source: src/lib/<name>. Run `npm run sync:shared`.
 import type { Position } from "./positions.ts";
 
-/** Row index from the goalkeeper (0) towards the attack. */
-export function positionRow(pos: Position): number {
+/**
+ * How advanced a position is, from the team's own goal (0) to the opponent's (50).
+ *
+ * This is a ranking, not a row: how many lines a team plays in, and which players
+ * share one, depends on the formation. A winger is level with the striker in a
+ * 4-3-3 but behind him in a 4-2-3-1, so the rows come from the formation and this
+ * scale only decides who stands where within it.
+ */
+export function positionDepth(pos: Position): number {
   switch (pos) {
     case "GK":
       return 0;
-    case "RB":
     case "CB":
+      return 10;
+    case "RB":
     case "LB":
-      return 1;
+      return 12;
     case "RWB":
     case "LWB":
+      return 16;
     case "DM":
-      return 2;
-    case "RM":
+      return 20;
     case "CM":
+      return 30;
+    case "RM":
     case "LM":
-      return 3;
+      return 32;
     case "AM":
+      return 40;
     case "RW":
     case "LW":
+      return 44;
     case "SS":
-      return 4;
+      return 46;
     case "CF":
-      return 5;
+      return 50;
   }
 }
 
@@ -46,41 +58,89 @@ export function positionLateral(pos: Position): number {
   }
 }
 
+/** Which band of the pitch a position belongs to, used only when no formation is recorded. */
+function line(pos: Position): 0 | 1 | 2 | 3 {
+  const d = positionDepth(pos);
+  if (d === 0) return 0;
+  if (d < 20) return 1;
+  if (d < 40) return 2;
+  return 3;
+}
+
+/**
+ * Parse "4-3-3" into [4, 3, 3]. Returns null unless the bands are all positive and
+ * account for exactly `outfield` players, so a typo can never reshape the pitch.
+ */
+export function parseFormation(formation: string | null | undefined, outfield = 10): number[] | null {
+  if (!formation) return null;
+  const parts = formation.trim().split("-");
+  if (parts.length < 2 || parts.length > 5) return null;
+  const bands = parts.map((p) => Number(p));
+  if (bands.some((b) => !Number.isInteger(b) || b < 1 || b > 6)) return null;
+  if (bands.reduce((a, b) => a + b, 0) !== outfield) return null;
+  return bands;
+}
+
 export type PitchSlot = { index: number; row: number; col: number; cols: number };
 
 /**
- * Lay out 11 starters on the pitch as rows. Adjacent sparse rows are merged so
- * the lineup reads as a familiar formation (e.g. 4-5-1) even when position
- * detail is imperfect. Output rows are ordered from the goalkeeper upwards.
+ * Lay out a starting eleven as rows, goalkeeper first.
+ *
+ * The recorded formation decides the rows: its bands are filled from the back with
+ * the deepest-playing outfielders, so the pitch always shows the shape the match
+ * data claims. Without a usable formation the players fall back to defence /
+ * midfield / attack, which is coarse but never contradicts anything.
  */
-export function layoutPitch(players: { pos: Position; order: number }[]): { rows: PitchSlot[][] } {
-  const groups = new Map<number, { i: number; pos: Position; order: number }[]>();
-  players.forEach((p, i) => {
-    const r = positionRow(p.pos);
-    if (!groups.has(r)) groups.set(r, []);
-    groups.get(r)!.push({ i, pos: p.pos, order: p.order });
-  });
-  // Merge rows: keep GK alone; merge single-player rows (except CF line) into a neighbour.
-  const rowKeys = Array.from(groups.keys()).sort((a, b) => a - b);
-  const merged: { i: number; pos: Position; order: number }[][] = [];
-  for (const k of rowKeys) {
-    const g = groups.get(k)!;
-    if (k === 0 || merged.length === 0) {
-      merged.push(g);
-      continue;
+export function layoutPitch(players: { pos: Position; order: number }[], formation?: string | null): { rows: PitchSlot[][] } {
+  const indexed = players.map((p, i) => ({ i, pos: p.pos, order: p.order }));
+  const keepers = indexed.filter((p) => p.pos === "GK");
+  const outfield = indexed.filter((p) => p.pos !== "GK");
+
+  const ranked = outfield.slice().sort((a, b) => positionDepth(a.pos) - positionDepth(b.pos) || a.order - b.order);
+  const bands = parseFormation(formation, outfield.length);
+
+  let groups: (typeof ranked)[];
+  if (bands) {
+    groups = [];
+    let at = 0;
+    for (const size of bands) {
+      groups.push(ranked.slice(at, at + size));
+      at += size;
     }
-    const prev = merged[merged.length - 1];
-    const prevIsGk = merged.length === 1;
-    const shouldMerge = !prevIsGk && ((g.length === 1 && k !== 5 && prev.length < 5) || (prev.length === 1 && g.length < 5 && k !== 5 && positionRow(prev[0].pos) !== 1));
-    if (shouldMerge) merged[merged.length - 1] = prev.concat(g);
-    else merged.push(g);
+  } else {
+    const byLine = new Map<number, typeof ranked>();
+    for (const p of ranked) {
+      const l = line(p.pos);
+      if (!byLine.has(l)) byLine.set(l, []);
+      byLine.get(l)!.push(p);
+    }
+    groups = Array.from(byLine.keys())
+      .sort((a, b) => a - b)
+      .map((l) => byLine.get(l)!);
   }
-  const rows = merged.map((g) => {
-    const sorted = g
-      .slice()
-      .sort((a, b) => positionLateral(a.pos) - positionLateral(b.pos) || a.order - b.order);
-    return sorted.map((p, col) => ({ index: p.i, row: 0, col, cols: sorted.length }));
-  });
+
+  const rows = [keepers, ...groups]
+    .filter((g) => g.length > 0)
+    .map((g) => {
+      const sorted = g.slice().sort((a, b) => positionLateral(a.pos) - positionLateral(b.pos) || a.order - b.order);
+      return sorted.map((p, col) => ({ index: p.i, row: 0, col, cols: sorted.length }));
+    });
   rows.forEach((r, ri) => r.forEach((slot) => (slot.row = ri)));
   return { rows };
+}
+
+/**
+ * Coarse line a position belongs to, for sanity-checking a recorded formation.
+ *
+ * Wing-backs are their own kind because they legitimately belong to either line:
+ * a back three in a 3-5-2 has them in the midfield five, a back five has them in
+ * defence. Every other position belongs to exactly one line.
+ */
+export function positionKind(pos: Position): "keeper" | "defence" | "wingback" | "midfield" | "attack" {
+  if (pos === "RWB" || pos === "LWB") return "wingback";
+  const d = positionDepth(pos);
+  if (d === 0) return "keeper";
+  if (d < 20) return "defence";
+  if (d < 40) return "midfield";
+  return "attack";
 }

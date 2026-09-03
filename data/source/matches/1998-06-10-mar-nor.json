@@ -18,17 +18,17 @@
   ],
   "notes": "Norges åpningskamp i VM 1998. Chippo-selvmål og Dan Eggen sørget for 2–2.",
   "lineup": [
-    { "name": "Frode Grodås", "no": 1, "pos": "GK" },
-    { "name": "Henning Berg", "no": 4, "pos": "RB" },
-    { "name": "Dan Eggen", "no": 15, "pos": "CB" },
-    { "name": "Ronny Johnsen", "no": 3, "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Håvard Flo", "no": 17, "pos": "RM" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM", "captain": true },
-    { "name": "Øyvind Leonhardsen", "no": 8, "pos": "LM" },
-    { "name": "Ole Gunnar Solskjær", "no": 20, "pos": "CF" },
-    { "name": "Tore André Flo", "no": 9, "pos": "CF" }
+    { "name": "Frode Grodås", "pos": "GK" },
+    { "name": "Henning Berg", "pos": "RB" },
+    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Ronny Johnsen", "pos": "CB" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Håvard Flo", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM", "captain": true },
+    { "name": "Øyvind Leonhardsen", "pos": "LM" },
+    { "name": "Ole Gunnar Solskjær", "pos": "CF" },
+    { "name": "Tore André Flo", "pos": "CF" }
   ],
   "goals": [
     { "team": "opponent", "scorer": "Mustapha Hadji", "minute": 38 },

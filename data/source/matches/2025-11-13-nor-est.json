@@ -20,17 +20,17 @@
   ],
   "notes": "Fire mål på tolv minutter etter pause gjorde VM-plassen så godt som sikker.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
-    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
-    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
-    { "name": "Torbjørn Heggem", "no": 17, "pos": "CB" },
-    { "name": "David Møller Wolfe", "no": 5, "pos": "LB" },
-    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
-    { "name": "Sander Berge", "no": 8, "pos": "CM" },
-    { "name": "Morten Thorsby", "no": 18, "pos": "CM" },
-    { "name": "Alexander Sørloth", "no": 7, "pos": "RW" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
-    { "name": "Antonio Nusa", "no": 20, "pos": "LW" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Julian Ryerson", "pos": "RB" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Torbjørn Heggem", "pos": "CB" },
+    { "name": "David Møller Wolfe", "pos": "LB" },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Morten Thorsby", "pos": "CM" },
+    { "name": "Alexander Sørloth", "pos": "RW" },
+    { "name": "Erling Haaland", "pos": "CF" },
+    { "name": "Antonio Nusa", "pos": "LW" }
   ],
   "goals": [
     { "team": "norway", "name": "Alexander Sørloth", "minute": 50 },

@@ -20,17 +20,17 @@
   ],
   "notes": "Erling Haalands første mål for Norge, i en tom Ullevaal under pandemien.",
   "lineup": [
-    { "name": "Rune Almenning Jarstein", "no": 1, "pos": "GK" },
-    { "name": "Omar Elabdellaoui", "no": 2, "pos": "RB" },
-    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
-    { "name": "Tore Reginiussen", "no": 4, "pos": "CB" },
-    { "name": "Haitam Aleesami", "no": 5, "pos": "LB" },
-    { "name": "Morten Thorsby", "no": 18, "pos": "RM" },
-    { "name": "Mathias Normann", "no": 6, "pos": "CM" },
-    { "name": "Sander Berge", "no": 8, "pos": "CM" },
-    { "name": "Stefan Johansen", "no": 10, "pos": "LM", "captain": true },
-    { "name": "Erling Haaland", "no": 23, "pos": "CF" },
-    { "name": "Joshua King", "no": 7, "pos": "CF" }
+    { "name": "Rune Almenning Jarstein", "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "pos": "RB" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Tore Reginiussen", "pos": "CB" },
+    { "name": "Haitam Aleesami", "pos": "LB" },
+    { "name": "Morten Thorsby", "pos": "RM" },
+    { "name": "Mathias Normann", "pos": "CM" },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Stefan Johansen", "pos": "LM", "captain": true },
+    { "name": "Erling Haaland", "pos": "CF" },
+    { "name": "Joshua King", "pos": "CF" }
   ],
   "goals": [
     { "team": "opponent", "scorer": "Michael Gregoritsch", "minute": 35 },

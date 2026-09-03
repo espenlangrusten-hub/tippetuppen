@@ -20,17 +20,17 @@
   ],
   "notes": "Uten Haaland holdt Norge 0–0 til det 84. minutt bak lukkede dører i Rotterdam. VM-drømmen røk på tampen.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
-    { "name": "Marcus Holmgren Pedersen", "no": 22, "pos": "RB" },
-    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
-    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
-    { "name": "Birger Meling", "no": 5, "pos": "LB" },
-    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
-    { "name": "Morten Thorsby", "no": 2, "pos": "CM" },
-    { "name": "Mathias Normann", "no": 6, "pos": "CM" },
-    { "name": "Mohamed Elyounoussi", "no": 11, "pos": "RW" },
-    { "name": "Alexander Sørloth", "no": 9, "pos": "CF" },
-    { "name": "Ola Solbakken", "no": 17, "pos": "LW" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB" },
+    { "name": "Stefan Strandberg", "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "pos": "CB" },
+    { "name": "Birger Meling", "pos": "LB" },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true },
+    { "name": "Morten Thorsby", "pos": "CM" },
+    { "name": "Mathias Normann", "pos": "CM" },
+    { "name": "Mohamed Elyounoussi", "pos": "RW" },
+    { "name": "Alexander Sørloth", "pos": "CF" },
+    { "name": "Ola Solbakken", "pos": "LW" }
   ],
   "goals": [
     { "team": "opponent", "scorer": "Steven Bergwijn", "minute": 84 },

@@ -19,17 +19,17 @@
   ],
   "notes": "Drillos første kamp i comebacket – og Tysklands første tap på hjemmebane på 17 år. Grindheim scoret.",
   "lineup": [
-    { "name": "Rune Almenning Jarstein", "no": 12, "pos": "GK" },
-    { "name": "Tom Høgli", "no": 2, "pos": "RB" },
-    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
-    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
-    { "name": "Trond Erik Bertelsen", "no": 20, "pos": "LB" },
-    { "name": "Daniel Braaten", "no": 6, "pos": "RM" },
-    { "name": "Christian Grindheim", "no": 16, "pos": "CM" },
-    { "name": "Per Ciljan Skjelbred", "no": 8, "pos": "CM" },
-    { "name": "Martin Andresen", "no": 10, "pos": "CM" },
-    { "name": "John Arne Riise", "no": 7, "pos": "LM" },
-    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "CF" }
+    { "name": "Rune Almenning Jarstein", "pos": "GK" },
+    { "name": "Tom Høgli", "pos": "RB" },
+    { "name": "Brede Hangeland", "pos": "CB", "captain": true },
+    { "name": "Kjetil Wæhler", "pos": "CB" },
+    { "name": "Trond Erik Bertelsen", "pos": "LB" },
+    { "name": "Daniel Braaten", "pos": "RM" },
+    { "name": "Christian Grindheim", "pos": "CM" },
+    { "name": "Per Ciljan Skjelbred", "pos": "CM" },
+    { "name": "Martin Andresen", "pos": "CM" },
+    { "name": "John Arne Riise", "pos": "LM" },
+    { "name": "Morten Gamst Pedersen", "pos": "CF" }
   ],
   "goals": [{ "team": "norway", "name": "Christian Grindheim", "minute": 63 }]
 }

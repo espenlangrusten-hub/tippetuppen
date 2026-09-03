@@ -19,21 +19,21 @@
   ],
   "notes": "Målløst på Hampden foran 51 300. Hareides nest siste kvalikkamp som landslagssjef.",
   "lineup": [
-    { "name": "Jon Knudsen", "no": 1, "pos": "GK" },
-    { "name": "Jon Inge Høiland", "no": 2, "pos": "RB" },
-    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
-    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
-    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
-    { "name": "Bjørn Helge Riise", "no": 7, "pos": "RM", "off": 56 },
-    { "name": "Fredrik Winsnes", "no": 4, "pos": "CM" },
-    { "name": "Christian Grindheim", "no": 8, "pos": "CM" },
-    { "name": "Fredrik Strømstad", "no": 11, "pos": "LM", "off": 77 },
-    { "name": "Steffen Iversen", "no": 9, "pos": "CF" },
-    { "name": "John Carew", "no": 10, "pos": "CF" }
+    { "name": "Jon Knudsen", "pos": "GK" },
+    { "name": "Jon Inge Høiland", "pos": "RB" },
+    { "name": "Kjetil Wæhler", "pos": "CB" },
+    { "name": "Brede Hangeland", "pos": "CB", "captain": true },
+    { "name": "John Arne Riise", "pos": "LB" },
+    { "name": "Bjørn Helge Riise", "pos": "RM", "off": 56 },
+    { "name": "Fredrik Winsnes", "pos": "CM" },
+    { "name": "Christian Grindheim", "pos": "CM" },
+    { "name": "Fredrik Strømstad", "pos": "LM", "off": 77 },
+    { "name": "Steffen Iversen", "pos": "CF" },
+    { "name": "John Carew", "pos": "CF" }
   ],
   "subs": [
-    { "name": "Daniel Braaten", "no": 16, "pos": "RM", "on": 56, "for": "Bjørn Helge Riise" },
-    { "name": "Morten Gamst Pedersen", "no": 17, "pos": "LM", "on": 77, "for": "Fredrik Strømstad" }
+    { "name": "Daniel Braaten", "pos": "RM", "on": 56, "for": "Bjørn Helge Riise" },
+    { "name": "Morten Gamst Pedersen", "pos": "LM", "on": 77, "for": "Fredrik Strømstad" }
   ],
   "goals": []
 }

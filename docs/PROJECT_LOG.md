@@ -48,3 +48,17 @@ Merk: repoet må gjøres offentlig for at GitHub Pages skal være gratis.
 ### Milepæler
 - Pipeline: validering, seed, puslespillgenerering, planlegger med variasjonsstyring (oppstillingslikhet, motstander, tiår, vanskelighetsgrad), innholdsrekkevidde.
 - Mangler XI og Målløs spillbare ende-til-ende, arkiv, statistikk, deling, admin, analyse, samtykke, SEO-metadata.
+
+## Screening av posisjoner og draktnumre (2026-09-03)
+
+Rapportert: lagoppstillingen på banen og draktnumrene stemte ikke med virkeligheten, selv om elleveren var riktig. Screeningen bekreftet to uavhengige feil.
+
+**1. Banen tegnet feil formasjon (11 av 47 kamper).** `layoutPitch` plasserte hver posisjon i en fast rekke, uavhengig av formasjon. Det holder ikke: en ving står på linje med spissen i 4-3-3, men bak ham i 4-2-3-1. Følgen var at alle ni 4-3-3-kampene ble tegnet som 4-3-2-1 med vingene bak spissen, 3-5-2 ble 3-2-3-2, og 4-1-4-1 ble 5-4-1 med den defensive midtbanespilleren inne i forsvarsrekken. Rekkene bygges nå fra den registrerte formasjonen: båndene fylles bakfra med de dypest spillende, så banen viser alltid formasjonen kampdataene oppgir. Bekreftet mot ESPNs oppstilling for Italia–Norge 16.11.2025, som deler linjene nøyaktig slik banen nå tegner dem.
+
+**2. Draktnumrene var i stor grad gjettet.** Intern kontroll uten eksterne kilder: åtte spillere hadde forskjellig nummer i Estland (13.11.2025) og Italia (16.11.2025) – tre dager og én tropp fra hverandre, altså umulig. Totalt 18 spillere bar to numre innenfor samme kalenderår. Konfliktene lå nesten utelukkende i kamper der ingen kilde bekreftet numrene: 18 konflikter totalt, 3 blant de 14 kampene med bekreftede numre (og de tre er måneder fra hverandre, der omfordeling er normalt). Numrene er derfor fjernet fra de 33 kampene uten kildebekreftelse; drakten viser posisjonen i stedet. De 14 bekreftede beholdes.
+
+**3. To kamper rettet.** England–Norge 03.09.2014 var registrert som 4-4-2 mens rollene beskriver 4-5-1 (elleveren og numrene er bekreftet mot lagoppstillingene; posisjonene er tilordnet). Satt til 4-5-1. Irland–Norge 28.06.1994 er nedgradert til `uncertain` og ute av rotasjon: kildene beskriver Egil Olsens 4-5-1 med Jostein Flo bredt til høyre, mens de registrerte rollene gir fem forsvarere og to spisser.
+
+**Nye regler i `validate-data`,** slik at dette ikke kan gjenoppstå: formasjonen må gå opp i elleve, banen som tegnes må være lik den oppgitte formasjonen, ingen forsvarer kan havne i en annen linje enn baklinjen (wingbacks unntatt – de hører til begge), en offensiv midtbanespiller kan ikke stå på spisslinjen (da er han hengende spiss), ingen duplikate eller delvise draktnumre, og samme spiller kan ikke ha to numre i kamper under ti dager fra hverandre. Alle seks er verifisert ved å innføre feilen i en kopi av datasettet. `tests/pitch.test.ts` låser formasjonene som var feil.
+
+**Rekkevidde etter endringen:** Mangler XI 42 dager (43 kvalifiserte kamper), Målløs 32 dager.

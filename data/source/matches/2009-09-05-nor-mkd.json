@@ -20,17 +20,17 @@
   ],
   "notes": "Helstad og John Arne Riise scoret i Drillos VM-kvalik.",
   "lineup": [
-    { "name": "Jon Knudsen", "no": 1, "pos": "GK" },
-    { "name": "Jon Inge Høiland", "no": 2, "pos": "RB" },
-    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
-    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
-    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
-    { "name": "Bjørn Helge Riise", "no": 7, "pos": "RM" },
-    { "name": "Henning Hauger", "no": 4, "pos": "CM" },
-    { "name": "Christian Grindheim", "no": 8, "pos": "CM" },
-    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "LM" },
-    { "name": "Thorstein Helstad", "no": 9, "pos": "CF" },
-    { "name": "John Carew", "no": 10, "pos": "CF" }
+    { "name": "Jon Knudsen", "pos": "GK" },
+    { "name": "Jon Inge Høiland", "pos": "RB" },
+    { "name": "Kjetil Wæhler", "pos": "CB" },
+    { "name": "Brede Hangeland", "pos": "CB", "captain": true },
+    { "name": "John Arne Riise", "pos": "LB" },
+    { "name": "Bjørn Helge Riise", "pos": "RM" },
+    { "name": "Henning Hauger", "pos": "CM" },
+    { "name": "Christian Grindheim", "pos": "CM" },
+    { "name": "Morten Gamst Pedersen", "pos": "LM" },
+    { "name": "Thorstein Helstad", "pos": "CF" },
+    { "name": "John Carew", "pos": "CF" }
   ],
   "subs": [{ "name": "Fredrik Winsnes", "pos": "CM", "on": 71 }, { "name": "Morten Moldskred", "pos": "RM", "on": 76 }, { "name": "Daniel Braaten", "pos": "CF", "on": 84 }],
   "goals": [

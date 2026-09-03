@@ -19,17 +19,17 @@
   ],
   "notes": "Rekdal utlignet med et venstrebeinsskudd fra 20 meter på Wembley. Posisjonene i forsvaret er ikke kildebelagt i detalj.",
   "lineup": [
-    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
-    { "name": "Gunnar Halle", "no": 2, "pos": "RB" },
-    { "name": "Tore Pedersen", "no": 3, "pos": "CB" },
-    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
-    { "name": "Roger Nilsen", "no": 5, "pos": "LB" },
-    { "name": "Kåre Ingebrigtsen", "no": 7, "pos": "RM" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM" },
-    { "name": "Stig Inge Bjørnebye", "no": 11, "pos": "LM" },
-    { "name": "Jan Ove Jakobsen", "no": 8, "pos": "SS" },
-    { "name": "Gøran Sørloth", "no": 9, "pos": "CF" }
+    { "name": "Erik Thorstvedt", "pos": "GK" },
+    { "name": "Gunnar Halle", "pos": "RB" },
+    { "name": "Tore Pedersen", "pos": "CB" },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
+    { "name": "Roger Nilsen", "pos": "LB" },
+    { "name": "Kåre Ingebrigtsen", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LM" },
+    { "name": "Jan Ove Jakobsen", "pos": "SS" },
+    { "name": "Gøran Sørloth", "pos": "CF" }
   ],
   "goals": [
     { "team": "opponent", "scorer": "David Platt", "minute": 56 },

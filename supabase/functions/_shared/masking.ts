@@ -5,7 +5,10 @@ import type { ManglerXiPayload } from "./types.ts";
 
 export function maskManglerXi(p: { puzzleId: string; number: number; date: string; title: string; payload: ManglerXiPayload }) {
   const pl = p.payload;
-  const layout = layoutPitch(pl.players.map((x) => ({ pos: x.pos, order: x.order })));
+  const layout = layoutPitch(
+    pl.players.map((x) => ({ pos: x.pos, order: x.order })),
+    pl.formation,
+  );
   const slot = new Map<number, { row: number; col: number; cols: number }>();
   layout.rows.forEach((row) => row.forEach((s) => slot.set(s.index, { row: s.row, col: s.col, cols: s.cols })));
   return {

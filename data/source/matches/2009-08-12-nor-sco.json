@@ -20,17 +20,17 @@
   ],
   "notes": "Drillos største seier i comebacket som landslagssjef. Brødrene Riise startet sammen.",
   "lineup": [
-    { "name": "Jon Knudsen", "no": 1, "pos": "GK" },
-    { "name": "Tom Høgli", "no": 2, "pos": "RB" },
-    { "name": "Brede Hangeland", "no": 5, "pos": "CB", "captain": true },
-    { "name": "Kjetil Wæhler", "no": 3, "pos": "CB" },
-    { "name": "John Arne Riise", "no": 6, "pos": "LB" },
-    { "name": "Bjørn Helge Riise", "no": 7, "pos": "RM" },
-    { "name": "Christian Grindheim", "no": 16, "pos": "CM" },
-    { "name": "Magne Hoseth", "no": 8, "pos": "CM" },
-    { "name": "Erik Huseklepp", "no": 20, "pos": "CM" },
-    { "name": "Morten Gamst Pedersen", "no": 11, "pos": "LM" },
-    { "name": "John Carew", "no": 10, "pos": "CF" }
+    { "name": "Jon Knudsen", "pos": "GK" },
+    { "name": "Tom Høgli", "pos": "RB" },
+    { "name": "Brede Hangeland", "pos": "CB", "captain": true },
+    { "name": "Kjetil Wæhler", "pos": "CB" },
+    { "name": "John Arne Riise", "pos": "LB" },
+    { "name": "Bjørn Helge Riise", "pos": "RM" },
+    { "name": "Christian Grindheim", "pos": "CM" },
+    { "name": "Magne Hoseth", "pos": "CM" },
+    { "name": "Erik Huseklepp", "pos": "CM" },
+    { "name": "Morten Gamst Pedersen", "pos": "LM" },
+    { "name": "John Carew", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "John Arne Riise", "minute": 35 },

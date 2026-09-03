@@ -20,17 +20,17 @@
   ],
   "notes": "Tre mål før pause i regnet på Ullevaal. Sørloth, Nusa og Haaland senket Italia.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
-    { "name": "Julian Ryerson", "no": 2, "pos": "RB" },
-    { "name": "Kristoffer Ajer", "no": 5, "pos": "CB" },
-    { "name": "Torbjørn Heggem", "no": 15, "pos": "CB" },
-    { "name": "David Møller Wolfe", "no": 3, "pos": "LB" },
-    { "name": "Martin Ødegaard", "no": 10, "pos": "RM", "captain": true },
-    { "name": "Sander Berge", "no": 6, "pos": "CM" },
-    { "name": "Morten Thorsby", "no": 8, "pos": "CM" },
-    { "name": "Antonio Nusa", "no": 7, "pos": "LM" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
-    { "name": "Alexander Sørloth", "no": 11, "pos": "CF" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Julian Ryerson", "pos": "RB" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Torbjørn Heggem", "pos": "CB" },
+    { "name": "David Møller Wolfe", "pos": "LB" },
+    { "name": "Martin Ødegaard", "pos": "RM", "captain": true },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Morten Thorsby", "pos": "CM" },
+    { "name": "Antonio Nusa", "pos": "LM" },
+    { "name": "Erling Haaland", "pos": "CF" },
+    { "name": "Alexander Sørloth", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "Alexander Sørloth", "minute": 14 },

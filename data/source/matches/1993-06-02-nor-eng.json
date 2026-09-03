@@ -20,17 +20,17 @@
   ],
   "notes": "Seieren som i praksis sendte Norge til VM 1994 og England hjem. Leonhardsen og Bohinen scoret rett før og rett etter pause.",
   "lineup": [
-    { "name": "Erik Thorstvedt", "no": 1, "pos": "GK" },
-    { "name": "Gunnar Halle", "no": 2, "pos": "RB" },
-    { "name": "Tore Pedersen", "no": 3, "pos": "CB" },
-    { "name": "Rune Bratseth", "no": 4, "pos": "CB", "captain": true },
-    { "name": "Stig Inge Bjørnebye", "no": 5, "pos": "LB" },
-    { "name": "Jostein Flo", "no": 7, "pos": "RM" },
-    { "name": "Erik Mykland", "no": 6, "pos": "CM" },
-    { "name": "Kjetil Rekdal", "no": 10, "pos": "CM" },
-    { "name": "Lars Bohinen", "no": 8, "pos": "CM" },
-    { "name": "Øyvind Leonhardsen", "no": 11, "pos": "LM" },
-    { "name": "Jan Åge Fjørtoft", "no": 9, "pos": "CF" }
+    { "name": "Erik Thorstvedt", "pos": "GK" },
+    { "name": "Gunnar Halle", "pos": "RB" },
+    { "name": "Tore Pedersen", "pos": "CB" },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Jostein Flo", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM" },
+    { "name": "Lars Bohinen", "pos": "CM" },
+    { "name": "Øyvind Leonhardsen", "pos": "LM" },
+    { "name": "Jan Åge Fjørtoft", "pos": "CF" }
   ],
   "goals": [
     { "team": "norway", "name": "Øyvind Leonhardsen", "minute": 43 },

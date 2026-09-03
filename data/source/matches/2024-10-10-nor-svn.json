@@ -20,17 +20,17 @@
   ],
   "notes": "Kvelden Haaland passerte Jørgen Juves 87 år gamle rekord som Norges mestscorende.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
-    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
-    { "name": "Andreas Hanche-Olsen", "no": 21, "pos": "CB" },
-    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
-    { "name": "Julian Ryerson", "no": 14, "pos": "RWB" },
-    { "name": "David Møller Wolfe", "no": 5, "pos": "LWB" },
-    { "name": "Morten Thorsby", "no": 18, "pos": "CM" },
-    { "name": "Sander Berge", "no": 8, "pos": "CM" },
-    { "name": "Antonio Nusa", "no": 20, "pos": "CM" },
-    { "name": "Alexander Sørloth", "no": 7, "pos": "CF" },
-    { "name": "Erling Haaland", "no": 9, "pos": "CF", "captain": true }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Andreas Hanche-Olsen", "pos": "CB" },
+    { "name": "Leo Østigård", "pos": "CB" },
+    { "name": "Julian Ryerson", "pos": "RWB" },
+    { "name": "David Møller Wolfe", "pos": "LWB" },
+    { "name": "Morten Thorsby", "pos": "CM" },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Antonio Nusa", "pos": "CM" },
+    { "name": "Alexander Sørloth", "pos": "CF" },
+    { "name": "Erling Haaland", "pos": "CF", "captain": true }
   ],
   "goals": [
     { "team": "norway", "name": "Erling Haaland", "minute": 7 },
