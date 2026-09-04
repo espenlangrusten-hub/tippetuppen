@@ -56,6 +56,7 @@ Ingenting må gjøres daglig. Planen ligger i databasen, og **Oppdater data** kj
 - **Rette data:** endre JSON-filene i `data/source/`, push, kjør **Oppdater data**. Alt er versjonskontrollert.
 - **Bytte ut eller skru av et puslespill:** åpne `/admin` på nettstedet, lim inn `ADMIN_KEY`, og bruk knappene. Endringer gjelder umiddelbart.
 - **Innholdsrekkevidde:** `/admin` viser hvor mange dager som er planlagt framover. Nærmer det seg 30, legg til flere kamper.
+- **Besøkstall:** `/admin` viser sidevisninger, spill startet og fullført, delinger, fordeling per spill og de siste 30 dagene. Merk at besøkskoden roterer hver natt, med vilje – «besøkende» gjelder derfor bare den enkelte dagen og kan ikke summeres til et antall personer.
 
 ## 5. Eget domene
 

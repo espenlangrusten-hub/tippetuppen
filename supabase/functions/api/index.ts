@@ -15,6 +15,7 @@
  *   POST /maalloes/submit      lock in five answers, return the full board
  *   POST /events               anonymous analytics
  *   GET  /admin/overview       schedule + runway (requires x-admin-key)
+ *   GET  /admin/stats          anonymous traffic and completion figures (requires x-admin-key)
  *   POST /admin/replace        swap the puzzle on a date (requires x-admin-key)
  *   POST /admin/enable         enable/disable a puzzle (requires x-admin-key)
  */
@@ -240,6 +241,36 @@ Deno.serve(async (req) => {
             (select count(*) from tippetuppen.puzzles p where p.game = ${game} and p.enabled and p.eligible
                and not exists (select 1 from tippetuppen.schedule s where s.puzzle_id = p.id)) as unused`;
         return json({ ok: true, today, rows, runway: runway[0] });
+      }
+
+      if (req.method === "GET" && route === "/admin/stats") {
+        const days = Math.min(120, Math.max(7, Number(q.get("days") ?? 30)));
+        const from = addDays(today, -(days - 1));
+        // Sequential on purpose: the function holds one pooled connection, so a burst
+        // of concurrent queries would stall behind Supabase's transaction pooler.
+        const daily = await db<{ day: string; page_views: number; visitors: number; starts: number; completes: number; new_visitors: number }[]>`
+          select day,
+                 count(*) filter (where name = 'page_view')                        as page_views,
+                 count(distinct visitor)                                           as visitors,
+                 count(*) filter (where name = 'game_start')                       as starts,
+                 count(*) filter (where name = 'game_complete')                    as completes,
+                 count(distinct visitor) filter (where is_new)                     as new_visitors
+          from tippetuppen.events where day >= ${from} group by day order by day desc`;
+        const games = await db<{ game: string; starts: number; completes: number; give_ups: number; archive: number }[]>`
+          select game,
+                 count(*) filter (where name = 'game_start')                       as starts,
+                 count(*) filter (where name = 'game_complete')                    as completes,
+                 count(*) filter (where name = 'game_give_up')                     as give_ups,
+                 count(*) filter (where archive and name = 'game_start')           as archive
+          from tippetuppen.events where game is not null group by game order by game`;
+        const totals = await db<{ page_views: number; starts: number; completes: number; shares: number; first_day: string | null; last_day: string | null }[]>`
+          select count(*) filter (where name = 'page_view')                        as page_views,
+                 count(*) filter (where name = 'game_start')                       as starts,
+                 count(*) filter (where name = 'game_complete')                    as completes,
+                 count(*) filter (where name = 'share')                            as shares,
+                 min(day) as first_day, max(day) as last_day
+          from tippetuppen.events`;
+        return json({ ok: true, today, daily, games, totals: totals[0] });
       }
 
       if (req.method === "POST" && route === "/admin/replace") {
