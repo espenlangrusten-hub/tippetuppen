@@ -64,3 +64,7 @@ Rapportert: lagoppstillingen på banen og draktnumrene stemte ikke med virkeligh
 **Planleggeren slipper nedgraderte kamper.** `extendSchedule` beholdt eksisterende dager, så en kamp som ble nedgradert etter at den var satt opp ble servert likevel – en datarettelse hadde altså ingen effekt på dager som allerede var fylt. Nå fjernes de, og resten av den ulåste fremtiden bygges om bak dem så det ikke blir hull i kalenderen. Låste dager røres ikke. Verifisert: 1994-kampen lå på 20.09.2026, forsvant ved nedgradering, og kalenderen ble 43 sammenhengende dager uten hull.
 
 **Rekkevidde etter endringen:** Mangler XI 42 dager (43 kvalifiserte kamper), Målløs 32 dager.
+
+## Brødre i samme ellever (2026-09-04)
+
+Rapportert: John Arne og Bjørn Helge Riise ble stavet «JA RIISE» og «BH RIISE», og de to bokstavene foran etternavnet er vanskelige å gjette. Kollisjonshåndteringen la automatisk initialer foran når to spillere i samme ellever delte etternavn. To bokstaver ingen tenker på som en del av navnet er vanskeligere enn navnet selv, og posisjonen på banen skiller dem allerede. Begge svarene er nå bare etternavnet; fullt navn løser fortsatt via alias. Berører ni kamper og tre par: Flo (1998), Johnsen (2004–2005), Riise (2008–2009). `answer_key`-kolonnen består som manuell overstyring, men fylles ikke lenger automatisk.

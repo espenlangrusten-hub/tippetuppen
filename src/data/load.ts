@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
-import { slugify, defaultAliases, toTileString, normalizeName } from "@/lib/names";
+import { slugify, defaultAliases, normalizeName } from "@/lib/names";
 import { layoutPitch, parseFormation, positionKind } from "@/lib/pitch";
 import * as S from "./schema";
 import type { DataStatus, Position } from "@/db/schema";
@@ -193,17 +193,17 @@ export function loadDataset(): Dataset {
       }
     }
 
-    // Answer-key collisions: same surname tile string among starters → use initials.
-    const tileCounts = new Map<string, number>();
+    // Two brothers in one XI (Riise, Flo, Johnsen) both spell out their surname. The
+    // tiles used to disambiguate with initials - "JA RIISE" - but guessing two letters
+    // nobody thinks of as part of the name is harder than the name itself, and the
+    // pitch position already tells the two apart. Both answers are just the surname;
+    // the full name still solves it as an alias.
     const starterPlayers = starters.map((s) => ensurePlayer(s.name));
-    for (const p of starterPlayers) tileCounts.set(toTileString(p.surname), (tileCounts.get(toTileString(p.surname)) ?? 0) + 1);
 
     starters.forEach((s, i) => {
       const p = starterPlayers[i];
       if (ids.has(p.id)) problems.push(`${m.id}: duplicate starter ${p.id}`);
       ids.add(p.id);
-      const collision = (tileCounts.get(toTileString(p.surname)) ?? 0) > 1;
-      const initials = p.firstName ? p.firstName.split(/\s+/).map((t) => t[0]).join("") : "";
       appearances.push({
         matchId: m.id,
         playerId: p.id,
@@ -214,7 +214,7 @@ export function loadDataset(): Dataset {
         captain: !!s.captain,
         minuteOn: null,
         minuteOff: s.off ?? null,
-        answerKey: collision ? toTileString(`${initials} ${p.surname}`) : null,
+        answerKey: null,
       });
     });
     m.subs.forEach((s, i) => {

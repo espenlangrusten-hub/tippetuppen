@@ -131,7 +131,7 @@ export const appearances = tt.table(
     captain: boolean("captain").notNull().default(false),
     minuteOn: integer("minute_on"),
     minuteOff: integer("minute_off"),
-    answerKey: text("answer_key"), // override for the tile string (e.g. "TA FLO")
+    answerKey: text("answer_key"), // manual override for the tile string; normally null (the surname is used)
   },
   (t) => [uniqueIndex("appearances_unique").on(t.matchId, t.playerId), index("appearances_match").on(t.matchId)],
 );

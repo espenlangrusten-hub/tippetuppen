@@ -22,7 +22,7 @@ const payload: ManglerXiPayload = {
   opponentScorers: ["Bebeto"],
   players: [
     { playerId: "p1", displayName: "Frode Grodås", answer: "GRODÅS", pos: "GK", order: 0, no: 1, captain: false, goals: 0, aliases: ["Frode Grodås", "Grodås"] },
-    { playerId: "p2", displayName: "Tore André Flo", answer: "TA FLO", pos: "CF", order: 1, no: 9, captain: false, goals: 1, aliases: ["Tore André Flo", "TA Flo"] },
+    { playerId: "p2", displayName: "David Møller Wolfe", answer: "MØLLER WOLFE", pos: "LB", order: 1, no: 5, captain: false, goals: 1, aliases: ["David Møller Wolfe", "Møller Wolfe"] },
     { playerId: "p3", displayName: "Erling Haaland", answer: "HAALAND", pos: "CM", order: 2, no: 9, captain: true, goals: 0, aliases: ["Erling Haaland", "Håland"] },
   ],
 };
@@ -45,9 +45,9 @@ describe("edge: Mangler XI guessing", () => {
     expect(evaluate(payload, 0, "FLO")).toEqual({ ok: false, error: "length" });
   });
   it("handles multi-word answers with the space fixed", () => {
-    const r = evaluate(payload, 1, "TA FLO");
+    const r = evaluate(payload, 1, "Møller Wolfe");
     expect(r).toMatchObject({ ok: true, solved: true });
-    if (r.ok) expect(r.tiles[2]).toBe("space");
+    if (r.ok) expect(r.tiles[6]).toBe("space");
   });
 });
 
@@ -60,7 +60,7 @@ describe("edge: masking", () => {
     expect(serialised).not.toContain("HAALAND");
     expect(serialised).not.toContain("aliases");
     expect(masked.players[0].wordLengths).toEqual([6]);
-    expect(masked.players[1].wordLengths).toEqual([2, 3]);
+    expect(masked.players[1].wordLengths).toEqual([6, 5]);
     expect(masked.players[0]).toHaveProperty("row");
   });
 });
