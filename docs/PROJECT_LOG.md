@@ -80,3 +80,13 @@ Innholdet var den bindende begrensningen: 40 dager igjen for Mangler XI, 30 for 
 **Formasjon utledes av kilden.** Wikipedia oppgir bare GK/DF/MF/FW, men antallet i hver gruppe gir båndene – fire DF, fem MF, én FW blir «4-5-1». Sidene (venstre/høyre) må fortsatt settes for hånd, og det står i utkastets `notes` og i pull requestens beskrivelse.
 
 Verifisert uten nett: ti nye enhetstester på ekte wikitekst-struktur, og et generert utkast lagt inn som ekte kamp kjører grønt gjennom `data:validate` – altså overlever det valideringsreglene fra 3. september uendret.
+
+## Fotballdata/FIKS som kilde (2026-09-05)
+
+NFF har sagt ja til bruk. Det løser rettighetsspørsmålet – de eier dataene i FIKS, og videredistribusjon krever avtale – men ikke det praktiske: fotball.no og api.fotballdata.no er blokkert fra byggemiljøet, så en parser kunne ikke skrives mot data jeg aldri har sett.
+
+API-formen er derfor lest ut av det åpne PHP-biblioteket `mentisy/fotballdata` (raw.githubusercontent er tilgjengelig): `https://api.fotballdata.no/v1/tournaments/{id}/matches` og `.../matches/{id}/peopleandevents`, med `clubId`, `cid`, `cwd` og `format=json` i spørrestrengen. Avgjørende funn: `Player`-entiteten har **`PlayerShirtNumber`**, **`Position`** og `TeamCaptain` – nøyaktig de to feltene våre egne data er svakest på (2 av 47 kamper har kildebekreftede posisjoner, 14 av 47 har bekreftede numre).
+
+I stedet for å gjette bygde vi det minste som svarer på spørsmålet: handlingen **Prøvehenting fra Fotballdata** kjører på en runner med nett, henter én turnering og noen kamper, og legger resultatet som artefakt. Ingenting committes. Åpne spørsmål prøven skal avgjøre: dekker Fotballdata i det hele tatt herrelandslaget (API-et er bygget rundt klubber og kretser), og hvor langt tilbake – FIKS kom lenge etter 1989.
+
+**Personvern:** svarene inneholder e-post og telefonnummer for spillere og klubbkontakter. `redact` fjerner dem før noe skrives. En test fanget at første forsøk lekket: mønsteret matchet hele feltnavn, mens API-et prefikser dem etter rolle (`HomeTeamContactPersonEmail`, `RefereeMobilePhone`). Nå matches det som delstreng.

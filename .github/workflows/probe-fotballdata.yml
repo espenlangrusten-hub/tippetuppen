@@ -1,0 +1,94 @@
+name: Prøvehenting fra Fotballdata
+
+# Answers one question before an importer is written: does NFF's Fotballdata actually
+# carry the men's national team, far enough back, with shirt numbers and real positions?
+# Those two fields are where our own records are weakest, and Wikipedia gives neither.
+#
+# Requires an agreement with NFF, and these repository secrets, issued by Fotballdata:
+#   FOTBALLDATA_CLUB_ID   FOTBALLDATA_CID   FOTBALLDATA_CWD
+#
+# The result is an artifact, never a commit: responses carry contact details for players
+# and club staff. The probe strips them before writing, and the artifact expires quickly.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tournament:
+        description: "fiksId for turneringen (39899 = Norge Menn Senior A på fotball.no)"
+        default: "39899"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Sjekk at nøklene finnes
+        env:
+          CLUB_ID: ${{ secrets.FOTBALLDATA_CLUB_ID }}
+          CID: ${{ secrets.FOTBALLDATA_CID }}
+          CWD: ${{ secrets.FOTBALLDATA_CWD }}
+        run: |
+          missing=""
+          [ -n "$CLUB_ID" ] || missing="$missing FOTBALLDATA_CLUB_ID"
+          [ -n "$CID" ]     || missing="$missing FOTBALLDATA_CID"
+          [ -n "$CWD" ]     || missing="$missing FOTBALLDATA_CWD"
+          if [ -n "$missing" ]; then
+            echo "Mangler repository secrets:$missing" >> "$GITHUB_STEP_SUMMARY"
+            echo "Disse får du fra Fotballdata under NFF-avtalen." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+      - name: Hent prøve
+        env:
+          FOTBALLDATA_CLUB_ID: ${{ secrets.FOTBALLDATA_CLUB_ID }}
+          FOTBALLDATA_CID: ${{ secrets.FOTBALLDATA_CID }}
+          FOTBALLDATA_CWD: ${{ secrets.FOTBALLDATA_CWD }}
+          TOURNAMENT: ${{ inputs.tournament }}
+        run: npx tsx scripts/import/fotballdata-probe.ts "$TOURNAMENT" prove
+
+      - name: Oppsummer hva som faktisk kom
+        if: always()
+        run: |
+          set -euo pipefail
+          [ -d prove ] || { echo "Ingen data hentet." >> "$GITHUB_STEP_SUMMARY"; exit 0; }
+          {
+            echo "## Hva prøven inneholder"
+            echo
+            for f in prove/*.json; do
+              printf '- `%s` – %s\n' "$(basename "$f")" "$(wc -c < "$f" | tr -d ' ') tegn"
+            done
+            echo
+            echo "### Har den det vi trenger?"
+            if grep -q "PlayerShirtNumber" prove/*.json 2>/dev/null; then
+              echo "- Draktnummer: **ja**"
+            else
+              echo "- Draktnummer: nei"
+            fi
+            if grep -q '"Position"' prove/*.json 2>/dev/null; then
+              echo "- Posisjon: **ja**"
+            else
+              echo "- Posisjon: nei"
+            fi
+            echo
+            echo "Ingenting er committet. Last ned artefakten for å se på dataene."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Last opp prøven
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fotballdata-prove
+          path: prove/
+          retention-days: 3
+          if-no-files-found: warn

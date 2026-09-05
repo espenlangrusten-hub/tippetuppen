@@ -59,6 +59,22 @@ Ingenting må gjøres daglig. Planen ligger i databasen, og **Oppdater data** kj
 - **Innholdsrekkevidde:** `/admin` viser hvor mange dager som er planlagt framover. Nærmer det seg 30, legg til flere kamper.
 - **Besøkstall:** `/admin` viser sidevisninger, spill startet og fullført, delinger, fordeling per spill og de siste 30 dagene. Merk at besøkskoden roterer hver natt, med vilje – «besøkende» gjelder derfor bare den enkelte dagen og kan ikke summeres til et antall personer.
 
+### Fotballdata (NFF)
+
+NFF eier dataene i FIKS, og bruk krever avtale med dem. Med avtalen på plass gir Fotballdata
+deg tre nøkler: `clubId`, `cid` og `cwd`. Legg dem inn som repository secrets
+`FOTBALLDATA_CLUB_ID`, `FOTBALLDATA_CID` og `FOTBALLDATA_CWD`.
+
+Kjør så handlingen **Prøvehenting fra Fotballdata** med turneringens fiksId (39899 er
+«Norge Menn Senior A» på fotball.no). Den henter en prøve og legger den som en artefakt –
+aldri som en commit, siden svarene inneholder e-post og telefonnummer til spillere og
+klubbkontakter. Prøven fjerner slike felt før den skriver noe.
+
+Oppsummeringen i kjøringen svarer på det som avgjør om en importør er verdt å bygge:
+finnes `PlayerShirtNumber` og `Position` i dataene, og hvor langt tilbake går de? Er svaret
+ja, er dette den beste kilden vi kan få til nettopp de to feltene våre egne data er
+svakest på.
+
 ## 5. Eget domene
 
 GitHub Pages støtter eget domene gratis, også med HTTPS.
