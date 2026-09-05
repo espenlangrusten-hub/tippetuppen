@@ -41,7 +41,7 @@ jobs:
             line="${line#"${line%%[![:space:]]*}"}"
             line="${line%"${line##*[![:space:]]}"}"
             [ -n "$line" ] && titles+=("$line")
-          done < <(printf '%s' "$PAGES" | tr ';' '\n')
+          done < <(printf '%s\n' "$PAGES" | tr ';' '\n')   # the \n matters: read drops a final line that has none
           if [ ${#titles[@]} -eq 0 ]; then
             echo "Ingen sider oppgitt."
             exit 1
