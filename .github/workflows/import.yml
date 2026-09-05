@@ -48,7 +48,7 @@ jobs:
           fi
           printf 'Henter %d side(r):\n' "${#titles[@]}"
           printf '  %s\n' "${titles[@]}"
-          npx tsx scripts/import/wikipedia.ts "${titles[@]}" | tee import.log
+          WIKITEXT_DUMP=wikitext npx tsx scripts/import/wikipedia.ts "${titles[@]}" | tee import.log
 
       - name: Se om noe nytt kom ut av det
         id: check
@@ -61,6 +61,17 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
             git status --porcelain data/source/drafts | wc -l | xargs printf 'count=%s\n' >> "$GITHUB_OUTPUT"
           fi
+
+      # The parser was written without any way to reach Wikipedia, so when a page yields
+      # nothing the raw source is the only evidence available.
+      - name: Ta vare på wikiteksten
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wikitext
+          path: wikitext/
+          retention-days: 7
+          if-no-files-found: warn
 
       - name: Åpne pull request
         if: steps.check.outputs.changed == 'true'

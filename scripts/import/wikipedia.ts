@@ -157,8 +157,15 @@ function teamBlocks(rows: ParsedLineupRow[]): ParsedLineupRow[][] {
  * Turn one Wikipedia page's wikitext into Norway match drafts. Pure, so the whole
  * transformation is testable without reaching the network.
  */
-export function buildDrafts(title: string, wikitext: string): Draft[] {
+export function buildDrafts(title: string, wikitext: string, report?: { boxes: number; teams: Set<string> }): Draft[] {
   const boxes = parseFootballboxes(wikitext);
+  if (report) {
+    report.boxes = boxes.length;
+    for (const b of boxes) {
+      report.teams.add(b.team1);
+      report.teams.add(b.team2);
+    }
+  }
   // Lineup tables follow each footballbox on tournament pages; split on the template
   // to pair every box with the text that comes after it.
   const chunks = wikitext.split(/\{\{\s*football\s*box(?:\s+collapsible)?/i).slice(1);
@@ -233,9 +240,17 @@ async function main() {
     process.exit(1);
   }
   mkdirSync(OUT, { recursive: true });
+  // When a page yields nothing, the raw wikitext is the only way to find out why, and
+  // the sandbox this parser was written in cannot reach Wikipedia at all.
+  const dumpDir = process.env.WIKITEXT_DUMP;
+  if (dumpDir) mkdirSync(dumpDir, { recursive: true });
   let total = 0;
   for (const title of titles) {
-    const drafts = buildDrafts(title, await fetchWikitext(title));
+    const wikitext = await fetchWikitext(title);
+    if (dumpDir) writeFileSync(path.join(dumpDir, `${title.replace(/[^\w-]+/g, "_")}.wiki`), wikitext);
+    const report = { boxes: 0, teams: new Set<string>() };
+    const drafts = buildDrafts(title, wikitext, report);
+    console.log(`${title}: ${wikitext.length} tegn, ${report.boxes} kampbokser, lag sett: ${[...report.teams].sort().join(", ") || "(ingen)"}`);
     let written = 0;
     for (const draft of drafts) {
       // Never overwrite a curated match.
