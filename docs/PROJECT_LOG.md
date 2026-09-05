@@ -68,3 +68,15 @@ Rapportert: lagoppstillingen på banen og draktnumrene stemte ikke med virkeligh
 ## Brødre i samme ellever (2026-09-04)
 
 Rapportert: John Arne og Bjørn Helge Riise ble stavet «JA RIISE» og «BH RIISE», og de to bokstavene foran etternavnet er vanskelige å gjette. Kollisjonshåndteringen la automatisk initialer foran når to spillere i samme ellever delte etternavn. To bokstaver ingen tenker på som en del av navnet er vanskeligere enn navnet selv, og posisjonen på banen skiller dem allerede. Begge svarene er nå bare etternavnet; fullt navn løser fortsatt via alias. Berører ni kamper og tre par: Flo (1998), Johnsen (2004–2005), Riise (2008–2009). `answer_key`-kolonnen består som manuell overstyring, men fylles ikke lenger automatisk.
+
+## Importør som GitHub-handling (2026-09-05)
+
+Innholdet var den bindende begrensningen: 40 dager igjen for Mangler XI, 30 for Målløs. Wikipedia-importøren var skrevet og enhetstestet, men aldri kjørt, fordi byggemiljøet blokkerer wikipedia.org – noe jeg bekreftet på nytt (wikipedia, wikimedia-API-et, eu-football og RSSSF svarer alle 000). En GitHub-runner har derimot åpen internettilgang, så importøren kjører nå der, som handlingen **Importer kamper**, og åpner en pull request med utkast i `data/source/drafts/` – en mappe `loadDataset` ikke leser, så ingenting kan havne i spill uten at et menneske flytter filen.
+
+**Draktnumre skrives ikke.** Parseren leser dem, importøren kaster dem. Ukontrollerte numre er nøyaktig det som ga åtte spillere feil drakt i november-2025-kampene; en manglende drakt koster ingenting, siden banen faller tilbake på posisjonen.
+
+**En reell feil kom fram av testene.** `buildDrafts` ble skilt ut som en ren funksjon slik at hele omformingen kan testes uten nett, og da viste det seg at importøren aldri ville funnet en eneste kamp: turneringssider skriver `{{fb|NOR}}`, som parseren gjør om til «NOR», mens koden lette etter «Norway». Lagene slås nå opp både på kode og engelsk navn, fra én tabell med norske navn.
+
+**Formasjon utledes av kilden.** Wikipedia oppgir bare GK/DF/MF/FW, men antallet i hver gruppe gir båndene – fire DF, fem MF, én FW blir «4-5-1». Sidene (venstre/høyre) må fortsatt settes for hånd, og det står i utkastets `notes` og i pull requestens beskrivelse.
+
+Verifisert uten nett: ti nye enhetstester på ekte wikitekst-struktur, og et generert utkast lagt inn som ekte kamp kjører grønt gjennom `data:validate` – altså overlever det valideringsreglene fra 3. september uendret.

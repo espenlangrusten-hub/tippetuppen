@@ -1,0 +1,108 @@
+name: Importer kamper
+
+# Runs the Wikipedia importer and opens a pull request with the drafts it produced.
+# Nothing reaches the game from here: drafts land in data/source/drafts/, which the
+# dataset loader ignores, and a human moves the reviewed ones into
+# data/source/matches/. The build sandbox cannot reach wikipedia.org, but a GitHub
+# runner can, which is the whole reason this workflow exists.
+
+on:
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: 'Wikipedia-sider, adskilt med semikolon (f.eks. "1994 FIFA World Cup Group E; UEFA Euro 2000 Group C")'
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hent kamper fra Wikipedia
+        env:
+          # Passed as an env var, never interpolated into the script body: this is user text,
+          # and `${{ }}` inside a run block would splice it straight into the shell.
+          PAGES: ${{ inputs.pages }}
+        run: |
+          set -euo pipefail
+          titles=()
+          while IFS= read -r line; do
+            line="${line#"${line%%[![:space:]]*}"}"
+            line="${line%"${line##*[![:space:]]}"}"
+            [ -n "$line" ] && titles+=("$line")
+          done < <(printf '%s' "$PAGES" | tr ';' '\n')
+          if [ ${#titles[@]} -eq 0 ]; then
+            echo "Ingen sider oppgitt."
+            exit 1
+          fi
+          printf 'Henter %d side(r):\n' "${#titles[@]}"
+          printf '  %s\n' "${titles[@]}"
+          npx tsx scripts/import/wikipedia.ts "${titles[@]}" | tee import.log
+
+      - name: Se om noe nytt kom ut av det
+        id: check
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain data/source/drafts)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Ingen nye utkast – alt importøren fant finnes allerede." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git status --porcelain data/source/drafts | wc -l | xargs printf 'count=%s\n' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Åpne pull request
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          branch="import/wikipedia-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/source/drafts
+          git commit -m "Importer kamputkast fra Wikipedia
+
+          Kjørt av «Importer kamper». Utkastene er ikke i spill: de ligger i
+          data/source/drafts/, som datasettet ikke laster."
+          git push -u origin "$branch"
+
+          {
+            echo "Utkast hentet av importøren. **De er ikke i spill ennå** – de ligger i \`data/source/drafts/\`, som datasettet ikke laster."
+            echo
+            echo "## Før et utkast flyttes til \`data/source/matches/\`"
+            echo
+            echo "- **Sett venstre/høyre.** Wikipedia oppgir bare GK/DF/MF/FW, så alle forsvarere kommer som \`CB\` og alle midtbanespillere som \`CM\`. Formasjonen er utledet av kildens egne DF/MF/FW-tall, så antallet i hver rekke stemmer – men sidene gjør det ikke."
+            echo "- **Draktnumre mangler med vilje.** Legg dem bare inn fra en kilde som faktisk viser dem, og skriv det i kildenotatet. Ukontrollerte numre er det som ga åtte spillere feil drakt i november-2025-kampene."
+            echo "- **Se over status.** \`uncertain\` betyr at importøren ikke fant elleve startende."
+            echo
+            echo "Når filen er flyttet: \`npm run data:validate\` må være grønn, og så kjør **Oppdater data**."
+            echo
+            echo "<details><summary>Logg fra importøren</summary>"
+            echo
+            echo '```'
+            cat import.log
+            echo '```'
+            echo
+            echo "</details>"
+          } > pr-body.md
+
+          gh pr create \
+            --title "Kamputkast fra Wikipedia" \
+            --body-file pr-body.md \
+            --base "${{ github.ref_name }}" \
+            --head "$branch"
+
+          cat pr-body.md >> "$GITHUB_STEP_SUMMARY"

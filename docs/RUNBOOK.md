@@ -53,6 +53,7 @@ Databaseskjemaet er allerede opprettet. Skal du sette opp et nytt prosjekt fra b
 Ingenting må gjøres daglig. Planen ligger i databasen, og **Oppdater data** kjører automatisk hver mandag og fyller på.
 
 - **Legge til kamper:** lag en fil i `data/source/matches/`, push, og kjør **Oppdater data**. Kravene er 11 startere, én keeper, kilde-URL og status.
+- **Legge til mange kamper:** kjør GitHub-handlingen **Importer kamper** og oppgi Wikipedia-sider adskilt med semikolon, f.eks. `1994 FIFA World Cup Group E; UEFA Euro 2000 Group C`. Den åpner en pull request med utkast i `data/source/drafts/`. Utkastene er ikke i spill – les `data/source/drafts/README.md` for hva som må gjøres før de flyttes til `matches/`. Kort: sett venstre/høyre på posisjonene (Wikipedia oppgir bare GK/DF/MF/FW), og la draktnumrene være med mindre du har en kilde som viser dem.
 - **Rette data:** endre JSON-filene i `data/source/`, push, kjør **Oppdater data**. Alt er versjonskontrollert.
 - **Bytte ut eller skru av et puslespill:** åpne `/admin` på nettstedet, lim inn `ADMIN_KEY`, og bruk knappene. Endringer gjelder umiddelbart.
 - **Innholdsrekkevidde:** `/admin` viser hvor mange dager som er planlagt framover. Nærmer det seg 30, legg til flere kamper.
