@@ -1,8 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0b1020"/>
-  <path d="M10 18h44v28H10z" fill="#e8edf6"/>
-  <path d="M10 18h14v28H10zm30 0h14v28H40z" fill="#ba0c2f"/>
-  <path d="M27 18h10v28H27z" fill="#00205b"/>
-  <circle cx="32" cy="32" r="7" fill="#0b1020"/>
-  <path d="m32 26 5.7 4.1-2.2 6.7h-7L26.3 30z" fill="#e8edf6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tippetuppen">
+  <!--
+    The Norwegian flag: a blue cross fimbriated in white on red, with the cross set
+    towards the hoist. Kept to those four shapes on purpose - anything finer (a ball,
+    a monogram) turns to mush at the 16px the browser tab actually draws.
+  -->
+  <rect width="64" height="64" rx="13" fill="#ba0c2f"/>
+  <path d="M16 0h16v64H16z" fill="#f4f7fb"/>
+  <path d="M0 24h64v16H0z" fill="#f4f7fb"/>
+  <path d="M20 0h8v64h-8z" fill="#00205b"/>
+  <path d="M0 28h64v8H0z" fill="#00205b"/>
+  <!-- The white arms run to the edge, so on a light tab bar the icon would read as
+       three loose red blocks. A faint edge keeps the square readable on any ground. -->
+  <rect x=".75" y=".75" width="62.5" height="62.5" rx="12.5" fill="none" stroke="#0b1020" stroke-opacity=".22" stroke-width="1.5"/>
 </svg>
