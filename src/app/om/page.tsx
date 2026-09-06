@@ -10,7 +10,7 @@ export default function Page() {
       <p className="text-mist">Tippetuppen er to små, daglige fotballspill for folk som husker Drillo-pasninger, Brann-jubel og hvem som spiste stopper på Ullevaal i 1994 – og for alle som bare liker norsk fotball.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Spillene</h2>
       <p className="text-mist">
-        <b className="text-snow">Mangler XI</b> gir deg en ekte landskamp for Norges herrelandslag (1989–i dag). Du ser motstander, resultat og posisjoner – og skal finne alle elleve i startelleveren, bokstav for bokstav.
+        <b className="text-snow">Mangler XI</b> gir deg en ekte landskamp for Norges herrelandslag (1990–2026). Du ser motstander, resultat og posisjoner – og skal finne alle elleve i startelleveren, bokstav for bokstav.
       </p>
       <p className="text-mist">
         <b className="text-snow">Målløs</b> stiller ett spørsmål om norsk fotball. Du gir fem svar, og hvert svar får poeng etter hvor mange andre spillere som svarte det samme. Sjeldne svar er gull. Poengene holdes skjult til alle fem svarene er gitt, slik at ingen kan justere kursen underveis.

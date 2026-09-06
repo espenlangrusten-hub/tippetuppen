@@ -37,18 +37,22 @@ export function StatsView({ today }: { today: string }) {
           <Stat label="Snitt funnet" value={avg(mxi.map((r) => r.score))?.toString() ?? "–"} small />
         </div>
         <p className="mt-2 text-xs text-mist">Rekke: {sMxi.current} · beste {sMxi.best}</p>
-        <div className="mt-3">
-          <div className="text-xs uppercase tracking-widest text-mist">Fordeling (antall funnet)</div>
-          <div className="mt-1 flex flex-col gap-1">
-            {dist.map((n, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs">
-                <span className="w-6 text-right font-display text-sm">{i}</span>
-                <div className="h-4 rounded bg-correct/80" style={{ width: `${(n / maxDist) * 100}%`, minWidth: n ? 8 : 0 }} />
-                <span className="text-mist">{n || ""}</span>
-              </div>
-            ))}
+        {mxi.length ? (
+          <div className="mt-3">
+            <div className="text-xs uppercase tracking-widest text-mist">Fordeling (antall funnet)</div>
+            <div className="mt-1 flex flex-col gap-1">
+              {dist.map((n, i) => (
+                <div key={i} className="flex items-center gap-2 text-xs">
+                  <span className="w-6 text-right font-display text-sm">{i}</span>
+                  <div className="h-4 rounded bg-correct/80" style={{ width: `${(n / maxDist) * 100}%`, minWidth: n ? 8 : 0 }} />
+                  <span className="text-mist">{n || ""}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <p className="mt-3 text-sm text-mist">Spill en Mangler XI-runde for å få en resultatfordeling.</p>
+        )}
       </section>
       <section className="card p-4">
         <h2 className="font-display text-2xl font-bold uppercase">🥅 Målløs</h2>

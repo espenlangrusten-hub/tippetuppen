@@ -2,6 +2,45 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-06 – Datakvalitet, 365 dager Målløs og NFF-import
+
+Produksjonsrevisjonen fant 47 kamper, 82 puslespill og bare 30–40 dagers reell
+rekkevidde. Den fant også en alvorlig kildefeil: sesongene 2006–2011 og 2024–2025 var
+merket som brukbare medlemslister, men inneholdt i flere tilfeller bare mester og
+nedrykkslag. Alle Eliteserien/Tippeligaen-sesonger 1990–2025 har nå komplette tabeller.
+2012–2023 er regnet fra et versjonsfestet CC0-resultatarkiv og krysskontrollert mot
+eksisterende mester/poeng; de øvrige hullene er fylt fra publiserte sluttabeller, med
+NFF som ekstra primærkilde for 2010 og 2011. `loadDataset` stopper nå hvis et år mangler
+eller en toppdivisjonstabell i perioden har færre enn tolv lag.
+
+Målløs bygger nye, kildeavgrensede spørsmål fra sesongvinduer på tre, fire og fem år,
+samt landslagsstartere gruppert på år, resultat og motstander. En ren PGlite-kjøring
+bygger 431 spørsmål, hvorav 430 går inn i standardrotasjonen. Etter dagens oppgave er
+rekkevidden 429 dager. Startpriorene er erstattet av en deterministisk simulering av
+20 000 spillere som velger fem ulike svar; sannsynlighetene summerer derfor til nøyaktig
+500 prosentpoeng per spørsmål. Ekte spillerdata overtar gradvis. Første spiller som
+finner et ubrukt svar kan nå faktisk få 0.
+
+Målløs har fått globalt spillersøk mot hele spillerregisteret, fem svar kan redigeres,
+og runden sendes først inn med en egen knapp. Serveren stoler ikke på spiller-ID-er fra
+nettleseren, men løser all tekst på nytt og teller samme svar maksimalt én gang.
+
+Den avtalte NFF/Fotballdata-kilden har fått en full importør og GitHub-handlingen
+**Importer NFF-kamper**. Den forstår både `Matches`-innpakningen og eldre arrays,
+normaliserer NFF-datoer, krever komplett ellever og keeper, beholder generiske
+posisjoner og setter ufullstendige svar i karantene. Eksisterende kuraterte filer
+overskrives aldri. Mangler XI har fortsatt bare 45 dager i den lokale testen; full
+1990–2026-import må kjøres på GitHub-runneren med de eksisterende NFF-hemmelighetene.
+
+Blokker: GitHub-integrasjonen svarte 403 «Resource not accessible by integration» ved
+forsøk på å opprette arbeidsgrenen. Ingen produksjonsdatabase eller Edge Function er
+endret før repoet kan få en samlet, testet utrulling.
+
+Supabase-rådgiveren fant også ni fremmednøkler i `tippetuppen` uten egne
+støtteindekser. Migrasjon `0001_yellow_wendigo` legger dem til; den er verifisert med
+en full migrering, innlasting og planlegging i en tom PGlite-database, men er ikke
+kjørt i produksjon.
+
 ## 2026-09-02 (kveld) – Arkitekturskifte: bare GitHub og Supabase
 
 Eieren vil ikke bruke Vercel eller andre leverandører. GitHub Pages serverer bare statiske filer, og det kolliderer med at fasiten aldri skal ligge i nettleseren. Løsningen:

@@ -9,10 +9,9 @@
  *
  * What the source can and cannot give us:
  *   - names, date, score, venue, scorers   reliable, taken straight from the page
- *   - positions                            only GK/DF/MF/FW, so every defender
- *                                          arrives as CB and every midfielder as
- *                                          CM; left and right have to be added by
- *                                          hand before release
+ *   - positions                            exact when the page gives them; otherwise
+ *                                          stored honestly as DF/MF/FW instead of
+ *                                          inventing a left, right or central role
  *   - formation                            derived from how many DF/MF/FW the page
  *                                          lists, so the bands are right even
  *                                          though the sides are not
@@ -29,101 +28,17 @@
  * The build sandbox blocks wikipedia.org; run it from a machine with normal
  * internet access, or through the "Importer kamper" GitHub Action.
  */
-import { mkdirSync, writeFileSync, existsSync } from "node:fs";
+import { mkdirSync, writeFileSync, existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { parseFootballboxes, parseLineupTable, type ParsedLineupRow } from "../../src/data/wikitext";
+import { isNorwayTeam, resolveNationalTeam } from "./national-teams";
 
 const API = "https://en.wikipedia.org/w/api.php";
 const OUT = path.join(process.cwd(), "data", "source", "drafts");
 
-/**
- * Teams reach us in two shapes: tournament pages write {{fb|NOR}}, which the parser
- * reduces to the code "NOR", while prose pages write [[Brazil]]. Both have to
- * resolve, so the table is keyed by code and indexed by English name as well.
- */
-const TEAMS: Record<string, { en: string; nb: string }> = {
-  BRA: { en: "Brazil", nb: "Brasil" },
-  ITA: { en: "Italy", nb: "Italia" },
-  SCO: { en: "Scotland", nb: "Skottland" },
-  MAR: { en: "Morocco", nb: "Marokko" },
-  MEX: { en: "Mexico", nb: "Mexico" },
-  IRL: { en: "Republic of Ireland", nb: "Irland" },
-  ESP: { en: "Spain", nb: "Spania" },
-  SVN: { en: "Slovenia", nb: "Slovenia" },
-  YUG: { en: "Yugoslavia", nb: "Jugoslavia" },
-  ENG: { en: "England", nb: "England" },
-  SWE: { en: "Sweden", nb: "Sverige" },
-  DEN: { en: "Denmark", nb: "Danmark" },
-  NED: { en: "Netherlands", nb: "Nederland" },
-  GER: { en: "Germany", nb: "Tyskland" },
-  FRA: { en: "France", nb: "Frankrike" },
-  SEN: { en: "Senegal", nb: "Senegal" },
-  IRQ: { en: "Iraq", nb: "Irak" },
-  CIV: { en: "Ivory Coast", nb: "Elfenbenskysten" },
-  AUT: { en: "Austria", nb: "Østerrike" },
-  BEL: { en: "Belgium", nb: "Belgia" },
-  POR: { en: "Portugal", nb: "Portugal" },
-  SUI: { en: "Switzerland", nb: "Sveits" },
-  CRO: { en: "Croatia", nb: "Kroatia" },
-  SRB: { en: "Serbia", nb: "Serbia" },
-  POL: { en: "Poland", nb: "Polen" },
-  HUN: { en: "Hungary", nb: "Ungarn" },
-  TUR: { en: "Turkey", nb: "Tyrkia" },
-  GRE: { en: "Greece", nb: "Hellas" },
-  ISR: { en: "Israel", nb: "Israel" },
-  EST: { en: "Estonia", nb: "Estland" },
-  MDA: { en: "Moldova", nb: "Moldova" },
-  KAZ: { en: "Kazakhstan", nb: "Kasakhstan" },
-  CYP: { en: "Cyprus", nb: "Kypros" },
-  MLT: { en: "Malta", nb: "Malta" },
-  GIB: { en: "Gibraltar", nb: "Gibraltar" },
-  FIN: { en: "Finland", nb: "Finland" },
-  ISL: { en: "Iceland", nb: "Island" },
-  WAL: { en: "Wales", nb: "Wales" },
-  NIR: { en: "Northern Ireland", nb: "Nord-Irland" },
-  CZE: { en: "Czech Republic", nb: "Tsjekkia" },
-  MKD: { en: "North Macedonia", nb: "Makedonia" },
-  BLR: { en: "Belarus", nb: "Hviterussland" },
-  SVK: { en: "Slovakia", nb: "Slovakia" },
-  ROU: { en: "Romania", nb: "Romania" },
-  BUL: { en: "Bulgaria", nb: "Bulgaria" },
-  UKR: { en: "Ukraine", nb: "Ukraina" },
-  RUS: { en: "Russia", nb: "Russland" },
-  LVA: { en: "Latvia", nb: "Latvia" },
-  LTU: { en: "Lithuania", nb: "Litauen" },
-  ALB: { en: "Albania", nb: "Albania" },
-  ARM: { en: "Armenia", nb: "Armenia" },
-  AZE: { en: "Azerbaijan", nb: "Aserbajdsjan" },
-  GEO: { en: "Georgia", nb: "Georgia" },
-  LUX: { en: "Luxembourg", nb: "Luxembourg" },
-  FRO: { en: "Faroe Islands", nb: "Færøyene" },
-  SMR: { en: "San Marino", nb: "San Marino" },
-  AND: { en: "Andorra", nb: "Andorra" },
-  USA: { en: "United States", nb: "USA" },
-  ARG: { en: "Argentina", nb: "Argentina" },
-  JPN: { en: "Japan", nb: "Japan" },
-  AUS: { en: "Australia", nb: "Australia" },
-};
-const BY_ENGLISH = new Map(Object.entries(TEAMS).map(([code, t]) => [t.en.toLowerCase(), code]));
-
-/** True for either form Norway appears in: the code NOR, or the name in English or Norwegian. */
-function isNorway(team: string): boolean {
-  return /^(nor|norway|norge)$/i.test(team.trim());
-}
-
-/** Resolve a team as written on the page into a code and a Norwegian name. */
-function resolveOpponent(team: string): { code: string; nb: string } {
-  const t = team.trim();
-  const byCode = TEAMS[t.toUpperCase()];
-  if (/^[A-Za-z]{3}$/.test(t) && byCode) return { code: t.toUpperCase(), nb: byCode.nb };
-  const code = BY_ENGLISH.get(t.toLowerCase());
-  if (code) return { code, nb: TEAMS[code].nb };
-  // Unknown team: keep the page's own name and derive a code from it, so the draft is
-  // still reviewable rather than silently dropped.
-  return { code: t.slice(0, 3).toUpperCase(), nb: t };
-}
-
 async function fetchWikitext(title: string): Promise<string> {
+  const fixtureDir = process.env.WIKITEXT_FILE_DIR;
+  if (fixtureDir) return readFileSync(path.join(fixtureDir, `${title.replace(/[^\w-]+/g, "_")}.wiki`), "utf8");
   const url = `${API}?action=query&prop=revisions&rvprop=content&rvslots=main&format=json&formatversion=2&titles=${encodeURIComponent(title)}`;
   const res = await fetch(url, { headers: { "user-agent": "Tippetuppen importer (contact: kontakt@tippetuppen.no)" } });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${title}`);
@@ -133,8 +48,30 @@ async function fetchWikitext(title: string): Promise<string> {
   return content;
 }
 
-/** Wikipedia only labels a line, not a side; the review pass adds left and right. */
-const POS_MAP: Record<string, string> = { GK: "GK", DF: "CB", MF: "CM", FW: "CF" };
+/** Keep generic source positions generic instead of inventing a side or central role. */
+const POS_MAP: Record<string, string> = {
+  GK: "GK",
+  RB: "RB",
+  CB: "CB",
+  LB: "LB",
+  RWB: "RWB",
+  LWB: "LWB",
+  SW: "CB",
+  DF: "DF",
+  DM: "DM",
+  RM: "RM",
+  CM: "CM",
+  LM: "LM",
+  AM: "AM",
+  RW: "RW",
+  LW: "LW",
+  SS: "SS",
+  CF: "CF",
+  RF: "CF",
+  LF: "CF",
+  MF: "MF",
+  FW: "FW",
+};
 
 export type Draft = Record<string, unknown> & { id: string; lineup: { name: string; pos: string }[] };
 
@@ -143,7 +80,7 @@ function teamBlocks(rows: ParsedLineupRow[]): ParsedLineupRow[][] {
   const blocks: ParsedLineupRow[][] = [];
   let cur: ParsedLineupRow[] = [];
   for (const r of rows) {
-    if (r.pos === "GK" && cur.length >= 11) {
+    if (r.pos === "GK" && r.starter && cur.filter((x) => x.starter).length >= 11) {
       blocks.push(cur);
       cur = [];
     }
@@ -168,16 +105,16 @@ export function buildDrafts(title: string, wikitext: string, report?: { boxes: n
   }
   // Lineup tables follow each footballbox on tournament pages; split on the template
   // to pair every box with the text that comes after it.
-  const chunks = wikitext.split(/\{\{\s*football\s*box(?:\s+collapsible)?/i).slice(1);
+  const chunks = wikitext.split(/\{\{\s*(?:football\s*box(?:\s+collapsible)?|#invoke:\s*football\s*box\s*\|\s*main)/i).slice(1);
   const drafts: Draft[] = [];
 
   boxes.forEach((box, i) => {
-    const isHome = isNorway(box.team1);
-    const isAway = isNorway(box.team2);
+    const isHome = isNorwayTeam(box.team1);
+    const isAway = isNorwayTeam(box.team2);
     if (!isHome && !isAway) return;
     if (!box.date || !box.score) return;
 
-    const { code, nb: opponent } = resolveOpponent(isHome ? box.team2 : box.team1);
+    const { code, nb: opponent } = resolveNationalTeam(isHome ? box.team2 : box.team1);
     const blocks = teamBlocks(parseLineupTable(chunks[i] ?? ""));
     const norwayBlock = blocks[isHome ? 0 : 1] ?? [];
     const starters = norwayBlock.filter((r) => r.starter);
@@ -185,17 +122,19 @@ export function buildDrafts(title: string, wikitext: string, report?: { boxes: n
 
     // The page's own DF/MF/FW counts give the shape's bands, even though it never
     // says who played left or right.
-    const count = (p: string) => starters.filter((r) => r.pos === p).length;
-    const bands = [count("DF"), count("MF"), count("FW")];
+    const count = (positions: string[]) => starters.filter((r) => positions.includes(r.pos)).length;
+    const bands = [count(["RB", "CB", "LB", "RWB", "LWB", "SW", "DF"]), count(["DM", "RM", "CM", "LM", "AM", "MF"]), count(["RW", "LW", "SS", "CF", "RF", "LF", "FW"])];
     const formation = starters.length === 11 && bands.every((b) => b > 0) ? bands.join("-") : undefined;
 
     const norwayGoals = (isHome ? box.goals1 : box.goals2).map((g) => ({ team: "norway", name: g.player, minute: g.minute ?? undefined, kind: g.kind }));
     const oppGoals = (isHome ? box.goals2 : box.goals1).map((g) => ({ team: "opponent", scorer: g.player, minute: g.minute ?? undefined, kind: g.kind }));
 
+    const hasCoarsePositions = starters.some((r) => ["DF", "MF", "FW"].includes(r.pos));
     const todo = [
-      "Sett venstre/høyre på backer og kanter – Wikipedia oppgir bare GK/DF/MF/FW.",
+      hasCoarsePositions ? "Kilden oppgir bare posisjonsgruppene DF/MF/FW; de er beholdt uten å dikte venstre/høyre." : null,
       starters.length === 11 ? null : `Importøren fant ${starters.length} startende; fyll ut elleveren.`,
       formation ? null : "Sett formasjon.",
+      "Kontroller resultat og ellever mot en uavhengig primærkilde.",
       "Draktnumre er utelatt med vilje; legg dem inn bare fra en kilde som viser dem.",
     ].filter(Boolean);
 
@@ -220,7 +159,7 @@ export function buildDrafts(title: string, wikitext: string, report?: { boxes: n
           title: `${title} – Wikipedia`,
           kind: "web",
           accessed: new Date().toISOString().slice(0, 10),
-          note: "Importert av scripts/import/wikipedia.ts. Elleve og resultat er fra kilden; posisjonene er kun GK/DF/MF/FW.",
+          note: "Importert av scripts/import/wikipedia.ts. Elleve, resultat og oppgitte posisjoner er overført fra kilden; generiske DF/MF/FW-posisjoner er beholdt som generiske.",
         },
       ],
       notes: `UTKAST – må gjennomgås før den flyttes til matches/: ${todo.join(" ")}`,

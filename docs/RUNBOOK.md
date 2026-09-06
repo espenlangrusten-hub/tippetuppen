@@ -29,6 +29,9 @@ Databaseskjemaet er allerede opprettet. Skal du sette opp et nytt prosjekt fra b
 | `SUPABASE_ACCESS_TOKEN` | Personlig token fra supabase.com/dashboard/account/tokens |
 | `SUPABASE_PROJECT_REF` | Prosjekt-ref-en (den i URL-en til prosjektet) |
 | `DATABASE_URL` | Supabase → Settings → Database → Transaction pooler |
+| `FOTBALLDATA_CLUB_ID` | NFF/Fotballdata-avtalens `clubId` |
+| `FOTBALLDATA_CID` | NFF/Fotballdata-avtalens `cid` |
+| `FOTBALLDATA_CWD` | NFF/Fotballdata-avtalens `cwd` |
 
 **Variables** (samme side, fanen Variables):
 
@@ -53,7 +56,8 @@ Databaseskjemaet er allerede opprettet. Skal du sette opp et nytt prosjekt fra b
 Ingenting må gjøres daglig. Planen ligger i databasen, og **Oppdater data** kjører automatisk hver mandag og fyller på.
 
 - **Legge til kamper:** lag en fil i `data/source/matches/`, push, og kjør **Oppdater data**. Kravene er 11 startere, én keeper, kilde-URL og status.
-- **Legge til mange kamper:** kjør GitHub-handlingen **Importer kamper** og oppgi Wikipedia-sider adskilt med semikolon, f.eks. `1994 FIFA World Cup Group E; UEFA Euro 2000 Group C`. Den åpner en pull request med utkast i `data/source/drafts/`. Utkastene er ikke i spill – les `data/source/drafts/README.md` for hva som må gjøres før de flyttes til `matches/`. Kort: sett venstre/høyre på posisjonene (Wikipedia oppgir bare GK/DF/MF/FW), og la draktnumrene være med mindre du har en kilde som viser dem.
+- **Legge til mange landskamper:** kjør GitHub-handlingen **Importer NFF-kamper**. Første fulle kjøring bruker fiksId `39899`, fra `1990-01-01` til `2026-12-31`. Komplette ellevere foreslås i en pull request; ufullstendige svar legges i `data/source/drafts/fotballdata-review/` og kommer aldri inn i spillet.
+- **Wikipedia-reserve:** handlingen **Importer kamper** kan hente utkast fra konkrete Wikipedia-sider. Generiske GK/DF/MF/FW-posisjoner beholdes som generiske; importøren dikter ikke side eller detaljrolle. Les `data/source/drafts/README.md` før en fil flyttes til `matches/`.
 - **Rette data:** endre JSON-filene i `data/source/`, push, kjør **Oppdater data**. Alt er versjonskontrollert.
 - **Bytte ut eller skru av et puslespill:** åpne `/admin` på nettstedet, lim inn `ADMIN_KEY`, og bruk knappene. Endringer gjelder umiddelbart.
 - **Innholdsrekkevidde:** `/admin` viser hvor mange dager som er planlagt framover. Nærmer det seg 30, legg til flere kamper.
@@ -65,15 +69,20 @@ NFF eier dataene i FIKS, og bruk krever avtale med dem. Med avtalen på plass gi
 deg tre nøkler: `clubId`, `cid` og `cwd`. Legg dem inn som repository secrets
 `FOTBALLDATA_CLUB_ID`, `FOTBALLDATA_CID` og `FOTBALLDATA_CWD`.
 
-Kjør så handlingen **Prøvehenting fra Fotballdata** med turneringens fiksId (39899 er
-«Norge Menn Senior A» på fotball.no). Den henter en prøve og legger den som en artefakt –
-aldri som en commit, siden svarene inneholder e-post og telefonnummer til spillere og
-klubbkontakter. Prøven fjerner slike felt før den skriver noe.
+Kjør handlingen **Importer NFF-kamper** med turneringens fiksId (39899 er «Norge Menn
+Senior A» på fotball.no), dato fra `1990-01-01` og dato til `2026-12-31`. Importøren:
 
-Oppsummeringen i kjøringen svarer på det som avgjør om en importør er verdt å bygge:
-finnes `PlayerShirtNumber` og `Position` i dataene, og hvor langt tilbake går de? Er svaret
-ja, er dette den beste kilden vi kan få til nettopp de to feltene våre egne data er
-svakest på.
+1. leser både innpakket `Matches`-respons og eldre array-respons;
+2. henter kampdetaljer sekvensielt med pause og retry;
+3. krever nøyaktig elleve startere, én keeper, gyldig resultat og dokumentert kilde;
+4. beholder generiske DF/MF/FW-posisjoner hvis NFF ikke oppgir en mer presis rolle;
+5. fjerner kontaktfelt i minnet før noe skrives;
+6. lar eksisterende håndkuraterte kampfiler stå urørt.
+
+Handlingen åpner en pull request. Se gjennom antall kamper, periode og eventuelle filer i
+`fotballdata-review`, slå sammen PR-en, og kjør deretter **Oppdater data**. Dette skiller
+innhenting fra produksjonssetting og gjør at en endring i API-formatet ikke kan publisere
+feil oppstillinger automatisk.
 
 ## 5. Eget domene
 

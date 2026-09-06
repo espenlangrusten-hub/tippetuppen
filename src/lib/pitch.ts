@@ -13,6 +13,7 @@ export function positionDepth(pos: Position): number {
     case "GK":
       return 0;
     case "CB":
+    case "DF":
       return 10;
     case "RB":
     case "LB":
@@ -23,6 +24,7 @@ export function positionDepth(pos: Position): number {
     case "DM":
       return 20;
     case "CM":
+    case "MF":
       return 30;
     case "RM":
     case "LM":
@@ -35,6 +37,7 @@ export function positionDepth(pos: Position): number {
     case "SS":
       return 46;
     case "CF":
+    case "FW":
       return 50;
   }
 }

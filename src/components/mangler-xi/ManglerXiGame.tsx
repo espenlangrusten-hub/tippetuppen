@@ -37,6 +37,12 @@ function triesUsed(ps: PlayerState) {
   return ps.guesses.length + (ps.hint ? 1 : 0);
 }
 
+export function formatScorers(names: string[]): string {
+  const counts = new Map<string, number>();
+  for (const name of names) counts.set(name, (counts.get(name) ?? 0) + 1);
+  return Array.from(counts, ([name, count]) => (count > 1 ? `${name} (${count})` : name)).join(", ");
+}
+
 export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzzle; isArchive: boolean; today: string }) {
   const [state, setState] = useState<GameState | null>(null);
   const [typed, setTyped] = useState("");
@@ -252,7 +258,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         <div className="mt-1 text-sm text-mist">
           {puzzle.manager ? `Landslagssjef: ${puzzle.manager}` : ""}
           {puzzle.formation ? ` · ${puzzle.formation}` : ""}
-          {puzzle.opponentScorers.length ? ` · Mål ${puzzle.opponent}: ${puzzle.opponentScorers.join(", ")}` : ""}
+          {puzzle.opponentScorers.length ? ` · Mål ${puzzle.opponent}: ${formatScorers(puzzle.opponentScorers)}` : ""}
         </div>
       </div>
 
@@ -428,7 +434,13 @@ function Shirt({ p, ps, active, onClick, finished }: { p: MaskedPlayer; ps: Play
   const label = ps.name ? ps.name.split(" ").slice(-1)[0].toUpperCase() : p.wordLengths.map((n) => "·".repeat(n)).join(" ");
   const used = triesUsed(ps);
   return (
-    <button type="button" onClick={onClick} disabled={finished || ps.solved || ps.failed} className="flex w-16 flex-col items-center gap-0.5 sm:w-24" aria-label={`Drakt ${p.no ?? p.pos}${ps.name ? `: ${ps.name}` : ""}`}>
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={finished || ps.solved || ps.failed}
+      className="flex w-16 flex-col items-center gap-0.5 sm:w-24"
+      aria-label={`Drakt ${p.no ?? p.pos}, ${POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
+    >
       <div className={`shirt ${cls} ${active ? "shirt-active" : ""}`}>
         <span className="text-lg">{p.no ?? p.pos}</span>
         {p.captain && <span className="absolute -right-1 bottom-0 rounded bg-ink px-1 text-[9px] text-snow">C</span>}

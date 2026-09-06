@@ -48,7 +48,7 @@ jobs:
           fi
           printf 'Henter %d side(r):\n' "${#titles[@]}"
           printf '  %s\n' "${titles[@]}"
-          WIKITEXT_DUMP=wikitext npx tsx scripts/import/wikipedia.ts "${titles[@]}" | tee import.log
+          WIKITEXT_DUMP=wikitext node --import tsx scripts/import/wikipedia.ts "${titles[@]}" | tee import.log
 
       - name: Se om noe nytt kom ut av det
         id: check
@@ -95,7 +95,7 @@ jobs:
             echo
             echo "## Før et utkast flyttes til \`data/source/matches/\`"
             echo
-            echo "- **Sett venstre/høyre.** Wikipedia oppgir bare GK/DF/MF/FW, så alle forsvarere kommer som \`CB\` og alle midtbanespillere som \`CM\`. Formasjonen er utledet av kildens egne DF/MF/FW-tall, så antallet i hver rekke stemmer – men sidene gjør det ikke."
+            echo "- **Kontroller posisjonene.** Wikipedia oppgir ofte bare GK/DF/MF/FW. De beholdes som generiske roller; importøren dikter ikke venstre, høyre eller sentral plass. Formasjonen er utledet av kildens egne DF/MF/FW-tall."
             echo "- **Draktnumre mangler med vilje.** Legg dem bare inn fra en kilde som faktisk viser dem, og skriv det i kildenotatet. Ukontrollerte numre er det som ga åtte spillere feil drakt i november-2025-kampene."
             echo "- **Se over status.** \`uncertain\` betyr at importøren ikke fant elleve startende."
             echo

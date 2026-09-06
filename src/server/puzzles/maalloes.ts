@@ -21,7 +21,7 @@ export type MaalloesPuzzleRow = {
 const MIN_ANSWERS = 6;
 const clamp = (x: number, lo = 1, hi = 95) => Math.max(lo, Math.min(hi, Math.round(x)));
 
-/** Estimated share of 100 fans naming this club when asked an open question (rough prior; replaced by crowd data). */
+/** Relative recall strength. Converted to a five-pick inclusion probability per puzzle below. */
 function clubPrior(fame: number | null, bonus = 0) {
   return clamp(6 + (fame ?? 2) * 15 + bonus);
 }
@@ -50,6 +50,53 @@ function personAnswer(name: string, prior: number, fact?: string): MaalloesAnswe
   return { id: `person:${slugify(name)}`, label: name, aliases: [name, name.split(" ").slice(-1)[0]], prior: clamp(prior), fact };
 }
 
+function seededRandom(seed: string) {
+  let state = 2166136261;
+  for (let i = 0; i < seed.length; i++) state = Math.imul(state ^ seed.charCodeAt(i), 16777619);
+  return () => {
+    state |= 0;
+    state = (state + 0x6d2b79f5) | 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * Simulate 20,000 fans choosing five different answers from the open question.
+ * The incoming prior is only a relative recall weight; the returned prior is a
+ * marginal probability and therefore sums to exactly 500 percentage points.
+ */
+export function simulateSelectionPriors<T extends MaalloesAnswer>(answers: T[], seed: string, respondents = 20_000): T[] {
+  if (answers.length <= 5) return answers.map((a) => ({ ...a, prior: 100 }));
+  const random = seededRandom(seed);
+  const counts = new Array<number>(answers.length).fill(0);
+  const weights = answers.map((a) => Math.max(1, a.prior) ** 2.4);
+  for (let respondent = 0; respondent < respondents; respondent++) {
+    const available = answers.map((_, i) => i);
+    for (let pick = 0; pick < 5; pick++) {
+      const total = available.reduce((sum, i) => sum + weights[i], 0);
+      let draw = random() * total;
+      let selectedAt = available.length - 1;
+      for (let j = 0; j < available.length; j++) {
+        draw -= weights[available[j]];
+        if (draw <= 0) {
+          selectedAt = j;
+          break;
+        }
+      }
+      counts[available[selectedAt]]++;
+      available.splice(selectedAt, 1);
+    }
+  }
+  const raw = counts.map((count) => (count * 100) / respondents);
+  const scores = raw.map(Math.floor);
+  const remainder = 500 - scores.reduce((sum, score) => sum + score, 0);
+  const byFraction = raw.map((value, i) => ({ i, fraction: value - Math.floor(value) })).sort((a, b) => b.fraction - a.fraction || answers[a.i].id.localeCompare(answers[b.i].id));
+  for (let i = 0; i < remainder; i++) scores[byFraction[i].i]++;
+  return answers.map((answer, i) => ({ ...answer, prior: scores[i] }));
+}
+
 /** Reject ambiguous answer sets: an alias that maps to two answers would make grading unfair. */
 function dedupeAliases(answers: MaalloesAnswer[]): MaalloesAnswer[] {
   const seen = new Map<string, number>();
@@ -72,7 +119,8 @@ function makePuzzle(opts: {
   tags?: string[];
   quality?: number;
 }): MaalloesPuzzleRow | null {
-  const answers = dedupeAliases(opts.answers.filter((a): a is MaalloesAnswer => !!a));
+  const candidates = dedupeAliases(opts.answers.filter((a): a is MaalloesAnswer => !!a));
+  const answers = simulateSelectionPriors(candidates, opts.id);
   const ids = new Set(answers.map((a) => a.id));
   if (ids.size !== answers.length) return null; // duplicate answer → reject
   if (answers.length < MIN_ANSWERS) return null;
@@ -158,6 +206,110 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         quality: 3.5,
       }),
     );
+  }
+  // Adjacent seasons and rolling windows create genuinely different membership
+  // questions from the verified tables, including membership-only source rows.
+  const sortedSeasons = seasons.slice().sort((a, b) => a.year - b.year);
+  const clubsBySeason = new Map(sortedSeasons.map((season) => [season.id, new Set((entriesBySeason.get(season.id) ?? []).map((entry) => entry.clubId))]));
+  const clubYears = (group: typeof seasons) => {
+    const result = new Map<string, number[]>();
+    for (const season of group) {
+      for (const clubId of clubsBySeason.get(season.id) ?? []) result.set(clubId, [...(result.get(clubId) ?? []), season.year]);
+    }
+    return result;
+  };
+  for (let i = 0; i < sortedSeasons.length - 1; i++) {
+    const pair = sortedSeasons.slice(i, i + 2);
+    if (pair[1].year !== pair[0].year + 1) continue;
+    const years = clubYears(pair);
+    const sourceIds = pair.map((season) => season.id);
+    const status = pair.every((season) => ok(season.status)) ? "single_source" : "recall";
+    push(
+      makePuzzle({
+        id: `mal-seasons-both-${pair[0].year}-${pair[1].year}`,
+        kind: "season-pair-both",
+        category: "Toppdivisjonen",
+        question: `Navngi et lag som spilte i norsk toppdivisjon i både ${pair[0].year} og ${pair[1].year}`,
+        intro: INTRO,
+        answerKind: "club",
+        answers: Array.from(years)
+          .filter(([, played]) => played.length === 2)
+          .map(([clubId]) => clubAnswer(ctx, clubId, 4, "Spilte begge sesongene")),
+        explanation: `Medlemslistene for ${pair[0].year}- og ${pair[1].year}-sesongen.`,
+        sourceIds,
+        status,
+        era: Math.floor(pair[0].year / 10) * 10,
+        quality: 3.2,
+      }),
+    );
+    push(
+      makePuzzle({
+        id: `mal-seasons-either-${pair[0].year}-${pair[1].year}`,
+        kind: "season-pair-either",
+        category: "Toppdivisjonen",
+        question: `Navngi et lag som spilte i norsk toppdivisjon i minst én av sesongene ${pair[0].year} og ${pair[1].year}`,
+        intro: INTRO,
+        answerKind: "club",
+        answers: Array.from(years).map(([clubId, played]) => clubAnswer(ctx, clubId, played.length === 2 ? 6 : 0, played.length === 2 ? "Begge sesongene" : `${played[0]}-sesongen`)),
+        explanation: `Samlet medlemsliste for sesongene ${pair[0].year} og ${pair[1].year}.`,
+        sourceIds,
+        status,
+        era: Math.floor(pair[0].year / 10) * 10,
+        quality: 3,
+      }),
+    );
+  }
+  const windowSpecs = [
+    { size: 3, sizeWord: "tre", threshold: 2, thresholdWord: "to", thresholdKey: "two" },
+    { size: 4, sizeWord: "fire", threshold: 3, thresholdWord: "tre", thresholdKey: "three" },
+    { size: 5, sizeWord: "fem", threshold: 3, thresholdWord: "tre", thresholdKey: "three" },
+  ] as const;
+  for (const spec of windowSpecs) {
+    for (let i = 0; i <= sortedSeasons.length - spec.size; i++) {
+      const window = sortedSeasons.slice(i, i + spec.size);
+      if (window[spec.size - 1].year !== window[0].year + spec.size - 1) continue;
+      const years = clubYears(window);
+      const start = window[0].year;
+      const end = window[spec.size - 1].year;
+      const sourceIds = window.map((season) => season.id);
+      const status = window.every((season) => ok(season.status)) ? "single_source" : "recall";
+      const idSize = spec.size === 5 ? "" : `-${spec.size}`;
+      const kindSize = spec.size === 5 ? "" : `-${spec.size}`;
+      push(
+        makePuzzle({
+          id: `mal-season-window${idSize}-any-${start}-${end}`,
+          kind: `season-window${kindSize}-any`,
+          category: "Toppdivisjonen",
+          question: `Navngi et lag som spilte i norsk toppdivisjon mellom ${start} og ${end}`,
+          intro: INTRO,
+          answerKind: "club",
+          answers: Array.from(years).map(([clubId, played]) => clubAnswer(ctx, clubId, Math.min(10, played.length * 2), `${played.length} av ${spec.size} sesonger`)),
+          explanation: `Samlet medlemsliste for ${spec.sizeWord} sesonger, ${start}–${end}.`,
+          sourceIds,
+          status,
+          era: Math.floor(start / 10) * 10,
+          quality: 3.2,
+        }),
+      );
+      push(
+        makePuzzle({
+          id: `mal-season-window${idSize}-${spec.thresholdKey}-${start}-${end}`,
+          kind: `season-window${kindSize}-${spec.thresholdKey}`,
+          category: "Toppdivisjonen",
+          question: `Navngi et lag som spilte minst ${spec.thresholdWord} sesonger i norsk toppdivisjon mellom ${start} og ${end}`,
+          intro: INTRO,
+          answerKind: "club",
+          answers: Array.from(years)
+            .filter(([, played]) => played.length >= spec.threshold)
+            .map(([clubId, played]) => clubAnswer(ctx, clubId, Math.min(10, played.length * 2), `${played.length} av ${spec.size} sesonger`)),
+          explanation: `Opptalt fra medlemslistene for sesongene ${start}–${end}.`,
+          sourceIds,
+          status,
+          era: Math.floor(start / 10) * 10,
+          quality: 3.5,
+        }),
+      );
+    }
   }
   // Relegated per decade, champions and runners-up spans.
   const byDecade = new Map<number, { relegated: Set<string>; champions: Map<string, number>; seasons: number; allOk: boolean }>();
@@ -330,6 +482,104 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     for (const m of ms) for (const a of appsByMatch.get(m.id) ?? []) if (a.starter) set.set(a.playerId, (set.get(a.playerId) ?? 0) + 1);
     return set;
   };
+  const pushStarterGroup = (opts: { id: string; kind: string; question: string; matches: typeof matches; era: number | null; quality?: number }) => {
+    const set = starterSet(opts.matches);
+    push(
+      makePuzzle({
+        id: opts.id,
+        kind: opts.kind,
+        category: "Landslaget",
+        question: opts.question,
+        intro: INTRO,
+        answerKind: "player",
+        answers: Array.from(set).map(([playerId, starts]) => playerAnswer(ctx, playerId, Math.min(12, starts * 2), `${starts} ${starts === 1 ? "kamp" : "kamper"} fra start`)),
+        explanation: `Basert på ${opts.matches.length} ${opts.matches.length === 1 ? "kamp" : "kamper"} i Tippetuppen-arkivet.`,
+        sourceIds: opts.matches.map((match) => match.id),
+        status: "single_source",
+        era: opts.era,
+        quality: opts.quality ?? 3.2,
+      }),
+    );
+  };
+  const matchesByYear = new Map<number, typeof matches>();
+  for (const match of okMatches) {
+    const year = Number(match.date.slice(0, 4));
+    matchesByYear.set(year, [...(matchesByYear.get(year) ?? []), match]);
+  }
+  const archiveYears = Array.from(matchesByYear.keys()).sort((a, b) => a - b);
+  for (const year of archiveYears) {
+    const yearMatches = matchesByYear.get(year)!;
+    pushStarterGroup({
+      id: `mal-starters-year-${year}`,
+      kind: "starters-year",
+      question: `Navngi en spiller som startet en av Norges landskamper fra ${year} i Tippetuppen-arkivet`,
+      matches: yearMatches,
+      era: Math.floor(year / 10) * 10,
+    });
+    const resultGroups = [
+      { key: "win", label: "en seier", matches: yearMatches.filter((match) => match.norwayScore > match.opponentScore) },
+      { key: "draw", label: "en uavgjort kamp", matches: yearMatches.filter((match) => match.norwayScore === match.opponentScore) },
+      { key: "loss", label: "et tap", matches: yearMatches.filter((match) => match.norwayScore < match.opponentScore) },
+    ];
+    for (const result of resultGroups) {
+      if (!result.matches.length) continue;
+      pushStarterGroup({
+        id: `mal-starters-${result.key}-${year}`,
+        kind: `starters-result-${result.key}`,
+        question: `Navngi en spiller som startet ${result.label} for Norge i ${year} i Tippetuppen-arkivet`,
+        matches: result.matches,
+        era: Math.floor(year / 10) * 10,
+        quality: 3,
+      });
+    }
+  }
+  for (let i = 0; i < archiveYears.length - 1; i++) {
+    const first = archiveYears[i];
+    const second = archiveYears[i + 1];
+    if (second !== first + 1) continue;
+    pushStarterGroup({
+      id: `mal-starters-years-${first}-${second}`,
+      kind: "starters-two-years",
+      question: `Navngi en spiller som startet en landskamp for Norge i ${first} eller ${second} i Tippetuppen-arkivet`,
+      matches: [...matchesByYear.get(first)!, ...matchesByYear.get(second)!],
+      era: Math.floor(first / 10) * 10,
+      quality: 3.1,
+    });
+  }
+  const matchesByOpponent = new Map<string, typeof matches>();
+  for (const match of okMatches) matchesByOpponent.set(match.opponent, [...(matchesByOpponent.get(match.opponent) ?? []), match]);
+  for (const [opponent, opponentMatches] of matchesByOpponent) {
+    pushStarterGroup({
+      id: `mal-starters-opponent-${slugify(opponent)}`,
+      kind: "starters-opponent",
+      question: `Navngi en spiller som startet en Norge-kamp mot ${opponent} i Tippetuppen-arkivet`,
+      matches: opponentMatches,
+      era: null,
+      quality: 3.3,
+    });
+  }
+  const matchesByDecade = new Map<number, typeof matches>();
+  for (const match of okMatches) {
+    const decade = Math.floor(Number(match.date.slice(0, 4)) / 10) * 10;
+    matchesByDecade.set(decade, [...(matchesByDecade.get(decade) ?? []), match]);
+  }
+  for (const [decade, decadeMatches] of matchesByDecade) {
+    for (const result of [
+      { key: "win", label: "vant", matches: decadeMatches.filter((match) => match.norwayScore > match.opponentScore) },
+      { key: "draw", label: "spilte uavgjort", matches: decadeMatches.filter((match) => match.norwayScore === match.opponentScore) },
+      { key: "loss", label: "tapte", matches: decadeMatches.filter((match) => match.norwayScore < match.opponentScore) },
+    ]) {
+      if (!result.matches.length) continue;
+      pushStarterGroup({
+        id: `mal-starters-decade-${result.key}-${decade}`,
+        kind: `starters-decade-${result.key}`,
+        question: `Navngi en spiller som startet en landskamp Norge ${result.label} på ${decade}-tallet i Tippetuppen-arkivet`,
+        matches: result.matches,
+        era: decade,
+        quality: 3.4,
+      });
+    }
+  }
   // Tournaments.
   const tournaments = new Map<string, typeof matches>();
   for (const m of okMatches) {
@@ -350,7 +600,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         intro: INTRO,
         answerKind: "player",
         answers: Array.from(set).map(([p, n]) => playerAnswer(ctx, p, n >= ms.length ? 8 : 0, `${n} av ${ms.length} kamper fra start`)),
-        explanation: `${ms.length} kamper i databasen: ${ms.map((m) => `${m.opponent} ${m.norwayScore}–${m.opponentScore}`).join(", ")}.`,
+        explanation: `${ms.length} ${ms.length === 1 ? "kamp" : "kamper"} i databasen: ${ms.map((m) => `${m.opponent} ${m.norwayScore}–${m.opponentScore}`).join(", ")}.`,
         sourceIds: ms.map((m) => m.id),
         status: "single_source",
         era: Number(key.slice(-4)),
@@ -375,7 +625,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         intro: INTRO,
         answerKind: "player",
         answers: Array.from(set).map(([p, n]) => playerAnswer(ctx, p, n >= ms.length * 0.7 ? 10 : 0, `${n} ${n === 1 ? "kamp" : "kamper"} fra start i databasen`)),
-        explanation: `Basert på ${ms.length} kamper i databasen.`,
+        explanation: `Basert på ${ms.length} ${ms.length === 1 ? "kamp" : "kamper"} i databasen.`,
         sourceIds: ms.map((m) => m.id),
         status: "single_source",
         era: Math.floor(Math.min(...years) / 10) * 10,
@@ -425,15 +675,6 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         quality: 3,
       }),
     );
-  // Opponents.
-  const opponents = new Map<string, typeof matches>();
-  for (const m of okMatches) opponents.set(m.opponent, [...(opponents.get(m.opponent) ?? []), m]);
-  const oppByDecade = new Map<number, Set<string>>();
-  for (const m of okMatches) {
-    const dec = Math.floor(Number(m.date.slice(0, 4)) / 10) * 10;
-    if (!oppByDecade.has(dec)) oppByDecade.set(dec, new Set());
-    oppByDecade.get(dec)!.add(m.opponent);
-  }
   // Squads.
   const bySquad = new Map<string, typeof squads>();
   for (const sq of squads) bySquad.set(sq.tournamentId, [...(bySquad.get(sq.tournamentId) ?? []), sq]);

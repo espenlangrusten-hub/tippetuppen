@@ -59,9 +59,12 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
   await page.screenshot({ path: `e2e/screenshots/mal-question-${testInfo.project.name}.png`, fullPage: true });
 
   // Fetch the puzzle id from the page's saved state after first interaction; use API to learn one valid answer.
-  const input = page.getByRole("textbox", { name: "Ditt svar" });
+  const input = page.getByRole("combobox", { name: "Ditt svar" });
+  await input.fill("solsk");
+  await expect(page.getByRole("option", { name: /Solskjær/ })).toBeVisible({ timeout: 10000 });
+  await input.fill("");
   await input.fill("xyzzy ikke et svar");
-  await page.getByRole("button", { name: "Svar" }).click();
+  await page.getByRole("button", { name: "Svar", exact: true }).click();
   await expect(page.getByText("Ikke et gyldig svar").first()).toBeVisible({ timeout: 10000 });
 
   // Pull a valid label via the answer API using the puzzle id stored in localStorage keys.
@@ -83,27 +86,34 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
   }
   expect(valid).toBeTruthy();
   await input.fill(valid!);
-  await page.getByRole("button", { name: "Svar" }).click();
+  await page.getByRole("button", { name: "Svar", exact: true }).click();
   await expect(page.locator("li", { hasText: valid! }).first()).toBeVisible({ timeout: 10000 });
-  // Points stay hidden mid-round: the answer must show a lock, and the API must not leak a score.
-  await expect(page.getByText("Låst").first()).toBeVisible();
-  await page.screenshot({ path: `e2e/screenshots/mal-locked-${testInfo.project.name}.png`, fullPage: true });
+  // Points stay hidden mid-round, while every entry remains editable.
+  await expect(page.getByRole("button", { name: /Endre/ }).first()).toBeVisible();
+  await page.screenshot({ path: `e2e/screenshots/mal-review-${testInfo.project.name}.png`, fullPage: true });
   const midRound = await page.request.post(`${process.env.E2E_API_URL ?? "http://localhost:8000/api"}/maalloes/answer`, { data: { puzzleId, text: valid!, taken: [] } });
   expect(await midRound.json()).not.toHaveProperty("score");
+  // Edit removes the chosen entry and puts it back in the input without spending a slot.
+  await page.getByRole("button", { name: /Endre/ }).nth(1).click();
+  await expect(input).not.toHaveValue("");
+  await page.getByRole("button", { name: "Svar", exact: true }).click();
   // Duplicate is rejected without consuming a slot.
   await input.fill(valid!);
-  await page.getByRole("button", { name: "Svar" }).click();
+  await page.getByRole("button", { name: "Svar", exact: true }).click();
   await expect(page.getByText(/allerede brukt/)).toBeVisible();
   // Fill the remaining three with junk to finish.
   for (const junk of ["a1", "b2", "c3"]) {
     await input.fill(junk + " tull");
-    await page.getByRole("button", { name: "Svar" }).click();
+    await page.getByRole("button", { name: "Svar", exact: true }).click();
     await page.waitForTimeout(300);
   }
+  await expect(page.getByRole("button", { name: "Send inn fem svar" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Del resultatet" })).toHaveCount(0);
+  await page.getByRole("button", { name: "Send inn fem svar" }).click();
   await expect(page.getByRole("button", { name: "Del resultatet" })).toBeVisible({ timeout: 15000 });
   await expect(page.getByText(/Alle svar, fra sjeldnest/)).toBeVisible();
   // ... and are revealed once all five are in.
-  await expect(page.getByText("Låst")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /Endre/ })).toHaveCount(0);
   await page.screenshot({ path: `e2e/screenshots/mal-result-${testInfo.project.name}.png`, fullPage: true });
   await page.reload();
   await expect(page.getByRole("button", { name: "Del resultatet" })).toBeVisible();

@@ -6,6 +6,7 @@
   { "id": "nations-league", "name": "Nations League", "kind": "nations-league" },
   { "id": "playoff", "name": "Playoff", "kind": "playoff" },
   { "id": "friendly", "name": "Privatlandskamp", "kind": "friendly" },
+  { "id": "international", "name": "Landskamp", "kind": "tournament" },
   { "id": "eliteserien", "name": "Eliteserien", "kind": "league" },
   { "id": "nm-cup", "name": "NM (cupen)", "kind": "cup" }
 ]

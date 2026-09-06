@@ -8,6 +8,13 @@
       "when": 1788350510990,
       "tag": "0000_init",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788697307862,
+      "tag": "0001_yellow_wendigo",
+      "breakpoints": true
     }
   ]
 }

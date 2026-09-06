@@ -2,7 +2,7 @@
 
 To daglige spill for norske fotballfans:
 
-- **Mangler XI** – fyll ut Norges startellever fra en ekte landskamp (1989–i dag), bokstav for bokstav.
+- **Mangler XI** – fyll ut Norges startellever fra en ekte landskamp (1990–2026), bokstav for bokstav.
 - **Målløs** – ett spørsmål om norsk fotball, fem svar; jo færre andre som svarer det samme, jo bedre.
 
 Nytt spill hver dag kl. 00:00 norsk tid (Europe/Oslo).
@@ -27,7 +27,8 @@ npm install
 npm run db:migrate      # embedded PGlite i .data/pglite
 npm run db:seed         # data/source/*.json → database
 npm run data:schedule    # genererer puslespill og planlegger 400 dager
-npm run dev:stack        # Postgres-protokoll + Edge-funksjonen under Deno på :8000
+ADMIN_KEY=<lokal-nøkkel> ANALYTICS_SALT=<lokalt-salt> npm run dev:stack
+                         # Postgres-protokoll + Edge-funksjonen under Deno på :8000
 npm run build && npm start   # statisk eksport på :3200
 ```
 
@@ -40,7 +41,7 @@ Tester: `npm test` (Vitest), `npm run check:deno` (Edge-funksjonen), `npm run e2
 | Sti | Hva |
 | --- | --- |
 | `data/source/` | Kildefiler med kildereferanser og status. Sannheten om fotballdataene. |
-| `scripts/` | `validate-data`, `seed`, `schedule`, `runway`, `sync-shared`, `import/wikipedia`, `dev-stack.sh` |
+| `scripts/` | Validering, seed, planlegging og import fra den avtalte NFF/Fotballdata-kilden |
 | `src/lib/` | Ren spill-logikk (navn, brikker, datoer, baneoppsett) – deles med Edge-funksjonen |
 | `supabase/functions/api/` | Spill-API-et |
 | `src/app/`, `src/components/` | Den statiske frontenden |
@@ -54,4 +55,4 @@ Se `docs/RUNBOOK.md`.
 
 ## Datakvalitet
 
-Kildestatus per kamp: `verified`, `single_source`, `recall`, `uncertain`, `rejected`. Bare `verified` og `single_source` går inn i den daglige rotasjonen. Vi finner aldri på oppstillinger.
+Kildestatus per kamp: `verified`, `single_source`, `recall`, `uncertain`, `rejected`. Bare `verified` og `single_source` går inn i den daglige rotasjonen. Vi finner aldri på oppstillinger. Eliteserien/Tippeligaen har komplette sesongtabeller for hvert år 1990–2025; valideringen stopper byggingen hvis en sesong mangler eller er åpenbart ufullstendig.

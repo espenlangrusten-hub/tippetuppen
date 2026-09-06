@@ -30,10 +30,22 @@ export const tt = pgSchema("tippetuppen");
  *  uncertain     – conflicting or incomplete information
  *  rejected      – known to be wrong; kept for audit
  */
-export const DATA_STATUSES = ["verified", "single_source", "recall", "uncertain", "rejected"] as const;
+export const DATA_STATUSES = [
+  "verified",
+  "single_source",
+  "recall",
+  "uncertain",
+  "rejected",
+] as const;
 export type DataStatus = (typeof DATA_STATUSES)[number];
 
-export type SourceRef = { url?: string; title: string; kind: "web" | "book" | "editorial" | "api"; accessed?: string; note?: string };
+export type SourceRef = {
+  url?: string;
+  title: string;
+  kind: "web" | "book" | "editorial" | "api";
+  accessed?: string;
+  note?: string;
+};
 
 // ---------------------------------------------------------------------------
 // Reference entities
@@ -52,21 +64,32 @@ export const players = tt.table("players", {
   notes: text("notes"),
   status: text("status").$type<DataStatus>().notNull().default("recall"),
   sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
-  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-  updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
 });
 
 export const playerAliases = tt.table(
   "player_aliases",
   {
     id: serial("id").primaryKey(),
-    playerId: text("player_id").notNull().references(() => players.id, { onDelete: "cascade" }),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id, { onDelete: "cascade" }),
     alias: text("alias").notNull(),
     normalized: text("normalized").notNull(),
-    kind: text("kind").$type<"surname" | "full" | "nickname" | "spelling" | "initials">().notNull(),
+    kind: text("kind")
+      .$type<"surname" | "full" | "nickname" | "spelling" | "initials">()
+      .notNull(),
     source: text("source").notNull().default("seed"),
   },
-  (t) => [uniqueIndex("player_aliases_unique").on(t.playerId, t.normalized), index("player_aliases_norm").on(t.normalized)],
+  (t) => [
+    uniqueIndex("player_aliases_unique").on(t.playerId, t.normalized),
+    index("player_aliases_norm").on(t.normalized),
+  ],
 );
 
 export const clubs = tt.table("clubs", {
@@ -95,7 +118,9 @@ export const matches = tt.table(
   {
     id: text("id").primaryKey(), // "1998-06-23-bra-nor"
     date: text("date").notNull(), // YYYY-MM-DD
-    competitionId: text("competition_id").notNull().references(() => competitions.id),
+    competitionId: text("competition_id")
+      .notNull()
+      .references(() => competitions.id),
     stage: text("stage"), // "Gruppe A", "Åttedelsfinale", "Kvalifisering"
     opponent: text("opponent").notNull(), // "Brasil"
     opponentCode: text("opponent_code").notNull(), // "BRA"
@@ -112,18 +137,29 @@ export const matches = tt.table(
     lineupComplete: boolean("lineup_complete").notNull().default(false),
     notes: text("notes"),
     sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
-    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
-    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
   },
-  (t) => [index("matches_date").on(t.date)],
+  (t) => [
+    index("matches_date").on(t.date),
+    index("matches_competition").on(t.competitionId),
+  ],
 );
 
 export const appearances = tt.table(
   "appearances",
   {
     id: serial("id").primaryKey(),
-    matchId: text("match_id").notNull().references(() => matches.id, { onDelete: "cascade" }),
-    playerId: text("player_id").notNull().references(() => players.id),
+    matchId: text("match_id")
+      .notNull()
+      .references(() => matches.id, { onDelete: "cascade" }),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id),
     starter: boolean("starter").notNull().default(true),
     shirtNumber: integer("shirt_number"),
     position: text("position").$type<Position>().notNull(),
@@ -133,48 +169,70 @@ export const appearances = tt.table(
     minuteOff: integer("minute_off"),
     answerKey: text("answer_key"), // manual override for the tile string; normally null (the surname is used)
   },
-  (t) => [uniqueIndex("appearances_unique").on(t.matchId, t.playerId), index("appearances_match").on(t.matchId)],
+  (t) => [
+    uniqueIndex("appearances_unique").on(t.matchId, t.playerId),
+    index("appearances_match").on(t.matchId),
+    index("appearances_player").on(t.playerId),
+  ],
 );
 
 export const goals = tt.table(
   "goals",
   {
     id: serial("id").primaryKey(),
-    matchId: text("match_id").notNull().references(() => matches.id, { onDelete: "cascade" }),
+    matchId: text("match_id")
+      .notNull()
+      .references(() => matches.id, { onDelete: "cascade" }),
     team: text("team").$type<"norway" | "opponent">().notNull(),
     playerId: text("player_id").references(() => players.id),
     scorerName: text("scorer_name"), // for opponent scorers
     minute: integer("minute"),
     kind: text("kind").$type<"goal" | "pen" | "og">().notNull().default("goal"),
   },
-  (t) => [index("goals_match").on(t.matchId)],
+  (t) => [
+    index("goals_match").on(t.matchId),
+    index("goals_player").on(t.playerId),
+  ],
 );
 
 // ---------------------------------------------------------------------------
 // Norwegian club football (Målløs)
 // ---------------------------------------------------------------------------
 
-export const seasons = tt.table("seasons", {
-  id: text("id").primaryKey(), // "eliteserien-1995"
-  competitionId: text("competition_id").notNull().references(() => competitions.id),
-  year: integer("year").notNull(),
-  name: text("name").notNull(), // "Tippeligaen 1995"
-  teams: integer("teams").notNull(),
-  status: text("status").$type<DataStatus>().notNull().default("recall"),
-  sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
-});
+export const seasons = tt.table(
+  "seasons",
+  {
+    id: text("id").primaryKey(), // "eliteserien-1995"
+    competitionId: text("competition_id")
+      .notNull()
+      .references(() => competitions.id),
+    year: integer("year").notNull(),
+    name: text("name").notNull(), // "Tippeligaen 1995"
+    teams: integer("teams").notNull(),
+    status: text("status").$type<DataStatus>().notNull().default("recall"),
+    sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
+  },
+  (t) => [index("seasons_competition").on(t.competitionId)],
+);
 
 export const seasonEntries = tt.table(
   "season_entries",
   {
     id: serial("id").primaryKey(),
-    seasonId: text("season_id").notNull().references(() => seasons.id, { onDelete: "cascade" }),
-    clubId: text("club_id").notNull().references(() => clubs.id),
+    seasonId: text("season_id")
+      .notNull()
+      .references(() => seasons.id, { onDelete: "cascade" }),
+    clubId: text("club_id")
+      .notNull()
+      .references(() => clubs.id),
     position: integer("position").notNull(),
     points: integer("points"),
     outcome: text("outcome"), // champion | relegated | playoff | europe | null
   },
-  (t) => [uniqueIndex("season_entries_unique").on(t.seasonId, t.clubId)],
+  (t) => [
+    uniqueIndex("season_entries_unique").on(t.seasonId, t.clubId),
+    index("season_entries_club").on(t.clubId),
+  ],
 );
 
 /** Generic honours: league titles, cup wins, top scorers, awards, managers. */
@@ -192,7 +250,11 @@ export const honours = tt.table(
     status: text("status").$type<DataStatus>().notNull().default("recall"),
     sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
   },
-  (t) => [index("honours_kind_year").on(t.kind, t.year)],
+  (t) => [
+    index("honours_kind_year").on(t.kind, t.year),
+    index("honours_club").on(t.clubId),
+    index("honours_player").on(t.playerId),
+  ],
 );
 
 /** Tournament squads (e.g. "wc-1998"). */
@@ -201,12 +263,17 @@ export const squadMembers = tt.table(
   {
     id: serial("id").primaryKey(),
     tournamentId: text("tournament_id").notNull(), // "wc-1994" | "wc-1998" | "euro-2000" | "euro-2024" ...
-    playerId: text("player_id").notNull().references(() => players.id),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id),
     shirtNumber: integer("shirt_number"),
     clubName: text("club_name"),
     status: text("status").$type<DataStatus>().notNull().default("recall"),
   },
-  (t) => [uniqueIndex("squad_members_unique").on(t.tournamentId, t.playerId)],
+  (t) => [
+    uniqueIndex("squad_members_unique").on(t.tournamentId, t.playerId),
+    index("squad_members_player").on(t.playerId),
+  ],
 );
 
 /** Player–club spells, used for "played for X" style questions. */
@@ -214,14 +281,21 @@ export const playerClubSpells = tt.table(
   "player_club_spells",
   {
     id: serial("id").primaryKey(),
-    playerId: text("player_id").notNull().references(() => players.id),
-    clubId: text("club_id").notNull().references(() => clubs.id),
+    playerId: text("player_id")
+      .notNull()
+      .references(() => players.id),
+    clubId: text("club_id")
+      .notNull()
+      .references(() => clubs.id),
     fromYear: integer("from_year"),
     toYear: integer("to_year"),
     status: text("status").$type<DataStatus>().notNull().default("recall"),
     sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
   },
-  (t) => [index("spells_player").on(t.playerId), index("spells_club").on(t.clubId)],
+  (t) => [
+    index("spells_player").on(t.playerId),
+    index("spells_club").on(t.clubId),
+  ],
 );
 
 // ---------------------------------------------------------------------------
@@ -247,9 +321,14 @@ export const puzzles = tt.table(
     sourceRef: text("source_ref"), // match id / generator seed
     eligible: boolean("eligible").notNull().default(true), // passes rotation policy
     enabled: boolean("enabled").notNull().default(true), // admin kill switch
-    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
   },
-  (t) => [index("puzzles_game").on(t.game), index("puzzles_game_fp").on(t.game, t.fingerprint)],
+  (t) => [
+    index("puzzles_game").on(t.game),
+    index("puzzles_game_fp").on(t.game, t.fingerprint),
+  ],
 );
 
 export const schedule = tt.table(
@@ -258,11 +337,20 @@ export const schedule = tt.table(
     game: text("game").$type<GameId>().notNull(),
     date: text("date").notNull(), // YYYY-MM-DD in Europe/Oslo
     number: integer("number").notNull(), // daily puzzle number shown to users (#1, #2, ...)
-    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id),
+    puzzleId: text("puzzle_id")
+      .notNull()
+      .references(() => puzzles.id),
     locked: boolean("locked").notNull().default(false), // set by admin to protect from regeneration
-    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .notNull()
+      .defaultNow(),
   },
-  (t) => [primaryKey({ columns: [t.game, t.date] }), uniqueIndex("schedule_game_puzzle").on(t.game, t.puzzleId), uniqueIndex("schedule_game_number").on(t.game, t.number)],
+  (t) => [
+    primaryKey({ columns: [t.game, t.date] }),
+    uniqueIndex("schedule_game_puzzle").on(t.game, t.puzzleId),
+    uniqueIndex("schedule_game_number").on(t.game, t.number),
+    index("schedule_puzzle").on(t.puzzleId),
+  ],
 );
 
 // ---------------------------------------------------------------------------
@@ -272,7 +360,9 @@ export const schedule = tt.table(
 export const maalloesAnswerCounts = tt.table(
   "maalloes_answer_counts",
   {
-    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+    puzzleId: text("puzzle_id")
+      .notNull()
+      .references(() => puzzles.id, { onDelete: "cascade" }),
     answerId: text("answer_id").notNull(),
     count: integer("count").notNull().default(0),
   },
@@ -280,7 +370,9 @@ export const maalloesAnswerCounts = tt.table(
 );
 
 export const puzzleStats = tt.table("puzzle_stats", {
-  puzzleId: text("puzzle_id").primaryKey().references(() => puzzles.id, { onDelete: "cascade" }),
+  puzzleId: text("puzzle_id")
+    .primaryKey()
+    .references(() => puzzles.id, { onDelete: "cascade" }),
   respondents: integer("respondents").notNull().default(0), // Målløs: completed submissions
   starts: integer("starts").notNull().default(0),
   completions: integer("completions").notNull().default(0),
@@ -299,16 +391,25 @@ export const events = tt.table(
     visitor: text("visitor").notNull(), // daily-rotating anonymous hash
     isNew: boolean("is_new").notNull().default(false), // client-reported first visit
     archive: boolean("archive").notNull().default(false),
-    props: jsonb("props").$type<Record<string, unknown>>().notNull().default({}),
+    props: jsonb("props")
+      .$type<Record<string, unknown>>()
+      .notNull()
+      .default({}),
   },
-  (t) => [index("events_day_name").on(t.day, t.name), index("events_visitor").on(t.day, t.visitor)],
+  (t) => [
+    index("events_day_name").on(t.day, t.name),
+    index("events_visitor").on(t.day, t.visitor),
+  ],
 );
 
 export const adminAudit = tt.table("admin_audit", {
   id: serial("id").primaryKey(),
   ts: timestamp("ts", { withTimezone: true }).notNull().defaultNow(),
   action: text("action").notNull(),
-  details: jsonb("details").$type<Record<string, unknown>>().notNull().default({}),
+  details: jsonb("details")
+    .$type<Record<string, unknown>>()
+    .notNull()
+    .default({}),
 });
 
 export const settings = tt.table("settings", {

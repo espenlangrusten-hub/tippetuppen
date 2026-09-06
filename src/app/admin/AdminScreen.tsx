@@ -80,6 +80,9 @@ export function AdminScreen() {
   }, [game]);
 
   const peakViews = Math.max(1, ...(stats?.daily ?? []).map((d) => Number(d.page_views)));
+  const gameStats = (["mangler-xi", "maalloes"] as const).map(
+    (gameId) => stats?.games.find((row) => row.game === gameId) ?? { game: gameId, starts: 0, completes: 0, give_ups: 0, archive: 0 },
+  );
 
   const act = async (path: string, body: unknown) => {
     setBusy(true);
@@ -151,7 +154,7 @@ export function AdminScreen() {
             ))}
           </dl>
 
-          {stats.games.length > 0 && (
+          {stats && (
             <table className="mt-4 w-full text-sm">
               <thead className="text-left text-xs uppercase text-mist">
                 <tr>
@@ -163,7 +166,7 @@ export function AdminScreen() {
                 </tr>
               </thead>
               <tbody>
-                {stats.games.map((g) => (
+                {gameStats.map((g) => (
                   <tr key={g.game} className="border-t border-line">
                     <td className="py-1">{GAME_LABEL[g.game] ?? g.game}</td>
                     <td className="text-right">{g.starts}</td>

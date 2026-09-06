@@ -4,7 +4,7 @@ import Link from "next/link";
 import { loadProgress, saveProgress, addRecord, getVisitorFlags, setVisitorFlags } from "@/lib/storage";
 import { maalloesShareText, shareOrCopy } from "@/lib/share";
 import { track } from "@/components/analytics/Beacon";
-import { apiPost } from "@/lib/api";
+import { apiGet, apiPost } from "@/lib/api";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
 
@@ -26,6 +26,7 @@ type Final = {
   explanation: string | null;
 };
 type GameState = { v: 1; puzzleId: string; entries: Entry[]; final: Final | null; startedAt: string | null; finishedAt: string | null };
+type Suggestion = { id: string; label: string };
 
 const ANSWERS = 5;
 
@@ -44,6 +45,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
   const [toast, setToast] = useState<string | null>(null);
   const [showIntro, setShowIntro] = useState(false);
   const [shareMsg, setShareMsg] = useState<string | null>(null);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const countdown = useMidnightCountdown();
 
@@ -55,6 +57,26 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
   useEffect(() => {
     if (state) saveProgress("maalloes", puzzle.puzzleId, state);
   }, [state, puzzle.puzzleId]);
+  useEffect(() => {
+    if (puzzle.answerKind !== "player" || text.trim().length < 2 || state?.final) {
+      setSuggestions([]);
+      return;
+    }
+    let cancelled = false;
+    const timer = window.setTimeout(() => {
+      void apiGet<{ ok: boolean; suggestions: Suggestion[] }>(`/suggestions?kind=player&q=${encodeURIComponent(text.trim())}`)
+        .then((result) => {
+          if (!cancelled) setSuggestions(result.ok ? result.suggestions : []);
+        })
+        .catch(() => {
+          if (!cancelled) setSuggestions([]);
+        });
+    }, 160);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [puzzle.answerKind, state?.final, text]);
 
   const showToast = (m: string) => {
     setToast(m);
@@ -62,7 +84,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
   };
 
   const submitAnswer = async () => {
-    if (!state || state.final || busy) return;
+    if (!state || state.final || busy || state.entries.length >= ANSWERS) return;
     const t = text.trim();
     if (t.length < 2) return;
     setBusy(true);
@@ -80,31 +102,45 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
       const entry: Entry = d.ok ? { text: t, id: d.id!, label: d.label!, score: null, fact: null } : { text: t, id: null, label: null, score: null, fact: null };
       const entries = [...state.entries, entry];
       setText("");
+      setSuggestions([]);
       const next: GameState = { ...state, entries, startedAt: state.startedAt ?? new Date().toISOString() };
-      if (entries.length >= ANSWERS) {
-        const f = await apiPost<{ ok: boolean } & Final>("/maalloes/submit", {
-          puzzleId: puzzle.puzzleId,
-          answers: entries.map((e) => ({ id: e.id, text: e.text })),
-        });
-        if (f.ok) {
-          // Everything is revealed at once, here.
-          const done: GameState = {
-            ...next,
-            final: f,
-            finishedAt: new Date().toISOString(),
-            entries: entries.map((e, i) => ({ ...e, score: f.scores[i], fact: f.board.find((b) => b.id === e.id)?.fact ?? null })),
-          };
-          setState(done);
-          addRecord("maalloes", { date: puzzle.date, completedAt: done.finishedAt!, score: f.total, won: f.tier.key !== "relegation", archive: isArchive });
-          track({ name: "game_complete", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive, props: { total: f.total, tier: f.tier.key, shield: f.shield } });
-          window.scrollTo({ top: 0, behavior: "smooth" });
-          return;
-        }
-      }
       setState(next);
       if (!d.ok) showToast("Ikke et gyldig svar");
-      else showToast(`${d.label} – låst inn`);
+      else showToast(`${d.label} – lagt til`);
       window.setTimeout(() => inputRef.current?.focus(), 0);
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const editEntry = (index: number) => {
+    if (!state || state.final || busy) return;
+    const entry = state.entries[index];
+    setState({ ...state, entries: state.entries.filter((_, i) => i !== index) });
+    setText(entry.label ?? entry.text);
+    window.setTimeout(() => inputRef.current?.focus(), 0);
+  };
+
+  const finalize = async () => {
+    if (!state || state.final || busy || state.entries.length !== ANSWERS) return;
+    setBusy(true);
+    try {
+      const f = await apiPost<{ ok: boolean } & Final>("/maalloes/submit", {
+        puzzleId: puzzle.puzzleId,
+        answers: state.entries.map((entry) => ({ id: entry.id, text: entry.text })),
+      });
+      if (!f.ok) return;
+      const finishedAt = new Date().toISOString();
+      const done: GameState = {
+        ...state,
+        final: f,
+        finishedAt,
+        entries: state.entries.map((entry, i) => ({ ...entry, score: f.scores[i], fact: f.board.find((answer) => answer.id === entry.id)?.fact ?? null })),
+      };
+      setState(done);
+      addRecord("maalloes", { date: puzzle.date, completedAt: finishedAt, score: f.total, won: f.tier.key !== "relegation", archive: isArchive });
+      track({ name: "game_complete", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive, props: { total: f.total, tier: f.tier.key, shield: f.shield } });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } finally {
       setBusy(false);
     }
@@ -188,9 +224,9 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
                       <div className="truncate text-xs text-mist">{e.label ? (e.fact ?? "") : "Ikke et gyldig svar"}</div>
                     </div>
                     {e.score == null ? (
-                      <span className="rounded-lg bg-ink-2 px-2.5 py-1 text-xs font-semibold text-mist" aria-label="Poeng vises når alle fem svar er gitt">
-                        🔒 Låst
-                      </span>
+                      <button type="button" className="rounded-lg bg-ink-2 px-2.5 py-1 text-xs font-semibold text-mist hover:text-snow" onClick={() => editEntry(i)} aria-label={`Endre ${e.label ?? e.text}`}>
+                        Endre
+                      </button>
                     ) : (
                       <span className={`rounded-lg px-2.5 py-1 font-display text-xl font-bold ${scoreColor(e.score)}`}>{e.score === 0 ? "MÅLLØS" : e.score}</span>
                     )}
@@ -202,9 +238,9 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
             );
           })}
         </ol>
-        {!f && (
+        {!f && state.entries.length < ANSWERS && (
           <form
-            className="mt-3 flex gap-2"
+            className="relative mt-3 flex gap-2"
             onSubmit={(e) => {
               e.preventDefault();
               void submitAnswer();
@@ -220,16 +256,50 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
               autoCapitalize="words"
               enterKeyHint="send"
               aria-label="Ditt svar"
+              role="combobox"
+              aria-autocomplete={puzzle.answerKind === "player" ? "list" : "none"}
+              aria-expanded={suggestions.length > 0}
+              aria-controls="player-suggestions"
               maxLength={80}
             />
             <button type="submit" className="btn btn-primary" disabled={busy || text.trim().length < 2}>
               Svar
             </button>
+            {suggestions.length > 0 && (
+              <ul id="player-suggestions" role="listbox" aria-label="Spillerforslag" className="absolute left-0 right-20 top-full z-20 mt-1 overflow-hidden rounded-xl border border-line bg-ink-2 shadow-xl">
+                {suggestions.map((suggestion) => (
+                  <li key={suggestion.id} role="none">
+                    <button
+                      type="button"
+                      role="option"
+                      aria-selected="false"
+                      className="w-full px-3 py-2 text-left text-sm hover:bg-ink-3 focus:bg-ink-3 focus:outline-none"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => {
+                        setText(suggestion.label);
+                        setSuggestions([]);
+                        inputRef.current?.focus();
+                      }}
+                    >
+                      {suggestion.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </form>
+        )}
+        {!f && state.entries.length === ANSWERS && (
+          <div className="mt-3 rounded-xl border border-line bg-ink-3 p-3">
+            <p className="text-sm text-mist">Se over svarene. Du kan fortsatt endre dem før poengene beregnes.</p>
+            <button type="button" className="btn btn-primary mt-3 w-full" onClick={() => void finalize()} disabled={busy}>
+              {busy ? "Sender inn …" : "Send inn fem svar"}
+            </button>
+          </div>
         )}
         {!f && (
           <p className="mt-2 text-xs text-fog">
-            Etternavn holder for spillere. Svaret låses når du trykker Svar, og poengene vises først når alle fem er gitt.
+            Etternavn holder for spillere. Spillerforslagene kommer fra hele registeret og avslører ikke fasiten. Alle svar kan endres før du sender inn.
           </p>
         )}
       </div>
@@ -274,7 +344,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
           <div className="card w-full max-w-md p-5" onClick={(e) => e.stopPropagation()}>
             <h2 className="font-display text-2xl font-bold uppercase">Slik spiller du Målløs</h2>
             <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-mist">
-              <li>Les spørsmålet og skriv fem riktige svar.</li>
+              <li>Les spørsmålet og legg til fem svar. Du kan endre dem før innsending.</li>
               <li>Hvert svar får poeng etter hvor mange av 100 spillere som svarer det samme. Lavt er bra.</li>
               <li>Feil svar gir 100 poeng. Et svar ingen andre har gitt er <b className="text-gold">målløst</b> (0) – og gir deg et skjold som stryker ditt dårligste svar.</li>
               <li>Totalen plasserer deg på tabellen: fra Nedrykk til Seriemester.</li>

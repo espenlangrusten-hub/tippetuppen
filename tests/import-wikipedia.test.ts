@@ -78,7 +78,7 @@ describe("buildDrafts", () => {
     expect(draft.lineup).toHaveLength(11);
     expect(draft.lineup.map((p) => p.name)).toContain("Frode Grodås");
     expect(draft.lineup.map((p) => p.name)).not.toContain("Ronaldo");
-    expect(draft.subs).toEqual([{ name: "Roar Strand", pos: "CM", on: 82 }]);
+    expect(draft.subs).toEqual([{ name: "Roar Strand", pos: "MF", on: 82 }]);
   });
 
   // The whole point of this change: an unchecked number is worse than no number.
@@ -93,11 +93,12 @@ describe("buildDrafts", () => {
   });
 
   it("marks the coarse positions rather than pretending they are exact", () => {
-    // Wikipedia gives lines, not sides: every defender arrives as CB.
-    expect(draft.lineup.filter((p) => p.pos === "CB")).toHaveLength(4);
-    expect(draft.lineup.filter((p) => p.pos === "CM")).toHaveLength(5);
+    // Wikipedia gives lines, not sides: the importer must not invent a side.
+    expect(draft.lineup.filter((p) => p.pos === "DF")).toHaveLength(4);
+    expect(draft.lineup.filter((p) => p.pos === "MF")).toHaveLength(5);
+    expect(draft.lineup.filter((p) => p.pos === "FW")).toHaveLength(1);
     expect(String(draft.notes)).toContain("UTKAST");
-    expect(String(draft.notes)).toContain("venstre/høyre");
+    expect(String(draft.notes)).toContain("posisjonsgruppene DF/MF/FW");
     expect(String(draft.notes)).toContain("Draktnumre er utelatt");
   });
 
@@ -123,5 +124,14 @@ describe("buildDrafts", () => {
 
   it("cites the page it came from", () => {
     expect(draft.sources).toMatchObject([{ url: "https://en.wikipedia.org/wiki/1998_FIFA_World_Cup_Group_A", kind: "web" }]);
+  });
+
+  it("supports Wikipedia's current #invoke match-box form", () => {
+    const current = PAGE.replace("{{footballbox", "{{#invoke:Football box|main")
+      .replace("|date = 23 June 1998", "|date={{Start date|1998|6|23}}")
+      .replace("|score = 1–2", "|score={{score link|Brazil vs Norway|1–2}}");
+    const [imported] = buildDrafts("1998 FIFA World Cup Group A", current);
+    expect(imported).toMatchObject({ id: "1998-06-23-bra-nor", score: [2, 1] });
+    expect(imported.lineup).toHaveLength(11);
   });
 });

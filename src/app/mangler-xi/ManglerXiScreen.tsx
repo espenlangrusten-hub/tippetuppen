@@ -22,7 +22,7 @@ export function ManglerXiScreen() {
         )}
       </div>
       {state.status === "loading" && <GameSkeleton />}
-      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="mangler-xi" kind={state.status} />}
+      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="mangler-xi" kind={state.status} archive={nr !== null} />}
       {state.status === "ready" && <ManglerXiGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
     </div>
   );
