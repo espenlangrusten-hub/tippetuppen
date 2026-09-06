@@ -1,0 +1,41 @@
+{
+  "id": "2000-06-18-nor-yug",
+  "date": "2000-06-18",
+  "competition": "euro",
+  "stage": "EM 2000, gruppe C",
+  "opponent": "Jugoslavia",
+  "opponentCode": "YUG",
+  "norwayHome": true,
+  "score": [0, 1],
+  "venue": "Stade Maurice Dufrasne",
+  "city": "Liège",
+  "manager": "Nils Johan Semb",
+  "formation": "4-3-3",
+  "importance": 5,
+  "tags": ["em", "jugoslavia"],
+  "status": "verified",
+  "sources": [
+    { "url": "https://www.uefa.com/uefaeuro/match/64859--norway-vs-yugoslavia/lineups/", "title": "Norway 0-1 Yugoslavia | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05", "note": "UEFAs offisielle kampside." },
+    { "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2000_Group_C", "title": "UEFA Euro 2000 Group C – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling og manuelt mot UEFA." }
+  ],
+  "notes": "Savo Milošević scoret kampens eneste mål etter åtte minutter.",
+  "lineup": [
+    { "name": "Thomas Myhre", "pos": "GK" },
+    { "name": "Vegard Heggem", "pos": "RB", "off": 35 },
+    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Bjørn Otto Bragstad", "pos": "CB" },
+    { "name": "André Bergdølmo", "pos": "LB" },
+    { "name": "Eirik Bakke", "pos": "CM", "off": 76 },
+    { "name": "Bent Skammelsrud", "pos": "CM", "captain": true },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Steffen Iversen", "pos": "CF", "off": 71 },
+    { "name": "Tore André Flo", "pos": "CF" },
+    { "name": "Ole Gunnar Solskjær", "pos": "CF" }
+  ],
+  "subs": [
+    { "name": "Stig Inge Bjørnebye", "pos": "CB", "on": 35 },
+    { "name": "John Carew", "pos": "CF", "on": 71 },
+    { "name": "Roar Strand", "pos": "CM", "on": 76 }
+  ],
+  "goals": [{ "team": "opponent", "scorer": "Savo Milošević", "minute": 8 }]
+}

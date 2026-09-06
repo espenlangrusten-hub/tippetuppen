@@ -38,15 +38,17 @@ export function GameSkeleton() {
   );
 }
 
-export function GameUnavailable({ game, kind }: { game: "mangler-xi" | "maalloes"; kind: "empty" | "error" }) {
+export function GameUnavailable({ game, kind, archive = false }: { game: "mangler-xi" | "maalloes"; kind: "empty" | "error"; archive?: boolean }) {
   return (
     <div className="card p-6 text-center">
       <h2 className="font-display text-2xl font-bold uppercase">
-        {kind === "empty" ? "Ikke klart ennå" : "Fikk ikke kontakt"}
+        {kind === "empty" ? (archive ? "Fant ikke oppgaven" : "Ikke klart ennå") : "Fikk ikke kontakt"}
       </h2>
       <p className="mt-2 text-mist">
         {kind === "empty"
-          ? "Dagens spill er ikke satt opp ennå. Prøv igjen om litt, eller spill fra arkivet."
+          ? archive
+            ? "Nummeret finnes ikke i arkivet. Velg en oppgave fra arkivlisten."
+            : "Dagens spill er ikke satt opp ennå. Prøv igjen om litt, eller spill fra arkivet."
           : "Vi klarte ikke å hente dagens spill. Sjekk nettforbindelsen og prøv igjen."}
       </p>
       <div className="mt-4 flex justify-center gap-2">

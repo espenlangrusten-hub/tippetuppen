@@ -13,10 +13,11 @@
   "formation": "4-4-2",
   "importance": 3,
   "tags": ["em"],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     { "url": "https://www.national-football-teams.com/matches/report/564/Slovenia_Norway.html", "title": "Slovenia vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698413", "title": "Slovenia – Norge 21.06.2000 – Norges Fotballforbund", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698413", "title": "Slovenia – Norge 21.06.2000 – Norges Fotballforbund", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://www.uefa.com/uefaeuro/match/64862--slovenia-vs-norway/lineups/", "title": "Slovenia 0-0 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05" }
   ],
   "notes": "0–0 i Arnhem var ikke nok: Spania snudde mot Jugoslavia på overtid, og Norge røk ut på målforskjell.",
   "lineup": [
@@ -25,12 +26,16 @@
     { "name": "Bjørn Otto Bragstad", "pos": "CB" },
     { "name": "Dan Eggen", "pos": "CB" },
     { "name": "Stig Inge Bjørnebye", "pos": "LB" },
-    { "name": "Ole Gunnar Solskjær", "pos": "RM" },
+    { "name": "Steffen Iversen", "pos": "RM" },
     { "name": "Erik Mykland", "pos": "CM" },
     { "name": "Ståle Solbakken", "pos": "CM", "captain": true },
-    { "name": "Steffen Iversen", "pos": "LM" },
-    { "name": "Tore André Flo", "pos": "CF" },
-    { "name": "John Carew", "pos": "CF" }
+    { "name": "Ole Gunnar Solskjær", "pos": "LM" },
+    { "name": "John Carew", "pos": "CF", "off": 61 },
+    { "name": "Tore André Flo", "pos": "CF" }
+  ],
+  "subs": [
+    { "name": "Eirik Bakke", "pos": "CM", "on": 61 },
+    { "name": "Roar Strand", "pos": "CM", "on": 82 }
   ],
   "goals": []
 }

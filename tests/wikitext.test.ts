@@ -55,6 +55,7 @@ describe("wikitext parser", () => {
     expect(parseDate("23 June 1998")).toBe("1998-06-23");
     expect(parseDate("June 5, 1991")).toBe("1991-06-05");
     expect(parseDate("2026-07-11")).toBe("2026-07-11");
+    expect(parseDate("{{Start date|1994|6|19}}")).toBe("1994-06-19");
   });
   it("strips markup", () => {
     expect(plain("[[Leonardo Araújo|Leonardo]]")).toBe("Leonardo");
@@ -82,5 +83,29 @@ describe("wikitext parser", () => {
     expect(norway.find((r) => r.name === "Kjetil Rekdal")?.captain).toBe(true);
     expect(norway.find((r) => r.name === "Roar Strand")).toMatchObject({ starter: false, on: 82 });
     expect(norway.find((r) => r.name === "Øyvind Leonhardsen")?.off).toBe(82);
+  });
+
+  it("parses current #invoke match boxes and detailed lineup positions", () => {
+    const current = `
+{{#invoke:Football box|main|section=E2
+|date={{Start date|1994|6|19}}
+|team1={{fb-rt|NOR}}
+|score={{score link|Norway vs Mexico|1–0}}
+|team2={{fb|MEX}}
+|stadium=[[RFK Stadium]], [[Washington, D.C.]]
+}}
+|RB ||'''18'''||[[Alf-Inge Haaland]] || {{yel|16}}
+|CB ||'''4''' ||[[Rune Bratseth]] ([[Captain (association football)|c]])
+|LM ||'''11''' ||[[Mini Jakobsen]] || || {{suboff|46}}
+|DF ||'''2'''||[[Gunnar Halle]] || || {{subon|46}}
+`;
+    const [box] = parseFootballboxes(current);
+    expect(box).toMatchObject({ date: "1994-06-19", team1: "NOR", team2: "MEX", score: [1, 0], stadium: "RFK Stadium", city: "Washington, D.C." });
+    expect(parseLineupTable(current)).toEqual([
+      { pos: "RB", number: 18, name: "Alf-Inge Haaland", starter: true, captain: false, off: null, on: null },
+      { pos: "CB", number: 4, name: "Rune Bratseth", starter: true, captain: true, off: null, on: null },
+      { pos: "LM", number: 11, name: "Mini Jakobsen", starter: true, captain: false, off: 46, on: null },
+      { pos: "DF", number: 2, name: "Gunnar Halle", starter: false, captain: false, off: null, on: 46 },
+    ]);
   });
 });

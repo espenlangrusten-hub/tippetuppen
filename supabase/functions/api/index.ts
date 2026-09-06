@@ -9,6 +9,7 @@
  *   GET  /today?game=          today's puzzle, masked
  *   GET  /puzzle?game=&nr=     one archived puzzle by its daily number, masked
  *   GET  /archive?game=&limit= list of past puzzles
+ *   GET  /suggestions?kind=player&q= global name suggestions (never puzzle answers)
  *   POST /guess                evaluate one Mangler XI guess
  *   POST /reveal               reveal answers (give up / round over) or one hint letter
  *   POST /maalloes/answer      score a single Målløs answer
@@ -24,6 +25,7 @@ import { cors, json, bad } from "../_shared/http.ts";
 import { maskManglerXi } from "../_shared/masking.ts";
 import { evaluate } from "../_shared/guess.ts";
 import { osloDateKey, addDays, isValidDateKey } from "../_shared/dates.ts";
+import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import type { ManglerXiPayload, MaalloesPayload } from "../_shared/types.ts";
 
@@ -132,6 +134,24 @@ Deno.serve(async (req) => {
       return json({ ok: true, ...present(game, r) }, 200, { "cache-control": "public, max-age=300" });
     }
 
+    if (req.method === "GET" && route === "/suggestions") {
+      const kind = q.get("kind");
+      const raw = q.get("q") ?? "";
+      const term = normalizeName(raw).slice(0, 40);
+      if (kind !== "player" || term.length < 2) return json({ ok: true, suggestions: [] });
+      const prefix = `${term}%`;
+      const contains = `%${term}%`;
+      const suggestions = await sql()<{ id: string; label: string }[]>`
+        select p.id, p.display_name as label
+        from tippetuppen.player_aliases a
+        join tippetuppen.players p on p.id = a.player_id
+        where a.normalized like ${contains}
+        group by p.id, p.display_name
+        order by min(case when a.normalized like ${prefix} then 0 else 1 end), p.display_name
+        limit 8`;
+      return json({ ok: true, suggestions }, 200, { "cache-control": "public, max-age=300" });
+    }
+
     if (req.method === "GET" && route === "/archive") {
       const game = q.get("game");
       if (!isGame(game)) return bad("unknown game");
@@ -184,27 +204,46 @@ Deno.serve(async (req) => {
     if (req.method === "POST" && route === "/maalloes/submit") {
       const body = await req.json().catch(() => null);
       const { puzzleId, answers } = (body ?? {}) as { puzzleId?: string; answers?: { id: string | null; text: string }[] };
-      if (typeof puzzleId !== "string" || !Array.isArray(answers) || answers.length !== ANSWERS_PER_GAME) return bad("bad request");
+      if (
+        typeof puzzleId !== "string" ||
+        !Array.isArray(answers) ||
+        answers.length !== ANSWERS_PER_GAME ||
+        answers.some((answer) => !answer || typeof answer.text !== "string" || answer.text.length > 80)
+      )
+        return bad("bad request");
       const payload = (await payloadFor(puzzleId, "maalloes")) as MaalloesPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
-      const valid = Array.from(new Set(answers.map((a) => a.id).filter((x): x is string => !!x && payload.answers.some((p) => p.id === x))));
+      // Resolve the submitted text again on the server. Client-supplied ids are only
+      // UI state and must not be able to poison the crowd counts.
+      const seen = new Set<string>();
+      const resolved = answers.map((submitted) => {
+        const answer = resolveAnswer(payload, submitted.text);
+        if (!answer || seen.has(answer.id)) return null;
+        seen.add(answer.id);
+        return answer;
+      });
+      const valid = resolved.filter((answer): answer is NonNullable<typeof answer> => !!answer);
       const db = sql();
+      // Score against the crowd that existed before this submission. Otherwise the
+      // first person to find an unused rare answer can never receive a genuine zero.
+      const { counts: previousCounts, respondents: previousRespondents } = await counts(puzzleId);
+      const board = payload.answers
+        .map((a) => ({ id: a.id, label: a.label, fact: a.fact ?? null, score: scoreFor(a, previousCounts, previousRespondents), count: previousCounts.get(a.id) ?? 0 }))
+        .sort((x, y) => x.score - y.score || x.label.localeCompare(y.label));
+      const scores = resolved.map((answer) => (answer ? (board.find((b) => b.id === answer.id)?.score ?? 100) : 100));
+      const thresholds = tierThresholds(board.map((b) => b.score));
+      const { total, shield, dropped } = finalTotal(scores);
       await db.begin(async (tx) => {
-        for (const id of valid) {
-          await tx`insert into tippetuppen.maalloes_answer_counts (puzzle_id, answer_id, count) values (${puzzleId}, ${id}, 1)
+        for (const answer of valid) {
+          await tx`insert into tippetuppen.maalloes_answer_counts (puzzle_id, answer_id, count) values (${puzzleId}, ${answer.id}, 1)
                    on conflict (puzzle_id, answer_id) do update set count = tippetuppen.maalloes_answer_counts.count + 1`;
         }
         await tx`insert into tippetuppen.puzzle_stats (puzzle_id, respondents, completions) values (${puzzleId}, 1, 1)
                  on conflict (puzzle_id) do update set respondents = tippetuppen.puzzle_stats.respondents + 1, completions = tippetuppen.puzzle_stats.completions + 1`;
       });
-      const { counts: c, respondents } = await counts(puzzleId);
-      const board = payload.answers
-        .map((a) => ({ id: a.id, label: a.label, fact: a.fact ?? null, score: scoreFor(a, c, respondents), count: c.get(a.id) ?? 0 }))
-        .sort((x, y) => x.score - y.score || x.label.localeCompare(y.label));
-      const scores = answers.map((a) => (a.id && valid.includes(a.id) ? (board.find((b) => b.id === a.id)?.score ?? 100) : 100));
-      const thresholds = tierThresholds(board.map((b) => b.score));
-      const { total, shield, dropped } = finalTotal(scores);
-      return json({ ok: true, scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board, respondents, explanation: payload.explanation });
+      const chosen = new Set(valid.map((answer) => answer.id));
+      const boardAfter = board.map((answer) => ({ ...answer, count: answer.count + (chosen.has(answer.id) ? 1 : 0) }));
+      return json({ ok: true, scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board: boardAfter, respondents: previousRespondents + 1, explanation: payload.explanation });
     }
 
     if (req.method === "POST" && route === "/events") {

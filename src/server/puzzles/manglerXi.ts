@@ -12,6 +12,7 @@ const COMP_LABEL: Record<string, string> = {
   "nations-league": "Nations League",
   playoff: "Playoff",
   friendly: "Privatlandskamp",
+  international: "Landskamp",
 };
 
 export function competitionLabel(id: string, date: string): string {

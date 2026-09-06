@@ -1,0 +1,121 @@
+name: Importer NFF-kamper
+
+# Imports the official Norway match records covered by the repository's NFF agreement.
+# Complete records are proposed in a pull request; nothing reaches production without
+# normal review, source validation and the separate "Oppdater data" workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tournament:
+        description: "fiksId (39899 = Norge Menn Senior A)"
+        default: "39899"
+        required: true
+      from:
+        description: "Første kampdato"
+        default: "1990-01-01"
+        required: true
+      to:
+        description: "Siste kampdato"
+        default: "2026-12-31"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Sjekk at NFF-nøklene finnes
+        env:
+          CLUB_ID: ${{ secrets.FOTBALLDATA_CLUB_ID }}
+          CID: ${{ secrets.FOTBALLDATA_CID }}
+          CWD: ${{ secrets.FOTBALLDATA_CWD }}
+        run: |
+          missing=""
+          [ -n "$CLUB_ID" ] || missing="$missing FOTBALLDATA_CLUB_ID"
+          [ -n "$CID" ]     || missing="$missing FOTBALLDATA_CID"
+          [ -n "$CWD" ]     || missing="$missing FOTBALLDATA_CWD"
+          if [ -n "$missing" ]; then
+            echo "Mangler repository secrets:$missing" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+      - name: Hent og konverter offisielle kamper
+        env:
+          FOTBALLDATA_CLUB_ID: ${{ secrets.FOTBALLDATA_CLUB_ID }}
+          FOTBALLDATA_CID: ${{ secrets.FOTBALLDATA_CID }}
+          FOTBALLDATA_CWD: ${{ secrets.FOTBALLDATA_CWD }}
+          TOURNAMENT: ${{ inputs.tournament }}
+          FROM_DATE: ${{ inputs.from }}
+          TO_DATE: ${{ inputs.to }}
+        run: |
+          node --import tsx scripts/import/fotballdata-import.ts "$TOURNAMENT" \
+            --from "$FROM_DATE" --to "$TO_DATE" | tee fotballdata-import.log
+
+      - name: Valider komplette kildefiler
+        run: npm run data:validate
+
+      - name: Se om importen fant noe nytt
+        id: check
+        run: |
+          if [ -z "$(git status --porcelain data/source)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Ingen nye kamper i perioden." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Last opp importlogg
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fotballdata-importlogg
+          path: fotballdata-import.log
+          retention-days: 7
+          if-no-files-found: warn
+
+      - name: Åpne pull request med NFF-data
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          branch="import/fotballdata-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/source
+          git commit -m "Importer offisielle NFF-kamper fra Fotballdata"
+          git push -u origin "$branch"
+
+          {
+            echo "Offisielle kampdata hentet gjennom NFF/Fotballdata-avtalen. Eksisterende håndkuraterte filer er ikke overskrevet."
+            echo
+            echo "- Komplette ellevere ligger i \`data/source/matches/\` med status \`single_source\`."
+            echo "- Ufullstendige svar ligger i \`data/source/drafts/fotballdata-review/\` og lastes aldri av spillet."
+            echo "- Generiske NFF-posisjoner vises som forsvar/midtbane/angrep; importøren dikter ikke side eller detaljrolle."
+            echo "- Kontaktfelt er fjernet i minnet før noe skrives."
+            echo
+            echo "## Importlogg"
+            echo '```'
+            cat fotballdata-import.log
+            echo '```'
+          } > pr-body.md
+
+          gh pr create \
+            --title "Importer offisielle NFF-landskamper" \
+            --body-file pr-body.md \
+            --base "${{ github.ref_name }}" \
+            --head "$branch"
+
+          cat pr-body.md >> "$GITHUB_STEP_SUMMARY"

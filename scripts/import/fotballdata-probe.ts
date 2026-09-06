@@ -15,19 +15,9 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { credentialsFromEnv, get, paths } from "./fotballdata";
+import { summariseTournament } from "./fotballdata-shape";
 
 const SAMPLE_MATCHES = 3;
-
-function summarise(matches: unknown): { count: number; earliest?: string; latest?: string; ids: unknown[] } {
-  const rows = Array.isArray(matches) ? matches : [];
-  const dates = rows.map((m) => String((m as Record<string, unknown>).MatchStartDate ?? "")).filter(Boolean).sort();
-  return {
-    count: rows.length,
-    earliest: dates[0],
-    latest: dates[dates.length - 1],
-    ids: rows.slice(0, SAMPLE_MATCHES).map((m) => (m as Record<string, unknown>).MatchId),
-  };
-}
 
 async function main() {
   const tournamentId = process.argv[2] ?? "39899";
@@ -38,7 +28,7 @@ async function main() {
   console.log(`Henter kamper for turnering ${tournamentId}…`);
   const matches = await get(paths.tournamentMatches(tournamentId), creds);
   writeFileSync(path.join(out, "matches.json"), JSON.stringify(matches, null, 2));
-  const summary = summarise(matches);
+  const summary = summariseTournament(matches, SAMPLE_MATCHES);
   console.log(`  ${summary.count} kamper, fra ${summary.earliest ?? "?"} til ${summary.latest ?? "?"}`);
 
   // Sequential: this is someone else's API, and we are guests on it.

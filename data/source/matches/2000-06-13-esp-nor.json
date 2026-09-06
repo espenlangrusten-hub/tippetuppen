@@ -10,28 +10,32 @@
   "venue": "De Kuip",
   "city": "Rotterdam",
   "manager": "Nils Johan Semb",
-  "formation": "4-4-2",
+  "formation": "4-3-3",
   "importance": 5,
   "tags": ["em", "ikonisk", "spania"],
-  "status": "recall",
+  "status": "verified",
   "sources": [
-    { "url": "https://www.11v11.com/matches/spain-v-norway-13-june-2000-268894/", "title": "Spain v Norway, 13 June 2000 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Search excerpt lists ten starters (Myhre; Bergdølmo, Eggen, Bragstad, Bjørnebye; Iversen, Mykland, Solbakken (c), Solskjær; Carew) and subs Bakke 61, Strand 82. Eleventh starter (Tore André Flo) from recall – verify." },
-    { "url": "https://www.uefa.com/uefaeuro/match/64858--spain-vs-norway/lineups/", "title": "Spain 0-1 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.uefa.com/uefaeuro/match/64858--spain-vs-norway/lineups/", "title": "Spain 0-1 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05", "note": "UEFAs offisielle kampside." },
+    { "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2000_Group_C", "title": "UEFA Euro 2000 Group C – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling og manuelt mot UEFA." }
   ],
   "notes": "Iversens hodestøt etter Myhres lange utspark ga Norges eneste EM-seier noensinne.",
   "lineup": [
     { "name": "Thomas Myhre", "pos": "GK" },
-    { "name": "André Bergdølmo", "pos": "RB" },
-    { "name": "Dan Eggen", "pos": "CB" },
+    { "name": "Vegard Heggem", "pos": "RB" },
+    { "name": "Henning Berg", "pos": "CB", "captain": true, "off": 59 },
     { "name": "Bjørn Otto Bragstad", "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
-    { "name": "Ole Gunnar Solskjær", "pos": "RM" },
+    { "name": "André Bergdølmo", "pos": "LB" },
+    { "name": "Eirik Bakke", "pos": "CM" },
+    { "name": "Bent Skammelsrud", "pos": "CM" },
     { "name": "Erik Mykland", "pos": "CM" },
-    { "name": "Ståle Solbakken", "pos": "CM", "captain": true },
-    { "name": "Steffen Iversen", "pos": "LM" },
-    { "name": "Tore André Flo", "pos": "CF" },
-    { "name": "John Carew", "pos": "CF" }
+    { "name": "Steffen Iversen", "pos": "CF", "off": 89 },
+    { "name": "Tore André Flo", "pos": "CF", "off": 71 },
+    { "name": "Ole Gunnar Solskjær", "pos": "CF" }
   ],
-  "subs": [{ "name": "Eirik Bakke", "pos": "CM", "on": 61 }, { "name": "Roar Strand", "pos": "CM", "on": 82 }],
+  "subs": [
+    { "name": "Dan Eggen", "pos": "CB", "on": 59 },
+    { "name": "John Carew", "pos": "CF", "on": 71 },
+    { "name": "Vidar Riseth", "pos": "CM", "on": 89 }
+  ],
   "goals": [{ "team": "norway", "name": "Steffen Iversen", "minute": 66 }]
 }

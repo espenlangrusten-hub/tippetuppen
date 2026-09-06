@@ -22,7 +22,7 @@ export function MaalloesScreen() {
         )}
       </div>
       {state.status === "loading" && <GameSkeleton />}
-      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="maalloes" kind={state.status} />}
+      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="maalloes" kind={state.status} archive={nr !== null} />}
       {state.status === "ready" && <MaalloesGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
     </div>
   );

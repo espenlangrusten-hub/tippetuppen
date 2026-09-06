@@ -46,7 +46,7 @@ jobs:
       - name: Generate puzzles and extend the schedule
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx tsx scripts/schedule.ts --days "${{ inputs.days || '400' }}"
+        run: node --import tsx scripts/schedule.ts --days "${{ inputs.days || '400' }}"
       - name: Content runway
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}

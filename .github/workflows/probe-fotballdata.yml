@@ -55,7 +55,7 @@ jobs:
           FOTBALLDATA_CID: ${{ secrets.FOTBALLDATA_CID }}
           FOTBALLDATA_CWD: ${{ secrets.FOTBALLDATA_CWD }}
           TOURNAMENT: ${{ inputs.tournament }}
-        run: npx tsx scripts/import/fotballdata-probe.ts "$TOURNAMENT" prove
+        run: node --import tsx scripts/import/fotballdata-probe.ts "$TOURNAMENT" prove
 
       - name: Oppsummer hva som faktisk kom
         if: always()

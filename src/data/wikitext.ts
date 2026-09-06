@@ -24,6 +24,8 @@ export type ParsedFootballbox = {
 const MONTHS: Record<string, number> = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 };
 
 export function parseDate(s: string): string | null {
+  const template = s.match(/\{\{\s*start date\s*\|\s*(\d{4})\s*\|\s*(\d{1,2})\s*\|\s*(\d{1,2})/i);
+  if (template) return `${template[1]}-${template[2].padStart(2, "0")}-${template[3].padStart(2, "0")}`;
   const m = s.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
   if (m) {
     const mo = MONTHS[m[2].toLowerCase()];
@@ -54,7 +56,7 @@ function parseGoals(s: string): ParsedGoal[] {
   const out: ParsedGoal[] = [];
   // Split on <br> or newlines; each fragment: [[Player]] {{goal|83}} {{goal|89|pen.}} {{goal|45|o.g.}}
   for (const frag of s.split(/<br\s*\/?>|\n/)) {
-    const player = plain(frag.replace(/\{\{goal[^}]*\}\}/gi, ""));
+    const player = plain(frag.replace(/\{\{goal[^}]*\}\}/gi, "")).replace(/^\*+\s*/, "");
     if (!player) continue;
     const goals = [...frag.matchAll(/\{\{goal\|([^}]*)\}\}/gi)];
     if (goals.length === 0) {
@@ -77,7 +79,9 @@ function parseGoals(s: string): ParsedGoal[] {
 /** Extract every {{footballbox ...}} template from a page. Handles nested templates by brace counting. */
 export function parseFootballboxes(wikitext: string): ParsedFootballbox[] {
   const boxes: ParsedFootballbox[] = [];
-  const re = /\{\{\s*football\s*box(?:\s+collapsible)?/gi;
+  // Wikipedia migrated many match pages from {{footballbox}} to the Lua form
+  // {{#invoke:Football box|main}}. Both have the same named parameters.
+  const re = /\{\{\s*(?:football\s*box(?:\s+collapsible)?|#invoke:\s*football\s*box\s*\|\s*main)/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(wikitext))) {
     let depth = 0;
@@ -131,7 +135,7 @@ export function parseFootballboxes(wikitext: string): ParsedFootballbox[] {
       goals1: parseGoals(params.goals1 ?? ""),
       goals2: parseGoals(params.goals2 ?? ""),
       stadium: stadiumParts[0] || null,
-      city: stadiumParts[1] || null,
+      city: stadiumParts.slice(1).join(", ") || null,
       attendance: att ? Number(att) : null,
       re: undefined,
     } as ParsedFootballbox & { re?: undefined });
@@ -142,6 +146,37 @@ export function parseFootballboxes(wikitext: string): ParsedFootballbox[] {
 
 export type ParsedLineupRow = { pos: string; number: number | null; name: string; starter: boolean; captain: boolean; off: number | null; on: number | null };
 
+/** Return the first table cell without splitting links such as [[Page|Label]]. */
+function firstTableCell(row: string): string {
+  let linkDepth = 0;
+  let templateDepth = 0;
+  for (let i = 0; i < row.length - 1; i++) {
+    const pair = row.slice(i, i + 2);
+    if (pair === "[[") {
+      linkDepth++;
+      i++;
+      continue;
+    }
+    if (pair === "]]" && linkDepth > 0) {
+      linkDepth--;
+      i++;
+      continue;
+    }
+    if (pair === "{{") {
+      templateDepth++;
+      i++;
+      continue;
+    }
+    if (pair === "}}" && templateDepth > 0) {
+      templateDepth--;
+      i++;
+      continue;
+    }
+    if (pair === "||" && linkDepth === 0 && templateDepth === 0) return row.slice(0, i);
+  }
+  return row;
+}
+
 /**
  * Parse a tournament-page lineup table. Rows look like:
  *   |GK ||'''1''' ||[[Frode Grodås]]
@@ -151,14 +186,14 @@ export type ParsedLineupRow = { pos: string; number: number | null; name: string
  */
 export function parseLineupTable(wikitext: string): ParsedLineupRow[] {
   const rows: ParsedLineupRow[] = [];
-  const re = /^\|\s*(GK|DF|MF|FW)\s*\|\|\s*'*\s*(\d{1,2})?\s*'*\s*\|\|\s*(.+)$/gim;
+  const re = /^\|\s*(GK|RB|CB|LB|RWB|LWB|SW|DF|DM|RM|CM|LM|AM|RW|LW|SS|CF|RF|LF|MF|FW)\s*\|\|\s*'*\s*(\d{1,2})?\s*'*\s*\|\|\s*(.+)$/gim;
   let m: RegExpExecArray | null;
   while ((m = re.exec(wikitext))) {
     const rest = m[3];
     const on = rest.match(/\{\{subon\|(\d+)/i);
     const off = rest.match(/\{\{suboff\|(\d+)/i);
-    const captain = /\{\{captain\}\}/i.test(rest);
-    const name = plain(rest.replace(/\{\{[^}]*\}\}/g, ""));
+    const captain = /\{\{captain\}\}|\[\[[^\]]*captain[^\]]*\|c\]\]/i.test(rest);
+    const name = plain(firstTableCell(rest).replace(/\{\{[^}]*\}\}/g, "")).replace(/\s*\(c\)\s*$/i, "");
     if (!name) continue;
     rows.push({ pos: m[1].toUpperCase(), number: m[2] ? Number(m[2]) : null, name, starter: !on, captain, off: off ? Number(off[1]) : null, on: on ? Number(on[1]) : null });
   }

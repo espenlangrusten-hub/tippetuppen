@@ -20,7 +20,7 @@ export function StreakStrip({ today }: { today: string }) {
           <div className="font-display text-2xl font-bold leading-none">
             🔥 {s.current}
           </div>
-          <div className="text-xs text-mist">dager på rad</div>
+          <div className="text-xs text-mist">{s.current === 1 ? "dag på rad" : "dager på rad"}</div>
         </div>
         <div>
           <div className="font-display text-2xl font-bold leading-none">{s.best}</div>

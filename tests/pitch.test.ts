@@ -92,6 +92,11 @@ describe("layoutPitch", () => {
     ]);
   });
 
+  it("lays out honest generic source positions without inventing a side", () => {
+    const positions: Position[] = ["GK", "DF", "DF", "DF", "DF", "MF", "MF", "MF", "MF", "MF", "FW"];
+    expect(shape(positions, "4-5-1")).toBe("4-5-1");
+  });
+
   it("never leaves a player out or duplicates one", () => {
     const positions: Position[] = ["GK", "RB", "CB", "CB", "LB", "DM", "CM", "AM", "RW", "LW", "CF"];
     for (const f of ["4-2-3-1", "4-3-3", "4-1-4-1", undefined]) {

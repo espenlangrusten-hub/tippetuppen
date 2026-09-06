@@ -2,7 +2,9 @@ import { test, expect } from "@playwright/test";
 
 // The admin key is only ever pasted in by the operator, never built in; this is the
 // dev-stack key from scripts/dev-stack.sh.
-const KEY = process.env.E2E_ADMIN_KEY ?? "dev-admin-key-0123456789";
+const KEY = process.env.E2E_ADMIN_KEY;
+
+if (!KEY) throw new Error("E2E_ADMIN_KEY must be set for the admin end-to-end tests");
 
 test("admin shows traffic figures behind the key", async ({ page }, info) => {
   await page.goto("/admin/");

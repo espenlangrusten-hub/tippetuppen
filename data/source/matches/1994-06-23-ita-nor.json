@@ -1,0 +1,40 @@
+{
+  "id": "1994-06-23-ita-nor",
+  "date": "1994-06-23",
+  "competition": "world-cup",
+  "stage": "VM 1994, gruppe E",
+  "opponent": "Italia",
+  "opponentCode": "ITA",
+  "norwayHome": false,
+  "score": [0, 1],
+  "venue": "Giants Stadium",
+  "city": "East Rutherford",
+  "manager": "Egil Olsen",
+  "formation": "4-5-1",
+  "importance": 5,
+  "tags": ["vm", "1994", "italia"],
+  "status": "verified",
+  "sources": [
+    { "url": "https://www.fifa.com/en/match-centre/match/17/84/337/3064", "title": "Italy vs Norway | 1994 FIFA World Cup", "kind": "web", "accessed": "2026-09-05", "note": "FIFAs offisielle kampside." },
+    { "url": "https://en.wikipedia.org/wiki/1994_FIFA_World_Cup_Group_E", "title": "1994 FIFA World Cup Group E – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling." }
+  ],
+  "notes": "Italia vant etter Dino Baggios scoring. Gianluca Pagliuca ble utvist tidlig i kampen.",
+  "lineup": [
+    { "name": "Erik Thorstvedt", "pos": "GK" },
+    { "name": "Alf-Inge Haaland", "pos": "RB" },
+    { "name": "Henning Berg", "pos": "CB" },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
+    { "name": "Jostein Flo", "pos": "RM" },
+    { "name": "Lars Bohinen", "pos": "CM" },
+    { "name": "Erik Mykland", "pos": "CM", "off": 81 },
+    { "name": "Øyvind Leonhardsen", "pos": "CM" },
+    { "name": "Sigurd Rushfeldt", "pos": "LM", "off": 45 },
+    { "name": "Jan Åge Fjørtoft", "pos": "CF" }
+  ],
+  "subs": [
+    { "name": "Mini Jakobsen", "pos": "CM", "on": 45 },
+    { "name": "Kjetil Rekdal", "pos": "CM", "on": 81 }
+  ],
+  "goals": [{ "team": "opponent", "scorer": "Dino Baggio", "minute": 69 }]
+}

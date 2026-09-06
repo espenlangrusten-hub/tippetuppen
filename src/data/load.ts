@@ -158,7 +158,7 @@ export function loadDataset(): Dataset {
     const numbered = starters.filter((s) => s.no != null);
     const byNumber = new Map<number, string[]>();
     for (const s of numbered) {
-      if (s.no! < 1 || s.no! > 30) problems.push(`${m.id}: implausible shirt number ${s.no} for ${s.name}`);
+      if (s.no! < 1 || s.no! > 99) problems.push(`${m.id}: implausible shirt number ${s.no} for ${s.name}`);
       byNumber.set(s.no!, [...(byNumber.get(s.no!) ?? []), s.name]);
     }
     for (const [no, who] of byNumber) if (who.length > 1) problems.push(`${m.id}: shirt number ${no} used by ${who.join(" and ")}`);
@@ -273,15 +273,23 @@ export function loadDataset(): Dataset {
 
   for (const s of seasons) {
     if (!compIds.has(s.competition)) problems.push(`season ${s.id}: unknown competition ${s.competition}`);
+    if (s.competition === "eliteserien" && s.year >= 1990 && s.year <= 2025 && s.table.length < 12)
+      problems.push(`season ${s.id}: incomplete top-division table (${s.table.length} clubs, expected at least 12)`);
     const seen = new Set<string>();
-    for (const row of s.table) {
+    const markedRelegated = new Set<string>();
+    for (const [position, row] of s.table.entries()) {
       const club = typeof row === "string" ? row : row.club;
       if (!clubIds.has(club)) problems.push(`season ${s.id}: unknown club ${club}`);
       if (seen.has(club)) problems.push(`season ${s.id}: duplicate club ${club}`);
+      if (typeof row !== "string" && row.outcome === "champion" && position !== 0) problems.push(`season ${s.id}: champion ${club} is not first in the table`);
+      if (typeof row !== "string" && row.outcome === "relegated") markedRelegated.add(club);
       seen.add(club);
     }
     for (const r of s.relegated) if (!seen.has(r)) problems.push(`season ${s.id}: relegated club ${r} not in table`);
+    for (const r of markedRelegated) if (!s.relegated.includes(r)) problems.push(`season ${s.id}: ${r} is marked relegated but missing from relegated list`);
   }
+  const topDivisionYears = new Set(seasons.filter((s) => s.competition === "eliteserien").map((s) => s.year));
+  for (let year = 1990; year <= 2025; year++) if (!topDivisionYears.has(year)) problems.push(`missing eliteserien season ${year}`);
   for (const h of honours) {
     if (h.club && !clubIds.has(h.club)) problems.push(`honour ${h.kind} ${h.year}: unknown club ${h.club}`);
     if (h.player) ensurePlayer(h.player);
