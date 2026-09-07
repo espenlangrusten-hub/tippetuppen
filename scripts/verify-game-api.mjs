@@ -2,10 +2,11 @@
 import assert from 'node:assert/strict';
 import postgres from 'postgres';
 const base = 'http://127.0.0.1:8000/api';
-const db = postgres('postgres://postgres@127.0.0.1:5544/postgres');
+const db = postgres('postgres://postgres@127.0.0.1:5544/postgres', {connect_timeout: 10, connection: {statement_timeout: 15000}});
 const created = [];
 const req = async (path, data, token) => {
-  const response = await fetch(base + path, {method:data ? 'POST':'GET',headers:{'content-type':'application/json',...(token?{'x-session-token':token}:{})},...(data?{body:JSON.stringify(data)}:{})});
+  console.log('Checking', path);
+  const response = await fetch(base + path, {signal: AbortSignal.timeout(20000), method:data ? 'POST':'GET',headers:{'content-type':'application/json',...(token?{'x-session-token':token}:{})},...(data?{body:JSON.stringify(data)}:{})});
   return response.json();
 };
 try {
