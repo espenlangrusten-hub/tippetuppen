@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { evaluate } from "../supabase/functions/_shared/guess.ts";
 import { maskManglerXi } from "../supabase/functions/_shared/masking.ts";
-import { resolveAnswer, scoreFor, finalTotal, tierThresholds, tierFor } from "../supabase/functions/_shared/maalloes.ts";
+import { resolveAnswer, scoreFor, zeroAnswerId, finalTotal, tierThresholds, tierFor } from "../supabase/functions/_shared/maalloes.ts";
 import type { ManglerXiPayload, MaalloesPayload } from "../supabase/functions/_shared/types.ts";
 
 const payload: ManglerXiPayload = {
@@ -85,14 +85,15 @@ describe("edge: Målløs", () => {
     expect(resolveAnswer(mal, "rbk")?.id).toBe("club:rosenborg");
     expect(resolveAnswer(mal, "Vålerenga")).toBeNull();
   });
-  it("gives 0 (målløs) only to a rare answer nobody picked", () => {
-    const empty = new Map<string, number>();
-    expect(scoreFor(mal.answers[1], empty, 0)).toBe(0);
-    expect(scoreFor(mal.answers[0], empty, 0)).toBeGreaterThan(0);
+  it("always gives 0 to exactly one deterministic rare answer", () => {
+    const zero = zeroAnswerId(mal.answers);
+    expect(scoreFor(mal.answers[1], zero)).toBe(0);
+    expect(scoreFor(mal.answers[0], zero)).toBeGreaterThan(0);
   });
-  it("uses pure crowd data once enough people have played", () => {
-    const c = new Map([["club:rosenborg", 90]]);
-    expect(scoreFor(mal.answers[0], c, 100)).toBe(90);
+  it("keeps the same score independent of later players", () => {
+    const zero = zeroAnswerId(mal.answers);
+    expect(scoreFor(mal.answers[0], zero)).toBe(80);
+    expect(scoreFor(mal.answers[0], zero)).toBe(80);
   });
   it("drops the worst score when the shield is earned", () => {
     expect(finalTotal([0, 40, 10, 5, 100])).toEqual({ total: 55, shield: true, dropped: 4 });

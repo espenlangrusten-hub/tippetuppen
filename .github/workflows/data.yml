@@ -7,6 +7,13 @@ name: Oppdater data
 # Requires secrets.DATABASE_URL (Supabase → Settings → Database → Transaction pooler).
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "data/source/**"
+      - "drizzle/**"
+      - "scripts/schedule.ts"
+      - "src/server/puzzles/**"
   workflow_dispatch:
     inputs:
       days:
@@ -39,7 +46,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npm run db:migrate
       - name: Seed source data
-        if: ${{ github.event_name == 'schedule' || inputs.reseed }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || inputs.reseed }}
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: npm run db:seed

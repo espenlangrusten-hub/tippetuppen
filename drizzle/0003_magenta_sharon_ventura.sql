@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "finn_attempts_user_puzzle" ON "tippetuppen"."finn_attempts" USING btree ("user_id","puzzle_id");

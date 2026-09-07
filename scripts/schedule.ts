@@ -6,6 +6,7 @@ import { eq, sql } from "drizzle-orm";
 import { getDbHandle, schema as s } from "../src/server/db";
 import { buildManglerXiPuzzles } from "../src/server/puzzles/manglerXi";
 import { buildMaalloesPuzzles } from "../src/server/puzzles/maalloes";
+import { buildFinnSpillerenPuzzles } from "../src/server/puzzles/finnSpilleren";
 import { extendSchedule, runwayFor } from "../src/server/puzzles/scheduler";
 import { osloDateKey } from "../src/lib/dates";
 
@@ -22,9 +23,10 @@ step("Reading matches and lineups…");
 const mxi = await buildManglerXiPuzzles(db);
 step(`Built ${mxi.length} Mangler XI puzzles. Reading club and honours data…`);
 const mal = await buildMaalloesPuzzles(db);
-step(`Built ${mal.length} Målløs puzzles. Writing…`);
+const finn = await buildFinnSpillerenPuzzles(db);
+step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
 let upserts = 0;
-for (const p of [...mxi, ...mal]) {
+for (const p of [...mxi, ...mal, ...finn]) {
   const row = { id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef };
   await db
     .insert(s.puzzles)
@@ -34,13 +36,13 @@ for (const p of [...mxi, ...mal]) {
   if (upserts % 20 === 0) step(`  …${upserts} puzzles written`);
 }
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
-const known = new Set([...mxi, ...mal].map((p) => p.id));
+const known = new Set([...mxi, ...mal, ...finn].map((p) => p.id));
 const existing = await db.select({ id: s.puzzles.id }).from(s.puzzles);
 for (const e of existing) if (!known.has(e.id)) await db.update(s.puzzles).set({ eligible: false }).where(eq(s.puzzles.id, e.id));
 
-console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs (${upserts} upserted).`);
+console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs, ${finn.length} Finn spilleren (${upserts} upserted).`);
 step("Scheduling days…");
-for (const game of ["mangler-xi", "maalloes"] as const) {
+for (const game of ["mangler-xi", "maalloes", "finn-spilleren"] as const) {
   const r = await extendSchedule(db, game, from, days);
   const runway = await runwayFor(db, game, osloDateKey());
   console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${runway.eligiblePuzzles} eligible, ${runway.belowPolicy} below policy).`);

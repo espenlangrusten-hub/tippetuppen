@@ -36,7 +36,7 @@ export function pickNext(game: GameId, candidates: Candidate[], recent: Recent[]
   const last = recent[recent.length - 1];
   const scored = candidates.map((c) => {
     let score = c.quality * 0.6;
-    if (game === "mangler-xi") {
+    if (game === "mangler-xi" || game === "finn-spilleren") {
       recent.slice(-14).forEach((r, i, arr) => {
         const sim = lineupSimilarity(c.fingerprint, r.fingerprint);
         const recency = (i + 1) / arr.length; // newer = higher

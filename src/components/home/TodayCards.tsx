@@ -12,12 +12,12 @@ type Card = { number: number; hint: string } | null;
 /** The static shell becomes today's games here, once the Edge Function answers. */
 export function TodayCards() {
   const [today, setToday] = useState<string | null>(null);
-  const [cards, setCards] = useState<Record<GameSlug, Card | undefined>>({ "mangler-xi": undefined, maalloes: undefined });
+  const [cards, setCards] = useState<Record<GameSlug, Card | undefined>>({ "mangler-xi": undefined, maalloes: undefined, "finn-spilleren": undefined });
   const [done, setDone] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     let cancelled = false;
-    (["mangler-xi", "maalloes"] as GameSlug[]).forEach((g) => {
+    (["mangler-xi", "maalloes", "finn-spilleren"] as GameSlug[]).forEach((g) => {
       apiGet<{ ok: boolean; today?: string; puzzle?: Record<string, unknown> | null }>(`/today?game=${g}`)
         .then((r) => {
           if (cancelled) return;
@@ -25,7 +25,7 @@ export function TodayCards() {
           const p = r.ok ? r.puzzle : null;
           setCards((prev) => ({
             ...prev,
-            [g]: p ? { number: Number(p.number), hint: String(g === "mangler-xi" ? p.competition : p.category) } : null,
+            [g]: p ? { number: Number(p.number), hint: String(g === "mangler-xi" ? p.competition : g === "maalloes" ? p.category : "Første hint er vanskeligst") } : null,
           }));
         })
         .catch(() => !cancelled && setCards((prev) => ({ ...prev, [g]: null })));
@@ -40,6 +40,7 @@ export function TodayCards() {
     setDone({
       "mangler-xi": !!loadRecords("mangler-xi").find((r) => r.date === today && !r.archive),
       maalloes: !!loadRecords("maalloes").find((r) => r.date === today && !r.archive),
+      "finn-spilleren": !!loadRecords("finn-spilleren").find((r) => r.date === today && !r.archive),
     });
   }, [today]);
 
@@ -47,14 +48,14 @@ export function TodayCards() {
     <>
       <section className="pt-2">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mist">Dagens fotball{today ? ` · ${formatDateNo(today)}` : ""}</p>
-        <h1 className="font-display text-4xl font-bold uppercase leading-none sm:text-5xl">To spill. Én gang om dagen.</h1>
+        <h1 className="font-display text-4xl font-bold uppercase leading-none sm:text-5xl">Tre spill. Én gang om dagen.</h1>
         <p className="mt-2 max-w-xl text-mist">Norsk fotballhistorie i lomma: fyll ut landslagets startellever og finn svarene ingen andre finner.</p>
       </section>
 
       {today && <StreakStrip today={today} />}
 
-      <section className="grid gap-4 sm:grid-cols-2">
-        {(["mangler-xi", "maalloes"] as GameSlug[]).map((g) => {
+      <section className="grid gap-4 sm:grid-cols-3">
+        {(["mangler-xi", "maalloes", "finn-spilleren"] as GameSlug[]).map((g) => {
           const meta = GAME_META[g];
           const card = cards[g];
           return (

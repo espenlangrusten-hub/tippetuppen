@@ -7,9 +7,11 @@ export default function Page() {
   return (
     <article className="flex max-w-2xl flex-col gap-4">
       <h1 className="font-display text-4xl font-bold uppercase">Personvern</h1>
-      <p className="text-mist">Kort versjon: Vi lagrer spillfremgangen din i din egen nettleser, vi bruker ingen sporingskapsler for statistikk, og annonser vises bare med den innstillingen du selv velger.</p>
+      <p className="text-mist">Kort versjon: Du kan spille uten konto. Hvis du oppretter en ligaprofil, lagrer vi brukernavn, en sikret passordverdi og resultater. Vi bruker ingen sporingskapsler for statistikk.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Lagring i nettleseren</h2>
       <p className="text-mist">For at spillet skal virke lagrer vi fremgang, resultater og rekke i nettleserens lokale lagring (localStorage). Dette er nødvendig for tjenesten, forlater aldri enheten din og kan slettes ved å tømme nettleserdata.</p>
+      <h2 className="font-display text-2xl font-bold uppercase">Ligaprofil</h2>
+      <p className="text-mist">Ligaprofil er frivillig. Vi lagrer det unike brukernavnet ditt, et saltet og langsomt hashet passord, en tidsbegrenset innloggingsnøkkel og serverberegnede spillresultater. Passordet lagres aldri i klartekst. Brukernavn og sammenlagt poengsum vises offentlig i ligatabellen.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Statistikk</h2>
       <p className="text-mist">Vi teller sidevisninger og spill med en anonym, daglig roterende nøkkel som lages på serveren fra IP-adresse og nettlesertype. Nøkkelen kan ikke føres tilbake til deg, lagres ikke i nettleseren din, og IP-adressen lagres ikke.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Annonser</h2>

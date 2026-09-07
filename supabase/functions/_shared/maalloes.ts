@@ -4,8 +4,6 @@ import { normalizeName } from "./names.ts";
 import type { MaalloesAnswer, MaalloesPayload } from "./types.ts";
 
 export const ANSWERS_PER_GAME = 5;
-const PRIOR_WEIGHT = 30;
-const CROWD_ONLY_AT = 100;
 
 export function resolveAnswer(payload: MaalloesPayload, text: string): MaalloesAnswer | null {
   const n = normalizeName(text);
@@ -23,12 +21,13 @@ export function resolveAnswer(payload: MaalloesPayload, text: string): MaalloesA
   return partial.length === 1 ? partial[0] : null;
 }
 
-export function scoreFor(answer: MaalloesAnswer, counts: Map<string, number>, respondents: number): number {
-  const c = counts.get(answer.id) ?? 0;
-  if (respondents >= CROWD_ONLY_AT) return Math.round((100 * c) / respondents);
-  if (c === 0 && answer.prior <= 12) return 0;
-  const est = (100 * (PRIOR_WEIGHT * (answer.prior / 100) + c)) / (PRIOR_WEIGHT + respondents);
-  return Math.max(1, Math.min(100, Math.round(est)));
+export function scoreFor(answer: MaalloesAnswer, zeroId: string): number {
+  return answer.id === zeroId ? 0 : Math.max(1, Math.min(99, Math.round(answer.prior)));
+}
+
+/** Exactly one designated zero; stable tie-breaking, independent of live visitors. */
+export function zeroAnswerId(answers: MaalloesAnswer[]): string {
+  return [...answers].sort((a, b) => a.prior - b.prior || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))[0]?.id ?? "";
 }
 
 export const TIERS = {

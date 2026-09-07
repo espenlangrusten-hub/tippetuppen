@@ -10,7 +10,7 @@ type State<T> = { status: "loading" } | { status: "empty" } | { status: "error" 
  * Loads today's puzzle (or an archived one via ?nr=) from the Edge Function.
  * The site is static, so this is the moment the page becomes today's game.
  */
-export function useGamePuzzle<T>(game: "mangler-xi" | "maalloes", nr: number | null) {
+export function useGamePuzzle<T>(game: "mangler-xi" | "maalloes" | "finn-spilleren", nr: number | null) {
   const [state, setState] = useState<State<T>>({ status: "loading" });
   useEffect(() => {
     let cancelled = false;
@@ -38,7 +38,7 @@ export function GameSkeleton() {
   );
 }
 
-export function GameUnavailable({ game, kind, archive = false }: { game: "mangler-xi" | "maalloes"; kind: "empty" | "error"; archive?: boolean }) {
+export function GameUnavailable({ game, kind, archive = false }: { game: "mangler-xi" | "maalloes" | "finn-spilleren"; kind: "empty" | "error"; archive?: boolean }) {
   return (
     <div className="card p-6 text-center">
       <h2 className="font-display text-2xl font-bold uppercase">

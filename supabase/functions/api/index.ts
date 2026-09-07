@@ -26,10 +26,11 @@ import { maskManglerXi } from "../_shared/masking.ts";
 import { evaluate } from "../_shared/guess.ts";
 import { osloDateKey, addDays, isValidDateKey } from "../_shared/dates.ts";
 import { normalizeName } from "../_shared/names.ts";
-import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
-import type { ManglerXiPayload, MaalloesPayload } from "../_shared/types.ts";
+import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
+import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
+import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
-const GAMES = ["mangler-xi", "maalloes"] as const;
+const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
 type Game = (typeof GAMES)[number];
 const isGame = (g: string | null): g is Game => !!g && (GAMES as readonly string[]).includes(g);
 
@@ -58,6 +59,15 @@ function present(game: Game, r: ScheduledRow) {
   if (game === "mangler-xi") {
     return { game, isArchive, today, puzzle: maskManglerXi({ puzzleId: r.puzzle_id, number: r.number, date: r.date, title: r.title, payload: r.payload as ManglerXiPayload }) };
   }
+  if (game === "finn-spilleren") {
+    const pl = r.payload as FinnSpillerenPayload;
+    return {
+      game,
+      isArchive,
+      today,
+      puzzle: { puzzleId: r.puzzle_id, number: r.number, date: r.date, title: r.title, role: pl.role, hintCount: pl.hints.length, status: pl.status },
+    };
+  }
   const pl = r.payload as MaalloesPayload;
   return {
     game,
@@ -75,6 +85,36 @@ function present(game: Game, r: ScheduledRow) {
       status: pl.status,
     },
   };
+}
+
+async function saveLeagueResult(userId: string, puzzleId: string, game: Game, rawScore: number, leaguePoints: number, details: Record<string, unknown>) {
+  const today = osloDateKey();
+  const rows = await sql()<{ date: string }[]>`select date from tippetuppen.schedule where game = ${game} and puzzle_id = ${puzzleId}`;
+  if (rows[0]?.date !== today) return;
+  await sql()`insert into tippetuppen.league_results (user_id, puzzle_id, game, date, raw_score, league_points, details)
+    values (${userId}, ${puzzleId}, ${game}, ${today}, ${rawScore}, ${Math.max(0, Math.min(100, leaguePoints))}, ${JSON.stringify(details)}::jsonb)
+    on conflict (user_id, puzzle_id) do nothing`;
+}
+
+type MxiProgress = { attempts: number[]; solved: boolean[] };
+async function updateMxiProgress(userId: string, puzzleId: string, index: number | null, solved: boolean, finishNow = false) {
+  const db = sql();
+  const rows = await db<{ state: MxiProgress }[]>`select state from tippetuppen.game_progress where user_id = ${userId} and puzzle_id = ${puzzleId}`;
+  const state: MxiProgress = rows[0]?.state ?? { attempts: Array(11).fill(0), solved: Array(11).fill(false) };
+  if (index != null && index >= 0 && index < 11 && !state.solved[index]) {
+    state.attempts[index] = Math.min(6, (state.attempts[index] ?? 0) + 1);
+    if (solved) state.solved[index] = true;
+  }
+  await db`insert into tippetuppen.game_progress (user_id, puzzle_id, game, state, updated_at)
+    values (${userId}, ${puzzleId}, 'mangler-xi', ${JSON.stringify(state)}::jsonb, now())
+    on conflict (user_id, puzzle_id) do update set state = excluded.state, updated_at = now()`;
+  const complete = finishNow || state.solved.every((ok, i) => ok || (state.attempts[i] ?? 0) >= 6);
+  if (complete) {
+    const found = state.solved.filter(Boolean).length;
+    const attempts = state.attempts.reduce((sum, n) => sum + n, 0);
+    const raw = found * 100 + Math.max(0, 66 - attempts);
+    await saveLeagueResult(userId, puzzleId, "mangler-xi", raw, Math.round((raw / 1166) * 100), { found, attempts });
+  }
 }
 
 async function payloadFor(puzzleId: string, game: Game) {
@@ -117,6 +157,56 @@ Deno.serve(async (req) => {
   const q = url.searchParams;
 
   try {
+    if (req.method === "POST" && route === "/auth/register") {
+      const body = (await req.json().catch(() => ({}))) as { username?: string; password?: string };
+      if (typeof body.username !== "string" || typeof body.password !== "string") return bad("bad request");
+      const day = osloDateKey();
+      const visitor = await visitorHash(req, day);
+      const recent = await sql()<{ count: number }[]>`select count(*)::int as count from tippetuppen.events where visitor = ${visitor} and name = 'auth_attempt' and ts > now() - interval '15 minutes'`;
+      if (Number(recent[0]?.count ?? 0) >= 12) return json({ ok: false, error: "rate-limit" }, 429);
+      await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
+      const result = await createUser(body.username, body.password);
+      return json(result, result.ok ? 200 : result.error === "taken" ? 409 : 400);
+    }
+
+    if (req.method === "POST" && route === "/auth/login") {
+      const body = (await req.json().catch(() => ({}))) as { username?: string; password?: string };
+      if (typeof body.username !== "string" || typeof body.password !== "string") return bad("bad request");
+      const day = osloDateKey();
+      const visitor = await visitorHash(req, day);
+      const recent = await sql()<{ count: number }[]>`select count(*)::int as count from tippetuppen.events where visitor = ${visitor} and name = 'auth_attempt' and ts > now() - interval '15 minutes'`;
+      if (Number(recent[0]?.count ?? 0) >= 12) return json({ ok: false, error: "rate-limit" }, 429);
+      await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
+      const result = await loginUser(body.username, body.password);
+      return json(result, result.ok ? 200 : 401);
+    }
+
+    if (req.method === "GET" && route === "/auth/me") {
+      const user = await currentUser(req);
+      return user ? json({ ok: true, user }) : json({ ok: false, error: "unauthorised" }, 401);
+    }
+
+    if (req.method === "POST" && route === "/auth/logout") {
+      await logoutUser(req);
+      return json({ ok: true });
+    }
+
+    if (req.method === "GET" && route === "/leaderboard") {
+      const from = addDays(osloDateKey(), -29);
+      const rows = await sql()<{ username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number }[]>`
+        select u.username,
+               coalesce(sum(r.league_points), 0)::int as points,
+               count(r.id)::int as played,
+               coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
+               coalesce(sum((r.details->>'found')::int) filter (where r.game = 'mangler-xi'), 0)::int as xi_solved,
+               coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
+        from tippetuppen.users u left join tippetuppen.league_results r on r.user_id = u.id and r.date >= ${from}
+        group by u.id, u.username
+        having count(r.id) > 0
+        order by points desc, played desc, maalloes_total asc, u.username asc limit 100`;
+      return json({ ok: true, from, to: osloDateKey(), rows }, 200, { "cache-control": "public, max-age=60" });
+    }
+
     if (req.method === "GET" && route === "/today") {
       const game = q.get("game");
       if (!isGame(game)) return bad("unknown game");
@@ -172,7 +262,10 @@ Deno.serve(async (req) => {
       if (typeof puzzleId !== "string" || typeof index !== "number" || typeof guess !== "string" || guess.length > 40) return bad("bad request");
       const payload = (await payloadFor(puzzleId, "mangler-xi")) as ManglerXiPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
-      return json(evaluate(payload, index, guess));
+      const result = evaluate(payload, index, guess);
+      const user = await currentUser(req);
+      if (user && result.ok) await updateMxiProgress(user.id, puzzleId, index, !!result.solved);
+      return json(result);
     }
 
     if (req.method === "POST" && route === "/reveal") {
@@ -182,23 +275,23 @@ Deno.serve(async (req) => {
       const payload = (await payloadFor(puzzleId, "mangler-xi")) as ManglerXiPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
       if (hint && typeof index === "number" && payload.players[index]) {
+        const user = await currentUser(req);
+        if (user) await updateMxiProgress(user.id, puzzleId, index, false);
         return json({ ok: true, letter: payload.players[index].answer[0] });
       }
+      const user = await currentUser(req);
+      if (user) await updateMxiProgress(user.id, puzzleId, null, false, true);
       return json({ ok: true, players: payload.players.map((p) => ({ name: p.displayName, answer: p.answer })), notes: payload.notes });
     }
 
     if (req.method === "POST" && route === "/maalloes/answer") {
       const body = await req.json().catch(() => null);
-      const { puzzleId, text, taken } = (body ?? {}) as { puzzleId?: string; text?: string; taken?: string[] };
+      const { puzzleId, text } = (body ?? {}) as { puzzleId?: string; text?: string };
       if (typeof puzzleId !== "string" || typeof text !== "string" || text.length > 80) return bad("bad request");
       const payload = (await payloadFor(puzzleId, "maalloes")) as MaalloesPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
-      const a = resolveAnswer(payload, text);
-      if (!a) return json({ ok: false, reason: "unknown" });
-      if (Array.isArray(taken) && taken.includes(a.id)) return json({ ok: false, reason: "duplicate", label: a.label });
-      // Deliberately no score here: knowing how a guess did before the round is over
-      // would let a player steer the remaining four. Scores only exist in /submit.
-      return json({ ok: true, id: a.id, label: a.label });
+      // Compatibility endpoint: never disclose whether an unsubmitted answer is valid.
+      return json({ ok: true, pending: true });
     }
 
     if (req.method === "POST" && route === "/maalloes/submit") {
@@ -228,7 +321,7 @@ Deno.serve(async (req) => {
       // first person to find an unused rare answer can never receive a genuine zero.
       const { counts: previousCounts, respondents: previousRespondents } = await counts(puzzleId);
       const board = payload.answers
-        .map((a) => ({ id: a.id, label: a.label, fact: a.fact ?? null, score: scoreFor(a, previousCounts, previousRespondents), count: previousCounts.get(a.id) ?? 0 }))
+        .map((a) => ({ id: a.id, label: a.label, fact: a.fact ?? null, score: scoreFor(a, zeroAnswerId(payload.answers)), count: previousCounts.get(a.id) ?? 0 }))
         .sort((x, y) => x.score - y.score || x.label.localeCompare(y.label));
       const scores = resolved.map((answer) => (answer ? (board.find((b) => b.id === answer.id)?.score ?? 100) : 100));
       const thresholds = tierThresholds(board.map((b) => b.score));
@@ -241,9 +334,55 @@ Deno.serve(async (req) => {
         await tx`insert into tippetuppen.puzzle_stats (puzzle_id, respondents, completions) values (${puzzleId}, 1, 1)
                  on conflict (puzzle_id) do update set respondents = tippetuppen.puzzle_stats.respondents + 1, completions = tippetuppen.puzzle_stats.completions + 1`;
       });
+      const user = await currentUser(req);
+      if (user) await saveLeagueResult(user.id, puzzleId, "maalloes", total, 100 - Math.round(total / 5), { scores, shield, dropped });
       const chosen = new Set(valid.map((answer) => answer.id));
       const boardAfter = board.map((answer) => ({ ...answer, count: answer.count + (chosen.has(answer.id) ? 1 : 0) }));
-      return json({ ok: true, scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board: boardAfter, respondents: previousRespondents + 1, explanation: payload.explanation });
+      return json({ ok: true, resolved: resolved.map((a) => a ? { id: a.id, label: a.label, fact: a.fact ?? null } : null), scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board: boardAfter, respondents: previousRespondents + 1, explanation: payload.explanation });
+    }
+
+    if (req.method === "POST" && route === "/finn-spilleren/start") {
+      const { puzzleId } = (await req.json().catch(() => ({}))) as { puzzleId?: string };
+      if (typeof puzzleId !== "string") return bad("bad request");
+      const payload = (await payloadFor(puzzleId, "finn-spilleren")) as FinnSpillerenPayload | null;
+      if (!payload) return json({ ok: false, error: "not-found" }, 404);
+      const user = await currentUser(req);
+      if (user) {
+        const existing = await sql()<{ id: string; hint_number: number; finished: boolean }[]>`
+          select id, hint_number, finished from tippetuppen.finn_attempts where user_id = ${user.id} and puzzle_id = ${puzzleId}`;
+        if (existing[0]?.finished) return json({ ok: false, error: "already-played" }, 409);
+        if (existing[0]) return json({ ok: true, attemptId: existing[0].id, hintNumber: existing[0].hint_number, hint: payload.hints[existing[0].hint_number - 1] });
+      }
+      const attemptId = crypto.randomUUID();
+      await sql()`insert into tippetuppen.finn_attempts (id, puzzle_id, user_id) values (${attemptId}, ${puzzleId}, ${user?.id ?? null})`;
+      return json({ ok: true, attemptId, hintNumber: 1, hint: payload.hints[0] });
+    }
+
+    if (req.method === "POST" && route === "/finn-spilleren/next") {
+      const { attemptId } = (await req.json().catch(() => ({}))) as { attemptId?: string };
+      if (typeof attemptId !== "string") return bad("bad request");
+      const rows = await sql()<{ puzzle_id: string; hint_number: number; finished: boolean; payload: FinnSpillerenPayload }[]>`
+        select a.puzzle_id, a.hint_number, a.finished, p.payload from tippetuppen.finn_attempts a join tippetuppen.puzzles p on p.id = a.puzzle_id where a.id = ${attemptId}`;
+      const attempt = rows[0];
+      if (!attempt || attempt.finished) return json({ ok: false, error: "finished" }, 409);
+      const next = Math.min(5, Number(attempt.hint_number) + 1);
+      await sql()`update tippetuppen.finn_attempts set hint_number = ${next} where id = ${attemptId}`;
+      return json({ ok: true, hintNumber: next, hint: attempt.payload.hints[next - 1], last: next === 5 });
+    }
+
+    if (req.method === "POST" && route === "/finn-spilleren/guess") {
+      const { attemptId, guess } = (await req.json().catch(() => ({}))) as { attemptId?: string; guess?: string };
+      if (typeof attemptId !== "string" || typeof guess !== "string" || guess.length > 80) return bad("bad request");
+      const rows = await sql()<{ puzzle_id: string; user_id: string | null; hint_number: number; finished: boolean; payload: FinnSpillerenPayload }[]>`
+        select a.puzzle_id, a.user_id, a.hint_number, a.finished, p.payload from tippetuppen.finn_attempts a join tippetuppen.puzzles p on p.id = a.puzzle_id where a.id = ${attemptId}`;
+      const attempt = rows[0];
+      if (!attempt || attempt.finished) return json({ ok: false, error: "finished" }, 409);
+      const accepted = new Set([attempt.payload.answer, ...attempt.payload.aliases].map(normalizeName));
+      const correct = accepted.has(normalizeName(guess));
+      const score = correct ? [100, 80, 60, 40, 20][Math.max(0, Math.min(4, Number(attempt.hint_number) - 1))] : 0;
+      await sql()`update tippetuppen.finn_attempts set finished = true where id = ${attemptId}`;
+      if (attempt.user_id) await saveLeagueResult(attempt.user_id, attempt.puzzle_id, "finn-spilleren", score, score, { hintNumber: attempt.hint_number, correct });
+      return json({ ok: true, correct, score, answer: attempt.payload.answer, explanation: attempt.payload.explanation });
     }
 
     if (req.method === "POST" && route === "/events") {
