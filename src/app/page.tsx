@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { TopPlayers } from "@/components/home/TopPlayers";
 import { TodayCards } from "@/components/home/TodayCards";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
         </p>
       </section>
 
-      <AdSlot placement="home-below-games" />
+      <TopPlayers />
 
       <section className="card p-5">
         <h2 className="font-display text-2xl font-bold uppercase">Slik funker det</h2>
