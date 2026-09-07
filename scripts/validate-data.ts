@@ -1,6 +1,9 @@
 import { loadDataset } from "../src/data/load";
+import { playerClues } from "../src/server/puzzles/playerClues";
 
 const ds = loadDataset();
+for (const id of playerClues.keys()) if (!ds.players.has(id)) ds.problems.push(`Unknown player in biography clues: ${id}`);
+console.log(`Biographical clue profiles: ${playerClues.size}`);
 const byStatus: Record<string, number> = {};
 for (const m of ds.matches) byStatus[m.status] = (byStatus[m.status] ?? 0) + 1;
 console.log(`Matches: ${ds.matches.length}`, byStatus);

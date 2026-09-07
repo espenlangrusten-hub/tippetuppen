@@ -187,19 +187,29 @@ Deno.serve(async (req) => {
     }
 
     if (req.method === "GET" && route === "/leaderboard") {
-      const from = addDays(osloDateKey(), -29);
-      const rows = await sql()<{ username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number }[]>`
-        select u.username,
-               coalesce(sum(r.league_points), 0)::int as points,
-               count(r.id)::int as played,
-               coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
-               coalesce(sum((r.details->>'found')::int) filter (where r.game = 'mangler-xi'), 0)::int as xi_solved,
-               coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
-        from tippetuppen.users u left join tippetuppen.league_results r on r.user_id = u.id and r.date >= ${from}
-        group by u.id, u.username
-        having count(r.id) > 0
-        order by points desc, played desc, maalloes_total asc, u.username asc limit 100`;
-      return json({ ok: true, from, to: osloDateKey(), rows }, 200, { "cache-control": "public, max-age=60" });
+      const to = osloDateKey();
+      const from = addDays(to, -29);
+      const user = await currentUser(req);
+      type Row = { rank: number; username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
+      const [board] = await sql()<{ rows: Row[]; me: Row | null; registered: number }[]>`
+        with totals as (
+          select u.username,
+                 sum(r.league_points)::int as points,
+                 count(r.id)::int as played,
+                 coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
+                 coalesce(sum((r.details->>'found')::int) filter (where r.game = 'mangler-xi'), 0)::int as xi_solved,
+                 coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
+          from tippetuppen.users u join tippetuppen.league_results r on r.user_id = u.id
+          where r.date between ${from} and ${to}
+          group by u.id, u.username
+        ), ranked as (
+          select (row_number() over (order by points desc, played desc, maalloes_total asc, username asc))::int as rank, totals.*
+          from totals
+        )
+        select coalesce((select jsonb_agg(to_jsonb(r) order by rank) from ranked r where rank <= 100), '[]'::jsonb) as rows,
+               (select to_jsonb(r) from ranked r where username = ${user?.username ?? null}) as me,
+               (select count(*)::int from tippetuppen.users) as registered`;
+      return json({ ok: true, from, to, ...board }, 200, { "cache-control": "private, no-store" });
     }
 
     if (req.method === "GET" && route === "/today") {

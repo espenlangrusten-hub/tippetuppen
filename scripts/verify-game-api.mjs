@@ -15,6 +15,9 @@ try {
   const user = await req('/auth/register',{username:name,password});
   assert.equal(user.ok,true,JSON.stringify(user)); created.push(user.user.id);
   const token=user.token;
+  const unranked=await req('/leaderboard',undefined,token);
+  assert.equal(unranked.me,null);
+  assert.equal(typeof unranked.registered,'number');
   assert.equal((await req('/auth/register',{username:name.toUpperCase(),password})).error,'taken');
   assert.equal((await req('/auth/login',{username:name,password})).ok,true);
   assert.equal((await req('/auth/login',{username:name,password:'wrong'})).ok,false);
@@ -53,6 +56,23 @@ try {
   assert.equal(first.board.filter(x=>x.score===0).length,1);
   const second=await req('/maalloes/submit',{puzzleId:mal.puzzleId,answers:first.board.slice(0,5).map(x=>({text:x.label,id:x.id}))},token);
   assert.deepEqual(second,first);
+  const ownBoard=await req('/leaderboard',undefined,token);
+  assert.equal(ownBoard.me.username,name);
+  assert.deepEqual(ownBoard.rows.find(r=>r.username===name),ownBoard.me);
+  const competitors=Array.from({length:105},(_,i)=>({id:crypto.randomUUID(),username:`${name}-r${String(i).padStart(3,'0')}`}));
+  created.push(...competitors.map(c=>c.id));
+  await db`insert into tippetuppen.users ${db(competitors.map(c=>({...c,username_normalized:c.username,password_hash:'test-only',password_salt:'test-only'})))}`;
+  await db`insert into tippetuppen.league_results(user_id,puzzle_id,game,date,raw_score,league_points,details)
+    select u.id, s.puzzle_id, s.game, s.date, 100, 100, '{}'::jsonb from tippetuppen.users u
+    cross join tippetuppen.schedule s where u.id in ${db(competitors.map(c=>c.id))} and s.puzzle_id=${xi.puzzleId}`;
+  const outside=await req('/leaderboard',undefined,token);
+  assert.equal(outside.rows.length,100);
+  assert.equal(outside.me.rank,ownBoard.me.rank+105);
+  assert.equal(outside.rows.some(r=>r.username===name),false);
+  assert.equal(outside.rows[0].rank,1); assert.equal(outside.rows[99].rank,100);
+  assert.equal(outside.registered,ownBoard.registered+105);
+  assert.equal((await req('/leaderboard')).me,null);
+  assert.equal((await req('/leaderboard',undefined,'invalid-session')).me,null);
   await req('/auth/logout',{},token);
   assert.equal((await req('/auth/me',undefined,token)).ok,false);
   console.log('API integration passed: login, uniqueness, ownership, concurrent start, resume, locked answer, future protection, give-up scoring, fixed Målløs result, logout.');

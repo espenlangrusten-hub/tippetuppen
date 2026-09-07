@@ -1,0 +1,278 @@
+[
+  {
+    "playerId": "erling-haaland",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Bryne.",
+      "Jeg ble født i Leeds i 2000.",
+      "Jeg spilte for Molde, Salzburg og Borussia Dortmund før jeg gikk til Manchester City."
+    ],
+    "sources": [
+      {
+        "url": "https://www.mancity.com/players/erling-haaland",
+        "title": "Erling Haaland",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.mancity.com/features/haaland/bryne/fk/",
+        "title": "Erling Haaland",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "martin-odegaard",
+    "hints": [
+      "Som barn spilte jeg i Drammen Strong.",
+      "Jeg ble født i Drammen i 1998.",
+      "Jeg gikk fra Strømsgodset til Real Madrid i 2015 og senere til Arsenal."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Martin_%C3%98degaard",
+        "title": "Martin Ødegaard",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.arsenal.com/news/welcome-martin-odegaard-joins-from-real-madrid-a3tzY6N1iJMk",
+        "title": "Martin Ødegaard",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "ole-gunnar-solskjaer",
+    "hints": [
+      "Karrieren min startet i Clausenengen.",
+      "Jeg ble født i Kristiansund i 1973.",
+      "Jeg gikk fra Molde til Manchester United i 1996."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.manutd.com/en/news/utd-podcast-arthur-albiston-on-molde-and-ole-gunnar-solskjaer-22-october-2020",
+        "title": "Ole Gunnar Solskjær",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "tore-andre-flo",
+    "hints": [
+      "Jeg startet fotballkarrieren i Stryn og gikk til Sogndal i 1993.",
+      "Jeg spilte for Tromsø i 1995 og deretter Brann.",
+      "Jeg gikk fra Brann til Chelsea sommeren 1997."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tore_Andr%C3%A9_Flo",
+        "title": "Tore André Flo",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "john-carew",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Lørenskog.",
+      "Jeg ble født i Lørenskog i 1979.",
+      "Jeg har spilt for både Valencia, Roma, Lyon og Aston Villa."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/John_Carew",
+        "title": "John Carew",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "john-arne-riise",
+    "hints": [
+      "Jeg spilte for Aalesund før jeg dro til Monaco i 1998.",
+      "Jeg ble født i Molde i 1980.",
+      "Jeg spilte for Liverpool fra 2001 til 2008 og vant Champions League i 2005."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/John_Arne_Riise",
+        "title": "John Arne Riise",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.liverpoolfc.com/news/first-team/224541-john-arne-riise-retires-from-football",
+        "title": "John Arne Riise",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "morten-gamst-pedersen",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Norild og Polarstjernen.",
+      "Jeg ble født i Vadsø i 1981.",
+      "Jeg gikk fra Tromsø til Blackburn i 2004 og ble der til 2013."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Morten_Gamst_Pedersen",
+        "title": "Morten Gamst Pedersen",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "brede-hangeland",
+    "hints": [
+      "Som ung spilte jeg for Vidar før jeg kom til Viking.",
+      "Jeg ble født i Houston i USA i 1981.",
+      "Jeg spilte for FC København før jeg gikk til Fulham i 2008."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Brede_Hangeland",
+        "title": "Brede Hangeland",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "steffen-iversen",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Nationalkameratene og Astor.",
+      "Jeg ble født i Oslo i 1976.",
+      "Jeg gikk fra Rosenborg til Tottenham i desember 1996."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Steffen_Iversen",
+        "title": "Steffen Iversen",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.tottenhamhotspur.com/news/1041050/iversen-joins-wolves",
+        "title": "Steffen Iversen",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "erik-thorstvedt",
+    "hints": [
+      "Som ung spilte jeg for Madla.",
+      "Jeg ble født i Stavanger i 1962.",
+      "Jeg var keeper i Tottenham fra 1988 til 1996."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Erik_Thorstvedt",
+        "title": "Erik Thorstvedt",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "stale-solbakken",
+    "hints": [
+      "Jeg startet karrieren i Grue før jeg gikk til HamKam i 1989.",
+      "Jeg spilte for Lillestrøm fra 1994 til 1997.",
+      "Etter Wimbledon spilte jeg for både AaB og FC København."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      },
+      {
+        "url": "https://www.uefa.com/uefachampionsleague/news/022f-0ea1b2100b1f-aa0e6a87a674-1000--stale-solbakken/",
+        "title": "Ståle Solbakken",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "erik-mykland",
+    "hints": [
+      "Fotballreisen min gikk fra Risør via Bryne til Start i 1989.",
+      "Jeg ble født i Risør i 1971.",
+      "Jeg spilte for Norge i VM i både 1994 og 1998 og i EM i 2000."
+    ],
+    "sources": [
+      {
+        "url": "https://www.ikstart.no/start-historien/history-since-1905/erik-mykland-eng",
+        "title": "Erik Mykland",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "orjan-nyland",
+    "hints": [
+      "Jeg spilte for Mork og Volda før jeg kom til Hødd i 2007.",
+      "Jeg ble født i Volda i 1990.",
+      "Jeg vant cupen med Hødd i 2012 og gikk til Molde før 2013-sesongen."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/%C3%98rjan_Nyland",
+        "title": "Ørjan Nyland",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "david-moller-wolfe",
+    "hints": [
+      "Jeg spilte seniorfotball for Bergen Nord før jeg kom til Brann.",
+      "Jeg ble født i Bergen i 2002.",
+      "Jeg var på lån i Åsane i 2020 og gikk fra Brann til AZ i 2023."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/David_M%C3%B8ller_Wolfe",
+        "title": "David Møller Wolfe",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "playerId": "alexander-sorloth",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Strindheim og Rosenborg.",
+      "Jeg ble født i Trondheim i 1995.",
+      "Jeg var på lån i Bodø/Glimt i 2015 og har også spilt for Crystal Palace og Trabzonspor."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Alexander_S%C3%B8rloth",
+        "title": "Alexander Sørloth",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  }
+]

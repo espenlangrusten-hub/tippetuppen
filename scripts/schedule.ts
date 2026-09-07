@@ -18,6 +18,9 @@ const step = (msg: string) => console.log(`[${new Date().toISOString().slice(11,
 
 const handle = await getDbHandle();
 const db = handle.db;
+// Hint changes apply to future rounds; started/published rounds keep their clues.
+const publishedFinn = new Set((await db.select({ id: s.schedule.puzzleId }).from(s.schedule)
+  .where(sql`${s.schedule.game} = 'finn-spilleren' and ${s.schedule.date} <= ${osloDateKey()}`)).map((r) => r.id));
 
 step("Reading matches and lineups…");
 const mxi = await buildManglerXiPuzzles(db);
@@ -27,6 +30,7 @@ const finn = await buildFinnSpillerenPuzzles(db);
 step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
 let upserts = 0;
 for (const p of [...mxi, ...mal, ...finn]) {
+  if (p.game === "finn-spilleren" && publishedFinn.has(p.id)) continue;
   const row = { id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef };
   await db
     .insert(s.puzzles)
