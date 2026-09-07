@@ -42,3 +42,14 @@ export type MaalloesPayload = {
   sourceIds: string[];
   status: string;
 };
+
+export type FinnSpillerenPayload = {
+  answerId: string;
+  answer: string;
+  aliases: string[];
+  role: "spiller" | "trener";
+  hints: [string, string, string, string, string];
+  explanation: string;
+  status: string;
+  sourceIds: string[];
+};

@@ -12,7 +12,11 @@ const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 function headers(extra: Record<string, string> = {}): Record<string, string> {
   // The anon key is public by design; the function itself does not require it, but
   // Supabase's gateway is happier when it is present.
-  return { ...(ANON_KEY ? { apikey: ANON_KEY, authorization: `Bearer ${ANON_KEY}` } : {}), ...extra };
+  let session = "";
+  try {
+    session = typeof window === "undefined" ? "" : window.localStorage.getItem("tt-session") || "";
+  } catch { /* private mode */ }
+  return { ...(ANON_KEY ? { apikey: ANON_KEY, authorization: `Bearer ${ANON_KEY}` } : {}), ...(session ? { "x-session-token": session } : {}), ...extra };
 }
 
 export async function apiGet<T>(path: string): Promise<T> {

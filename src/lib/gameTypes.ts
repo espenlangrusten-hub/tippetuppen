@@ -46,5 +46,15 @@ export type MaalloesPublic = {
   status: string;
 };
 
+export type FinnSpillerenPublic = {
+  puzzleId: string;
+  number: number;
+  date: string;
+  title: string;
+  role: "spiller" | "trener";
+  hintCount: number;
+  status: string;
+};
+
 export type TodayResponse<T> = { ok: true; game: string; isArchive: boolean; today: string; puzzle: T | null } | { ok: false; error: string };
 export type ArchiveRow = { date: string; number: number; title: string; difficulty: number };

@@ -15,6 +15,20 @@
       "when": 1788697307862,
       "tag": "0001_yellow_wendigo",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788796535722,
+      "tag": "0002_solid_next_avengers",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788796675791,
+      "tag": "0003_magenta_sharon_ventura",
+      "breakpoints": true
     }
   ]
 }

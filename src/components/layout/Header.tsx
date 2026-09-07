@@ -14,6 +14,9 @@ export function Header() {
           <Link href="/maalloes" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
             Målløs
           </Link>
+          <Link href="/finn-spilleren" className="hidden whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:block sm:px-2.5">
+            Finn spilleren
+          </Link>
           <Link href="/arkiv" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
             Arkiv
           </Link>
@@ -24,6 +27,7 @@ export function Header() {
               <rect x="14" y="8" width="3" height="9" rx="1" />
             </svg>
           </Link>
+          <Link href="/liga" aria-label="Liga og innlogging" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">🏆</Link>
         </nav>
       </div>
     </header>

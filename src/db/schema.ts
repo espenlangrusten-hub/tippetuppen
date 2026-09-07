@@ -302,7 +302,7 @@ export const playerClubSpells = tt.table(
 // Puzzles and schedule
 // ---------------------------------------------------------------------------
 
-export const GAMES = ["mangler-xi", "maalloes"] as const;
+export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
 export type GameId = (typeof GAMES)[number];
 
 export const puzzles = tt.table(
@@ -416,3 +416,76 @@ export const settings = tt.table("settings", {
   key: text("key").primaryKey(),
   value: jsonb("value").$type<unknown>().notNull(),
 });
+
+// ---------------------------------------------------------------------------
+// Accounts and server-owned league results
+// ---------------------------------------------------------------------------
+
+export const users = tt.table(
+  "users",
+  {
+    id: text("id").primaryKey(),
+    username: text("username").notNull(),
+    usernameNormalized: text("username_normalized").notNull(),
+    passwordHash: text("password_hash").notNull(),
+    passwordSalt: text("password_salt").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("users_username_normalized").on(t.usernameNormalized)],
+);
+
+export const sessions = tt.table(
+  "sessions",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("sessions_user").on(t.userId), index("sessions_expiry").on(t.expiresAt)],
+);
+
+export const gameProgress = tt.table(
+  "game_progress",
+  {
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+    game: text("game").$type<GameId>().notNull(),
+    state: jsonb("state").$type<Record<string, unknown>>().notNull().default({}),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.puzzleId] })],
+);
+
+export const leagueResults = tt.table(
+  "league_results",
+  {
+    id: bigserial("id", { mode: "number" }).primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+    game: text("game").$type<GameId>().notNull(),
+    date: text("date").notNull(),
+    rawScore: integer("raw_score").notNull(),
+    leaguePoints: integer("league_points").notNull(),
+    details: jsonb("details").$type<Record<string, unknown>>().notNull().default({}),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("league_results_user_puzzle").on(t.userId, t.puzzleId),
+    index("league_results_date").on(t.date),
+    index("league_results_user_date").on(t.userId, t.date),
+  ],
+);
+
+export const finnAttempts = tt.table(
+  "finn_attempts",
+  {
+    id: text("id").primaryKey(),
+    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+    userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
+    hintNumber: integer("hint_number").notNull().default(1),
+    finished: boolean("finished").notNull().default(false),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("finn_attempts_puzzle").on(t.puzzleId), index("finn_attempts_user").on(t.userId), uniqueIndex("finn_attempts_user_puzzle").on(t.userId, t.puzzleId)],
+);

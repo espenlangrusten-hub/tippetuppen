@@ -26,6 +26,13 @@ export const GAME_META = {
     description: "Fem svar på et spørsmål om norsk fotball. Jo færre som svarer det samme som deg, jo bedre.",
     emoji: "🥅",
   },
+  "finn-spilleren": {
+    slug: "finn-spilleren",
+    name: "Finn spilleren",
+    short: "Fem hint. Ett svar.",
+    description: "Finn spilleren eller treneren. Tidlig riktig svar gir flest poeng; feil svar avslutter runden.",
+    emoji: "🕵️",
+  },
 } as const;
 
 export type GameSlug = keyof typeof GAME_META;

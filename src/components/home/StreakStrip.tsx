@@ -7,7 +7,7 @@ import { loadRecords } from "@/lib/storage";
 export function StreakStrip({ today }: { today: string }) {
   const [s, setS] = useState<{ current: number; best: number; played: number } | null>(null);
   useEffect(() => {
-    const all = [...loadRecords("mangler-xi"), ...loadRecords("maalloes")];
+    const all = [...loadRecords("mangler-xi"), ...loadRecords("maalloes"), ...loadRecords("finn-spilleren")];
     // Day streak: a day counts when at least one official daily game was completed.
     const st = computeStreak(all, today);
     setS({ current: st.current, best: st.best, played: all.length });

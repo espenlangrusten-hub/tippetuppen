@@ -15,6 +15,7 @@ export type { MaalloesPublic };
 // choosing five answers without knowing how the earlier ones did.
 type Entry = { text: string; id: string | null; label: string | null; score: number | null; fact: string | null };
 type Final = {
+  resolved: ({ id: string; label: string; fact: string | null } | null)[];
   scores: number[];
   total: number;
   shield: boolean;
@@ -90,23 +91,17 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
     setBusy(true);
     try {
       if (!state.startedAt) track({ name: "game_start", game: "maalloes", puzzleId: puzzle.puzzleId, archive: isArchive });
-      const d = await apiPost<{ ok: boolean; reason?: string; id?: string; label?: string }>("/maalloes/answer", {
-        puzzleId: puzzle.puzzleId,
-        text: t,
-        taken: state.entries.map((e) => e.id).filter(Boolean),
-      });
-      if (!d.ok && d.reason === "duplicate") {
-        showToast(`${d.label} er allerede brukt`);
+      if (state.entries.some((e) => e.text.toLocaleLowerCase("nb") === t.toLocaleLowerCase("nb"))) {
+        showToast("Dette svaret er allerede lagt til");
         return;
       }
-      const entry: Entry = d.ok ? { text: t, id: d.id!, label: d.label!, score: null, fact: null } : { text: t, id: null, label: null, score: null, fact: null };
+      const entry: Entry = { text: t, id: null, label: null, score: null, fact: null };
       const entries = [...state.entries, entry];
       setText("");
       setSuggestions([]);
       const next: GameState = { ...state, entries, startedAt: state.startedAt ?? new Date().toISOString() };
       setState(next);
-      if (!d.ok) showToast("Ikke et gyldig svar");
-      else showToast(`${d.label} – lagt til`);
+      showToast("Svar lagt til – vurderes ved innsending");
       window.setTimeout(() => inputRef.current?.focus(), 0);
     } finally {
       setBusy(false);
@@ -135,7 +130,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
         ...state,
         final: f,
         finishedAt,
-        entries: state.entries.map((entry, i) => ({ ...entry, score: f.scores[i], fact: f.board.find((answer) => answer.id === entry.id)?.fact ?? null })),
+        entries: state.entries.map((entry, i) => ({ ...entry, id: f.resolved[i]?.id ?? null, label: f.resolved[i]?.label ?? null, score: f.scores[i], fact: f.resolved[i]?.fact ?? null })),
       };
       setState(done);
       addRecord("maalloes", { date: puzzle.date, completedAt: finishedAt, score: f.total, won: f.tier.key !== "relegation", archive: isArchive });
@@ -221,7 +216,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
                   <>
                     <div className="min-w-0 flex-1">
                       <div className="truncate font-semibold">{e.label ?? e.text}</div>
-                      <div className="truncate text-xs text-mist">{e.label ? (e.fact ?? "") : "Ikke et gyldig svar"}</div>
+                      <div className="truncate text-xs text-mist">{!f ? "Vurderes når alle fem sendes inn" : e.label ? (e.fact ?? "") : "Ugyldig eller gjentatt svar"}</div>
                     </div>
                     {e.score == null ? (
                       <button type="button" className="rounded-lg bg-ink-2 px-2.5 py-1 text-xs font-semibold text-mist hover:text-snow" onClick={() => editEntry(i)} aria-label={`Endre ${e.label ?? e.text}`}>

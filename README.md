@@ -1,9 +1,10 @@
 # Tippetuppen – dagens norske fotballspill
 
-To daglige spill for norske fotballfans:
+Tre daglige spill for norske fotballfans:
 
 - **Mangler XI** – fyll ut Norges startellever fra en ekte landskamp (1990–2026), bokstav for bokstav.
 - **Målløs** – ett spørsmål om norsk fotball, fem svar; jo færre andre som svarer det samme, jo bedre.
+- **Finn spilleren** – fem kildebaserte hint; tidlig riktig svar gir flest poeng.
 
 Nytt spill hver dag kl. 00:00 norsk tid (Europe/Oslo).
 

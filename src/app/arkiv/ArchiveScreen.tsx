@@ -13,7 +13,7 @@ import { track } from "@/components/analytics/Beacon";
 export function ArchiveScreen() {
   const params = useSearchParams();
   const only = params.get("game");
-  const games: GameSlug[] = only === "mangler-xi" || only === "maalloes" ? [only] : ["mangler-xi", "maalloes"];
+  const games: GameSlug[] = only === "mangler-xi" || only === "maalloes" || only === "finn-spilleren" ? [only] : ["mangler-xi", "maalloes", "finn-spilleren"];
   const [rows, setRows] = useState<Record<string, ArchiveRow[] | null>>({});
 
   useEffect(() => {

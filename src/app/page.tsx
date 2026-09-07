@@ -17,12 +17,16 @@ export default function Home() {
 
       <section className="card p-5">
         <h2 className="font-display text-2xl font-bold uppercase">Slik funker det</h2>
-        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        <div className="mt-3 grid gap-4 sm:grid-cols-3">
           <div>
             <h3 className="font-semibold">🇳🇴 Mangler XI</h3>
             <p className="mt-1 text-sm text-mist">
               Du får en ekte norsk landskamp fra 1989 til i dag – med motstander, resultat og formasjon. Trykk på en drakt og gjett spilleren bokstav for bokstav, wordle-style. Seks forsøk per spiller. Fyll ut alle elleve.
             </p>
+          </div>
+          <div>
+            <h3 className="font-semibold">🕵️ Finn spilleren</h3>
+            <p className="mt-1 text-sm text-mist">Start med et vanskelig hint. Riktig svar gir 100 poeng, og hvert nytt hint reduserer gevinsten. Ett feil svar avslutter runden.</p>
           </div>
           <div>
             <h3 className="font-semibold">🥅 Målløs</h3>
