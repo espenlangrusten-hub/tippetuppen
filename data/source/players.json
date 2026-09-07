@@ -64,7 +64,8 @@
     "fullName": "Kristoffer Ajer",
     "surname": "Ajer",
     "aliases": [
-      "Kristoffer Vassbakk Ajer"
+      "Kristoffer Vassbakk Ajer",
+      "Kristoffer Vassbakk Köpp Ajer"
     ],
     "fame": 4
   },
@@ -342,7 +343,8 @@
     "surname": "Hanche-Olsen",
     "aliases": [
       "Hanche Olsen",
-      "Hanche"
+      "Hanche",
+      "Andreas Schjølberg Hanche-Olsen"
     ],
     "fame": 2
   },
@@ -403,7 +405,10 @@
     "id": "ola-solbakken",
     "fullName": "Ola Solbakken",
     "surname": "Solbakken",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Ola Selvaag Solbakken"
+    ]
   },
   {
     "id": "stale-solbakken",
@@ -415,13 +420,19 @@
     "id": "stefan-strandberg",
     "fullName": "Stefan Strandberg",
     "surname": "Strandberg",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Ken Remi Stefan Strandberg"
+    ]
   },
   {
     "id": "birger-meling",
     "fullName": "Birger Meling",
     "surname": "Meling",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Birger Solberg Meling"
+    ]
   },
   {
     "id": "steffen-iversen",
@@ -534,7 +545,10 @@
     "id": "stefan-johansen",
     "fullName": "Stefan Johansen",
     "surname": "Johansen",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Stefan Marius Johansen"
+    ]
   },
   {
     "id": "markus-henriksen",
@@ -546,7 +560,10 @@
     "id": "mathias-normann",
     "fullName": "Mathias Normann",
     "surname": "Normann",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Mathias Antonsen Normann"
+    ]
   },
   {
     "id": "andre-hansen",
@@ -569,7 +586,8 @@
     "surname": "Elyounoussi",
     "aliases": [
       "Moi",
-      "Moi Elyounoussi"
+      "Moi Elyounoussi",
+      "Mohamed Amine Elyounoussi"
     ],
     "fame": 4
   },
@@ -892,7 +910,8 @@
     "surname": "Omoijuanfo",
     "fame": 3,
     "aliases": [
-      "Ohi"
+      "Ohi",
+      "Ohikhuaeme Anthony Omoijuanfo"
     ]
   },
   {
@@ -1011,5 +1030,72 @@
     "fullName": "Raymond Kvisvik",
     "surname": "Kvisvik",
     "fame": 2
+  },
+  {
+    "id": "kristoffer-zachariassen",
+    "fullName": "Kristoffer Zachariassen",
+    "surname": "Zachariassen",
+    "aliases": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=8179784",
+        "title": "NFFs kampkort: dokumentert startspiller",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "id": "sten-grytebust",
+    "fullName": "Sten Grytebust",
+    "surname": "Grytebust",
+    "aliases": [
+      "Sten Michael Grytebust"
+    ],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=6929604",
+        "title": "NFFs kampkort: dokumentert startspiller",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "id": "iver-fossum",
+    "fullName": "Iver Fossum",
+    "surname": "Fossum",
+    "aliases": [
+      "Iver Tobias Fossum",
+      "Iver Tobias Rørvik Fossum"
+    ],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=6929604",
+        "title": "NFFs kampkort: dokumentert startspiller",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
+  },
+  {
+    "id": "bjorn-maars-johnsen",
+    "fullName": "Bjørn Maars Johnsen",
+    "surname": "Johnsen",
+    "aliases": [
+      "Bjørn Johnsen"
+    ],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=6929604",
+        "title": "NFFs kampkort: dokumentert startspiller",
+        "kind": "web",
+        "accessed": "2026-09-07"
+      }
+    ]
   }
 ]
