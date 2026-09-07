@@ -1,0 +1,108 @@
+{
+  "id": "2022-11-20-nor-fin",
+  "date": "2022-11-20",
+  "competition": "friendly",
+  "opponent": "Finland",
+  "opponentCode": "FIN",
+  "norwayHome": true,
+  "score": [
+    1,
+    1
+  ],
+  "venue": "Ullevaal Stadion",
+  "formation": "4-3-3",
+  "importance": 3,
+  "tags": [
+    "nff",
+    "manuelt-kontrollert"
+  ],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=8179784",
+      "title": "NFF: Norge – Finland, 2022-11-20",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startellever, draktnumre, kaptein, dato og resultat manuelt kontrollert mot NFFs kampkort."
+    },
+    {
+      "url": "https://www.espn.co.uk/football/match/_/gameId/654139/finland-norway",
+      "title": "ESPN: lagoppstilling 2022-11-20",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startelleveren og formasjonen kryssjekket mot den søkeindekserte lagoppstillingen. Generiske posisjoner beholdt der eksakt side ikke er dokumentert."
+    }
+  ],
+  "notes": "NFFs startoppstilling er kontrollert separat fra innbytterlisten. Innbyttere er ikke fullstendig registrert. Posisjonsgrupper følger ESPN; ingen udokumenterte sideplasseringer.",
+  "lineup": [
+    {
+      "name": "Ørjan Nyland",
+      "no": 1,
+      "pos": "GK"
+    },
+    {
+      "name": "Stefan Strandberg",
+      "no": 4,
+      "pos": "DF"
+    },
+    {
+      "name": "Birger Meling",
+      "no": 5,
+      "pos": "DF"
+    },
+    {
+      "name": "Leo Østigård",
+      "no": 15,
+      "pos": "DF"
+    },
+    {
+      "name": "Marcus Holmgren Pedersen",
+      "no": 22,
+      "pos": "DF"
+    },
+    {
+      "name": "Patrick Berg",
+      "no": 6,
+      "pos": "MF"
+    },
+    {
+      "name": "Kristoffer Zachariassen",
+      "no": 8,
+      "pos": "MF"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "no": 10,
+      "pos": "MF",
+      "captain": true
+    },
+    {
+      "name": "Mats Møller Dæhli",
+      "no": 20,
+      "pos": "FW"
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "no": 11,
+      "pos": "FW"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "no": 19,
+      "pos": "FW"
+    }
+  ],
+  "subs": [],
+  "goals": [
+    {
+      "team": "opponent",
+      "scorer": "Benjamin Källman",
+      "minute": 32
+    },
+    {
+      "team": "norway",
+      "name": "Alexander Sørloth",
+      "minute": 46
+    }
+  ]
+}

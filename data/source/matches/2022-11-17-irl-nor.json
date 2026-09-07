@@ -1,0 +1,121 @@
+{
+  "id": "2022-11-17-irl-nor",
+  "date": "2022-11-17",
+  "competition": "friendly",
+  "opponent": "Irland",
+  "opponentCode": "IRL",
+  "norwayHome": false,
+  "score": [
+    2,
+    1
+  ],
+  "venue": "Aviva Stadium",
+  "city": "Dublin",
+  "formation": "4-1-4-1",
+  "importance": 3,
+  "tags": [
+    "nff",
+    "manuelt-kontrollert"
+  ],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=8179783",
+      "title": "NFF: Irland – Norge, 2022-11-17",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startellever, draktnumre, kaptein, dato og resultat manuelt kontrollert mot NFFs kampkort."
+    },
+    {
+      "url": "https://www.espn.co.uk/football/match/_/gameId/654248/norway-republic-of-ireland",
+      "title": "ESPN: lagoppstilling 2022-11-17",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startelleveren og formasjonen kryssjekket mot den søkeindekserte lagoppstillingen. Generiske posisjoner beholdt der eksakt side ikke er dokumentert."
+    }
+  ],
+  "notes": "NFFs startoppstilling er kontrollert separat fra innbytterlisten. Innbyttere er ikke fullstendig registrert. Posisjonsgrupper følger ESPN; ingen udokumenterte sideplasseringer.",
+  "lineup": [
+    {
+      "name": "Ørjan Nyland",
+      "no": 1,
+      "pos": "GK"
+    },
+    {
+      "name": "Stefan Strandberg",
+      "no": 4,
+      "pos": "DF"
+    },
+    {
+      "name": "Leo Østigård",
+      "no": 15,
+      "pos": "DF"
+    },
+    {
+      "name": "Fredrik Bjørkan",
+      "no": 17,
+      "pos": "DF"
+    },
+    {
+      "name": "Marcus Holmgren Pedersen",
+      "no": 22,
+      "pos": "DF"
+    },
+    {
+      "name": "Morten Thorsby",
+      "no": 2,
+      "pos": "MF"
+    },
+    {
+      "name": "Patrick Berg",
+      "no": 6,
+      "pos": "DM"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "no": 10,
+      "pos": "MF",
+      "captain": true
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "no": 11,
+      "pos": "MF"
+    },
+    {
+      "name": "Ola Solbakken",
+      "no": 16,
+      "pos": "MF"
+    },
+    {
+      "name": "Jørgen Strand Larsen",
+      "no": 23,
+      "pos": "FW"
+    }
+  ],
+  "subs": [
+    {
+      "name": "Ohi Omoijuanfo",
+      "no": 9,
+      "on": 74,
+      "for": "Jørgen Strand Larsen"
+    }
+  ],
+  "goals": [
+    {
+      "team": "norway",
+      "name": "Leo Østigård",
+      "minute": 41
+    },
+    {
+      "team": "opponent",
+      "scorer": "Alan Browne",
+      "minute": 69
+    },
+    {
+      "team": "norway",
+      "name": "Ohi Omoijuanfo",
+      "minute": 85
+    }
+  ]
+}

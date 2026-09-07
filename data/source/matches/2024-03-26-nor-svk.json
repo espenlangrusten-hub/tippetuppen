@@ -1,0 +1,108 @@
+{
+  "id": "2024-03-26-nor-svk",
+  "date": "2024-03-26",
+  "competition": "friendly",
+  "opponent": "Slovakia",
+  "opponentCode": "SVK",
+  "norwayHome": true,
+  "score": [
+    1,
+    1
+  ],
+  "venue": "Ullevaal Stadion",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": [
+    "nff",
+    "manuelt-kontrollert"
+  ],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=8452632",
+      "title": "NFF: Norge – Slovakia, 2024-03-26",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startellever, draktnumre, kaptein, dato og resultat manuelt kontrollert mot NFFs kampkort."
+    },
+    {
+      "url": "https://www.espn.co.uk/football/match/_/gameId/694652/slovakia-norway",
+      "title": "ESPN: lagoppstilling 2024-03-26",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startelleveren og formasjonen kryssjekket mot den søkeindekserte lagoppstillingen. Generiske posisjoner beholdt der eksakt side ikke er dokumentert."
+    }
+  ],
+  "notes": "NFFs startoppstilling er kontrollert separat fra innbytterlisten. Innbyttere er ikke fullstendig registrert. Posisjonsgrupper følger ESPN; ingen udokumenterte sideplasseringer.",
+  "lineup": [
+    {
+      "name": "Ørjan Nyland",
+      "no": 1,
+      "pos": "GK"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "no": 3,
+      "pos": "DF"
+    },
+    {
+      "name": "Leo Østigård",
+      "no": 4,
+      "pos": "DF"
+    },
+    {
+      "name": "Julian Ryerson",
+      "no": 14,
+      "pos": "DF"
+    },
+    {
+      "name": "Fredrik Bjørkan",
+      "no": 17,
+      "pos": "DF"
+    },
+    {
+      "name": "Sander Berge",
+      "no": 8,
+      "pos": "MF"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "no": 10,
+      "pos": "MF",
+      "captain": true
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "no": 11,
+      "pos": "MF"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "no": 7,
+      "pos": "FW"
+    },
+    {
+      "name": "Erling Haaland",
+      "no": 9,
+      "pos": "FW"
+    },
+    {
+      "name": "Oscar Bobb",
+      "no": 22,
+      "pos": "MF"
+    }
+  ],
+  "subs": [],
+  "goals": [
+    {
+      "team": "norway",
+      "name": "Alexander Sørloth",
+      "minute": 18
+    },
+    {
+      "team": "opponent",
+      "scorer": "Ondrej Duda",
+      "minute": 87
+    }
+  ]
+}

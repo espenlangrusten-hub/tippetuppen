@@ -1,0 +1,103 @@
+{
+  "id": "2018-06-06-nor-pan",
+  "date": "2018-06-06",
+  "competition": "friendly",
+  "opponent": "Panama",
+  "opponentCode": "PAN",
+  "norwayHome": true,
+  "score": [
+    1,
+    0
+  ],
+  "venue": "Ullevaal Stadion",
+  "formation": "4-4-2",
+  "importance": 3,
+  "tags": [
+    "nff",
+    "manuelt-kontrollert"
+  ],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=6929604",
+      "title": "NFF: Norge – Panama, 6. juni 2018",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Alle elleve startspillere, draktnumre, kaptein, dato og resultat manuelt kontrollert."
+    },
+    {
+      "url": "https://www.espn.in/football/match/_/gameId/506895/panama-norway",
+      "title": "ESPN: Norway – Panama, formations and lineups",
+      "kind": "web",
+      "accessed": "2026-09-07",
+      "note": "Startellever og 4-4-2 kontrollert. Innbytterkoblingene avviker fra NFF og brukes ikke."
+    }
+  ],
+  "notes": "Generiske posisjonsgrupper fra ESPN. Startelleveren er kontrollert mot NFF separat fra innbytterne. Innbyttere er ikke registrert.",
+  "lineup": [
+    {
+      "name": "Sten Grytebust",
+      "no": 22,
+      "pos": "GK"
+    },
+    {
+      "name": "Birger Meling",
+      "no": 2,
+      "pos": "DF"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "no": 3,
+      "pos": "DF"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "no": 4,
+      "pos": "DF"
+    },
+    {
+      "name": "Martin Linnes",
+      "no": 17,
+      "pos": "DF"
+    },
+    {
+      "name": "Stefan Johansen",
+      "no": 8,
+      "pos": "MF",
+      "captain": true
+    },
+    {
+      "name": "Sander Berge",
+      "no": 15,
+      "pos": "MF"
+    },
+    {
+      "name": "Markus Henriksen",
+      "no": 19,
+      "pos": "MF"
+    },
+    {
+      "name": "Iver Fossum",
+      "no": 24,
+      "pos": "MF"
+    },
+    {
+      "name": "Joshua King",
+      "no": 7,
+      "pos": "FW"
+    },
+    {
+      "name": "Bjørn Maars Johnsen",
+      "no": 21,
+      "pos": "FW"
+    }
+  ],
+  "subs": [],
+  "goals": [
+    {
+      "team": "norway",
+      "name": "Joshua King",
+      "minute": 4
+    }
+  ]
+}
