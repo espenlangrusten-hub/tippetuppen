@@ -1,10 +1,12 @@
 "use client";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
 import type { FinnSpillerenPublic } from "@/lib/gameTypes";
-import { addRecord } from "@/lib/storage";
+import { addRecord, loadProgress, saveProgress } from "@/lib/storage";
+import { storedUser } from "@/lib/auth";
 
 type Result = { correct: boolean; score: number; answer: string; explanation: string };
+type Reply = { ok: boolean; attemptId?: string; hints?: string[]; hintNumber?: number; finished?: boolean; result?: Result | null; error?: string };
 
 export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpillerenPublic; isArchive: boolean }) {
   const [attemptId, setAttemptId] = useState("");
@@ -14,33 +16,59 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
   const [result, setResult] = useState<Result | null>(null);
   const [busy, setBusy] = useState(true);
   const [error, setError] = useState("");
+  const [finished, setFinished] = useState(false);
+  const pending = useRef(false);
+
+  const apply = (reply: Reply) => {
+    if (!reply.ok) throw new Error(reply.error === "unauthorised" ? "Logg inn igjen for å fortsette ligarunden." : "Kunne ikke hente runden. Prøv igjen.");
+    if (reply.attemptId) setAttemptId(reply.attemptId);
+    if (reply.hints) setHints(reply.hints);
+    if (reply.hintNumber) setHintNumber(reply.hintNumber);
+    setFinished(!!reply.finished);
+    if (reply.result) {
+      setResult(reply.result);
+      addRecord("finn-spilleren", { date: puzzle.date, completedAt: new Date().toISOString(), score: reply.result.score, won: reply.result.correct, archive: isArchive });
+    }
+  };
 
   useEffect(() => {
-    apiPost<{ ok: boolean; attemptId?: string; hint?: string }>("/finn-spilleren/start", { puzzleId: puzzle.puzzleId })
-      .then((r) => { if (r.ok && r.attemptId && r.hint) { setAttemptId(r.attemptId); setHints([r.hint]); } else setError("Du har allerede spilt dagens runde."); })
-      .finally(() => setBusy(false));
+    let cancelled = false;
+    const key = `finn-spilleren:${storedUser()?.id ?? "guest"}`;
+    const saved = loadProgress<{attemptId:string}>(key, puzzle.puzzleId);
+    apiPost<Reply>("/finn-spilleren/start", { puzzleId: puzzle.puzzleId, attemptId: saved?.attemptId })
+      .then((r) => {
+        if (cancelled) return;
+        apply(r);
+        if (r.attemptId) saveProgress(key, puzzle.puzzleId, {attemptId:r.attemptId});
+      })
+      .catch((e: Error) => { if (!cancelled) setError(e.message); })
+      .finally(() => { if (!cancelled) setBusy(false); });
+    return () => { cancelled = true; };
+    // The server resumes progress by puzzle and account; state updates must not start a new round.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [puzzle.puzzleId]);
 
   const next = async () => {
-    if (!attemptId || hintNumber >= 5) return;
+    if (!attemptId || hintNumber >= 5 || finished || pending.current) return;
+    pending.current = true;
+    setError("");
     setBusy(true);
     try {
-      const r = await apiPost<{ ok: boolean; hint?: string; hintNumber?: number }>("/finn-spilleren/next", { attemptId });
-      if (r.ok && r.hint && r.hintNumber) { setHints((h) => [...h, r.hint!]); setHintNumber(r.hintNumber); }
-    } finally { setBusy(false); }
+      apply(await apiPost<Reply>("/finn-spilleren/next", { attemptId }));
+    } catch (e) { setError((e as Error).message); }
+    finally { setBusy(false); pending.current = false; }
   };
 
   const submit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!attemptId || !guess.trim() || result) return;
+    if (!attemptId || !guess.trim() || finished || pending.current) return;
+    pending.current = true;
+    setError("");
     setBusy(true);
     try {
-      const r = await apiPost<{ ok: boolean } & Result>("/finn-spilleren/guess", { attemptId, guess });
-      if (r.ok) {
-        setResult(r);
-        addRecord("finn-spilleren", { date: puzzle.date, completedAt: new Date().toISOString(), score: r.score, won: r.correct, archive: isArchive });
-      }
-    } finally { setBusy(false); }
+      apply(await apiPost<Reply>("/finn-spilleren/guess", { attemptId, guess }));
+    } catch (e) { setError((e as Error).message); }
+    finally { setBusy(false); pending.current = false; }
   };
 
   return <div className="flex flex-col gap-4">
@@ -54,8 +82,9 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
         {hints.map((hint, i) => <li key={i} className="flex gap-3"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky font-bold">{i + 1}</span><span>{hint}</span></li>)}
       </ol>
       {error && <p className="mt-4 rounded-xl bg-ink-3 p-3 text-mist">{error}</p>}
-      {!result && <form className="mt-5 space-y-3" onSubmit={submit}>
-        <input className="input" value={guess} onChange={(e) => setGuess(e.target.value)} placeholder="Skriv spillerens navn" autoComplete="off" />
+      {finished && !result && <p className="mt-3">Denne runden er allerede avsluttet.</p>}
+      {!finished && attemptId && <form className="mt-5 space-y-3" onSubmit={submit}>
+        <input aria-label="Spillerens navn" className="input" value={guess} onChange={(e) => setGuess(e.target.value)} placeholder="Skriv spillerens navn" autoComplete="off" maxLength={80} />
         <div className="grid grid-cols-2 gap-2">
           <button className="btn btn-primary" disabled={busy || !guess.trim()}>{busy ? "Venter …" : "Svar"}</button>
           <button type="button" className="btn btn-secondary" disabled={busy || hintNumber >= 5} onClick={next}>{hintNumber >= 5 ? "Siste hint" : "Neste hint"}</button>

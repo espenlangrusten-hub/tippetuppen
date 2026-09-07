@@ -28,6 +28,8 @@ import { osloDateKey, addDays, isValidDateKey } from "../_shared/dates.ts";
 import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
+import { advanceXi, xiScore, type XiState } from "../_shared/league.ts";
+import { finnRoute } from "../_shared/finn.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
 const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
@@ -40,11 +42,11 @@ async function scheduled(game: Game, where: { date?: string; number?: number }) 
   const db = sql();
   const rows = where.date
     ? await db<ScheduledRow[]>`
-        select s.date, s.number, s.puzzle_id, p.title, p.payload, p.enabled
+        select s.date, s.number, case when s.game = 'finn-spilleren' then 'finn-' || md5(s.puzzle_id) else s.puzzle_id end as puzzle_id, p.title, p.payload, p.enabled
         from tippetuppen.schedule s join tippetuppen.puzzles p on p.id = s.puzzle_id
         where s.game = ${game} and s.date = ${where.date}`
     : await db<ScheduledRow[]>`
-        select s.date, s.number, s.puzzle_id, p.title, p.payload, p.enabled
+        select s.date, s.number, case when s.game = 'finn-spilleren' then 'finn-' || md5(s.puzzle_id) else s.puzzle_id end as puzzle_id, p.title, p.payload, p.enabled
         from tippetuppen.schedule s join tippetuppen.puzzles p on p.id = s.puzzle_id
         where s.game = ${game} and s.number = ${where.number!}`;
   const r = rows[0];
@@ -87,39 +89,32 @@ function present(game: Game, r: ScheduledRow) {
   };
 }
 
-async function saveLeagueResult(userId: string, puzzleId: string, game: Game, rawScore: number, leaguePoints: number, details: Record<string, unknown>) {
-  const today = osloDateKey();
-  const rows = await sql()<{ date: string }[]>`select date from tippetuppen.schedule where game = ${game} and puzzle_id = ${puzzleId}`;
-  if (rows[0]?.date !== today) return;
-  await sql()`insert into tippetuppen.league_results (user_id, puzzle_id, game, date, raw_score, league_points, details)
-    values (${userId}, ${puzzleId}, ${game}, ${today}, ${rawScore}, ${Math.max(0, Math.min(100, leaguePoints))}, ${JSON.stringify(details)}::jsonb)
-    on conflict (user_id, puzzle_id) do nothing`;
-}
-
-type MxiProgress = { attempts: number[]; solved: boolean[] };
-async function updateMxiProgress(userId: string, puzzleId: string, index: number | null, solved: boolean, finishNow = false) {
-  const db = sql();
-  const rows = await db<{ state: MxiProgress }[]>`select state from tippetuppen.game_progress where user_id = ${userId} and puzzle_id = ${puzzleId}`;
-  const state: MxiProgress = rows[0]?.state ?? { attempts: Array(11).fill(0), solved: Array(11).fill(false) };
-  if (index != null && index >= 0 && index < 11 && !state.solved[index]) {
-    state.attempts[index] = Math.min(6, (state.attempts[index] ?? 0) + 1);
-    if (solved) state.solved[index] = true;
-  }
-  await db`insert into tippetuppen.game_progress (user_id, puzzle_id, game, state, updated_at)
-    values (${userId}, ${puzzleId}, 'mangler-xi', ${JSON.stringify(state)}::jsonb, now())
-    on conflict (user_id, puzzle_id) do update set state = excluded.state, updated_at = now()`;
-  const complete = finishNow || state.solved.every((ok, i) => ok || (state.attempts[i] ?? 0) >= 6);
-  if (complete) {
-    const found = state.solved.filter(Boolean).length;
-    const attempts = state.attempts.reduce((sum, n) => sum + n, 0);
-    const raw = found * 100 + Math.max(0, 66 - attempts);
-    await saveLeagueResult(userId, puzzleId, "mangler-xi", raw, Math.round((raw / 1166) * 100), { found, attempts });
-  }
+async function updateMxiProgress(userId: string, puzzleId: string, index: number | null, solved: boolean, finishNow = false, hint = false) {
+  return await sql().begin(async (tx) => {
+    const initial: XiState = { attempts: Array(11).fill(0), solved: Array(11).fill(false) };
+    await tx`insert into tippetuppen.game_progress (user_id,puzzle_id,game,state)
+      values (${userId},${puzzleId},'mangler-xi',${sql().json(initial)}::jsonb) on conflict do nothing`;
+    const [row] = await tx<{ state: XiState }[]>`select state from tippetuppen.game_progress
+      where user_id=${userId} and puzzle_id=${puzzleId} for update`;
+    if (!advanceXi(row.state, index, solved, finishNow, hint)) return false;
+    await tx`update tippetuppen.game_progress set state=${sql().json(row.state)}::jsonb,updated_at=now()
+      where user_id=${userId} and puzzle_id=${puzzleId}`;
+    if (row.state.finished) {
+      const score = xiScore(row.state);
+      await tx`insert into tippetuppen.league_results (user_id,puzzle_id,game,date,raw_score,league_points,details)
+        select ${userId},puzzle_id,game,date,${score.raw},${score.points},${sql().json(score)}::jsonb
+        from tippetuppen.schedule where puzzle_id=${puzzleId} and game='mangler-xi' and date=${osloDateKey()}
+        on conflict (user_id,puzzle_id) do nothing`;
+    }
+    return true;
+  });
 }
 
 async function payloadFor(puzzleId: string, game: Game) {
   const rows = await sql()<{ payload: unknown; game: string }[]>`
-    select payload, game from tippetuppen.puzzles where id = ${puzzleId}`;
+    select p.payload, p.game from tippetuppen.puzzles p
+    join tippetuppen.schedule s on s.puzzle_id = p.id and s.game = p.game
+    where p.id = ${puzzleId} and p.enabled and s.date <= ${osloDateKey()}`;
   if (!rows[0] || rows[0].game !== game) return null;
   return rows[0].payload;
 }
@@ -264,7 +259,7 @@ Deno.serve(async (req) => {
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
       const result = evaluate(payload, index, guess);
       const user = await currentUser(req);
-      if (user && result.ok) await updateMxiProgress(user.id, puzzleId, index, !!result.solved);
+      if (user && result.ok && !await updateMxiProgress(user.id, puzzleId, index, !!result.solved)) return bad("finished", 409);
       return json(result);
     }
 
@@ -276,7 +271,7 @@ Deno.serve(async (req) => {
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
       if (hint && typeof index === "number" && payload.players[index]) {
         const user = await currentUser(req);
-        if (user) await updateMxiProgress(user.id, puzzleId, index, false);
+        if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
         return json({ ok: true, letter: payload.players[index].answer[0] });
       }
       const user = await currentUser(req);
@@ -317,8 +312,7 @@ Deno.serve(async (req) => {
       });
       const valid = resolved.filter((answer): answer is NonNullable<typeof answer> => !!answer);
       const db = sql();
-      // Score against the crowd that existed before this submission. Otherwise the
-      // first person to find an unused rare answer can never receive a genuine zero.
+      // Crowd counts are displayed for interest; the published prior fixes the score.
       const { counts: previousCounts, respondents: previousRespondents } = await counts(puzzleId);
       const board = payload.answers
         .map((a) => ({ id: a.id, label: a.label, fact: a.fact ?? null, score: scoreFor(a, zeroAnswerId(payload.answers)), count: previousCounts.get(a.id) ?? 0 }))
@@ -326,64 +320,37 @@ Deno.serve(async (req) => {
       const scores = resolved.map((answer) => (answer ? (board.find((b) => b.id === answer.id)?.score ?? 100) : 100));
       const thresholds = tierThresholds(board.map((b) => b.score));
       const { total, shield, dropped } = finalTotal(scores);
-      await db.begin(async (tx) => {
+      const chosen = new Set(valid.map((answer) => answer.id));
+      const boardAfter = board.map((answer) => ({ ...answer, count: answer.count + (chosen.has(answer.id) ? 1 : 0) }));
+      const response = { ok: true, resolved: resolved.map((a) => a ? { id: a.id, label: a.label, fact: a.fact ?? null } : null), scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board: boardAfter, respondents: previousRespondents + 1, explanation: payload.explanation };
+      const user = await currentUser(req);
+      if (req.headers.has("x-session-token") && !user) return bad("unauthorised", 401);
+      const saved = await db.begin(async (tx) => {
+        if (user) {
+          await tx`insert into tippetuppen.game_progress(user_id,puzzle_id,game,state)
+            values(${user.id},${puzzleId},'maalloes','{}'::jsonb) on conflict do nothing`;
+          const [row] = await tx<{state: {final?: typeof response}}[]>`select state from tippetuppen.game_progress
+            where user_id=${user.id} and puzzle_id=${puzzleId} for update`;
+          if (row.state.final) return row.state.final;
+          await tx`update tippetuppen.game_progress set state=${sql().json({final:response})}::jsonb,updated_at=now()
+            where user_id=${user.id} and puzzle_id=${puzzleId}`;
+          await tx`insert into tippetuppen.league_results(user_id,puzzle_id,game,date,raw_score,league_points,details)
+            select ${user.id},puzzle_id,game,date,${total},${100-Math.round(total/5)},${sql().json({scores,shield,dropped})}::jsonb
+            from tippetuppen.schedule where puzzle_id=${puzzleId} and game='maalloes' and date=${osloDateKey()}
+            on conflict(user_id,puzzle_id) do nothing`;
+        }
         for (const answer of valid) {
           await tx`insert into tippetuppen.maalloes_answer_counts (puzzle_id, answer_id, count) values (${puzzleId}, ${answer.id}, 1)
                    on conflict (puzzle_id, answer_id) do update set count = tippetuppen.maalloes_answer_counts.count + 1`;
         }
         await tx`insert into tippetuppen.puzzle_stats (puzzle_id, respondents, completions) values (${puzzleId}, 1, 1)
                  on conflict (puzzle_id) do update set respondents = tippetuppen.puzzle_stats.respondents + 1, completions = tippetuppen.puzzle_stats.completions + 1`;
+        return response;
       });
-      const user = await currentUser(req);
-      if (user) await saveLeagueResult(user.id, puzzleId, "maalloes", total, 100 - Math.round(total / 5), { scores, shield, dropped });
-      const chosen = new Set(valid.map((answer) => answer.id));
-      const boardAfter = board.map((answer) => ({ ...answer, count: answer.count + (chosen.has(answer.id) ? 1 : 0) }));
-      return json({ ok: true, resolved: resolved.map((a) => a ? { id: a.id, label: a.label, fact: a.fact ?? null } : null), scores, total, shield, dropped, tier: tierFor(total, thresholds), thresholds, board: boardAfter, respondents: previousRespondents + 1, explanation: payload.explanation });
+      return json(saved);
     }
 
-    if (req.method === "POST" && route === "/finn-spilleren/start") {
-      const { puzzleId } = (await req.json().catch(() => ({}))) as { puzzleId?: string };
-      if (typeof puzzleId !== "string") return bad("bad request");
-      const payload = (await payloadFor(puzzleId, "finn-spilleren")) as FinnSpillerenPayload | null;
-      if (!payload) return json({ ok: false, error: "not-found" }, 404);
-      const user = await currentUser(req);
-      if (user) {
-        const existing = await sql()<{ id: string; hint_number: number; finished: boolean }[]>`
-          select id, hint_number, finished from tippetuppen.finn_attempts where user_id = ${user.id} and puzzle_id = ${puzzleId}`;
-        if (existing[0]?.finished) return json({ ok: false, error: "already-played" }, 409);
-        if (existing[0]) return json({ ok: true, attemptId: existing[0].id, hintNumber: existing[0].hint_number, hint: payload.hints[existing[0].hint_number - 1] });
-      }
-      const attemptId = crypto.randomUUID();
-      await sql()`insert into tippetuppen.finn_attempts (id, puzzle_id, user_id) values (${attemptId}, ${puzzleId}, ${user?.id ?? null})`;
-      return json({ ok: true, attemptId, hintNumber: 1, hint: payload.hints[0] });
-    }
-
-    if (req.method === "POST" && route === "/finn-spilleren/next") {
-      const { attemptId } = (await req.json().catch(() => ({}))) as { attemptId?: string };
-      if (typeof attemptId !== "string") return bad("bad request");
-      const rows = await sql()<{ puzzle_id: string; hint_number: number; finished: boolean; payload: FinnSpillerenPayload }[]>`
-        select a.puzzle_id, a.hint_number, a.finished, p.payload from tippetuppen.finn_attempts a join tippetuppen.puzzles p on p.id = a.puzzle_id where a.id = ${attemptId}`;
-      const attempt = rows[0];
-      if (!attempt || attempt.finished) return json({ ok: false, error: "finished" }, 409);
-      const next = Math.min(5, Number(attempt.hint_number) + 1);
-      await sql()`update tippetuppen.finn_attempts set hint_number = ${next} where id = ${attemptId}`;
-      return json({ ok: true, hintNumber: next, hint: attempt.payload.hints[next - 1], last: next === 5 });
-    }
-
-    if (req.method === "POST" && route === "/finn-spilleren/guess") {
-      const { attemptId, guess } = (await req.json().catch(() => ({}))) as { attemptId?: string; guess?: string };
-      if (typeof attemptId !== "string" || typeof guess !== "string" || guess.length > 80) return bad("bad request");
-      const rows = await sql()<{ puzzle_id: string; user_id: string | null; hint_number: number; finished: boolean; payload: FinnSpillerenPayload }[]>`
-        select a.puzzle_id, a.user_id, a.hint_number, a.finished, p.payload from tippetuppen.finn_attempts a join tippetuppen.puzzles p on p.id = a.puzzle_id where a.id = ${attemptId}`;
-      const attempt = rows[0];
-      if (!attempt || attempt.finished) return json({ ok: false, error: "finished" }, 409);
-      const accepted = new Set([attempt.payload.answer, ...attempt.payload.aliases].map(normalizeName));
-      const correct = accepted.has(normalizeName(guess));
-      const score = correct ? [100, 80, 60, 40, 20][Math.max(0, Math.min(4, Number(attempt.hint_number) - 1))] : 0;
-      await sql()`update tippetuppen.finn_attempts set finished = true where id = ${attemptId}`;
-      if (attempt.user_id) await saveLeagueResult(attempt.user_id, attempt.puzzle_id, "finn-spilleren", score, score, { hintNumber: attempt.hint_number, correct });
-      return json({ ok: true, correct, score, answer: attempt.payload.answer, explanation: attempt.payload.explanation });
-    }
+    if (req.method === "POST" && route.startsWith("/finn-spilleren/")) return finnRoute(req, route.split("/").at(-1)!);
 
     if (req.method === "POST" && route === "/events") {
       const body = await req.json().catch(() => null);
@@ -393,7 +360,7 @@ Deno.serve(async (req) => {
       const day = osloDateKey();
       try {
         await sql()`insert into tippetuppen.events (day, name, game, puzzle_id, visitor, is_new, archive, props)
-          values (${day}, ${e.name}, ${e.game ?? null}, ${e.puzzleId ?? null}, ${await visitorHash(req, day)}, ${!!e.isNew}, ${!!e.archive}, ${JSON.stringify({ path: e.path ?? null })}::jsonb)`;
+          values (${day}, ${e.name}, ${e.game ?? null}, ${e.puzzleId ?? null}, ${await visitorHash(req, day)}, ${!!e.isNew}, ${!!e.archive}, ${sql().json({ path: e.path ?? null })}::jsonb)`;
       } catch {
         // Analytics must never break the game.
       }
@@ -461,7 +428,7 @@ Deno.serve(async (req) => {
           order by p.quality desc limit 1`;
         if (!cand[0]) return json({ ok: false, error: "no-spare-puzzle" }, 409);
         await db`update tippetuppen.schedule set puzzle_id = ${cand[0].id}, locked = true where game = ${game!} and date = ${date}`;
-        await db`insert into tippetuppen.admin_audit (action, details) values ('replace_scheduled', ${JSON.stringify({ game, date, to: cand[0].id })}::jsonb)`;
+        await db`insert into tippetuppen.admin_audit (action, details) values ('replace_scheduled', ${sql().json({ game, date, to: cand[0].id })}::jsonb)`;
         return json({ ok: true, puzzleId: cand[0].id });
       }
 
@@ -469,7 +436,7 @@ Deno.serve(async (req) => {
         const { puzzleId, enabled } = (await req.json().catch(() => ({}))) as { puzzleId?: string; enabled?: boolean };
         if (typeof puzzleId !== "string" || typeof enabled !== "boolean") return bad("bad request");
         await db`update tippetuppen.puzzles set enabled = ${enabled} where id = ${puzzleId}`;
-        await db`insert into tippetuppen.admin_audit (action, details) values ('puzzle_enabled', ${JSON.stringify({ puzzleId, enabled })}::jsonb)`;
+        await db`insert into tippetuppen.admin_audit (action, details) values ('puzzle_enabled', ${sql().json({ puzzleId, enabled })}::jsonb)`;
         return json({ ok: true });
       }
     }

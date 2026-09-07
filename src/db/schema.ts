@@ -485,6 +485,7 @@ export const finnAttempts = tt.table(
     userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
     hintNumber: integer("hint_number").notNull().default(1),
     finished: boolean("finished").notNull().default(false),
+    result: jsonb("result").$type<{ correct: boolean; score: number; answer: string; explanation: string }>(),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("finn_attempts_puzzle").on(t.puzzleId), index("finn_attempts_user").on(t.userId), uniqueIndex("finn_attempts_user_puzzle").on(t.userId, t.puzzleId)],

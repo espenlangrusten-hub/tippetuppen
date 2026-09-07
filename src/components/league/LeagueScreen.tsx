@@ -15,7 +15,12 @@ export function LeagueScreen() {
   const [busy, setBusy] = useState(false);
 
   const load = useCallback(() => apiGet<{ ok: boolean; rows?: Row[] }>("/leaderboard").then((r) => setRows(r.rows ?? [])).catch(() => setRows([])), []);
-  useEffect(() => { setUser(storedUser()); void load(); }, [load]);
+  useEffect(() => {
+    setUser(storedUser()); void load();
+    if (storedUser()) void apiGet<{ok:boolean;user?:SessionUser}>("/auth/me")
+      .then((r) => { if(r.ok && r.user) setUser(r.user); else {clearSession();setUser(null);} })
+      .catch(() => setMessage("Kunne ikke bekrefte innloggingen. Prøv igjen når forbindelsen er tilbake."));
+  }, [load]);
 
   const submit = async (e: FormEvent) => {
     e.preventDefault(); setBusy(true); setMessage("");
@@ -23,10 +28,14 @@ export function LeagueScreen() {
       const r = await apiPost<{ ok: boolean; token?: string; user?: SessionUser; error?: string }>(`/auth/${mode}`, { username, password });
       if (r.ok && r.token && r.user) { saveSession(r.token, r.user); setUser(r.user); setPassword(""); setMessage("Du er logget inn. Dagens resultater registreres automatisk."); }
       else setMessage(r.error === "taken" ? "Brukernavnet er allerede tatt." : r.error === "rate-limit" ? "For mange forsøk. Vent 15 minutter." : mode === "register" ? "Bruk 3–24 tegn og minst 8 tegn i passordet." : "Feil brukernavn eller passord.");
-    } finally { setBusy(false); }
+    } catch { setMessage("Fikk ikke kontakt. Prøv igjen."); }
+    finally { setBusy(false); }
   };
 
-  const logout = async () => { await apiPost("/auth/logout", {}); clearSession(); setUser(null); };
+  const logout = async () => {
+    try { await apiPost("/auth/logout", {}); clearSession(); setUser(null); }
+    catch { setMessage("Kunne ikke logge ut. Prøv igjen."); }
+  };
 
   return <div className="flex flex-col gap-4">
     <section><h1 className="font-display text-4xl font-bold uppercase">🏆 Tippetuppen-ligaen</h1><p className="mt-2 text-mist">Rullerende 30 dager. Alle tre spill omregnes til 0–100 ligapoeng per dag, så de teller like mye.</p></section>

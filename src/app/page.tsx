@@ -21,7 +21,7 @@ export default function Home() {
           <div>
             <h3 className="font-semibold">🇳🇴 Mangler XI</h3>
             <p className="mt-1 text-sm text-mist">
-              Du får en ekte norsk landskamp fra 1989 til i dag – med motstander, resultat og formasjon. Trykk på en drakt og gjett spilleren bokstav for bokstav, wordle-style. Seks forsøk per spiller. Fyll ut alle elleve.
+              Du får en ekte norsk landskamp fra 1990–2026 – med motstander, resultat og formasjon. Trykk på en drakt og gjett spilleren bokstav for bokstav. Seks forsøk per spiller. Fyll ut alle elleve.
             </p>
           </div>
           <div>
@@ -31,7 +31,7 @@ export default function Home() {
           <div>
             <h3 className="font-semibold">🥅 Målløs</h3>
             <p className="mt-1 text-sm text-mist">
-              Ett spørsmål om norsk fotball, fem svar. Hvert svar får poeng etter hvor mange andre spillere som svarte det samme. Feil svar koster 100. Finn et svar ingen andre fant – et målløst svar – og du får et skjold som stryker ditt dårligste.
+              Ett spørsmål om norsk fotball, fem svar. Poengene bygger på estimert sannsynlighet for at et svar blir valgt, og er like for alle på samme oppgave. Feil svar koster 100. Ett sjeldent svar gir 0 og et skjold som stryker ditt dårligste svar.
             </p>
           </div>
         </div>

@@ -39,15 +39,14 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
     for (const app of apps.filter((a) => a.matchId === match.id && a.starter)) {
       const player = playerById.get(app.playerId);
       if (!player) continue;
-      const words = player.displayName.trim().split(/\s+/);
-      const first = words.slice(0, -1).join(" ") || words[0];
-      const surname = words.at(-1)!;
+      const first = player.displayName.trim().split(/\s+/)[0];
+      const surname = player.surname;
       const hints: FinnSpillerenPayload["hints"] = [
         `Jeg startet en norsk landskamp mot ${match.opponent} i ${match.date.slice(0, 4)}.`,
         `Norge ${result} kampen ${match.norwayScore}–${match.opponentScore}${match.venue ? ` på ${match.venue}` : ""}.`,
-        match.manager ? `Landslagssjefen i kampen var ${match.manager}.` : `Kampen ble spilt i ${match.city ?? "Norge"}.`,
+        match.manager ? `Landslagssjefen i kampen var ${match.manager}.` : `Kampen ble spilt ${match.date}.`,
         `I lagoppstillingen var jeg ${POSITION_LABEL[app.position].toLowerCase()}.`,
-        `Fornavnet mitt er ${first}, og etternavnet begynner på ${surname[0].toUpperCase()}.`,
+        `Navnet mitt begynner med ${first}, og etternavnet begynner på ${surname[0].toUpperCase()}.`,
       ];
       out.push({
         id: `finn-${match.id}-${player.id}`,
