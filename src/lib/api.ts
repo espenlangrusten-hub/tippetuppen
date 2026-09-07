@@ -21,7 +21,7 @@ function headers(extra: Record<string, string> = {}): Record<string, string> {
 
 export async function apiGet<T>(path: string): Promise<T> {
   const res = await fetch(`${API_URL}${path}`, { headers: headers(), cache: "no-store" });
-  if (!res.ok && res.status !== 404) throw new Error(`API ${res.status}`);
+  if (!res.ok && res.status !== 404 && res.status !== 401) throw new Error(`API ${res.status}`);
   return (await res.json()) as T;
 }
 

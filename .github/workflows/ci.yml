@@ -24,5 +24,21 @@ jobs:
         run: npm test
       - name: Edge Function typecheck
         run: npm run check:deno
+      - name: Check login and ranked game transactions
+        run: |
+          set -euo pipefail
+          npm run db:migrate
+          npm run db:seed
+          node --import tsx scripts/schedule.ts --days 10
+          PG_PORT=5544 node --import tsx scripts/pg-socket-server.ts &
+          pg_pid=$!
+          SUPABASE_DB_URL=postgres://postgres@127.0.0.1:5544/postgres ./node_modules/.bin/deno run --node-modules-dir=manual --allow-net --allow-env --allow-read --config supabase/functions/deno.json supabase/functions/api/index.ts &
+          api_pid=$!
+          trap 'kill "$pg_pid" "$api_pid" 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl -sf -o /dev/null 'http://127.0.0.1:8000/api/today?game=mangler-xi'; then break; fi
+            sleep 1
+          done
+          node scripts/verify-game-api.mjs
       - name: Build static site
         run: npm run build
