@@ -54,10 +54,10 @@ export async function finnRoute(req: Request, action: string) {
     const correct = [puzzle.payload.answer, ...puzzle.payload.aliases].some((a) => normalizeName(a) === normalizeName(body.guess));
     const score = correct ? 120 - 20 * attempt.hint_number : 0;
     const result: Result = { correct, score, answer: puzzle.payload.answer, explanation: puzzle.payload.explanation };
-    await tx`update tippetuppen.finn_attempts set finished=true,result=${JSON.stringify(result)}::jsonb where id=${attempt.id}`;
+    await tx`update tippetuppen.finn_attempts set finished=true,result=${sql().json(result)}::jsonb where id=${attempt.id}`;
     if (attempt.user_id && puzzle.date === osloDateKey()) {
       await tx`insert into tippetuppen.league_results (user_id,puzzle_id,game,date,raw_score,league_points,details)
-        values(${attempt.user_id},${attempt.puzzle_id},'finn-spilleren',${puzzle.date},${score},${score},${JSON.stringify({hintNumber:attempt.hint_number,correct})}::jsonb)
+        values(${attempt.user_id},${attempt.puzzle_id},'finn-spilleren',${puzzle.date},${score},${score},${sql().json({hintNumber:attempt.hint_number,correct})}::jsonb)
         on conflict (user_id,puzzle_id) do nothing`;
     }
     return json({ ok: true, finished: true, result });

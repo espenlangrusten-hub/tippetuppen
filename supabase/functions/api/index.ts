@@ -93,16 +93,16 @@ async function updateMxiProgress(userId: string, puzzleId: string, index: number
   return await sql().begin(async (tx) => {
     const initial: XiState = { attempts: Array(11).fill(0), solved: Array(11).fill(false) };
     await tx`insert into tippetuppen.game_progress (user_id,puzzle_id,game,state)
-      values (${userId},${puzzleId},'mangler-xi',${JSON.stringify(initial)}::jsonb) on conflict do nothing`;
+      values (${userId},${puzzleId},'mangler-xi',${sql().json(initial)}::jsonb) on conflict do nothing`;
     const [row] = await tx<{ state: XiState }[]>`select state from tippetuppen.game_progress
       where user_id=${userId} and puzzle_id=${puzzleId} for update`;
     if (!advanceXi(row.state, index, solved, finishNow, hint)) return false;
-    await tx`update tippetuppen.game_progress set state=${JSON.stringify(row.state)}::jsonb,updated_at=now()
+    await tx`update tippetuppen.game_progress set state=${sql().json(row.state)}::jsonb,updated_at=now()
       where user_id=${userId} and puzzle_id=${puzzleId}`;
     if (row.state.finished) {
       const score = xiScore(row.state);
       await tx`insert into tippetuppen.league_results (user_id,puzzle_id,game,date,raw_score,league_points,details)
-        select ${userId},puzzle_id,game,date,${score.raw},${score.points},${JSON.stringify(score)}::jsonb
+        select ${userId},puzzle_id,game,date,${score.raw},${score.points},${sql().json(score)}::jsonb
         from tippetuppen.schedule where puzzle_id=${puzzleId} and game='mangler-xi' and date=${osloDateKey()}
         on conflict (user_id,puzzle_id) do nothing`;
     }
@@ -332,10 +332,10 @@ Deno.serve(async (req) => {
           const [row] = await tx<{state: {final?: typeof response}}[]>`select state from tippetuppen.game_progress
             where user_id=${user.id} and puzzle_id=${puzzleId} for update`;
           if (row.state.final) return row.state.final;
-          await tx`update tippetuppen.game_progress set state=${JSON.stringify({final:response})}::jsonb,updated_at=now()
+          await tx`update tippetuppen.game_progress set state=${sql().json({final:response})}::jsonb,updated_at=now()
             where user_id=${user.id} and puzzle_id=${puzzleId}`;
           await tx`insert into tippetuppen.league_results(user_id,puzzle_id,game,date,raw_score,league_points,details)
-            select ${user.id},puzzle_id,game,date,${total},${100-Math.round(total/5)},${JSON.stringify({scores,shield,dropped})}::jsonb
+            select ${user.id},puzzle_id,game,date,${total},${100-Math.round(total/5)},${sql().json({scores,shield,dropped})}::jsonb
             from tippetuppen.schedule where puzzle_id=${puzzleId} and game='maalloes' and date=${osloDateKey()}
             on conflict(user_id,puzzle_id) do nothing`;
         }
@@ -360,7 +360,7 @@ Deno.serve(async (req) => {
       const day = osloDateKey();
       try {
         await sql()`insert into tippetuppen.events (day, name, game, puzzle_id, visitor, is_new, archive, props)
-          values (${day}, ${e.name}, ${e.game ?? null}, ${e.puzzleId ?? null}, ${await visitorHash(req, day)}, ${!!e.isNew}, ${!!e.archive}, ${JSON.stringify({ path: e.path ?? null })}::jsonb)`;
+          values (${day}, ${e.name}, ${e.game ?? null}, ${e.puzzleId ?? null}, ${await visitorHash(req, day)}, ${!!e.isNew}, ${!!e.archive}, ${sql().json({ path: e.path ?? null })}::jsonb)`;
       } catch {
         // Analytics must never break the game.
       }
@@ -428,7 +428,7 @@ Deno.serve(async (req) => {
           order by p.quality desc limit 1`;
         if (!cand[0]) return json({ ok: false, error: "no-spare-puzzle" }, 409);
         await db`update tippetuppen.schedule set puzzle_id = ${cand[0].id}, locked = true where game = ${game!} and date = ${date}`;
-        await db`insert into tippetuppen.admin_audit (action, details) values ('replace_scheduled', ${JSON.stringify({ game, date, to: cand[0].id })}::jsonb)`;
+        await db`insert into tippetuppen.admin_audit (action, details) values ('replace_scheduled', ${sql().json({ game, date, to: cand[0].id })}::jsonb)`;
         return json({ ok: true, puzzleId: cand[0].id });
       }
 
@@ -436,7 +436,7 @@ Deno.serve(async (req) => {
         const { puzzleId, enabled } = (await req.json().catch(() => ({}))) as { puzzleId?: string; enabled?: boolean };
         if (typeof puzzleId !== "string" || typeof enabled !== "boolean") return bad("bad request");
         await db`update tippetuppen.puzzles set enabled = ${enabled} where id = ${puzzleId}`;
-        await db`insert into tippetuppen.admin_audit (action, details) values ('puzzle_enabled', ${JSON.stringify({ puzzleId, enabled })}::jsonb)`;
+        await db`insert into tippetuppen.admin_audit (action, details) values ('puzzle_enabled', ${sql().json({ puzzleId, enabled })}::jsonb)`;
         return json({ ok: true });
       }
     }

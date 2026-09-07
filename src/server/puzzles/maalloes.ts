@@ -151,7 +151,7 @@ function makePuzzle(opts: {
   };
 }
 
-const INTRO = "Fem svar. Jo færre andre som svarer det samme, jo bedre.";
+const INTRO = "Fem svar. Velg svar vi anslår at færrest vil velge. Poengene er faste for alle som spiller oppgaven.";
 
 export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]> {
   // Sequential on purpose: a pooled connection (Supabase's transaction pooler) will
