@@ -35,9 +35,16 @@ try {
   const future=await db`select p.id from tippetuppen.puzzles p join tippetuppen.schedule s on s.puzzle_id=p.id where s.game='mangler-xi' and s.date>(now() at time zone 'Europe/Oslo')::date::text limit 1`;
   assert.equal((await req('/reveal',{puzzleId:future[0].id})).ok,false);
   const xi=(await req('/today?game=mangler-xi')).puzzle;
+  const [xiData]=await db`select payload from tippetuppen.puzzles where id=${xi.puzzleId}`;
+  const solved=await req('/guess',{puzzleId:xi.puzzleId,index:0,guess:xiData.payload.players[0].answer},token);
+  assert.equal(solved.solved,true);
   await req('/reveal',{puzzleId:xi.puzzleId},token);
   const [score]=await db`select raw_score,league_points from tippetuppen.league_results where user_id=${user.user.id} and game='mangler-xi'`;
-  assert.equal(score.raw_score,0); assert.equal(score.league_points,0);
+  assert.equal(score.raw_score,105); assert.equal(score.league_points,9);
+  assert.equal((await req('/guess',{puzzleId:xi.puzzleId,index:1,guess:xiData.payload.players[1].answer},token)).ok,false);
+  await req('/reveal',{puzzleId:xi.puzzleId},token);
+  const [savedXi]=await db`select raw_score,league_points from tippetuppen.league_results where user_id=${user.user.id} and game='mangler-xi'`;
+  assert.deepEqual(savedXi,score);
   const mal=(await req('/today?game=maalloes')).puzzle;
   assert.deepEqual(await req('/maalloes/answer',{puzzleId:mal.puzzleId,text:'anything'}),{ok:true,pending:true});
   const answers=Array.from({length:5},(_,i)=>({text:'invalid'+i,id:null}));

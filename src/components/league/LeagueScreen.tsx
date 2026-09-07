@@ -16,6 +16,12 @@ export function LeagueScreen() {
 
   const load = useCallback(() => apiGet<{ ok: boolean; rows?: Row[] }>("/leaderboard").then((r) => setRows(r.rows ?? [])).catch(() => setRows([])), []);
   useEffect(() => {
+    const syncMode = () => setMode(window.location.hash === "#register" ? "register" : "login");
+    syncMode();
+    window.addEventListener("hashchange", syncMode);
+    return () => window.removeEventListener("hashchange", syncMode);
+  }, []);
+  useEffect(() => {
     setUser(storedUser()); void load();
     if (storedUser()) void apiGet<{ok:boolean;user?:SessionUser}>("/auth/me")
       .then((r) => { if(r.ok && r.user) setUser(r.user); else {clearSession();setUser(null);} })
@@ -39,7 +45,7 @@ export function LeagueScreen() {
 
   return <div className="flex flex-col gap-4">
     <section><h1 className="font-display text-4xl font-bold uppercase">🏆 Tippetuppen-ligaen</h1><p className="mt-2 text-mist">Rullerende 30 dager. Alle tre spill omregnes til 0–100 ligapoeng per dag, så de teller like mye.</p></section>
-    <section className="card p-5">
+    <section id={mode} className="card p-5 scroll-mt-20">
       {user ? <div className="flex items-center justify-between gap-3"><div><div className="text-sm text-mist">Logget inn som</div><div className="font-display text-2xl font-bold">{user.username}</div></div><button className="btn btn-secondary" onClick={logout}>Logg ut</button></div> : <>
         <div className="mb-4 flex gap-2"><button className={`btn ${mode === "login" ? "btn-primary" : "btn-secondary"}`} onClick={() => setMode("login")}>Logg inn</button><button className={`btn ${mode === "register" ? "btn-primary" : "btn-secondary"}`} onClick={() => setMode("register")}>Ny spiller</button></div>
         <form className="space-y-3" onSubmit={submit}><input className="input" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Unikt brukernavn" autoComplete="username"/><input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Passord (minst 8 tegn)" autoComplete={mode === "login" ? "current-password" : "new-password"}/><button className="btn btn-primary w-full" disabled={busy}>{busy ? "Venter …" : mode === "login" ? "Logg inn" : "Opprett spiller"}</button></form>

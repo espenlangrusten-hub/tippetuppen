@@ -208,8 +208,11 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     setBusy(true);
     try {
       const rev = await apiPost<{ ok: boolean; players?: { name: string; answer: string }[]; notes?: string | null }>("/reveal", { puzzleId: puzzle.puzzleId });
+      if (!rev.ok || !rev.players) { setToast("Kunne ikke avslutte runden. Prøv igjen."); return; }
       const players = state.players.map((p, j) => (p.solved ? p : { ...p, failed: true, name: rev.players?.[j]?.name }));
       finish({ ...state, players }, true, rev.players ?? null, rev.notes ?? null);
+    } catch {
+      setToast("Fikk ikke kontakt. Prøv igjen.");
     } finally {
       setBusy(false);
       setConfirmGiveUp(false);
@@ -355,7 +358,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
 
       {confirmGiveUp && (
         <Modal onClose={() => setConfirmGiveUp(false)} title="Gi opp?">
-          <p className="text-sm text-mist">Alle spillerne blir avslørt, og runden telles som fullført med {found} av 11.</p>
+          <p className="text-sm text-mist">Du beholder poengene for de {found} spillerne du har funnet, inkludert bonus for få forsøk. Resten gir 0 poeng og blir avslørt. Runden avsluttes.</p>
           <div className="mt-4 flex gap-2">
             <button className="btn btn-secondary flex-1" onClick={() => setConfirmGiveUp(false)}>
               Fortsett
@@ -376,6 +379,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
               Etter hvert forsøk farges bokstavene: <span className="rounded bg-correct px-1 text-ink">grønn</span> riktig plass, <span className="rounded bg-present px-1 text-ink">gul</span> finnes i navnet, grå finnes ikke.
             </li>
             <li>Seks forsøk per spiller. Fyll ut alle elleve!</li>
+            <li>Gir du opp, beholder du poengene for riktige svar. Ubesvarte spillere gir 0 poeng.</li>
           </ol>
           <button className="btn btn-primary mt-4 w-full" onClick={dismissIntro}>
             Kjør!
