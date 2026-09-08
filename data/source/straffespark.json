@@ -415,11 +415,21 @@
     "difficulty": 1,
     "image": {
       "file": "erling-haaland.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "MichaelEmilio",
+      "licence": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erling_Haaland_June_2025.jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Erling_Haaland_June_2025.jpg",
+        "title": "File:Erling Haaland June 2025.jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2025,
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Erling Haaland før spørsmålet skrus på."
   },
   {
     "kind": "photo",
@@ -429,11 +439,21 @@
     "difficulty": 2,
     "image": {
       "file": "ole-gunnar-solskjaer.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "Jon Candy from Cardiff, Wales",
+      "licence": "CC BY-SA 2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ole_Gunnar_Solskjaer_Cardiff_manager_cropped.jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Ole_Gunnar_Solskjaer_Cardiff_manager_cropped.jpg",
+        "title": "File:Ole Gunnar Solskjaer Cardiff manager cropped.jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2014,
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Ole Gunnar Solskjær før spørsmålet skrus på."
   },
   {
     "kind": "photo",
@@ -443,11 +463,21 @@
     "difficulty": 2,
     "image": {
       "file": "martin-odegaard.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "Luis Fernandez",
+      "licence": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_%C3%98degaard_2015-02-08_001.jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Martin_%C3%98degaard_2015-02-08_001.jpg",
+        "title": "File:Martin Ødegaard 2015-02-08 001.jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2015,
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Martin Ødegaard før spørsmålet skrus på."
   },
   {
     "kind": "photo",
