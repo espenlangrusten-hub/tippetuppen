@@ -141,3 +141,13 @@ Det avdekket to følgefeil, begge funnet ved å faktisk spille gjennom seks fors
 Profilbasen er utvidet fra 15 til 24 spillere, alle med kilde: Berge, Ajer, Ryerson, Patrick Berg, Østigård, Nusa, Bjørnebye, Rekdal og Henning Berg. Søkene rettet flere av mine egne antagelser underveis – Ryerson er fra Flekkefjord med Lyngdal som ungdomsklubb, ikke Tønsberg og Flint. `tests/player-clues.test.ts` fanger nå tre ting: at hver profil peker på en spiller som finnes (en feilstavet id ville ellers bare stille droppet spilleren), at første hint ikke handler om en landskamp, og at hver profil har kilde.
 
 **To e2e-tester var utdaterte fra før.** Forsiden sier «Tre spill», ikke «To spill», og Målløs validerer ikke lenger svar ved inntasting – alt godtas og avgjøres ved innsending. Rettet. Verdt å merke seg: CI kjører ikke Playwright, så suiten kan råtne uten at noe blir rødt.
+
+## Nettlesertestene kjører i CI (2026-09-08)
+
+Enhetstestene kan ikke se hvor ting havner på en skjerm. Hver layoutfeil prosjektet har hatt – bokstavbrikker utenfor kanten, et panel som begravde «Gi opp» – var usynlig for dem og åpenbar for en nettleser. To Playwright-tester hadde stått røde i dagevis uten at noe reagerte, rett og slett fordi ingenting kjørte dem.
+
+CI har nå en egen jobb som fyller en ekte Postgres, bygger det statiske nettstedet, starter Edge-funksjonen og nettstedet, og spiller gjennom alle tre spill i Chromium på både iPhone- og skrivebordsvisning. Feiler noe, lastes skjermbilder og spor opp som artefakt – en mislykket layoutpåstand er uleselig uten bildet.
+
+`serve` er lagt inn som utviklingsavhengighet i stedet for å hentes med `npx` ved hver kjøring, så jobben ikke er avhengig av et nedlastet uspesifisert versjonsnummer.
+
+Generalprøvd lokalt med nøyaktig de samme nøklene og variablene CI bruker: 14 av 14 grønne, og `--days 10` gir dagens puslespill for alle tre spill.

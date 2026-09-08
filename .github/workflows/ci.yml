@@ -55,3 +55,85 @@ jobs:
           node scripts/verify-game-api.mjs
       - name: Build static site
         run: npm run build
+
+  # The unit tests cannot see where things land on a screen. Every layout bug this
+  # project has had - tiles off the edge, a panel burying the give-up button - was
+  # invisible to them and obvious to a browser. Two of these specs had been failing
+  # unnoticed for days because nothing ran them.
+  e2e:
+    name: Nettlesertester
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5544:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgres://postgres@127.0.0.1:5544/postgres
+      E2E_API_URL: http://localhost:8000/api
+      E2E_ADMIN_KEY: ci-admin-key-0123456789
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Hent nettleser
+        run: npx playwright install --with-deps chromium
+
+      - name: Fyll databasen
+        run: |
+          set -euo pipefail
+          npm run db:migrate
+          npm run db:seed
+          node --import tsx scripts/schedule.ts --days 10
+
+      - name: Bygg nettstedet
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:8000/api
+          NEXT_PUBLIC_SITE_URL: http://localhost:3200
+        run: npm run build
+
+      - name: Start API og nettsted
+        run: |
+          set -euo pipefail
+          SUPABASE_DB_URL="$DATABASE_URL" \
+          ADMIN_KEY="$E2E_ADMIN_KEY" \
+          ANALYTICS_SALT=ci-salt \
+            ./node_modules/.bin/deno run --node-modules-dir=manual --allow-net --allow-env --allow-read \
+            --config supabase/functions/deno.json supabase/functions/api/index.ts > api.log 2>&1 &
+          ./node_modules/.bin/serve out -l 3200 > web.log 2>&1 &
+          for i in {1..40}; do
+            if curl --max-time 5 -sf -o /dev/null "$E2E_API_URL/today?game=mangler-xi" \
+               && curl --max-time 5 -sf -o /dev/null http://localhost:3200/; then
+              echo "Begge oppe."; exit 0
+            fi
+            sleep 2
+          done
+          echo "::error::API-et eller nettstedet startet ikke."
+          tail -30 api.log web.log
+          exit 1
+
+      - name: Kjør nettlesertestene
+        run: npm run e2e
+
+      # A failed layout assertion is unreadable without the picture.
+      - name: Ta vare på skjermbilder og spor
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-resultat
+          path: |
+            e2e/screenshots/
+            test-results/
+          retention-days: 7
+          if-no-files-found: ignore
