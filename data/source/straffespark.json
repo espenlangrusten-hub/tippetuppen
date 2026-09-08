@@ -417,11 +417,20 @@
     "difficulty": 1,
     "image": {
       "file": "erling-haaland-2017.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "MichaelEmilio",
+      "licence": "CC BY 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Erling_Haaland_June_2025.jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Erling_Haaland_June_2025.jpg",
+        "title": "File:Erling Haaland June 2025.jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Erling Haaland før spørsmålet skrus på."
   },
   {
     "kind": "photo",
@@ -433,11 +442,20 @@
     "difficulty": 2,
     "image": {
       "file": "ole-gunnar-solskjaer-1995.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "Ardfern",
+      "licence": "CC BY-SA 4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manchester_United_v_Atalanta_BC,_20_October_2021_(21).jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Manchester_United_v_Atalanta_BC,_20_October_2021_(21).jpg",
+        "title": "File:Manchester United v Atalanta BC, 20 October 2021 (21).jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Ole Gunnar Solskjær før spørsmålet skrus på."
   },
   {
     "kind": "photo",
@@ -449,11 +467,20 @@
     "difficulty": 2,
     "image": {
       "file": "martin-odegaard-2014.jpg",
-      "credit": "TODO – fotograf eller rettighetshaver",
-      "licence": "TODO – lisens eller skriftlig tillatelse"
+      "credit": "Luis Fernandez",
+      "licence": "CC BY 3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martin_%C3%98degaard_2015-02-08_001.jpg"
     },
-    "status": "recall",
-    "sources": []
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:Martin_%C3%98degaard_2015-02-08_001.jpg",
+        "title": "File:Martin Ødegaard 2015-02-08 001.jpg",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Martin Ødegaard før spørsmålet skrus på."
   },
   {
     "kind": "photo",
