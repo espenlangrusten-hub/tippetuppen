@@ -410,7 +410,7 @@
   {
     "kind": "photo",
     "id": "str-foto-erling-haaland",
-    "enabled": false,
+    "enabled": true,
     "playerId": "erling-haaland",
     "difficulty": 1,
     "image": {
@@ -428,8 +428,7 @@
         "accessed": "2026-09-08"
       }
     ],
-    "era": 2025,
-    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Erling Haaland før spørsmålet skrus på."
+    "era": 2025
   },
   {
     "kind": "photo",
@@ -453,7 +452,7 @@
       }
     ],
     "era": 2014,
-    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Ole Gunnar Solskjær før spørsmålet skrus på."
+    "notes": "Riktig person, men helfigur i dress som Cardiff-manager 2014 – ansiktet blir for lite uskarpt. Bytt til et nærbilde før den skrus på."
   },
   {
     "kind": "photo",
@@ -477,7 +476,7 @@
       }
     ],
     "era": 2015,
-    "notes": "Hentet fra Wikimedia Commons. Sjekk at bildet faktisk viser Martin Ødegaard før spørsmålet skrus på."
+    "notes": "Riktig person, men helfigur i Real Madrid-drakt 2015 – ansiktet blir for lite uskarpt. Bytt til et nærbilde før den skrus på."
   },
   {
     "kind": "photo",

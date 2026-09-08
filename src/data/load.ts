@@ -8,6 +8,13 @@ import type { DataStatus, Position } from "@/db/schema";
 
 export const DATA_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), "data", "source");
 
+/**
+ * Media sits beside the source files, not inside them: `data/media/...`, not
+ * `data/source/media/...`. Deriving it from DATA_DIR is what makes an overridden
+ * DATA_DIR (tests, fixtures) still find the right folder.
+ */
+export const MEDIA_DIR = process.env.MEDIA_DIR ?? path.join(DATA_DIR, "..", "media");
+
 function readJson<T>(schema: z.ZodType<T>, file: string, fallback?: T): T {
   const p = path.join(DATA_DIR, file);
   if (!existsSync(p)) {
@@ -325,7 +332,7 @@ export function loadDataset(): Dataset {
   // Straffespark. A round of five is drawn from this pool, so a broken entry would
   // surface as a question nobody can answer rather than as an error somewhere.
   const straffesparkIds = new Set<string>();
-  const mediaDir = path.join(DATA_DIR, "media", "straffespark");
+  const mediaDir = path.join(MEDIA_DIR, "straffespark");
   for (const q of straffespark) {
     if (straffesparkIds.has(q.id)) problems.push(`straffespark: duplicate id ${q.id}`);
     straffesparkIds.add(q.id);
