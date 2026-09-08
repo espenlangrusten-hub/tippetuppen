@@ -45,23 +45,6 @@ jobs:
           fi
           echo "Configuration looks complete."
 
-      - name: Base path matches the site URL
-        run: |
-          url="${{ vars.NEXT_PUBLIC_SITE_URL }}"
-          base="${{ vars.NEXT_PUBLIC_BASE_PATH }}"
-          case "$url" in
-            *github.io*)
-              if [ -z "$base" ]; then
-                echo "::error::NEXT_PUBLIC_SITE_URL points at github.io, so NEXT_PUBLIC_BASE_PATH must be /<repo> (e.g. /tippetuppen)."
-                exit 1
-              fi ;;
-            *)
-              if [ -n "$base" ]; then
-                echo "::error::NEXT_PUBLIC_SITE_URL is a custom domain, so NEXT_PUBLIC_BASE_PATH must be empty. Delete the variable, otherwise every link and asset gets a /$base prefix that does not exist."
-                exit 1
-              fi ;;
-          esac
-          echo "Base path is consistent with the site URL."
 
   function:
     name: Deploy Edge Function
@@ -116,10 +99,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/configure-pages@v5
+        id: pages
       - name: Build
         env:
-          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-          NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_ADSENSE_CLIENT: ${{ vars.NEXT_PUBLIC_ADSENSE_CLIENT }}
@@ -131,7 +116,6 @@ jobs:
         run: npm run build
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
