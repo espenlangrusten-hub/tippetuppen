@@ -23,9 +23,12 @@ test("admin shows traffic figures behind the key", async ({ page }, info) => {
   for (const label of ["Sidevisninger", "Spill startet", "Spill fullført", "Delinger"]) {
     await expect(section.getByText(label, { exact: true })).toBeVisible();
   }
-  // Both games are broken out, and the daily table has at least today.
-  await expect(section.getByRole("row").filter({ hasText: "Mangler XI" })).toHaveCount(1);
-  await expect(section.getByRole("row").filter({ hasText: "Målløs" })).toHaveCount(1);
+  // Each game has one aggregate row. The daily table also names the games in its
+  // column headings, so scope this assertion to the first (per-game) table.
+  const gameTable = section.locator("table").first();
+  await expect(gameTable.getByRole("row").filter({ hasText: "Mangler XI" })).toHaveCount(1);
+  await expect(gameTable.getByRole("row").filter({ hasText: "Målløs" })).toHaveCount(1);
+  await expect(gameTable.getByRole("row").filter({ hasText: "Finn spilleren" })).toHaveCount(1);
   await expect(section.getByText("Siste 30 dager")).toBeVisible();
   await expect(section.getByText(/Besøkskoden byttes hver natt/)).toBeVisible();
 
