@@ -566,5 +566,809 @@
     },
     "status": "recall",
     "sources": []
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-8",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Alfheim som hjemmebane?",
+    "answer": {
+      "label": "Tromsø",
+      "aliases": [
+        "Tromsø IL",
+        "TIL"
+      ]
+    },
+    "fact": "Alfheim er hjemmebanen til Tromsø.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Tromsø IL",
+      "mustMention": [
+        "Alfheim"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-9",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Nadderud som hjemmebane?",
+    "answer": {
+      "label": "Stabæk",
+      "aliases": [
+        "Stabæk Fotball"
+      ]
+    },
+    "fact": "Nadderud er hjemmebanen til Stabæk.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Stabæk Fotball",
+      "mustMention": [
+        "Nadderud"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-10",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Marienlyst som hjemmebane?",
+    "answer": {
+      "label": "Strømsgodset",
+      "aliases": [
+        "Godset",
+        "Strømsgodset IF"
+      ]
+    },
+    "fact": "Marienlyst er hjemmebanen til Strømsgodset.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Strømsgodset IF",
+      "mustMention": [
+        "Marienlyst"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-11",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Briskeby som hjemmebane?",
+    "answer": {
+      "label": "HamKam",
+      "aliases": [
+        "Hamarkameratene",
+        "Ham-Kam"
+      ]
+    },
+    "fact": "Briskeby er hjemmebanen til HamKam.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Hamarkameratene",
+      "mustMention": [
+        "Briskeby"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-12",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Color Line Stadion som hjemmebane?",
+    "answer": {
+      "label": "Aalesund",
+      "aliases": [
+        "AaFK",
+        "Aalesunds FK"
+      ]
+    },
+    "fact": "Color Line Stadion er hjemmebanen til Aalesund.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Aalesunds FK",
+      "mustMention": [
+        "Color Line Stadion"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-13",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Fosshaugane Campus som hjemmebane?",
+    "answer": {
+      "label": "Sogndal",
+      "aliases": [
+        "Sogndal IL"
+      ]
+    },
+    "fact": "Fosshaugane Campus er hjemmebanen til Sogndal.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Sogndal Fotball",
+      "mustMention": [
+        "Fosshaugane"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-14",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Sør Arena som hjemmebane?",
+    "answer": {
+      "label": "Start",
+      "aliases": [
+        "IK Start"
+      ]
+    },
+    "fact": "Sør Arena er hjemmebanen til Start.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "IK Start",
+      "mustMention": [
+        "Sør Arena"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-15",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Intility Arena som hjemmebane?",
+    "answer": {
+      "label": "Vålerenga",
+      "aliases": [
+        "VIF",
+        "Vålerenga Fotball"
+      ]
+    },
+    "fact": "Intility Arena er hjemmebanen til Vålerenga.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Vålerenga Fotball",
+      "mustMention": [
+        "Intility Arena"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-16",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Fredrikstad stadion som hjemmebane?",
+    "answer": {
+      "label": "Fredrikstad",
+      "aliases": [
+        "FFK",
+        "Fredrikstad FK"
+      ]
+    },
+    "fact": "Fredrikstad stadion er hjemmebanen til Fredrikstad.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Fredrikstad FK",
+      "mustMention": [
+        "Fredrikstad stadion"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-17",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Sarpsborg stadion som hjemmebane?",
+    "answer": {
+      "label": "Sarpsborg 08",
+      "aliases": [
+        "Sarpsborg"
+      ]
+    },
+    "fact": "Sarpsborg stadion er hjemmebanen til Sarpsborg 08.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Sarpsborg 08 FF",
+      "mustMention": [
+        "Sarpsborg stadion"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-18",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Haugesund stadion som hjemmebane?",
+    "answer": {
+      "label": "Haugesund",
+      "aliases": [
+        "FK Haugesund",
+        "FKH"
+      ]
+    },
+    "fact": "Haugesund stadion er hjemmebanen til Haugesund.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "FK Haugesund",
+      "mustMention": [
+        "Haugesund stadion"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-19",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Melløs som hjemmebane?",
+    "answer": {
+      "label": "Moss",
+      "aliases": [
+        "Moss FK"
+      ]
+    },
+    "fact": "Melløs er hjemmebanen til Moss.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Moss FK",
+      "mustMention": [
+        "Melløs"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-20",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Gjemselund som hjemmebane?",
+    "answer": {
+      "label": "Kongsvinger",
+      "aliases": [
+        "KIL",
+        "Kongsvinger IL"
+      ]
+    },
+    "fact": "Gjemselund er hjemmebanen til Kongsvinger.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Kongsvinger IL",
+      "mustMention": [
+        "Gjemselund"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-21",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Levermyr som hjemmebane?",
+    "answer": {
+      "label": "Jerv",
+      "aliases": [
+        "FK Jerv"
+      ]
+    },
+    "fact": "Levermyr er hjemmebanen til Jerv.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "FK Jerv",
+      "mustMention": [
+        "Levermyr"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-22",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Høddvoll som hjemmebane?",
+    "answer": {
+      "label": "Hødd",
+      "aliases": [
+        "IL Hødd"
+      ]
+    },
+    "fact": "Høddvoll er hjemmebanen til Hødd.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "IL Hødd",
+      "mustMention": [
+        "Høddvoll"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-23",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Bryne stadion som hjemmebane?",
+    "answer": {
+      "label": "Bryne",
+      "aliases": [
+        "Bryne FK"
+      ]
+    },
+    "fact": "Bryne stadion er hjemmebanen til Bryne.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Bryne FK",
+      "mustMention": [
+        "Bryne stadion"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-24",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har AKA Arena som hjemmebane?",
+    "answer": {
+      "label": "Hønefoss",
+      "aliases": [
+        "Hønefoss BK"
+      ]
+    },
+    "fact": "AKA Arena er hjemmebanen til Hønefoss.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Hønefoss BK",
+      "mustMention": [
+        "AKA Arena"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-25",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har KFUM Arena som hjemmebane?",
+    "answer": {
+      "label": "KFUM Oslo",
+      "aliases": [
+        "KFUM"
+      ]
+    },
+    "fact": "KFUM Arena er hjemmebanen til KFUM Oslo.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "KFUM Oslo",
+      "mustMention": [
+        "KFUM Arena"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-26",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Øster Hus Arena som hjemmebane?",
+    "answer": {
+      "label": "Sandnes Ulf",
+      "aliases": [
+        "Sandnes"
+      ]
+    },
+    "fact": "Øster Hus Arena er hjemmebanen til Sandnes Ulf.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Sandnes Ulf",
+      "mustMention": [
+        "Øster Hus Arena"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-27",
+    "category": "stadion",
+    "prompt": "Hvor spiller Norges herrelandslag hjemmekampene sine?",
+    "answer": {
+      "label": "Ullevaal Stadion",
+      "aliases": [
+        "Ullevaal",
+        "Ullevål stadion"
+      ]
+    },
+    "fact": "Ullevaal Stadion i Oslo er landslagets hjemmebane.",
+    "difficulty": 1,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Ullevaal Stadion",
+      "mustMention": [
+        "landslag"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-5",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Tornekrattet på?",
+    "answer": {
+      "label": "Odd",
+      "aliases": [
+        "Odds BK",
+        "Odd Grenland"
+      ]
+    },
+    "fact": "Tornekrattet er supportergruppa til Odd.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Odds BK",
+      "mustMention": [
+        "Tornekrattet"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-6",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Vikinghordene på?",
+    "answer": {
+      "label": "Viking",
+      "aliases": [
+        "Viking FK"
+      ]
+    },
+    "fact": "Vikinghordene er supportergruppa til Viking.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Viking FK",
+      "mustMention": [
+        "Vikinghordene"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-7",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Godsetunionen på?",
+    "answer": {
+      "label": "Strømsgodset",
+      "aliases": [
+        "Godset",
+        "Strømsgodset IF"
+      ]
+    },
+    "fact": "Godsetunionen er supportergruppa til Strømsgodset.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Strømsgodset IF",
+      "mustMention": [
+        "Godsetunionen"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-8",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Isberget på?",
+    "answer": {
+      "label": "Tromsø",
+      "aliases": [
+        "Tromsø IL",
+        "TIL"
+      ]
+    },
+    "fact": "Isberget er supportergruppa til Tromsø.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Tromsø IL",
+      "mustMention": [
+        "Isberget"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-9",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Plankehaugen på?",
+    "answer": {
+      "label": "Fredrikstad",
+      "aliases": [
+        "FFK",
+        "Fredrikstad FK"
+      ]
+    },
+    "fact": "Plankehaugen er supportergruppa til Fredrikstad.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Fredrikstad FK",
+      "mustMention": [
+        "Plankehaugen"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-10",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa J-feltet på?",
+    "answer": {
+      "label": "Bodø/Glimt",
+      "aliases": [
+        "Glimt",
+        "FK Bodø/Glimt"
+      ]
+    },
+    "fact": "J-feltet er supportergruppa til Bodø/Glimt.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "FK Bodø/Glimt",
+      "mustMention": [
+        "J-feltet"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-4",
+    "category": "trener",
+    "prompt": "Hvilken klubb ledet Nils Arne Eggen til seriegull på rekke og rad på 1990-tallet?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "fact": "Nils Arne Eggen var Rosenborg-trener gjennom gullrekka.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Rosenborg"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-5",
+    "category": "trener",
+    "prompt": "Hvilken norsk klubb ledet Ole Gunnar Solskjær til seriegull i 2011 og 2012?",
+    "answer": {
+      "label": "Molde",
+      "aliases": [
+        "Molde FK",
+        "MFK"
+      ]
+    },
+    "fact": "Solskjær ga Molde klubbens to første seriegull.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Molde",
+        "2011",
+        "2012"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-6",
+    "category": "trener",
+    "prompt": "Hvem har vært hovedtrener for Bodø/Glimt gjennom seriegullene på 2020-tallet?",
+    "answer": {
+      "label": "Kjetil Knutsen",
+      "aliases": [
+        "Knutsen"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Bodø/Glimt"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-7",
+    "category": "trener",
+    "prompt": "Hvem overtok som Norges landslagssjef i 2017?",
+    "answer": {
+      "label": "Lars Lagerbäck",
+      "aliases": [
+        "Lagerbäck",
+        "Lagerback"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Lars Lagerbäck",
+      "mustMention": [
+        "Norge",
+        "2017"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-8",
+    "category": "trener",
+    "prompt": "Hvem var Norges landslagssjef fra 2013 til 2016?",
+    "answer": {
+      "label": "Per-Mathias Høgmo",
+      "aliases": [
+        "Høgmo",
+        "Hogmo"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "Norge",
+        "2013",
+        "2016"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-9",
+    "category": "trener",
+    "prompt": "Hvilket lands herrelandslag ledet Åge Hareide til VM i 2018?",
+    "answer": {
+      "label": "Danmark",
+      "aliases": [
+        "Det danske landslaget"
+      ]
+    },
+    "fact": "Hareide tok Danmark til VM i Russland.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Danmark",
+        "2018"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-10",
+    "category": "trener",
+    "prompt": "Hvilken klubb ledet Ronny Deila til seriegull i 2013?",
+    "answer": {
+      "label": "Strømsgodset",
+      "aliases": [
+        "Godset",
+        "Strømsgodset IF"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "Strømsgodset",
+        "2013"
+      ]
+    }
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-11",
+    "category": "trener",
+    "prompt": "Hvem var Vålerenga-trener da klubben vant serien i 2005?",
+    "answer": {
+      "label": "Kjetil Rekdal",
+      "aliases": [
+        "Rekdal"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "Vålerenga",
+        "2005"
+      ]
+    }
   }
 ]

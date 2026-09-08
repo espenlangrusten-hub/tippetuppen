@@ -84,6 +84,38 @@ Handlingen åpner en pull request. Se gjennom antall kamper, periode og eventuel
 innhenting fra produksjonssetting og gjør at en endring i API-formatet ikke kan publisere
 feil oppstillinger automatisk.
 
+### Straffespark: hvor spørsmålene kommer fra
+
+Spørsmålsbanken bygges på to måter, og forskjellen avgjør om et spørsmål kan serveres.
+
+**Utledet fra registeret.** Serie- og cupmestere og toppscorere står allerede i
+`data/source/seasons.json` og `honours.json` med kilden som slo dem fast. `deriveStraffesparkTrivia`
+skriver dem om til spørsmål og arver kilde og status uendret – et spørsmål blir aldri sikrere enn
+raden det kommer fra. Disse er sourced fra dag én og krever ingen gjennomgang. Regler verdt å kjenne:
+
+- Seriemester utledes bare når tabellen faktisk avgjør det: enten er raden merket `champion`, eller
+  så har topplaget flere poeng enn nummer to i en tabell som ikke er `membershipOnly`. 1993 og 2004
+  er uavgjort på poeng og gir derfor ikke noe spørsmål – tabellen har ingen målforskjell.
+- År der toppscorertittelen ble delt, hoppes over. To spillere er ikke to skrivemåter av samme svar.
+
+**Skrevet for hånd.** Stadion, supportergrupper og trenere finnes ikke som data, så de skrives inn i
+`data/source/straffespark.json` med `"status": "recall"` og ingen kilde. **Et `recall`-spørsmål
+serveres aldri** (`isPlayable`). Det får i stedet et `verify`-felt som sier hvilken artikkel som
+avgjør saken, og hva som må stå i den.
+
+Handlingen **Verifiser spørsmål** slår opp artikkelen, og hvis teksten inneholder det svaret
+påstår, oppgraderes spørsmålet til `single_source` med artikkelen som kilde. Ellers står det igjen
+på `recall` med en merknad om hva som manglet. Kontrollen er et tekstsøk, ikke et bevis for
+sammenhengen – at artikkelen om en trener nevner både klubben og årstallet gjør det sannsynlig, ikke
+sikkert – og kildenotatet sier at ingen har lest artikkelen. Derfor er stikkprøver på plass før
+sammenslåing.
+
+`npm run data:validate` skriver ut hvor stor banken er og hvor mange som venter:
+
+```
+Straffespark: 108 spillbare av 153 { trivia: 142, photo: 10, chant: 1 } kategorier: {...} venter: { avskrudd: 11, recall: 34 }
+```
+
 ### Starte en jobb uten å trykke på knappen
 
 **Hent spillerbilder** kan også startes ved å pushe til grenen `kjør/hent-bilder`. Grenen
@@ -93,6 +125,9 @@ Pushen utløser ikke CI.
 
 Vil du starte den selv, er knappen under **Actions → Hent spillerbilder** fortsatt der, og der
 kan du også styre `limit` og `width`. Ved push brukes standardverdiene: tre bilder, 900 piksler.
+
+**Verifiser spørsmål** virker på samme måte: push til grenen `kjør/verifiser-sporsmal`, eller kjør
+den fra **Actions → Verifiser spørsmål** hvis du vil sette `limit` selv.
 
 **Oppdater data** trenger ingenting av dette – den går automatisk når noe i `data/source/`,
 `drizzle/`, `scripts/schedule.ts` eller `src/server/puzzles/` endres på `main`.

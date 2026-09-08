@@ -1,0 +1,108 @@
+name: Verifiser spørsmål
+
+# Checks the hand-written Straffespark questions against Norwegian Wikipedia and opens
+# a pull request with the result. A question written from memory sits at `recall` and
+# is never served; this is what turns it into a sourced question - or flags it for a
+# person when the article does not back it up.
+#
+# The build sandbox cannot reach wikipedia.org; a runner can, which is why this exists.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Hvor mange spørsmål som kontrolleres i denne kjøringen"
+        default: "40"
+        required: false
+  # A push to this branch starts the job. The assistant working on this repository can
+  # push but cannot dispatch a workflow, so without this every run waits on someone
+  # clicking a button. The branch carries no code of its own - the job always checks
+  # out the default branch.
+  push:
+    branches: ["kjør/verifiser-sporsmal"]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Slå opp på Wikipedia
+        env:
+          LIMIT: ${{ inputs.limit || '40' }}
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/import/verify-trivia.ts --limit "$LIMIT" | tee verify.log
+
+      # A promoted question claims a source; this is where a broken claim stops.
+      - name: Valider dataene
+        run: npm run data:validate
+
+      - name: Se om noe ble endret
+        id: check
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain data/source/straffespark.json)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Ingen endringer – ingen spørsmål ventet på kontroll." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Åpne pull request
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          branch="verify/trivia-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/source/straffespark.json
+          git commit -m "Kontroller håndskrevne spørsmål mot Wikipedia
+
+          Spørsmål artikkelen dekker er oppgradert til single_source med artikkelen
+          som kilde. Resten står fortsatt på recall med en merknad om hva som manglet."
+          git push -u origin "$branch"
+
+          {
+            echo "Kontroll av de håndskrevne spørsmålene mot norsk Wikipedia."
+            echo
+            echo "## Hva kontrollen faktisk gjør"
+            echo
+            echo "Den henter artikkelen spørsmålet peker på og sjekker at teksten inneholder det svaret påstår."
+            echo "Det er et **tekstsøk, ikke et bevis for sammenhengen**: at artikkelen om Lars Lagerbäck nevner"
+            echo "både «Norge» og «2017» gjør det sannsynlig at han overtok da, men sier det ikke ordrett."
+            echo "Derfor står de godkjente på \`single_source\` – samme nivå som «bekreftet i et søkeutdrag»"
+            echo "ellers i datasettet – og kildenotatet sier at ingen har lest artikkelen."
+            echo
+            echo "## Hva du bør se på"
+            echo
+            echo "- **Merknadene.** Et spørsmål som ikke gikk gjennom har fått en \`notes\` med hva som manglet. Det er enten feil svar eller feil oppslag."
+            echo "- **Stikkprøver blant de godkjente.** Særlig trenerspørsmålene, der årstallet og klubben kan stå i artikkelen uten å høre sammen."
+            echo
+            echo "<details><summary>Logg</summary>"
+            echo
+            echo '```'
+            cat verify.log
+            echo '```'
+            echo
+            echo "</details>"
+          } > pr-body.md
+
+          gh pr create --title "Kontroll av håndskrevne spørsmål" --body-file pr-body.md \
+            --base "${{ github.event.repository.default_branch }}" --head "$branch"
+          cat pr-body.md >> "$GITHUB_STEP_SUMMARY"
