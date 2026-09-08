@@ -4,12 +4,40 @@ import postgres from 'postgres';
 const base = 'http://127.0.0.1:8000/api';
 const db = postgres('postgres://postgres@127.0.0.1:5544/postgres', {connect_timeout: 10, connection: {statement_timeout: 15000}});
 const created = [];
+const eventVisitor = 'qa-stats-' + crypto.randomUUID();
 const req = async (path, data, token) => {
   console.log('Checking', path);
   const response = await fetch(base + path, {signal: AbortSignal.timeout(20000), method:data ? 'POST':'GET',headers:{'content-type':'application/json',...(token?{'x-session-token':token}:{})},...(data?{body:JSON.stringify(data)}:{})});
   return response.json();
 };
 try {
+  assert.equal((await fetch(base+'/admin/stats')).status,401);
+  const stats = async (suffix='') => {
+    const response=await fetch(base+'/admin/stats'+suffix,{headers:{'x-admin-key':'local-ci-admin-stats-only'}});
+    assert.equal(response.status,200);
+    return response.json();
+  };
+  const before=await stats();
+  assert.equal(before.daily.length,30);
+  for(const game of ['mangler-xi','maalloes','finn-spilleren']) {
+    for(const offset of [0,0,-1,-40,1]) {
+      await db`insert into tippetuppen.events(day,name,game,visitor,props)
+        values(to_char((now() at time zone 'Europe/Oslo')::date+${offset}::int,'YYYY-MM-DD'),'game_start',${game},${eventVisitor},'{}'::jsonb)`;
+    }
+  }
+  await db`insert into tippetuppen.events(day,name,game,visitor,props)
+    values(to_char(now() at time zone 'Europe/Oslo','YYYY-MM-DD'),'game_start','finn-spilleren',${eventVisitor},'{"path":"/admin/"}'::jsonb)`;
+  const after=await stats();
+  assert.equal(after.todayVisitors,before.todayVisitors+1);
+  assert.equal(after.visitorDays,before.visitorDays+2);
+  for(const game of ['mangler-xi','maalloes','finn-spilleren']) {
+    const old=before.games.find(g=>g.game===game);
+    const current=after.games.find(g=>g.game===game);
+    assert.equal(Number(current.starts),Number(old?.starts??0)+3);
+    assert.equal(Number(current.player_days),Number(old?.player_days??0)+2);
+    assert.equal(Number(current.today_players),Number(old?.today_players??0)+1);
+  }
+  assert.equal((await stats('?days=invalid')).daily.length,30);
   const name = 'qa-' + Date.now();
   const password = crypto.randomUUID();
   const user = await req('/auth/register',{username:name,password});
@@ -77,6 +105,7 @@ try {
   assert.equal((await req('/auth/me',undefined,token)).ok,false);
   console.log('API integration passed: login, uniqueness, ownership, concurrent start, resume, locked answer, future protection, give-up scoring, fixed Målløs result, logout.');
 } finally {
+  await db`delete from tippetuppen.events where visitor=${eventVisitor}`;
   for(const id of created) await db`delete from tippetuppen.users where id=${id}`;
   await db.end();
 }

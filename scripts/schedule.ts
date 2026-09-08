@@ -8,7 +8,7 @@ import { buildManglerXiPuzzles } from "../src/server/puzzles/manglerXi";
 import { buildMaalloesPuzzles } from "../src/server/puzzles/maalloes";
 import { buildFinnSpillerenPuzzles } from "../src/server/puzzles/finnSpilleren";
 import { extendSchedule, runwayFor } from "../src/server/puzzles/scheduler";
-import { osloDateKey } from "../src/lib/dates";
+import { addDays, osloDateKey } from "../src/lib/dates";
 
 const args = process.argv.slice(2);
 const days = Number(args[args.indexOf("--days") + 1] || 400);
@@ -23,6 +23,7 @@ const publishedFinn = new Set((await db.select({ id: s.schedule.puzzleId }).from
   .where(sql`${s.schedule.game} = 'finn-spilleren' and ${s.schedule.date} <= ${osloDateKey()}`)).map((r) => r.id));
 
 step("Reading matches and lineups…");
+const finnTodayExists = (await db.select().from(s.schedule).where(sql`${s.schedule.game} = 'finn-spilleren' and ${s.schedule.date} = ${osloDateKey()}`)).length > 0;
 const mxi = await buildManglerXiPuzzles(db);
 step(`Built ${mxi.length} Mangler XI puzzles. Reading club and honours data…`);
 const mal = await buildMaalloesPuzzles(db);
@@ -35,19 +36,20 @@ for (const p of [...mxi, ...mal, ...finn]) {
   await db
     .insert(s.puzzles)
     .values(row)
-    .onConflictDoUpdate({ target: s.puzzles.id, set: { title: row.title, payload: row.payload, difficulty: row.difficulty, quality: row.quality, era: row.era, tags: row.tags, fingerprint: row.fingerprint, sourceRef: row.sourceRef } });
+    .onConflictDoUpdate({ target: s.puzzles.id, set: { eligible: true, title: row.title, payload: row.payload, difficulty: row.difficulty, quality: row.quality, era: row.era, tags: row.tags, fingerprint: row.fingerprint, sourceRef: row.sourceRef } });
   upserts++;
   if (upserts % 20 === 0) step(`  …${upserts} puzzles written`);
 }
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
-const known = new Set([...mxi, ...mal, ...finn].map((p) => p.id));
+const known = new Set([...mxi, ...mal, ...finn].map((p) => p.id).concat([...publishedFinn]));
 const existing = await db.select({ id: s.puzzles.id }).from(s.puzzles);
 for (const e of existing) if (!known.has(e.id)) await db.update(s.puzzles).set({ eligible: false }).where(eq(s.puzzles.id, e.id));
 
 console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs, ${finn.length} Finn spilleren (${upserts} upserted).`);
 step("Scheduling days…");
 for (const game of ["mangler-xi", "maalloes", "finn-spilleren"] as const) {
-  const r = await extendSchedule(db, game, from, days);
+  const scheduleFrom = game === "finn-spilleren" && finnTodayExists && from <= osloDateKey() ? addDays(osloDateKey(), 1) : from;
+  const r = await extendSchedule(db, game, scheduleFrom, days);
   const runway = await runwayFor(db, game, osloDateKey());
   console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${runway.eligiblePuzzles} eligible, ${runway.belowPolicy} below policy).`);
 }

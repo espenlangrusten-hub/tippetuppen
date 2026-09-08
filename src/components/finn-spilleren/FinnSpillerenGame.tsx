@@ -4,6 +4,7 @@ import { apiPost } from "@/lib/api";
 import type { FinnSpillerenPublic } from "@/lib/gameTypes";
 import { addRecord, loadProgress, saveProgress } from "@/lib/storage";
 import { storedUser } from "@/lib/auth";
+import { track } from "@/components/analytics/Beacon";
 
 type Result = { correct: boolean; score: number; answer: string; explanation: string };
 type Reply = { ok: boolean; attemptId?: string; hints?: string[]; hintNumber?: number; finished?: boolean; result?: Result | null; error?: string };
@@ -18,14 +19,21 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
   const [error, setError] = useState("");
   const [finished, setFinished] = useState(false);
   const pending = useRef(false);
+  const started = useRef(false);
+  const trackStart = () => {
+    if (started.current) return;
+    started.current = true;
+    track({ name: "game_start", game: "finn-spilleren", puzzleId: puzzle.puzzleId, archive: isArchive });
+  };
 
-  const apply = (reply: Reply) => {
+  const apply = (reply: Reply, submitted = false) => {
     if (!reply.ok) throw new Error(reply.error === "unauthorised" ? "Logg inn igjen for å fortsette ligarunden." : "Kunne ikke hente runden. Prøv igjen.");
     if (reply.attemptId) setAttemptId(reply.attemptId);
     if (reply.hints) setHints(reply.hints);
     if (reply.hintNumber) setHintNumber(reply.hintNumber);
     setFinished(!!reply.finished);
     if (reply.result) {
+      if (submitted) track({ name: "game_complete", game: "finn-spilleren", puzzleId: puzzle.puzzleId, archive: isArchive });
       setResult(reply.result);
       addRecord("finn-spilleren", { date: puzzle.date, completedAt: new Date().toISOString(), score: reply.result.score, won: reply.result.correct, archive: isArchive });
     }
@@ -50,6 +58,7 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
 
   const next = async () => {
     if (!attemptId || hintNumber >= 5 || finished || pending.current) return;
+    trackStart();
     pending.current = true;
     setError("");
     setBusy(true);
@@ -62,11 +71,12 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     if (!attemptId || !guess.trim() || finished || pending.current) return;
+    trackStart();
     pending.current = true;
     setError("");
     setBusy(true);
     try {
-      apply(await apiPost<Reply>("/finn-spilleren/guess", { attemptId, guess }));
+      apply(await apiPost<Reply>("/finn-spilleren/guess", { attemptId, guess }), true);
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(false); pending.current = false; }
   };
