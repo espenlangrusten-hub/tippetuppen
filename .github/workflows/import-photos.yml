@@ -1,0 +1,102 @@
+name: Hent spillerbilder
+
+# Fetches player photos for Straffespark from Wikimedia Commons and opens a pull
+# request with them. Commons is the one source where the rights question has a clean
+# answer: everything on it is freely licensed, and the API returns the author and
+# licence we are obliged to print.
+#
+# The build sandbox cannot reach commons.wikimedia.org; a runner can, which is why
+# this exists. Every entry stays disabled: nothing in the pipeline can tell whether a
+# picture actually shows the right player, so a person confirms the face first.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Hvor mange bilder som hentes i denne kjøringen"
+        default: "5"
+        required: false
+      width:
+        description: "Bredde i piksler på bildet som lagres"
+        default: "900"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hent fra Commons
+        env:
+          LIMIT: ${{ inputs.limit }}
+          WIDTH: ${{ inputs.width }}
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/import/commons-photos.ts --limit "$LIMIT" --width "$WIDTH" | tee commons.log
+
+      # A photo whose credit or licence did not come through would fail here rather
+      # than reach a player.
+      - name: Valider dataene
+        run: npm run data:validate
+
+      - name: Se om noe nytt kom ut av det
+        id: check
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain data/source/straffespark.json data/media/straffespark)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Ingen nye bilder – alt importøren fant finnes allerede." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Åpne pull request
+        if: steps.check.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          branch="import/commons-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add data/source/straffespark.json data/media/straffespark
+          git commit -m "Hent spillerbilder fra Wikimedia Commons
+
+          Alle spørsmål står fortsatt avskrudd og må gjennomgås."
+          git push -u origin "$branch"
+
+          {
+            echo "Bilder hentet fra Wikimedia Commons. **Alle spørsmål står avskrudd** og går ikke i spill før noen har sett på dem."
+            echo
+            echo "## Før du skrur på et spørsmål"
+            echo
+            echo "- **Er det riktig person?** Importøren søker på navn og tar det beste treffet. Den kan ikke se hvem som er på bildet."
+            echo "- **Er ansiktet synlig nok** til at bildet fungerer uskarpt?"
+            echo "- **Stemmer kreditering og lisens** med filsiden på Commons? Lenken ligger i \`sourceUrl\`."
+            echo
+            echo "Sett så \`\"enabled\": true\` og fjern \`notes\`."
+            echo
+            echo "<details><summary>Logg</summary>"
+            echo
+            echo '```'
+            cat commons.log
+            echo '```'
+            echo
+            echo "</details>"
+          } > pr-body.md
+
+          gh pr create --title "Spillerbilder fra Wikimedia Commons" --body-file pr-body.md \
+            --base "${{ github.ref_name }}" --head "$branch"
+          cat pr-body.md >> "$GITHUB_STEP_SUMMARY"

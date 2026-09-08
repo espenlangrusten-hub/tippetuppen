@@ -6,7 +6,22 @@ Et spørsmål i `data/source/straffespark.json` står med `"enabled": false` så
 `npm run data:validate` nekter å godkjenne et spørsmål som er skrudd på og peker på en fil som
 ikke finnes – da ville spilleren fått et blankt spørsmål.
 
-## Bilder (spørsmål 1: gjett spilleren)
+## Bilder hentes automatisk fra Wikimedia Commons
+
+Kjør GitHub-handlingen **Hent spillerbilder**. Den søker opp spillerne som mangler bilde,
+henter et fritt lisensiert bilde, fyller inn fotograf og lisens, og åpner en pull request.
+
+Bildene kommer inn **avskrudd**. Importøren søker på navn og tar det beste treffet – den kan
+ikke se hvem som faktisk er på bildet. Før du setter `"enabled": true`:
+
+1. Er det riktig person?
+2. Er ansiktet synlig nok til at bildet fungerer uskarpt?
+3. Stemmer kreditering og lisens med filsiden på Commons? Lenken ligger i `sourceUrl`.
+
+Bare lisenser som tillater kommersiell bruk godtas – CC0, CC BY, CC BY-SA og offentlig eiendom.
+Siden har annonser, så NC- og ND-lisenser er utelukket, og det er testet.
+
+## Bilder du legger inn selv (spørsmål 1: gjett spilleren)
 
 - **Filnavn:** akkurat det som står i `image.file`, for eksempel `erling-haaland-2017.jpg`
 - **Format:** JPG eller PNG, minst 800 px på korteste side, gjerne ansiktet nær midten

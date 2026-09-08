@@ -165,6 +165,7 @@ const straffesparkMedia = z.object({
 const straffesparkBase = {
   id: z.string().min(1),
   enabled: z.boolean().default(true),
+  notes: z.string().optional(), // review note, e.g. what an importer still needs a human to check
   era: z.number().int().min(1990).max(2026).optional(),
   difficulty: z.number().int().min(1).max(5).default(3),
   status: dataStatus.default("recall"),
