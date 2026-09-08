@@ -29,7 +29,7 @@ test("admin shows traffic figures behind the key", async ({ page }, info) => {
   await expect(gameTable.getByRole("row").filter({ hasText: "Mangler XI" })).toHaveCount(1);
   await expect(gameTable.getByRole("row").filter({ hasText: "Målløs" })).toHaveCount(1);
   await expect(gameTable.getByRole("row").filter({ hasText: "Finn spilleren" })).toHaveCount(1);
-  await expect(section.getByText("Siste 30 dager")).toBeVisible();
+  await expect(section.getByRole("heading", { name: "Siste 30 dager", exact: true })).toBeVisible();
   await expect(section.getByText(/Besøkskoden byttes hver natt/)).toBeVisible();
 
   await page.screenshot({ path: `e2e/screenshots/admin-${info.project.name}.png`, fullPage: true });
