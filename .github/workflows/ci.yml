@@ -2,7 +2,9 @@ name: CI
 
 on:
   push:
-    branches: ["**"]
+    # Every branch except the ones that exist only to start another workflow: they
+    # carry no code, so building and testing them proves nothing.
+    branches-ignore: ["kjør/**"]
   pull_request:
 
 jobs:

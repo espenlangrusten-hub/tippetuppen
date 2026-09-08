@@ -84,6 +84,19 @@ Handlingen åpner en pull request. Se gjennom antall kamper, periode og eventuel
 innhenting fra produksjonssetting og gjør at en endring i API-formatet ikke kan publisere
 feil oppstillinger automatisk.
 
+### Starte en jobb uten å trykke på knappen
+
+**Hent spillerbilder** kan også startes ved å pushe til grenen `kjør/hent-bilder`. Grenen
+inneholder ingen kode – jobben henter alltid ut standardgrenen – og finnes bare fordi en
+push er noe assistenten som jobber i repoet kan gjøre, mens den ikke får starte en workflow.
+Pushen utløser ikke CI.
+
+Vil du starte den selv, er knappen under **Actions → Hent spillerbilder** fortsatt der, og der
+kan du også styre `limit` og `width`. Ved push brukes standardverdiene: tre bilder, 900 piksler.
+
+**Oppdater data** trenger ingenting av dette – den går automatisk når noe i `data/source/`,
+`drizzle/`, `scripts/schedule.ts` eller `src/server/puzzles/` endres på `main`.
+
 ## 5. Eget domene
 
 GitHub Pages støtter eget domene gratis, også med HTTPS.
