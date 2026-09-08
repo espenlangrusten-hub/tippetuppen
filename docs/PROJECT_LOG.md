@@ -129,3 +129,15 @@ API-formen er derfor lest ut av det åpne PHP-biblioteket `mentisy/fotballdata` 
 I stedet for å gjette bygde vi det minste som svarer på spørsmålet: handlingen **Prøvehenting fra Fotballdata** kjører på en runner med nett, henter én turnering og noen kamper, og legger resultatet som artefakt. Ingenting committes. Åpne spørsmål prøven skal avgjøre: dekker Fotballdata i det hele tatt herrelandslaget (API-et er bygget rundt klubber og kretser), og hvor langt tilbake – FIKS kom lenge etter 1989.
 
 **Personvern:** svarene inneholder e-post og telefonnummer for spillere og klubbkontakter. `redact` fjerner dem før noe skrives. En test fanget at første forsøk lekket: mønsteret matchet hele feltnavn, mens API-et prefikser dem etter rolle (`HomeTeamContactPersonEmail`, `RefereeMobilePhone`). Nå matches det som delstreng.
+
+## Gjettehistorikk og personlige hint (2026-09-08)
+
+**Mangler XI viste bare de to siste forsøkene.** `slice(-2)` i gjettepanelet gjorde at fra og med tredje forsøk kunne du ikke lenger se hvilke bokstaver du hadde utelukket – med seks forsøk er det halve spillet. Alle forsøk vises nå, i en boks med tak på 34 % av skjermhøyden så et langt navn aldri kan skyve tastaturet ut av bildet.
+
+Det avdekket to følgefeil, begge funnet ved å faktisk spille gjennom seks forsøk på en iPhone-visning: panelet er festet nederst og vokser med historikken, mens siden reserverte en fast gjettet høyde (`pb-64`). Nå måles panelet med en ResizeObserver. Og «Gi opp» og stillingen lå nederst i banen – altså nøyaktig der panelet vokser opp – så de havnet bak tastaturet. De ligger nå i en egen stripe over banen, der de verken dekkes eller overlapper en drakt.
+
+**Finn spilleren serverte uløselige runder.** Uten en personlig profil ble første hint «Jeg startet for Norge mot X» – like sant for de ti medspillerne. Runder uten profil genereres ikke lenger. Det tok puslespilltallet fra 561 til 267, men alle 267 åpner nå med noe som peker på personen.
+
+Profilbasen er utvidet fra 15 til 24 spillere, alle med kilde: Berge, Ajer, Ryerson, Patrick Berg, Østigård, Nusa, Bjørnebye, Rekdal og Henning Berg. Søkene rettet flere av mine egne antagelser underveis – Ryerson er fra Flekkefjord med Lyngdal som ungdomsklubb, ikke Tønsberg og Flint. `tests/player-clues.test.ts` fanger nå tre ting: at hver profil peker på en spiller som finnes (en feilstavet id ville ellers bare stille droppet spilleren), at første hint ikke handler om en landskamp, og at hver profil har kilde.
+
+**To e2e-tester var utdaterte fra før.** Forsiden sier «Tre spill», ikke «To spill», og Målløs validerer ikke lenger svar ved inntasting – alt godtas og avgjøres ved innsending. Rettet. Verdt å merke seg: CI kjører ikke Playwright, så suiten kan råtne uten at noe blir rødt.

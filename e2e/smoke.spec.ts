@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Tippetuppen smoke", () => {
   test("home shows both games and Mangler XI plays end-to-end", async ({ page }, testInfo) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("To spill");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Tre spill");
     await page.screenshot({ path: `e2e/screenshots/home-${testInfo.project.name}.png`, fullPage: true });
     await expect(page.getByRole("link", { name: /Spill|Se resultat/ }).first()).toBeVisible();
 
@@ -63,44 +63,34 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
   await input.fill("solsk");
   await expect(page.getByRole("option", { name: /Solskjær/ })).toBeVisible({ timeout: 10000 });
   await input.fill("");
+  // Answers are no longer judged as they are typed - anything is accepted and only
+  // resolved on submit - so an unknown string is taken in like any other.
   await input.fill("xyzzy ikke et svar");
   await page.getByRole("button", { name: "Svar", exact: true }).click();
-  await expect(page.getByText("Ikke et gyldig svar").first()).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText(/Svar lagt til/).first()).toBeVisible({ timeout: 10000 });
 
-  // Pull a valid label via the answer API using the puzzle id stored in localStorage keys.
   const puzzleId = await page.evaluate(() => {
     const k = Object.keys(localStorage).find((x) => x.startsWith("tt1:progress:maalloes:"));
     return k ? k.replace("tt1:progress:maalloes:", "") : null;
   });
   expect(puzzleId).toBeTruthy();
-  // Try a handful of common Norwegian answers until one is valid.
-  const candidates = ["Rosenborg", "Molde", "Brann", "Haaland", "Ødegaard", "Solskjær", "Rekdal", "Egil Olsen", "Viking", "Lillestrøm", "Bratseth", "Sørloth", "Vålerenga", "Bodø/Glimt", "Fjørtoft"];
-  let valid: string | null = null;
-  for (const c of candidates) {
-    const r = await page.request.post(`${process.env.E2E_API_URL ?? "http://localhost:8000/api"}/maalloes/answer`, { data: { puzzleId, text: c, taken: [] } });
-    const j = (await r.json()) as { ok: boolean };
-    if (j.ok) {
-      valid = c;
-      break;
-    }
-  }
-  expect(valid).toBeTruthy();
-  await input.fill(valid!);
+  const valid = "Rosenborg";
+  await input.fill(valid);
   await page.getByRole("button", { name: "Svar", exact: true }).click();
   await expect(page.locator("li", { hasText: valid! }).first()).toBeVisible({ timeout: 10000 });
   // Points stay hidden mid-round, while every entry remains editable.
   await expect(page.getByRole("button", { name: /Endre/ }).first()).toBeVisible();
   await page.screenshot({ path: `e2e/screenshots/mal-review-${testInfo.project.name}.png`, fullPage: true });
-  const midRound = await page.request.post(`${process.env.E2E_API_URL ?? "http://localhost:8000/api"}/maalloes/answer`, { data: { puzzleId, text: valid!, taken: [] } });
+  const midRound = await page.request.post(`${process.env.E2E_API_URL ?? "http://localhost:8000/api"}/maalloes/answer`, { data: { puzzleId, text: valid, taken: [] } });
   expect(await midRound.json()).not.toHaveProperty("score");
   // Edit removes the chosen entry and puts it back in the input without spending a slot.
   await page.getByRole("button", { name: /Endre/ }).nth(1).click();
   await expect(input).not.toHaveValue("");
   await page.getByRole("button", { name: "Svar", exact: true }).click();
   // Duplicate is rejected without consuming a slot.
-  await input.fill(valid!);
+  await input.fill(valid);
   await page.getByRole("button", { name: "Svar", exact: true }).click();
-  await expect(page.getByText(/allerede brukt/)).toBeVisible();
+  await expect(page.getByText(/allerede lagt til/)).toBeVisible();
   // Fill the remaining three with junk to finish.
   for (const junk of ["a1", "b2", "c3"]) {
     await input.fill(junk + " tull");

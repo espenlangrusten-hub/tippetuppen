@@ -37,21 +37,26 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
 
   const out: FinnSpillerenPuzzleRow[] = [];
   for (const match of matches) {
-    const result = match.norwayScore === match.opponentScore ? "spilte uavgjort" : match.norwayScore > match.opponentScore ? "vant" : "tapte";
     for (const app of apps.filter((a) => a.matchId === match.id && a.starter)) {
       const player = playerById.get(app.playerId);
       if (!player) continue;
       const first = player.displayName.trim().split(/\s+/)[0];
       const surname = player.surname;
       const profile = playerClues.get(player.id);
+      // Without a profile the first clue would be "I started for Norway against X",
+      // which is equally true of the ten team-mates beside him - unguessable by design.
+      // A round is only worth serving when the opening clue points at the person.
+      if (!profile) continue;
       const squad = squads.filter((s) => s.playerId === player.id).sort((a, b) => a.tournamentId.localeCompare(b.tournamentId))[0];
       const tournament = squad?.tournamentId.replace("wc-", "VM ").replace("euro-", "EM ");
       const matchClue = `Jeg startet som ${POSITION_LABEL[app.position].toLowerCase()}${app.shirtNumber != null ? ` med draktnummer ${app.shirtNumber}` : ""} mot ${match.opponent} ${match.date}.`;
+      // Personal first, narrowing to the match last: the three profile clues are about
+      // the person, then the squad or result places him, then the match, then the name.
       const hints: FinnSpillerenPayload["hints"] = [
-        profile?.hints[0] ?? (squad ? `I Norges tropp til ${tournament} var jeg oppført som spiller i ${squad.clubName}.` : `Jeg startet for Norge mot ${match.opponent} i ${match.date.slice(0, 4)}.`),
-        profile?.hints[1] ?? `I denne kampen ${result} Norge ${match.norwayScore}–${match.opponentScore}${match.venue ? ` på ${match.venue}` : ""}.`,
-        profile?.hints[2] ?? `Jeg spilte ${POSITION_LABEL[app.position].toLowerCase()}${app.captain ? " og var Norges kaptein" : ""} i den kampen.`,
-        matchClue,
+        profile.hints[0],
+        profile.hints[1],
+        profile.hints[2],
+        squad ? `I Norges tropp til ${tournament} var jeg oppført som spiller i ${squad.clubName}.` : matchClue,
         `Navnet mitt begynner med ${first}, og etternavnet begynner på ${surname[0].toUpperCase()}.`,
       ];
       out.push({
@@ -65,9 +70,9 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
           aliases: Array.from(new Set([player.fullName, player.displayName, player.surname, ...(aliasesById.get(player.id) ?? [])])),
           role: "spiller",
           hints,
-          explanation: `${player.displayName} startet for Norge mot ${match.opponent} ${match.date}.${profile ? ` ${profile.hints.join(" ")}` : ""}`,
-          status: profile ? "single_source" : match.status,
-          sourceIds: [match.id, ...(profile?.sources.map((s) => s.url) ?? (squad ? [squad.tournamentId] : []))],
+          explanation: `${player.displayName} startet for Norge mot ${match.opponent} ${match.date}. ${profile.hints.join(" ")}`,
+          status: "single_source",
+          sourceIds: [match.id, ...profile.sources.map((src) => src.url)],
         },
         difficulty: Math.max(1, 5.5 - (player.fame ?? 2)),
         quality: match.importance + (player.fame ?? 2) / 10,

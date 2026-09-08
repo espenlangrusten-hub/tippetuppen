@@ -274,5 +274,179 @@
         "accessed": "2026-09-07"
       }
     ]
+  },
+  {
+    "playerId": "sander-berge",
+    "hints": [
+      "Jeg begynte i Asker i 2004.",
+      "Jeg ble født i Bærum i 1998, og bestefaren min Ragnar spilte for Vålerenga.",
+      "Jeg gikk fra Vålerenga til Genk i 2017 og videre til Sheffield United i 2020."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Sander_Berge",
+        "title": "Sander Berge – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "kristoffer-ajer",
+    "hints": [
+      "Jeg begynte i Rælingen i 2004 og gikk til Lillestrøms akademi i 2009.",
+      "Jeg ble født i Rælingen i 1998.",
+      "Som 16-åring var jeg kaptein for Start, og i 2016 gikk jeg til Celtic."
+    ],
+    "sources": [
+      {
+        "url": "https://snl.no/Kristoffer_Vassbakk_Ajer",
+        "title": "Kristoffer Vassbakk Ajer – Store norske leksikon",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Kristoffer_Ajer",
+        "title": "Kristoffer Ajer – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "julian-ryerson",
+    "hints": [
+      "Jeg vokste opp i Kvinesdal og Lyngdal, og spilte ungdomsfotball i Lyngdal.",
+      "Jeg ble født i Flekkefjord i 1997 og flyttet til Stavanger som 15-åring.",
+      "Jeg debuterte for Viking som 17-åring, gikk til Union Berlin i 2018 og Dortmund i 2023."
+    ],
+    "sources": [
+      {
+        "url": "https://snl.no/Julian_Ryerson",
+        "title": "Julian Ryerson – Store norske leksikon",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Julian_Ryerson",
+        "title": "Julian Ryerson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "patrick-berg",
+    "hints": [
+      "Jeg begynte å spille i Strindheim, og familien flyttet til Bodø i 2006.",
+      "Faren min Ørjan og bestefaren min Harald spilte begge på landslaget.",
+      "Jeg debuterte for Bodø/Glimt som 16-åring i 2014 og spilte for Lens i 2022."
+    ],
+    "sources": [
+      {
+        "url": "https://snl.no/Patrick_Berg",
+        "title": "Patrick Berg – Store norske leksikon",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Patrick_Berg",
+        "title": "Patrick Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "leo-ostigard",
+    "hints": [
+      "Jeg vokste opp i Åndalsnes og trente med A-laget der som 14-åring.",
+      "Jeg var kaptein for Moldes juniorlag som vant cupen.",
+      "Jeg gikk til Brighton i 2018, og var i Napoli-troppen som vant Serie A i 2023."
+    ],
+    "sources": [
+      {
+        "url": "https://snl.no/Leo_Skiri_%C3%98stig%C3%A5rd",
+        "title": "Leo Skiri Østigård – Store norske leksikon",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Leo_%C3%98stig%C3%A5rd",
+        "title": "Leo Østigård – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "antonio-nusa",
+    "hints": [
+      "Jeg begynte i Langhus og gikk til Stabæks ungdomsavdeling som 13-åring.",
+      "Jeg ble født i 2005 og vokste opp i Langhus utenfor Oslo.",
+      "Jeg gikk til Club Brugge som 16-åring i 2021 og til RB Leipzig i 2024."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Antonio_Nusa",
+        "title": "Antonio Nusa – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "stig-inge-bjornebye",
+    "hints": [
+      "Jeg begynte i Elverum og gikk via Strømmen til Kongsvinger i 1989.",
+      "Jeg ble født i Elverum i 1969, og faren min Jo Inge var olympisk skihopper.",
+      "Jeg scoret vinnermålet i cupfinalen for Rosenborg og gikk til Liverpool i 1992."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Stig_Inge_Bj%C3%B8rnebye",
+        "title": "Stig Inge Bjørnebye – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "kjetil-rekdal",
+    "hints": [
+      "Ungdomsklubben min var Fiksdal/Rekdal.",
+      "Jeg ble født i Vestnes i 1968.",
+      "Jeg spilte for Molde, Borussia Mönchengladbach, Lierse, Rennes, Hertha Berlin og Vålerenga."
+    ],
+    "sources": [
+      {
+        "url": "https://snl.no/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Store norske leksikon",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "henning-berg",
+    "hints": [
+      "Jeg begynte i KFUM-Kameratene i Oslo.",
+      "Jeg ble født i Eidsvoll i 1969.",
+      "Jeg ble den første som vant Premier League med to klubber – Blackburn og Manchester United."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
   }
 ]

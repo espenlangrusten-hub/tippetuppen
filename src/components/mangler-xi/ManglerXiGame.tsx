@@ -52,6 +52,30 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const [showIntro, setShowIntro] = useState(false);
   const [confirmGiveUp, setConfirmGiveUp] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
+  const historyRef = useRef<HTMLDivElement>(null);
+  const [panelHeight, setPanelHeight] = useState(0);
+
+  // The guess panel is fixed to the bottom and grows with the history, so the page has
+  // to reserve exactly as much room as it takes - a fixed guess used to leave "Gi opp"
+  // buried under the keyboard once more than a couple of attempts were on screen.
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el) {
+      setPanelHeight(0);
+      return;
+    }
+    const measure = () => setPanelHeight(el.offsetHeight);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [state?.finished, state?.active]);
+
+  // When the history is tall enough to scroll, the newest guess is the one to look at.
+  useEffect(() => {
+    const el = historyRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [state?.players, state?.active]);
 
   // Load or initialise.
   useEffect(() => {
@@ -242,7 +266,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const scoreline = puzzle.norwayHome ? `Norge ${puzzle.score[0]}–${puzzle.score[1]} ${puzzle.opponent}` : `${puzzle.opponent} ${puzzle.score[1]}–${puzzle.score[0]} Norge`;
 
   return (
-    <div className="flex flex-col gap-4 pb-64 sm:pb-72">
+    <div className="flex flex-col gap-4 pb-64 sm:pb-72" style={panelHeight ? { paddingBottom: panelHeight + 24 } : undefined}>
       {/* Match header */}
       <div className="card p-4">
         <div className="flex items-center justify-between text-xs uppercase tracking-widest text-mist">
@@ -267,6 +291,17 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
 
       {state.finished && <ResultCard puzzle={puzzle} state={state} rows={rows} found={found} tries={triesTotal} isArchive={isArchive} today={today} />}
 
+      {/* Score and give-up sit above the pitch, not on it: overlaid at the bottom they
+          ended up behind the guess panel, and overlaid at the top they covered a shirt. */}
+      <div className="flex items-center justify-between px-1">
+        <span className="font-display text-xl font-bold text-snow">{found}/11</span>
+        {!state.finished && (
+          <button type="button" onClick={() => setConfirmGiveUp(true)} className="rounded-lg bg-ink-3 px-3 py-1 text-xs font-semibold text-mist hover:bg-line-2 hover:text-snow">
+            Gi opp
+          </button>
+        )}
+      </div>
+
       {/* Pitch */}
       <div className="pitch relative overflow-hidden rounded-2xl border border-pitch-line/30 px-2 py-4">
         <div className="pointer-events-none absolute inset-3 rounded-lg border-2 border-pitch-line/50" />
@@ -284,14 +319,6 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
             </div>
           ))}
         </div>
-        <div className="absolute bottom-2 left-3 font-display text-xl font-bold text-white/90">
-          {found}/11
-        </div>
-        {!state.finished && (
-          <button type="button" onClick={() => setConfirmGiveUp(true)} className="absolute bottom-2 right-3 rounded-lg bg-black/30 px-3 py-1 text-xs font-semibold text-white/90 hover:bg-black/50">
-            Gi opp
-          </button>
-        )}
       </div>
 
       {state.finished && state.revealed && (
@@ -336,9 +363,17 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                   </span>
                 </div>
                 <div className="mt-1.5 flex flex-col items-center gap-1">
-                  {activeState.guesses.slice(-2).map((g, gi) => (
-                    <TileRow key={gi} letters={g} states={activeState.tiles[activeState.tiles.length - Math.min(2, activeState.guesses.length) + gi]} small />
-                  ))}
+                  {/* Every guess so far, not just the last two: with six tries you cannot
+                      reason about which letters are still open if the earlier rows are gone.
+                      Capped in viewport height so a long answer can never push the keyboard
+                      off a small screen. */}
+                  {activeState.guesses.length > 0 && (
+                    <div ref={historyRef} className="flex max-h-[34vh] w-full flex-col items-center gap-1 overflow-y-auto">
+                      {activeState.guesses.map((g, gi) => (
+                        <TileRow key={gi} letters={g} states={activeState.tiles[gi]} small />
+                      ))}
+                    </div>
+                  )}
                   <div className={shake ? "shake" : ""}>
                     <TileRow letters={composeDisplay(typed, active.wordLengths)} states={null} activeIndex={typed.length} hint={activeState.hint} />
                   </div>
