@@ -68,4 +68,18 @@ describe("choosing between candidates", () => {
   it("returns nothing rather than something unusable", () => {
     expect(chooseImage([])).toBeNull();
   });
+
+  // The real failure this rule exists for: a search for Solskjær returned a Manchester
+  // United match photo where Pogba fills the frame and Solskjær stands behind him in a
+  // manager's tracksuit. The title never mentions him.
+  it("refuses a file whose title does not name the player", () => {
+    const wrong = candidate({ title: "File:Manchester United v Atalanta BC, 20 October 2021 (21).jpg", meta: meta({ LicenseShortName: "CC BY-SA 4.0" }) });
+    expect(chooseImage([wrong], { mustMention: ["Solskjær"] })).toBeNull();
+  });
+
+  it("matches the name past case and Nordic letters", () => {
+    const ok = candidate({ title: "File:Ole Gunnar Solskjaer 2019.jpg", meta: meta({ LicenseShortName: "CC BY-SA 4.0" }) });
+    expect(chooseImage([ok], { mustMention: ["Solskjær"] })?.title).toContain("Solskjaer");
+    expect(chooseImage([candidate({ title: "File:Martin Ødegaard 2015.jpg", meta: meta({ LicenseShortName: "CC0" }) })], { mustMention: ["Ødegaard"] })).not.toBeNull();
+  });
 });

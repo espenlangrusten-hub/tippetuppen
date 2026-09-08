@@ -412,11 +412,9 @@
     "id": "str-foto-erling-haaland",
     "enabled": false,
     "playerId": "erling-haaland",
-    "club": "molde",
-    "era": 2017,
     "difficulty": 1,
     "image": {
-      "file": "erling-haaland-2017.jpg",
+      "file": "erling-haaland.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -428,11 +426,9 @@
     "id": "str-foto-ole-gunnar-solskjaer",
     "enabled": false,
     "playerId": "ole-gunnar-solskjaer",
-    "club": "molde",
-    "era": 1995,
     "difficulty": 2,
     "image": {
-      "file": "ole-gunnar-solskjaer-1995.jpg",
+      "file": "ole-gunnar-solskjaer.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -444,11 +440,9 @@
     "id": "str-foto-martin-odegaard",
     "enabled": false,
     "playerId": "martin-odegaard",
-    "club": "stromsgodset",
-    "era": 2014,
     "difficulty": 2,
     "image": {
-      "file": "martin-odegaard-2014.jpg",
+      "file": "martin-odegaard.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -460,11 +454,9 @@
     "id": "str-foto-tore-andre-flo",
     "enabled": false,
     "playerId": "tore-andre-flo",
-    "club": "brann",
-    "era": 1996,
     "difficulty": 3,
     "image": {
-      "file": "tore-andre-flo-1996.jpg",
+      "file": "tore-andre-flo.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -476,11 +468,9 @@
     "id": "str-foto-kjetil-rekdal",
     "enabled": false,
     "playerId": "kjetil-rekdal",
-    "club": "valerenga",
-    "era": 2001,
     "difficulty": 3,
     "image": {
-      "file": "kjetil-rekdal-2001.jpg",
+      "file": "kjetil-rekdal.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -492,11 +482,9 @@
     "id": "str-foto-erik-mykland",
     "enabled": false,
     "playerId": "erik-mykland",
-    "club": "start",
-    "era": 1991,
     "difficulty": 4,
     "image": {
-      "file": "erik-mykland-1991.jpg",
+      "file": "erik-mykland.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -508,11 +496,9 @@
     "id": "str-foto-rune-bratseth",
     "enabled": false,
     "playerId": "rune-bratseth",
-    "club": "rosenborg",
-    "era": 1990,
     "difficulty": 4,
     "image": {
-      "file": "rune-bratseth-1990.jpg",
+      "file": "rune-bratseth.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -524,11 +510,9 @@
     "id": "str-foto-morten-gamst-pedersen",
     "enabled": false,
     "playerId": "morten-gamst-pedersen",
-    "club": "tromso",
-    "era": 2003,
     "difficulty": 3,
     "image": {
-      "file": "morten-gamst-pedersen-2003.jpg",
+      "file": "morten-gamst-pedersen.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -540,11 +524,9 @@
     "id": "str-foto-john-carew",
     "enabled": false,
     "playerId": "john-carew",
-    "club": "rosenborg",
-    "era": 1999,
     "difficulty": 3,
     "image": {
-      "file": "john-carew-1999.jpg",
+      "file": "john-carew.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },
@@ -556,11 +538,9 @@
     "id": "str-foto-jan-age-fjortoft",
     "enabled": false,
     "playerId": "jan-age-fjortoft",
-    "club": "lillestrom",
-    "era": 1991,
     "difficulty": 4,
     "image": {
-      "file": "jan-age-fjortoft-1991.jpg",
+      "file": "jan-age-fjortoft.jpg",
       "credit": "TODO – fotograf eller rettighetshaver",
       "licence": "TODO – lisens eller skriftlig tillatelse"
     },

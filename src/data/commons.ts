@@ -47,6 +47,14 @@ export function licenceOf(meta: CommonsMeta): string {
   return plainText(value(meta, "LicenseShortName") || value(meta, "License"));
 }
 
+/** The year the photo was taken, when Commons knows it. Never guessed from anything else. */
+export function yearOf(meta: CommonsMeta): number | null {
+  const raw = plainText(value(meta, "DateTimeOriginal") || value(meta, "DateTime"));
+  const m = raw.match(/\b(19|20)\d{2}\b/);
+  const year = m ? Number(m[0]) : NaN;
+  return Number.isInteger(year) && year >= 1900 && year <= 2100 ? year : null;
+}
+
 export function creditOf(meta: CommonsMeta): string {
   const artist = plainText(value(meta, "Artist"));
   return artist || plainText(value(meta, "Credit")) || "Ukjent fotograf (Wikimedia Commons)";
@@ -62,14 +70,36 @@ export function isUsable(meta: CommonsMeta): boolean {
   return ALLOWED.some((a) => a.test(licence));
 }
 
+/** Loose comparison for file titles: case, accents and Nordic letters folded away. */
+function fold(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/ø/g, "o").replace(/æ/g, "ae").replace(/å/g, "a")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 /**
  * Rank the candidates and return the first that can actually be used: a real raster
  * image, freely licensed, and tall enough to be worth blurring. Portrait-ish shapes
  * come first - a wide crowd shot rarely shows one face.
+ *
+ * `mustMention` is what stops a search for a name returning a photo of somebody else.
+ * A file called "Manchester United v Atalanta BC" was picked for Solskjær and turned
+ * out to be Pogba in the foreground with Solskjær behind him in a manager's tracksuit;
+ * requiring the surname in the title rejects that without anyone having to look.
  */
-export function chooseImage(candidates: CommonsCandidate[], minWidth = 500): CommonsCandidate | null {
+export function chooseImage(
+  candidates: CommonsCandidate[],
+  { minWidth = 500, mustMention = [] as string[] } = {},
+): CommonsCandidate | null {
+  const needles = mustMention.map(fold).filter(Boolean);
   const usable = candidates.filter(
-    (c) => /^image\/(jpeg|png)$/.test(c.mime) && c.width >= minWidth && c.thumbUrl && isUsable(c.meta),
+    (c) =>
+      /^image\/(jpeg|png)$/.test(c.mime) &&
+      c.width >= minWidth &&
+      c.thumbUrl &&
+      isUsable(c.meta) &&
+      needles.every((n) => fold(c.title).includes(n)),
   );
   if (!usable.length) return null;
   const score = (c: CommonsCandidate) => {

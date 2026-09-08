@@ -17,7 +17,7 @@
  */
 import { existsSync, mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { chooseImage, creditOf, licenceOf, plainText, type CommonsCandidate, type CommonsMeta } from "../../src/data/commons";
+import { chooseImage, creditOf, licenceOf, plainText, yearOf, type CommonsCandidate, type CommonsMeta } from "../../src/data/commons";
 import { loadDataset } from "../../src/data/load";
 
 const API = "https://commons.wikimedia.org/w/api.php";
@@ -96,7 +96,7 @@ async function main() {
     const term = player.fullName || player.displayName;
     // Sequential and unhurried: this is someone else's API and we are guests on it.
     const candidates = await search(term, width);
-    const pick = chooseImage(candidates);
+    const pick = chooseImage(candidates, { mustMention: [player.surname] });
     console.log(`  ${term}: ${candidates.length} treff, ${pick ? `valgte ${pick.title}` : "ingen brukbar"}`);
     if (!pick || !pick.thumbUrl) continue;
 
@@ -104,6 +104,12 @@ async function main() {
     image.credit = creditOf(pick.meta);
     image.licence = licenceOf(pick.meta);
     image.sourceUrl = pick.descriptionUrl;
+    // The era comes from the photograph, not from what we hoped to find: the search
+    // returns whatever exists, which is rarely the club or year we had in mind.
+    const year = yearOf(pick.meta);
+    if (year) entry.era = year;
+    else delete entry.era;
+    delete entry.club;
     entry.status = "single_source";
     entry.sources = [{ url: pick.descriptionUrl, title: plainText(pick.title), kind: "web", accessed: new Date().toISOString().slice(0, 10) }];
     // Still disabled: nothing here has seen the picture.
