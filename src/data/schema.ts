@@ -145,3 +145,65 @@ export const spellFile = z.array(
     sources: z.array(sourceRef).default([]),
   }),
 );
+
+/**
+ * Straffespark: the pool a daily round of five is drawn from.
+ *
+ * Three kinds share one file because a round mixes them and the rules that matter -
+ * unique ids, a source for every claim, media that actually exists - are the same for
+ * all three. Photo and chant entries need a file the repository does not generate, so
+ * they stay `enabled: false` until it is committed; validation refuses to let an
+ * enabled entry point at a file that is not there.
+ */
+const straffesparkMedia = z.object({
+  file: z.string().min(1), // relative to data/media/straffespark/
+  credit: z.string().min(1), // who made it - never blank, this is someone else's work
+  licence: z.string().min(1), // e.g. "CC BY-SA 4.0", "eget opptak", "med tillatelse fra klubben"
+  sourceUrl: z.string().optional(),
+});
+
+const straffesparkBase = {
+  id: z.string().min(1),
+  enabled: z.boolean().default(true),
+  era: z.number().int().min(1990).max(2026).optional(),
+  difficulty: z.number().int().min(1).max(5).default(3),
+  status: dataStatus.default("recall"),
+  sources: z.array(sourceRef).default([]),
+};
+
+const straffesparkAnswer = z.object({
+  label: z.string().min(1),
+  aliases: z.array(z.string()).default([]),
+});
+
+export const STRAFFESPARK_CATEGORIES = ["spiller", "trener", "stadion", "klubb", "supportere"] as const;
+
+export const straffesparkFile = z.array(
+  z.discriminatedUnion("kind", [
+    z.object({
+      ...straffesparkBase,
+      kind: z.literal("photo"),
+      // The answer is the player, so it is a reference rather than free text: the
+      // registry already holds the display name and every accepted spelling.
+      playerId: z.string().min(1),
+      prompt: z.string().default("Hvem er spilleren?"),
+      club: z.string().optional(), // club id, for the context line after the reveal
+      image: straffesparkMedia,
+    }),
+    z.object({
+      ...straffesparkBase,
+      kind: z.literal("trivia"),
+      category: z.enum(STRAFFESPARK_CATEGORIES),
+      prompt: z.string().min(8),
+      answer: straffesparkAnswer,
+      fact: z.string().optional(), // one line shown once the answer is in
+    }),
+    z.object({
+      ...straffesparkBase,
+      kind: z.literal("chant"),
+      prompt: z.string().default("Hvilket lag er dette?"),
+      answer: straffesparkAnswer,
+      audio: straffesparkMedia,
+    }),
+  ]),
+);

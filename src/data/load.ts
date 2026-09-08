@@ -60,6 +60,7 @@ export type Dataset = {
   honours: z.infer<typeof S.honourFile>;
   squads: z.infer<typeof S.squadFile>;
   spells: z.infer<typeof S.spellFile>;
+  straffespark: z.infer<typeof S.straffesparkFile>;
   problems: string[];
 };
 
@@ -77,6 +78,7 @@ export function loadDataset(): Dataset {
   const honours = readJson(S.honourFile, "honours.json", []);
   const squads = readJson(S.squadFile, "squads.json", []);
   const spells = readJson(S.spellFile, "spells.json", []);
+  const straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
 
   const matchDir = path.join(DATA_DIR, "matches");
   const matches: S.MatchFile[] = existsSync(matchDir)
@@ -320,5 +322,39 @@ export function loadDataset(): Dataset {
     });
   }
 
-  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, problems };
+  // Straffespark. A round of five is drawn from this pool, so a broken entry would
+  // surface as a question nobody can answer rather than as an error somewhere.
+  const straffesparkIds = new Set<string>();
+  const mediaDir = path.join(DATA_DIR, "media", "straffespark");
+  for (const q of straffespark) {
+    if (straffesparkIds.has(q.id)) problems.push(`straffespark: duplicate id ${q.id}`);
+    straffesparkIds.add(q.id);
+    if (q.enabled && q.status !== "recall" && q.sources.length === 0)
+      problems.push(`straffespark ${q.id}: status ${q.status} requires a source`);
+
+    if (q.kind === "photo") {
+      if (!players.has(q.playerId)) problems.push(`straffespark ${q.id}: unknown player ${q.playerId}`);
+      if (q.club && !clubIds.has(q.club)) problems.push(`straffespark ${q.id}: unknown club ${q.club}`);
+    }
+    if (q.kind === "trivia") {
+      // The answer has to be reachable by typing it, so it must not be blank after
+      // normalisation, and an alias that repeats the label buys nothing.
+      if (!normalizeName(q.answer.label)) problems.push(`straffespark ${q.id}: answer normalises to nothing`);
+      const dupes = q.answer.aliases.filter((a) => normalizeName(a) === normalizeName(q.answer.label));
+      if (dupes.length) problems.push(`straffespark ${q.id}: alias ${dupes[0]} repeats the answer`);
+    }
+
+    // Media the repository does not generate: an entry may sit disabled while the file
+    // is still missing, but an enabled one that points at nothing would ship a blank
+    // question. Credit and licence are required because this is someone else's work.
+    const media = q.kind === "photo" ? q.image : q.kind === "chant" ? q.audio : null;
+    if (media && q.enabled) {
+      if (!existsSync(path.join(mediaDir, media.file)))
+        problems.push(`straffespark ${q.id}: enabled but ${media.file} is missing from data/media/straffespark`);
+      for (const field of ["credit", "licence"] as const)
+        if (media[field].startsWith("TODO")) problems.push(`straffespark ${q.id}: ${field} is still a placeholder`);
+    }
+  }
+
+  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, problems };
 }

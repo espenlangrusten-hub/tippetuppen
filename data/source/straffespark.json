@@ -1,0 +1,590 @@
+[
+  {
+    "kind": "trivia",
+    "id": "str-stadion-1",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Lerkendal som hjemmebane?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK",
+        "Rosenborg Ballklub"
+      ]
+    },
+    "fact": "Lerkendal er hjemmebanen til Rosenborg.",
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-2",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Brann Stadion som hjemmebane?",
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann"
+      ]
+    },
+    "fact": "Brann Stadion er hjemmebanen til Brann.",
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-3",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Aspmyra som hjemmebane?",
+    "answer": {
+      "label": "Bodø/Glimt",
+      "aliases": [
+        "Glimt",
+        "FK Bodø/Glimt"
+      ]
+    },
+    "fact": "Aspmyra er hjemmebanen til Bodø/Glimt.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-4",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Åråsen som hjemmebane?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "fact": "Åråsen er hjemmebanen til Lillestrøm.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-5",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Aker Stadion som hjemmebane?",
+    "answer": {
+      "label": "Molde",
+      "aliases": [
+        "Molde FK"
+      ]
+    },
+    "fact": "Aker Stadion er hjemmebanen til Molde.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-6",
+    "category": "stadion",
+    "prompt": "Hvilken klubb har Skagerak Arena som hjemmebane?",
+    "answer": {
+      "label": "Odd",
+      "aliases": [
+        "Odds BK",
+        "Odd Grenland"
+      ]
+    },
+    "fact": "Skagerak Arena er hjemmebanen til Odd.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-stadion-7",
+    "category": "stadion",
+    "prompt": "Hva heter Vikings hjemmebane i Stavanger?",
+    "answer": {
+      "label": "Viking Stadion",
+      "aliases": [
+        "SR-Bank Arena"
+      ]
+    },
+    "fact": "Viking spiller på Viking Stadion, som også har hatt sponsornavn.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_venues",
+        "title": "List of Eliteserien venues – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-1",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Klanen på?",
+    "answer": {
+      "label": "Vålerenga",
+      "aliases": [
+        "VIF",
+        "Vålerenga Fotball"
+      ]
+    },
+    "fact": "Klanen er supportergruppa til Vålerenga.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Norske_supporterklubber_i_fotball",
+        "title": "Norske supporterklubber i fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-2",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Bataljonen på?",
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann"
+      ]
+    },
+    "fact": "Bataljonen er supportergruppa til Brann.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Norske_supporterklubber_i_fotball",
+        "title": "Norske supporterklubber i fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-3",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Kanarifansen på?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "fact": "Kanarifansen er supportergruppa til Lillestrøm.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Norske_supporterklubber_i_fotball",
+        "title": "Norske supporterklubber i fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-supporter-4",
+    "category": "supportere",
+    "prompt": "Hvilken klubb heier supportergruppa Kjernen på?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "fact": "Kjernen er supportergruppa til Rosenborg.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Norske_supporterklubber_i_fotball",
+        "title": "Norske supporterklubber i fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-1",
+    "category": "trener",
+    "prompt": "Hvem var Norges landslagssjef under VM i 1994 og 1998?",
+    "answer": {
+      "label": "Egil Olsen",
+      "aliases": [
+        "Drillo",
+        "Egil Roger Olsen"
+      ]
+    },
+    "fact": "Egil «Drillo» Olsen ledet Norge i begge sluttspillene.",
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://github.com/espenlangrusten-hub/tippetuppen/tree/main/data/source/matches",
+        "title": "Kampdata i Tippetuppen, kontrollert mot offentlige kamparkiv",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 1994
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-2",
+    "category": "trener",
+    "prompt": "Hvem var Norges landslagssjef under EM i 2000?",
+    "answer": {
+      "label": "Nils Johan Semb",
+      "aliases": [
+        "Semb"
+      ]
+    },
+    "fact": "Nils Johan Semb tok over etter Egil Olsen i 1998.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://github.com/espenlangrusten-hub/tippetuppen/tree/main/data/source/matches",
+        "title": "Kampdata i Tippetuppen, kontrollert mot offentlige kamparkiv",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2000
+  },
+  {
+    "kind": "trivia",
+    "id": "str-trener-3",
+    "category": "trener",
+    "prompt": "Hvem ledet Norge til VM-sluttspillet i 2026?",
+    "answer": {
+      "label": "Ståle Solbakken",
+      "aliases": [
+        "Solbakken"
+      ]
+    },
+    "fact": "Ståle Solbakken tok over landslaget i desember 2020.",
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://github.com/espenlangrusten-hub/tippetuppen/tree/main/data/source/matches",
+        "title": "Kampdata i Tippetuppen, kontrollert mot offentlige kamparkiv",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2026
+  },
+  {
+    "kind": "trivia",
+    "id": "str-klubb-1",
+    "category": "klubb",
+    "prompt": "Hvilket lag vant NM-cupen for menn i 2022?",
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann"
+      ]
+    },
+    "fact": "Brann vant cupfinalen i 2022.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Norwegian_Football_Cup_finals",
+        "title": "List of Norwegian Football Cup finals – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2022
+  },
+  {
+    "kind": "trivia",
+    "id": "str-klubb-2",
+    "category": "klubb",
+    "prompt": "Hvilket lag vant NM-cupen for menn i 2024?",
+    "answer": {
+      "label": "Fredrikstad",
+      "aliases": [
+        "FFK",
+        "Fredrikstad FK"
+      ]
+    },
+    "fact": "Fredrikstad vant cupfinalen i 2024.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Norwegian_Football_Cup_finals",
+        "title": "List of Norwegian Football Cup finals – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2024
+  },
+  {
+    "kind": "trivia",
+    "id": "str-klubb-3",
+    "category": "klubb",
+    "prompt": "Hvilket lag vant NM-cupen for menn i 2025?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "fact": "Lillestrøm vant cupfinalen i 2025.",
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_Norwegian_Football_Cup_finals",
+        "title": "List of Norwegian Football Cup finals – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "era": 2025
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-erling-haaland",
+    "enabled": false,
+    "playerId": "erling-haaland",
+    "club": "molde",
+    "era": 2017,
+    "difficulty": 1,
+    "image": {
+      "file": "erling-haaland-2017.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-ole-gunnar-solskjaer",
+    "enabled": false,
+    "playerId": "ole-gunnar-solskjaer",
+    "club": "molde",
+    "era": 1995,
+    "difficulty": 2,
+    "image": {
+      "file": "ole-gunnar-solskjaer-1995.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-martin-odegaard",
+    "enabled": false,
+    "playerId": "martin-odegaard",
+    "club": "stromsgodset",
+    "era": 2014,
+    "difficulty": 2,
+    "image": {
+      "file": "martin-odegaard-2014.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-tore-andre-flo",
+    "enabled": false,
+    "playerId": "tore-andre-flo",
+    "club": "brann",
+    "era": 1996,
+    "difficulty": 3,
+    "image": {
+      "file": "tore-andre-flo-1996.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-kjetil-rekdal",
+    "enabled": false,
+    "playerId": "kjetil-rekdal",
+    "club": "valerenga",
+    "era": 2001,
+    "difficulty": 3,
+    "image": {
+      "file": "kjetil-rekdal-2001.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-erik-mykland",
+    "enabled": false,
+    "playerId": "erik-mykland",
+    "club": "start",
+    "era": 1991,
+    "difficulty": 4,
+    "image": {
+      "file": "erik-mykland-1991.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-rune-bratseth",
+    "enabled": false,
+    "playerId": "rune-bratseth",
+    "club": "rosenborg",
+    "era": 1990,
+    "difficulty": 4,
+    "image": {
+      "file": "rune-bratseth-1990.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-morten-gamst-pedersen",
+    "enabled": false,
+    "playerId": "morten-gamst-pedersen",
+    "club": "tromso",
+    "era": 2003,
+    "difficulty": 3,
+    "image": {
+      "file": "morten-gamst-pedersen-2003.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-john-carew",
+    "enabled": false,
+    "playerId": "john-carew",
+    "club": "rosenborg",
+    "era": 1999,
+    "difficulty": 3,
+    "image": {
+      "file": "john-carew-1999.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "photo",
+    "id": "str-foto-jan-age-fjortoft",
+    "enabled": false,
+    "playerId": "jan-age-fjortoft",
+    "club": "lillestrom",
+    "era": 1991,
+    "difficulty": 4,
+    "image": {
+      "file": "jan-age-fjortoft-1991.jpg",
+      "credit": "TODO – fotograf eller rettighetshaver",
+      "licence": "TODO – lisens eller skriftlig tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  },
+  {
+    "kind": "chant",
+    "id": "str-sang-eksempel",
+    "enabled": false,
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann",
+        "Bataljonen"
+      ]
+    },
+    "difficulty": 2,
+    "audio": {
+      "file": "eksempel-brann.mp3",
+      "credit": "TODO – hvem gjorde opptaket",
+      "licence": "TODO – eget opptak eller tillatelse"
+    },
+    "status": "recall",
+    "sources": []
+  }
+]
