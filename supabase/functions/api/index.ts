@@ -399,33 +399,42 @@ Deno.serve(async (req) => {
       }
 
       if (req.method === "GET" && route === "/admin/stats") {
-        const days = Math.min(120, Math.max(7, Number(q.get("days") ?? 30)));
+        const requestedDays = Number(q.get("days") ?? 30);
+        const days = Number.isInteger(requestedDays) ? Math.min(120, Math.max(7, requestedDays)) : 30;
         const from = addDays(today, -(days - 1));
         // Sequential on purpose: the function holds one pooled connection, so a burst
         // of concurrent queries would stall behind Supabase's transaction pooler.
-        const daily = await db<{ day: string; page_views: number; visitors: number; starts: number; completes: number; new_visitors: number }[]>`
-          select day,
+        const daily = await db<{ day: string; page_views: number; visitors: number; starts: number; completes: number; new_visitors: number; xi_players: number; maalloes_players: number; finn_players: number }[]>`
+          with activity as (select * from tippetuppen.events where day between ${from} and ${today} and coalesce(props->>'path','') not like '%/admin%'),
+          calendar as (select to_char(d,'YYYY-MM-DD') as day from generate_series(${from}::date,${today}::date,interval '1 day') d)
+          select c.day,
                  count(*) filter (where name = 'page_view')                        as page_views,
                  count(distinct visitor)                                           as visitors,
                  count(*) filter (where name = 'game_start')                       as starts,
                  count(*) filter (where name = 'game_complete')                    as completes,
-                 count(distinct visitor) filter (where is_new)                     as new_visitors
-          from tippetuppen.events where day >= ${from} group by day order by day desc`;
-        const games = await db<{ game: string; starts: number; completes: number; give_ups: number; archive: number }[]>`
+                 count(distinct visitor) filter (where is_new)                     as new_visitors,
+                 count(distinct visitor) filter (where name='game_start' and game='mangler-xi') as xi_players,
+                 count(distinct visitor) filter (where name='game_start' and game='maalloes') as maalloes_players,
+                 count(distinct visitor) filter (where name='game_start' and game='finn-spilleren') as finn_players
+          from calendar c left join activity e on e.day=c.day group by c.day order by c.day desc`;
+        const games = await db<{ game: string; starts: number; completes: number; give_ups: number; archive: number; player_days: number; today_players: number }[]>`
           select game,
                  count(*) filter (where name = 'game_start')                       as starts,
                  count(*) filter (where name = 'game_complete')                    as completes,
                  count(*) filter (where name = 'game_give_up')                     as give_ups,
-                 count(*) filter (where archive and name = 'game_start')           as archive
-          from tippetuppen.events where game is not null group by game order by game`;
+                 count(*) filter (where archive and name = 'game_start')           as archive,
+                 count(distinct (day,visitor)) filter (where name='game_start' and visitor is not null) as player_days,
+                 count(distinct visitor) filter (where name='game_start' and day=${today}) as today_players
+          from tippetuppen.events where game is not null and day between ${from} and ${today} and coalesce(props->>'path','') not like '%/admin%' group by game order by game`;
         const totals = await db<{ page_views: number; starts: number; completes: number; shares: number; first_day: string | null; last_day: string | null }[]>`
           select count(*) filter (where name = 'page_view')                        as page_views,
                  count(*) filter (where name = 'game_start')                       as starts,
                  count(*) filter (where name = 'game_complete')                    as completes,
                  count(*) filter (where name = 'share')                            as shares,
                  min(day) as first_day, max(day) as last_day
-          from tippetuppen.events`;
-        return json({ ok: true, today, daily, games, totals: totals[0] });
+          from tippetuppen.events where day between ${from} and ${today} and coalesce(props->>'path','') not like '%/admin%'`;
+        const visitorDays = daily.reduce((n, d) => n + Number(d.visitors), 0);
+        return json({ ok: true, from, today, daily, games, visitorDays, todayVisitors: Number(daily[0]?.visitors ?? 0), totals: totals[0] });
       }
 
       if (req.method === "POST" && route === "/admin/replace") {

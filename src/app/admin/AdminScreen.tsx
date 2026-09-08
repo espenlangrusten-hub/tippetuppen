@@ -12,20 +12,22 @@ type Row = { date: string; number: number; puzzle_id: string; title: string; loc
 type Overview = { ok: boolean; today: string; rows: Row[]; runway: { eligible: number; scheduled_future: number; unused: number } };
 /** Counts arrive as strings: Postgres returns bigint that way. */
 type Count = number | string;
-type Daily = { day: string; page_views: Count; visitors: Count; starts: Count; completes: Count; new_visitors: Count };
-type GameStat = { game: string; starts: Count; completes: Count; give_ups: Count; archive: Count };
+type Daily = { day: string; page_views: Count; visitors: Count; starts: Count; completes: Count; new_visitors: Count; xi_players: Count; maalloes_players: Count; finn_players: Count };
+type GameStat = { game: string; starts: Count; completes: Count; give_ups: Count; archive: Count; player_days: Count; today_players: Count };
 type Stats = {
   ok: boolean;
+  visitorDays: number;
+  todayVisitors: number;
   daily: Daily[];
   games: GameStat[];
   totals: { page_views: Count; starts: Count; completes: Count; shares: Count; first_day: string | null; last_day: string | null };
 };
 
-const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloes: "Målløs" };
+const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloes: "Målløs", "finn-spilleren": "Finn spilleren" };
 const pct = (part: Count, whole: Count) => (Number(whole) > 0 ? `${Math.round((100 * Number(part)) / Number(whole))} %` : "–");
 
 const KEY = "tt1:adminKey";
-type Game = "mangler-xi" | "maalloes";
+type Game = "mangler-xi" | "maalloes" | "finn-spilleren";
 
 export function AdminScreen() {
   const [key, setKey] = useState("");
@@ -59,7 +61,8 @@ export function AdminScreen() {
         setData((await res.json()) as Overview);
         // Traffic is not per-game, so it is fetched alongside rather than folded in.
         const statsRes = await fetch(`${API_URL}/admin/stats?days=30`, { headers: { "x-admin-key": k } });
-        if (statsRes.ok) setStats((await statsRes.json()) as Stats);
+        if (!statsRes.ok) { setStats(null); throw new Error("Stats unavailable"); }
+        setStats((await statsRes.json()) as Stats);
         try {
           sessionStorage.setItem(KEY, k);
         } catch {
@@ -80,8 +83,8 @@ export function AdminScreen() {
   }, [game]);
 
   const peakViews = Math.max(1, ...(stats?.daily ?? []).map((d) => Number(d.page_views)));
-  const gameStats = (["mangler-xi", "maalloes"] as const).map(
-    (gameId) => stats?.games.find((row) => row.game === gameId) ?? { game: gameId, starts: 0, completes: 0, give_ups: 0, archive: 0 },
+  const gameStats = (["mangler-xi", "maalloes", "finn-spilleren"] as const).map(
+    (gameId) => stats?.games.find((row) => row.game === gameId) ?? { game: gameId, starts: 0, completes: 0, give_ups: 0, archive: 0, player_days: 0, today_players: 0 },
   );
 
   const act = async (path: string, body: unknown) => {
@@ -111,6 +114,7 @@ export function AdminScreen() {
         <select className="input max-w-44" value={game} onChange={(e) => setGame(e.target.value as Game)}>
           <option value="mangler-xi">Mangler XI</option>
           <option value="maalloes">Målløs</option>
+          <option value="finn-spilleren">Finn spilleren</option>
         </select>
         <button className="btn btn-primary" disabled={busy || !key}>
           Hent
@@ -135,13 +139,15 @@ export function AdminScreen() {
 
       {stats?.totals && (
         <section className="card p-4">
-          <h2 className="font-display text-xl font-bold uppercase">Besøk</h2>
+          <h2 className="font-display text-xl font-bold uppercase">Besøk og spill – siste 30 dager</h2>
           <p className="mt-1 text-xs text-fog">
             {stats.totals.first_day ? `Fra ${stats.totals.first_day} til ${stats.totals.last_day}` : "Ingen registrerte besøk ennå"}
           </p>
 
           <dl className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
+              ["Besøkende i dag", stats.todayVisitors ?? 0],
+              ["Besøksdøgn siste 30 dager", stats.visitorDays ?? 0],
               ["Sidevisninger", stats.totals.page_views],
               ["Spill startet", stats.totals.starts],
               ["Spill fullført", stats.totals.completes],
@@ -155,10 +161,12 @@ export function AdminScreen() {
           </dl>
 
           {stats && (
-            <table className="mt-4 w-full text-sm">
+            <div className="overflow-x-auto"><table className="mt-4 w-full min-w-[520px] text-sm">
               <thead className="text-left text-xs uppercase text-mist">
                 <tr>
                   <th className="py-1">Spill</th>
+                  <th className="text-right">Spillere i dag</th>
+                  <th className="text-right">Spillerdøgn / 30 d</th>
                   <th className="text-right">Startet</th>
                   <th className="text-right">Fullført</th>
                   <th className="text-right">Ga opp</th>
@@ -169,6 +177,8 @@ export function AdminScreen() {
                 {gameStats.map((g) => (
                   <tr key={g.game} className="border-t border-line">
                     <td className="py-1">{GAME_LABEL[g.game] ?? g.game}</td>
+                    <td className="text-right">{g.today_players ?? 0}</td>
+                    <td className="text-right">{g.player_days ?? 0}</td>
                     <td className="text-right">{g.starts}</td>
                     <td className="text-right">
                       {g.completes} <span className="text-fog">({pct(g.completes, g.starts)})</span>
@@ -178,18 +188,21 @@ export function AdminScreen() {
                   </tr>
                 ))}
               </tbody>
-            </table>
+            </table></div>
           )}
 
           {stats.daily.length > 0 && (
             <>
               <h3 className="mt-5 font-display text-sm font-bold uppercase text-mist">Siste 30 dager</h3>
-              <table className="mt-1 w-full text-sm">
+              <div className="overflow-x-auto"><table className="mt-1 w-full min-w-[650px] text-sm">
                 <thead className="text-left text-xs uppercase text-mist">
                   <tr>
                     <th className="py-1">Dag</th>
                     <th className="text-right">Visninger</th>
                     <th className="text-right">Besøkende</th>
+                    <th className="text-right">XI-spillere</th>
+                    <th className="text-right">Målløs-spillere</th>
+                    <th className="text-right">Finn-spillere</th>
                     <th className="text-right">Nye</th>
                     <th className="text-right">Startet</th>
                     <th className="text-right">Fullført</th>
@@ -210,19 +223,22 @@ export function AdminScreen() {
                           </span>
                         </td>
                         <td className="text-right">{d.visitors}</td>
+                        <td className="text-right">{d.xi_players ?? 0}</td>
+                        <td className="text-right">{d.maalloes_players ?? 0}</td>
+                        <td className="text-right">{d.finn_players ?? 0}</td>
                         <td className="text-right text-fog">{d.new_visitors}</td>
                         <td className="text-right">{d.starts}</td>
                         <td className="text-right">{d.completes}</td>
                       </tr>
                   ))}
                 </tbody>
-              </table>
+              </table></div>
             </>
           )}
 
           <p className="mt-3 text-xs text-fog">
             Besøkskoden byttes hver natt, med vilje, så ingen kan følges over tid. «Besøkende» gjelder derfor bare den
-            enkelte dagen – tallene kan ikke legges sammen til et samlet antall personer. Statistikken er uten
+            enkelte dagen. Besøksdøgn og spillerdøgn summerer daglige besøkende, ikke unike personer over 30 dager. Samme person på to dager teller to ganger. Ulike enheter, nettverk og blokkering kan påvirke tallene. Finn spilleren måles fra denne oppdateringen. Statistikken er uten
             informasjonskapsler og lagrer verken IP-adresse eller nettleser.
           </p>
         </section>
