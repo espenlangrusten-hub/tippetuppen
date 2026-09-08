@@ -1370,5 +1370,33 @@
         "2005"
       ]
     }
+  },
+  {
+    "kind": "chant",
+    "id": "str-sang-lillestrom",
+    "enabled": false,
+    "prompt": "Hvilken klubb synger dette?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "difficulty": 2,
+    "audio": {
+      "file": "lillestrom-supportersang.mp3",
+      "credit": "TODO – opptaket er fra YouTube, opphavsperson ikke avklart",
+      "licence": "TODO – krever tillatelse fra den som la ut videoen, eller et eget opptak"
+    },
+    "status": "single_source",
+    "sources": [
+      {
+        "title": "Lydklipp levert av Espen Langrusten, som oppga klubben",
+        "kind": "editorial",
+        "accessed": "2026-09-08"
+      }
+    ],
+    "notes": "Spørsmålet er klart, lyden er det ikke. Klippet ble hentet fra en YouTube-video, og YouTubes standardlisens gir ingen rett til gjenbruk. Lydfila er derfor ikke lagt inn i repoet – det er et offentlig repo, så et opptak her er publisert selv om spørsmålet står avskrudd. Trengs: enten et eget opptak, en video lagt ut under Creative Commons, eller skriftlig tillatelse fra den som gjorde opptaket."
   }
 ]
