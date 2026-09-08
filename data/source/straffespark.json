@@ -610,9 +610,16 @@
     },
     "fact": "Alfheim er hjemmebanen til Tromsø.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Troms%C3%B8_Idrettslag",
+        "title": "Tromsø Idrettslag – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Alfheim». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tromsø IL",
       "mustMention": [
@@ -633,9 +640,16 @@
     },
     "fact": "Nadderud er hjemmebanen til Stabæk.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Stab%C3%A6k_Fotball_(menn)",
+        "title": "Stabæk Fotball (menn) – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Nadderud». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Stabæk Fotball",
       "mustMention": [
@@ -657,9 +671,16 @@
     },
     "fact": "Marienlyst er hjemmebanen til Strømsgodset.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Str%C3%B8msgodset_Idrettsforening",
+        "title": "Strømsgodset Idrettsforening – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Marienlyst». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Strømsgodset IF",
       "mustMention": [
@@ -681,9 +702,16 @@
     },
     "fact": "Briskeby er hjemmebanen til HamKam.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Hamarkameratene",
+        "title": "Hamarkameratene – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Briskeby». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Hamarkameratene",
       "mustMention": [
@@ -705,9 +733,16 @@
     },
     "fact": "Color Line Stadion er hjemmebanen til Aalesund.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Aalesunds_Fotballklubb",
+        "title": "Aalesunds Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Color Line Stadion». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Aalesunds FK",
       "mustMention": [
@@ -728,9 +763,16 @@
     },
     "fact": "Fosshaugane Campus er hjemmebanen til Sogndal.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Sogndal_Fotball",
+        "title": "Sogndal Fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Fosshaugane». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sogndal Fotball",
       "mustMention": [
@@ -751,9 +793,16 @@
     },
     "fact": "Sør Arena er hjemmebanen til Start.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Idrettsklubben_Start",
+        "title": "Idrettsklubben Start – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Sør Arena». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "IK Start",
       "mustMention": [
@@ -775,9 +824,16 @@
     },
     "fact": "Intility Arena er hjemmebanen til Vålerenga.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/V%C3%A5lerenga_Fotball",
+        "title": "Vålerenga Fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Intility Arena». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Vålerenga Fotball",
       "mustMention": [
@@ -799,9 +855,16 @@
     },
     "fact": "Fredrikstad stadion er hjemmebanen til Fredrikstad.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Fredrikstad_Fotballklubb",
+        "title": "Fredrikstad Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Fredrikstad stadion». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Fredrikstad FK",
       "mustMention": [
@@ -822,9 +885,16 @@
     },
     "fact": "Sarpsborg stadion er hjemmebanen til Sarpsborg 08.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Sarpsborg_08_Fotballforening",
+        "title": "Sarpsborg 08 Fotballforening – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Sarpsborg stadion». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sarpsborg 08 FF",
       "mustMention": [
@@ -846,9 +916,16 @@
     },
     "fact": "Haugesund stadion er hjemmebanen til Haugesund.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/FK_Haugesund",
+        "title": "FK Haugesund – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Haugesund stadion». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "FK Haugesund",
       "mustMention": [
@@ -869,9 +946,16 @@
     },
     "fact": "Melløs er hjemmebanen til Moss.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Moss_Fotballklubb",
+        "title": "Moss Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Melløs». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Moss FK",
       "mustMention": [
@@ -893,9 +977,16 @@
     },
     "fact": "Gjemselund er hjemmebanen til Kongsvinger.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kongsvinger_Idrettslag",
+        "title": "Kongsvinger Idrettslag – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Gjemselund». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kongsvinger IL",
       "mustMention": [
@@ -916,9 +1007,16 @@
     },
     "fact": "Levermyr er hjemmebanen til Jerv.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Fotballklubben_Jerv",
+        "title": "Fotballklubben Jerv – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Levermyr». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "FK Jerv",
       "mustMention": [
@@ -939,9 +1037,16 @@
     },
     "fact": "Høddvoll er hjemmebanen til Hødd.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Idrottslaget_H%C3%B8dd",
+        "title": "Idrottslaget Hødd – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Høddvoll». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "IL Hødd",
       "mustMention": [
@@ -962,9 +1067,16 @@
     },
     "fact": "Bryne stadion er hjemmebanen til Bryne.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Bryne_Fotballklubb",
+        "title": "Bryne Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Bryne stadion». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Bryne FK",
       "mustMention": [
@@ -985,9 +1097,16 @@
     },
     "fact": "AKA Arena er hjemmebanen til Hønefoss.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/H%C3%B8nefoss_Ballklubb",
+        "title": "Hønefoss Ballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «AKA Arena». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Hønefoss BK",
       "mustMention": [
@@ -1008,9 +1127,16 @@
     },
     "fact": "KFUM Arena er hjemmebanen til KFUM Oslo.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/KFUM-Kameratene_Oslo",
+        "title": "KFUM-Kameratene Oslo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «KFUM Arena». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "KFUM Oslo",
       "mustMention": [
@@ -1031,9 +1157,16 @@
     },
     "fact": "Øster Hus Arena er hjemmebanen til Sandnes Ulf.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Sandnes_Ulf",
+        "title": "Sandnes Ulf – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Øster Hus Arena». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sandnes Ulf",
       "mustMention": [
@@ -1055,9 +1188,16 @@
     },
     "fact": "Ullevaal Stadion i Oslo er landslagets hjemmebane.",
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ullevaal_Stadion",
+        "title": "Ullevaal Stadion – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «landslag». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ullevaal Stadion",
       "mustMention": [
@@ -1081,7 +1221,7 @@
     "difficulty": 3,
     "status": "recall",
     "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "notes": "Artikkelen «Odds Ballklubb» nevner ikke «Tornekrattet». Sjekk svaret for hånd.",
     "verify": {
       "subject": "Odds BK",
       "mustMention": [
@@ -1102,9 +1242,16 @@
     },
     "fact": "Vikinghordene er supportergruppa til Viking.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Viking_Fotballklubb",
+        "title": "Viking Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Vikinghordene». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Viking FK",
       "mustMention": [
@@ -1128,7 +1275,7 @@
     "difficulty": 3,
     "status": "recall",
     "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "notes": "Artikkelen «Strømsgodset Idrettsforening» nevner ikke «Godsetunionen». Sjekk svaret for hånd.",
     "verify": {
       "subject": "Strømsgodset IF",
       "mustMention": [
@@ -1150,9 +1297,16 @@
     },
     "fact": "Isberget er supportergruppa til Tromsø.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Troms%C3%B8_Idrettslag",
+        "title": "Tromsø Idrettslag – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Isberget». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tromsø IL",
       "mustMention": [
@@ -1174,9 +1328,16 @@
     },
     "fact": "Plankehaugen er supportergruppa til Fredrikstad.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Fredrikstad_Fotballklubb",
+        "title": "Fredrikstad Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «Plankehaugen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Fredrikstad FK",
       "mustMention": [
@@ -1198,9 +1359,16 @@
     },
     "fact": "J-feltet er supportergruppa til Bodø/Glimt.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Fotballklubben_Bod%C3%B8/Glimt",
+        "title": "Fotballklubben Bodø/Glimt – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Artikkelteksten nevner «J-feltet». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "FK Bodø/Glimt",
       "mustMention": [
@@ -1222,9 +1390,16 @@
     },
     "fact": "Nils Arne Eggen var Rosenborg-trener gjennom gullrekka.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -1246,9 +1421,16 @@
     },
     "fact": "Solskjær ga Molde klubbens to første seriegull.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Ole Gunnar Solskjær",
       "mustMention": [
@@ -1270,9 +1452,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Knutsen",
       "mustMention": [
@@ -1293,9 +1482,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck",
+        "title": "Lars Lagerbäck – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Lars Lagerbäck",
       "mustMention": [
@@ -1317,9 +1513,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1342,9 +1545,16 @@
     },
     "fact": "Hareide tok Danmark til VM i Russland.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -1366,9 +1576,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -1389,9 +1606,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
-    "notes": "Skrevet fra hukommelsen. Venter på maskinell verifisering mot Wikidata før den kan komme i spill.",
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-08",
+        "note": "Manuelt kontrollert 2026-09-08: artikkelteksten underbygger både spørsmål og svar."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
