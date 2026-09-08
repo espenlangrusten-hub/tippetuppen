@@ -170,6 +170,12 @@ const straffesparkBase = {
   difficulty: z.number().int().min(1).max(5).default(3),
   status: dataStatus.default("recall"),
   sources: z.array(sourceRef).default([]),
+  /**
+   * What a verifier has to look up to confirm a hand-written answer: the article to
+   * read, and the strings that have to appear in it. Present on entries written from
+   * memory; absent on entries derived from data that already carries its own source.
+   */
+  verify: z.object({ subject: z.string().min(1), mustMention: z.array(z.string()).min(1) }).optional(),
 };
 
 const straffesparkAnswer = z.object({

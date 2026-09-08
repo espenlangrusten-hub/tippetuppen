@@ -4,6 +4,7 @@ import { z } from "zod";
 import { slugify, defaultAliases, normalizeName } from "@/lib/names";
 import { layoutPitch, parseFormation, positionKind } from "@/lib/pitch";
 import * as S from "./schema";
+import { deriveStraffesparkTrivia } from "./straffespark";
 import type { DataStatus, Position } from "@/db/schema";
 
 export const DATA_DIR = process.env.DATA_DIR ?? path.join(process.cwd(), "data", "source");
@@ -85,7 +86,7 @@ export function loadDataset(): Dataset {
   const honours = readJson(S.honourFile, "honours.json", []);
   const squads = readJson(S.squadFile, "squads.json", []);
   const spells = readJson(S.spellFile, "spells.json", []);
-  const straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
+  let straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
 
   const matchDir = path.join(DATA_DIR, "matches");
   const matches: S.MatchFile[] = existsSync(matchDir)
@@ -331,6 +332,11 @@ export function loadDataset(): Dataset {
 
   // Straffespark. A round of five is drawn from this pool, so a broken entry would
   // surface as a question nobody can answer rather than as an error somewhere.
+  // Most of the pool is derived from the registry rather than written by hand; a
+  // hand-written question wins a collision, since it was written on purpose.
+  const written = new Set(straffespark.map((q) => (q.kind === "trivia" ? normalizeName(q.prompt) : "")));
+  const derived = deriveStraffesparkTrivia({ seasons, honours, clubs, players }).filter((q) => !written.has(normalizeName(q.prompt)));
+  straffespark = [...straffespark, ...derived];
   const straffesparkIds = new Set<string>();
   const mediaDir = path.join(MEDIA_DIR, "straffespark");
   for (const q of straffespark) {
