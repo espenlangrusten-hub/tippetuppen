@@ -153,6 +153,12 @@ function makePuzzle(opts: {
 
 const INTRO = "Fem svar. Velg svar vi anslår at færrest vil velge. Poengene er faste for alle som spiller oppgaven.";
 
+// Arkivet dekker et utvalg av landskampene, ikke alle. Spørsmål som spenner over et år
+// eller et tiår må si det, ellers blir en spiller som faktisk startet en kamp vi ikke har
+// vurdert som feil svar. Vi navngir ikke arkivet: siden har allerede et arkiv over
+// tidligere oppgaver, og to arkiver i samme setning forvirrer mer enn det opplyser.
+const SCOPE = " (av kampene som er med i spillet)";
+
 export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]> {
   // Sequential on purpose: a pooled connection (Supabase's transaction pooler) will
   // stall if a burst of concurrent queries exceeds the pool, and these are cheap reads.
@@ -493,7 +499,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         intro: INTRO,
         answerKind: "player",
         answers: Array.from(set).map(([playerId, starts]) => playerAnswer(ctx, playerId, Math.min(12, starts * 2), `${starts} ${starts === 1 ? "kamp" : "kamper"} fra start`)),
-        explanation: `Basert på ${opts.matches.length} ${opts.matches.length === 1 ? "kamp" : "kamper"} i Tippetuppen-arkivet.`,
+        explanation: `Basert på ${opts.matches.length} ${opts.matches.length === 1 ? "kamp" : "kamper"} som er med i spillet.`,
         sourceIds: opts.matches.map((match) => match.id),
         status: "single_source",
         era: opts.era,
@@ -512,7 +518,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-year-${year}`,
       kind: "starters-year",
-      question: `Navngi en spiller som startet en av Norges landskamper fra ${year} i Tippetuppen-arkivet`,
+      question: `Navngi en spiller som startet en av Norges landskamper fra ${year}${SCOPE}`,
       matches: yearMatches,
       era: Math.floor(year / 10) * 10,
     });
@@ -526,7 +532,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
       pushStarterGroup({
         id: `mal-starters-${result.key}-${year}`,
         kind: `starters-result-${result.key}`,
-        question: `Navngi en spiller som startet ${result.label} for Norge i ${year} i Tippetuppen-arkivet`,
+        question: `Navngi en spiller som startet ${result.label} for Norge i ${year}${SCOPE}`,
         matches: result.matches,
         era: Math.floor(year / 10) * 10,
         quality: 3,
@@ -540,7 +546,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-years-${first}-${second}`,
       kind: "starters-two-years",
-      question: `Navngi en spiller som startet en landskamp for Norge i ${first} eller ${second} i Tippetuppen-arkivet`,
+      question: `Navngi en spiller som startet en landskamp for Norge i ${first} eller ${second}${SCOPE}`,
       matches: [...matchesByYear.get(first)!, ...matchesByYear.get(second)!],
       era: Math.floor(first / 10) * 10,
       quality: 3.1,
@@ -552,7 +558,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-opponent-${slugify(opponent)}`,
       kind: "starters-opponent",
-      question: `Navngi en spiller som startet en Norge-kamp mot ${opponent} i Tippetuppen-arkivet`,
+      question: `Navngi en spiller som startet en Norge-kamp mot ${opponent}${SCOPE}`,
       matches: opponentMatches,
       era: null,
       quality: 3.3,
@@ -573,7 +579,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
       pushStarterGroup({
         id: `mal-starters-decade-${result.key}-${decade}`,
         kind: `starters-decade-${result.key}`,
-        question: `Navngi en spiller som startet en landskamp Norge ${result.label} på ${decade}-tallet i Tippetuppen-arkivet`,
+        question: `Navngi en spiller som startet en landskamp Norge ${result.label} på ${decade}-tallet${SCOPE}`,
         matches: result.matches,
         era: decade,
         quality: 3.4,
@@ -664,11 +670,11 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         id: "mal-scorers-all",
         kind: "scorers-all",
         category: "Landslaget",
-        question: "Navngi en spiller som har scoret for Norge i en av landskampene i Tippetuppen-arkivet",
+        question: `Navngi en spiller som har scoret for Norge${SCOPE}`,
         intro: INTRO,
         answerKind: "player",
-        answers: Array.from(allScorers).map(([p, n]) => playerAnswer(ctx, p, n > 2 ? 12 : 0, `${n} mål i arkivet`)),
-        explanation: `Arkivet dekker ${okMatches.length} landskamper.`,
+        answers: Array.from(allScorers).map(([p, n]) => playerAnswer(ctx, p, n > 2 ? 12 : 0, `${n} mål i disse kampene`)),
+        explanation: `Spillet dekker ${okMatches.length} landskamper.`,
         sourceIds: okMatches.map((m) => m.id),
         status: "single_source",
         era: null,
