@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Tippetuppen smoke", () => {
   test("home shows both games and Mangler XI plays end-to-end", async ({ page }, testInfo) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Tre spill");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Tre daglige spill");
     await page.screenshot({ path: `e2e/screenshots/home-${testInfo.project.name}.png`, fullPage: true });
     await expect(page.getByRole("link", { name: /Spill|Se resultat/ }).first()).toBeVisible();
 
