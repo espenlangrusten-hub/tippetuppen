@@ -1,6 +1,113 @@
 [
   {
     "kind": "trivia",
+    "id": "str-mfk-final-1994",
+    "category": "klubb",
+    "prompt": "Hvilket lag tapte 3–2 mot Molde i herrenes cupfinale i 1994?",
+    "answer": {
+      "label": "Lyn",
+      "aliases": [
+        "Lyn Oslo",
+        "FK Lyn"
+      ]
+    },
+    "fact": "Molde slo Lyn 3–2.",
+    "era": 1994,
+    "difficulty": 4,
+    "status": "single_source",
+    "enabled": true,
+    "sources": [
+      {
+        "url": "https://www.moldefk.no/om-klubben/var-historie/milepaeler-i-klubbens-historie-fra-1911",
+        "title": "Milepæler i klubbens historie – Molde FK",
+        "kind": "web",
+        "accessed": "2026-09-09",
+        "note": "Relevant årsavsnitt lest og kontrollert."
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-mfk-opening-1998",
+    "category": "klubb",
+    "prompt": "Hvilket lag møtte Molde i åpningskampen på nye Molde Stadion 18. april 1998?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "fact": "Molde slo Lillestrøm 4–0.",
+    "era": 1998,
+    "difficulty": 5,
+    "status": "single_source",
+    "enabled": true,
+    "sources": [
+      {
+        "url": "https://www.moldefk.no/om-klubben/var-historie/milepaeler-i-klubbens-historie-fra-1911",
+        "title": "Milepæler i klubbens historie – Molde FK",
+        "kind": "web",
+        "accessed": "2026-09-09",
+        "note": "Relevant årsavsnitt lest og kontrollert."
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-mfk-junior-1997",
+    "category": "klubb",
+    "prompt": "Hvilken klubb møtte Molde i finalen i junior-NM for gutter i 1997?",
+    "answer": {
+      "label": "Nardo",
+      "aliases": [
+        "Nardo FK"
+      ]
+    },
+    "fact": "Molde slo Nardo 3–2.",
+    "era": 1997,
+    "difficulty": 5,
+    "status": "single_source",
+    "enabled": true,
+    "sources": [
+      {
+        "url": "https://www.moldefk.no/om-klubben/var-historie/milepaeler-i-klubbens-historie-fra-1911",
+        "title": "Milepæler i klubbens historie – Molde FK",
+        "kind": "web",
+        "accessed": "2026-09-09",
+        "note": "Relevant årsavsnitt lest og kontrollert."
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
+    "id": "str-mfk-berg-hestad-2016",
+    "category": "spiller",
+    "prompt": "Hvilken Molde-veteran spilte sin siste kamp mot Sevilla 25. februar 2016?",
+    "answer": {
+      "label": "Daniel Berg Hestad",
+      "aliases": [
+        "Berg Hestad",
+        "Daniel Hestad"
+      ]
+    },
+    "fact": "Molde vant avskjedskampen 1–0.",
+    "era": 2016,
+    "difficulty": 4,
+    "status": "single_source",
+    "enabled": true,
+    "sources": [
+      {
+        "url": "https://www.moldefk.no/om-klubben/var-historie/milepaeler-i-klubbens-historie-fra-1911",
+        "title": "Milepæler i klubbens historie – Molde FK",
+        "kind": "web",
+        "accessed": "2026-09-09",
+        "note": "Relevant årsavsnitt lest og kontrollert."
+      }
+    ]
+  },
+  {
+    "kind": "trivia",
     "id": "str-stadion-1",
     "category": "stadion",
     "prompt": "Hvilken klubb har Lerkendal som hjemmebane?",
