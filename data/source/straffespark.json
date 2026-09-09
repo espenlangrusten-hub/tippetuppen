@@ -1633,12 +1633,13 @@
       "label": "Lillestrøm",
       "aliases": [
         "LSK",
+        "Kanarifansen",
         "Lillestrøm SK"
       ]
     },
     "difficulty": 2,
     "audio": {
-      "file": "lillestrom-supportersang.mp3",
+      "file": "lillestrom-supportersang-20260909.mp3",
       "credit": "Opptak",
       "licence": "Eget opptak, brukt med tillatelse"
     },
@@ -1647,7 +1648,7 @@
       {
         "title": "Opptak",
         "kind": "editorial",
-        "accessed": "2026-09-08"
+        "accessed": "2026-09-09"
       }
     ]
   }

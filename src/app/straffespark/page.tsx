@@ -17,7 +17,7 @@ export default function Page() {
       if (!player) throw new Error(`Missing player: ${q.playerId}`);
       return { id, kind: q.kind, prompt: "Hvem skjuler seg i bildet?", answer: player.displayName, aliases: [player.fullName, player.surname, ...player.aliases.map((a) => a.alias)], media: { ...q.image, file: "shot-1.jpg" }, sources: q.sources };
     }
-    return { id, kind: q.kind, prompt: q.prompt, answer: q.answer.label, aliases: q.answer.aliases ?? [], sources: q.sources, ...(q.kind === "chant" ? { media: { ...q.audio, file: "shot-5.mp3" } } : { fact: q.fact }) };
+    return { id, kind: q.kind, prompt: q.prompt, answer: q.answer.label, aliases: q.answer.aliases ?? [], sources: q.sources, ...(q.kind === "chant" ? { media: { ...q.audio, file: "shot-5-20260909.mp3" } } : { fact: q.fact }) };
   });
   return <BetaGame questions={questions} />;
 }
