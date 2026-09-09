@@ -3,11 +3,11 @@ import { test, expect } from "@playwright/test";
 test.describe("Tippetuppen smoke", () => {
   test("home shows both games and Mangler XI plays end-to-end", async ({ page }, testInfo) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Tre daglige spill");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("du norsk fotball?");
     await page.screenshot({ path: `e2e/screenshots/home-${testInfo.project.name}.png`, fullPage: true });
-    await expect(page.getByRole("link", { name: /Spill|Se resultat/ }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Spill dagens XI", exact: true })).toBeVisible();
 
-    await page.goto("/mangler-xi/");
+    await page.getByRole("link", { name: "Spill dagens XI", exact: true }).click();
     // Intro modal on first visit
     await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 8000 }).catch(() => {});
     await expect(page.getByText("Trykk på en drakt for å gjette spilleren.")).toBeVisible();
@@ -47,7 +47,7 @@ test.describe("Tippetuppen smoke", () => {
 
     // Home now shows completion state.
     await page.goto("/");
-    await expect(page.getByText("Fullført i dag").first()).toBeVisible();
+    await expect(page.getByRole("link", { name: "Se resultat for Mangler XI", exact: true })).toContainText("Fullført");
   });
 });
 

@@ -33,7 +33,9 @@ test("beta plays exactly five questions, reveals after submission and restarts",
 
 test("home has the beta after Finn spilleren", async ({ page }) => {
   await page.goto("/");
-  const cards = await page.locator("article h2").allTextContents();
+  const cards = await page.getByRole("region", { name: "Dagens spill" }).getByRole("heading", { level: 2 }).allTextContents();
+  expect(cards).toHaveLength(4);
+  expect(cards.findIndex((s) => s.includes("Finn spilleren"))).toBeGreaterThanOrEqual(0);
   expect(cards.findIndex((s) => s.includes("Straffespark"))).toBeGreaterThan(cards.findIndex((s) => s.includes("Finn spilleren")));
-  await expect(page.getByRole("link", { name: "Prøv Straffespark" })).toHaveAttribute("href", /\/straffespark\//);
+  await expect(page.getByRole("link", { name: "Prøv Straffespark, 5 kjappe – beta", exact: true })).toHaveAttribute("href", /\/straffespark\//);
 });
