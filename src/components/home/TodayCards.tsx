@@ -48,7 +48,7 @@ export function TodayCards() {
     <>
       <section className="pt-2">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mist">Dagens fotball{today ? ` · ${formatDateNo(today)}` : ""}</p>
-        <h1 className="font-display text-4xl font-bold uppercase leading-none sm:text-5xl">Tre spill. Én gang om dagen.</h1>
+        <h1 className="font-display text-4xl font-bold uppercase leading-none sm:text-5xl">Tre daglige spill. Og fem kjappe.</h1>
         <p className="mt-2 max-w-xl text-mist">Norsk fotballhistorie i lomma: fyll ut landslagets startellever og finn svarene ingen andre finner.</p>
       </section>
 
@@ -89,6 +89,13 @@ export function TodayCards() {
             </article>
           );
         })}
+        <article className="card flex flex-col gap-3 p-5 sm:col-span-3">
+          <span className="w-fit rounded-full bg-gold/20 px-3 py-1 text-xs font-bold uppercase text-gold">Beta-versjon</span>
+          <h2 className="font-display text-3xl font-bold uppercase">⚽ Straffespark, 5 kjappe</h2>
+          <p className="text-sm text-mist">Et bilde, tre faktaspørsmål og en heiesang. Ett spørsmål om gangen.</p>
+          <p className="text-xs text-mist">Fast testrunde · teller ikke i ligaen</p>
+          <Link href="/straffespark/" className="btn btn-primary w-full sm:w-fit">Prøv Straffespark</Link>
+        </article>
       </section>
     </>
   );
