@@ -998,7 +998,7 @@
     "kind": "trivia",
     "id": "str-stadion-21",
     "category": "stadion",
-    "prompt": "Hvilken klubb har Levermyr som hjemmebane?",
+    "prompt": "Hvilken herreklubb har Levermyr som hjemmebane?",
     "answer": {
       "label": "Jerv",
       "aliases": [
@@ -1639,13 +1639,13 @@
     "difficulty": 2,
     "audio": {
       "file": "lillestrom-supportersang.mp3",
-      "credit": "Espen Langrusten",
+      "credit": "Opptak",
       "licence": "Eget opptak, brukt med tillatelse"
     },
     "status": "single_source",
     "sources": [
       {
-        "title": "Eget opptak levert av Espen Langrusten, som også oppga klubben",
+        "title": "Opptak",
         "kind": "editorial",
         "accessed": "2026-09-08"
       }
