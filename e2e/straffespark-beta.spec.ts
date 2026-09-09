@@ -4,7 +4,7 @@ test("beta plays exactly five questions, reveals after submission and restarts",
   await page.goto("/straffespark/");
   await page.getByRole("button", { name: "Kjør!" }).click({ timeout: 2000 }).catch(() => {});
   await expect(page.getByText("Beta-versjon", { exact: true })).toBeVisible();
-  const answers = ["Haaland", "RBK", "VIF", "Drillo", "LSK"];
+  const answers = ["Haaland", "FK Jerv", "Kaasa", "Molde FK", "LSK"];
   for (let i = 0; i < 5; i++) {
     await expect(page.getByText(new RegExp(`Spørsmål ${i + 1} av 5`))).toBeVisible();
     await expect(page.getByLabel("Ditt svar")).toHaveCount(1);

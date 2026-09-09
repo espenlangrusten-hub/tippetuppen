@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Straffespark, 5 kjappe – Beta", de
 
 export default function Page() {
   const ds = loadDataset();
-  const ids = ["str-foto-erling-haaland", "str-stadion-1", "str-supporter-1", "str-trener-1", "str-sang-lillestrom"];
+  const ids = ["str-foto-erling-haaland", "str-stadion-21", "str-auto-toppscorer-1992", "str-auto-cup-1994", "str-sang-lillestrom"];
   const questions: BetaQuestion[] = ids.map((id) => {
     const q = ds.straffespark.find((item) => item.id === id);
     if (!q || !isPlayable(q)) throw new Error(`Beta question unavailable: ${id}`);
