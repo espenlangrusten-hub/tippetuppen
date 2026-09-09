@@ -2,32 +2,33 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-ink/85 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
-        <Link href="/" className="font-display text-2xl font-bold uppercase tracking-wide">
-          <span className="text-flag">Tippe</span>tuppen
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link href="/" className="site-logo" aria-label="Tippetuppen – forsiden">
+          <span className="site-logo-mark" aria-hidden><i /><i /><i /></span>
+          <span><b>Tippe</b>tuppen</span>
         </Link>
-        <nav className="flex items-center gap-0.5 text-[13px] font-semibold sm:gap-1 sm:text-sm">
-          <Link href="/mangler-xi" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
+        <nav className="site-nav" aria-label="Hovedmeny">
+          <Link href="/mangler-xi">
             Mangler XI
           </Link>
-          <Link href="/maalloes" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
+          <Link href="/maalloes">
             Målløs
           </Link>
-          <Link href="/finn-spilleren" className="hidden whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:block sm:px-2.5">
+          <Link href="/finn-spilleren" className="site-nav-optional">
             Finn spilleren
           </Link>
-          <Link href="/arkiv" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
+          <Link href="/arkiv" className="site-nav-optional">
             Arkiv
           </Link>
-          <Link href="/statistikk" aria-label="Statistikk" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">
+          <Link href="/statistikk" aria-label="Statistikk" className="site-nav-icon">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
               <rect x="3" y="10" width="3" height="7" rx="1" />
               <rect x="8.5" y="5" width="3" height="12" rx="1" />
               <rect x="14" y="8" width="3" height="9" rx="1" />
             </svg>
           </Link>
-          <Link href="/liga" aria-label="Liga og innlogging" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">🏆</Link>
+          <Link href="/liga" className="site-league-link"><span aria-hidden>🏆</span><span className="site-league-text">Ligaen</span></Link>
         </nav>
       </div>
     </header>

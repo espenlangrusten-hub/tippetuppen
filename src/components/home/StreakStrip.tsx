@@ -14,11 +14,11 @@ export function StreakStrip({ today }: { today: string }) {
   }, [today]);
   if (!s || s.played === 0) return null;
   return (
-    <Link href="/statistikk" className="card flex items-center justify-between px-4 py-3 text-sm hover:border-line-2">
+    <Link href="/statistikk" className="home-streak">
       <div className="flex items-center gap-4">
         <div>
           <div className="font-display text-2xl font-bold leading-none">
-            🔥 {s.current}
+            <span aria-hidden>🔥</span> {s.current}
           </div>
           <div className="text-xs text-mist">{s.current === 1 ? "dag på rad" : "dager på rad"}</div>
         </div>
@@ -31,7 +31,7 @@ export function StreakStrip({ today }: { today: string }) {
           <div className="text-xs text-mist">spill</div>
         </div>
       </div>
-      <span className="text-mist">Statistikk →</span>
+      <span>Se statistikk →</span>
     </Link>
   );
 }

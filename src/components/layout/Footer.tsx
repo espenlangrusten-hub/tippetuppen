@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="mt-12 border-t border-line py-8 text-sm text-fog">
-      <div className="mx-auto flex max-w-3xl flex-col gap-3 px-4">
+      <div className="mx-auto flex max-w-[74rem] flex-col gap-3 px-4">
         <div className="flex flex-wrap gap-x-5 gap-y-2">
           <Link href="/om" className="hover:text-snow">
             Om Tippetuppen

@@ -22,23 +22,22 @@ export function TopPlayers() {
     return () => { active = false; };
   }, [retry]);
 
-  return <section className="card overflow-hidden" aria-labelledby="top-players-heading">
-    <div className="border-b border-line p-5">
-      <h2 id="top-players-heading" className="font-display text-2xl font-bold uppercase">🏆 Topp 5 siste måned</h2>
-      <p className="mt-1 text-sm text-mist">Sammenlagt i alle tre spill · siste 30 dager</p>
+  return <section className="home-leaderboard" aria-labelledby="top-players-heading">
+    <div className="home-leaderboard-heading">
+      <span className="home-trophy" aria-hidden="true">★</span>
+      <div><p className="home-eyebrow">Månedsligaen</p><h2 id="top-players-heading" className="font-display">Topp 5</h2></div>
     </div>
-    {status === "loading" ? <p className="p-5 text-sm text-mist" role="status">Henter topplisten …</p>
-      : status === "error" ? <div className="p-5 text-sm" role="status"><p className="text-mist">Kunne ikke hente topplisten.</p><button className="mt-2 underline" onClick={() => { setStatus("loading"); setRetry((n) => n + 1); }}>Prøv igjen</button></div>
-      : rows.length ? <table className="w-full text-sm">
-        <thead className="text-left text-xs uppercase text-mist"><tr><th scope="col" className="p-3">Plass</th><th scope="col" className="p-3">Spiller</th><th scope="col" className="p-3 text-right">Ligapoeng</th></tr></thead>
-        <tbody>{rows.map((row, i) => <tr key={row.username} className="border-t border-line">
-          <td className="p-3 font-display text-xl">{i + 1}</td><th scope="row" className="break-all p-3 text-left font-semibold">{row.username}</th><td className="p-3 text-right font-display text-2xl font-bold text-gold">{row.points}</td>
+    {status === "loading" ? <p className="home-leaderboard-status" role="status">Henter topplisten …</p>
+      : status === "error" ? <div className="home-leaderboard-status" role="status"><p>Kunne ikke hente topplisten.</p><button className="mt-2 underline" onClick={() => { setStatus("loading"); setRetry((n) => n + 1); }}>Prøv igjen</button></div>
+      : rows.length ? <table className="home-leaderboard-table">
+        <thead><tr><th scope="col">#</th><th scope="col">Spiller</th><th scope="col">Poeng</th></tr></thead>
+        <tbody>{rows.map((row, i) => <tr key={row.username}>
+          <td><span className={i < 3 ? `home-rank home-rank-${i + 1}` : "home-rank"}>{i + 1}</span></td><th scope="row">{row.username}</th><td>{row.points}</td>
         </tr>)}</tbody>
-      </table> : <p className="p-5 text-sm text-mist">Ingen resultater de siste 30 dagene. Registrer deg og bli den første på tabellen!</p>}
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-line p-5 text-sm">
-      <Link href="/liga/#login" className="font-semibold underline">Logg inn</Link>
-      <Link href="/liga/#register" className="font-semibold underline">Registrer deg</Link>
-      <Link href="/liga/" className="text-mist underline sm:ml-auto">Se hele ligaen →</Link>
+      </table> : <p className="home-leaderboard-status">Ingen resultater de siste 30 dagene. Registrer deg og bli den første!</p>}
+    <div className="home-leaderboard-links">
+      <Link href="/liga/">Se hele tabellen <span aria-hidden>→</span></Link>
+      <div><Link href="/liga/#login">Logg inn</Link><Link href="/liga/#register">Registrer deg</Link></div>
     </div>
   </section>;
 }
