@@ -1,117 +1,56 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { apiGet } from "@/lib/api";
-import { GAME_META, type GameSlug } from "@/lib/site";
+import { BASE_PATH, type GameSlug } from "@/lib/site";
 import { loadRecords } from "@/lib/storage";
-import { formatDateNo } from "@/lib/dates";
-import { StreakStrip } from "./StreakStrip";
+import { computeStreak } from "@/lib/streaks";
 import { TopPlayers } from "./TopPlayers";
+import s from "./StadiumHome.module.css";
 
-type Card = { number: number; hint: string } | null;
+const games = [
+  { slug: "mangler-xi", name: "Mangler XI", description: "🇳🇴 Fyll ut Norges startellever", art: "xi", action: "Spill dagens XI" },
+  { slug: "maalloes", name: "Målløs", description: "Finn svarene færrest velger", art: "goal", action: "Spill Målløs" },
+  { slug: "finn-spilleren", name: "Finn spilleren", description: "Fem hint. Én spiller.", art: "mystery", action: "Spill Finn spilleren" },
+] as const;
 
-/** The static shell becomes today's games here, once the Edge Function answers. */
 export function TodayCards() {
-  const [today, setToday] = useState<string | null>(null);
-  const [cards, setCards] = useState<Record<GameSlug, Card | undefined>>({ "mangler-xi": undefined, maalloes: undefined, "finn-spilleren": undefined });
-  const [done, setDone] = useState<Record<string, boolean>>({});
-
+  const [done, setDone] = useState<Partial<Record<GameSlug, boolean>>>({});
+  const [streak, setStreak] = useState<number | null>(null);
   useEffect(() => {
-    let cancelled = false;
-    (["mangler-xi", "maalloes", "finn-spilleren"] as GameSlug[]).forEach((g) => {
-      apiGet<{ ok: boolean; today?: string; puzzle?: Record<string, unknown> | null }>(`/today?game=${g}`)
-        .then((r) => {
-          if (cancelled) return;
-          if (r.today) setToday(r.today);
-          const p = r.ok ? r.puzzle : null;
-          setCards((prev) => ({
-            ...prev,
-            [g]: p ? { number: Number(p.number), hint: String(g === "mangler-xi" ? p.competition : g === "maalloes" ? p.category : "Første hint er vanskeligst") } : null,
-          }));
-        })
-        .catch(() => !cancelled && setCards((prev) => ({ ...prev, [g]: null })));
-    });
-    return () => {
-      cancelled = true;
-    };
+    let active = true;
+    apiGet<{ ok: boolean; today?: string }>("/today?game=mangler-xi").then((r) => {
+      if (!active || !r.today) return;
+      setStreak(computeStreak(games.flatMap((g) => loadRecords(g.slug)), r.today).current);
+      setDone(Object.fromEntries(games.map((g) => [g.slug, loadRecords(g.slug).some((record) => record.date === r.today && !record.archive)])));
+    }).catch(() => {});
+    return () => { active = false; };
   }, []);
-
-  useEffect(() => {
-    if (!today) return;
-    setDone({
-      "mangler-xi": !!loadRecords("mangler-xi").find((r) => r.date === today && !r.archive),
-      maalloes: !!loadRecords("maalloes").find((r) => r.date === today && !r.archive),
-      "finn-spilleren": !!loadRecords("finn-spilleren").find((r) => r.date === today && !r.archive),
-    });
-  }, [today]);
-
-  return (
-    <>
-      <section className="home-hero">
-        <div className="home-hero-copy">
-          <p className="home-eyebrow">Dagens utfordring{today ? ` · ${formatDateNo(today)}` : ""}</p>
-          <h1 className="font-display">Hvor godt kjenner du <em>norsk fotball?</em></h1>
-          <p className="home-lead">Tre nye oppgaver hver dag – pluss fem kjappe, historikk fra 1990 og en månedsliga å kjempe om.</p>
-          <div className="home-hero-meta">
-            <span><b>{Object.values(done).filter(Boolean).length}</b> av 3 dagens spill fullført</span>
-            <Link href="/arkiv/">Utforsk arkivet <span aria-hidden>→</span></Link>
-          </div>
-        </div>
-        <div className="home-ball" aria-hidden="true">
-          <svg viewBox="0 0 160 160" role="presentation">
-            <circle cx="80" cy="80" r="70" />
-            <path d="m80 45 22 16-8 26H66l-8-26 22-16Zm-51 3 29 13m73-13-29 13M35 112l31-25m59 25L94 87M80 150v-31m-45-7-14 3m104-3 14 3M80 45V12M66 87l14 32 14-32" />
-          </svg>
-        </div>
+  return <div className={s.shell}>
+    <div className={s.backdrop} aria-hidden="true"><Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="100vw" /></div>
+    <section className={s.hero}>
+      <div><p className={s.eyebrow}>Dagens fotballutfordring</p><h1>Hvor godt kjenner<br />du norsk fotball?</h1></div>
+      <div className={s.intro}><p>Tre daglige spill. Og fem kjappe.</p><Link href="/statistikk/" className={s.streak}>🔥 {streak ? streak + (streak === 1 ? " dag på rad" : " dager på rad") : "Klar for dagens utfordring?"}</Link></div>
+      <p className={s.signature} aria-hidden="true">Norge<br />i våre hjerter ♡</p>
+    </section>
+    <div className={s.dashboard}>
+      <section id="spill" className={s.games} aria-label="Dagens spill">
+        {games.map((game, i) => <Link key={game.slug} href={"/" + game.slug + "/"} className={s.game + " " + s[game.art]} aria-label={done[game.slug] ? "Se resultat for " + game.name : game.action}>
+          <Image src={BASE_PATH + "/design/" + game.art + ".webp"} alt="" fill priority={i === 0} sizes={i === 0 ? "(max-width: 760px) 100vw, 780px" : "(max-width: 760px) 50vw, 390px"} />
+          <div className={s.gameTitle}><h2>{game.name}</h2><p>{game.description}</p></div>
+          {game.art === "mystery" && <div className={s.clues} aria-hidden="true">{["Klubb", "Nasjonalitet", "Alder", "Posisjon", "En spesiell detalj"].map((hint) => <span key={hint}>{hint}</span>)}</div>}
+          {done[game.slug] && <span className={s.completed}>✓ Fullført</span>}
+          <span className={i === 0 ? s.primary : s.arrow}>{i === 0 && (done[game.slug] ? "Se resultat" : game.action)} <span aria-hidden="true">→</span></span>
+        </Link>)}
+        <Link href="/straffespark/" className={s.game + " " + s.penalty} aria-label="Prøv Straffespark, 5 kjappe – beta">
+          <Image src={BASE_PATH + "/design/penalty.webp"} alt="" fill sizes="(max-width: 760px) 100vw, 780px" />
+          <div className={s.gameTitle}><h2>Straffespark, 5 kjappe <span className={s.beta}>Beta</span></h2><p>Fem spørsmål. Fem sjanser.</p></div>
+          <div className={s.balls} aria-hidden="true">{[0,1,2,3,4].map((n) => <span key={n}>⚽</span>)}</div>
+          <span className={s.arrow} aria-hidden="true">→</span>
+        </Link>
       </section>
-
-      <div className="home-dashboard">
-        <div className="home-games-column">
-          {today && <StreakStrip today={today} />}
-          <section className="home-game-grid" aria-label="Dagens spill">
-            {(["mangler-xi", "maalloes", "finn-spilleren"] as GameSlug[]).map((g, index) => {
-              const meta = GAME_META[g];
-              const card = cards[g];
-              return (
-                <article key={g} className={`home-game-card home-game-card-${index + 1}`}>
-                  <div className="home-game-topline">
-                    <GameIcon game={g} />
-                    {card && <span className="home-game-number">#{card.number}</span>}
-                  </div>
-                  <div>
-                    <h2 className="font-display">{meta.name}</h2>
-                    <p>{meta.short}</p>
-                  </div>
-                  {card === undefined && <div className="h-12 animate-pulse rounded-lg bg-black/10" />}
-                  {card === null && <p className="home-game-hint">Dagens spill er ikke klart ennå. Prøv igjen om litt.</p>}
-                  {card && <p className="home-game-hint">{card.hint}</p>}
-                  <div className="home-game-action">
-                    {done[g] && <span className="home-done">✓ Fullført</span>}
-                    {card && <Link href={`/${g}/`} aria-label={`${done[g] ? "Se resultat for" : "Spill"} ${meta.name}`}>{done[g] ? "Se resultat" : "Spill nå"}<span aria-hidden>→</span></Link>}
-                  </div>
-                </article>
-              );
-            })}
-            <article className="home-game-card home-game-card-4">
-              <div className="home-game-topline"><GameIcon game="straffespark" /><span className="home-beta">Beta</span></div>
-              <div><h2 className="font-display">Straffespark</h2><p>5 kjappe</p></div>
-              <p className="home-game-hint">Bilde, fotballhistorie og heiesang. Ett spørsmål om gangen.</p>
-              <div className="home-game-action"><span className="home-test-round">Testrunde</span><Link href="/straffespark/">Prøv nå <span aria-hidden>→</span></Link></div>
-            </article>
-          </section>
-        </div>
-        <TopPlayers />
-      </div>
-    </>
-  );
-}
-
-function GameIcon({ game }: { game: GameSlug | "straffespark" }) {
-  const paths = {
-    "mangler-xi": <><path d="M8 5.5 12 8l4-2.5 4 3.5-2 4-2-1v8H8v-8l-2 1-2-4 4-3.5Z"/><path d="M9 13h6M12 8v12"/></>,
-    maalloes: <><circle cx="12" cy="12" r="8"/><path d="m12 8 3 2-1 4h-4l-1-4 3-2Zm-7 2 4 .2m10-.2-4 .2M7 18l3-4m7 4-3-4"/></>,
-    "finn-spilleren": <><circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 5 5M8.5 9a2 2 0 0 1 3.8.8c0 1.6-1.8 1.7-1.8 3M10.5 15h.01"/></>,
-    straffespark: <><path d="M4 19V5h16v14M7 19v-5h10v5M4 8h16"/><circle cx="12" cy="11" r="1.5"/></>,
-  };
-  return <span className="home-game-icon"><svg viewBox="0 0 24 24" aria-hidden="true">{paths[game]}</svg></span>;
+      <aside className={s.sidebar}><TopPlayers /><div className={s.daily}><span aria-hidden="true">▦</span><div><h2>Nye utfordringer hver dag</h2><p>Kl. 00:00 norsk tid</p><small>Straffespark er en fast betarunde.</small></div></div></aside>
+    </div>
+  </div>;
 }
