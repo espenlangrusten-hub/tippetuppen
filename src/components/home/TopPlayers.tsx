@@ -25,7 +25,7 @@ export function TopPlayers() {
   return <section className="home-leaderboard" aria-labelledby="top-players-heading">
     <div className="home-leaderboard-heading">
       <span className="home-trophy" aria-hidden="true">★</span>
-      <div><p className="home-eyebrow">Månedsligaen</p><h2 id="top-players-heading" className="font-display">Topp 5</h2></div>
+      <div><h2 id="top-players-heading" className="font-display">Månedens topp 5</h2><p className="league-period">Siste 30 dager · ligapoeng</p></div>
     </div>
     {status === "loading" ? <p className="home-leaderboard-status" role="status">Henter topplisten …</p>
       : status === "error" ? <div className="home-leaderboard-status" role="status"><p>Kunne ikke hente topplisten.</p><button className="mt-2 underline" onClick={() => { setStatus("loading"); setRetry((n) => n + 1); }}>Prøv igjen</button></div>
