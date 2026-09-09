@@ -2,6 +2,7 @@ import { inArray } from "drizzle-orm";
 import type { Db } from "@/server/db";
 import { schema as s } from "@/server/db";
 import { normalizeName, slugify } from "@/lib/names";
+import { reviewedHalves } from "@/data/reviewed-tables";
 import type { MaalloesAnswer, MaalloesPayload } from "./types";
 
 export type MaalloesPuzzleRow = {
@@ -196,6 +197,26 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     if (rows.length < 10) continue;
     const st = se.status;
     const champion = rows.find((r) => r.outcome === "champion")?.clubId;
+    const halves = ok(st) ? reviewedHalves(se.id, rows) : null;
+    if (halves) {
+      for (const [key, label, selected] of [["upper", "øvre", halves.upper], ["lower", "nedre", halves.lower]] as const) {
+        if (selected.some((row) => !ctx.clubs.has(row.clubId))) continue;
+        push(makePuzzle({
+          id: `mal-season-half-${key}-${se.year}`,
+          kind: "season-half",
+          category: se.name,
+          question: `Navngi et lag som endte på ${label} tabellhalvdel i ${se.name}`,
+          intro: INTRO,
+          answerKind: "club",
+          answers: selected.map((row) => clubAnswer(ctx, row.clubId, 0, `${row.position}. plass`)),
+          explanation: `Sluttabellen: plass ${selected[0].position}–${selected[selected.length - 1].position}.`,
+          sourceIds: [se.id, halves.source],
+          status: "single_source",
+          era: Math.floor(se.year / 10) * 10,
+          quality: 4,
+        }));
+      }
+    }
     push(
       makePuzzle({
         id: `mal-season-${se.year}`,
