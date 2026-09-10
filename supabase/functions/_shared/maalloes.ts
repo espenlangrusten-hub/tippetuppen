@@ -1,6 +1,6 @@
 // Målløs scoring. Blends an editorial prior with live crowd counts, becoming pure
 // crowd data once enough people have played. Mirrors src/server/maalloes.ts.
-import { normalizeName } from "./names.ts";
+import { matchKey, normalizeName } from "./names.ts";
 import type { MaalloesAnswer, MaalloesPayload } from "./types.ts";
 
 export const ANSWERS_PER_GAME = 5;
@@ -11,6 +11,12 @@ export function resolveAnswer(payload: MaalloesPayload, text: string): MaalloesA
   const hits = payload.answers.filter((a) => a.aliases.some((al) => normalizeName(al) === n));
   if (hits.length === 1) return hits[0];
   if (hits.length > 1) return hits.find((a) => normalizeName(a.label) === n) ?? null;
+  // "ham kam" is HamKam. Tried only after the strict pass, so an answer that already
+  // resolved keeps resolving to the same row.
+  const key = matchKey(text);
+  const spaced = payload.answers.filter((a) => a.aliases.some((al) => matchKey(al) === key));
+  if (spaced.length === 1) return spaced[0];
+  if (spaced.length > 1) return spaced.find((a) => matchKey(a.label) === key) ?? null;
   const tokens = n.split(" ");
   const partial = payload.answers.filter((a) =>
     a.aliases.some((al) => {

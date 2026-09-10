@@ -85,6 +85,13 @@ describe("edge: Målløs", () => {
     expect(resolveAnswer(mal, "rbk")?.id).toBe("club:rosenborg");
     expect(resolveAnswer(mal, "Vålerenga")).toBeNull();
   });
+  it("accepts an answer that only differs in where the spaces fall", () => {
+    const spaced = { ...mal, answers: [{ id: "club:hamkam", label: "HamKam", aliases: ["HamKam", "Hamarkameratene"], prior: 30 }, ...mal.answers] };
+    expect(resolveAnswer(spaced, "ham kam")?.id).toBe("club:hamkam");
+    expect(resolveAnswer(spaced, "Ham-Kam")?.id).toBe("club:hamkam");
+    expect(resolveAnswer(spaced, "hamkam")?.id).toBe("club:hamkam");
+    expect(resolveAnswer(spaced, "Ham Kam FC")).toBeNull();
+  });
   it("always gives 0 to exactly one deterministic rare answer", () => {
     const zero = zeroAnswerId(mal.answers);
     expect(scoreFor(mal.answers[1], zero)).toBe(0);

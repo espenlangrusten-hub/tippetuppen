@@ -1,0 +1,1 @@
+ALTER TABLE "tippetuppen"."finn_attempts" ADD COLUMN "guesses" jsonb DEFAULT '[]'::jsonb NOT NULL;

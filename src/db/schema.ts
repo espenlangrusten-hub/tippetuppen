@@ -484,6 +484,9 @@ export const finnAttempts = tt.table(
     puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
     userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
     hintNumber: integer("hint_number").notNull().default(1),
+    // Wrong guesses, in order. A wrong guess opens the next hint rather than ending the
+    // round, so the round has to remember them to come back the same after a refresh.
+    guesses: jsonb("guesses").$type<string[]>().notNull().default([]),
     finished: boolean("finished").notNull().default(false),
     result: jsonb("result").$type<{ correct: boolean; score: number; answer: string; explanation: string }>(),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
