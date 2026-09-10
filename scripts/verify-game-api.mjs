@@ -58,8 +58,20 @@ try {
   const resumed=await req('/finn-spilleren/start',{puzzleId:puzzle.puzzleId},token);
   assert.equal(resumed.hintNumber,2); assert.equal(resumed.hints.length,2);
   assert.equal((await req('/finn-spilleren/guess',{attemptId,guess:'nobody'})).ok,false);
+  // A wrong guess buys the next hint and lowers the pot; it does not end the round.
+  const wrong=await req('/finn-spilleren/guess',{attemptId,guess:'nobody'},token);
+  assert.equal(wrong.finished,false); assert.equal(wrong.correct,false);
+  assert.equal(wrong.hintNumber,3); assert.equal(wrong.hints.length,3);
+  assert.equal(wrong.potential,60); assert.deepEqual(wrong.guesses,['nobody']);
+  // Only the last hint being guessed away ends it. The round opened on hint 1 and one
+  // hint was taken with /next, so four wrong guesses is what it takes from here.
+  await req('/finn-spilleren/guess',{attemptId,guess:'nobody'},token);
+  await req('/finn-spilleren/guess',{attemptId,guess:'nobody'},token);
   const result=await req('/finn-spilleren/guess',{attemptId,guess:'nobody'},token);
+  assert.equal(result.finished,true);
+  assert.equal(result.hintNumber,5);
   assert.equal(result.result.score,0);
+  assert.equal(result.guesses.length,4);
   const replay=await req('/finn-spilleren/guess',{attemptId,guess:result.result.answer},token);
   assert.deepEqual(replay.result,result.result);
   assert.deepEqual((await req('/finn-spilleren/start',{puzzleId:puzzle.puzzleId},token)).result,result.result);
