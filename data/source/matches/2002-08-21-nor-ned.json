@@ -1,0 +1,75 @@
+{
+  "id": "2002-08-21-nor-ned",
+  "date": "2002-08-21",
+  "competition": "friendly",
+  "opponent": "Nederland",
+  "opponentCode": "NED",
+  "norwayHome": true,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697634",
+      "title": "www.fotball.no – Norge mot Nederland, 2002-08-21",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Stille Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thomas Austin Pereira",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roar Strand",
+      "pos": "OUT"
+    },
+    {
+      "name": "Eirik Bakke",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jo Stuen Tessem",
+      "pos": "OUT"
+    },
+    {
+      "name": "Sigurd Rushfeldt",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    }
+  ]
+}

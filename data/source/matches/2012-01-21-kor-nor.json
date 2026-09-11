@@ -1,0 +1,75 @@
+{
+  "id": "2012-01-21-kor-nor",
+  "date": "2012-01-21",
+  "competition": "friendly",
+  "opponent": "Sør-Korea",
+  "opponentCode": "KOR",
+  "norwayHome": false,
+  "score": [
+    0,
+    3
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2012.html",
+      "title": "www.rsssf.org – Norge mot Sør-Korea, 2012-01-21",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Espen Bugge Pettersen",
+      "pos": "GK"
+    },
+    {
+      "name": "Espen Ruud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegar Eggen Hedenstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Magnus Lekven",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Yttergård Jenssen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Valon Berisha",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mostafa Abdellaoue",
+      "pos": "OUT"
+    }
+  ]
+}

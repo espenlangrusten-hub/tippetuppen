@@ -1,0 +1,75 @@
+{
+  "id": "1995-11-29-tri-nor",
+  "date": "1995-11-29",
+  "competition": "friendly",
+  "opponent": "Trinidad og Tobago",
+  "opponentCode": "TRI",
+  "norwayHome": false,
+  "score": [
+    2,
+    3
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697530",
+      "title": "www.fotball.no – Norge mot Trinidad og Tobago, 1995-11-29",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Egil Ulfstein",
+      "pos": "OUT"
+    },
+    {
+      "name": "Claus Lehland Eftevaag",
+      "pos": "OUT"
+    },
+    {
+      "name": "Geirmund Brendesæter",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Arild Stavrum",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Arild Levernes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Andre Flo",
+      "pos": "OUT"
+    }
+  ]
+}

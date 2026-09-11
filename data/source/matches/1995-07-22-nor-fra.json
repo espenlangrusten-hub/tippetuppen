@@ -1,0 +1,75 @@
+{
+  "id": "1995-07-22-nor-fra",
+  "date": "1995-07-22",
+  "competition": "friendly",
+  "opponent": "Frankrike",
+  "opponentCode": "FRA",
+  "norwayHome": true,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-france-22-july-1995-245955/",
+      "title": "www.11v11.com – Norge mot Frankrike, 1995-07-22",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erland Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roger Nilsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mons-Ivar Mjelde",
+      "pos": "OUT"
+    }
+  ]
+}

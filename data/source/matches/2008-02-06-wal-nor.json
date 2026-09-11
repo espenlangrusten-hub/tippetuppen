@@ -1,0 +1,75 @@
+{
+  "id": "2008-02-06-wal-nor",
+  "date": "2008-02-06",
+  "competition": "friendly",
+  "opponent": "Wales",
+  "opponentCode": "WAL",
+  "norwayHome": false,
+  "score": [
+    0,
+    3
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2008.html",
+      "title": "www.rsssf.org – Norge mot Wales, 2008-02-06",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Håkon Eikemo Opdal",
+      "pos": "GK"
+    },
+    {
+      "name": "Jarl-André Storbæk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Pa-Modou Kah",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Strømstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Nevland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Daniel Omoya Braaten",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    }
+  ]
+}

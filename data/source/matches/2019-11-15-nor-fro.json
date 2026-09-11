@@ -1,0 +1,75 @@
+{
+  "id": "2019-11-15-nor-fro",
+  "date": "2019-11-15",
+  "competition": "friendly",
+  "opponent": "Færøyene",
+  "opponentCode": "FRO",
+  "norwayHome": true,
+  "score": [
+    4,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesf/far-intres2019.html",
+      "title": "www.rsssf.org – Norge mot Færøyene, 2019-11-15",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "pos": "OUT"
+    },
+    {
+      "name": "Haitam Aleesami",
+      "pos": "OUT"
+    },
+    {
+      "name": "Iver Fossum",
+      "pos": "OUT"
+    },
+    {
+      "name": "Sander Berge",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Kristian Selnæs",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Joshua King",
+      "pos": "OUT"
+    }
+  ]
+}

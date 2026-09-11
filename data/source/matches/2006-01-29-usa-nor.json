@@ -1,0 +1,75 @@
+{
+  "id": "2006-01-29-usa-nor",
+  "date": "2006-01-29",
+  "competition": "friendly",
+  "opponent": "USA",
+  "opponentCode": "USA",
+  "norwayHome": false,
+  "score": [
+    0,
+    5
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698427",
+      "title": "www.fotball.no – Norge mot USA, 2006-01-29",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Espen Johnsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Steinar Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Kippe",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erlend Kaldestad Hanstveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tomasz Sokolowski",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Hauger",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Vaagan Moen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Martin Årst",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stian Piene Ohr",
+      "pos": "OUT"
+    }
+  ]
+}

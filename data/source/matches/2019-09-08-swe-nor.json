@@ -1,0 +1,75 @@
+{
+  "id": "2019-09-08-swe-nor",
+  "date": "2019-09-08",
+  "competition": "friendly",
+  "opponent": "Sverige",
+  "opponentCode": "SWE",
+  "norwayHome": false,
+  "score": [
+    1,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2019.html",
+      "title": "www.rsssf.org – Norge mot Sverige, 2019-09-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Haitam Aleesami",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Sander Berge",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Kristian Selnæs",
+      "pos": "OUT"
+    },
+    {
+      "name": "Joshua King",
+      "pos": "OUT"
+    }
+  ]
+}

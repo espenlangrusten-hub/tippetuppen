@@ -1,0 +1,75 @@
+{
+  "id": "2004-11-16-aus-nor",
+  "date": "2004-11-16",
+  "competition": "friendly",
+  "opponent": "Australia",
+  "opponentCode": "AUS",
+  "norwayHome": false,
+  "score": [
+    2,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698424",
+      "title": "www.fotball.no – Norge mot Australia, 2004-11-16",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "Hassan el Fakiri",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Bjørnstad Hagen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Claus Lundekvam",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thomas Holm",
+      "pos": "OUT"
+    },
+    {
+      "name": "Magne Hoset",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Ødegaard",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    }
+  ]
+}

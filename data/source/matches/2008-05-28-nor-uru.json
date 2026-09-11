@@ -1,0 +1,75 @@
+{
+  "id": "2008-05-28-nor-uru",
+  "date": "2008-05-28",
+  "competition": "friendly",
+  "opponent": "Uruguay",
+  "opponentCode": "URU",
+  "norwayHome": true,
+  "score": [
+    2,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697567",
+      "title": "www.fotball.no – Norge mot Uruguay, 2008-05-28",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jon Inge Høiland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Gunnar Solli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per Ciljan Skjelbred",
+      "pos": "OUT"
+    }
+  ]
+}

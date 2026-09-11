@@ -1,0 +1,75 @@
+{
+  "id": "1991-08-08-nor-swe",
+  "date": "1991-08-08",
+  "competition": "friendly",
+  "opponent": "Sverige",
+  "opponentCode": "SWE",
+  "norwayHome": true,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/intldetails/1991e2.html",
+      "title": "www.rsssf.org – Norge mot Sverige, 1991-08-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Einar Rossbach",
+      "pos": "GK"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Pål Lydersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Dahlum",
+      "pos": "OUT"
+    }
+  ]
+}

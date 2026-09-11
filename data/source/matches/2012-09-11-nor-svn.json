@@ -1,0 +1,75 @@
+{
+  "id": "2012-09-11-nor-svn",
+  "date": "2012-09-11",
+  "competition": "friendly",
+  "opponent": "Slovenia",
+  "opponentCode": "SVN",
+  "norwayHome": true,
+  "score": [
+    2,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2012.html",
+      "title": "www.rsssf.org – Norge mot Slovenia, 2012-09-11",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Espen Ruud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil Wæhler",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Daniel Omoya Braaten",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Yttergård Jenssen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohammed Abdellaoue",
+      "pos": "OUT"
+    }
+  ]
+}

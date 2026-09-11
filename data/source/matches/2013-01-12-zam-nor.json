@@ -1,0 +1,75 @@
+{
+  "id": "2013-01-12-zam-nor",
+  "date": "2013-01-12",
+  "competition": "friendly",
+  "opponent": "Zambia",
+  "opponentCode": "ZAM",
+  "norwayHome": false,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2013.html",
+      "title": "www.rsssf.org – Norge mot Zambia, 2013-01-12",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "André Hansen",
+      "pos": "GK"
+    },
+    {
+      "name": "Espen Ruud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Semb Berge",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jørgen Horn",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Kristiansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jo Inge Berget",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohammed Fellah",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ardian Gashi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Magnus Lekven",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Marcus Pedersen",
+      "pos": "OUT"
+    }
+  ]
+}

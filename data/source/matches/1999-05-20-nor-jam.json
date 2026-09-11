@@ -1,0 +1,75 @@
+{
+  "id": "1999-05-20-nor-jam",
+  "date": "1999-05-20",
+  "competition": "friendly",
+  "opponent": "Jamaica",
+  "opponentCode": "JAM",
+  "norwayHome": true,
+  "score": [
+    6,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-jamaica-20-may-1999-266835/",
+      "title": "www.11v11.com – Norge mot Jamaica, 1999-05-20",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Otto Bragstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Heggem",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Hoftun",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vidar Riseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    }
+  ]
+}

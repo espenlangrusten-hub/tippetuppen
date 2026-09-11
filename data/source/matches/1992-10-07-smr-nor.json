@@ -1,0 +1,75 @@
+{
+  "id": "1992-10-07-smr-nor",
+  "date": "1992-10-07",
+  "competition": "friendly",
+  "opponent": "San Marino",
+  "opponentCode": "SMR",
+  "norwayHome": false,
+  "score": [
+    2,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/san-marino-v-norway-07-october-1992-243785/",
+      "title": "www.11v11.com – Norge mot San Marino, 1992-10-07",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roger Nilsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}
