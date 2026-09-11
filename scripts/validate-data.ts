@@ -1,10 +1,17 @@
 import { loadDataset } from "../src/data/load";
 import { summarizePool } from "../src/data/straffespark";
-import { playerClues } from "../src/server/puzzles/playerClues";
+import { clueSourcingSummary, playerClues } from "../src/server/puzzles/playerClues";
 
 const ds = loadDataset();
 for (const id of playerClues.keys()) if (!ds.players.has(id)) ds.problems.push(`Unknown player in biography clues: ${id}`);
-console.log(`Biographical clue profiles: ${playerClues.size}`);
+const hintSets = new Set([...playerClues.values()].map((p) => p.hintSetId));
+const sourcing = clueSourcingSummary();
+// Profiles and clue sets are the same number until a person gets a second set of clues;
+// printing both is what makes it visible the day they stop matching.
+console.log(
+  `Biographical clue profiles: ${playerClues.size}, unike hintsett: ${hintSets.size}` +
+    ` (kilde per hint: ${sourcing.perHint}, arvet fra profilen: ${sourcing.inherited})`,
+);
 const byStatus: Record<string, number> = {};
 for (const m of ds.matches) byStatus[m.status] = (byStatus[m.status] ?? 0) + 1;
 console.log(`Matches: ${ds.matches.length}`, byStatus);

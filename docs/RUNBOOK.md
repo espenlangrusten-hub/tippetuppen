@@ -84,6 +84,53 @@ Handlingen åpner en pull request. Se gjennom antall kamper, periode og eventuel
 innhenting fra produksjonssetting og gjør at en endring i API-formatet ikke kan publisere
 feil oppstillinger automatisk.
 
+### Finn spilleren: ett hintsett er én dag
+
+Generatoren lager én runde per kamp en spiller med hintprofil startet. Ørjan Nyland har
+startet 22 spillbare kamper, så han gir 22 runder – med de samme tre biografiske hintene
+hver gang. Bare det avsluttende kamphintet skiller dem.
+
+Planleggeren teller derfor **hintsett**, ikke runder: personen pluss ordlyden i de tre
+biografiske hintene er nøkkelen (`servedKey` i `scheduler.ts`). Når et hintsett er servert
+én gang, faller alle de andre rundene med samme sett ut av utvalget. Nøkkelen leses fra
+selve oppgaven, ikke fra puslespillraden, slik at runder som ble publisert før regelen
+fantes også teller som brukt.
+
+Konsekvenser å kjenne til:
+
+- **Rekkevidden er hintsett.** `runwayFor` returnerer nå både `eligiblePuzzles` (runder) og
+  `eligibleTasks` (hintsett). 292 runder fra 30 hintsett er 30 dager med innhold, ikke 292.
+- **Skriver du om et hint, blir settet nytt** og personen kan serveres igjen. Det er med
+  vilje: en person med et nytt sett hint er en ny oppgave.
+- **Regelen gjelder framover.** Dager som allerede ligger i kalenderen blir stående.
+  Er kalenderen fylt opp før denne regelen kom, må framtiden bygges på nytt én gang
+  (`/admin` → regenerer framtiden). Publiserte dager røres ikke.
+
+### Kilder på hintnivå
+
+Et hint i `data/source/player-clues.json` kan skrives på to måter:
+
+```json
+"hints": [
+  "Jeg vokste opp i Bryne.",
+  { "text": "Jeg ble født i Leeds i 2000.", "sources": [{ "url": "...", "title": "...", "kind": "web", "accessed": "2026-09-09" }] },
+  "Jeg gikk fra Molde til Salzburg."
+]
+```
+
+Den korte formen er den alle profiler bruker i dag, og den fortsetter å virke. Kilden
+ligger da på profilen og sier ingenting om hvilket av de tre hintene den dekker; det
+registreres som `sourcing: "profile"`. Den lange formen knytter kilden til én påstand, og
+gir `sourcing: "hint"`.
+
+**Et hint skal bare flyttes over til den lange formen av noen som faktisk har åpnet siden
+og sett at den dekker påstanden.** `npm run data:validate` skriver ut fordelingen, så det
+er synlig hvor mye som fortsatt bare arver profilens kildeliste:
+
+```
+Biographical clue profiles: 30, unike hintsett: 30 (kilde per hint: 0, arvet fra profilen: 90)
+```
+
 ### Straffespark: hvor spørsmålene kommer fra
 
 Spørsmålsbanken bygges på to måter, og forskjellen avgjør om et spørsmål kan serveres.
