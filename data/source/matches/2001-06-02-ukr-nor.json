@@ -1,0 +1,75 @@
+{
+  "id": "2001-06-02-ukr-nor",
+  "date": "2001-06-02",
+  "competition": "friendly",
+  "opponent": "Ukraina",
+  "opponentCode": "UKR",
+  "norwayHome": false,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697540",
+      "title": "www.fotball.no – Norge mot Ukraina, 2001-06-02",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Hoftun",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Stille Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vidar Riseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Eirik Bakke",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roar Strand",
+      "pos": "OUT"
+    }
+  ]
+}

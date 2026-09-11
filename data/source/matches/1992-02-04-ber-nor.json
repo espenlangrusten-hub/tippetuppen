@@ -1,0 +1,75 @@
+{
+  "id": "1992-02-04-ber-nor",
+  "date": "1992-02-04",
+  "competition": "friendly",
+  "opponent": "Bermuda",
+  "opponentCode": "BER",
+  "norwayHome": false,
+  "score": [
+    3,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.national-football-teams.com/matches/report/30595/Bermuda_Norway.html",
+      "title": "www.national-football-teams.com – Norge mot Bermuda, 1992-02-04",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per-Egil Ahlsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kåre Ingebrigtsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frank Strandli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ulf Karlsen",
+      "pos": "OUT"
+    }
+  ]
+}

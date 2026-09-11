@@ -1,0 +1,75 @@
+{
+  "id": "2020-09-07-nir-nor",
+  "date": "2020-09-07",
+  "competition": "friendly",
+  "opponent": "Nord-Irland",
+  "opponentCode": "NIR",
+  "norwayHome": false,
+  "score": [
+    5,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/northern-ireland-v-norway-07-september-2020-366718/",
+      "title": "www.11v11.com – Norge mot Nord-Irland, 2020-09-07",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Haitam Aleesami",
+      "pos": "OUT"
+    },
+    {
+      "name": "Even Hovland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "pos": "OUT"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mathias Normann",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erling Braut Haaland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}

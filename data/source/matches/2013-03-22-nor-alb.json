@@ -1,0 +1,75 @@
+{
+  "id": "2013-03-22-nor-alb",
+  "date": "2013-03-22",
+  "competition": "friendly",
+  "opponent": "Albania",
+  "opponentCode": "ALB",
+  "norwayHome": true,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2013.html",
+      "title": "www.rsssf.org – Norge mot Albania, 2013-03-22",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Søderlund",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Yttergård Jenssen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohammed Abdellaoue",
+      "pos": "OUT"
+    }
+  ]
+}

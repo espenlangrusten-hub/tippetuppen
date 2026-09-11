@@ -1,0 +1,75 @@
+{
+  "id": "1993-09-08-nor-usa",
+  "date": "1993-09-08",
+  "competition": "friendly",
+  "opponent": "USA",
+  "opponentCode": "USA",
+  "norwayHome": true,
+  "score": [
+    1,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-usa-08-september-1993-244664/",
+      "title": "www.11v11.com – Norge mot USA, 1993-09-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}

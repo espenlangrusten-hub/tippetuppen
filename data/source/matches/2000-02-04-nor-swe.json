@@ -1,0 +1,75 @@
+{
+  "id": "2000-02-04-nor-swe",
+  "date": "2000-02-04",
+  "competition": "friendly",
+  "opponent": "Sverige",
+  "opponentCode": "SWE",
+  "norwayHome": true,
+  "score": [
+    1,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-sweden-04-february-2000-267778/",
+      "title": "www.11v11.com – Norge mot Sverige, 2000-02-04",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Morten Bakke",
+      "pos": "GK"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Otto Bragstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mike Kjølø",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roger Nilsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ørjan Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bent André Skammelsrud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roar Strand",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Martin Årst",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Andreas Lund",
+      "pos": "OUT"
+    }
+  ]
+}

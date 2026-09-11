@@ -1,0 +1,75 @@
+{
+  "id": "1997-01-22-nor-nzl",
+  "date": "1997-01-22",
+  "competition": "friendly",
+  "opponent": "New Zealand",
+  "opponentCode": "NZL",
+  "norwayHome": true,
+  "score": [
+    3,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.no/1997/NOR-NZL",
+      "title": "www.rsssf.no – Norge mot New Zealand, 1997-01-22",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Gill",
+      "pos": "GK"
+    },
+    {
+      "name": "Jonny Hanssen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Dan Eggen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Egil Soltvedt",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stig Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Flo",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "1999-09-08-nor-svn",
+  "date": "1999-09-08",
+  "competition": "friendly",
+  "opponent": "Slovenia",
+  "opponentCode": "SVN",
+  "norwayHome": true,
+  "score": [
+    4,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-slovenia-08-september-1999-267234/",
+      "title": "www.11v11.com – Norge mot Slovenia, 1999-09-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Olsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Heggem",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Hoftun",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bent André Skammelsrud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    }
+  ]
+}

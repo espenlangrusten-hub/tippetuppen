@@ -1,0 +1,75 @@
+{
+  "id": "2001-03-28-blr-nor",
+  "date": "2001-03-28",
+  "competition": "friendly",
+  "opponent": "Hviterussland",
+  "opponentCode": "BLR",
+  "norwayHome": false,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/belarus-v-norway-28-march-2001-270968/",
+      "title": "www.11v11.com – Norge mot Hviterussland, 2001-03-28",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Dan Eggen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vidar Riseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tommy Svindal Larsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jo Stuen Tessem",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Lærum Winsnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    }
+  ]
+}

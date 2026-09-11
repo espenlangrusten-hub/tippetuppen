@@ -1,0 +1,75 @@
+{
+  "id": "2016-03-24-est-nor",
+  "date": "2016-03-24",
+  "competition": "friendly",
+  "opponent": "Estland",
+  "opponentCode": "EST",
+  "norwayHome": false,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2016.html",
+      "title": "www.rsssf.org – Norge mot Estland, 2016-03-24",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Martin Linnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Even Hovland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Haitam Aleesami",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per Ciljan Skjelbred",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jo Inge Berget",
+      "pos": "OUT"
+    },
+    {
+      "name": "Valon Berisha",
+      "pos": "OUT"
+    },
+    {
+      "name": "Adama Diomandé",
+      "pos": "OUT"
+    }
+  ]
+}

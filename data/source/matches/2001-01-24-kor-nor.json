@@ -1,0 +1,75 @@
+{
+  "id": "2001-01-24-kor-nor",
+  "date": "2001-01-24",
+  "competition": "friendly",
+  "opponent": "Sør-Korea",
+  "opponentCode": "KOR",
+  "norwayHome": false,
+  "score": [
+    3,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/korea-republic-v-norway-24-january-2001-270436/",
+      "title": "www.11v11.com – Norge mot Sør-Korea, 2001-01-24",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Morten Bakke",
+      "pos": "GK"
+    },
+    {
+      "name": "Alexander Aas",
+      "pos": "OUT"
+    },
+    {
+      "name": "Pa-Modou Kah",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Stensaas",
+      "pos": "OUT"
+    },
+    {
+      "name": "Azar Karadas",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tommy Svindal Larsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Lærum Winsnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Dagfinn Enerly",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thorstein Helstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjarte Lunde Aarsheim",
+      "pos": "OUT"
+    }
+  ]
+}

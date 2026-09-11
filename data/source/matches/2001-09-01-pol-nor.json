@@ -1,0 +1,75 @@
+{
+  "id": "2001-09-01-pol-nor",
+  "date": "2001-09-01",
+  "competition": "friendly",
+  "opponent": "Polen",
+  "opponentCode": "POL",
+  "norwayHome": false,
+  "score": [
+    0,
+    3
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/poland-v-norway-01-september-2001-270978/",
+      "title": "www.11v11.com – Norge mot Polen, 2001-09-01",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roar Strand",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan-Derek Sørensen",
+      "pos": "OUT"
+    }
+  ]
+}

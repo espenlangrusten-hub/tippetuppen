@@ -1,0 +1,75 @@
+{
+  "id": "2009-09-09-nor-mkd",
+  "date": "2009-09-09",
+  "competition": "friendly",
+  "opponent": "Nord-Makedonia",
+  "opponentCode": "MKD",
+  "norwayHome": true,
+  "score": [
+    2,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2009.html",
+      "title": "www.rsssf.org – Norge mot Nord-Makedonia, 2009-09-09",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Jon Knudsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Jon Inge Høiland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil Wæhler",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Helge Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Hauger",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thorstein Helstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    }
+  ]
+}

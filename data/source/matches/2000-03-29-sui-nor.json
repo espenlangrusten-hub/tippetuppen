@@ -1,0 +1,75 @@
+{
+  "id": "2000-03-29-sui-nor",
+  "date": "2000-03-29",
+  "competition": "friendly",
+  "opponent": "Sveits",
+  "opponentCode": "SUI",
+  "norwayHome": false,
+  "score": [
+    2,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/switzerland-v-norway-29-march-2000-268160/",
+      "title": "www.11v11.com – Norge mot Sveits, 2000-03-29",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Otto Bragstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bent André Skammelsrud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    }
+  ]
+}

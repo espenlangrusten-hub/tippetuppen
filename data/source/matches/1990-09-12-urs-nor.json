@@ -1,0 +1,75 @@
+{
+  "id": "1990-09-12-urs-nor",
+  "date": "1990-09-12",
+  "competition": "friendly",
+  "opponent": "Sovjetunionen",
+  "opponentCode": "URS",
+  "norwayHome": false,
+  "score": [
+    0,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesu/ussr-intres9099.html",
+      "title": "www.rsssf.org – Norge mot Sovjetunionen, 1990-09-12",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Pål Lydersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ørjan Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per-Egil Ahlsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tom Gulbrandsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jørn Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "OUT"
+    }
+  ]
+}

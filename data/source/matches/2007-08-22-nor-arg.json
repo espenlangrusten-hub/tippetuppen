@@ -1,0 +1,75 @@
+{
+  "id": "2007-08-22-nor-arg",
+  "date": "2007-08-22",
+  "competition": "friendly",
+  "opponent": "Argentina",
+  "opponentCode": "ARG",
+  "norwayHome": true,
+  "score": [
+    2,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697600",
+      "title": "www.fotball.no – Norge mot Argentina, 2007-08-22",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Håkon Eikemo Opdal",
+      "pos": "GK"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jarl-André Storbæk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Helge Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristofer Krüger Hæstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Daniel Omoya Braaten",
+      "pos": "OUT"
+    }
+  ]
+}

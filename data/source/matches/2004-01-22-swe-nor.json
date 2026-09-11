@@ -1,0 +1,75 @@
+{
+  "id": "2004-01-22-swe-nor",
+  "date": "2004-01-22",
+  "competition": "friendly",
+  "opponent": "Sverige",
+  "opponentCode": "SWE",
+  "norwayHome": false,
+  "score": [
+    3,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2004.html",
+      "title": "www.rsssf.org – Norge mot Sverige, 2004-01-22",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Terje Stenehjem Skjeldestad",
+      "pos": "GK"
+    },
+    {
+      "name": "Jon Inge Høiland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vidar Riseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Stensaas",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Gunnar Solli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Magne Hoset",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan-Derek Sørensen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Harald Brattbakk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Flo",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "2019-03-23-esp-nor",
+  "date": "2019-03-23",
+  "competition": "friendly",
+  "opponent": "Spania",
+  "opponentCode": "ESP",
+  "norwayHome": false,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2019.html",
+      "title": "www.rsssf.org – Norge mot Spania, 2019-03-23",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "pos": "OUT"
+    },
+    {
+      "name": "Haitam Aleesami",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Kristian Selnæs",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Joshua King",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    }
+  ]
+}

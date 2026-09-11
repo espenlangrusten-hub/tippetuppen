@@ -408,7 +408,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       {showIntro && (
         <Modal onClose={dismissIntro} title="Slik spiller du Mangler XI">
           <ol className="list-decimal space-y-2 pl-5 text-sm text-mist">
-            <li>Dette er Norges startellever fra en ekte landskamp. Du ser motstander, resultat og posisjoner – men ikke navnene.</li>
+            <li>Dette er Norges startellever fra en ekte landskamp. Du ser motstander og resultat; posisjoner vises når de er dokumentert i kilden.</li>
             <li>Trykk på en drakt og skriv etternavnet bokstav for bokstav. Prikkene viser hvor mange bokstaver navnet har.</li>
             <li>
               Etter hvert forsøk farges bokstavene: <span className="rounded bg-correct px-1 text-ink">grønn</span> riktig plass, <span className="rounded bg-present px-1 text-ink">gul</span> finnes i navnet, grå finnes ikke.

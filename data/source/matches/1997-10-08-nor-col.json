@@ -1,0 +1,75 @@
+{
+  "id": "1997-10-08-nor-col",
+  "date": "1997-10-08",
+  "competition": "friendly",
+  "opponent": "Colombia",
+  "opponentCode": "COL",
+  "norwayHome": true,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.no/1997/NOR-COL",
+      "title": "www.rsssf.no – Norge mot Colombia, 1997-10-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Gill",
+      "pos": "GK"
+    },
+    {
+      "name": "Bjørn Tore Kvarme",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Hoftun",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bent André Skammelsrud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Viljugrein",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    }
+  ]
+}

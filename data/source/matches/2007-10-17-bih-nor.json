@@ -1,0 +1,75 @@
+{
+  "id": "2007-10-17-bih-nor",
+  "date": "2007-10-17",
+  "competition": "friendly",
+  "opponent": "Bosnia-Hercegovina",
+  "opponentCode": "BIH",
+  "norwayHome": false,
+  "score": [
+    2,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2007.html",
+      "title": "www.rsssf.org – Norge mot Bosnia-Hercegovina, 2007-10-17",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Håkon Eikemo Opdal",
+      "pos": "GK"
+    },
+    {
+      "name": "Jarl-André Storbæk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Hagen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Gunnar Solli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Helge Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thorstein Helstad",
+      "pos": "OUT"
+    }
+  ]
+}

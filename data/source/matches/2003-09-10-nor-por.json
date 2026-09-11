@@ -1,0 +1,75 @@
+{
+  "id": "2003-09-10-nor-por",
+  "date": "2003-09-10",
+  "competition": "friendly",
+  "opponent": "Portugal",
+  "opponentCode": "POR",
+  "norwayHome": true,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697586",
+      "title": "www.fotball.no – Norge mot Portugal, 2003-09-10",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Espen Johnsen",
+      "pos": "GK"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Claus Lundekvam",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Andre Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Harald Brattbakk",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "1991-05-23-nor-rou",
+  "date": "1991-05-23",
+  "competition": "friendly",
+  "opponent": "Romania",
+  "opponentCode": "ROU",
+  "norwayHome": true,
+  "score": [
+    1,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/intldetails/1991e1.html",
+      "title": "www.rsssf.org – Norge mot Romania, 1991-05-23",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Pål Lydersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per-Egil Ahlsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}

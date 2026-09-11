@@ -1,0 +1,75 @@
+{
+  "id": "2017-10-08-nor-nir",
+  "date": "2017-10-08",
+  "competition": "friendly",
+  "opponent": "Nord-Irland",
+  "opponentCode": "NIR",
+  "norwayHome": true,
+  "score": [
+    1,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2017.html",
+      "title": "www.rsssf.org – Norge mot Nord-Irland, 2017-10-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Ørjan Håskjold Nyland",
+      "pos": "GK"
+    },
+    {
+      "name": "Jonas Svensson",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Birger Meling",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Sander Berge",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Søderlund",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "2009-03-28-rsa-nor",
+  "date": "2009-03-28",
+  "competition": "friendly",
+  "opponent": "Sør-Afrika",
+  "opponentCode": "RSA",
+  "norwayHome": false,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2009.html",
+      "title": "www.rsssf.org – Norge mot Sør-Afrika, 2009-03-28",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Jon Knudsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Daniel Omoya Braaten",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Helge Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Andre Huseklepp",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohammed Abdellaoue",
+      "pos": "OUT"
+    }
+  ]
+}

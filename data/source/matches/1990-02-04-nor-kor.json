@@ -1,0 +1,75 @@
+{
+  "id": "1990-02-04-nor-kor",
+  "date": "1990-02-04",
+  "competition": "friendly",
+  "opponent": "Sør-Korea",
+  "opponentCode": "KOR",
+  "norwayHome": true,
+  "score": [
+    3,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.national-football-teams.com/matches/report/30872/Norway_South_Korea.html",
+      "title": "www.national-football-teams.com – Norge mot Sør-Korea, 1990-02-04",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ørjan Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ola By Rise",
+      "pos": "GK"
+    },
+    {
+      "name": "Jørn Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Rune Tangen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Halvor Halvorsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Hugo Hansen",
+      "pos": "OUT"
+    }
+  ]
+}

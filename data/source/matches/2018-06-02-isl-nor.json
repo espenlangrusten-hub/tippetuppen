@@ -1,0 +1,75 @@
+{
+  "id": "2018-06-02-isl-nor",
+  "date": "2018-06-02",
+  "competition": "friendly",
+  "opponent": "Island",
+  "opponentCode": "ISL",
+  "norwayHome": false,
+  "score": [
+    3,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2018.html",
+      "title": "www.rsssf.org – Norge mot Island, 2018-06-02",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Jonas Svensson",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristoffer Ajer",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Linnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Sander Berge",
+      "pos": "OUT"
+    },
+    {
+      "name": "Iver Fossum",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bjørn Maars Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tarik Elyounoussi",
+      "pos": "OUT"
+    }
+  ]
+}

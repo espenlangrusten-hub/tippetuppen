@@ -1,0 +1,75 @@
+{
+  "id": "2002-10-16-nor-bih",
+  "date": "2002-10-16",
+  "competition": "friendly",
+  "opponent": "Bosnia-Hercegovina",
+  "opponentCode": "BIH",
+  "norwayHome": true,
+  "score": [
+    2,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697549",
+      "title": "www.fotball.no – Norge mot Bosnia-Hercegovina, 2002-10-16",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Olsen",
+      "pos": "GK"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Claus Lundekvam",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Stille Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Eirik Bakke",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "1997-09-10-nor-sui",
+  "date": "1997-09-10",
+  "competition": "friendly",
+  "opponent": "Sveits",
+  "opponentCode": "SUI",
+  "norwayHome": true,
+  "score": [
+    5,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.no/1997/NOR-SUI",
+      "title": "www.rsssf.no – Norge mot Sveits, 1997-09-10",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Dan Eggen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jahn Ivar Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT"
+    }
+  ]
+}

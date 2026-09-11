@@ -1,0 +1,75 @@
+{
+  "id": "1995-09-06-cze-nor",
+  "date": "1995-09-06",
+  "competition": "friendly",
+  "opponent": "Tsjekkia",
+  "opponentCode": "CZE",
+  "norwayHome": false,
+  "score": [
+    0,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/czech-republic-v-norway-06-september-1995-245990/",
+      "title": "www.11v11.com – Norge mot Tsjekkia, 1995-09-06",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Erik Thorstvedt",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erland Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "2005-01-28-jor-nor",
+  "date": "2005-01-28",
+  "competition": "friendly",
+  "opponent": "Jordan",
+  "opponentCode": "JOR",
+  "norwayHome": false,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698425",
+      "title": "www.fotball.no – Norge mot Jordan, 2005-01-28",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Espen Johnsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Jarl-André Storbæk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ragnvald Soma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Kippe",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erlend Kaldestad Hanstveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thomas Holm",
+      "pos": "OUT"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ardian Gashi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Raymond Kvisvik",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bengt Henning Sæternes",
+      "pos": "OUT"
+    }
+  ]
+}
