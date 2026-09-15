@@ -1,0 +1,54 @@
+{
+  "id": "2026-06-26-nor-fra",
+  "date": "2026-06-26",
+  "competition": "world-cup",
+  "stage": "VM 2026, gruppe I",
+  "opponent": "Frankrike",
+  "opponentCode": "FRA",
+  "norwayHome": true,
+  "score": [1, 4],
+  "venue": "Boston Stadium",
+  "city": "Boston",
+  "manager": "Ståle Solbakken",
+  "formation": "4-3-3",
+  "importance": 4,
+  "tags": ["vm", "vm-2026"],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=9154187",
+      "title": "Frankrike - Norge - 26.06.2026 21:00 - Norges Fotballforbund",
+      "kind": "web",
+      "accessed": "2026-09-15",
+      "note": "NFFs offisielle kampside dokumenterer resultat, arena, norsk startoppstilling, draktnumre, kaptein og målscorere."
+    },
+    {
+      "url": "https://www.eurosport.no/fotball/vm/2026/live-norge-frankrike_mtc1579465/live-lineup.shtml",
+      "title": "Norge - Frankrike lagoppstilling - VM 2026 - Eurosport",
+      "kind": "web",
+      "accessed": "2026-09-15",
+      "note": "Uavhengig kontroll av startellever, formasjon, resultat og målscorere."
+    }
+  ],
+  "notes": "Frankrike vant gruppefinalen 4–1. Norge hvilte ti av spillerne som startet den foregående kampen mot Senegal.",
+  "lineup": [
+    { "name": "Egil Selvik", "no": 13, "pos": "GK" },
+    { "name": "Fredrik Aursnes", "no": 14, "pos": "RB" },
+    { "name": "Leo Østigård", "no": 4, "pos": "CB" },
+    { "name": "Henrik Sælebakke Falchener", "no": 25, "pos": "CB" },
+    { "name": "Fredrik Bjørkan", "no": 15, "pos": "LB" },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM", "captain": true },
+    { "name": "Kristian Thorstvedt", "no": 18, "pos": "CM" },
+    { "name": "Thelo Aasgaard", "no": 19, "pos": "CM" },
+    { "name": "Oscar Bobb", "no": 22, "pos": "RW" },
+    { "name": "Jørgen Strand Larsen", "no": 11, "pos": "CF" },
+    { "name": "Andreas Schjelderup", "no": 21, "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "opponent", "scorer": "Ousmane Dembélé", "minute": 7 },
+    { "team": "opponent", "scorer": "Ousmane Dembélé", "minute": 20 },
+    { "team": "norway", "name": "Thelo Aasgaard", "minute": 21 },
+    { "team": "opponent", "scorer": "Ousmane Dembélé", "minute": 32 },
+    { "team": "opponent", "scorer": "Désiré Doué", "minute": 90 }
+  ]
+}

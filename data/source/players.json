@@ -216,6 +216,27 @@
     "fame": 3
   },
   {
+    "id": "henrik-saelebakke-falchener",
+    "fullName": "Henrik Sælebakke Falchener",
+    "displayName": "Henrik Falchener",
+    "surname": "Falchener",
+    "aliases": [
+      "Henrik Falchener",
+      "Sælebakke Falchener"
+    ],
+    "fame": 1,
+    "status": "verified",
+    "sources": [
+      {
+        "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=9154187",
+        "title": "Frankrike - Norge - 26.06.2026 21:00 - Norges Fotballforbund",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "NFF oppgir fullt navn i Norges startoppstilling."
+      }
+    ]
+  },
+  {
     "id": "gunnar-halle",
     "fullName": "Gunnar Halle",
     "surname": "Halle",
