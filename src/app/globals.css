@@ -455,7 +455,7 @@ body {
 .kj-fact { margin-top: 0.4rem; font-family: var(--font-sans) !important; font-size: 0.85rem !important; font-weight: 400 !important; color: #4a4568; }
 
 /* Countdown */
-.kj-clock { position: absolute; top: 0; right: 0; display: grid; place-items: center; width: 3.25rem; height: 3.25rem; }
+.kj-clock { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; margin: 0 auto 0.4rem; border-radius: 50%; background: rgb(12 8 32 / 0.5); border: 3px solid rgb(255 255 255 / 0.25); }
 .kj-clock svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
 .kj-clock-track { fill: rgb(12 8 32 / 0.5); stroke: rgb(255 255 255 / 0.22); stroke-width: 4; }
 .kj-clock-hand { fill: none; stroke: #7fe0a8; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 900ms linear; }
@@ -464,19 +464,52 @@ body {
 .kj-clock-low span { color: #ffb4b4; animation: kj-pulse 700ms ease-in-out infinite; }
 @keyframes kj-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
 
-/* Podiums */
-.kj-podiums { display: grid; grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr)); gap: 0.5rem; align-items: end; }
-.kj-podium { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
-.kj-podium-score { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: #bff0ff; text-shadow: 0 0 12px rgb(120 220 255 / 0.55); }
-.kj-podium-box { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; width: 100%; padding: 0.55rem 0.35rem 0.7rem; border-radius: 0.6rem 0.6rem 0.3rem 0.3rem; background: linear-gradient(180deg, #f6b44a, #e08a2c); color: #2a1a05; box-shadow: inset 0 -4px 0 rgb(0 0 0 / 0.18); }
-.kj-podium-seat { display: grid; place-items: center; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: #2b2560; color: #fff; font-family: var(--font-display); font-weight: 700; }
-.kj-podium-name { font-size: 0.8rem; font-weight: 600; text-align: center; overflow-wrap: anywhere; }
-.kj-podium-name em { font-style: normal; opacity: 0.7; }
-.kj-podium-empty .kj-podium-box { background: rgb(255 255 255 / 0.12); color: rgb(255 255 255 / 0.6); box-shadow: none; }
-.kj-podium-buzzed .kj-podium-box { background: linear-gradient(180deg, #8ef0b2, #43c97e); }
-.kj-podium-buzzed .kj-podium-score { color: #b9ffd2; }
-.kj-podium-waiting .kj-podium-box { animation: kj-ready 1.6s ease-in-out infinite; }
-@keyframes kj-ready { 0%, 100% { box-shadow: inset 0 -4px 0 rgb(0 0 0 / 0.18); } 50% { box-shadow: inset 0 -4px 0 rgb(0 0 0 / 0.18), 0 0 18px rgb(255 220 130 / 0.6); } }
+/* Contestants: four figures on a stage, each with a scoreboard over their head */
+/* One row, always: four contestants wrapping onto a second row split a
+   scoreboard from the player it belongs to. */
+.kj-contestants { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.35rem; align-items: end; margin-top: 2.2rem; }
+.kj-seat { position: relative; display: flex; flex-direction: column; align-items: center; }
+.kj-seat-empty { min-height: 7rem; display: grid; place-items: center; border: 2px dashed rgb(255 255 255 / 0.22); border-radius: 0.9rem; color: rgb(255 255 255 / 0.55); font-size: 0.8rem; }
+.kj-contestant { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; width: 100%; }
+.kj-figure { width: 100%; max-width: 5.5rem; height: auto; }
+.kj-arm-up { display: none; }
+.kj-contestant-buzzed .kj-arm-down { display: none; }
+.kj-contestant-buzzed .kj-arm-up { display: block; animation: kj-pop 320ms ease-out; }
+@keyframes kj-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.kj-scoreboard { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0.2rem 0.3rem; border: 2px solid #12204a; border-radius: 0.5rem; background: linear-gradient(180deg, #17306b, #0d1c44); box-shadow: 0 0 14px rgb(90 170 255 / 0.28); }
+.kj-scoreboard-name { max-width: 100%; font-size: 0.64rem; font-weight: 600; text-align: center; overflow-wrap: anywhere; }
+.kj-scoreboard-name em { font-style: normal; opacity: 0.65; }
+.kj-scoreboard-score { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; line-height: 1; color: #7fe0ff; text-shadow: 0 0 10px rgb(120 220 255 / 0.65); }
+.kj-contestant-buzzed .kj-scoreboard { background: linear-gradient(180deg, #1c6b42, #0f4429); box-shadow: 0 0 20px rgb(120 240 170 / 0.6); }
+.kj-contestant-ready .kj-figure { animation: kj-bob 1.8s ease-in-out infinite; }
+@keyframes kj-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+/* What a contestant said, over their head */
+.kj-say { position: absolute; bottom: calc(100% + 0.1rem); z-index: 4; max-width: 8rem; margin-bottom: 0.2rem; padding: 0.35rem 0.55rem; border-radius: 0.7rem; background: #f4f1ea; color: #14112b; font-size: 0.78rem; font-weight: 600; text-align: center; overflow-wrap: anywhere; box-shadow: 0 6px 18px rgb(0 0 0 / 0.3); }
+.kj-say::after { content: ""; position: absolute; left: 50%; bottom: -0.45rem; margin-left: -0.35rem; border: 0.35rem solid transparent; border-top-color: #f4f1ea; }
+
+/* Kahoot-style sweep between questions */
+.kj-sweep { height: 0.5rem; border-radius: 99px; background: rgb(12 8 32 / 0.45); overflow: hidden; }
+.kj-sweep-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #7fe0a8, #f2c14e, #ff6b6b); animation: kj-sweep linear forwards; }
+@keyframes kj-sweep { from { width: 100%; } to { width: 0; } }
+
+/* The big clock everybody watches once someone has the buzzer */
+.kj-bigclock { position: relative; display: grid; place-items: center; width: 8.5rem; height: 8.5rem; margin: 0 auto; }
+.kj-bigclock svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.kj-bigclock-track { fill: rgb(12 8 32 / 0.55); stroke: rgb(255 255 255 / 0.2); stroke-width: 9; }
+.kj-bigclock-hand { fill: none; stroke: #7fe0a8; stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 900ms linear; }
+.kj-bigclock span { position: relative; font-family: var(--font-display); font-size: 3.4rem; font-weight: 700; }
+.kj-bigclock-low .kj-bigclock-hand { stroke: #ff6b6b; }
+.kj-bigclock-low span { color: #ffb4b4; animation: kj-pulse 640ms ease-in-out infinite; }
+
+/* Verdict across the whole screen */
+/* A scrim, not a blur: blurring the board hid the very scores the verdict is about. */
+.kj-verdict { position: absolute; inset: 0; z-index: 6; display: grid; place-items: center; padding-bottom: 20%; pointer-events: none; background: rgb(10 5 30 / 0.32); animation: kj-verdict-out 3.2s forwards; }
+@keyframes kj-verdict-out { 0%, 80% { opacity: 1; } 100% { opacity: 0; } }
+.kj-verdict span { font-family: var(--font-display); font-size: clamp(2.6rem, 14vw, 5rem); font-weight: 700; letter-spacing: 0.02em; text-align: center; animation: kj-flash 480ms ease-in-out 6; }
+.kj-verdict-right span { color: #56f09a; text-shadow: 0 0 26px rgb(70 240 150 / 0.85), 0 6px 0 #0d3f26; }
+.kj-verdict-wrong span { color: #ff5a67; text-shadow: 0 0 26px rgb(255 90 103 / 0.85), 0 6px 0 #4d0d14; }
+@keyframes kj-flash { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.75; transform: scale(0.94); } }
 
 /* The buzzer */
 .kj-buzzer { width: 100%; min-height: 7rem; border: none; border-radius: 1.25rem; background: radial-gradient(circle at 50% 30%, #ff6b6b, #c81e3a); color: #fff; font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; letter-spacing: 0.08em; cursor: pointer; box-shadow: 0 10px 0 #8d1226, 0 18px 30px rgb(0 0 0 / 0.35); transition: transform 60ms ease, box-shadow 60ms ease; }
@@ -488,3 +521,8 @@ body {
 }
 .kj-choice { display: flex; flex-direction: column; gap: 0.6rem; }
 .kj-choice .kj-form { background: rgb(12 8 32 / 0.42); }
+
+.kj-heading { font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; text-align: center; text-transform: uppercase; }
+.kj-logo-mid { width: 7rem; height: 7rem; margin: 0 auto; }
+.kj-code-big { padding: 1rem; border-radius: 1rem; background: rgb(12 8 32 / 0.5); font-family: var(--font-display); font-size: 3.6rem; font-weight: 700; letter-spacing: 0.3em; text-align: center; text-indent: 0.3em; }
+.kj-controls { display: flex; flex-direction: column; gap: 0.5rem; }
