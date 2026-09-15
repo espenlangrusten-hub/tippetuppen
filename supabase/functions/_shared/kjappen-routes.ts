@@ -13,7 +13,7 @@
 import { sql } from "./db.ts";
 import { bad, json } from "./http.ts";
 import {
-  MAX_PLAYERS, QUESTIONS_PER_GAME, isCode, isCorrectAnswer, newCode, secondsLeft,
+  MAX_PLAYERS, QUESTIONS_PER_GAME, dealAvatar, isCode, isCorrectAnswer, newCode, secondsLeft,
   settle, start, buzz, answer as answerStep, winners,
   type GameState, type Outcome, type Phase,
 } from "./kjappen.ts";
@@ -35,7 +35,7 @@ type GameRow = {
   ends_at: string | null;
   last_outcome: (Outcome & { guess?: string }) | null;
 };
-type PlayerRow = { id: string; code: string; name: string; seat: number; score: number; host: boolean };
+type PlayerRow = { id: string; code: string; name: string; seat: number; avatar: number; score: number; host: boolean };
 type QuestionRow = { id: string; prompt: string; answer: string; aliases: string[]; fact: string | null };
 
 const stateOf = (g: GameRow): GameState => ({
@@ -51,7 +51,7 @@ const cleanName = (value: unknown) =>
 /** Public view of a game. The answer is included only once the round is over. */
 function view(game: GameRow, players: PlayerRow[], question: QuestionRow | null, me: string | null, now: number) {
   const roster = players
-    .map((p) => ({ id: p.id, name: p.name, seat: p.seat, score: p.score, host: p.host }))
+    .map((p) => ({ id: p.id, name: p.name, seat: p.seat, avatar: p.avatar, score: p.score, host: p.host }))
     .sort((a, b) => a.seat - b.seat);
   const revealing = game.phase === "reveal" || game.phase === "done";
   return {
@@ -122,8 +122,8 @@ export async function kjappenRoute(req: Request, action: string) {
         on conflict (code) do nothing returning *`;
       if (!made.length) continue;
       const id = crypto.randomUUID();
-      await sql()`insert into tippetuppen.kjappen_players (id, code, name, seat, host)
-        values (${id}, ${code}, ${name}, 1, true)`;
+      await sql()`insert into tippetuppen.kjappen_players (id, code, name, seat, avatar, host)
+        values (${id}, ${code}, ${name}, 1, ${dealAvatar([])}, true)`;
       const players = await sql()<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
       return json({ ...view(made[0], players, null, id, Date.now()), playerId: id });
     }
@@ -145,7 +145,11 @@ export async function kjappenRoute(req: Request, action: string) {
       if (players.length >= MAX_PLAYERS) return bad(`Det er plass til ${MAX_PLAYERS} spillere`);
       const seat = (players[players.length - 1]?.seat ?? 0) + 1;
       const id = crypto.randomUUID();
-      await tx`insert into tippetuppen.kjappen_players (id, code, name, seat) values (${id}, ${code}, ${name}, ${seat})`;
+      // Read inside the same locked transaction as the seat, so two people joining at
+      // once cannot be dealt the same face.
+      const avatar = dealAvatar(players.map((p) => p.avatar));
+      await tx`insert into tippetuppen.kjappen_players (id, code, name, seat, avatar)
+        values (${id}, ${code}, ${name}, ${seat}, ${avatar})`;
       const after = await tx<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
       return json({ ...view(game, after, null, id, Date.now()), playerId: id });
     });

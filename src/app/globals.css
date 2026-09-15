@@ -2,6 +2,8 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource/barlow-condensed/600.css";
 @import "@fontsource/barlow-condensed/700.css";
+/* Kjappen only: the arcade face the show is lettered in. One weight, latin only. */
+@import "@fontsource/press-start-2p";
 
 @theme {
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -419,110 +421,670 @@ body {
   .home-game-card, .home-streak { transition: none; }
 }
 
+
 /* ---------------------------------------------------------------------------
-   Kjappen: the quiz show. Scoped to .kj-* so it cannot leak into the daily
-   games, which are dark blue where this one is stage purple.
+   Kjappen: the quiz show.
+
+   A television set, not a page. Everything is scoped to .kj-* so none of it can
+   reach the daily games, which are dark blue and quiet where this one is purple
+   and lit. The rule throughout: what exists as artwork (logo, host, contestant
+   portraits, front row) is used as artwork, and CSS builds the set around it -
+   the neon, the podiums, the board and the buzzer all have to stretch to the
+   screen and light up when the game says so, which a picture cannot do.
    --------------------------------------------------------------------------- */
-.kj-shell { position: relative; min-height: 32rem; overflow: hidden; color: #fff; }
-.kj-shell-entry { min-height: 100dvh; }
-.kj-backdrop { position: absolute; inset: 0; width: 100%; height: 100%; }
-.kj-front { position: relative; display: flex; flex-direction: column; gap: 1rem; max-width: 34rem; margin: 0 auto; padding: 1rem 1rem 2rem; }
 
-.kj-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-.kj-logo { width: 12rem; height: 12rem; margin: 0 auto; }
-.kj-logo-small { width: 3.5rem; height: 3.5rem; }
-.kj-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
-.kj-code-chip { padding: 0.3rem 0.7rem; border-radius: 99px; background: rgb(255 255 255 / 0.16); font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.12em; }
-.kj-round { font-size: 0.8rem; color: rgb(255 255 255 / 0.72); }
+/* The show is a set, not an article, so it leaves the page's reading column and
+   runs to both edges. Scoped by :has() rather than by a body class, because the
+   layout that wraps every page is shared with the daily games. */
+main:has(.kj-shell) { max-width: none; padding: 0; }
 
-.kj-entry { align-items: stretch; justify-content: center; min-height: 100dvh; }
-.kj-tagline { margin-top: -0.5rem; text-align: center; color: rgb(255 255 255 / 0.82); }
-.kj-form { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.9rem; border-radius: 1rem; background: rgb(12 8 32 / 0.42); }
-.kj-label { font-size: 0.85rem; color: rgb(255 255 255 / 0.78); }
-.kj-code-input { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.35em; text-align: center; text-transform: uppercase; }
-.kj-error { padding: 0.6rem 0.8rem; border-radius: 0.75rem; background: rgb(230 57 70 / 0.24); }
-.kj-hint { text-align: center; color: rgb(255 255 255 / 0.85); }
-.kj-rules { text-align: center; font-size: 0.78rem; color: rgb(255 255 255 / 0.6); }
+.kj-shell {
+  --kj-navy: #120a3a;
+  --kj-navy-2: #1b0f57;
+  --kj-purple: #3a1b8f;
+  --kj-purple-2: #5626c7;
+  --kj-cyan: #29e0ff;
+  --kj-blue: #2b8cff;
+  --kj-magenta: #ff2fa0;
+  --kj-pink: #ff5ec7;
+  --kj-gold: #ffd24a;
+  --kj-orange: #ff8a1e;
+  --kj-red: #e8172c;
+  --kj-red-2: #ff4d5e;
+  --kj-green: #37e07a;
+  --kj-pixel: "Press Start 2P", var(--font-display), monospace;
 
-/* Host and speech bubble */
-.kj-stage { position: relative; display: grid; grid-template-columns: 8rem 1fr; align-items: center; gap: 0.25rem; min-height: 12rem; }
-.kj-host { width: 8rem; height: 12rem; }
-.kj-host-talking .kj-mouth { animation: kj-talk 620ms ease-in-out infinite; transform-origin: 100px 80px; }
-@keyframes kj-talk { 0%, 100% { transform: scaleY(0.7); } 50% { transform: scaleY(1.25); } }
-.kj-bubble { position: relative; align-self: center; padding: 0.9rem 1rem; border-radius: 1rem; background: #f4f1ea; color: #14112b; box-shadow: 0 10px 30px rgb(0 0 0 / 0.28); }
-.kj-bubble p { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; line-height: 1.15; }
-.kj-bubble::before { content: ""; position: absolute; left: -0.6rem; bottom: 1.4rem; border: 0.6rem solid transparent; border-right-color: #f4f1ea; }
-.kj-fact { margin-top: 0.4rem; font-family: var(--font-sans) !important; font-size: 0.85rem !important; font-weight: 400 !important; color: #4a4568; }
-
-/* Countdown */
-.kj-clock { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; margin: 0 auto 0.4rem; border-radius: 50%; background: rgb(12 8 32 / 0.5); border: 3px solid rgb(255 255 255 / 0.25); }
-.kj-clock svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
-.kj-clock-track { fill: rgb(12 8 32 / 0.5); stroke: rgb(255 255 255 / 0.22); stroke-width: 4; }
-.kj-clock-hand { fill: none; stroke: #7fe0a8; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 900ms linear; }
-.kj-clock span { position: relative; font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; }
-.kj-clock-low .kj-clock-hand { stroke: #ff6b6b; }
-.kj-clock-low span { color: #ffb4b4; animation: kj-pulse 700ms ease-in-out infinite; }
-@keyframes kj-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
-
-/* Contestants: four figures on a stage, each with a scoreboard over their head */
-/* One row, always: four contestants wrapping onto a second row split a
-   scoreboard from the player it belongs to. */
-.kj-contestants { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0.35rem; align-items: end; margin-top: 2.2rem; }
-.kj-seat { position: relative; display: flex; flex-direction: column; align-items: center; }
-.kj-seat-empty { min-height: 7rem; display: grid; place-items: center; border: 2px dashed rgb(255 255 255 / 0.22); border-radius: 0.9rem; color: rgb(255 255 255 / 0.55); font-size: 0.8rem; }
-.kj-contestant { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; width: 100%; }
-.kj-figure { width: 100%; max-width: 5.5rem; height: auto; }
-.kj-arm-up { display: none; }
-.kj-contestant-buzzed .kj-arm-down { display: none; }
-.kj-contestant-buzzed .kj-arm-up { display: block; animation: kj-pop 320ms ease-out; }
-@keyframes kj-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.kj-scoreboard { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0.2rem 0.3rem; border: 2px solid #12204a; border-radius: 0.5rem; background: linear-gradient(180deg, #17306b, #0d1c44); box-shadow: 0 0 14px rgb(90 170 255 / 0.28); }
-.kj-scoreboard-name { max-width: 100%; font-size: 0.64rem; font-weight: 600; text-align: center; overflow-wrap: anywhere; }
-.kj-scoreboard-name em { font-style: normal; opacity: 0.65; }
-.kj-scoreboard-score { font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; line-height: 1; color: #7fe0ff; text-shadow: 0 0 10px rgb(120 220 255 / 0.65); }
-.kj-contestant-buzzed .kj-scoreboard { background: linear-gradient(180deg, #1c6b42, #0f4429); box-shadow: 0 0 20px rgb(120 240 170 / 0.6); }
-.kj-contestant-ready .kj-figure { animation: kj-bob 1.8s ease-in-out infinite; }
-@keyframes kj-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-
-/* What a contestant said, over their head */
-.kj-say { position: absolute; bottom: calc(100% + 0.1rem); z-index: 4; max-width: 8rem; margin-bottom: 0.2rem; padding: 0.35rem 0.55rem; border-radius: 0.7rem; background: #f4f1ea; color: #14112b; font-size: 0.78rem; font-weight: 600; text-align: center; overflow-wrap: anywhere; box-shadow: 0 6px 18px rgb(0 0 0 / 0.3); }
-.kj-say::after { content: ""; position: absolute; left: 50%; bottom: -0.45rem; margin-left: -0.35rem; border: 0.35rem solid transparent; border-top-color: #f4f1ea; }
-
-/* Kahoot-style sweep between questions */
-.kj-sweep { height: 0.5rem; border-radius: 99px; background: rgb(12 8 32 / 0.45); overflow: hidden; }
-.kj-sweep-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #7fe0a8, #f2c14e, #ff6b6b); animation: kj-sweep linear forwards; }
-@keyframes kj-sweep { from { width: 100%; } to { width: 0; } }
-
-/* The big clock everybody watches once someone has the buzzer */
-.kj-bigclock { position: relative; display: grid; place-items: center; width: 8.5rem; height: 8.5rem; margin: 0 auto; }
-.kj-bigclock svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
-.kj-bigclock-track { fill: rgb(12 8 32 / 0.55); stroke: rgb(255 255 255 / 0.2); stroke-width: 9; }
-.kj-bigclock-hand { fill: none; stroke: #7fe0a8; stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 900ms linear; }
-.kj-bigclock span { position: relative; font-family: var(--font-display); font-size: 3.4rem; font-weight: 700; }
-.kj-bigclock-low .kj-bigclock-hand { stroke: #ff6b6b; }
-.kj-bigclock-low span { color: #ffb4b4; animation: kj-pulse 640ms ease-in-out infinite; }
-
-/* Verdict across the whole screen */
-/* A scrim, not a blur: blurring the board hid the very scores the verdict is about. */
-.kj-verdict { position: absolute; inset: 0; z-index: 6; display: grid; place-items: center; padding-bottom: 20%; pointer-events: none; background: rgb(10 5 30 / 0.32); animation: kj-verdict-out 3.2s forwards; }
-@keyframes kj-verdict-out { 0%, 80% { opacity: 1; } 100% { opacity: 0; } }
-.kj-verdict span { font-family: var(--font-display); font-size: clamp(2.6rem, 14vw, 5rem); font-weight: 700; letter-spacing: 0.02em; text-align: center; animation: kj-flash 480ms ease-in-out 6; }
-.kj-verdict-right span { color: #56f09a; text-shadow: 0 0 26px rgb(70 240 150 / 0.85), 0 6px 0 #0d3f26; }
-.kj-verdict-wrong span { color: #ff5a67; text-shadow: 0 0 26px rgb(255 90 103 / 0.85), 0 6px 0 #4d0d14; }
-@keyframes kj-flash { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.75; transform: scale(0.94); } }
-
-/* The buzzer */
-.kj-buzzer { width: 100%; min-height: 7rem; border: none; border-radius: 1.25rem; background: radial-gradient(circle at 50% 30%, #ff6b6b, #c81e3a); color: #fff; font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; letter-spacing: 0.08em; cursor: pointer; box-shadow: 0 10px 0 #8d1226, 0 18px 30px rgb(0 0 0 / 0.35); transition: transform 60ms ease, box-shadow 60ms ease; }
-.kj-buzzer:active { transform: translateY(8px); box-shadow: 0 2px 0 #8d1226, 0 6px 14px rgb(0 0 0 / 0.35); }
-.kj-buzzer:disabled { opacity: 0.75; cursor: wait; }
-
-@media (prefers-reduced-motion: reduce) {
-  .kj-host-talking .kj-mouth, .kj-podium-waiting .kj-podium-box, .kj-clock-low span { animation: none; }
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  overflow: hidden;
+  color: #fff;
+  background: var(--kj-navy);
+  font-family: var(--font-sans);
 }
-.kj-choice { display: flex; flex-direction: column; gap: 0.6rem; }
-.kj-choice .kj-form { background: rgb(12 8 32 / 0.42); }
 
-.kj-heading { font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; text-align: center; text-transform: uppercase; }
-.kj-logo-mid { width: 7rem; height: 7rem; margin: 0 auto; }
-.kj-code-big { padding: 0.6rem; border-radius: 0.9rem; background: rgb(12 8 32 / 0.5); font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; letter-spacing: 0.3em; text-align: center; text-indent: 0.3em; }
-.kj-controls { display: flex; flex-direction: column; gap: 0.5rem; }
+/* The set ------------------------------------------------------------------ */
+
+.kj-set { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+
+/* Rays fanning out from behind the logo. */
+.kj-set-rays {
+  position: absolute; inset: -20% -10% 0;
+  background: repeating-conic-gradient(from 0deg at 50% 26%,
+    rgb(255 255 255 / 0.07) 0deg 4deg, transparent 4deg 10deg);
+  animation: kj-spin 90s linear infinite;
+}
+@keyframes kj-spin { to { transform: rotate(360deg); } }
+
+/* Halftone dots, the print texture the logo art is built from. */
+.kj-set-halftone {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgb(120 90 255 / 0.5) 1.2px, transparent 1.4px);
+  background-size: 9px 9px;
+  opacity: 0.5;
+}
+
+.kj-set-glow {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(120% 70% at 50% 6%, rgb(120 60 255 / 0.85), transparent 60%),
+    radial-gradient(80% 50% at 12% 42%, rgb(255 47 160 / 0.28), transparent 70%),
+    radial-gradient(80% 50% at 88% 42%, rgb(41 224 255 / 0.26), transparent 70%),
+    linear-gradient(180deg, var(--kj-navy-2) 0%, var(--kj-purple) 42%, var(--kj-navy) 100%);
+}
+
+/* Two spotlight beams sweeping the stage. */
+.kj-beam {
+  position: absolute; top: -12%; width: 26%; height: 90%;
+  background: linear-gradient(180deg, rgb(255 236 170 / 0.32), rgb(255 236 170 / 0));
+  filter: blur(26px);
+  transform-origin: 50% 0;
+}
+.kj-beam-l { left: 4%; clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); animation: kj-sweep-l 11s ease-in-out infinite alternate; }
+.kj-beam-r { right: 4%; clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); animation: kj-sweep-r 13s ease-in-out infinite alternate; }
+@keyframes kj-sweep-l { from { transform: rotate(-11deg); } to { transform: rotate(9deg); } }
+@keyframes kj-sweep-r { from { transform: rotate(11deg); } to { transform: rotate(-9deg); } }
+
+/* LED squares taped to the back wall. */
+.kj-pixels span {
+  position: absolute; display: block; border-radius: 2px;
+  box-shadow: 0 0 10px currentColor;
+  animation: kj-blink 3.4s ease-in-out infinite;
+}
+@keyframes kj-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.95; } }
+
+/* The front row: one strip of art used twice, the right side mirrored. Absolute
+   inside the shell rather than fixed, so it stays at the front of the stage
+   instead of riding the viewport down into the site footer. */
+.kj-crowd {
+  position: absolute; inset: auto 0 0; z-index: 2;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent, #000 40%);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 40%);
+}
+.kj-crowd img { width: 36%; height: auto; object-fit: cover; object-position: bottom; opacity: 0.92; }
+.kj-crowd-flip { transform: scaleX(-1); }
+
+/* Everything above the set ------------------------------------------------- */
+
+.kj-front {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: clamp(0.4rem, 1.2vh, 0.9rem);
+  min-height: 100dvh;
+  max-width: 82rem; margin: 0 auto; padding: 0.8rem 1.2rem 1.2rem;
+}
+
+/* Logo --------------------------------------------------------------------- */
+
+/* The wordmark keeps its own starburst; the edges are feathered into the set
+   behind it rather than cut out, because the two are the same purple. */
+.kj-logo { line-height: 0; filter: drop-shadow(0 8px 26px rgb(0 0 0 / 0.55)); }
+.kj-logo img {
+  width: 100%; height: auto;
+  mask-image: radial-gradient(112% 92% at 50% 50%, #000 62%, transparent 92%);
+  -webkit-mask-image: radial-gradient(112% 92% at 50% 50%, #000 62%, transparent 92%);
+}
+.kj-logo-hero { width: min(23rem, 82vw); animation: kj-throb 4.5s ease-in-out infinite; }
+@keyframes kj-throb { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+
+/* Top bar ------------------------------------------------------------------ */
+
+.kj-top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.75rem; }
+.kj-top-mid { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; }
+.kj-top-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.kj-top-mid .kj-logo { width: clamp(13rem, 23vh, 21rem); }
+
+.kj-code-chip {
+  font-family: var(--kj-pixel); font-size: 0.5rem; letter-spacing: 0.06em;
+  padding: 0.4rem 0.7rem; border-radius: 999px; color: var(--kj-cyan);
+  background: rgb(8 4 28 / 0.75); border: 2px solid rgb(41 224 255 / 0.55);
+  box-shadow: 0 0 14px rgb(41 224 255 / 0.35), inset 0 0 12px rgb(41 224 255 / 0.15);
+}
+.kj-code-chip b { color: #fff; }
+
+/* The LED boards flanking the logo. */
+.kj-panel {
+  padding: 0.6rem 0.7rem; border-radius: 0.7rem;
+  background: linear-gradient(180deg, rgb(10 6 40 / 0.94), rgb(20 10 62 / 0.94));
+  border: 2px solid rgb(41 224 255 / 0.5);
+  box-shadow: 0 0 18px rgb(41 224 255 / 0.25), inset 0 0 22px rgb(86 38 199 / 0.5);
+  font-family: var(--kj-pixel); font-size: 0.5rem; line-height: 1.9;
+}
+.kj-panel-title { display: block; color: var(--kj-gold); font-size: 0.45rem; letter-spacing: 0.1em; margin-bottom: 0.35rem; }
+.kj-panel ul { list-style: none; margin: 0; padding: 0; }
+.kj-panel li { display: flex; justify-content: space-between; gap: 0.6rem; color: var(--kj-cyan); }
+.kj-panel-left { justify-self: start; }
+.kj-panel-right { justify-self: end; min-width: 9.5rem; }
+.kj-panel-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 6.5rem; }
+.kj-panel-num { color: var(--kj-gold); }
+
+/* Main row: host, board, clock --------------------------------------------- */
+
+.kj-main { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) minmax(0, 11rem); align-items: start; gap: 0.9rem; }
+.kj-center { display: flex; flex-direction: column; gap: 0.7rem; min-width: 0; }
+
+/* Host --------------------------------------------------------------------- */
+
+.kj-host { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.kj-host-frame {
+  position: relative; width: 100%; max-width: clamp(8.5rem, 19vh, 13.5rem); line-height: 0;
+  border-radius: 0.8rem 0.8rem 0.4rem 0.4rem; overflow: hidden;
+  border: 3px solid var(--kj-cyan);
+  box-shadow: 0 0 22px rgb(41 224 255 / 0.5), 0 14px 30px rgb(0 0 0 / 0.5);
+}
+.kj-host-frame img { width: 100%; height: auto; }
+.kj-host-plate {
+  position: absolute; inset: auto 0 0; padding: 0.35rem;
+  font-family: var(--kj-pixel); font-size: 0.42rem; text-align: center; letter-spacing: 0.06em;
+  background: linear-gradient(180deg, rgb(10 6 40 / 0.85), rgb(10 6 40 / 0.97));
+  color: #fff; text-shadow: 0 0 8px var(--kj-cyan);
+}
+.kj-host-live .kj-host-frame { animation: kj-host-bob 2.8s ease-in-out infinite; }
+@keyframes kj-host-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* Speech bubble, with the tail pointing down at the host. */
+.kj-bubble {
+  position: relative; width: 100%;
+  padding: 0.7rem 0.85rem; border-radius: 0.9rem;
+  background: #fdfbf4; color: #16103a;
+  border: 3px solid #0d0730;
+  box-shadow: 0 8px 0 rgb(0 0 0 / 0.35), 0 0 22px rgb(255 255 255 / 0.2);
+  font-weight: 700; font-size: 0.95rem; line-height: 1.35;
+}
+.kj-bubble::after {
+  content: ""; position: absolute; left: 2.2rem; bottom: -0.85rem;
+  border: 0.55rem solid transparent; border-top: 0.6rem solid #0d0730; border-bottom: 0;
+}
+.kj-bubble p { margin: 0; }
+.kj-bubble-fact { margin-top: 0.4rem !important; font-weight: 500; font-size: 0.8rem; color: #4a4270; }
+
+/* Question board ----------------------------------------------------------- */
+
+.kj-board {
+  position: relative; padding: clamp(0.55rem, 1.4vh, 0.95rem) 1rem; border-radius: 0.9rem;
+  background:
+    repeating-linear-gradient(180deg, rgb(255 255 255 / 0.035) 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #14093f, #0b0526);
+  border: 4px solid var(--kj-cyan);
+  box-shadow:
+    0 0 0 2px rgb(8 4 28 / 0.9),
+    0 0 26px rgb(41 224 255 / 0.55),
+    inset 0 0 40px rgb(41 224 255 / 0.12),
+    0 18px 40px rgb(0 0 0 / 0.5);
+  animation: kj-board-pulse 3.6s ease-in-out infinite;
+}
+@keyframes kj-board-pulse {
+  0%, 100% { box-shadow: 0 0 0 2px rgb(8 4 28 / 0.9), 0 0 22px rgb(41 224 255 / 0.45), inset 0 0 40px rgb(41 224 255 / 0.1), 0 18px 40px rgb(0 0 0 / 0.5); }
+  50% { box-shadow: 0 0 0 2px rgb(8 4 28 / 0.9), 0 0 38px rgb(41 224 255 / 0.7), inset 0 0 46px rgb(41 224 255 / 0.18), 0 18px 40px rgb(0 0 0 / 0.5); }
+}
+.kj-board-strip {
+  display: flex; justify-content: center; align-items: center; gap: 0.8rem;
+  font-family: var(--kj-pixel); font-size: 0.5rem; letter-spacing: 0.12em;
+  color: var(--kj-gold); text-shadow: 0 0 10px rgb(255 210 74 / 0.7);
+  text-transform: uppercase; margin-bottom: 0.6rem;
+}
+.kj-board-round { color: var(--kj-cyan); text-shadow: 0 0 10px rgb(41 224 255 / 0.7); }
+.kj-board-question {
+  margin: 0; text-align: center; text-wrap: balance;
+  font-weight: 800; font-size: clamp(1rem, 2.3vh + 0.6vw, 1.85rem); line-height: 1.25;
+  text-shadow: 0 2px 0 #06021a, 0 0 22px rgb(41 224 255 / 0.45);
+}
+
+/* The join code, shown big enough to read across a room. */
+.kj-code-big {
+  font-family: var(--kj-pixel); font-size: clamp(1.6rem, 6vw, 3rem); text-align: center;
+  letter-spacing: 0.18em; text-indent: 0.18em; padding: 0.7rem;
+  color: var(--kj-gold); text-shadow: 0 0 18px rgb(255 210 74 / 0.8), 0 4px 0 #3a1b00;
+}
+
+/* Clock -------------------------------------------------------------------- */
+
+.kj-clock {
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+  padding: 0.7rem 0.6rem; border-radius: 0.9rem;
+  background: linear-gradient(180deg, rgb(10 6 40 / 0.94), rgb(20 10 62 / 0.94));
+  border: 3px solid var(--kj-magenta);
+  box-shadow: 0 0 22px rgb(255 47 160 / 0.45), inset 0 0 26px rgb(255 47 160 / 0.15);
+}
+.kj-clock-label, .kj-clock-unit {
+  font-family: var(--kj-pixel); font-size: 0.42rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--kj-cyan); text-shadow: 0 0 10px rgb(41 224 255 / 0.7);
+}
+.kj-clock-dial { position: relative; width: 100%; max-width: clamp(4.5rem, 9vh, 7rem); aspect-ratio: 1; }
+.kj-clock-dial svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.kj-clock-track { fill: none; stroke: rgb(255 255 255 / 0.12); stroke-width: 10; }
+.kj-clock-hand {
+  fill: none; stroke: var(--kj-gold); stroke-width: 10; stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgb(255 210 74 / 0.9)); transition: stroke-dashoffset 0.9s linear;
+}
+.kj-clock-num {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--kj-pixel); font-size: 1.5rem; color: #fff;
+  text-shadow: 0 0 16px rgb(41 224 255 / 0.9);
+}
+.kj-clock-low { border-color: var(--kj-red-2); box-shadow: 0 0 26px rgb(255 77 94 / 0.6), inset 0 0 26px rgb(255 77 94 / 0.2); animation: kj-clock-alarm 0.9s steps(2) infinite; }
+.kj-clock-low .kj-clock-hand { stroke: var(--kj-red-2); }
+@keyframes kj-clock-alarm { 0%, 100% { opacity: 1; } 50% { opacity: 0.72; } }
+
+/* Contestants -------------------------------------------------------------- */
+
+.kj-contestants {
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr);
+  gap: clamp(0.4rem, 1.8vw, 1.6rem); align-items: end;
+  padding: 0.4rem clamp(0.2rem, 4vw, 4rem) 0;
+}
+.kj-seat { position: relative; min-width: 0; }
+
+.kj-contestant { position: relative; max-width: clamp(8rem, 19vh, 14rem); margin: 0 auto; display: flex; flex-direction: column; align-items: center; transition: opacity 0.25s, transform 0.25s; }
+.kj-contestant-dim { opacity: 0.45; transform: scale(0.95); }
+.kj-contestant-buzzed { transform: scale(1.05); z-index: 2; }
+
+/* The booth: the dealt portrait behind a neon arch. */
+.kj-booth {
+  position: relative; width: 100%; line-height: 0; overflow: hidden;
+  border-radius: 0.9rem 0.9rem 0.2rem 0.2rem;
+  border: 3px solid rgb(41 224 255 / 0.65);
+  background: #100835;
+  box-shadow: 0 0 16px rgb(41 224 255 / 0.3), inset 0 -18px 26px rgb(8 4 28 / 0.6);
+}
+.kj-booth img { width: 100%; height: auto; }
+.kj-contestant-ready .kj-booth { border-color: rgb(255 210 74 / 0.8); box-shadow: 0 0 20px rgb(255 210 74 / 0.4), inset 0 -18px 26px rgb(8 4 28 / 0.6); }
+.kj-contestant-you .kj-booth { border-style: dashed; }
+.kj-contestant-buzzed .kj-booth {
+  border-color: var(--kj-gold);
+  box-shadow: 0 0 34px rgb(255 210 74 / 0.9), 0 0 70px rgb(255 138 30 / 0.5), inset 0 -18px 26px rgb(8 4 28 / 0.5);
+}
+.kj-booth-flash { position: absolute; inset: 0; background: rgb(255 210 74 / 0.35); animation: kj-flash 0.65s ease-out 3; }
+@keyframes kj-flash { 0% { opacity: 0.8; } 100% { opacity: 0; } }
+.kj-booth-wait {
+  display: grid; place-items: center; aspect-ratio: 496 / 382;
+  font-family: var(--kj-pixel); font-size: 1.6rem; color: rgb(255 255 255 / 0.22); line-height: 1;
+}
+
+/* The podium the booth stands on. */
+/* The podium the booth stands on: a lit plinth carrying a name plate and a
+   scoreboard, the way the reference set has it. */
+.kj-podium {
+  position: relative; width: 112%; margin-top: -3px;
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  padding: 0.7rem 0.6rem 0.9rem;
+  clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(180deg, rgb(41 224 255 / 0.18), transparent 30%),
+    linear-gradient(180deg, #3a22a4, #1d0f66 45%, #0d0630);
+  box-shadow: inset 0 3px 0 var(--kj-cyan), 0 14px 30px rgb(0 0 0 / 0.6);
+}
+/* The magenta strip lighting the front of the plinth. */
+.kj-podium::before {
+  content: ""; position: absolute; inset: auto 14% 0.35rem; height: 4px; border-radius: 2px;
+  background: var(--kj-magenta); box-shadow: 0 0 16px var(--kj-magenta), 0 0 34px rgb(255 47 160 / 0.6);
+}
+.kj-podium-name {
+  width: 100%; padding: 0.25rem 0.3rem; border-radius: 0.25rem;
+  background: rgb(6 3 22 / 0.85); border: 2px solid rgb(41 224 255 / 0.55);
+  font-family: var(--kj-pixel); font-size: clamp(0.4rem, 1.05vw, 0.58rem); letter-spacing: 0.04em;
+  color: #fff; text-align: center; text-shadow: 0 0 8px rgb(41 224 255 / 0.9);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.kj-podium-name em { font-style: normal; color: var(--kj-cyan); }
+.kj-podium-score {
+  min-width: 3.6rem; text-align: center;
+  font-family: var(--kj-pixel); font-size: clamp(0.8rem, 1.8vw, 1.3rem);
+  color: var(--kj-cyan); text-shadow: 0 0 14px rgb(41 224 255 / 0.95);
+  padding: 0.3rem 0.55rem; border-radius: 0.3rem;
+  background: rgb(4 2 16 / 0.92);
+  border: 2px solid rgb(41 224 255 / 0.5);
+  box-shadow: inset 0 0 14px rgb(41 224 255 / 0.25);
+}
+.kj-contestant-buzzed .kj-podium-score { color: var(--kj-gold); border-color: rgb(255 210 74 / 0.6); text-shadow: 0 0 12px rgb(255 210 74 / 0.9); }
+
+/* +100 / -100, thrown up over the podium. */
+.kj-delta {
+  position: absolute; left: 50%; top: 8%; z-index: 3;
+  font-family: var(--kj-pixel); font-size: clamp(0.7rem, 2vw, 1.1rem);
+  animation: kj-delta-rise 1.9s ease-out forwards; pointer-events: none;
+}
+.kj-delta-up { color: var(--kj-green); text-shadow: 0 0 14px rgb(55 224 122 / 0.9), 0 2px 0 #062; }
+.kj-delta-down { color: var(--kj-red-2); text-shadow: 0 0 14px rgb(255 77 94 / 0.9), 0 2px 0 #500; }
+@keyframes kj-delta-rise {
+  0% { opacity: 0; transform: translate(-50%, 0.6rem) scale(0.7); }
+  22% { opacity: 1; transform: translate(-50%, -0.4rem) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%, -3.2rem) scale(1); }
+}
+
+/* What the player typed, over their own podium. */
+.kj-said {
+  position: absolute; left: 50%; top: -0.4rem; z-index: 4; transform: translateX(-50%);
+  max-width: 130%; padding: 0.35rem 0.6rem; border-radius: 0.6rem;
+  background: #fdfbf4; color: #16103a; border: 3px solid #0d0730;
+  font-weight: 800; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  box-shadow: 0 6px 0 rgb(0 0 0 / 0.35);
+}
+.kj-said::after {
+  content: ""; position: absolute; left: 50%; bottom: -0.6rem; margin-left: -0.4rem;
+  border: 0.4rem solid transparent; border-top: 0.45rem solid #0d0730; border-bottom: 0;
+}
+
+/* Buzzer ------------------------------------------------------------------- */
+
+/* The floor: the buzzer sits in front of the crowd, at the front of the stage. */
+.kj-floor {
+  position: relative; z-index: 4;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  margin-top: 0; padding-top: 0.2rem;
+}
+.kj-buzzer-rig { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+
+.kj-buzzer {
+  position: relative; display: block; width: clamp(10rem, 19vh, 15rem); padding: 0; border: 0;
+  background: none; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.kj-buzzer:disabled { cursor: not-allowed; }
+
+/* The base the button sits in: a lit ring on the studio floor. */
+.kj-buzzer-base {
+  position: absolute; inset: auto 0 0; height: 34%;
+  border-radius: 50%; transform: translateY(42%);
+  background: linear-gradient(180deg, #2b1b86, #120a3a);
+  box-shadow: 0 0 26px rgb(41 224 255 / 0.65), inset 0 2px 0 rgb(41 224 255 / 0.8), 0 14px 30px rgb(0 0 0 / 0.6);
+}
+/* The plate you press. It travels down into the base, so the press is physical
+   rather than a change of colour. */
+.kj-buzzer-top {
+  position: relative; z-index: 1; display: grid; place-items: center;
+  aspect-ratio: 1.85; border-radius: 50%;
+  background: radial-gradient(60% 55% at 42% 26%, #ff8a92, var(--kj-red-2) 38%, var(--kj-red) 72%, #8e0a17);
+  box-shadow:
+    inset 0 -10px 18px rgb(0 0 0 / 0.45),
+    inset 0 8px 16px rgb(255 255 255 / 0.28),
+    0 12px 0 #78060f,
+    0 18px 34px rgb(0 0 0 / 0.55),
+    0 0 40px rgb(232 23 44 / 0.5);
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out;
+}
+.kj-buzzer-shine {
+  position: absolute; left: 14%; top: 12%; width: 46%; height: 34%; border-radius: 50%;
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.75), rgb(255 255 255 / 0));
+  filter: blur(1px);
+}
+.kj-buzzer-label {
+  position: relative; font-family: var(--kj-pixel);
+  font-size: clamp(0.55rem, 1.5vh, 0.85rem); letter-spacing: 0.04em; color: #fff;
+  text-shadow: 0 2px 0 #7a0812, 0 0 14px rgb(0 0 0 / 0.5);
+}
+.kj-buzzer:hover:not(:disabled) .kj-buzzer-top { transform: translateY(-3px); box-shadow: inset 0 -10px 18px rgb(0 0 0 / 0.45), inset 0 8px 16px rgb(255 255 255 / 0.32), 0 15px 0 #78060f, 0 22px 38px rgb(0 0 0 / 0.55), 0 0 56px rgb(232 23 44 / 0.7); }
+.kj-buzzer:active:not(:disabled) .kj-buzzer-top { transform: translateY(9px); box-shadow: inset 0 -4px 12px rgb(0 0 0 / 0.5), inset 0 6px 12px rgb(255 255 255 / 0.2), 0 3px 0 #78060f, 0 6px 14px rgb(0 0 0 / 0.5), 0 0 30px rgb(232 23 44 / 0.5); }
+.kj-buzzer:focus-visible { outline: 3px solid var(--kj-gold); outline-offset: 6px; border-radius: 50%; }
+.kj-buzzer:disabled .kj-buzzer-top { filter: saturate(0.45) brightness(0.72); }
+.kj-shell-question .kj-buzzer:not(:disabled) .kj-buzzer-top { animation: kj-buzzer-beckon 1.5s ease-in-out infinite; }
+@keyframes kj-buzzer-beckon {
+  0%, 100% { box-shadow: inset 0 -10px 18px rgb(0 0 0 / 0.45), inset 0 8px 16px rgb(255 255 255 / 0.28), 0 12px 0 #78060f, 0 18px 34px rgb(0 0 0 / 0.55), 0 0 36px rgb(232 23 44 / 0.45); }
+  50% { box-shadow: inset 0 -10px 18px rgb(0 0 0 / 0.45), inset 0 8px 16px rgb(255 255 255 / 0.28), 0 12px 0 #78060f, 0 18px 34px rgb(0 0 0 / 0.55), 0 0 68px rgb(255 77 94 / 0.85); }
+}
+
+.kj-buzzer-sub {
+  font-family: var(--kj-pixel); font-size: 0.42rem; letter-spacing: 0.06em; text-align: center;
+  padding: 0.35rem 0.7rem; border-radius: 999px;
+  color: var(--kj-gold); background: rgb(6 3 22 / 0.85);
+  border: 2px solid rgb(255 210 74 / 0.45); text-shadow: 0 0 10px rgb(255 210 74 / 0.6);
+}
+
+
+/* Between questions -------------------------------------------------------- */
+
+.kj-sweep { display: flex; flex-direction: column; gap: 0.3rem; }
+.kj-sweep-text { font-family: var(--kj-pixel); font-size: 0.45rem; letter-spacing: 0.1em; color: var(--kj-cyan); text-align: center; }
+.kj-sweep-track { height: 0.9rem; border-radius: 999px; overflow: hidden; background: rgb(6 3 22 / 0.8); border: 2px solid rgb(41 224 255 / 0.45); }
+.kj-sweep-fill {
+  height: 100%; width: 100%;
+  background: linear-gradient(90deg, var(--kj-magenta), var(--kj-gold), var(--kj-cyan));
+  animation: kj-sweep-out linear forwards; transform-origin: left;
+}
+@keyframes kj-sweep-out { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+
+/* Verdict ------------------------------------------------------------------ */
+
+/* Thrown over the whole stage. No blur behind it: the scoreboard it is about is
+   the thing you want to read at that moment. */
+.kj-verdict {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+  pointer-events: none; animation: kj-verdict-in 0.28s ease-out;
+}
+.kj-verdict span {
+  font-family: var(--kj-pixel); font-size: clamp(1.3rem, 7vw, 3.6rem); text-align: center;
+  padding: 1rem 1.4rem; border-radius: 1rem; border: 5px solid currentColor;
+  background: rgb(6 3 22 / 0.86);
+  animation: kj-verdict-beat 0.5s ease-in-out infinite alternate;
+}
+.kj-verdict-right span { color: var(--kj-green); text-shadow: 0 0 26px rgb(55 224 122 / 0.9); box-shadow: 0 0 60px rgb(55 224 122 / 0.6); }
+.kj-verdict-wrong span { color: var(--kj-red-2); text-shadow: 0 0 26px rgb(255 77 94 / 0.9); box-shadow: 0 0 60px rgb(255 77 94 / 0.6); }
+@keyframes kj-verdict-in { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+@keyframes kj-verdict-beat { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+/* Finale ------------------------------------------------------------------- */
+
+.kj-final { position: relative; display: flex; flex-direction: column; align-items: center; gap: clamp(0.4rem, 1.5vh, 1rem); padding: 0.3rem 0 0.4rem; }
+.kj-final-champs { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(0.5rem, 2vw, 1.4rem); }
+.kj-champ {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  padding: 0 1.2rem;
+}
+/* The spotlight the winner stands in. */
+.kj-champ::before {
+  content: ""; position: absolute; inset: -18% -10% -6%; z-index: -1;
+  background: radial-gradient(60% 55% at 50% 22%, rgb(255 236 170 / 0.45), transparent 70%);
+  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+}
+.kj-champ-cup { font-size: clamp(1.6rem, 5vh, 3rem); animation: kj-cup 2.2s ease-in-out infinite; }
+@keyframes kj-cup { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-8px) rotate(4deg); } }
+.kj-champ-frame {
+  width: clamp(7rem, 21vh, 12.5rem); line-height: 0; overflow: hidden; border-radius: 1rem;
+  border: 4px solid var(--kj-gold);
+  box-shadow: 0 0 40px rgb(255 210 74 / 0.75), 0 20px 40px rgb(0 0 0 / 0.55);
+}
+.kj-champ-frame img { width: 100%; height: auto; }
+.kj-champ-name { font-family: var(--kj-pixel); font-size: clamp(0.62rem, 2vw, 1rem); color: #fff; text-shadow: 0 0 14px rgb(255 210 74 / 0.9); }
+.kj-champ-score { font-family: var(--kj-pixel); font-size: clamp(1rem, 3.4vw, 1.8rem); color: var(--kj-gold); text-shadow: 0 0 20px rgb(255 210 74 / 0.9), 0 3px 0 #5a3a00; }
+
+/* A draw puts several winners in the light at once, so they share the width
+   rather than stacking into a column nobody can see the bottom of. */
+.kj-final-champs:has(> :nth-child(2)) .kj-champ-frame { width: clamp(6rem, 15vh, 9.5rem); }
+.kj-final-champs:has(> :nth-child(3)) .kj-champ-frame { width: clamp(5rem, 12vh, 8rem); }
+.kj-final-champs:has(> :nth-child(2)) .kj-champ { padding: 0 0.4rem; }
+
+.kj-final-rest { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem; list-style: none; margin: 0; padding: 0; }
+.kj-final-rest li {
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem; width: 5.5rem;
+  padding-bottom: 0.35rem; border-radius: 0.6rem;
+  background: linear-gradient(180deg, rgb(42 27 122 / 0.8), rgb(13 6 48 / 0.9));
+  border: 2px solid rgb(41 224 255 / 0.4);
+}
+.kj-final-rest img { width: 100%; height: auto; border-radius: 0.5rem 0.5rem 0 0; }
+.kj-final-name { font-family: var(--kj-pixel); font-size: 0.4rem; color: #fff; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kj-final-score { font-family: var(--kj-pixel); font-size: 0.62rem; color: var(--kj-cyan); }
+
+.kj-confetti { position: absolute; inset: -10% 0 auto; height: 120%; overflow: hidden; pointer-events: none; }
+.kj-confetti span {
+  position: absolute; top: -8%; width: 9px; height: 14px; border-radius: 1px;
+  animation: kj-fall linear infinite;
+}
+@keyframes kj-fall {
+  0% { transform: translateY(-10%) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(560px) rotate(540deg); opacity: 0; }
+}
+
+/* Entry screens ------------------------------------------------------------ */
+
+.kj-shell-entry .kj-front { max-width: 30rem; padding-bottom: 3rem; min-height: 100dvh; justify-content: center; }
+.kj-entry { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+.kj-tagline {
+  margin: 0; text-align: center; font-weight: 700; font-size: 1.05rem; line-height: 1.4;
+  text-shadow: 0 2px 0 #06021a, 0 0 20px rgb(41 224 255 / 0.5);
+}
+.kj-entry-title { margin: 0; font-family: var(--kj-pixel); font-size: 1rem; color: var(--kj-gold); text-shadow: 0 0 16px rgb(255 210 74 / 0.8); }
+.kj-entry-actions { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+.kj-entry-note { margin: 0; font-family: var(--kj-pixel); font-size: 0.42rem; line-height: 2; color: var(--kj-cyan); text-align: center; }
+
+.kj-form { display: flex; flex-direction: column; gap: 0.45rem; width: 100%; }
+.kj-answer { margin-top: 0.2rem; }
+.kj-label { font-family: var(--kj-pixel); font-size: 0.45rem; letter-spacing: 0.08em; color: var(--kj-cyan); }
+.kj-input {
+  width: 100%; padding: 0.7rem 0.8rem; border-radius: 0.6rem;
+  background: rgb(6 3 22 / 0.85); color: #fff;
+  border: 3px solid rgb(41 224 255 / 0.5);
+  font-size: 1rem; font-weight: 600;
+  box-shadow: inset 0 0 18px rgb(41 224 255 / 0.12);
+}
+.kj-input:focus { outline: none; border-color: var(--kj-gold); box-shadow: 0 0 20px rgb(255 210 74 / 0.45), inset 0 0 18px rgb(255 210 74 / 0.12); }
+.kj-input-code { font-family: var(--kj-pixel); font-size: 1.3rem; letter-spacing: 0.25em; text-align: center; text-indent: 0.25em; }
+
+/* Buttons that are not the buzzer: pressed plates in the same set. */
+.kj-btn {
+  display: block; width: 100%; padding: 0.8rem 1rem; border-radius: 0.7rem; border: 3px solid;
+  font-family: var(--kj-pixel); font-size: 0.6rem; letter-spacing: 0.06em; cursor: pointer;
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.15s;
+}
+.kj-btn:active:not(:disabled) { transform: translateY(4px); }
+.kj-btn:disabled { filter: saturate(0.4) brightness(0.7); cursor: not-allowed; }
+.kj-btn-go {
+  color: #2a1400; border-color: #7a4a00;
+  background: linear-gradient(180deg, #ffe07a, var(--kj-gold) 45%, var(--kj-orange));
+  box-shadow: 0 6px 0 #8a4a00, 0 0 26px rgb(255 210 74 / 0.5);
+}
+.kj-btn-go:active:not(:disabled) { box-shadow: 0 2px 0 #8a4a00, 0 0 18px rgb(255 210 74 / 0.4); }
+.kj-btn-alt {
+  color: #04202a; border-color: #0a6b86;
+  background: linear-gradient(180deg, #9af0ff, var(--kj-cyan) 50%, #12a8cc);
+  box-shadow: 0 6px 0 #0a6b86, 0 0 26px rgb(41 224 255 / 0.5);
+}
+.kj-btn-alt:active:not(:disabled) { box-shadow: 0 2px 0 #0a6b86, 0 0 18px rgb(41 224 255 / 0.4); }
+.kj-btn-ghost {
+  width: auto; padding: 0.5rem 0.9rem; font-size: 0.45rem;
+  color: rgb(255 255 255 / 0.75); border-color: rgb(255 255 255 / 0.28);
+  background: rgb(6 3 22 / 0.75); box-shadow: none;
+}
+.kj-btn-ghost:hover { color: #fff; border-color: rgb(41 224 255 / 0.6); }
+
+.kj-error {
+  margin: 0; padding: 0.55rem 0.8rem; border-radius: 0.6rem; text-align: center;
+  font-weight: 700; font-size: 0.85rem; color: #fff;
+  background: rgb(120 10 24 / 0.9); border: 2px solid var(--kj-red-2);
+  box-shadow: 0 0 20px rgb(255 77 94 / 0.45);
+}
+.kj-rules {
+  margin: 0.2rem 0 0; text-align: center; font-size: 0.68rem; line-height: 1.5;
+  color: rgb(255 255 255 / 0.6); text-wrap: balance;
+}
+
+/* Phones ------------------------------------------------------------------- */
+
+/* The show does not become a web page on a phone. It keeps the set, the podiums
+   and the buzzer, and gives up the scenery instead: the two LED boards step
+   aside and the logo shrinks to a bar, so the question, the four players and the
+   button all fit on one screen without scrolling to find the thing you press. */
+@media (max-width: 760px) {
+  .kj-shell { min-height: 100dvh; }
+  .kj-front {
+    min-height: 100dvh; gap: 0.35rem;
+    padding: 0.4rem 0.55rem calc(0.5rem + env(safe-area-inset-bottom));
+  }
+
+  .kj-top { grid-template-columns: 1fr; gap: 0.3rem; }
+  .kj-panel-left, .kj-panel-right { display: none; }
+  .kj-top-mid .kj-logo { width: min(9rem, 36vw); }
+  .kj-top-row { gap: 0.4rem; }
+  .kj-code-chip, .kj-btn-ghost { font-size: 0.4rem; padding: 0.3rem 0.55rem; }
+
+  .kj-main { grid-template-columns: 1fr; gap: 0.35rem; }
+  /* Question first, then the host talking about it. */
+  .kj-center { order: 1; gap: 0.4rem; }
+  .kj-host { order: 2; flex-direction: row-reverse; align-items: flex-start; gap: 0.5rem; }
+  .kj-host-frame { width: 4.5rem; max-width: 4.5rem; flex: none; }
+  .kj-host-plate { font-size: 0.3rem; padding: 0.15rem; }
+  .kj-bubble { font-size: 0.8rem; padding: 0.45rem 0.6rem; line-height: 1.3; box-shadow: 0 5px 0 rgb(0 0 0 / 0.35); }
+  .kj-bubble::after { left: auto; right: 1.2rem; }
+  .kj-bubble-fact { font-size: 0.68rem; }
+
+  .kj-board { padding: 0.45rem 0.6rem; border-width: 3px; }
+  .kj-board-strip { font-size: 0.4rem; gap: 0.5rem; margin-bottom: 0.35rem; }
+  .kj-board-question { font-size: clamp(0.95rem, 4.4vw, 1.3rem); }
+  .kj-code-big { font-size: 2.1rem; padding: 0.3rem; }
+
+  /* The clock rides above the board rather than beside it, and stays put while
+     the rest scrolls, so the seconds are never the thing off screen. */
+  .kj-clock-side {
+    order: 0; position: sticky; top: 0.3rem; z-index: 6;
+    flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.3rem 0.6rem; border-width: 2px;
+  }
+  .kj-clock-side .kj-clock-dial { width: 2.2rem; max-width: 2.2rem; }
+  .kj-clock-side .kj-clock-num { font-size: 0.85rem; }
+  .kj-clock-side .kj-clock-unit { display: none; }
+
+  .kj-contestants { gap: 0.25rem; padding: 0.15rem 0 0; }
+  .kj-contestant { max-width: none; }
+  .kj-booth { border-width: 2px; border-radius: 0.5rem 0.5rem 0.15rem 0.15rem; }
+  .kj-podium { width: 108%; padding: 0.3rem 0.15rem 0.45rem; gap: 0.2rem; }
+  .kj-podium-name { font-size: 0.32rem; padding: 0.18rem 0.1rem; border-width: 1px; }
+  .kj-podium-score { min-width: 0; font-size: 0.6rem; padding: 0.18rem 0.3rem; border-width: 1px; }
+  .kj-said { font-size: 0.55rem; padding: 0.2rem 0.35rem; border-width: 2px; }
+  .kj-delta { font-size: 0.75rem; }
+
+  /* Thumb-sized, and the last thing before the front row. */
+  .kj-floor { margin-top: auto; padding-top: 0.3rem; }
+  .kj-buzzer { width: min(10rem, 46vw); }
+  .kj-buzzer-label { font-size: 0.55rem; }
+  .kj-buzzer-sub { font-size: 0.36rem; padding: 0.25rem 0.5rem; }
+
+  .kj-answer .kj-input { padding: 0.55rem 0.6rem; }
+  .kj-crowd img { width: 46%; }
+  /* A footnote nobody needs mid-round, and the screen is the scarce thing here. */
+  .kj-rules { display: none; }
+
+  .kj-shell-entry .kj-front { justify-content: center; }
+  .kj-logo-hero { width: min(17rem, 70vw); }
+  .kj-tagline { font-size: 0.95rem; }
+
+  .kj-champ { padding: 0 0.25rem; }
+  .kj-champ-frame { width: min(10rem, 42vw); border-width: 3px; }
+  .kj-final-rest li { width: 4.2rem; }
+}
+
+@media (max-width: 420px) {
+  .kj-board-question { font-size: 1rem; }
+  .kj-podium-name { font-size: 0.34rem; }
+}
+
+/* Anybody who has asked for less movement gets the set, lit, holding still. */
+@media (prefers-reduced-motion: reduce) {
+  .kj-set-rays, .kj-beam, .kj-pixels span, .kj-logo-hero, .kj-board, .kj-host-live .kj-host-frame,
+  .kj-clock-low, .kj-buzzer-top, .kj-champ-cup, .kj-confetti span, .kj-booth-flash, .kj-verdict span,
+  .kj-shell-question .kj-buzzer:not(:disabled) .kj-buzzer-top {
+    animation: none !important;
+  }
+  .kj-delta { animation: kj-delta-hold 1.9s forwards; }
+  @keyframes kj-delta-hold { 0%, 80% { opacity: 1; transform: translate(-50%, -1.6rem); } 100% { opacity: 0; transform: translate(-50%, -1.6rem); } }
+  .kj-sweep-fill { animation-name: kj-sweep-out; }
+}

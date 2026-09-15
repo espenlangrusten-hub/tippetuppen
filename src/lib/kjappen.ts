@@ -16,6 +16,31 @@ export const QUESTIONS_PER_GAME = 5;
 export const BUZZ_SECONDS = 30;
 export const ANSWER_SECONDS = 15;
 export const REVEAL_SECONDS = 6;
+/**
+ * The contestant portraits, by file number in `public/kjappen/`.
+ *
+ * The art sheet holds six figures, and the first of them is the host - he stands at the
+ * side of the stage introducing every question, so he is not dealt to a player. Dealing
+ * him out would put two of the same man on screen, one hosting and one competing. Add 1
+ * to this list if you would rather have him play too; nothing else has to change.
+ */
+export const AVATAR_POOL = [2, 3, 4, 5, 6] as const;
+export const HOST_AVATAR = 1;
+
+/**
+ * Deal a portrait nobody in this game already has.
+ *
+ * Done on the server when a player takes a seat, so every screen shows the same face on
+ * the same player and a reconnect does not reshuffle anyone. The pool is larger than the
+ * table, so `taken` can never use it up; the fallback only exists so a game that somehow
+ * outgrew the pool still gets a picture instead of a blank.
+ */
+export function dealAvatar(taken: readonly number[], random: () => number = Math.random): number {
+  const free = AVATAR_POOL.filter((a) => !taken.includes(a));
+  const from = free.length ? free : AVATAR_POOL;
+  return from[Math.floor(random() * from.length)];
+}
+
 export const CORRECT_POINTS = 100;
 export const WRONG_POINTS = -100;
 

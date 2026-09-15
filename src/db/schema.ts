@@ -518,6 +518,10 @@ export const kjappenPlayers = tt.table(
     code: text("code").notNull().references(() => kjappenGames.code, { onDelete: "cascade" }),
     name: text("name").notNull(),
     seat: integer("seat").notNull(), // 1..4, decides podium order
+    /** Which contestant portrait this player wears. Dealt on the server when the seat is
+     *  taken, unique within the game, and never redealt - so a reconnect comes back with
+     *  the same face and every screen agrees on who is who. */
+    avatar: integer("avatar").notNull().default(2),
     score: integer("score").notNull().default(0),
     host: boolean("host").notNull().default(false),
     joinedAt: timestamp("joined_at", { withTimezone: true }).notNull().defaultNow(),
