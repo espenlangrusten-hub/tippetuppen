@@ -1,0 +1,58 @@
+{
+  "id": "2026-06-30-civ-nor",
+  "date": "2026-06-30",
+  "competition": "world-cup",
+  "stage": "VM 2026, 16-delsfinale",
+  "opponent": "Elfenbenskysten",
+  "opponentCode": "CIV",
+  "norwayHome": false,
+  "score": [2, 1],
+  "venue": "Dallas Stadium",
+  "city": "Dallas",
+  "manager": "Ståle Solbakken",
+  "importance": 5,
+  "tags": ["vm", "vm-2026", "sluttspill"],
+  "status": "verified",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/landslag/norge-a-herrer/vm-2026/",
+      "title": "Medieguide VM 2026 - Norges Fotballforbund",
+      "kind": "web",
+      "accessed": "2026-09-15",
+      "note": "NFF dokumenterer kampen, datoen, arenaen og resultatet 1–2."
+    },
+    {
+      "url": "https://www.reuters.com/sports/soccer/norway-back-with-big-guns-ivory-coast-make-three-changes-2026-06-30/",
+      "title": "Norway back with big guns as Ivory Coast make three changes - Reuters",
+      "kind": "web",
+      "accessed": "2026-09-15",
+      "note": "Reuters dokumenterer Norges komplette startellever."
+    },
+    {
+      "url": "https://www.reuters.com/sports/soccer/haaland-hero-again-norway-edge-ivory-coast-advance-world-cup-2026-06-30/",
+      "title": "Haaland the hero again as Norway edge Ivory Coast to advance at World Cup - Reuters",
+      "kind": "web",
+      "accessed": "2026-09-15",
+      "note": "Reuters dokumenterer sluttresultatet og målscorerne."
+    }
+  ],
+  "notes": "Antonio Nusa ga Norge ledelsen, før Erling Haaland avgjorde i sluttminuttene og sendte Norge til åttedelsfinalen.",
+  "lineup": [
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB" },
+    { "name": "Kristoffer Ajer", "pos": "CB" },
+    { "name": "Torbjørn Heggem", "pos": "CB" },
+    { "name": "David Møller Wolfe", "pos": "LB" },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true },
+    { "name": "Sander Berge", "pos": "CM" },
+    { "name": "Patrick Berg", "pos": "CM" },
+    { "name": "Alexander Sørloth", "pos": "RW" },
+    { "name": "Erling Haaland", "pos": "CF" },
+    { "name": "Antonio Nusa", "pos": "LW" }
+  ],
+  "goals": [
+    { "team": "norway", "name": "Antonio Nusa", "minute": 39 },
+    { "team": "opponent", "scorer": "Amad Diallo", "minute": 74 },
+    { "team": "norway", "name": "Erling Haaland", "minute": 86 }
+  ]
+}
