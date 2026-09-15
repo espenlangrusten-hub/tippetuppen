@@ -10,7 +10,7 @@ test("two players share a round, and only the one who buzzed may answer", async 
   const guest: Page = await guestCtx.newPage();
 
   await host.goto("/kjappen/");
-  await host.getByLabel("Navnet ditt").fill("Vert");
+  await host.getByLabel("1. Skriv navnet ditt").fill("Vert");
   await host.getByRole("button", { name: "Lag ny runde" }).click();
   const chip = host.locator(".kj-code-chip");
   await expect(chip).toBeVisible({ timeout: 15000 });
@@ -18,8 +18,13 @@ test("two players share a round, and only the one who buzzed may answer", async 
   expect(code).toMatch(/^[BCDFGHJKMNPQRSTVWXZ23456789]{4}$/);
 
   await guest.goto("/kjappen/");
-  await guest.getByLabel("Navnet ditt").fill("Gjest");
-  await guest.getByLabel("…eller bli med på en kode").fill(code);
+  // Exactly what the first tester did: fill in the code that was handed over, and
+  // nothing else. The button used to be dead here, with nothing to say why.
+  await guest.getByLabel("…eller bli med på en kode du har fått").fill(code);
+  await guest.getByRole("button", { name: "Bli med" }).click();
+  await expect(guest.locator(".kj-error")).toContainText("Skriv navnet ditt først", { timeout: 5000 });
+
+  await guest.getByLabel("1. Skriv navnet ditt").fill("Gjest");
   await guest.getByRole("button", { name: "Bli med" }).click();
 
   // The host sees the guest arrive without reloading.
@@ -47,6 +52,14 @@ test("two players share a round, and only the one who buzzed may answer", async 
   // A wrong answer costs 100, and both screens show it.
   await expect(guest.locator(".kj-podium-score", { hasText: "-100" })).toBeVisible({ timeout: 15000 });
   await expect(host.locator(".kj-podium-score", { hasText: "-100" })).toBeVisible({ timeout: 15000 });
+
+  // The host can stop the round, and everyone lands on the same message.
+  host.on("dialog", (d) => void d.accept());
+  await host.getByRole("button", { name: "Avbryt runden" }).click();
+  await expect(host.locator(".kj-bubble p").first()).toHaveText("Runden ble avbrutt.", { timeout: 15000 });
+  await expect(guest.locator(".kj-bubble p").first()).toHaveText("Runden ble avbrutt.", { timeout: 15000 });
+  // Only the host gets that button; a guest can step out without ending it for others.
+  await expect(guest.getByRole("button", { name: "Avbryt runden" })).toHaveCount(0);
 
   await hostCtx.close();
   await guestCtx.close();

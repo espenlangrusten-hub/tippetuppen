@@ -110,6 +110,7 @@ export function KjappenGame() {
   }, [view]);
 
   const mine = view?.you ?? seat?.playerId ?? null;
+  const isHost = !!view?.players.some((p) => p.id === mine && p.host);
   const iBuzzed = !!view && view.buzzedBy === mine;
   const phase = view?.phase;
 
@@ -129,8 +130,16 @@ export function KjappenGame() {
     }
   };
 
+  // A button that is simply dead tells you nothing. Say what is missing instead.
+  const missingName = () => {
+    if (name.trim()) return false;
+    setError("Skriv navnet ditt først – feltet under nummer 1.");
+    return true;
+  };
+
   const create = (e: FormEvent) => {
     e.preventDefault();
+    if (missingName()) return;
     void guard(async () => {
       const reply = await call("create", { name });
       if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
@@ -139,10 +148,21 @@ export function KjappenGame() {
 
   const join = (e: FormEvent) => {
     e.preventDefault();
+    if (missingName()) return;
+    if (code.trim().length < 4) {
+      setError("Koden er på fire tegn. Sjekk den med den som lagde runden.");
+      return;
+    }
     void guard(async () => {
       const reply = await call("join", { name, code: code.toUpperCase().trim() });
       if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
     });
+  };
+
+  const cancel = () => {
+    if (!seat) return;
+    if (!window.confirm("Avbryte runden for alle?")) return;
+    void guard(() => call("cancel", seat));
   };
 
   const buzz = () => {
@@ -167,18 +187,28 @@ export function KjappenGame() {
           <KjappenLogo className="kj-logo" />
           <p className="kj-tagline">Fem spørsmål om norsk fotball. Først på knappen får svare.</p>
           {error && <p className="kj-error">{error}</p>}
-          <form className="kj-form" onSubmit={create}>
-            <label className="kj-label" htmlFor="kj-name">Navnet ditt</label>
+
+          {/* The name belongs to both paths, so it sits above them. Inside the first
+              card it read as part of "make a new round", and whoever had been handed a
+              code filled in the code alone and met a button that would not move. */}
+          <div className="kj-form">
+            <label className="kj-label" htmlFor="kj-name">1. Skriv navnet ditt</label>
             <input id="kj-name" className="input" value={name} maxLength={18} autoComplete="off"
               onChange={(e) => setName(e.target.value)} placeholder="F.eks. Espen" />
-            <button className="btn btn-primary w-full" disabled={busy || !name.trim()}>Lag ny runde</button>
-          </form>
-          <form className="kj-form" onSubmit={join}>
-            <label className="kj-label" htmlFor="kj-code">…eller bli med på en kode</label>
-            <input id="kj-code" className="input kj-code-input" value={code} maxLength={6} autoComplete="off"
-              onChange={(e) => setCode(e.target.value.toUpperCase())} placeholder="BCDF" />
-            <button className="btn btn-secondary w-full" disabled={busy || !name.trim() || code.trim().length < 4}>Bli med</button>
-          </form>
+          </div>
+
+          <div className="kj-choice">
+            <form className="kj-form" onSubmit={create}>
+              <p className="kj-label">2. Lag en ny runde</p>
+              <button className="btn btn-primary w-full" disabled={busy}>Lag ny runde</button>
+            </form>
+            <form className="kj-form" onSubmit={join}>
+              <label className="kj-label" htmlFor="kj-code">…eller bli med på en kode du har fått</label>
+              <input id="kj-code" className="input kj-code-input" value={code} maxLength={6} autoComplete="off"
+                onChange={(e) => setCode(e.target.value.toUpperCase())} placeholder="BCDF" />
+              <button className="btn btn-secondary w-full" disabled={busy}>Bli med</button>
+            </form>
+          </div>
         </div>
       </div>
     );
@@ -190,6 +220,7 @@ export function KjappenGame() {
 
   const bubble = () => {
     if (view.phase === "lobby") return `Velkommen! Del koden ${view.code} med inntil ${MAX_PLAYERS - 1} andre.`;
+    if (view.phase === "done" && view.outcome?.kind === "cancelled") return "Runden ble avbrutt.";
     if (view.phase === "done")
       return champions.length > 1
         ? `Uavgjort mellom ${champions.map((w) => w.name).join(" og ")}!`
@@ -258,7 +289,7 @@ export function KjappenGame() {
           {view.phase === "lobby" && (
             <>
               <p className="kj-hint">Del koden <b>{view.code}</b>. Alle som er med står på podiene over.</p>
-              {view.players[0]?.id === mine ? (
+              {isHost ? (
                 <button className="btn btn-primary w-full" disabled={busy || view.players.length < 2}
                   onClick={() => void guard(() => call("start", seat))}>
                   {view.players.length < 2 ? "Venter på flere spillere" : "Start Kjappen"}
@@ -287,6 +318,16 @@ export function KjappenGame() {
 
           {view.phase === "done" && (
             <button className="btn btn-secondary w-full" onClick={() => { remember(null); setView(null); }}>Ny runde</button>
+          )}
+
+          {/* The host can always stop; anyone else can step out of a round they are
+              stuck in without ending it for the others. */}
+          {view.phase !== "done" && (
+            isHost ? (
+              <button className="btn btn-ghost w-full" onClick={cancel} disabled={busy}>Avbryt runden</button>
+            ) : (
+              <button className="btn btn-ghost w-full" onClick={() => { remember(null); setView(null); }}>Forlat runden</button>
+            )
           )}
         </section>
 

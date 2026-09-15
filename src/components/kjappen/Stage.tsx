@@ -105,7 +105,7 @@ export function StageBackdrop() {
   );
 }
 
-export type PodiumPlayer = { id: string; name: string; score: number; seat: number };
+export type PodiumPlayer = { id: string; name: string; score: number; seat: number; host?: boolean };
 
 export function Podium({ player, you, buzzed, waiting }: { player: PodiumPlayer; you: boolean; buzzed: boolean; waiting: boolean }) {
   return (
