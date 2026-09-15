@@ -25,4 +25,29 @@ describe("September content audit", () => {
       expect(q.sources.length).toBeGreaterThan(0);
     }
   });
+  it("contains all six Norway matches from the 2026 World Cup", () => {
+    const matches = ds.matches.filter((match) => match.competition === "world-cup" && match.date.startsWith("2026-"));
+    expect(matches.map((match) => match.id)).toEqual([
+      "2026-06-16-irq-nor",
+      "2026-06-22-nor-sen",
+      "2026-06-26-nor-fra",
+      "2026-06-30-civ-nor",
+      "2026-07-05-bra-nor",
+      "2026-07-11-nor-eng",
+    ]);
+    expect(matches.every((match) => match.lineup.length === 11)).toBe(true);
+    expect(matches.find((match) => match.id === "2026-06-26-nor-fra")?.lineup.map((player) => player.name)).toEqual([
+      "Egil Selvik",
+      "Fredrik Aursnes",
+      "Leo Østigård",
+      "Henrik Sælebakke Falchener",
+      "Fredrik Bjørkan",
+      "Patrick Berg",
+      "Kristian Thorstvedt",
+      "Thelo Aasgaard",
+      "Oscar Bobb",
+      "Jørgen Strand Larsen",
+      "Andreas Schjelderup",
+    ]);
+  });
 });
