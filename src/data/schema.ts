@@ -185,6 +185,24 @@ const straffesparkAnswer = z.object({
 
 export const STRAFFESPARK_CATEGORIES = ["spiller", "trener", "stadion", "klubb", "supportere"] as const;
 
+/**
+ * Kjappen's own question bank.
+ *
+ * Separate from Straffespark on purpose: the two games draw from the same kind of
+ * material, but this file is written for the quiz show and is not Straffespark's to
+ * carry. Same shape as a trivia entry, same confidence rules - a question written from
+ * memory sits at `recall` and never reaches a player until a source is attached.
+ */
+export const kjappenFile = z.array(
+  z.object({
+    ...straffesparkBase,
+    category: z.enum(STRAFFESPARK_CATEGORIES),
+    prompt: z.string().min(8),
+    answer: straffesparkAnswer,
+    fact: z.string().optional(),
+  }),
+);
+
 export const straffesparkFile = z.array(
   z.discriminatedUnion("kind", [
     z.object({

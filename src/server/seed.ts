@@ -137,11 +137,12 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
     // is written for this game by hand: a question only gets here if it passes the same
     // bar as everything else, and the answer stays on the server where the game is
     // adjudicated. Photo and chant questions are left out - Kjappen is read aloud.
-    const kjappen = ds.straffespark.flatMap((q) =>
-      q.kind === "trivia" && isPlayable(q)
-        ? [{ id: q.id, prompt: q.prompt, answer: q.answer.label, aliases: q.answer.aliases, fact: q.fact ?? null, sources: q.sources }]
-        : [],
-    );
+    const row = (q: { id: string; prompt: string; answer: { label: string; aliases: string[] }; fact?: string; sources: typeof ds.straffespark[number]["sources"] }) =>
+      ({ id: q.id, prompt: q.prompt, answer: q.answer.label, aliases: q.answer.aliases, fact: q.fact ?? null, sources: q.sources });
+    const kjappen = [
+      ...ds.straffespark.flatMap((q) => (q.kind === "trivia" && isPlayable(q) ? [row(q)] : [])),
+      ...ds.kjappen.filter((q) => isPlayable(q)).map(row),
+    ];
     await tx.delete(s.kjappenQuestions);
     for (let i = 0; i < kjappen.length; i += 500) await tx.insert(s.kjappenQuestions).values(kjappen.slice(i, i + 500));
 
@@ -151,6 +152,6 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
   });
   
 
-  const kjappenCount = ds.straffespark.filter((q) => q.kind === "trivia" && isPlayable(q)).length;
+  const kjappenCount = ds.straffespark.filter((q) => q.kind === "trivia" && isPlayable(q)).length + ds.kjappen.filter((q) => isPlayable(q)).length;
   return { matches: ds.matches.length, players: ds.players.size, clubs: ds.clubs.length, seasons: ds.seasons.length, honours: ds.honours.length, kjappen: kjappenCount, problems: ds.problems };
 }
