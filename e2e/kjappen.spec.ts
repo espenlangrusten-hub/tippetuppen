@@ -8,6 +8,7 @@ const join = async (page: Page, code: string, name: string) => {
   await page.getByRole("button", { name: "Videre" }).click();
 };
 
+
 // Two browser contexts, because the point of Kjappen is that two people see the same
 // round at the same time. One context could never catch a buzzer that works for the
 // player who pressed it but not for anyone else.
@@ -25,11 +26,12 @@ test("two players share a round, and only the one who buzzed may answer", async 
 
   await host.getByLabel("Navnet ditt").fill("Vert");
   await host.getByRole("button", { name: "Videre" }).click();
+  // Straight into the lobby: the code is handed over there, not on a screen of its own.
   const big = host.locator(".kj-code-big");
   await expect(big).toBeVisible({ timeout: 15000 });
   const code = ((await big.textContent()) ?? "").trim();
   expect(code).toMatch(/^[BCDFGHJKMNPQRSTVWXZ23456789]{4}$/);
-  await host.getByRole("button", { name: "Videre" }).click();
+  await expect(host.getByRole("button", { name: /Venter på flere spillere|Start Kjappen/ })).toBeVisible();
 
   await join(guest, code, "Gjest");
 
