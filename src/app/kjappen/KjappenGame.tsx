@@ -1,8 +1,8 @@
 "use client";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
-import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, type Phase } from "@/lib/kjappen";
-import { Host, KjappenLogo, Podium, StageBackdrop, type PodiumPlayer } from "@/components/kjappen/Stage";
+import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
+import { Contestant, Host, KjappenLogo, NextQuestionBar, StageBackdrop, Verdict, type PodiumPlayer } from "@/components/kjappen/Stage";
 
 type Outcome = { kind: string; playerId: string | null; delta: number; guess?: string };
 type View = {
@@ -26,13 +26,13 @@ type View = {
 
 const STORE = "kjappen-seat";
 type Seat = { code: string; playerId: string };
-
-/** The phases that move on their own, and therefore need watching. */
-const TICKING: Phase[] = ["question", "answering", "reveal"];
+/** Which of the pre-game screens is showing. The round itself replaces all of them. */
+type Screen = "welcome" | "create" | "join" | "code";
 
 export function KjappenGame() {
   const [seat, setSeat] = useState<Seat | null>(null);
   const [view, setView] = useState<View | null>(null);
+  const [screen, setScreen] = useState<Screen>("welcome");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [name, setName] = useState("");
@@ -65,15 +65,25 @@ export function KjappenGame() {
     } catch { /* private mode */ }
   }, []);
 
-  // Pick a saved seat back up, so a refresh mid-round does not lose the game.
+  const leave = useCallback(() => {
+    remember(null);
+    setView(null);
+    setScreen("welcome");
+    setCode("");
+    setGuess("");
+  }, [remember]);
+
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORE);
-      if (raw) setSeat(JSON.parse(raw) as Seat);
+      if (raw) {
+        setSeat(JSON.parse(raw) as Seat);
+        setScreen("code");
+      }
     } catch { /* private mode */ }
   }, []);
 
-  // One poll a second while a game is running. The server owns the clock; this only
+  // One poll a second while a round is running. The server owns the clock; this only
   // asks what it says.
   useEffect(() => {
     if (!seat) return;
@@ -84,10 +94,9 @@ export function KjappenGame() {
         const reply = await apiPost<View>("/kjappen/state", seat);
         if (stop) return;
         if (!reply.ok) {
-          // The round is gone (old code, cleared database): drop the seat rather than
-          // hammering a game that no longer exists.
           remember(null);
           setView(null);
+          setScreen("welcome");
           setError(reply.error || "Runden finnes ikke lenger");
           return;
         }
@@ -103,16 +112,22 @@ export function KjappenGame() {
   }, [seat, apply, remember]);
 
   // The countdown runs locally between polls so it does not stutter once a second.
+  const ticking = view && (view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
   useEffect(() => {
-    if (!view || !TICKING.includes(view.phase)) return;
+    if (!ticking) return;
     const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
     return () => clearInterval(id);
-  }, [view]);
+  }, [ticking]);
 
   const mine = view?.you ?? seat?.playerId ?? null;
   const isHost = !!view?.players.some((p) => p.id === mine && p.host);
   const iBuzzed = !!view && view.buzzedBy === mine;
   const phase = view?.phase;
+  const round = view?.round;
+
+  // Clear the box for every new question. It used to keep the last answer, so the next
+  // time you buzzed you had to wipe it first - with fifteen seconds running.
+  useEffect(() => setGuess(""), [round, phase]);
 
   useEffect(() => {
     if (phase === "answering" && iBuzzed) answerBox.current?.focus();
@@ -130,44 +145,43 @@ export function KjappenGame() {
     }
   };
 
-  // A button that is simply dead tells you nothing. Say what is missing instead.
-  const missingName = () => {
+  const needName = () => {
     if (name.trim()) return false;
-    setError("Skriv navnet ditt først – feltet under nummer 1.");
+    setError("Skriv navnet ditt først.");
     return true;
   };
 
   const create = (e: FormEvent) => {
     e.preventDefault();
-    if (missingName()) return;
+    if (needName()) return;
     void guard(async () => {
       const reply = await call("create", { name });
-      if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
+      if (reply?.playerId) {
+        remember({ code: reply.code, playerId: reply.playerId });
+        setScreen("code");
+      }
     });
   };
 
   const join = (e: FormEvent) => {
     e.preventDefault();
-    if (missingName()) return;
+    if (needName()) return;
     if (code.trim().length < 4) {
       setError("Koden er på fire tegn. Sjekk den med den som lagde runden.");
       return;
     }
     void guard(async () => {
       const reply = await call("join", { name, code: code.toUpperCase().trim() });
-      if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
+      if (reply?.playerId) {
+        remember({ code: reply.code, playerId: reply.playerId });
+        setScreen("code");
+      }
     });
   };
 
   const cancel = () => {
-    if (!seat) return;
-    if (!window.confirm("Avbryte runden for alle?")) return;
+    if (!seat || !window.confirm("Avbryte runden for alle?")) return;
     void guard(() => call("cancel", seat));
-  };
-
-  const buzz = () => {
-    if (!seat || view?.phase !== "question" || view.buzzedBy) return;
-    void guard(() => call("buzz", seat));
   };
 
   const send = (e: FormEvent) => {
@@ -179,59 +193,83 @@ export function KjappenGame() {
     });
   };
 
+  const shell = (extra: string, children: React.ReactNode) => (
+    <div className={`kj-shell ${extra}`}>
+      <StageBackdrop />
+      <div className="kj-front">{children}</div>
+    </div>
+  );
+
+  // ---- before the round -----------------------------------------------------
+
   if (!seat || !view) {
-    return (
-      <div className="kj-shell kj-shell-entry">
-        <StageBackdrop />
-        <div className="kj-front kj-entry">
+    if (screen === "welcome")
+      return shell("kj-shell-entry", (
+        <div className="kj-entry">
           <KjappenLogo className="kj-logo" />
           <p className="kj-tagline">Fem spørsmål om norsk fotball. Først på knappen får svare.</p>
           {error && <p className="kj-error">{error}</p>}
+          <button className="btn btn-primary w-full" onClick={() => { setError(""); setScreen("create"); }}>Lag runde</button>
+          <button className="btn btn-secondary w-full" onClick={() => { setError(""); setScreen("join"); }}>Tast inn kode</button>
+        </div>
+      ));
 
-          {/* The name belongs to both paths, so it sits above them. Inside the first
-              card it read as part of "make a new round", and whoever had been handed a
-              code filled in the code alone and met a button that would not move. */}
-          <div className="kj-form">
-            <label className="kj-label" htmlFor="kj-name">1. Skriv navnet ditt</label>
-            <input id="kj-name" className="input" value={name} maxLength={18} autoComplete="off"
-              onChange={(e) => setName(e.target.value)} placeholder="F.eks. Espen" />
-          </div>
-
-          <div className="kj-choice">
-            <form className="kj-form" onSubmit={create}>
-              <p className="kj-label">2. Lag en ny runde</p>
-              <button className="btn btn-primary w-full" disabled={busy}>Lag ny runde</button>
-            </form>
-            <form className="kj-form" onSubmit={join}>
-              <label className="kj-label" htmlFor="kj-code">…eller bli med på en kode du har fått</label>
+    return shell("kj-shell-entry", (
+      <div className="kj-entry">
+        <KjappenLogo className="kj-logo-mid" />
+        <h1 className="kj-heading">{screen === "create" ? "Ny runde" : "Bli med i en runde"}</h1>
+        {error && <p className="kj-error">{error}</p>}
+        <form className="kj-form" onSubmit={screen === "create" ? create : join}>
+          <label className="kj-label" htmlFor="kj-name">Navnet ditt</label>
+          <input id="kj-name" className="input" value={name} maxLength={18} autoComplete="off" autoFocus
+            onChange={(e) => setName(e.target.value)} placeholder="F.eks. Espen" />
+          {screen === "join" && (
+            <>
+              <label className="kj-label" htmlFor="kj-code">Koden du har fått</label>
               <input id="kj-code" className="input kj-code-input" value={code} maxLength={6} autoComplete="off"
                 onChange={(e) => setCode(e.target.value.toUpperCase())} placeholder="BCDF" />
-              <button className="btn btn-secondary w-full" disabled={busy}>Bli med</button>
-            </form>
-          </div>
-        </div>
+            </>
+          )}
+          <button className="btn btn-primary w-full" disabled={busy}>{busy ? "Vent …" : "Videre"}</button>
+        </form>
+        <button className="btn btn-ghost w-full" onClick={() => { setError(""); setScreen("welcome"); }}>Avbryt</button>
       </div>
-    );
+    ));
   }
+
+  // ---- the code hand-off ----------------------------------------------------
+
+  if (screen === "code" && view.phase === "lobby" && isHost)
+    return shell("kj-shell-entry", (
+      <div className="kj-entry">
+        <p className="kj-tagline">Del denne koden med de andre</p>
+        <div className="kj-code-big">{view.code}</div>
+        <p className="kj-hint">Inntil {MAX_PLAYERS - 1} andre kan bli med. De velger «Tast inn kode».</p>
+        <button className="btn btn-primary w-full" onClick={() => setScreen("welcome")}>Videre</button>
+        <button className="btn btn-ghost w-full" onClick={cancel}>Avbryt runden</button>
+      </div>
+    ));
+
+  // ---- the round ------------------------------------------------------------
 
   const champions = view.winners?.length ? view.players.filter((p) => view.winners!.includes(p.id)) : [];
   const buzzedPlayer = view.players.find((p) => p.id === view.buzzedBy) ?? null;
-  const total = view.phase === "question" ? BUZZ_SECONDS : ANSWER_SECONDS;
+  const cancelled = view.phase === "done" && view.outcome?.kind === "cancelled";
+  const verdict = view.phase === "reveal" && (view.outcome?.kind === "correct" || view.outcome?.kind === "wrong" || view.outcome?.kind === "timeout")
+    ? view.outcome.kind === "correct"
+    : null;
 
   const bubble = () => {
-    if (view.phase === "lobby") return `Velkommen! Del koden ${view.code} med inntil ${MAX_PLAYERS - 1} andre.`;
-    if (view.phase === "done" && view.outcome?.kind === "cancelled") return "Runden ble avbrutt.";
+    if (view.phase === "lobby") return `Venter på spillere. Koden er ${view.code}.`;
+    if (cancelled) return "Runden ble avbrutt.";
     if (view.phase === "done")
       return champions.length > 1
         ? `Uavgjort mellom ${champions.map((w) => w.name).join(" og ")}!`
-        : champions.length
-          ? `${champions[0].name} vinner Kjappen!`
-          : "Takk for i dag!";
+        : champions.length ? `${champions[0].name} vinner Kjappen!` : "Takk for i dag!";
     if (view.phase === "reveal") {
-      if (view.outcome?.kind === "correct") return `Riktig! Svaret var ${view.answer}.`;
       if (view.outcome?.kind === "nobody") return `Ingen turte. Svaret var ${view.answer}.`;
       if (view.outcome?.kind === "timeout") return `Tiden gikk ut. Svaret var ${view.answer}.`;
-      return `Feil. Svaret var ${view.answer}.`;
+      return `Svaret var ${view.answer}.`;
     }
     if (view.phase === "answering") return buzzedPlayer ? `${buzzedPlayer.name} svarer!` : "Noen svarer!";
     return view.prompt ?? "";
@@ -240,12 +278,13 @@ export function KjappenGame() {
   return (
     <div className="kj-shell">
       <StageBackdrop />
+      {verdict !== null && <Verdict correct={verdict} />}
       <div className="kj-front">
         <header className="kj-top">
           <KjappenLogo className="kj-logo-small" />
           <div className="kj-meta">
             <span className="kj-code-chip">Kode {view.code}</span>
-            {view.phase !== "lobby" && <span className="kj-round">Spørsmål {view.round}/{view.questionCount}</span>}
+            {view.phase !== "lobby" && !cancelled && <span className="kj-round">Spørsmål {view.round}/{view.questionCount}</span>}
           </div>
         </header>
 
@@ -254,32 +293,40 @@ export function KjappenGame() {
           <div className="kj-bubble">
             <p>{bubble()}</p>
             {view.phase === "reveal" && view.fact && <p className="kj-fact">{view.fact}</p>}
-            {view.phase === "reveal" && view.outcome?.kind === "wrong" && view.outcome.guess && (
-              <p className="kj-fact">Svaret som ble gitt: «{view.outcome.guess}»</p>
-            )}
           </div>
-          {(view.phase === "question" || view.phase === "answering") && (
-            <div className={`kj-clock ${left <= 5 ? "kj-clock-low" : ""}`}>
-              <svg viewBox="0 0 48 48" aria-hidden="true">
-                <circle cx="24" cy="24" r="20" className="kj-clock-track" />
-                <circle cx="24" cy="24" r="20" className="kj-clock-hand"
-                  style={{ strokeDasharray: 125.6, strokeDashoffset: 125.6 * (1 - left / total) }} />
-              </svg>
-              <span>{left}</span>
-            </div>
-          )}
         </section>
 
-        <section className="kj-podiums">
+        {/* The sweep says a new question is on its way, so the pause reads as part of
+            the show rather than as the game having stopped. */}
+        {view.phase === "reveal" && view.round < view.questionCount && (
+          <NextQuestionBar seconds={REVEAL_SECONDS} keyed={view.round} />
+        )}
+
+        {/* Once somebody has the buzzer, everybody watches the same clock. */}
+        {view.phase === "answering" && (
+          <div className={`kj-bigclock ${left <= 5 ? "kj-bigclock-low" : ""}`}>
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="52" className="kj-bigclock-track" />
+              <circle cx="60" cy="60" r="52" className="kj-bigclock-hand"
+                style={{ strokeDasharray: 326.7, strokeDashoffset: 326.7 * (1 - left / ANSWER_SECONDS) }} />
+            </svg>
+            <span>{left}</span>
+          </div>
+        )}
+
+        <section className="kj-contestants">
           {view.players.map((p) => (
-            <Podium key={p.id} player={p} you={p.id === mine} buzzed={p.id === view.buzzedBy}
-              waiting={view.phase === "question"} />
+            <div key={p.id} className="kj-seat">
+              {/* What the player typed, shown where the player stands. */}
+              {view.phase === "reveal" && view.outcome?.guess && view.outcome.playerId === p.id && (
+                <div className="kj-say">{view.outcome.guess}</div>
+              )}
+              <Contestant player={p} you={p.id === mine} buzzed={p.id === view.buzzedBy} ready={view.phase === "question"} />
+            </div>
           ))}
           {view.phase === "lobby" &&
             Array.from({ length: MAX_PLAYERS - view.players.length }).map((_, i) => (
-              <div key={`empty-${i}`} className="kj-podium kj-podium-empty">
-                <div className="kj-podium-box"><span className="kj-podium-name">Venter …</span></div>
-              </div>
+              <div key={`empty-${i}`} className="kj-seat kj-seat-empty"><span>Venter …</span></div>
             ))}
         </section>
 
@@ -287,21 +334,23 @@ export function KjappenGame() {
 
         <section className="kj-controls">
           {view.phase === "lobby" && (
-            <>
-              <p className="kj-hint">Del koden <b>{view.code}</b>. Alle som er med står på podiene over.</p>
-              {isHost ? (
-                <button className="btn btn-primary w-full" disabled={busy || view.players.length < 2}
-                  onClick={() => void guard(() => call("start", seat))}>
-                  {view.players.length < 2 ? "Venter på flere spillere" : "Start Kjappen"}
-                </button>
-              ) : (
-                <p className="kj-hint">Venter på at runden startes …</p>
-              )}
-            </>
+            isHost ? (
+              <button className="btn btn-primary w-full" disabled={busy || view.players.length < 2}
+                onClick={() => void guard(() => call("start", seat))}>
+                {view.players.length < 2 ? "Venter på flere spillere" : "Start Kjappen"}
+              </button>
+            ) : (
+              <p className="kj-hint">Venter på at runden startes …</p>
+            )
           )}
 
           {view.phase === "question" && (
-            <button className="kj-buzzer" onClick={buzz} disabled={busy}><span>SVAR!</span></button>
+            <>
+              <div className={`kj-clock ${left <= 5 ? "kj-clock-low" : ""}`}><span>{left}</span></div>
+              <button className="kj-buzzer" onClick={() => { if (!view.buzzedBy) void guard(() => call("buzz", seat)); }} disabled={busy}>
+                <span>SVAR!</span>
+              </button>
+            </>
           )}
 
           {view.phase === "answering" && iBuzzed && (
@@ -316,24 +365,18 @@ export function KjappenGame() {
             <p className="kj-hint">{buzzedPlayer ? `${buzzedPlayer.name} rakk knappen først.` : "Noen rakk knappen først."}</p>
           )}
 
-          {view.phase === "done" && (
-            <button className="btn btn-secondary w-full" onClick={() => { remember(null); setView(null); }}>Ny runde</button>
-          )}
+          {view.phase === "done" && <button className="btn btn-secondary w-full" onClick={leave}>Ny runde</button>}
 
-          {/* The host can always stop; anyone else can step out of a round they are
-              stuck in without ending it for the others. */}
           {view.phase !== "done" && (
-            isHost ? (
-              <button className="btn btn-ghost w-full" onClick={cancel} disabled={busy}>Avbryt runden</button>
-            ) : (
-              <button className="btn btn-ghost w-full" onClick={() => { remember(null); setView(null); }}>Forlat runden</button>
-            )
+            isHost
+              ? <button className="btn btn-ghost w-full" onClick={cancel} disabled={busy}>Avbryt runden</button>
+              : <button className="btn btn-ghost w-full" onClick={leave}>Forlat runden</button>
           )}
         </section>
 
         <p className="kj-rules">
           Riktig svar gir 100 poeng, feil svar trekker 100. Rekker du ikke svare innen {ANSWER_SECONDS} sekunder,
-          teller det som feil.
+          teller det som feil. Du har {BUZZ_SECONDS} sekunder på å trykke.
         </p>
       </div>
     </div>

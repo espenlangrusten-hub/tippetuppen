@@ -107,17 +107,77 @@ export function StageBackdrop() {
 
 export type PodiumPlayer = { id: string; name: string; score: number; seat: number; host?: boolean };
 
-export function Podium({ player, you, buzzed, waiting }: { player: PodiumPlayer; you: boolean; buzzed: boolean; waiting: boolean }) {
+/**
+ * Four contestants who look like four different people.
+ *
+ * Seat decides the look, so the same player keeps the same face for the whole round and
+ * everybody sees the same one. Hair and shirt carry the difference; the face is shared,
+ * because four hand-drawn faces would drift apart and none of them should resemble
+ * anyone real.
+ */
+const LOOKS = [
+  { shirt: "#e8654a", shirtDark: "#c44a32", hair: "#3b2a1c", skin: "#f6c39d" },
+  { shirt: "#4f9de8", shirtDark: "#3579bd", hair: "#d9a44f", skin: "#eab183" },
+  { shirt: "#5bbd7a", shirtDark: "#3f9159", hair: "#8c3b2a", skin: "#c98d63" },
+  { shirt: "#f2c14e", shirtDark: "#cf9c2c", hair: "#1f1a17", skin: "#8d5a3b" },
+];
+
+export function Contestant({ player, you, buzzed, ready }: { player: PodiumPlayer; you: boolean; buzzed: boolean; ready: boolean }) {
+  const look = LOOKS[(player.seat - 1) % LOOKS.length];
   return (
-    <div className={`kj-podium ${buzzed ? "kj-podium-buzzed" : ""} ${waiting ? "kj-podium-waiting" : ""}`}>
-      <div className="kj-podium-score">{player.score}</div>
-      <div className="kj-podium-box">
-        <span className="kj-podium-seat">{player.seat}</span>
-        <span className="kj-podium-name">
-          {player.name}
-          {you && <em> (deg)</em>}
-        </span>
+    <div className={`kj-contestant ${buzzed ? "kj-contestant-buzzed" : ""} ${ready ? "kj-contestant-ready" : ""}`}>
+      <div className="kj-scoreboard">
+        <span className="kj-scoreboard-name">{player.name}{you && <em> (deg)</em>}</span>
+        <span className="kj-scoreboard-score">{player.score}</span>
       </div>
+      <svg viewBox="0 0 100 150" className="kj-figure" role="img" aria-label={player.name}>
+        <ellipse cx="50" cy="145" rx="26" ry="5" fill="#1b1040" fillOpacity=".4" />
+        {/* legs and shoes */}
+        <path d="M38 104h10v34H38zM52 104h10v34H52z" fill="#26304f" />
+        <path d="M34 136h14a4 4 0 0 1 4 4v3H34zM48 136h14a4 4 0 0 1 4 4v3H48z" fill="#141b30" />
+        {/* body */}
+        <path d="M50 62c-16 0-27 9-27 22v26h54V84c0-13-11-22-27-22z" fill={look.shirt} />
+        <path d="M31 66c-5 4-8 10-8 18v26h9l3-42zM69 66c5 4 8 10 8 18v26h-9l-3-42z" fill={look.shirtDark} />
+        <path d="M50 62l-8 5 8 11 8-11z" fill="#fff" fillOpacity=".85" />
+        {/* Two arms drawn, one shown: swapping a whole limb is predictable in a way a
+            rotation about a guessed pivot is not. */}
+        <g className="kj-arm-down">
+          <path d="M72 72c8 4 13 12 13 22v12h-10V96c0-6-2-10-6-13z" fill={look.shirtDark} />
+          <circle cx="80" cy="108" r="7.5" fill={look.skin} />
+        </g>
+        <g className="kj-arm-up">
+          <path d="M72 72c9 2 15 7 17 14l-6 2-8 22-9-4 8-24c-1-3-3-5-6-6z" fill={look.shirtDark} />
+          <circle cx="86" cy="80" r="7.5" fill={look.skin} />
+        </g>
+        <g>
+          <path d="M28 72c-8 4-13 12-13 22v12h10V96c0-6 2-10 6-13z" fill={look.shirtDark} />
+          <circle cx="20" cy="108" r="7.5" fill={look.skin} />
+        </g>
+        {/* head */}
+        <path d="M44 52h12v12H44z" fill={look.skin} />
+        <ellipse cx="50" cy="36" rx="20" ry="22" fill={look.skin} />
+        <path d="M50 12c14 0 24 9 24 19 0 5-2 9-4 11 1-11-8-16-20-16s-21 5-20 16c-2-2-4-6-4-11 0-10 10-19 24-19z" fill={look.hair} />
+        <circle cx="43" cy="36" r="3" fill="#1b2340" /><circle cx="57" cy="36" r="3" fill="#1b2340" />
+        <path d="M42 45q8 8 16 0q-8 4-16 0z" fill="#7a2230" />
+      </svg>
+    </div>
+  );
+}
+
+/** Kahoot-style sweep: a bar that empties while the next question is on its way. */
+export function NextQuestionBar({ seconds, keyed }: { seconds: number; keyed: number | string }) {
+  return (
+    <div className="kj-sweep" aria-hidden="true">
+      <div key={keyed} className="kj-sweep-fill" style={{ animationDuration: `${seconds}s` }} />
+    </div>
+  );
+}
+
+/** The verdict, thrown across the whole screen so nobody misses it. */
+export function Verdict({ correct }: { correct: boolean }) {
+  return (
+    <div className={`kj-verdict ${correct ? "kj-verdict-right" : "kj-verdict-wrong"}`} role="status">
+      <span>{correct ? "RIKTIG SVAR" : "FEIL SVAR"}</span>
     </div>
   );
 }
