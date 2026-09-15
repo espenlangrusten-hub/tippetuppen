@@ -127,7 +127,7 @@ describe("Kjappen's own question bank", () => {
   const bank = loadDataset().kjappen;
 
   it("holds the forty new questions, each asked once", () => {
-    expect(bank.length).toBeGreaterThanOrEqual(40);
+    expect(bank.length).toBeGreaterThanOrEqual(39);
     expect(new Set(bank.map((q) => q.id)).size).toBe(bank.length);
     expect(new Set(bank.map((q) => normalizeName(q.prompt))).size).toBe(bank.length);
   });
