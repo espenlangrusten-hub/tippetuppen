@@ -1086,8 +1086,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ullevaal_Stadion",
+        "title": "Ullevaal Stadion – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «cupfinale». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ullevaal Stadion",
       "mustMention": [
