@@ -1,0 +1,837 @@
+[
+  {
+    "id": "kj-trener-ingebrigtsen",
+    "category": "trener",
+    "prompt": "Hvilken klubb ledet Kåre Ingebrigtsen til seriegull i 2015 og 2016?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "fact": "Ingebrigtsen tok over Rosenborg i 2014.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen",
+      "mustMention": [
+        "Rosenborg",
+        "2015"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-drillo-2009",
+    "category": "trener",
+    "prompt": "Hvem kom tilbake som Norges landslagssjef i 2009?",
+    "answer": {
+      "label": "Egil Olsen",
+      "aliases": [
+        "Drillo",
+        "Egil Drillo Olsen"
+      ]
+    },
+    "fact": "Olsens andre periode varte til 2013.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Egil Olsen",
+      "mustMention": [
+        "2009"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-drillo-wimbledon",
+    "category": "trener",
+    "prompt": "Hvilken engelsk klubb ledet Egil Olsen i Premier League?",
+    "answer": {
+      "label": "Wimbledon",
+      "aliases": [
+        "Wimbledon FC"
+      ]
+    },
+    "fact": "Olsen var Wimbledon-manager rundt årtusenskiftet.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Egil Olsen",
+      "mustMention": [
+        "Wimbledon"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-pellerud-1995",
+    "category": "trener",
+    "prompt": "Hvem var trener for Norges kvinnelandslag da laget vant VM i 1995?",
+    "answer": {
+      "label": "Even Pellerud",
+      "aliases": [
+        "Pellerud"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Even Pellerud",
+      "mustMention": [
+        "1995"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-hogmo-ol2000",
+    "category": "trener",
+    "prompt": "Hvem var trener for Norges kvinnelandslag da laget vant OL-gull i 2000?",
+    "answer": {
+      "label": "Per-Mathias Høgmo",
+      "aliases": [
+        "Høgmo"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "2000"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-sjogren",
+    "category": "trener",
+    "prompt": "Hvem var trener for Norges kvinnelandslag fra 2017 til 2022?",
+    "answer": {
+      "label": "Martin Sjögren",
+      "aliases": [
+        "Sjögren"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Martin Sjögren",
+      "mustMention": [
+        "2017"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-grainger",
+    "category": "trener",
+    "prompt": "Hvem overtok som trener for Norges kvinnelandslag i 2022?",
+    "answer": {
+      "label": "Gemma Grainger",
+      "aliases": [
+        "Grainger"
+      ]
+    },
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Gemma Grainger",
+      "mustMention": [
+        "2022"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-hareide-rbk",
+    "category": "trener",
+    "prompt": "Hvilken norsk klubb ledet Åge Hareide til seriegull i 2003?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Rosenborg",
+        "2003"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-mjelde-brann",
+    "category": "trener",
+    "prompt": "Hvem var Brann-trener da klubben vant seriegull i 2007?",
+    "answer": {
+      "label": "Mons Ivar Mjelde",
+      "aliases": [
+        "Mjelde"
+      ]
+    },
+    "fact": "Brann tok sitt første seriegull siden 1963.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Mons Ivar Mjelde",
+      "mustMention": [
+        "Brann",
+        "2007"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-jonsson-stabak",
+    "category": "trener",
+    "prompt": "Hvem var Stabæk-trener da klubben vant seriegull i 2008?",
+    "answer": {
+      "label": "Jan Jönsson",
+      "aliases": [
+        "Jönsson"
+      ]
+    },
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Jan Jönsson",
+      "mustMention": [
+        "Stabæk",
+        "2008"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-moe-molde",
+    "category": "trener",
+    "prompt": "Hvem var Molde-trener da klubben vant seriegull i 2019?",
+    "answer": {
+      "label": "Erling Moe",
+      "aliases": [
+        "Moe"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Erling Moe",
+      "mustMention": [
+        "Molde",
+        "2019"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-solbakken-fck",
+    "category": "trener",
+    "prompt": "Hvilken dansk klubb ledet Ståle Solbakken til flere seriegull?",
+    "answer": {
+      "label": "FC København",
+      "aliases": [
+        "København",
+        "FCK",
+        "FC Koebenhavn"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "København"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-ogs-cardiff",
+    "category": "trener",
+    "prompt": "Hvilken engelsk klubb ledet Ole Gunnar Solskjær før han ble Manchester United-manager?",
+    "answer": {
+      "label": "Cardiff City",
+      "aliases": [
+        "Cardiff"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Cardiff"
+      ]
+    }
+  },
+  {
+    "id": "kj-trener-deila-celtic",
+    "category": "trener",
+    "prompt": "Hvilken skotsk klubb ledet Ronny Deila fra 2014?",
+    "answer": {
+      "label": "Celtic",
+      "aliases": [
+        "Celtic FC",
+        "Celtic Glasgow"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "Celtic",
+        "2014"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-brasil-1998",
+    "category": "klubb",
+    "prompt": "Hvilket lag slo Norge 2–1 i gruppespillet i VM i 1998?",
+    "answer": {
+      "label": "Brasil",
+      "aliases": [
+        "Brazil",
+        "Brasils landslag"
+      ]
+    },
+    "fact": "Seieren sendte Norge videre til åttendedelsfinalen.",
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Verdensmesterskapet i fotball 1998",
+      "mustMention": [
+        "Norge",
+        "Brasil"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-rekdal-straffe",
+    "category": "spiller",
+    "prompt": "Hvem scoret på straffe da Norge slo Brasil 2–1 i VM i 1998?",
+    "answer": {
+      "label": "Kjetil Rekdal",
+      "aliases": [
+        "Rekdal"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "Brasil"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-italia-1998",
+    "category": "klubb",
+    "prompt": "Hvilket land slo Norge ut av VM i 1998 i åttendedelsfinalen?",
+    "answer": {
+      "label": "Italia",
+      "aliases": [
+        "Italy"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Verdensmesterskapet i fotball 1998",
+      "mustMention": [
+        "Norge",
+        "Italia"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-mexico-1994",
+    "category": "klubb",
+    "prompt": "Hvilket land møtte Norge i åpningskampen i VM i 1994?",
+    "answer": {
+      "label": "Mexico",
+      "aliases": [
+        "Mexicos landslag"
+      ]
+    },
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Verdensmesterskapet i fotball 1994",
+      "mustMention": [
+        "Norge",
+        "Mexico"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-iversen-spania",
+    "category": "spiller",
+    "prompt": "Hvem scoret Norges seiersmål mot Spania i EM i 2000?",
+    "answer": {
+      "label": "Steffen Iversen",
+      "aliases": [
+        "Iversen"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Steffen Iversen",
+      "mustMention": [
+        "Spania"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-em2000-ut",
+    "category": "klubb",
+    "prompt": "Hvilket land slo Norge 1–0 i EM i 2000?",
+    "answer": {
+      "label": "Jugoslavia",
+      "aliases": [
+        "Yugoslavia"
+      ]
+    },
+    "fact": "Norge røk ut av gruppa på målforskjell.",
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Europamesterskapet i fotball 2000",
+      "mustMention": [
+        "Norge",
+        "Jugoslavia"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-rbk-milan",
+    "category": "klubb",
+    "prompt": "Hvilken italiensk klubb slo Rosenborg på San Siro i Champions League i 1996?",
+    "answer": {
+      "label": "Milan",
+      "aliases": [
+        "AC Milan"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Rosenborg Ballklub",
+      "mustMention": [
+        "Milan"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-glimt-roma",
+    "category": "klubb",
+    "prompt": "Hvilket lag tapte 1–6 for Bodø/Glimt i Conference League i 2021?",
+    "answer": {
+      "label": "Roma",
+      "aliases": [
+        "AS Roma"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "FK Bodø/Glimt",
+      "mustMention": [
+        "Roma"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-mourinho",
+    "category": "trener",
+    "prompt": "Hvem var manager for Roma i 1–6-tapet mot Bodø/Glimt?",
+    "answer": {
+      "label": "José Mourinho",
+      "aliases": [
+        "Mourinho"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "José Mourinho",
+      "mustMention": [
+        "Roma"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-ogs-1999",
+    "category": "spiller",
+    "prompt": "Hvem scoret Manchester Uniteds seiersmål i Champions League-finalen i 1999?",
+    "answer": {
+      "label": "Ole Gunnar Solskjær",
+      "aliases": [
+        "Solskjær"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "1999"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-vm-kvinner-1995",
+    "category": "klubb",
+    "prompt": "Hvilket land vant VM i fotball for kvinner i 1995?",
+    "answer": {
+      "label": "Norge",
+      "aliases": [
+        "Noreg",
+        "Norway"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Verdensmesterskapet i fotball for kvinner 1995",
+      "mustMention": [
+        "Norge"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-ol-kvinner",
+    "category": "klubb",
+    "prompt": "I hvilket år vant Norges kvinnelandslag OL-gull i fotball?",
+    "answer": {
+      "label": "2000",
+      "aliases": [
+        "år 2000"
+      ]
+    },
+    "fact": "Finalen i Sydney gikk mot USA.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Norges kvinnelandslag i fotball",
+      "mustMention": [
+        "OL",
+        "2000"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-hegerberg-gullball",
+    "category": "spiller",
+    "prompt": "Hvilken norsk spiller vant den første Gullballen for kvinner i 2018?",
+    "answer": {
+      "label": "Ada Hegerberg",
+      "aliases": [
+        "Hegerberg"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ada Hegerberg",
+      "mustMention": [
+        "2018"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-hegerberg-lyon",
+    "category": "klubb",
+    "prompt": "Hvilken fransk klubb spilte Ada Hegerberg for da hun vant Gullballen?",
+    "answer": {
+      "label": "Lyon",
+      "aliases": [
+        "Olympique Lyonnais",
+        "OL Lyon"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ada Hegerberg",
+      "mustMention": [
+        "Lyon"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-haaland-36",
+    "category": "spiller",
+    "prompt": "Hvor mange mål scoret Erling Haaland i Premier League-sesongen 2022/23?",
+    "answer": {
+      "label": "36",
+      "aliases": [
+        "36 mål"
+      ]
+    },
+    "fact": "Det var ny rekord for én Premier League-sesong.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Erling Haaland",
+      "mustMention": [
+        "36"
+      ]
+    }
+  },
+  {
+    "id": "kj-hendelse-rbk-13",
+    "category": "klubb",
+    "prompt": "Hvor mange strake seriegull tok Rosenborg fra 1992 til 2004?",
+    "answer": {
+      "label": "13",
+      "aliases": [
+        "13 gull",
+        "tretten"
+      ]
+    },
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Rosenborg Ballklub",
+      "mustMention": [
+        "13"
+      ]
+    }
+  },
+  {
+    "id": "kj-klubb-haaland-salzburg",
+    "category": "klubb",
+    "prompt": "Hvilken klubb kjøpte Erling Haaland fra Molde i 2019?",
+    "answer": {
+      "label": "Red Bull Salzburg",
+      "aliases": [
+        "Salzburg",
+        "RB Salzburg",
+        "FC Salzburg"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Erling Haaland",
+      "mustMention": [
+        "Salzburg"
+      ]
+    }
+  },
+  {
+    "id": "kj-klubb-odegaard-godset",
+    "category": "klubb",
+    "prompt": "Hvilken norsk klubb solgte Martin Ødegaard til Real Madrid i 2015?",
+    "answer": {
+      "label": "Strømsgodset",
+      "aliases": [
+        "Godset",
+        "Strømsgodset IF"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Martin Ødegaard",
+      "mustMention": [
+        "Strømsgodset"
+      ]
+    }
+  },
+  {
+    "id": "kj-klubb-flest-gull",
+    "category": "klubb",
+    "prompt": "Hvilken norsk klubb har vunnet flest seriegull?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Eliteserien",
+      "mustMention": [
+        "Rosenborg"
+      ]
+    }
+  },
+  {
+    "id": "kj-spiller-riise-liverpool",
+    "category": "spiller",
+    "prompt": "Hvilken engelsk klubb spilte John Arne Riise for fra 2001 til 2008?",
+    "answer": {
+      "label": "Liverpool",
+      "aliases": [
+        "Liverpool FC"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "John Arne Riise",
+      "mustMention": [
+        "Liverpool"
+      ]
+    }
+  },
+  {
+    "id": "kj-spiller-myhre-everton",
+    "category": "spiller",
+    "prompt": "Hvilken engelsk klubb spilte keeper Thomas Myhre for på slutten av 1990-tallet?",
+    "answer": {
+      "label": "Everton",
+      "aliases": [
+        "Everton FC"
+      ]
+    },
+    "difficulty": 4,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Thomas Myhre",
+      "mustMention": [
+        "Everton"
+      ]
+    }
+  },
+  {
+    "id": "kj-spiller-berg-blackburn",
+    "category": "spiller",
+    "prompt": "Hvilken norsk spiller vant Premier League med Blackburn i 1995?",
+    "answer": {
+      "label": "Henning Berg",
+      "aliases": [
+        "Berg"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "Blackburn"
+      ]
+    }
+  },
+  {
+    "id": "kj-spiller-carew-valencia",
+    "category": "spiller",
+    "prompt": "Hvilken spansk klubb spilte John Carew for?",
+    "answer": {
+      "label": "Valencia",
+      "aliases": [
+        "Valencia CF"
+      ]
+    },
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "John Carew",
+      "mustMention": [
+        "Valencia"
+      ]
+    }
+  },
+  {
+    "id": "kj-klubb-kniksenprisen",
+    "category": "klubb",
+    "prompt": "Hva heter prisen som deles ut til årets spiller i Eliteserien?",
+    "answer": {
+      "label": "Kniksenprisen",
+      "aliases": [
+        "Kniksen"
+      ]
+    },
+    "fact": "Oppkalt etter Roald «Kniksen» Jensen.",
+    "difficulty": 3,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Kniksenprisen",
+      "mustMention": [
+        "Eliteserien"
+      ]
+    }
+  },
+  {
+    "id": "kj-klubb-tippeligaen",
+    "category": "klubb",
+    "prompt": "Hva het den norske toppdivisjonen for menn fra 1991 til 2016?",
+    "answer": {
+      "label": "Tippeligaen",
+      "aliases": [
+        "Tippeliga"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Eliteserien",
+      "mustMention": [
+        "Tippeligaen"
+      ]
+    }
+  },
+  {
+    "id": "kj-stadion-cupfinale",
+    "category": "stadion",
+    "prompt": "Hvilken arena er fast åsted for cupfinalen i norsk fotball?",
+    "answer": {
+      "label": "Ullevaal Stadion",
+      "aliases": [
+        "Ullevaal",
+        "Ullevål stadion"
+      ]
+    },
+    "difficulty": 2,
+    "status": "recall",
+    "sources": [],
+    "verify": {
+      "subject": "Ullevaal Stadion",
+      "mustMention": [
+        "cupfinale"
+      ]
+    }
+  }
+]

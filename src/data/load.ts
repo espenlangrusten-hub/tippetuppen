@@ -69,6 +69,7 @@ export type Dataset = {
   squads: z.infer<typeof S.squadFile>;
   spells: z.infer<typeof S.spellFile>;
   straffespark: z.infer<typeof S.straffesparkFile>;
+  kjappen: z.infer<typeof S.kjappenFile>;
   problems: string[];
 };
 
@@ -87,6 +88,7 @@ export function loadDataset(): Dataset {
   const squads = readJson(S.squadFile, "squads.json", []);
   const spells = readJson(S.spellFile, "spells.json", []);
   let straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
+  const kjappen = readJson(S.kjappenFile, "kjappen.json", []);
 
   const matchDir = path.join(DATA_DIR, "matches");
   const matches: S.MatchFile[] = existsSync(matchDir)
@@ -369,5 +371,20 @@ export function loadDataset(): Dataset {
     }
   }
 
-  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, problems };
+  // Kjappen's own questions: same checks as a Straffespark trivia entry, plus a promise
+  // that no two questions in the game ask the same thing.
+  const asked = new Set(straffespark.flatMap((q) => (q.kind === "trivia" ? [normalizeName(q.prompt)] : [])));
+  for (const q of kjappen) {
+    if (straffesparkIds.has(q.id)) problems.push(`kjappen: id ${q.id} collides with a straffespark question`);
+    straffesparkIds.add(q.id);
+    if (asked.has(normalizeName(q.prompt))) problems.push(`kjappen ${q.id}: this question is already asked elsewhere`);
+    asked.add(normalizeName(q.prompt));
+    if (q.enabled && q.status !== "recall" && q.sources.length === 0)
+      problems.push(`kjappen ${q.id}: status ${q.status} requires a source`);
+    if (!normalizeName(q.answer.label)) problems.push(`kjappen ${q.id}: answer normalises to nothing`);
+    const dupes = q.answer.aliases.filter((a) => normalizeName(a) === normalizeName(q.answer.label));
+    if (dupes.length) problems.push(`kjappen ${q.id}: alias ${dupes[0]} repeats the answer`);
+  }
+
+  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, problems };
 }

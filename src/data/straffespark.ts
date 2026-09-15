@@ -156,8 +156,11 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
  * source. Entries written from memory sit at `recall` until a verifier attaches the page
  * that confirms them - the same bar every other fact in the dataset is held to, and the
  * reason a wrong answer cannot quietly become a question.
+ *
+ * Deliberately structural rather than tied to one file's type: Kjappen keeps its own
+ * bank, and both are held to this bar.
  */
-export function isPlayable(q: StraffesparkQuestion): boolean {
+export function isPlayable(q: { enabled: boolean; status: string }): boolean {
   return q.enabled && (q.status === "verified" || q.status === "single_source");
 }
 

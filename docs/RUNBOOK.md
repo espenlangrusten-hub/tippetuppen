@@ -153,6 +153,12 @@ Regler: 30 sekunder på å trykke, 15 sekunder på å svare, 100 poeng for rikti
 feil. Trykker du og sier ingenting, koster det også 100 – ellers er beste taktikk å ta hvert
 spørsmål og tie for å stenge de andre ute.
 
+Kjappen har i tillegg **sin egen spørsmålsfil**, `data/source/kjappen.json`. Den er skilt
+fra Straffespark med vilje: materialet er av samme slag, men denne fila er skrevet for
+quizshowet og er ikke Straffesparks å bære. Samme regler gjelder – et spørsmål skrevet fra
+hukommelsen står på `recall` og serveres aldri før **Verifiser spørsmål** har hentet
+artikkelen som bekrefter det. Handlingen går gjennom begge filene.
+
 **Etter en deploy:** vent til handlingen **Oppdater data** er ferdig før du prøver siden.
 Den både lager tabellene (migrasjon 0006) og fyller spørsmålsbanken; funksjonsdeployen går
 parallelt og kan rekke fram først.

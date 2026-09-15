@@ -1,4 +1,7 @@
 import { describe, it, expect } from "vitest";
+import { loadDataset } from "@/data/load";
+import { isPlayable } from "@/data/straffespark";
+import { normalizeName } from "@/lib/names";
 import {
   ANSWER_SECONDS, BUZZ_SECONDS, REVEAL_SECONDS, QUESTIONS_PER_GAME,
   answer, buzz, isCode, isCorrectAnswer, newCode, secondsLeft, settle, start, winners,
@@ -117,5 +120,42 @@ describe("who won", () => {
 
   it("copes with everyone in the red", () => {
     expect(winners([p("a", -100, 1), p("b", -300, 2)]).map((w) => w.id)).toEqual(["a"]);
+  });
+});
+
+describe("Kjappen's own question bank", () => {
+  const bank = loadDataset().kjappen;
+
+  it("holds the forty new questions, each asked once", () => {
+    expect(bank.length).toBeGreaterThanOrEqual(40);
+    expect(new Set(bank.map((q) => q.id)).size).toBe(bank.length);
+    expect(new Set(bank.map((q) => normalizeName(q.prompt))).size).toBe(bank.length);
+  });
+
+  it("keeps every unsourced question out of play", () => {
+    // Written from memory until a verifier has opened the page that confirms them.
+    for (const q of bank) if (q.status === "recall") expect(isPlayable(q), q.id).toBe(false);
+  });
+
+  it("tells the verifier what would settle each one", () => {
+    for (const q of bank) {
+      if (q.status !== "recall") continue;
+      expect(q.verify?.subject, q.id).toBeTruthy();
+      expect(q.verify?.mustMention.length, q.id).toBeGreaterThan(0);
+    }
+  });
+
+  it("has an answer you can actually type, and no alias that accepts nothing new", () => {
+    for (const q of bank) {
+      expect(normalizeName(q.answer.label), q.id).toBeTruthy();
+      const keys = [q.answer.label, ...q.answer.aliases].map(normalizeName);
+      expect(new Set(keys).size, `${q.id} repeats a spelling`).toBe(keys.length);
+    }
+  });
+
+  it("does not ask anything Straffespark already asks", () => {
+    const ds = loadDataset();
+    const asked = new Set(ds.straffespark.flatMap((q) => (q.kind === "trivia" ? [normalizeName(q.prompt)] : [])));
+    for (const q of bank) expect(asked.has(normalizeName(q.prompt)), q.id).toBe(false);
   });
 });
