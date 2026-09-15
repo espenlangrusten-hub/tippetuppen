@@ -14,6 +14,7 @@
  *   POST /reveal               reveal answers (give up / round over) or one hint letter
  *   POST /maalloes/answer      score a single Målløs answer
  *   POST /maalloes/submit      lock in five answers, return the full board
+ *   POST /kjappen/*            multiplayer quiz show: create, join, start, buzz, answer, state
  *   POST /events               anonymous analytics
  *   GET  /admin/overview       schedule + runway (requires x-admin-key)
  *   GET  /admin/stats          anonymous traffic and completion figures (requires x-admin-key)
@@ -30,6 +31,7 @@ import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
 import { advanceXi, xiScore, type XiState } from "../_shared/league.ts";
 import { finnRoute } from "../_shared/finn.ts";
+import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
 const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
@@ -361,6 +363,12 @@ Deno.serve(async (req) => {
     }
 
     if (req.method === "POST" && route.startsWith("/finn-spilleren/")) return finnRoute(req, route.split("/").at(-1)!);
+
+    // Kjappen: the multiplayer quiz show. Separate from the daily games - its own
+    // tables, its own codes, and no schedule.
+    if (req.method === "POST" && route.startsWith("/kjappen/")) {
+      return await kjappenRoute(req, route.slice("/kjappen/".length));
+    }
 
     if (req.method === "POST" && route === "/events") {
       const body = await req.json().catch(() => null);

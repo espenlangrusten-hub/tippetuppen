@@ -132,6 +132,31 @@ den fra **Actions → Verifiser spørsmål** hvis du vil sette `limit` selv.
 **Oppdater data** trenger ingenting av dette – den går automatisk når noe i `data/source/`,
 `drizzle/`, `scripts/schedule.ts` eller `src/server/puzzles/` endres på `main`.
 
+### Kjappen (test, ikke lenket)
+
+Quizshow for inntil fire spillere på `/kjappen/`. Den står bevisst **uten lenke fra
+forsiden** og med `robots: noindex` – den er en prøvebenk, ikke et ferdig spill.
+
+Slik henger den sammen:
+
+- **Spørsmålene** kommer fra den samme kildebelagte trivia-banken som Straffespark
+  (`kjappen_questions`, fylt av `npm run db:seed`). Ingenting er skrevet for hånd til dette
+  spillet, og svarene forlater aldri serveren før runden er avgjort.
+- **Serveren avgjør alt.** Hvem som rakk knappen først settes av én betinget `UPDATE`, så to
+  trykk i samme millisekund gir én vinner og én taper – ikke to som svarer.
+- **Klokka er en lagret sluttid**, ikke en timer. Funksjonen har ingen prosess mellom
+  forespørsler, så en runde som ingen ser på står likevel riktig når noen kommer tilbake.
+  Neste forespørsel rydder opp i alt tiden har gjort.
+- **Nettleseren spør én gang i sekundet.** Ingen websockets, ingen nye avhengigheter.
+
+Regler: 30 sekunder på å trykke, 15 sekunder på å svare, 100 poeng for riktig, −100 for
+feil. Trykker du og sier ingenting, koster det også 100 – ellers er beste taktikk å ta hvert
+spørsmål og tie for å stenge de andre ute.
+
+**Etter en deploy:** vent til handlingen **Oppdater data** er ferdig før du prøver siden.
+Den både lager tabellene (migrasjon 0006) og fyller spørsmålsbanken; funksjonsdeployen går
+parallelt og kan rekke fram først.
+
 ## 5. Eget domene
 
 GitHub Pages støtter eget domene gratis, også med HTTPS.
