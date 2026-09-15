@@ -12,8 +12,16 @@
     },
     "fact": "Ingebrigtsen tok over Rosenborg i 2014.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2015». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -35,8 +43,16 @@
     },
     "fact": "Olsens andre periode varte til 2013.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «2009». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen",
       "mustMention": [
@@ -56,8 +72,16 @@
     },
     "fact": "Olsen var Wimbledon-manager rundt årtusenskiftet.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Wimbledon». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen",
       "mustMention": [
@@ -83,7 +107,8 @@
       "mustMention": [
         "Pellerud"
       ]
-    }
+    },
+    "notes": "Artikkelen «Verdensmesterskapet i fotball for kvinner» nevner ikke «Pellerud». Sjekk svaret for hånd."
   },
   {
     "id": "kj-trener-hogmo-ol2000",
@@ -96,8 +121,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -116,8 +149,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Sj%C3%B6gren",
+        "title": "Martin Sjögren – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «2017». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Martin Sjögren",
       "mustMention": [
@@ -143,7 +184,8 @@
       "mustMention": [
         "Grainger"
       ]
-    }
+    },
+    "notes": "Artikkelen «Norges kvinnelandslag i fotball» nevner ikke «Grainger». Sjekk svaret for hånd."
   },
   {
     "id": "kj-trener-hareide-rbk",
@@ -157,8 +199,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2003». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -179,8 +229,16 @@
     },
     "fact": "Brann tok sitt første seriegull siden 1963.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Brann» og «2007». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -200,8 +258,16 @@
       ]
     },
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Stabæk» og «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -221,8 +287,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Molde_Fotballklubb",
+        "title": "Molde Fotballklubb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Erling Moe». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Molde FK",
       "mustMention": [
@@ -243,8 +317,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «København». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -263,8 +345,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Cardiff». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ole Gunnar Solskjær",
       "mustMention": [
@@ -284,8 +374,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Celtic» og «2014». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -307,8 +405,16 @@
     },
     "fact": "Seieren sendte Norge videre til åttendedelsfinalen.",
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/VM_i_fotball_1998",
+        "title": "VM i fotball 1998 – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Norge» og «Brasil». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Verdensmesterskapet i fotball 1998",
       "mustMention": [
@@ -328,8 +434,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Brasil». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -348,8 +462,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/VM_i_fotball_1998",
+        "title": "VM i fotball 1998 – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Norge» og «Italia». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Verdensmesterskapet i fotball 1998",
       "mustMention": [
@@ -369,8 +491,16 @@
       ]
     },
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/VM_i_fotball_1994",
+        "title": "VM i fotball 1994 – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Norge» og «Mexico». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Verdensmesterskapet i fotball 1994",
       "mustMention": [
@@ -390,8 +520,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Steffen_Iversen",
+        "title": "Steffen Iversen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Spania». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Steffen Iversen",
       "mustMention": [
@@ -411,8 +549,16 @@
     },
     "fact": "Norge røk ut av gruppa på målforskjell.",
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/EM_i_fotball_2000",
+        "title": "EM i fotball 2000 – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Norge» og «Jugoslavia». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Europamesterskapet i fotball 2000",
       "mustMention": [
@@ -432,8 +578,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Rosenborg_Ballklub",
+        "title": "Rosenborg Ballklub – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Milan». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Rosenborg Ballklub",
       "mustMention": [
@@ -452,8 +606,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Fotballklubben_Bod%C3%B8/Glimt",
+        "title": "Fotballklubben Bodø/Glimt – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Roma». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "FK Bodø/Glimt",
       "mustMention": [
@@ -472,8 +634,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jos%C3%A9_Mourinho",
+        "title": "José Mourinho – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Roma». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "José Mourinho",
       "mustMention": [
@@ -492,8 +662,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «1999». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ole Gunnar Solskjær",
       "mustMention": [
@@ -513,8 +691,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Verdensmesterskapet_i_fotball_for_kvinner",
+        "title": "Verdensmesterskapet i fotball for kvinner – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Norge». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Verdensmesterskapet i fotball for kvinner 1995",
       "mustMention": [
@@ -534,8 +720,16 @@
     },
     "fact": "Finalen i Sydney gikk mot USA.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Norges_kvinnelandslag_i_fotball",
+        "title": "Norges kvinnelandslag i fotball – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «OL» og «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Norges kvinnelandslag i fotball",
       "mustMention": [
@@ -555,8 +749,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ada_Hegerberg",
+        "title": "Ada Hegerberg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «2018». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ada Hegerberg",
       "mustMention": [
@@ -576,8 +778,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ada_Hegerberg",
+        "title": "Ada Hegerberg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Lyon». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ada Hegerberg",
       "mustMention": [
@@ -597,8 +807,16 @@
     },
     "fact": "Det var ny rekord for én Premier League-sesong.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erling_Braut_Haaland",
+        "title": "Erling Braut Haaland – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «36». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erling Haaland",
       "mustMention": [
@@ -618,8 +836,16 @@
       ]
     },
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Rosenborg_Ballklub",
+        "title": "Rosenborg Ballklub – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «13». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Rosenborg Ballklub",
       "mustMention": [
@@ -640,8 +866,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erling_Braut_Haaland",
+        "title": "Erling Braut Haaland – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Salzburg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erling Haaland",
       "mustMention": [
@@ -661,8 +895,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_%C3%98degaard",
+        "title": "Martin Ødegaard – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Strømsgodset». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Martin Ødegaard",
       "mustMention": [
@@ -681,8 +923,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/John_Arne_Riise",
+        "title": "John Arne Riise – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Liverpool». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "John Arne Riise",
       "mustMention": [
@@ -701,8 +951,16 @@
       ]
     },
     "difficulty": 4,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Thomas_Myhre",
+        "title": "Thomas Myhre – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Everton». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Thomas Myhre",
       "mustMention": [
@@ -721,8 +979,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Blackburn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -741,8 +1007,16 @@
       ]
     },
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/John_Carew",
+        "title": "John Carew – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Valencia». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "John Carew",
       "mustMention": [
@@ -762,8 +1036,16 @@
     },
     "fact": "Oppkalt etter Roald «Kniksen» Jensen.",
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kniksenprisen",
+        "title": "Kniksenprisen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-15",
+        "note": "Artikkelteksten nevner «Eliteserien». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kniksenprisen",
       "mustMention": [
@@ -789,7 +1071,8 @@
       "mustMention": [
         "Tippeligaen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Eliteserien» nevner ikke «Tippeligaen». Sjekk svaret for hånd."
   },
   {
     "id": "kj-stadion-cupfinale",
