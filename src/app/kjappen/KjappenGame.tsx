@@ -26,8 +26,8 @@ type View = {
 
 const STORE = "kjappen-seat";
 type Seat = { code: string; playerId: string };
-/** Which of the pre-game screens is showing. The round itself replaces all of them. */
-type Screen = "welcome" | "create" | "join" | "code";
+/** Which of the pre-game screens is showing. The round itself replaces both. */
+type Screen = "welcome" | "create" | "join";
 
 export function KjappenGame() {
   const [seat, setSeat] = useState<Seat | null>(null);
@@ -76,10 +76,7 @@ export function KjappenGame() {
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORE);
-      if (raw) {
-        setSeat(JSON.parse(raw) as Seat);
-        setScreen("code");
-      }
+      if (raw) setSeat(JSON.parse(raw) as Seat);
     } catch { /* private mode */ }
   }, []);
 
@@ -156,10 +153,7 @@ export function KjappenGame() {
     if (needName()) return;
     void guard(async () => {
       const reply = await call("create", { name });
-      if (reply?.playerId) {
-        remember({ code: reply.code, playerId: reply.playerId });
-        setScreen("code");
-      }
+      if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
     });
   };
 
@@ -172,10 +166,7 @@ export function KjappenGame() {
     }
     void guard(async () => {
       const reply = await call("join", { name, code: code.toUpperCase().trim() });
-      if (reply?.playerId) {
-        remember({ code: reply.code, playerId: reply.playerId });
-        setScreen("code");
-      }
+      if (reply?.playerId) remember({ code: reply.code, playerId: reply.playerId });
     });
   };
 
@@ -237,19 +228,6 @@ export function KjappenGame() {
     ));
   }
 
-  // ---- the code hand-off ----------------------------------------------------
-
-  if (screen === "code" && view.phase === "lobby" && isHost)
-    return shell("kj-shell-entry", (
-      <div className="kj-entry">
-        <p className="kj-tagline">Del denne koden med de andre</p>
-        <div className="kj-code-big">{view.code}</div>
-        <p className="kj-hint">Inntil {MAX_PLAYERS - 1} andre kan bli med. De velger «Tast inn kode».</p>
-        <button className="btn btn-primary w-full" onClick={() => setScreen("welcome")}>Videre</button>
-        <button className="btn btn-ghost w-full" onClick={cancel}>Avbryt runden</button>
-      </div>
-    ));
-
   // ---- the round ------------------------------------------------------------
 
   const champions = view.winners?.length ? view.players.filter((p) => view.winners!.includes(p.id)) : [];
@@ -260,7 +238,7 @@ export function KjappenGame() {
     : null;
 
   const bubble = () => {
-    if (view.phase === "lobby") return `Venter på spillere. Koden er ${view.code}.`;
+    if (view.phase === "lobby") return "Velkommen! Vi venter på at flere blir med.";
     if (cancelled) return "Runden ble avbrutt.";
     if (view.phase === "done")
       return champions.length > 1
@@ -333,6 +311,13 @@ export function KjappenGame() {
         {error && <p className="kj-error">{error}</p>}
 
         <section className="kj-controls">
+          {view.phase === "lobby" && (
+            <>
+              <p className="kj-hint">Del koden med de andre. De velger «Tast inn kode».</p>
+              <div className="kj-code-big">{view.code}</div>
+            </>
+          )}
+
           {view.phase === "lobby" && (
             isHost ? (
               <button className="btn btn-primary w-full" disabled={busy || view.players.length < 2}

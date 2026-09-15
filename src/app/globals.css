@@ -524,5 +524,5 @@ body {
 
 .kj-heading { font-family: var(--font-display); font-size: 2.1rem; font-weight: 700; text-align: center; text-transform: uppercase; }
 .kj-logo-mid { width: 7rem; height: 7rem; margin: 0 auto; }
-.kj-code-big { padding: 1rem; border-radius: 1rem; background: rgb(12 8 32 / 0.5); font-family: var(--font-display); font-size: 3.6rem; font-weight: 700; letter-spacing: 0.3em; text-align: center; text-indent: 0.3em; }
+.kj-code-big { padding: 0.6rem; border-radius: 0.9rem; background: rgb(12 8 32 / 0.5); font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; letter-spacing: 0.3em; text-align: center; text-indent: 0.3em; }
 .kj-controls { display: flex; flex-direction: column; gap: 0.5rem; }
