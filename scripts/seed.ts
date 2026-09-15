@@ -8,7 +8,7 @@ import { seedFromSource } from "../src/server/seed";
 const handle = await getDbHandle();
 try {
   const r = await seedFromSource(handle.db);
-  console.log(`Seeded ${r.matches} matches, ${r.players} players, ${r.clubs} clubs, ${r.seasons} seasons, ${r.honours} honours (${handle.kind}).`);
+  console.log(`Seeded ${r.matches} matches, ${r.players} players, ${r.clubs} clubs, ${r.seasons} seasons, ${r.honours} honours, ${r.kjappen} Kjappen-spørsmål (${handle.kind}).`);
 } catch (e) {
   const problems = (e as Error & { problems?: string[] }).problems;
   if (problems) {

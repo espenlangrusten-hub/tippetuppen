@@ -477,6 +477,54 @@ export const leagueResults = tt.table(
   ],
 );
 
+// ---------------------------------------------------------------------------
+// Kjappen: the multiplayer quiz show (separate from the daily games)
+// ---------------------------------------------------------------------------
+
+/** Question bank, seeded from the sourced trivia in data/source. Answers never leave the server. */
+export const kjappenQuestions = tt.table("kjappen_questions", {
+  id: text("id").primaryKey(),
+  prompt: text("prompt").notNull(),
+  answer: text("answer").notNull(),
+  aliases: jsonb("aliases").$type<string[]>().notNull().default([]),
+  fact: text("fact"),
+  sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
+});
+
+export const kjappenGames = tt.table(
+  "kjappen_games",
+  {
+    code: text("code").primaryKey(), // short, read-aloud join code
+    phase: text("phase").$type<"lobby" | "question" | "answering" | "reveal" | "done">().notNull().default("lobby"),
+    round: integer("round").notNull().default(0),
+    /** The five questions drawn when the game was created, in order. */
+    questionIds: jsonb("question_ids").$type<string[]>().notNull().default([]),
+    buzzedBy: text("buzzed_by"),
+    /** When the running phase expires. The game has no process of its own between
+     *  requests, so this is what makes a countdown real rather than cosmetic. */
+    endsAt: timestamp("ends_at", { withTimezone: true }),
+    /** What happened on the question just shown, for the reveal screen. */
+    lastOutcome: jsonb("last_outcome").$type<{ kind: string; playerId: string | null; delta: number; guess?: string } | null>(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("kjappen_games_created").on(t.createdAt)],
+);
+
+export const kjappenPlayers = tt.table(
+  "kjappen_players",
+  {
+    id: text("id").primaryKey(), // secret: whoever holds it plays as this seat
+    code: text("code").notNull().references(() => kjappenGames.code, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    seat: integer("seat").notNull(), // 1..4, decides podium order
+    score: integer("score").notNull().default(0),
+    host: boolean("host").notNull().default(false),
+    joinedAt: timestamp("joined_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("kjappen_players_seat").on(t.code, t.seat), index("kjappen_players_code").on(t.code)],
+);
+
 export const finnAttempts = tt.table(
   "finn_attempts",
   {
