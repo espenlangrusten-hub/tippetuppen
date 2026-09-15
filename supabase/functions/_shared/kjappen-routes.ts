@@ -171,6 +171,19 @@ export async function kjappenRoute(req: Request, action: string) {
       return json(view(fresh, players, await questionFor(tx, fresh), playerId, now));
     }
 
+    if (action === "cancel") {
+      // Whoever started the round can end it for everybody. The row is kept rather than
+      // deleted, so the other screens land on "avbrutt" instead of on a 404 that reads
+      // like something broke.
+      if (!me.host) return bad("Bare den som lagde runden kan avbryte");
+      await tx`update tippetuppen.kjappen_games
+        set phase='done', buzzed_by=null, ends_at=null,
+            last_outcome=${sql().json({ kind: "cancelled", playerId: null, delta: 0 })}::jsonb, updated_at=now()
+        where code=${code}`;
+      const fresh = (await load(tx, code, false))!;
+      return json(view(fresh, players, null, playerId, now));
+    }
+
     if (action === "buzz") {
       // The race, decided in one statement: the row only moves if nobody has it yet.
       const won = await tx<GameRow[]>`

@@ -486,3 +486,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .kj-host-talking .kj-mouth, .kj-podium-waiting .kj-podium-box, .kj-clock-low span { animation: none; }
 }
+.kj-choice { display: flex; flex-direction: column; gap: 0.6rem; }
+.kj-choice .kj-form { background: rgb(12 8 32 / 0.42); }
