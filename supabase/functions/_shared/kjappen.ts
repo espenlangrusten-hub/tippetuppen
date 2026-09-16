@@ -17,7 +17,7 @@ export const QUESTIONS_PER_GAME = 5;
 export const READY_SECONDS = 5;
 export const BUZZ_SECONDS = 30;
 export const ANSWER_SECONDS = 15;
-export const REVEAL_SECONDS = 6;
+export const REVEAL_SECONDS = 3;
 /**
  * The contestant portraits, by file number in `public/kjappen/`.
  *
