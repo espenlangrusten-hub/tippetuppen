@@ -95,6 +95,14 @@ describe("answers and codes", () => {
     expect(isCorrectAnswer(accepted, "   ")).toBe(false);
   });
 
+  it("accepts a harmless extra middle name but not a different person", () => {
+    const accepted = ["Harald Brattbakk", "Brattbakk"];
+    expect(isCorrectAnswer(accepted, "Harald Martin Brattbakk")).toBe(true);
+    expect(isCorrectAnswer(accepted, "Harald Olsen Brattbakk")).toBe(true);
+    expect(isCorrectAnswer(accepted, "Martin Brattbakk")).toBe(false);
+    expect(isCorrectAnswer(["36", "36 mål"], "35")).toBe(false);
+  });
+
   it("makes codes people can read aloud", () => {
     // No 0/O, 1/I/L or vowels: nothing to spell out twice, and no accidental words.
     for (let i = 0; i < 200; i++) {

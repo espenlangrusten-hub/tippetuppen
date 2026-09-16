@@ -92,13 +92,26 @@ export function newCode(random: () => number = Math.random, length = 4): string 
 export const isCode = (value: string) => /^[BCDFGHJKMNPQRSTVWXZ23456789]{4,6}$/.test(value);
 
 /**
- * Does the typed answer count? Strict comparison first, then the same
- * spacing-insensitive fallback the other games use, so "ham kam" passes for HamKam.
+ * Does the typed answer count? Exact/spacing-insensitive matches are preferred. For
+ * multi-word accepted names we also allow extra whole name tokens in the player's
+ * answer: "Harald Martin Brattbakk" must count when the source says "Harald Brattbakk".
+ * This is deliberately not fuzzy substring matching, so short/numeric answers stay exact.
  */
 export function isCorrectAnswer(accepted: string[], guess: string): boolean {
   const value = normalizeName(guess);
   if (!value) return false;
-  return accepted.some((a) => normalizeName(a) === value) || accepted.some((a) => matchKey(a) === matchKey(guess));
+  if (accepted.some((a) => normalizeName(a) === value) || accepted.some((a) => matchKey(a) === matchKey(guess))) return true;
+
+  const guessed = value.split(" ");
+  return accepted.some((a) => {
+    const normalized = normalizeName(a);
+    if (!normalized || /^\d+$/.test(normalized)) return false;
+    const tokens = normalized.split(" ");
+    if (tokens.length < 2 || guessed.length <= tokens.length) return false;
+    let at = 0;
+    for (const token of guessed) if (token === tokens[at]) at++;
+    return at === tokens.length;
+  });
 }
 
 const startQuestion = (round: number, now: number): GameState => ({
