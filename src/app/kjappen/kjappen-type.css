@@ -118,14 +118,27 @@
   font-weight: 700;
 }
 
-.kj-v2 .kj-countdown-title {
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+.kj-v2 .kj-ready-kicker {
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
 }
 
-.kj-v2 .kj-countdown-num {
+.kj-v2 .kj-ready-title {
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
   font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.kj-v2 .kj-ready-number {
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.kj-v2 .kj-ready-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
 }
 
 .kj-v2 .kj-podium-name {
@@ -145,7 +158,13 @@
   letter-spacing: 0.055em;
 }
 
-.kj-v2 .kj-buzzer-sub {
+.kj-v2 .kj-buzzer-status strong {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+
+.kj-v2 .kj-buzzer-status > span {
   font-size: 0.86rem;
   font-weight: 600;
 }
@@ -161,7 +180,7 @@
   font-weight: 600;
 }
 
-.kj-v2 .kj-final-title,
+.kj-v2 .kj-winner-board strong,
 .kj-v2 .kj-champ-name {
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -178,8 +197,11 @@
   .kj-v2 .kj-btn { font-size: 0.96rem; }
   .kj-v2 .kj-board-question { font-size: clamp(1.25rem, 5.5vw, 1.65rem); }
   .kj-v2 .kj-board-strip { font-size: 0.82rem; }
+  .kj-v2 .kj-ready-title { font-size: clamp(1.3rem, 6vw, 1.75rem); }
+  .kj-v2 .kj-ready-sub { font-size: 0.8rem; }
   .kj-v2 .kj-podium-name { font-size: 0.72rem; }
   .kj-v2 .kj-podium-score { font-size: 1.05rem; }
   .kj-v2 .kj-buzzer-label { font-size: 0.88rem; }
-  .kj-v2 .kj-buzzer-sub { font-size: 0.72rem; }
+  .kj-v2 .kj-buzzer-status strong { font-size: 0.86rem; }
+  .kj-v2 .kj-buzzer-status > span { font-size: 0.72rem; }
 }
