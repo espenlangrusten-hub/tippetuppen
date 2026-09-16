@@ -1,0 +1,210 @@
+/* Kjappen host cutout -------------------------------------------------------
+   The presenter is a character on the studio floor, not a framed web card.
+   This file is deliberately loaded last so it wins over the older card/viewport
+   rules without touching any game logic.
+   ------------------------------------------------------------------------- */
+
+.kj-v2:not(.kj-shell-entry) .kj-host {
+  overflow: visible !important;
+}
+
+/* Remove the old portrait-card language completely. */
+.kj-v2:not(.kj-shell-entry) .kj-host-frame {
+  position: relative !important;
+  isolation: isolate;
+  overflow: visible !important;
+  display: grid !important;
+  place-items: end center;
+  width: 100% !important;
+  min-height: clamp(7.6rem, 19vh, 11.8rem) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-host-plate {
+  display: none !important;
+}
+
+/* Soft studio light behind the character. It reads as scenery, not a frame. */
+.kj-v2:not(.kj-shell-entry) .kj-host-frame::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  top: 47%;
+  width: 145%;
+  height: 112%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgb(59 229 255 / .2) 0 20%, rgb(116 59 255 / .12) 45%, transparent 72%);
+  filter: blur(8px);
+}
+
+/* A subtle floor shadow anchors him to the stage. */
+.kj-v2:not(.kj-shell-entry) .kj-host-frame::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -.2rem;
+  width: 86%;
+  height: 1rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(1 3 20 / .62), transparent 70%);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Show the whole source artwork instead of cropping it into a card. The feathered
+   mask removes the rectangular artwork edge so the presenter melts into the set. */
+.kj-v2:not(.kj-shell-entry) .kj-host-frame img {
+  position: relative;
+  z-index: 1;
+  display: block !important;
+  width: 118% !important;
+  max-width: none !important;
+  height: auto !important;
+  aspect-ratio: 496 / 382 !important;
+  object-fit: contain !important;
+  object-position: 50% 50% !important;
+  margin: 0 -9% -.15rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  -webkit-mask-image: radial-gradient(ellipse 78% 90% at 50% 48%, #000 0 56%, rgb(0 0 0 / .94) 66%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 90% at 50% 48%, #000 0 56%, rgb(0 0 0 / .94) 66%, transparent 100%);
+  filter:
+    saturate(1.08)
+    contrast(1.03)
+    drop-shadow(0 .55rem .45rem rgb(0 0 0 / .42))
+    drop-shadow(0 0 .8rem rgb(72 224 255 / .14));
+  transform-origin: 50% 100%;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-host-live .kj-host-frame {
+  animation: none !important;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-host-live .kj-host-frame img {
+  animation: kj-host-character-idle 3.6s ease-in-out infinite;
+}
+
+@keyframes kj-host-character-idle {
+  0%, 100% { transform: translateY(0) rotate(-.15deg); }
+  50% { transform: translateY(-.22rem) rotate(.15deg); }
+}
+
+/* The speech bubble now points at the character itself. */
+.kj-v2:not(.kj-shell-entry) .kj-bubble {
+  position: relative !important;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-bubble::before {
+  left: .85rem !important;
+}
+
+/* Lobby: give the host a little more visual presence next to the code board. */
+.kj-v2.kj-shell-lobby .kj-host-frame {
+  min-height: clamp(8.2rem, 21vh, 12.8rem) !important;
+}
+
+.kj-v2.kj-shell-lobby .kj-host-frame img {
+  width: 124% !important;
+  margin-inline: -12% !important;
+}
+
+/* Tablet / short desktop: keep him visible without turning him back into a thumbnail. */
+@media (min-width: 761px) and (max-width: 980px) {
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame {
+    min-height: clamp(6.8rem, 17vh, 9.2rem) !important;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame img {
+    width: 122% !important;
+    margin-inline: -11% !important;
+  }
+}
+
+@media (min-width: 761px) and (max-height: 760px) {
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame {
+    min-height: clamp(5.7rem, 16vh, 7.4rem) !important;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame img {
+    width: 114% !important;
+    margin-inline: -7% !important;
+  }
+}
+
+/* Mobile: still a character beside the speech bubble, never a boxed avatar. */
+@media (max-width: 760px) {
+  .kj-v2:not(.kj-shell-entry) .kj-host {
+    grid-template-columns: clamp(5rem, 20vw, 6.5rem) minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    gap: clamp(.22rem, 1.8vw, .48rem) !important;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame,
+  .kj-v2.kj-shell-lobby .kj-host-frame {
+    width: clamp(5rem, 20vw, 6.5rem) !important;
+    min-height: clamp(4.2rem, 16vw, 5.7rem) !important;
+    align-self: end;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame img,
+  .kj-v2.kj-shell-lobby .kj-host-frame img {
+    width: 132% !important;
+    height: auto !important;
+    margin: 0 -16% -.08rem !important;
+    object-fit: contain !important;
+    object-position: 50% 50% !important;
+    -webkit-mask-image: radial-gradient(ellipse 76% 92% at 50% 48%, #000 0 54%, rgb(0 0 0 / .92) 68%, transparent 100%);
+    mask-image: radial-gradient(ellipse 76% 92% at 50% 48%, #000 0 54%, rgb(0 0 0 / .92) 68%, transparent 100%);
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame::before {
+    width: 150%;
+    height: 120%;
+    opacity: .82;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame::after {
+    width: 92%;
+    bottom: -.05rem;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-bubble::before {
+    display: block !important;
+    left: -.4rem !important;
+    top: 50% !important;
+    width: .72rem !important;
+    height: .72rem !important;
+    transform: translateY(-50%) rotate(-45deg) !important;
+    border-left: 3px solid #111941 !important;
+    border-top: 3px solid #111941 !important;
+  }
+}
+
+/* Very narrow phones: reserve enough room for the character, but protect the board. */
+@media (max-width: 390px) {
+  .kj-v2:not(.kj-shell-entry) .kj-host {
+    grid-template-columns: 4.65rem minmax(0, 1fr) !important;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame,
+  .kj-v2.kj-shell-lobby .kj-host-frame {
+    width: 4.65rem !important;
+    min-height: 3.95rem !important;
+  }
+}
