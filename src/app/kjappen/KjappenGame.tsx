@@ -1,6 +1,7 @@
 "use client";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
+import { subscribeKjappen } from "@/lib/kjappen-realtime";
 import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
 import {
   Buzzer, Clock, Contestant, Crowd, EmptySeat, Host, KjappenLogo, NextQuestionBar, QuestionBoard,
@@ -94,33 +95,35 @@ export function KjappenGame() {
     } catch { /* private mode */ }
   }, []);
 
-  // One poll a second while a round is running. The server owns the clock; this only
-  // asks what it says.
+  const refresh = useCallback(async () => {
+    if (!seat) return;
+    try {
+      const reply = await apiPost<View>("/kjappen/state", seat);
+      if (!reply.ok) {
+        remember(null);
+        setView(null);
+        setScreen("welcome");
+        setError(reply.error || "Runden finnes ikke lenger");
+        return;
+      }
+      apply(reply);
+    } catch { /* a dropped refresh is not worth showing */ }
+  }, [seat, apply, remember]);
+
+  // Realtime is the fast path: any server-side game/player change makes every other
+  // participant fetch the authoritative state immediately. The one-second poll remains
+  // as a fallback for sleeping tabs, dropped WebSocket frames and reconnects.
   useEffect(() => {
     if (!seat) return;
-    let stop = false;
-    const tick = async () => {
-      if (stop) return;
-      try {
-        const reply = await apiPost<View>("/kjappen/state", seat);
-        if (stop) return;
-        if (!reply.ok) {
-          remember(null);
-          setView(null);
-          setScreen("welcome");
-          setError(reply.error || "Runden finnes ikke lenger");
-          return;
-        }
-        apply(reply);
-      } catch { /* a dropped poll is not worth showing */ }
-    };
-    void tick();
-    const every = setInterval(tick, 1000);
-    return () => {
-      stop = true;
-      clearInterval(every);
-    };
-  }, [seat, apply, remember]);
+    return subscribeKjappen(seat.code, seat.playerId, () => { void refresh(); });
+  }, [seat, refresh]);
+
+  useEffect(() => {
+    if (!seat) return;
+    void refresh();
+    const every = setInterval(() => { void refresh(); }, 1000);
+    return () => clearInterval(every);
+  }, [seat, refresh]);
 
   // The countdown runs locally between polls so it does not stutter once a second.
   const ticking = view && (view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
@@ -248,6 +251,7 @@ export function KjappenGame() {
   const champions = view.winners?.length ? view.players.filter((p) => view.winners!.includes(p.id)) : [];
   const runnersUp = view.players.filter((p) => !champions.some((c) => c.id === p.id));
   const buzzedPlayer = view.players.find((p) => p.id === view.buzzedBy) ?? null;
+  const outcomePlayer = view.players.find((p) => p.id === view.outcome?.playerId) ?? null;
   const cancelled = view.phase === "done" && view.outcome?.kind === "cancelled";
   const finished = view.phase === "done" && !cancelled;
   const verdict = view.phase === "reveal" && (view.outcome?.kind === "correct" || view.outcome?.kind === "wrong" || view.outcome?.kind === "timeout")
@@ -264,6 +268,11 @@ export function KjappenGame() {
     if (view.phase === "reveal") {
       if (view.outcome?.kind === "nobody") return `Ingen turte. Svaret var ${view.answer}.`;
       if (view.outcome?.kind === "timeout") return `Tiden gikk ut. Svaret var ${view.answer}.`;
+      if (view.outcome?.guess && outcomePlayer) {
+        return view.outcome.kind === "correct"
+          ? `${outcomePlayer.name} svarte «${view.outcome.guess}». Riktig!`
+          : `${outcomePlayer.name} svarte «${view.outcome.guess}». Riktig svar var ${view.answer}.`;
+      }
       return `Svaret var ${view.answer}.`;
     }
     if (view.phase === "answering") return buzzedPlayer ? `${buzzedPlayer.name} svarer!` : "Noen svarer!";
