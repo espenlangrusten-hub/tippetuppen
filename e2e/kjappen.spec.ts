@@ -58,8 +58,14 @@ test("two players share a round, and only the one who buzzed may answer", async 
 
   await host.getByRole("button", { name: "START SHOWET" }).click();
 
-  // Wait for the synchronized opening countdown to finish and the first question to
-  // become active before reading the board.
+  // Starting the show is shared state: every player must actually see the synchronized
+  // opening countdown, not jump from the lobby straight into the first question.
+  await expect(host.locator(".kj-shell-countdown")).toHaveCount(1, { timeout: 5000 });
+  await expect(guest.locator(".kj-shell-countdown")).toHaveCount(1, { timeout: 5000 });
+  await expect(host.locator(".kj-countdown-num")).toBeVisible();
+  await expect(guest.locator(".kj-countdown-num")).toBeVisible();
+
+  // Wait for the countdown to finish and the first question to become active.
   await expect(host.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
   await expect(guest.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
 
