@@ -4,6 +4,7 @@ import "./kjappen-type.css";
 import "./kjappen-arcade.css";
 import "./kjappen-game.css";
 import "./kjappen-lobby.css";
+import "./kjappen-responsive.css";
 import { KjappenGame } from "./KjappenGame";
 
 // Kept out of the index while Kjappen is being polished and tested.
