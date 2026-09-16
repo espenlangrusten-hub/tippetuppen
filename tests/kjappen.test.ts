@@ -5,6 +5,7 @@ import { normalizeName } from "@/lib/names";
 import {
   ANSWER_SECONDS, BUZZ_SECONDS, REVEAL_SECONDS, QUESTIONS_PER_GAME,
   answer, buzz, isCode, isCorrectAnswer, newCode, secondsLeft, settle, start, winners,
+  AVATAR_POOL, HOST_AVATAR, MAX_PLAYERS, dealAvatar,
   type GameState,
 } from "@/lib/kjappen";
 
@@ -157,5 +158,42 @@ describe("Kjappen's own question bank", () => {
     const ds = loadDataset();
     const asked = new Set(ds.straffespark.flatMap((q) => (q.kind === "trivia" ? [normalizeName(q.prompt)] : [])));
     for (const q of bank) expect(asked.has(normalizeName(q.prompt)), q.id).toBe(false);
+  });
+});
+
+describe("dealing contestant portraits", () => {
+  it("never deals a face somebody at the table already has", () => {
+    const taken: number[] = [];
+    for (let i = 0; i < MAX_PLAYERS; i++) {
+      const dealt = dealAvatar(taken);
+      expect(taken).not.toContain(dealt);
+      taken.push(dealt);
+    }
+    expect(new Set(taken).size).toBe(MAX_PLAYERS);
+  });
+
+  it("has more faces than seats, so a full table never runs the pack out", () => {
+    expect(AVATAR_POOL.length).toBeGreaterThan(MAX_PLAYERS);
+  });
+
+  it("keeps the host out of the pack he is dealing from", () => {
+    expect(AVATAR_POOL).not.toContain(HOST_AVATAR);
+  });
+
+  it("deals from the whole pack rather than always the first free one", () => {
+    const seen = new Set<number>();
+    for (let i = 0; i < 400; i++) seen.add(dealAvatar([]));
+    expect(seen.size).toBe(AVATAR_POOL.length);
+  });
+
+  it("is driven by the caller's randomness, so the server decides and not the browser", () => {
+    // Lowest draw picks the first free face; highest picks the last.
+    expect(dealAvatar([], () => 0)).toBe(AVATAR_POOL[0]);
+    expect(dealAvatar([], () => 0.999)).toBe(AVATAR_POOL[AVATAR_POOL.length - 1]);
+    expect(dealAvatar([AVATAR_POOL[0]], () => 0)).toBe(AVATAR_POOL[1]);
+  });
+
+  it("still returns a picture if the pack is somehow used up", () => {
+    expect(AVATAR_POOL).toContain(dealAvatar([...AVATAR_POOL]));
   });
 });
