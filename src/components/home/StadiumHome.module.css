@@ -31,7 +31,15 @@
 .mystery .arrow { background: #6125f4; }
 .clues { position: absolute; right: 17px; top: 90px; display: grid; width: 125px; transform: rotate(-7deg); }
 .clues span { padding: 3px 9px; background: linear-gradient(130deg,#2b1665,#100c30); border: 1px solid #9163ca; border-radius: 4px; font-size: 9px; box-shadow: 0 -2px 8px #0004; }
-.penalty { --accent: #e9b83b; grid-column: 1 / -1; min-height: 126px; }
+.penalty { --accent: #e9b83b; min-height: 210px; }
+.kjappen { --accent: #9754ff; min-height: 210px; background: radial-gradient(ellipse at top, #251778, #081329); }
+.kjappen::before { background: linear-gradient(0deg, #060c24, transparent 65%); }
+.kjappenLogo { position: absolute; inset: 0 0 48px; z-index: -2; }
+.kjappenLogo img { object-fit: contain; mask-image: linear-gradient(#000 78%, transparent); }
+.kjappenCaption { position: absolute; left: 15px; right: 65px; bottom: 17px; text-shadow: 0 2px 7px #000; }
+.kjappenCaption p { font-size: 14px; font-weight: 700; }
+.kjappenCaption > span { font-size: 12px; color: #c4cce1; }
+.kjappen .arrow { background: #6125f4; }
 .penalty > img { object-position: center 65%; }
 .penalty::before { background: linear-gradient(90deg,#171307c9,transparent); }
 .penalty .gameTitle { padding-top: 10px; }
@@ -76,10 +84,14 @@
  .arrow { width: 35px; height: 35px; bottom: 10px; right: 10px; font-size: 25px; }
  .clues { width: 80px; right: 8px; top: auto; bottom: 14px; }
  .clues span { font-size: 7px; padding: 3px 5px; }
- .penalty { min-height: 110px; }
- .penalty .gameTitle h2 { font-size: 26px; }
+ .penalty, .kjappen { min-height: 195px; }
+ .penalty .gameTitle h2 { font-size: clamp(23px, 6vw, 30px); }
+ .kjappenLogo { inset: 0 0 53px; }
+ .kjappenCaption { left: 10px; right: 10px; bottom: 51px; }
+ .kjappenCaption p { font-size: 11px; }
+ .kjappenCaption > span { font-size: 10px; }
  .beta { font-size: 10px; margin-left: 4px; padding: 3px 4px; }
- .balls { left: 13px; gap: 10px; font-size: 23px; bottom: 13px; }
+ .balls { left: 12px; gap: 3px; font-size: 17px; bottom: 55px; }
  .daily { display:none; }
 }
 @media (prefers-reduced-motion: reduce) { .game, .game > img { transition: none; } .game:hover, .game:hover > img { transform: none; } }
