@@ -62,8 +62,10 @@ test("two players share a round, and only the one who buzzed may answer", async 
   // opening countdown, not jump from the lobby straight into the first question.
   await expect(host.locator(".kj-shell-countdown")).toHaveCount(1, { timeout: 5000 });
   await expect(guest.locator(".kj-shell-countdown")).toHaveCount(1, { timeout: 5000 });
-  await expect(host.locator(".kj-countdown-num")).toBeVisible();
-  await expect(guest.locator(".kj-countdown-num")).toBeVisible();
+  await expect(host.locator(".kj-ready-number")).toBeVisible();
+  await expect(guest.locator(".kj-ready-number")).toBeVisible();
+  await expect(host.locator(".kj-ready-title")).toHaveText("Gjør dere klare");
+  await expect(guest.locator(".kj-ready-title")).toHaveText("Gjør dere klare");
 
   // Wait for the countdown to finish and the first question to become active.
   await expect(host.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
