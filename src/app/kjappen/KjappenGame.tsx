@@ -107,12 +107,36 @@ export function KjappenGame() {
     return subscribeKjappen(seat.code, seat.playerId, () => { void refresh(); });
   }, [seat, refresh]);
 
+  // Lobby and opening countdown are deliberately polled more aggressively than the
+  // rest of the round. Starting is the one transition every player must see at once;
+  // Realtime remains the fast path, while this makes the fallback fast enough that a
+  // player does not jump straight from the lobby into question one. A focus/visibility
+  // refresh also catches a device immediately when the player returns to the game.
+  const syncPhase = view?.phase;
   useEffect(() => {
     if (!seat) return;
-    void refresh();
-    const every = setInterval(() => { void refresh(); }, 1000);
-    return () => clearInterval(every);
-  }, [seat, refresh]);
+    let stopped = false;
+    const sync = () => {
+      if (!stopped) void refresh();
+    };
+
+    sync();
+    const fast = !syncPhase || syncPhase === "lobby" || syncPhase === "countdown";
+    const every = setInterval(sync, fast ? 350 : 1000);
+    const onFocus = () => sync();
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") sync();
+    };
+
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      stopped = true;
+      clearInterval(every);
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [seat, refresh, syncPhase]);
 
   const ticking = view && (view.phase === "countdown" || view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
   useEffect(() => {
