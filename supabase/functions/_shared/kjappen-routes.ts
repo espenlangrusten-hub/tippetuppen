@@ -109,8 +109,45 @@ export async function kjappenRoute(req: Request, action: string) {
   if (action === "create") {
     const name = cleanName((body as { name?: unknown }).name);
     if (!name) return bad("Skriv inn et navn");
+
+    // Most of the raw bank is deliberately systematic reference trivia (league winner,
+    // cup winner and top scorer by year). It is useful depth, but uniform random made
+    // whole rounds feel like database lookups. Deal four distinct non-auto categories
+    // plus at most one year-stat question, then shuffle the five.
     const picked = await sql()<{ id: string }[]>`
-      select id from tippetuppen.kjappen_questions order by random() limit ${QUESTIONS_PER_GAME}`;
+      with bank as (
+        select id,
+          case
+            when id like 'str-auto-%' then 'year_stat'
+            when id like '%stadion%' then 'stadion'
+            when id like '%trener%' then 'trener'
+            when id like '%supporter%' then 'supporter'
+            when id like '%hendelse%' then 'hendelse'
+            when id like '%spiller%' then 'spiller'
+            when id like '%klubb%' then 'klubb'
+            else 'historie'
+          end as category,
+          id like 'str-auto-%' as is_auto
+        from tippetuppen.kjappen_questions
+      ),
+      varied as (
+        select id from (
+          select id, category, row_number() over (partition by category order by random()) as rn
+          from bank where not is_auto
+        ) q
+        where rn=1
+        order by random()
+        limit ${QUESTIONS_PER_GAME - 1}
+      ),
+      one_year as (
+        select id from bank where is_auto order by random() limit 1
+      )
+      select id from (
+        select id from varied
+        union all
+        select id from one_year
+      ) picked
+      order by random()`;
     if (picked.length < QUESTIONS_PER_GAME) return bad("Spørsmålsbanken er ikke fylt opp", 503);
     // A code collision is rare but not impossible; a handful of tries is cheaper than
     // a unique-violation round trip to the browser.
