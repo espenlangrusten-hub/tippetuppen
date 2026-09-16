@@ -8,6 +8,7 @@ import { loadRecords } from "@/lib/storage";
 import { computeStreak } from "@/lib/streaks";
 import { TopPlayers } from "./TopPlayers";
 import s from "./StadiumHome.module.css";
+import k from "./KjappenHome.module.css";
 
 const games = [
   { slug: "mangler-xi", name: "Mangler XI", description: "🇳🇴 Fyll ut Norges startellever", art: "xi", action: "Spill dagens XI" },
@@ -51,7 +52,7 @@ export function TodayCards() {
         </Link>
         <Link href="/kjappen/" className={s.game + " " + s.kjappen} aria-label="Spill Kjappen quizshow med venner">
           <div className={s.kjappenLogo}><Image src={BASE_PATH + "/kjappen/logo.webp"} alt="Kjappen quizshow" fill sizes="(max-width: 760px) 50vw, 390px" /></div>
-          <div className={s.kjappenCaption}><p>2–4 spillere · 5 spørsmål</p><span>Utfordre vennene dine</span></div>
+          <div className={k.caption}><p>2–4 spillere · 5 spørsmål</p><span>Utfordre vennene dine</span></div>
           <span className={s.arrow} aria-hidden="true">→</span>
         </Link>
       </section>
