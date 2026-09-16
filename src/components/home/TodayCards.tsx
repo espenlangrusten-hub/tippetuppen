@@ -31,7 +31,7 @@ export function TodayCards() {
     <div className={s.backdrop} aria-hidden="true"><Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="100vw" /></div>
     <section className={s.hero}>
       <div><p className={s.eyebrow}>Dagens fotballutfordring</p><h1>Hvor godt kjenner<br />du norsk fotball?</h1></div>
-      <div className={s.intro}><p>Tre daglige spill. Og fem kjappe.</p><Link href="/statistikk/" className={s.streak}>🔥 {streak ? streak + (streak === 1 ? " dag på rad" : " dager på rad") : "Klar for dagens utfordring?"}</Link></div>
+      <div className={s.intro}><p>Daglige utfordringer og quiz med venner.</p><Link href="/statistikk/" className={s.streak}>🔥 {streak ? streak + (streak === 1 ? " dag på rad" : " dager på rad") : "Klar for dagens utfordring?"}</Link></div>
       <p className={s.signature} aria-hidden="true">Norge<br />i våre hjerter ♡</p>
     </section>
     <div className={s.dashboard}>
@@ -44,9 +44,14 @@ export function TodayCards() {
           <span className={i === 0 ? s.primary : s.arrow}>{i === 0 && (done[game.slug] ? "Se resultat" : game.action)} <span aria-hidden="true">→</span></span>
         </Link>)}
         <Link href="/straffespark/" className={s.game + " " + s.penalty} aria-label="Prøv Straffespark, 5 kjappe – beta">
-          <Image src={BASE_PATH + "/design/penalty.webp"} alt="" fill sizes="(max-width: 760px) 100vw, 780px" />
+          <Image src={BASE_PATH + "/design/penalty.webp"} alt="" fill sizes="(max-width: 760px) 50vw, 390px" />
           <div className={s.gameTitle}><h2>Straffespark, 5 kjappe <span className={s.beta}>Beta</span></h2><p>Fem spørsmål. Fem sjanser.</p></div>
           <div className={s.balls} aria-hidden="true">{[0,1,2,3,4].map((n) => <span key={n}>⚽</span>)}</div>
+          <span className={s.arrow} aria-hidden="true">→</span>
+        </Link>
+        <Link href="/kjappen/" className={s.game + " " + s.kjappen} aria-label="Spill Kjappen quizshow med venner">
+          <div className={s.kjappenLogo}><Image src={BASE_PATH + "/kjappen/logo.webp"} alt="Kjappen quizshow" fill sizes="(max-width: 760px) 50vw, 390px" /></div>
+          <div className={s.kjappenCaption}><p>2–4 spillere · 5 spørsmål</p><span>Utfordre vennene dine</span></div>
           <span className={s.arrow} aria-hidden="true">→</span>
         </Link>
       </section>
