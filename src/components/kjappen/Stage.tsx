@@ -4,7 +4,6 @@
  */
 import Image from "next/image";
 import { BASE_PATH } from "@/lib/site";
-import { HOST_AVATAR } from "@/lib/kjappen";
 
 const art = (file: string) => `${BASE_PATH}/kjappen/${file}`;
 
@@ -86,7 +85,7 @@ export function Host({ talking, says, fact }: { talking: boolean; says: string; 
   return (
     <div className={`kj-host ${talking ? "kj-host-live" : ""}`}>
       <div className="kj-host-frame">
-        <Image src={art(`avatar-${HOST_AVATAR}.webp`)} alt="Programlederen" width={496} height={382} sizes="(max-width: 760px) 30vw, 190px" priority />
+        <Image src={art("host-full.webp")} alt="Programlederen" width={1024} height={1536} sizes="(max-width: 760px) 64px, 180px" priority />
         <span className="kj-host-plate">Programleder</span>
       </div>
       <div className="kj-bubble">
