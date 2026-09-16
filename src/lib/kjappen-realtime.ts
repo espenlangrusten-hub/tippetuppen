@@ -4,12 +4,14 @@
  * Lightweight Supabase Realtime subscriber for Kjappen.
  *
  * Realtime is deliberately only a nudge: database broadcasts never carry authoritative
- * game state. They tell the browser to fetch /kjappen/state, while the one-second poll in
- * KjappenGame remains the safety net if WebSocket delivery is delayed or unavailable.
+ * game state. They tell the browser to fetch /kjappen/state. A short safety poll runs in
+ * parallel so buzzer ownership still propagates quickly if WebSocket delivery is delayed
+ * or unavailable. apiPost keeps those reads in one request lane per seat.
  */
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 const API_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-const DEBOUNCE_MS = 200;
+const DEBOUNCE_MS = 30;
+const SAFETY_POLL_MS = 300;
 const RECONNECT_DELAYS = [1_000, 2_000, 5_000, 10_000] as const;
 
 function realtimeUrl() {
@@ -35,8 +37,14 @@ function debug(...args: unknown[]) {
 }
 
 export function subscribeKjappen(code: string, playerId: string, onChange: () => void) {
+  // Buzzer ownership is the most timing-sensitive transition in the game. Keep a short
+  // safety poll even when Realtime is healthy so every device converges within roughly
+  // one network round trip + 300 ms. apiPost coalesces overlapping state requests.
+  const safetyPoll = setInterval(onChange, SAFETY_POLL_MS);
   const url = realtimeUrl();
-  if (!url || !API_KEY || typeof WebSocket === "undefined") return () => {};
+  if (!url || !API_KEY || typeof WebSocket === "undefined") {
+    return () => clearInterval(safetyPoll);
+  }
 
   const topic = `realtime:kjappen:${code}`;
   let socket: WebSocket | null = null;
@@ -124,7 +132,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
       const delay = RECONNECT_DELAYS[Math.min(reconnectAttempt, RECONNECT_DELAYS.length - 1)];
       reconnectAttempt += 1;
-      debug("disconnected; polling remains active", { code, playerId, reconnectInMs: delay });
+      debug("disconnected; safety polling remains active", { code, playerId, reconnectInMs: delay });
       reconnect = setTimeout(connect, delay);
     };
   };
@@ -133,6 +141,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
   return () => {
     closed = true;
+    clearInterval(safetyPoll);
     clearHeartbeat();
     if (reconnect) clearTimeout(reconnect);
     if (refreshTimer) clearTimeout(refreshTimer);
