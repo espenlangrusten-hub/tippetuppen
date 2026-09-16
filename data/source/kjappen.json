@@ -103,12 +103,12 @@
     "status": "recall",
     "sources": [],
     "verify": {
-      "subject": "Verdensmesterskapet i fotball for kvinner 1995",
+      "subject": "Even Pellerud",
       "mustMention": [
-        "Pellerud"
+        "1995",
+        "kvinnelandslag"
       ]
-    },
-    "notes": "Artikkelen «Verdensmesterskapet i fotball for kvinner» nevner ikke «Pellerud». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "kj-trener-hogmo-ol2000",
@@ -180,12 +180,12 @@
     "status": "recall",
     "sources": [],
     "verify": {
-      "subject": "Norges kvinnelandslag i fotball",
+      "subject": "Gemma Grainger",
       "mustMention": [
-        "Grainger"
+        "2022",
+        "Norge"
       ]
-    },
-    "notes": "Artikkelen «Norges kvinnelandslag i fotball» nevner ikke «Grainger». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "kj-trener-hareide-rbk",
@@ -1056,7 +1056,7 @@
   {
     "id": "kj-klubb-tippeligaen",
     "category": "klubb",
-    "prompt": "Hva het den norske toppdivisjonen for menn fra 1991 til 2016?",
+    "prompt": "Hva het den norske toppdivisjonen for menn før den skiftet navn til Eliteserien i 2017?",
     "answer": {
       "label": "Tippeligaen",
       "aliases": [
@@ -1067,12 +1067,12 @@
     "status": "recall",
     "sources": [],
     "verify": {
-      "subject": "Eliteserien",
+      "subject": "Eliteserien i fotball",
       "mustMention": [
-        "Tippeligaen"
+        "Tippeligaen",
+        "2017"
       ]
-    },
-    "notes": "Artikkelen «Eliteserien» nevner ikke «Tippeligaen». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "kj-stadion-cupfinale",
