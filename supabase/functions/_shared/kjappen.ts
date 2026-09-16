@@ -6,14 +6,15 @@
  * the same countdown and the same scores between polls. Keeping one copy of the rules
  * means a client can never disagree with the server about what phase a game is in.
  *
- * A round runs lobby → question → answering → reveal → question … → done. Every phase
- * that can time out carries an end time, so a game that nobody is looking at is still
- * in a well-defined state when someone comes back to it.
+ * A round runs lobby → countdown → question → answering → reveal → question … → done.
+ * Every phase that can time out carries an end time, so a game that nobody is looking
+ * at is still in a well-defined state when someone comes back to it.
  */
 import { matchKey, normalizeName } from "./names.ts";
 
 export const MAX_PLAYERS = 4;
 export const QUESTIONS_PER_GAME = 5;
+export const READY_SECONDS = 5;
 export const BUZZ_SECONDS = 30;
 export const ANSWER_SECONDS = 15;
 export const REVEAL_SECONDS = 6;
@@ -45,7 +46,7 @@ export function dealAvatar(taken: readonly number[], random: () => number = Math
 export const CORRECT_POINTS = 100;
 export const WRONG_POINTS = -100;
 
-export type Phase = "lobby" | "question" | "answering" | "reveal" | "done";
+export type Phase = "lobby" | "countdown" | "question" | "answering" | "reveal" | "done";
 
 export type GameState = {
   phase: Phase;
@@ -67,6 +68,7 @@ export type Step = { state: GameState; outcome: Outcome | null };
 
 export const PHASE_SECONDS: Record<Phase, number | null> = {
   lobby: null,
+  countdown: READY_SECONDS,
   question: BUZZ_SECONDS,
   answering: ANSWER_SECONDS,
   reveal: REVEAL_SECONDS,
@@ -121,7 +123,12 @@ const startQuestion = (round: number, now: number): GameState => ({
   endsAt: now + BUZZ_SECONDS * 1000,
 });
 
-/** Leaving the lobby: the first question opens straight away. */
+/** Synchronized five-second show countdown before the first question opens. */
+export function ready(now: number): GameState {
+  return { phase: "countdown", round: 1, buzzedBy: null, endsAt: now + READY_SECONDS * 1000 };
+}
+
+/** Opens the first question immediately. Kept as the pure round primitive. */
 export function start(now: number): GameState {
   return startQuestion(1, now);
 }
@@ -155,9 +162,13 @@ export function answer(state: GameState, correct: boolean, now: number): Step {
 export function settle(state: GameState, now: number, questionCount = QUESTIONS_PER_GAME): Step {
   let current = state;
   let outcome: Outcome | null = null;
-  for (let guard = 0; guard < questionCount * 3 + 3; guard++) {
+  for (let guard = 0; guard < questionCount * 3 + 4; guard++) {
     if (current.endsAt == null || now < current.endsAt) return { state: current, outcome };
-    if (current.phase === "question") {
+    if (current.phase === "countdown") {
+      // Everybody gets the same start instant because the question clock begins at the
+      // stored countdown deadline, not whenever a particular browser happens to poll.
+      current = startQuestion(current.round, current.endsAt);
+    } else if (current.phase === "question") {
       // Nobody dared. No points either way, and the answer is shown anyway.
       outcome = outcome ?? { kind: "nobody", playerId: null, delta: 0 };
       current = { ...current, phase: "reveal", endsAt: current.endsAt + REVEAL_SECONDS * 1000 };

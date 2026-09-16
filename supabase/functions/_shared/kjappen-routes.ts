@@ -14,7 +14,7 @@ import { sql } from "./db.ts";
 import { bad, json } from "./http.ts";
 import {
   MAX_PLAYERS, QUESTIONS_PER_GAME, dealAvatar, isCode, isCorrectAnswer, newCode, secondsLeft,
-  settle, start, buzz, answer as answerStep, winners,
+  settle, ready, buzz, answer as answerStep, winners,
   type GameState, type Outcome, type Phase,
 } from "./kjappen.ts";
 
@@ -65,7 +65,7 @@ function view(game: GameRow, players: PlayerRow[], question: QuestionRow | null,
     you: me,
     players: roster,
     // The prompt is public from the moment the question opens; the answer is not.
-    prompt: game.phase === "lobby" ? null : (question?.prompt ?? null),
+    prompt: game.phase === "lobby" || game.phase === "countdown" ? null : (question?.prompt ?? null),
     answer: revealing ? (question?.answer ?? null) : null,
     fact: revealing ? (question?.fact ?? null) : null,
     outcome: revealing ? game.last_outcome : null,
@@ -207,7 +207,7 @@ export async function kjappenRoute(req: Request, action: string) {
     if (action === "start") {
       if (!me.host) return bad("Bare den som lagde runden kan starte");
       if (game.phase !== "lobby") return bad("Runden er allerede i gang");
-      await persist(tx, code, start(now), null);
+      await persist(tx, code, ready(now), null);
       const fresh = (await load(tx, code, false))!;
       return json(view(fresh, players, await questionFor(tx, fresh), playerId, now));
     }

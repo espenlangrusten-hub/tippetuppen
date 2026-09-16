@@ -2,7 +2,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
 import { subscribeKjappen } from "@/lib/kjappen-realtime";
-import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
+import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, READY_SECONDS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
 import {
   Buzzer, Clock, Contestant, Crowd, EmptySeat, Host, KjappenLogo, NextQuestionBar, QuestionBoard,
   SaidBubble, ScorePanel, SidePanel, StageBackdrop, Verdict, WinnerStage, type PodiumPlayer,
@@ -54,6 +54,7 @@ export function KjappenGame() {
   const [code, setCode] = useState("");
   const [guess, setGuess] = useState("");
   const [left, setLeft] = useState(0);
+  const [readyFlash, setReadyFlash] = useState(true);
   const answerBox = useRef<HTMLInputElement>(null);
 
   const apply = useCallback((reply: View) => {
@@ -126,7 +127,7 @@ export function KjappenGame() {
   }, [seat, refresh]);
 
   // The countdown runs locally between polls so it does not stutter once a second.
-  const ticking = view && (view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
+  const ticking = view && (view.phase === "countdown" || view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
   useEffect(() => {
     if (!ticking) return;
     const id = setInterval(() => setLeft((n) => Math.max(0, n - 1)), 1000);
@@ -138,6 +139,19 @@ export function KjappenGame() {
   const iBuzzed = !!view && view.buzzedBy === mine;
   const phase = view?.phase;
   const round = view?.round;
+
+  // During the five-second opening countdown the board itself flashes "Gjør dere klare"
+  // while the number stays readable. The server owns the actual deadline, so every
+  // participant sees the same start even when their WebSocket arrives a fraction later.
+  useEffect(() => {
+    if (phase !== "countdown") {
+      setReadyFlash(true);
+      return;
+    }
+    setReadyFlash(true);
+    const id = setInterval(() => setReadyFlash((on) => !on), 360);
+    return () => clearInterval(id);
+  }, [phase]);
 
   // Clear the box for every new question. It used to keep the last answer, so the next
   // time you buzzed you had to wipe it first - with fifteen seconds running.
@@ -260,11 +274,12 @@ export function KjappenGame() {
 
   const says = () => {
     if (view.phase === "lobby") return "Velkommen til Kjappen! Vi venter på at flere blir med.";
+    if (view.phase === "countdown") return "Gjør dere klare!";
     if (cancelled) return "Runden ble avbrutt.";
     if (finished)
       return champions.length > 1
         ? `Uavgjort mellom ${listNames(champions.map((w) => w.name))}!`
-        : champions.length ? `${champions[0].name} vinner Kjappen!` : "Takk for i dag!";
+        : champions.length ? `${champions[0].name} vinner Kjappen!` : "Vi har en vinner";
     if (view.phase === "reveal") {
       if (view.outcome?.kind === "nobody") return `Ingen turte. Svaret var ${view.answer}.`;
       if (view.outcome?.kind === "timeout") return `Tiden gikk ut. Svaret var ${view.answer}.`;
@@ -281,8 +296,9 @@ export function KjappenGame() {
 
   const boardText = () => {
     if (view.phase === "lobby") return `Del koden ${view.code} med de andre.`;
+    if (view.phase === "countdown") return readyFlash ? `Gjør dere klare · ${left}` : `${left}`;
     if (cancelled) return "Runden er avbrutt.";
-    if (finished) return "Takk for i dag!";
+    if (finished) return "Vi har en vinner";
     return view.prompt ?? "";
   };
 
@@ -298,6 +314,12 @@ export function KjappenGame() {
         disabled: busy || !ready,
       };
     }
+    if (view.phase === "countdown")
+      return {
+        label: "KLAR!",
+        sub: `Første spørsmål om ${left} sek`,
+        onPress: () => {}, disabled: true,
+      };
     if (view.phase === "question")
       return {
         label: "TRYKK HER!",
@@ -364,8 +386,13 @@ export function KjappenGame() {
             )}
           </div>
 
-          {(view.phase === "question" || view.phase === "answering") && (
-            <Clock className="kj-clock-side" left={left} of={view.phase === "question" ? BUZZ_SECONDS : ANSWER_SECONDS} label="Tid igjen" />
+          {(view.phase === "countdown" || view.phase === "question" || view.phase === "answering") && (
+            <Clock
+              className="kj-clock-side"
+              left={left}
+              of={view.phase === "countdown" ? READY_SECONDS : view.phase === "question" ? BUZZ_SECONDS : ANSWER_SECONDS}
+              label={view.phase === "countdown" ? "Starter om" : "Tid igjen"}
+            />
           )}
         </div>
 
