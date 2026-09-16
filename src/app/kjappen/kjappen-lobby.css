@@ -153,13 +153,20 @@
   margin: 0 !important;
   color: #fff;
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.55vw, 2.55rem);
+  font-size: 0 !important;
   font-weight: 950;
   line-height: 1.02;
   letter-spacing: .025em;
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 4px 0 rgb(0 0 0 / .42), 0 0 22px rgb(93 217 255 / .16);
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question::after {
+  content: "DEL KODEN MED DE ANDRE";
+  display: block;
+  font-size: clamp(1.55rem, 2.55vw, 2.55rem);
+  line-height: 1.02;
 }
 
 /* Illuminated cabinet display for the join code. It belongs to the stage instead of
@@ -295,9 +302,14 @@
 
   .kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question {
     margin: 0 !important;
-    font-size: clamp(.88rem, 4.1vw, 1.18rem);
+    font-size: 0 !important;
     line-height: 1.06;
     letter-spacing: .018em;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question::after {
+    font-size: clamp(.88rem, 4.1vw, 1.18rem);
+    line-height: 1.06;
   }
 
   .kj-v2.kj-shell-lobby .kj-code-big {
