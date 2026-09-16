@@ -1,0 +1,468 @@
+/* Kjappen game layer --------------------------------------------------------
+   Turns the existing quiz UI into a single-screen arcade/game-show experience.
+   No game rules or network state are changed here. This file is intentionally
+   loaded last so it can sharpen the visual language without touching logic.
+   ------------------------------------------------------------------------- */
+
+.kj-v2 {
+  --kj-hud: #050921;
+  --kj-hud-line: #42e6ff;
+  --kj-hud-gold: #ffd34f;
+  --kj-game-shadow: 0 14px 0 #03051b, 0 24px 48px rgb(0 0 0 / .46);
+  isolation: isolate;
+}
+
+/* A subtle CRT/arcade surface over the entire game, not over the controls. */
+.kj-v2::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: .13;
+  background:
+    repeating-linear-gradient(180deg, rgb(255 255 255 / .045) 0 1px, transparent 1px 4px),
+    radial-gradient(circle at 50% 45%, transparent 0 54%, rgb(0 0 0 / .32) 100%);
+  mix-blend-mode: soft-light;
+}
+
+/* Active rounds behave like one game scene rather than a page of cards. */
+.kj-v2:not(.kj-shell-entry) .kj-front {
+  display: grid;
+  grid-template-rows: auto minmax(0, auto) auto auto;
+  align-content: start;
+}
+
+@media (min-width: 761px) and (min-height: 690px) {
+  .kj-v2:not(.kj-shell-entry) {
+    height: calc(100dvh - 4.25rem);
+    min-height: 0;
+    overflow: hidden;
+  }
+  .kj-v2:not(.kj-shell-entry) .kj-front {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+/* HUD --------------------------------------------------------------------- */
+.kj-v2:not(.kj-shell-entry) .kj-top {
+  position: relative;
+  align-items: center;
+  padding: .15rem .4rem .45rem;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-top::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: .08rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #33ddff 20%, #8f55ff 50%, #ffd34f 80%, transparent);
+  box-shadow: 0 0 14px #42e6ff;
+  opacity: .72;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-panel {
+  min-height: 4.2rem;
+  border: 2px solid rgb(66 230 255 / .48);
+  border-radius: .55rem;
+  background:
+    linear-gradient(180deg, rgb(18 28 91 / .92), rgb(5 9 33 / .94));
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / .045), 0 6px 0 #03051a, 0 0 22px rgb(66 230 255 / .17);
+  backdrop-filter: none;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-panel-title {
+  color: var(--kj-hud-gold);
+  text-shadow: 0 0 10px rgb(255 211 79 / .45);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-top-mid .kj-logo {
+  transform: translateY(.15rem);
+  filter: drop-shadow(0 8px 0 rgb(0 0 0 / .25)) drop-shadow(0 0 18px rgb(56 222 255 / .28));
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-code-chip,
+.kj-v2:not(.kj-shell-entry) .kj-btn-ghost {
+  border-radius: .48rem;
+  border-width: 2px;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .05), 0 4px 0 #020419, 0 0 14px rgb(48 220 255 / .16);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* Main stage --------------------------------------------------------------- */
+.kj-v2:not(.kj-shell-entry) .kj-main {
+  position: relative;
+  z-index: 4;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-host-frame {
+  border-width: 3px;
+  border-radius: .65rem .65rem .35rem .35rem;
+  box-shadow: inset 0 0 0 2px #101858, 0 7px 0 #02051b, 0 0 30px rgb(57 223 255 / .35);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 10px);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-host-plate {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #8decff;
+  border-top: 1px solid rgb(92 230 255 / .42);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-bubble {
+  position: relative;
+  border: 3px solid #111941;
+  border-radius: .55rem;
+  background: #f7fbff;
+  box-shadow: 0 6px 0 #02051a, 0 14px 26px rgb(0 0 0 / .32);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-bubble::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: -10px;
+  width: 18px;
+  height: 18px;
+  background: #f7fbff;
+  border-left: 3px solid #111941;
+  border-top: 3px solid #111941;
+  transform: rotate(45deg);
+}
+
+/* Question = the central game object, not a web card. */
+.kj-v2:not(.kj-shell-entry) .kj-board {
+  border-width: 3px;
+  border-radius: .65rem;
+  background:
+    linear-gradient(180deg, rgb(11 29 89 / .98), rgb(4 7 31 / .98));
+  box-shadow:
+    inset 0 0 0 3px rgb(19 35 91 / .9),
+    inset 0 -28px 50px rgb(15 9 75 / .38),
+    0 8px 0 #020419,
+    0 0 38px rgb(51 224 255 / .38),
+    0 20px 48px rgb(0 0 0 / .42);
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+  transform-origin: 50% 50%;
+}
+
+.kj-v2.kj-shell-question .kj-board { animation: kj-game-board-in .36s cubic-bezier(.2,1.2,.32,1); }
+.kj-v2.kj-shell-answering .kj-board { animation: kj-game-board-lock .28s ease-out; }
+.kj-v2.kj-shell-reveal .kj-board { animation: kj-game-board-reveal .34s ease-out; }
+
+@keyframes kj-game-board-in {
+  0% { opacity: .25; transform: translateY(-18px) scale(.94); filter: brightness(1.8); }
+  65% { transform: translateY(3px) scale(1.012); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes kj-game-board-lock {
+  0%,100% { transform: translateX(0); }
+  35% { transform: translateX(-4px); }
+  70% { transform: translateX(4px); }
+}
+@keyframes kj-game-board-reveal {
+  from { filter: brightness(1.65); box-shadow: inset 0 0 0 3px rgb(19 35 91 / .9), 0 8px 0 #020419, 0 0 75px rgb(255 213 78 / .62); }
+  to { filter: none; }
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-board-strip {
+  display: inline-flex;
+  width: auto;
+  padding: .34rem .62rem;
+  border: 1px solid rgb(61 229 255 / .42);
+  background: #050a2b;
+  box-shadow: 0 3px 0 #020419;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-board-round {
+  color: #ffd34f;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-board-question {
+  text-transform: none;
+  text-shadow: 0 3px 0 rgb(0 0 0 / .34), 0 0 24px rgb(62 224 255 / .16);
+}
+
+/* Timer becomes an arcade HUD dial. */
+.kj-v2:not(.kj-shell-entry) .kj-board-timer {
+  border-radius: .55rem;
+  background: #05091e;
+  box-shadow: inset 0 0 0 2px #1b276d, 0 5px 0 #020419, 0 0 18px rgb(68 229 255 / .28);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-board-timer > span {
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px #47e6ff;
+}
+
+/* 3-2-1 should feel like a game start, not a status page. */
+.kj-v2.kj-shell-countdown .kj-ready-title {
+  letter-spacing: .07em;
+  animation: kj-game-ready-title .54s steps(2,end) infinite;
+}
+.kj-v2.kj-shell-countdown .kj-ready-number {
+  animation: kj-game-count .78s cubic-bezier(.16,1.3,.3,1) infinite;
+}
+.kj-v2.kj-shell-countdown .kj-board {
+  animation: kj-game-count-board .75s ease-in-out infinite alternate;
+}
+@keyframes kj-game-ready-title { 0%,48% { opacity: 1; } 49%,100% { opacity: .44; } }
+@keyframes kj-game-count { 0% { transform: scale(.6); opacity: .4; } 30% { transform: scale(1.18); opacity: 1; } 60%,100% { transform: scale(1); opacity: 1; } }
+@keyframes kj-game-count-board { from { filter: saturate(1); } to { filter: saturate(1.25) brightness(1.08); } }
+
+/* Contestants ------------------------------------------------------------- */
+.kj-v2:not(.kj-shell-entry) .kj-contestants {
+  position: relative;
+  z-index: 6;
+  width: min(66rem, 88%);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-contestant {
+  transform-origin: 50% 100%;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-booth {
+  border-width: 3px;
+  border-radius: .55rem .55rem .25rem .25rem;
+  box-shadow: inset 0 0 0 2px #0b103f, 0 6px 0 #020419, 0 0 24px color-mix(in srgb, var(--seat-accent) 54%, transparent);
+  clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%, 0 9px);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-podium {
+  width: 112%;
+  padding-top: .68rem;
+  box-shadow: inset 0 3px 0 var(--seat-accent), 0 8px 0 #020419, 0 17px 28px rgb(0 0 0 / .4);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-podium-score {
+  border-width: 2px;
+  border-radius: .3rem;
+  box-shadow: inset 0 0 12px rgb(0 0 0 / .55), 0 3px 0 #020419, 0 0 14px color-mix(in srgb, var(--seat-accent) 38%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.kj-v2.kj-shell-question .kj-contestant-ready {
+  animation: kj-game-idle 1.8s ease-in-out infinite alternate;
+}
+.kj-v2.kj-shell-question .kj-contestant-ready:nth-child(2n) { animation-delay: -.85s; }
+@keyframes kj-game-idle { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+
+.kj-v2.kj-shell-answering .kj-contestant-buzzed {
+  animation: kj-game-winner-pop .48s cubic-bezier(.15,1.45,.32,1) both;
+  z-index: 4;
+}
+.kj-v2.kj-shell-answering .kj-contestant-buzzed .kj-booth {
+  box-shadow: inset 0 0 0 2px #fff1a1, 0 7px 0 #7d4c00, 0 0 32px #ffd34f, 0 0 84px rgb(255 182 50 / .62);
+}
+@keyframes kj-game-winner-pop {
+  0% { transform: translateY(10px) scale(.88); }
+  55% { transform: translateY(-14px) scale(1.12) rotate(-1deg); }
+  100% { transform: translateY(-8px) scale(1.075); }
+}
+
+.kj-v2.kj-shell-answering .kj-contestant-dim {
+  opacity: .2;
+  filter: grayscale(.4) brightness(.55);
+}
+
+.kj-v2 .kj-delta {
+  font-size: clamp(1.55rem, 4vw, 2.6rem);
+  text-shadow: 0 4px 0 #020419, 0 0 20px currentColor;
+  animation: kj-game-score-pop .9s cubic-bezier(.14,1.35,.28,1) both;
+}
+@keyframes kj-game-score-pop {
+  0% { opacity: 0; transform: translate(-50%, 18px) scale(.45); }
+  40% { opacity: 1; transform: translate(-50%, -18px) scale(1.28); }
+  100% { opacity: 1; transform: translate(-50%, -8px) scale(1); }
+}
+
+/* Buzzer = physical arcade control ---------------------------------------- */
+.kj-v2:not(.kj-shell-entry) .kj-floor {
+  position: relative;
+  z-index: 8;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-buzzer {
+  width: clamp(12.5rem, 20vw, 17rem);
+  transition: transform .08s ease, filter .12s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-buzzer:not(:disabled) {
+  cursor: pointer;
+  filter: saturate(1.14) drop-shadow(0 0 14px rgb(255 48 71 / .32));
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-buzzer:not(:disabled):active {
+  transform: translateY(9px) scale(.985);
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-buzzer:not(:disabled):active .kj-buzzer-top {
+  box-shadow: inset 0 -7px 18px rgb(0 0 0 / .5), inset 0 6px 12px rgb(255 255 255 / .22), 0 4px 0 #770711, 0 8px 18px rgb(0 0 0 / .5), 0 0 56px rgb(255 39 59 / .62);
+}
+
+.kj-v2.kj-shell-question .kj-buzzer:not(:disabled) .kj-buzzer-top {
+  animation: kj-game-buzzer-live .82s ease-in-out infinite alternate;
+}
+@keyframes kj-game-buzzer-live {
+  from { filter: brightness(.95); transform: scale(.99); }
+  to { filter: brightness(1.18); transform: scale(1.025); box-shadow: inset 0 -13px 22px rgb(0 0 0 / .42), inset 0 9px 18px rgb(255 255 255 / .32), 0 12px 0 #770711, 0 20px 38px rgb(0 0 0 / .46), 0 0 70px rgb(255 39 59 / .68); }
+}
+
+.kj-v2:not(.kj-shell-entry) .kj-buzzer-status {
+  border-radius: .45rem;
+  border: 2px solid rgb(81 224 255 / .28);
+  background: #05091fe8;
+  box-shadow: inset 0 0 0 1px #202960, 0 5px 0 #020419;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* Full-screen game feedback ------------------------------------------------ */
+.kj-v2 .kj-verdict {
+  z-index: 50;
+  backdrop-filter: blur(2px);
+}
+.kj-v2 .kj-verdict span {
+  border: 4px solid currentColor;
+  border-radius: .65rem;
+  padding: .5em .9em;
+  background: rgb(3 6 25 / .9);
+  box-shadow: 0 8px 0 #020419, 0 0 60px currentColor;
+  transform: rotate(-2deg);
+  animation: kj-game-verdict .52s cubic-bezier(.13,1.5,.3,1) both;
+}
+@keyframes kj-game-verdict {
+  from { opacity: 0; transform: scale(.45) rotate(-8deg); }
+  65% { opacity: 1; transform: scale(1.08) rotate(1deg); }
+  to { opacity: 1; transform: scale(1) rotate(-2deg); }
+}
+
+/* Website-like supporting copy disappears while a round is live. */
+.kj-v2.kj-shell-countdown .kj-meta-row,
+.kj-v2.kj-shell-question .kj-meta-row,
+.kj-v2.kj-shell-answering .kj-meta-row,
+.kj-v2.kj-shell-reveal .kj-meta-row,
+.kj-v2.kj-shell-countdown .kj-rules,
+.kj-v2.kj-shell-question .kj-rules,
+.kj-v2.kj-shell-answering .kj-rules,
+.kj-v2.kj-shell-reveal .kj-rules {
+  display: none;
+}
+
+/* Finale gets a stronger cabinet/game completion treatment. */
+.kj-v2.kj-shell-done .kj-final {
+  border: 3px solid #ffd34f;
+  border-radius: .7rem;
+  background: radial-gradient(circle at 50% 18%, rgb(72 53 180 / .5), rgb(5 7 29 / .88) 60%);
+  box-shadow: inset 0 0 0 3px #241751, 0 8px 0 #020419, 0 0 60px rgb(255 210 71 / .28);
+  animation: kj-game-finale .6s cubic-bezier(.12,1.2,.28,1) both;
+}
+@keyframes kj-game-finale { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+
+/* Mobile ------------------------------------------------------------------ */
+@media (max-width: 760px) {
+  .kj-v2:not(.kj-shell-entry) .kj-front {
+    padding-left: .55rem;
+    padding-right: .55rem;
+    gap: .34rem;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-top {
+    grid-template-columns: 1fr;
+    padding-bottom: .2rem;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-panel-left,
+  .kj-v2:not(.kj-shell-entry) .kj-panel-right {
+    display: none;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-top-mid .kj-logo {
+    width: min(9.3rem, 34vw);
+    margin-top: -.55rem;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-top-row {
+    margin-top: -.5rem;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-main {
+    grid-template-columns: minmax(5.3rem, 24vw) minmax(0, 1fr);
+    gap: .46rem;
+    margin-top: 0;
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-host { gap: .3rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame { border-width: 2px; }
+  .kj-v2:not(.kj-shell-entry) .kj-host-plate { font-size: .48rem; padding: .25rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-bubble { padding: .45rem; border-width: 2px; font-size: .62rem; line-height: 1.22; }
+  .kj-v2:not(.kj-shell-entry) .kj-bubble::before { width: 11px; height: 11px; top: -7px; border-width: 2px; }
+
+  .kj-v2:not(.kj-shell-entry) .kj-board {
+    min-height: 7.4rem;
+    padding: .58rem .65rem;
+    border-width: 2px;
+    box-shadow: inset 0 0 0 2px rgb(19 35 91 / .9), 0 5px 0 #020419, 0 0 25px rgb(51 224 255 / .3);
+  }
+
+  .kj-v2:not(.kj-shell-entry) .kj-board-strip { padding: .2rem .36rem; font-size: .56rem; gap: .28rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-board-ball { font-size: .75rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-board-round { margin-left: .15rem; font-size: .48rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-board-question { margin-top: .52rem; font-size: clamp(.92rem, 4vw, 1.15rem); line-height: 1.12; }
+  .kj-v2:not(.kj-shell-entry) .kj-board-timer { width: 3rem; height: 3rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-board-timer > span { font-size: 1rem; }
+
+  .kj-v2.kj-shell-countdown .kj-board { min-height: 9.4rem; }
+  .kj-v2.kj-shell-countdown .kj-ready-title { font-size: clamp(1.25rem, 6vw, 1.7rem); }
+  .kj-v2.kj-shell-countdown .kj-ready-number { font-size: clamp(3.6rem, 18vw, 5.2rem); }
+  .kj-v2.kj-shell-countdown .kj-ready-sub { font-size: .62rem; }
+
+  .kj-v2:not(.kj-shell-entry) .kj-contestants {
+    width: 100%;
+    gap: .3rem;
+  }
+  .kj-v2:not(.kj-shell-entry) .kj-booth { border-width: 2px; box-shadow: inset 0 0 0 1px #0b103f, 0 4px 0 #020419, 0 0 12px color-mix(in srgb, var(--seat-accent) 45%, transparent); }
+  .kj-v2:not(.kj-shell-entry) .kj-podium { width: 106%; padding: .42rem .18rem .36rem; box-shadow: inset 0 2px 0 var(--seat-accent), 0 4px 0 #020419; }
+  .kj-v2:not(.kj-shell-entry) .kj-podium-name { font-size: clamp(.48rem, 2.4vw, .65rem); }
+  .kj-v2:not(.kj-shell-entry) .kj-podium-name em { display: none; }
+  .kj-v2:not(.kj-shell-entry) .kj-podium-score { min-width: 2.8rem; font-size: .84rem; padding: .12rem .25rem; }
+  .kj-v2 .kj-player-status { font-size: .42rem; padding: .18rem .12rem; }
+
+  .kj-v2:not(.kj-shell-entry) .kj-floor { margin-top: -.1rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-buzzer { width: min(11.5rem, 46vw); }
+  .kj-v2:not(.kj-shell-entry) .kj-buzzer-status { padding: .3rem .48rem; min-height: 1.55rem; gap: .3rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-buzzer-status strong { font-size: .53rem; }
+  .kj-v2:not(.kj-shell-entry) .kj-buzzer-status span { font-size: .48rem; }
+
+  .kj-v2.kj-shell-question .kj-contestant-ready { animation-duration: 2.2s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kj-v2.kj-shell-question .kj-board,
+  .kj-v2.kj-shell-answering .kj-board,
+  .kj-v2.kj-shell-reveal .kj-board,
+  .kj-v2.kj-shell-countdown .kj-ready-title,
+  .kj-v2.kj-shell-countdown .kj-ready-number,
+  .kj-v2.kj-shell-countdown .kj-board,
+  .kj-v2.kj-shell-question .kj-contestant-ready,
+  .kj-v2.kj-shell-answering .kj-contestant-buzzed,
+  .kj-v2.kj-shell-question .kj-buzzer:not(:disabled) .kj-buzzer-top,
+  .kj-v2 .kj-delta,
+  .kj-v2 .kj-verdict span,
+  .kj-v2.kj-shell-done .kj-final {
+    animation: none !important;
+  }
+}
