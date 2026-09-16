@@ -195,6 +195,39 @@ export async function kjappenRoute(req: Request, action: string) {
   // Every other action needs to know who is asking.
   if (!playerId) return bad("Mangler spiller");
 
+  // State polling is by far the hottest Kjappen path. Most reads do not mutate anything,
+  // so they must not take a FOR UPDATE lock. Locking every poll serialized all players on
+  // one row and was the main source of intermittent server errors under fast polling.
+  if (action === "state") {
+    const db = sql();
+    const now = Date.now();
+    const snapshot = await load(db, code, false);
+    if (!snapshot) return bad("Fant ingen runde med den koden", 404);
+    const players = await db<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
+    if (!players.some((p) => p.id === playerId)) return bad("Du er ikke med i denne runden", 403);
+
+    const settled = settle(stateOf(snapshot), now);
+    const needsWrite = settled.state.phase !== snapshot.phase || settled.state.round !== snapshot.round;
+    if (!needsWrite) {
+      return json(view(snapshot, players, await questionFor(db, snapshot), playerId, now));
+    }
+
+    // A timer has crossed a phase boundary. Re-check it under one row lock so only one
+    // poll advances the game or applies a timeout score.
+    return await db.begin(async (raw) => {
+      const tx = inTx(raw);
+      const locked = await load(tx, code, true);
+      if (!locked) return bad("Fant ingen runde med den koden", 404);
+      const current = settle(stateOf(locked), now);
+      if (current.state.phase !== locked.phase || current.state.round !== locked.round) {
+        await persist(tx, code, current.state, current.outcome);
+      }
+      const fresh = (await load(tx, code, false))!;
+      const after = await tx<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
+      return json(view(fresh, after, await questionFor(tx, fresh), playerId, now));
+    });
+  }
+
   return await sql().begin(async (raw) => {
     const tx = inTx(raw);
     const game = await load(tx, code, true);
@@ -254,17 +287,6 @@ export async function kjappenRoute(req: Request, action: string) {
       const fresh = (await load(tx, code, false))!;
       const after = await tx<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
       return json(view(fresh, after, question, playerId, now));
-    }
-
-    if (action === "state") {
-      const settled = settle(stateOf(game), now);
-      if (settled.state.phase !== game.phase || settled.state.round !== game.round) {
-        await persist(tx, code, settled.state, settled.outcome);
-        const fresh = (await load(tx, code, false))!;
-        const after = await tx<PlayerRow[]>`select * from tippetuppen.kjappen_players where code=${code}`;
-        return json(view(fresh, after, await questionFor(tx, fresh), playerId, now));
-      }
-      return json(view(game, players, await questionFor(tx, game), playerId, now));
     }
 
     return bad("bad request");
