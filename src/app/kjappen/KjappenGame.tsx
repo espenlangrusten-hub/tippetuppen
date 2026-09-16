@@ -2,10 +2,10 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
 import { subscribeKjappen } from "@/lib/kjappen-realtime";
-import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, READY_SECONDS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
+import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
 import {
-  Buzzer, Clock, Contestant, Crowd, EmptySeat, Host, KjappenLogo, NextQuestionBar, QuestionBoard,
-  SaidBubble, ScorePanel, SidePanel, StageBackdrop, Verdict, WinnerStage, type PodiumPlayer,
+  Buzzer, Contestant, Crowd, EmptySeat, Host, KjappenLogo, NextQuestionBar, QuestionBoard,
+  SaidBubble, SidePanel, StageBackdrop, Verdict, WinnerStage, type PodiumPlayer,
 } from "@/components/kjappen/Stage";
 
 type Outcome = { kind: string; playerId: string | null; delta: number; guess?: string };
@@ -30,17 +30,9 @@ type View = {
 
 const STORE = "kjappen-seat";
 type Seat = { code: string; playerId: string };
-/** Which of the pre-game screens is showing. The round itself replaces both. */
 type Screen = "welcome" | "create" | "join";
-
-/**
- * Every question in the bank is about Norwegian football, so the strip over the board
- * says so. The bank carries a finer category per question, but it does not travel with
- * the question row, and putting it there is a change to the seed rather than to the set.
- */
 const CATEGORY = "Norsk fotball";
 
-/** "Lene, Jacob og Ada" - a three-way draw should read like a sentence. */
 const listNames = (names: string[]) =>
   names.length < 2 ? (names[0] ?? "") : `${names.slice(0, -1).join(", ")} og ${names[names.length - 1]}`;
 
@@ -54,7 +46,6 @@ export function KjappenGame() {
   const [code, setCode] = useState("");
   const [guess, setGuess] = useState("");
   const [left, setLeft] = useState(0);
-  const [readyFlash, setReadyFlash] = useState(true);
   const answerBox = useRef<HTMLInputElement>(null);
 
   const apply = useCallback((reply: View) => {
@@ -108,12 +99,9 @@ export function KjappenGame() {
         return;
       }
       apply(reply);
-    } catch { /* a dropped refresh is not worth showing */ }
+    } catch { /* fallback polling will try again */ }
   }, [seat, apply, remember]);
 
-  // Realtime is the fast path: any server-side game/player change makes every other
-  // participant fetch the authoritative state immediately. The one-second poll remains
-  // as a fallback for sleeping tabs, dropped WebSocket frames and reconnects.
   useEffect(() => {
     if (!seat) return;
     return subscribeKjappen(seat.code, seat.playerId, () => { void refresh(); });
@@ -126,7 +114,6 @@ export function KjappenGame() {
     return () => clearInterval(every);
   }, [seat, refresh]);
 
-  // The countdown runs locally between polls so it does not stutter once a second.
   const ticking = view && (view.phase === "countdown" || view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
   useEffect(() => {
     if (!ticking) return;
@@ -140,23 +127,7 @@ export function KjappenGame() {
   const phase = view?.phase;
   const round = view?.round;
 
-  // During the five-second opening countdown the board itself flashes "Gjør dere klare"
-  // while the number stays readable. The server owns the actual deadline, so every
-  // participant sees the same start even when their WebSocket arrives a fraction later.
-  useEffect(() => {
-    if (phase !== "countdown") {
-      setReadyFlash(true);
-      return;
-    }
-    setReadyFlash(true);
-    const id = setInterval(() => setReadyFlash((on) => !on), 360);
-    return () => clearInterval(id);
-  }, [phase]);
-
-  // Clear the box for every new question. It used to keep the last answer, so the next
-  // time you buzzed you had to wipe it first - with fifteen seconds running.
   useEffect(() => setGuess(""), [round, phase]);
-
   useEffect(() => {
     if (phase === "answering" && iBuzzed) answerBox.current?.focus();
   }, [phase, iBuzzed]);
@@ -215,13 +186,12 @@ export function KjappenGame() {
     });
   };
 
-  // ---- before the round -----------------------------------------------------
-
   if (!seat || !view) {
     const entry = screen === "welcome" ? (
       <div className="kj-entry">
         <KjappenLogo className="kj-logo-hero" priority />
-        <p className="kj-tagline">Fem spørsmål om norsk fotball.<br />Først på knappen får svare.</p>
+        <span className="kj-entry-kicker">Quizshow · Norsk fotball</span>
+        <p className="kj-tagline">Fem spørsmål. Én knapp. Først på knappen får svare.</p>
         {error && <p className="kj-error">{error}</p>}
         <div className="kj-entry-actions">
           <button className="kj-btn kj-btn-go" onClick={() => { setError(""); setScreen("create"); }}>Lag runde</button>
@@ -232,6 +202,7 @@ export function KjappenGame() {
     ) : (
       <div className="kj-entry">
         <KjappenLogo className="kj-logo-hero" priority />
+        <span className="kj-entry-kicker">Kjappen quizshow</span>
         <h1 className="kj-entry-title">{screen === "create" ? "Ny runde" : "Bli med"}</h1>
         {error && <p className="kj-error">{error}</p>}
         <form className="kj-form" onSubmit={screen === "create" ? create : join}>
@@ -252,15 +223,13 @@ export function KjappenGame() {
     );
 
     return (
-      <div className="kj-shell kj-shell-entry">
+      <div className="kj-shell kj-shell-entry kj-v2">
         <StageBackdrop />
         <div className="kj-front">{entry}</div>
         <Crowd />
       </div>
     );
   }
-
-  // ---- the round ------------------------------------------------------------
 
   const champions = view.winners?.length ? view.players.filter((p) => view.winners!.includes(p.id)) : [];
   const runnersUp = view.players.filter((p) => !champions.some((c) => c.id === p.id));
@@ -273,13 +242,13 @@ export function KjappenGame() {
     : null;
 
   const says = () => {
-    if (view.phase === "lobby") return "Velkommen til Kjappen! Vi venter på at flere blir med.";
-    if (view.phase === "countdown") return "Gjør dere klare!";
+    if (view.phase === "lobby") return "Velkommen til Kjappen! Del koden og få med gjengen.";
+    if (view.phase === "countdown") return "Gjør dere klare! Første spørsmål kommer nå.";
     if (cancelled) return "Runden ble avbrutt.";
     if (finished)
       return champions.length > 1
         ? `Uavgjort mellom ${listNames(champions.map((w) => w.name))}!`
-        : champions.length ? `${champions[0].name} vinner Kjappen!` : "Vi har en vinner";
+        : champions.length ? `Fantastisk, ${champions[0].name}! Du er kveldens vinner!` : "Vi har en vinner!";
     if (view.phase === "reveal") {
       if (view.outcome?.kind === "nobody") return `Ingen turte. Svaret var ${view.answer}.`;
       if (view.outcome?.kind === "timeout") return `Tiden gikk ut. Svaret var ${view.answer}.`;
@@ -290,39 +259,32 @@ export function KjappenGame() {
       }
       return `Svaret var ${view.answer}.`;
     }
-    if (view.phase === "answering") return buzzedPlayer ? `${buzzedPlayer.name} svarer!` : "Noen svarer!";
-    return "Hvem trykker først?";
+    if (view.phase === "answering") return buzzedPlayer ? `${buzzedPlayer.name} var raskest. Hva er svaret?` : "Noen svarer!";
+    return "Spennende spørsmål, folkens. Hvem tar denne?";
   };
 
   const boardText = () => {
     if (view.phase === "lobby") return `Del koden ${view.code} med de andre.`;
-    if (view.phase === "countdown") return readyFlash ? `Gjør dere klare · ${left}` : `${left}`;
     if (cancelled) return "Runden er avbrutt.";
     if (finished) return "Vi har en vinner";
     return view.prompt ?? "";
   };
 
-  /** What the buzzer does right now. It drives the whole show, not just the buzz. */
   const rig = () => {
     if (view.phase === "lobby") {
       if (!isHost) return { label: "VENT …", sub: "Runden startes av den som lagde den", onPress: () => {}, disabled: true };
       const ready = view.players.length >= 2;
       return {
-        label: ready ? "START!" : "VENTER",
-        sub: ready ? "Trykk for å starte showet" : "Minst to spillere må være med",
+        label: ready ? "START SHOWET" : "VENTER",
+        sub: ready ? "Trykk for å starte" : "Minst to spillere må være med",
         onPress: () => { if (ready) void guard(() => call("start", seat)); },
         disabled: busy || !ready,
       };
     }
-    if (view.phase === "countdown")
-      return {
-        label: "KLAR!",
-        sub: `Første spørsmål om ${left} sek`,
-        onPress: () => {}, disabled: true,
-      };
+    if (view.phase === "countdown") return { label: "GJØR DERE KLARE", sub: `Første spørsmål om ${left} sek`, onPress: () => {}, disabled: true };
     if (view.phase === "question")
       return {
-        label: "TRYKK HER!",
+        label: "TRYKK FOR Å SVARE!",
         sub: `${left} sekunder igjen`,
         onPress: () => { if (!view.buzzedBy) void guard(() => call("buzz", seat)); },
         disabled: busy || !!view.buzzedBy,
@@ -333,7 +295,7 @@ export function KjappenGame() {
         sub: buzzedPlayer ? `${buzzedPlayer.name} rakk knappen først` : "Noen rakk knappen først",
         onPress: () => {}, disabled: true, taken: true,
       };
-    if (view.phase === "reveal") return { label: "…", sub: "Neste spørsmål kommer", onPress: () => {}, disabled: true, taken: true };
+    if (view.phase === "reveal") return { label: "VENT PÅ NESTE", sub: "Neste spørsmål kommer", onPress: () => {}, disabled: true, taken: true };
     return { label: "NY RUNDE", sub: "Tilbake til start", onPress: leave, disabled: false };
   };
   const button = rig();
@@ -341,15 +303,29 @@ export function KjappenGame() {
   const deltaFor = (id: string) =>
     view.phase === "reveal" && view.outcome?.playerId === id ? view.outcome.delta : null;
 
+  const boardVariant: "default" | "lobby" | "countdown" | "winner" = finished
+    ? "winner"
+    : view.phase === "countdown"
+      ? "countdown"
+      : view.phase === "lobby"
+        ? "lobby"
+        : "default";
+
+  const boardTimer = view.phase === "question"
+    ? { left, of: BUZZ_SECONDS, label: "Tid igjen" }
+    : view.phase === "answering"
+      ? { left, of: ANSWER_SECONDS, label: "Tid igjen" }
+      : undefined;
+
   return (
-    <div className={`kj-shell kj-shell-${view.phase}`}>
+    <div className={`kj-shell kj-shell-${view.phase} kj-v2`}>
       <StageBackdrop />
       <Crowd />
       {verdict !== null && <Verdict correct={verdict} />}
 
       <div className="kj-front">
         <header className="kj-top">
-          <SidePanel className="kj-panel-left" title="Kjappen" lines={["Kunnskap", "Hurtighet", "Venner", "Seier!"]} />
+          <SidePanel className="kj-panel-left" title="Live" lines={["Raskere", "Skarpere", "Gøyere"]} />
           <div className="kj-top-mid">
             <KjappenLogo priority />
             <div className="kj-top-row">
@@ -361,14 +337,22 @@ export function KjappenGame() {
                   : <button className="kj-btn kj-btn-ghost" onClick={leave}>Forlat runden</button>}
             </div>
           </div>
-          <ScorePanel className="kj-panel-right" players={view.players} />
+          <SidePanel className="kj-panel-right" title="Kjappen" lines={["Kunnskap", "For alle"]} />
         </header>
 
         <div className="kj-main">
           <Host talking={view.phase !== "lobby"} says={says()} fact={view.phase === "reveal" ? view.fact : null} />
 
           <div className="kj-center">
-            <QuestionBoard category={CATEGORY} question={boardText()} round={finished || cancelled ? 0 : view.round} of={view.questionCount} />
+            <QuestionBoard
+              category={CATEGORY}
+              question={boardText()}
+              round={finished || cancelled ? 0 : view.round}
+              of={view.questionCount}
+              variant={boardVariant}
+              countdown={view.phase === "countdown" ? left : undefined}
+              timer={boardTimer}
+            />
 
             {view.phase === "reveal" && view.round < view.questionCount && (
               <NextQuestionBar seconds={REVEAL_SECONDS} keyed={view.round} />
@@ -379,21 +363,14 @@ export function KjappenGame() {
             {view.phase === "answering" && iBuzzed && (
               <form className="kj-form kj-answer" onSubmit={send}>
                 <label className="kj-label" htmlFor="kj-answer">Skriv svaret</label>
-                <input id="kj-answer" ref={answerBox} className="kj-input" value={guess} maxLength={80} autoComplete="off"
-                  onChange={(e) => setGuess(e.target.value)} />
-                <button className="kj-btn kj-btn-go" disabled={busy || !guess.trim()}>Send svar</button>
+                <div className="kj-answer-row">
+                  <input id="kj-answer" ref={answerBox} className="kj-input" value={guess} maxLength={80} autoComplete="off"
+                    onChange={(e) => setGuess(e.target.value)} />
+                  <button className="kj-btn kj-btn-go" disabled={busy || !guess.trim()}>Send svar</button>
+                </div>
               </form>
             )}
           </div>
-
-          {(view.phase === "countdown" || view.phase === "question" || view.phase === "answering") && (
-            <Clock
-              className="kj-clock-side"
-              left={left}
-              of={view.phase === "countdown" ? READY_SECONDS : view.phase === "question" ? BUZZ_SECONDS : ANSWER_SECONDS}
-              label={view.phase === "countdown" ? "Starter om" : "Tid igjen"}
-            />
-          )}
         </div>
 
         {error && <p className="kj-error">{error}</p>}
@@ -404,8 +381,6 @@ export function KjappenGame() {
           <section className="kj-contestants">
             {view.players.map((p) => (
               <div key={p.id} className="kj-seat">
-                {/* What was typed, shown where the player stands: live for the one
-                    answering, and to everybody once the question is over. */}
                 {view.phase === "answering" && p.id === view.buzzedBy && iBuzzed && guess.trim() && <SaidBubble text={guess} />}
                 {view.phase === "reveal" && view.outcome?.guess && view.outcome.playerId === p.id && <SaidBubble text={view.outcome.guess} />}
                 <Contestant
@@ -423,9 +398,22 @@ export function KjappenGame() {
           </section>
         )}
 
-        <section className="kj-floor">
-          <Buzzer {...button} />
-        </section>
+        {!finished && (
+          <section className="kj-floor">
+            <Buzzer {...button} />
+          </section>
+        )}
+
+        <div className="kj-meta-row" aria-hidden="true">
+          <div className="kj-meta-card">
+            <span className="kj-meta-icon">🏆</span>
+            <span><b>Norsk fotball</b><small>Kveldens kategori</small></span>
+          </div>
+          <div className="kj-meta-card kj-meta-card-right">
+            <span className="kj-meta-icon">👥</span>
+            <span><b>Spill med venner</b><small>Kunnskap er morsommere sammen</small></span>
+          </div>
+        </div>
 
         <p className="kj-rules">
           Riktig svar gir 100 poeng, feil svar trekker 100. Rekker du ikke svare innen {ANSWER_SECONDS} sekunder,

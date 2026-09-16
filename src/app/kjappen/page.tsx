@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import "./kjappen-v2.css";
 import { KjappenGame } from "./KjappenGame";
 
-// Not linked from anywhere and kept out of the index: this is a test bench, not a
-// finished game. It is reachable by URL for whoever is trying it out.
+// Kept out of the index while Kjappen is being polished and tested.
 export const metadata: Metadata = {
   title: "Kjappen – test",
   description: "Quizshow for inntil fire spillere. Fem spørsmål om norsk fotball.",
