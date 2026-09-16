@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./kjappen-v2.css";
 import "./kjappen-type.css";
+import "./kjappen-arcade.css";
 import { KjappenGame } from "./KjappenGame";
 
 // Kept out of the index while Kjappen is being polished and tested.
