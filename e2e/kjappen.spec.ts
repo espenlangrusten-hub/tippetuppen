@@ -45,8 +45,8 @@ test("two players share a round, and only the one who buzzed may answer", async 
 
   await expect(host.locator(".kj-podium-name", { hasText: "Gjest" })).toBeVisible({ timeout: 15000 });
   // Only the player who made the round may start it.
-  await expect(host.getByRole("button", { name: "START!" })).toBeVisible({ timeout: 15000 });
-  await expect(guest.getByRole("button", { name: "START!" })).toHaveCount(0);
+  await expect(host.getByRole("button", { name: "START SHOWET" })).toBeVisible({ timeout: 15000 });
+  await expect(guest.getByRole("button", { name: "START SHOWET" })).toHaveCount(0);
 
   // The server deals the portraits, so both screens have to agree on who is who, and
   // two players must never be handed the same face.
@@ -56,12 +56,10 @@ test("two players share a round, and only the one who buzzed may answer", async 
   expect(new Set(hostFaces).size).toBe(hostFaces.length);
   expect(hostFaces).not.toContain("?");
 
-  await host.getByRole("button", { name: "START!" }).click();
+  await host.getByRole("button", { name: "START SHOWET" }).click();
 
-  // Wait for the round to be on a question before reading the board. The board is the
-  // same element in the lobby, where it carries "Del koden ... med de andre", so
-  // waiting for it to be visible proves nothing and reads whatever is there - which is
-  // the lobby text until the phase actually turns over.
+  // Wait for the synchronized opening countdown to finish and the first question to
+  // become active before reading the board.
   await expect(host.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
   await expect(guest.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
 
@@ -70,15 +68,15 @@ test("two players share a round, and only the one who buzzed may answer", async 
   expect(question.length).toBeGreaterThan(0);
   expect(question).not.toContain("Del koden");
   await expect(guest.locator(".kj-board-question")).toHaveText(question, { timeout: 15000 });
-  await expect(host.getByRole("button", { name: "TRYKK HER!" })).toBeVisible();
+  await expect(host.getByRole("button", { name: "TRYKK FOR Å SVARE!" })).toBeVisible();
 
-  await guest.getByRole("button", { name: "TRYKK HER!" }).click();
+  await guest.getByRole("button", { name: "TRYKK FOR Å SVARE!" }).click();
 
-  // The guest gets the box; everyone watches the same clock, and the guest's podium
-  // is the lit one on both screens.
+  // The guest gets the box; everyone watches the same integrated board timer, and the
+  // guest's podium is the lit one on both screens.
   await expect(guest.getByLabel("Skriv svaret")).toBeVisible({ timeout: 15000 });
-  await expect(host.locator(".kj-clock")).toBeVisible({ timeout: 15000 });
-  await expect(guest.locator(".kj-clock")).toBeVisible();
+  await expect(host.locator(".kj-board-timer")).toBeVisible({ timeout: 15000 });
+  await expect(guest.locator(".kj-board-timer")).toBeVisible();
   await expect(host.getByLabel("Skriv svaret")).toHaveCount(0);
   await expect(host.locator(".kj-contestant-buzzed")).toHaveCount(1);
   await expect(guest.locator(".kj-contestant-buzzed")).toHaveCount(1);
@@ -95,8 +93,8 @@ test("two players share a round, and only the one who buzzed may answer", async 
   await expect(host.locator(".kj-sweep")).toBeVisible();
 
   // The box must be empty on the next question: it used to keep the last answer.
-  await expect(guest.getByRole("button", { name: "TRYKK HER!" })).toBeEnabled({ timeout: 20000 });
-  await guest.getByRole("button", { name: "TRYKK HER!" }).click();
+  await expect(guest.getByRole("button", { name: "TRYKK FOR Å SVARE!" })).toBeEnabled({ timeout: 20000 });
+  await guest.getByRole("button", { name: "TRYKK FOR Å SVARE!" }).click();
   await expect(guest.getByLabel("Skriv svaret")).toHaveValue("", { timeout: 15000 });
   // The face a player was dealt survives the round rather than being redrawn per question.
   expect(await faces(guest)).toEqual(guestFaces);
