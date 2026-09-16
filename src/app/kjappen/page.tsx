@@ -7,7 +7,7 @@ import "./kjappen-lobby.css";
 import "./kjappen-responsive.css";
 import { KjappenGame } from "./KjappenGame";
 
-// Kept out of the index while Kjappen is being polished and tested.
+// Kept out of the index while Kjappen is being polished and tested. Viewport-fit pass active.
 export const metadata: Metadata = {
   title: "Kjappen – test",
   description: "Quizshow for inntil fire spillere. Fem spørsmål om norsk fotball.",
