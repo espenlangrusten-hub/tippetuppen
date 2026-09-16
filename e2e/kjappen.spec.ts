@@ -58,11 +58,17 @@ test("two players share a round, and only the one who buzzed may answer", async 
 
   await host.getByRole("button", { name: "START!" }).click();
 
+  // Wait for the round to be on a question before reading the board. The board is the
+  // same element in the lobby, where it carries "Del koden ... med de andre", so
+  // waiting for it to be visible proves nothing and reads whatever is there - which is
+  // the lobby text until the phase actually turns over.
+  await expect(host.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
+  await expect(guest.locator(".kj-shell-question")).toHaveCount(1, { timeout: 15000 });
+
   // The question is on the board, and both players read the same one.
-  const board = host.locator(".kj-board-question");
-  await expect(board).toBeVisible({ timeout: 15000 });
-  const question = ((await board.textContent()) ?? "").trim();
+  const question = ((await host.locator(".kj-board-question").textContent()) ?? "").trim();
   expect(question.length).toBeGreaterThan(0);
+  expect(question).not.toContain("Del koden");
   await expect(guest.locator(".kj-board-question")).toHaveText(question, { timeout: 15000 });
   await expect(host.getByRole("button", { name: "TRYKK HER!" })).toBeVisible();
 
