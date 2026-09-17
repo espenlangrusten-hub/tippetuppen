@@ -9,7 +9,7 @@
  *   node --import tsx scripts/audit-content.ts
  */
 import { loadDataset } from "../src/data/load";
-import { playerClues } from "../src/server/puzzles/playerClues";
+import { clueSourcingSummary, playerClues } from "../src/server/puzzles/playerClues";
 
 const PRIMARY = new Set(["www.fotball.no", "www.uefa.com", "www.fifa.com", "www.thefa.com", "www.olympics.com", "hns.team"]);
 const ARCHIVE = new Set([
@@ -59,13 +59,18 @@ function idOf(name: string) {
 const people = new Set(ds.matches.flatMap((m) => (PLAYABLE.has(m.status) ? m.lineup.map((p) => idOf(p.name)).filter((id) => playerClues.has(id)) : [])));
 
 console.log("\nFINN SPILLEREN");
+const hintSets = new Set([...playerClues.values()].map((p) => p.hintSetId));
+const sourcing = clueSourcingSummary();
 console.log(`  hintprofiler ${playerClues.size}`);
-console.log(`  runder generatoren kan lage ${rounds.length}`);
+console.log(`  unike hintsett ${hintSets.size}  <- dette er antallet dagsoppgaver`);
+console.log(`  runder generatoren kan lage ${rounds.length} (samme hintsett gjenbrukt per kamp)`);
 console.log(`  unike personer ${people.size}`);
+console.log(`  hint med egen kilde ${sourcing.perHint} av ${playerClues.size * 3}; ${sourcing.inherited} arver profilens kildeliste`);
+console.log(`  profiler med minst ett hint som har egen kilde: ${sourcing.profilesWithPerHintSources}`);
 console.log("  kilder per profil", show(tally([...playerClues.values()].map((p) => p.sources.length))));
 console.log("  kildedomener", show(tally([...playerClues.values()].flatMap((p) => p.sources.map((s) => host(s.url) ?? "?")))));
-const noBirthYear = [...playerClues.values()].filter((p) => /ble født/.test(p.hints.join(" ")) && ds.players.get(p.playerId)?.birthYear == null);
+const noBirthYear = [...playerClues.values()].filter((p) => /ble født/.test(p.texts.join(" ")) && ds.players.get(p.playerId)?.birthYear == null);
 console.log(`  profiler som oppgir fødselsår i hint uten at registeret har feltet: ${noBirthYear.length}`);
 
-console.log(`\nUnike oppgaver i dag: Mangler XI ${playable.length}, Finn spilleren ${people.size}. Mål 365 hver.`);
+console.log(`\nUnike oppgaver i dag: Mangler XI ${playable.length}, Finn spilleren ${hintSets.size}. Mål 365 hver.`);
 console.log(`Uten dekning: ${starters.size} ulike startende spillere finnes i kampdataene, ${people.size} av dem har hintprofil.`);

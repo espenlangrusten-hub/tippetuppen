@@ -51,7 +51,13 @@ for (const game of ["mangler-xi", "maalloes", "finn-spilleren"] as const) {
   const scheduleFrom = game === "finn-spilleren" && finnTodayExists && from <= osloDateKey() ? addDays(osloDateKey(), 1) : from;
   const r = await extendSchedule(db, game, scheduleFrom, days);
   const runway = await runwayFor(db, game, osloDateKey());
-  console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${runway.eligiblePuzzles} eligible, ${runway.belowPolicy} below policy).`);
+  // Rounds and tasks differ where one clue set produces many rounds; printing only the
+  // round count would report a year of content that does not exist.
+  const pool =
+    runway.eligibleTasks === runway.eligiblePuzzles
+      ? `${runway.eligiblePuzzles} eligible`
+      : `${runway.eligibleTasks} distinct tasks from ${runway.eligiblePuzzles} rounds`;
+  console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${pool}, ${runway.belowPolicy} below policy).`);
 }
 void sql;
 await handle.close();

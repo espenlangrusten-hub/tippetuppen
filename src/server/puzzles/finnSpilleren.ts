@@ -53,9 +53,9 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
       // Personal first, narrowing to the match last: the three profile clues are about
       // the person, then the squad or result places him, then the match, then the name.
       const hints: FinnSpillerenPayload["hints"] = [
-        profile.hints[0],
-        profile.hints[1],
-        profile.hints[2],
+        profile.texts[0],
+        profile.texts[1],
+        profile.texts[2],
         squad ? `I Norges tropp til ${tournament} var jeg oppført som spiller i ${squad.clubName}.` : matchClue,
         `Navnet mitt begynner med ${first}, og etternavnet begynner på ${surname[0].toUpperCase()}.`,
       ];
@@ -70,15 +70,17 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
           aliases: Array.from(new Set([player.fullName, player.displayName, player.surname, ...(aliasesById.get(player.id) ?? [])])),
           role: "spiller",
           hints,
-          explanation: `${player.displayName} startet for Norge mot ${match.opponent} ${match.date}. ${profile.hints.join(" ")}`,
+          explanation: `${player.displayName} startet for Norge mot ${match.opponent} ${match.date}. ${profile.texts.join(" ")}`,
           status: "single_source",
-          sourceIds: [match.id, ...profile.sources.map((src) => src.url)],
+          // Clue-level sources first when a clue carries its own; the profile list is
+          // the fallback for the clues that are still only documented profile-wide.
+          sourceIds: Array.from(new Set([match.id, ...profile.hints.flatMap((h) => h.sources.map((src) => src.url))])),
         },
         difficulty: Math.max(1, 5.5 - (player.fame ?? 2)),
         quality: match.importance + (player.fame ?? 2) / 10,
         era: Math.floor(Number(match.date.slice(0, 4)) / 10) * 10,
         tags: [match.opponentCode, match.competitionId, "spiller"],
-        fingerprint: `${player.id}:${match.id}`,
+        fingerprint: profile.hintSetId,
         sourceRef: match.id,
       });
     }

@@ -3,6 +3,7 @@ import type { Db } from "@/server/db";
 import { schema as s, type GameId } from "@/server/db";
 import { addDays } from "@/lib/dates";
 import { lineupSimilarity } from "./manglerXi";
+import { hintSetKey } from "./playerClues";
 
 export type RotationPolicy = { statuses: string[] };
 export const DEFAULT_ROTATION: RotationPolicy = { statuses: ["verified", "single_source"] };
@@ -23,6 +24,28 @@ type Candidate = {
 };
 
 type Recent = { fingerprint: string; era: number | null; tags: string[]; difficulty: number; payload: Record<string, unknown> };
+
+/**
+ * What counts as "already served".
+ *
+ * For most games that is the puzzle itself. Finn spilleren is different: it makes one
+ * round per match a profiled player started, so Ørjan Nyland alone produces 22 rounds
+ * that open with the same three biographical clues and differ only in the closing match
+ * clue. Served as separate days they are the same task four weeks apart, so the person
+ * plus their clue set is the unit, not the id.
+ *
+ * The key is read from the payload rather than the puzzle row, because rounds published
+ * before this rule existed are never rewritten - they must still be recognised as spent.
+ */
+export function servedKey(game: GameId, puzzle: { id: string; payload: Record<string, unknown> }): string {
+  if (game !== "finn-spilleren") return puzzle.id;
+  const payload = puzzle.payload as { answerId?: unknown; hints?: unknown };
+  const hints = payload.hints;
+  if (typeof payload.answerId !== "string" || !Array.isArray(hints)) return puzzle.id;
+  const biographical = hints.slice(0, 3).filter((h): h is string => typeof h === "string");
+  if (biographical.length < 3) return puzzle.id;
+  return hintSetKey(payload.answerId, biographical);
+}
 
 /**
  * Pick the next puzzle given the recent schedule. Scores candidates for variety:
@@ -83,7 +106,11 @@ function hash(str: string): number {
  */
 export async function extendSchedule(db: Db, game: GameId, fromDate: string, days: number): Promise<{ added: number; exhaustedAt: string | null }> {
   const policy = await getRotationPolicy(db);
-  const all = await db.select().from(s.puzzles).where(and(eq(s.puzzles.game, game), eq(s.puzzles.enabled, true), eq(s.puzzles.eligible, true)));
+  // Everything for this game, not just what may be picked: a puzzle that has since been
+  // disabled is still the reason a clue set counts as spent, and still what a past day
+  // shows.
+  const everything = await db.select().from(s.puzzles).where(eq(s.puzzles.game, game));
+  const all = everything.filter((p) => p.enabled && p.eligible);
   const eligible = all.filter((p) => policy.statuses.includes(String((p.payload as { status?: string }).status ?? "verified")));
 
   // A puzzle that has since been disabled or downgraded must leave the schedule, not
@@ -98,7 +125,11 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   const existing = await db.select().from(s.schedule).where(eq(s.schedule.game, game)).orderBy(asc(s.schedule.date));
   const used = new Set(existing.map((e) => e.puzzleId));
   const byDate = new Map(existing.map((e) => [e.date, e]));
-  const puzzleById = new Map(all.map((p) => [p.id, p]));
+  const puzzleById = new Map(everything.map((p) => [p.id, p]));
+  const spent = new Set(existing.map((e) => {
+    const p = puzzleById.get(e.puzzleId);
+    return p ? servedKey(game, p) : e.puzzleId;
+  }));
   let number = existing.reduce((m, e) => Math.max(m, e.number), 0);
   let added = 0;
   let exhaustedAt: string | null = null;
@@ -118,7 +149,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
       if (p) recent.push({ fingerprint: p.fingerprint, era: p.era, tags: p.tags, difficulty: p.difficulty, payload: p.payload });
       continue;
     }
-    const candidates = eligible.filter((p) => !used.has(p.id));
+    const candidates = eligible.filter((p) => !used.has(p.id) && !spent.has(servedKey(game, p)));
     const pick = pickNext(game, candidates, recent, i + number);
     if (!pick) {
       exhaustedAt = date;
@@ -127,6 +158,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
     number += 1;
     await db.insert(s.schedule).values({ game, date, number, puzzleId: pick.id });
     used.add(pick.id);
+    spent.add(servedKey(game, pick));
     added += 1;
     recent.push({ fingerprint: pick.fingerprint, era: pick.era, tags: pick.tags, difficulty: pick.difficulty, payload: pick.payload });
     if (recent.length > 14) recent.shift();
@@ -147,12 +179,25 @@ export async function runwayFor(db: Db, game: GameId, today: string) {
   const scheduledIds = new Set(sched.map((x) => x.puzzleId));
   const published = sched.filter((x) => x.date <= today).length;
   const future = sched.filter((x) => x.date > today).length;
-  const unused = eligible.filter((p) => !scheduledIds.has(p.id)).length;
+  const byId = new Map(all.map((p) => [p.id, p]));
+  const spent = new Set(sched.map((x) => {
+    const p = byId.get(x.puzzleId);
+    return p ? servedKey(game, p) : x.puzzleId;
+  }));
+  // Distinct, because 292 Finn spilleren rounds drawn from 30 clue sets are 30 days of
+  // content, and a runway that says 292 would be an invitation to stop writing clues.
+  const remaining = new Set<string>();
+  for (const p of eligible) {
+    const key = servedKey(game, p);
+    if (!scheduledIds.has(p.id) && !spent.has(key)) remaining.add(key);
+  }
+  const unused = remaining.size;
   const remainingDays = future + unused;
   return {
     game,
     totalPuzzles: all.length,
     eligiblePuzzles: eligible.length,
+    eligibleTasks: new Set(eligible.map((p) => servedKey(game, p))).size,
     belowPolicy: all.length - eligible.length,
     published,
     scheduledFuture: future,
