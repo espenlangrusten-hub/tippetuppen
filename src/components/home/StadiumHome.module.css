@@ -87,7 +87,7 @@
  .penalty, .kjappen { min-height: 195px; }
  .penalty .gameTitle h2 { font-size: clamp(23px, 6vw, 30px); }
  .kjappenLogo { inset: 0 0 53px; }
- .kjappenCaption { left: 10px; right: 10px; bottom: 51px; }
+ .kjappenCaption { left: 10px; right: 51px; bottom: 10px; }
  .kjappenCaption p { font-size: 11px; }
  .kjappenCaption > span { font-size: 10px; }
  .beta { font-size: 10px; margin-left: 4px; padding: 3px 4px; }
