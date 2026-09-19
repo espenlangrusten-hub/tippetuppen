@@ -110,6 +110,15 @@ export async function kjappenRoute(req: Request, action: string) {
     const name = cleanName((body as { name?: unknown }).name);
     if (!name) return bad("Skriv inn et navn");
 
+    // Sweep abandoned rounds before making a new one.
+    //
+    // A game only moves when somebody asks about it, so a round whose players all closed
+    // their tabs never reaches "done" - it sits in `question` or `answering` forever, and
+    // its join code is never released. There is no scheduler for this, so the sweep rides
+    // along with the one action that creates the rows in the first place. Twelve hours is
+    // far longer than any round can legitimately take; players cascade with the game.
+    await sql()`delete from tippetuppen.kjappen_games where updated_at < now() - interval '12 hours'`;
+
     // Most of the raw bank is deliberately systematic reference trivia (league winner,
     // cup winner and top scorer by year). It is useful depth, but uniform random made
     // whole rounds feel like database lookups. Deal four distinct non-auto categories

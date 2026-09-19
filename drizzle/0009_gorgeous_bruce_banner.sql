@@ -1,0 +1,1 @@
+ALTER TABLE "tippetuppen"."matches" ADD COLUMN "goals_complete" boolean DEFAULT false NOT NULL;

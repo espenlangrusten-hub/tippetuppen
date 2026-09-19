@@ -135,6 +135,12 @@ export const matches = tt.table(
     tags: jsonb("tags").$type<string[]>().notNull().default([]),
     status: text("status").$type<DataStatus>().notNull().default("recall"),
     lineupComplete: boolean("lineup_complete").notNull().default(false),
+    /** Whether the goal list for this match is known to be complete.
+     *  Mirrors the source files' `goalsPartial`, inverted. It has to reach the database
+     *  because the question generators read from here, not from the JSON: without it a
+     *  generator cannot tell "nobody scored" from "we never recorded who scored", and
+     *  will happily build a scoring question on a match whose scorers are unknown. */
+    goalsComplete: boolean("goals_complete").notNull().default(false),
     notes: text("notes"),
     sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
     createdAt: timestamp("created_at", { withTimezone: true })

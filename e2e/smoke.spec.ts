@@ -58,10 +58,23 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
   await expect(page.getByRole("heading", { level: 2 }).first()).toBeVisible();
   await page.screenshot({ path: `e2e/screenshots/mal-question-${testInfo.project.name}.png`, fullPage: true });
 
-  // Fetch the puzzle id from the page's saved state after first interaction; use API to learn one valid answer.
+  // The puzzle is whichever one the schedule picked today, and it may ask for a club or
+  // for a player. Discover a real answer from the page's own autocomplete rather than
+  // naming one: hard-coding "Solskjær" passed only on the days a player question came
+  // up, and failed as an environment problem on every club day.
   const input = page.getByRole("combobox", { name: "Ditt svar" });
-  await input.fill("solsk");
-  await expect(page.getByRole("option", { name: /Solskjær/ })).toBeVisible({ timeout: 10000 });
+  const firstOption = page.getByRole("option").first();
+  let valid = "";
+  for (const stem of ["ro", "mo", "st", "br", "sk", "ha", "li", "an"]) {
+    await input.fill(stem);
+    try {
+      await expect(firstOption).toBeVisible({ timeout: 4000 });
+      valid = ((await firstOption.textContent()) ?? "").trim();
+      if (valid) break;
+    } catch { /* that stem matched nothing; try the next */ }
+  }
+  // Every Målløs puzzle answers either clubs or players, and both now autocomplete.
+  expect(valid, "fant ingen forslag - autocomplete er nede for denne oppgavetypen").not.toBe("");
   await input.fill("");
   // Answers are no longer judged as they are typed - anything is accepted and only
   // resolved on submit - so an unknown string is taken in like any other.
@@ -74,10 +87,9 @@ test("Målløs plays end-to-end with valid, invalid and duplicate answers", asyn
     return k ? k.replace("tt1:progress:maalloes:", "") : null;
   });
   expect(puzzleId).toBeTruthy();
-  const valid = "Rosenborg";
   await input.fill(valid);
   await page.getByRole("button", { name: "Svar", exact: true }).click();
-  await expect(page.locator("li", { hasText: valid! }).first()).toBeVisible({ timeout: 10000 });
+  await expect(page.locator("li", { hasText: valid }).first()).toBeVisible({ timeout: 10000 });
   // Points stay hidden mid-round, while every entry remains editable.
   await expect(page.getByRole("button", { name: /Endre/ }).first()).toBeVisible();
   await page.screenshot({ path: `e2e/screenshots/mal-review-${testInfo.project.name}.png`, fullPage: true });

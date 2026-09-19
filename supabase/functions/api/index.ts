@@ -235,17 +235,31 @@ Deno.serve(async (req) => {
       const kind = q.get("kind");
       const raw = q.get("q") ?? "";
       const term = normalizeName(raw).slice(0, 40);
-      if (kind !== "player" || term.length < 2) return json({ ok: true, suggestions: [] });
+      if ((kind !== "player" && kind !== "club") || term.length < 2) return json({ ok: true, suggestions: [] });
       const prefix = `${term}%`;
       const contains = `%${term}%`;
-      const suggestions = await sql()<{ id: string; label: string }[]>`
-        select p.id, p.display_name as label
-        from tippetuppen.player_aliases a
-        join tippetuppen.players p on p.id = a.player_id
-        where a.normalized like ${contains}
-        group by p.id, p.display_name
-        order by min(case when a.normalized like ${prefix} then 0 else 1 end), p.display_name
-        limit 8`;
+      // Clubs get the same help as players. Målløs charges 100 points for an answer it
+      // cannot resolve, so leaving half the puzzles - every question about a team - with
+      // no autocomplete made a spelling variant cost the same as not knowing the answer.
+      // Club aliases live in a jsonb column rather than their own table, hence the
+      // unnest; the same normalisation the resolver uses is applied on both sides.
+      const suggestions = kind === "club"
+        ? await sql()<{ id: string; label: string }[]>`
+            select c.id, c.name as label
+            from tippetuppen.clubs c,
+                 lateral (select unnest(array[c.name, c.full_name] || array(select jsonb_array_elements_text(c.aliases))) as alias) a
+            where lower(regexp_replace(translate(a.alias, 'ÆØÅæøéèêáàâóòôüúùíìî', 'AOAaoeeeaaaooouuuiii'), '[^a-zA-Z0-9 ]', '', 'g')) like ${contains}
+            group by c.id, c.name
+            order by min(case when lower(regexp_replace(translate(a.alias, 'ÆØÅæøéèêáàâóòôüúùíìî', 'AOAaoeeeaaaooouuuiii'), '[^a-zA-Z0-9 ]', '', 'g')) like ${prefix} then 0 else 1 end), c.name
+            limit 8`
+        : await sql()<{ id: string; label: string }[]>`
+            select p.id, p.display_name as label
+            from tippetuppen.player_aliases a
+            join tippetuppen.players p on p.id = a.player_id
+            where a.normalized like ${contains}
+            group by p.id, p.display_name
+            order by min(case when a.normalized like ${prefix} then 0 else 1 end), p.display_name
+            limit 8`;
       return json({ ok: true, suggestions }, 200, { "cache-control": "public, max-age=300" });
     }
 
