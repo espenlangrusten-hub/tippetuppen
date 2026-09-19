@@ -110,13 +110,22 @@ export async function kjappenRoute(req: Request, action: string) {
     const name = cleanName((body as { name?: unknown }).name);
     if (!name) return bad("Skriv inn et navn");
 
+    // Sweep abandoned rounds before making a new one.
+    //
+    // A game only moves when somebody asks about it, so a round whose players all closed
+    // their tabs never reaches "done" - it sits in `question` or `answering` forever, and
+    // its join code is never released. There is no scheduler for this, so the sweep rides
+    // along with the one action that creates the rows in the first place. Twelve hours is
+    // far longer than any round can legitimately take; players cascade with the game.
+    await sql()`delete from tippetuppen.kjappen_games where updated_at < now() - interval '12 hours'`;
+
     // Most of the raw bank is deliberately systematic reference trivia (league winner,
     // cup winner and top scorer by year). It is useful depth, but uniform random made
     // whole rounds feel like database lookups. Deal four distinct non-auto categories
     // plus at most one year-stat question, then shuffle the five.
     const picked = await sql()<{ id: string }[]>`
       with bank as (
-        select id,
+        select id, answer,
           case
             when id like 'str-auto-%' then 'year_stat'
             when id like '%stadion%' then 'stadion'
@@ -130,17 +139,28 @@ export async function kjappenRoute(req: Request, action: string) {
           id like 'str-auto-%' as is_auto
         from tippetuppen.kjappen_questions
       ),
+      -- One question per answer before anything else is dealt. Rosenborg answers 23
+      -- questions in this bank and Molde 13, so dealing purely by category put the same
+      -- answer in one round twice about six times in a hundred - and the second time it
+      -- comes up it is a free 100 points for whoever notices.
+      by_answer as (
+        select id, answer, category, is_auto from (
+          select id, answer, category, is_auto,
+                 row_number() over (partition by lower(answer) order by random()) as arn
+          from bank
+        ) a where arn = 1
+      ),
       varied as (
         select id from (
           select id, category, row_number() over (partition by category order by random()) as rn
-          from bank where not is_auto
+          from by_answer where not is_auto
         ) q
         where rn=1
         order by random()
         limit ${QUESTIONS_PER_GAME - 1}
       ),
       one_year as (
-        select id from bank where is_auto order by random() limit 1
+        select id from by_answer where is_auto order by random() limit 1
       )
       select id from (
         select id from varied

@@ -9,6 +9,18 @@ const byStatus: Record<string, number> = {};
 for (const m of ds.matches) byStatus[m.status] = (byStatus[m.status] ?? 0) + 1;
 console.log(`Matches: ${ds.matches.length}`, byStatus);
 console.log(`Players: ${ds.players.size}, clubs: ${ds.clubs.length}, seasons: ${ds.seasons.length}, honours: ${ds.honours.length}, squads: ${ds.squads.length}`);
+// Goal coverage, printed because it decides which questions may exist at all. A
+// question about who scored can only be built on matches whose goal list is complete;
+// the rest know the scoreline but not the scorer, and a player naming a real scorer we
+// never recorded would be charged the full 100 points for being right.
+const goalsComplete = ds.matches.filter((m) => !m.goalsPartial);
+const scoredGoals = ds.matches.reduce((n, m) => n + m.score[0], 0);
+const recordedGoals = ds.matches.reduce((n, m) => n + m.goals.filter((g) => g.team === "norway").length, 0);
+console.log(
+  `Goal data: ${goalsComplete.length} of ${ds.matches.length} matches have a complete goal list ` +
+  `(${recordedGoals} of ${scoredGoals} Norway goals recorded). Only the complete ones may feed a scorer question.`,
+);
+
 const pool = summarizePool(ds.straffespark);
 console.log(`Straffespark: ${pool.playable} spillbare av ${pool.total}`, pool.byKind, "kategorier:", pool.byCategory, "venter:", pool.waiting);
 if (ds.problems.length) {

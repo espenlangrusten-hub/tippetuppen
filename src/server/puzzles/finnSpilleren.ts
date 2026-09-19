@@ -78,7 +78,15 @@ export async function buildFinnSpillerenPuzzles(db: Db): Promise<FinnSpillerenPu
         quality: match.importance + (player.fame ?? 2) / 10,
         era: Math.floor(Number(match.date.slice(0, 4)) / 10) * 10,
         tags: [match.opponentCode, match.competitionId, "spiller"],
-        fingerprint: `${player.id}:${match.id}`,
+        // The player alone, not the player and the match.
+        //
+        // The scheduler spaces rounds apart with lineupSimilarity(), which splits the
+        // fingerprint on commas and measures overlap - it was written for Mangler XI,
+        // whose fingerprints are comma-separated line-ups. "brede-hangeland:1998-..."
+        // has no comma, so two rounds with the same answer scored 0, exactly the same
+        // as two rounds about different people: the repeat protection did nothing. The
+        // thing that must not come round again is the answer, so the answer is the key.
+        fingerprint: player.id,
         sourceRef: match.id,
       });
     }

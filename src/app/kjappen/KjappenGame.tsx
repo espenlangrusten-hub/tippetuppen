@@ -98,9 +98,18 @@ export function KjappenGame() {
         setError(reply.error || "Runden finnes ikke lenger");
         return;
       }
+      // A seat we restored from storage into a round that is already over belongs to a
+      // previous visit. Showing its finale again would greet a returning player with
+      // somebody else's result instead of the front door.
+      if (reply.phase === "done" && !view) {
+        remember(null);
+        setView(null);
+        setScreen("welcome");
+        return;
+      }
       apply(reply);
     } catch { /* fallback polling will try again */ }
-  }, [seat, apply, remember]);
+  }, [seat, apply, remember, view]);
 
   useEffect(() => {
     if (!seat) return;

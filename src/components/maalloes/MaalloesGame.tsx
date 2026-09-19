@@ -59,13 +59,15 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
     if (state) saveProgress("maalloes", puzzle.puzzleId, state);
   }, [state, puzzle.puzzleId]);
   useEffect(() => {
-    if (puzzle.answerKind !== "player" || text.trim().length < 2 || state?.final) {
+    // Both kinds get suggestions. Club questions are the majority of the bank, and a
+    // wrong spelling costs the same 100 points as a wrong answer.
+    if ((puzzle.answerKind !== "player" && puzzle.answerKind !== "club") || text.trim().length < 2 || state?.final) {
       setSuggestions([]);
       return;
     }
     let cancelled = false;
     const timer = window.setTimeout(() => {
-      void apiGet<{ ok: boolean; suggestions: Suggestion[] }>(`/suggestions?kind=player&q=${encodeURIComponent(text.trim())}`)
+      void apiGet<{ ok: boolean; suggestions: Suggestion[] }>(`/suggestions?kind=${puzzle.answerKind}&q=${encodeURIComponent(text.trim())}`)
         .then((result) => {
           if (!cancelled) setSuggestions(result.ok ? result.suggestions : []);
         })
@@ -261,7 +263,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
               Svar
             </button>
             {suggestions.length > 0 && (
-              <ul id="player-suggestions" role="listbox" aria-label="Spillerforslag" className="absolute left-0 right-20 top-full z-20 mt-1 overflow-hidden rounded-xl border border-line bg-ink-2 shadow-xl">
+              <ul id="player-suggestions" role="listbox" aria-label="Forslag" className="absolute left-0 right-20 top-full z-20 mt-1 overflow-hidden rounded-xl border border-line bg-ink-2 shadow-xl">
                 {suggestions.map((suggestion) => (
                   <li key={suggestion.id} role="none">
                     <button

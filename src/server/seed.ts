@@ -82,6 +82,7 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
         tags: m.tags,
         status: m.status,
         lineupComplete: m.lineup.length === 11,
+        goalsComplete: !m.goalsPartial,
         notes: m.notes ?? null,
         sources: m.sources,
         updatedAt: new Date(),
