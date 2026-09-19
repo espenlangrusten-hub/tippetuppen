@@ -129,6 +129,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   let number = existing.reduce((m, e) => Math.max(m, e.number), 0);
   let added = 0;
   let exhaustedAt: string | null = null;
+  const pending: { game: GameId; date: string; number: number; puzzleId: string }[] = [];
 
   // Recent = the 14 scheduled days before fromDate, in order.
   const recentRows = existing.filter((e) => e.date < fromDate).slice(-RECENT_DAYS);
@@ -152,12 +153,18 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
       break;
     }
     number += 1;
-    await db.insert(s.schedule).values({ game, date, number, puzzleId: pick.id });
+    // Collected, not written one at a time. Each day used to be its own round trip,
+    // which was invisible while a run only topped the calendar up by a day or two -
+    // and then a full rebuild of 400 days for three games became 1200 round trips and
+    // ran past the job's limit. The picks depend on each other in memory, not in the
+    // database, so they can all be written at the end.
+    pending.push({ game, date, number, puzzleId: pick.id });
     used.add(pick.id);
     added += 1;
     recent.push({ fingerprint: pick.fingerprint, era: pick.era, tags: pick.tags, difficulty: pick.difficulty, payload: pick.payload });
     if (recent.length > RECENT_DAYS) recent.shift();
   }
+  for (let i = 0; i < pending.length; i += 500) await db.insert(s.schedule).values(pending.slice(i, i + 500));
   return { added, exhaustedAt };
 }
 
