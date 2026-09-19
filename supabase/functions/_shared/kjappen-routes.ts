@@ -125,7 +125,7 @@ export async function kjappenRoute(req: Request, action: string) {
     // plus at most one year-stat question, then shuffle the five.
     const picked = await sql()<{ id: string }[]>`
       with bank as (
-        select id,
+        select id, answer,
           case
             when id like 'str-auto-%' then 'year_stat'
             when id like '%stadion%' then 'stadion'
@@ -139,17 +139,28 @@ export async function kjappenRoute(req: Request, action: string) {
           id like 'str-auto-%' as is_auto
         from tippetuppen.kjappen_questions
       ),
+      -- One question per answer before anything else is dealt. Rosenborg answers 23
+      -- questions in this bank and Molde 13, so dealing purely by category put the same
+      -- answer in one round twice about six times in a hundred - and the second time it
+      -- comes up it is a free 100 points for whoever notices.
+      by_answer as (
+        select id, answer, category, is_auto from (
+          select id, answer, category, is_auto,
+                 row_number() over (partition by lower(answer) order by random()) as arn
+          from bank
+        ) a where arn = 1
+      ),
       varied as (
         select id from (
           select id, category, row_number() over (partition by category order by random()) as rn
-          from bank where not is_auto
+          from by_answer where not is_auto
         ) q
         where rn=1
         order by random()
         limit ${QUESTIONS_PER_GAME - 1}
       ),
       one_year as (
-        select id from bank where is_auto order by random() limit 1
+        select id from by_answer where is_auto order by random() limit 1
       )
       select id from (
         select id from varied

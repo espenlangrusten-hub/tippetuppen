@@ -187,3 +187,17 @@ export function summarizePool(pool: StraffesparkQuestion[]): PoolSummary {
   }
   return summary;
 }
+
+/**
+ * Står svaret som et eget ord i spørsmålet?
+ *
+ * «Brann Stadion» inneholder «Brann» som eget ord - svaret kan leses rett av teksten.
+ * «Høddvoll» inneholder «Hødd» bare som forstavelse inne i et lengre ord, og å komme fra
+ * det til klubben krever at man vet hvem Hødd er. Ordgrensen er nettopp skillet mellom å
+ * lese svaret og å kunne det.
+ */
+export function answerIsSpelledOut(prompt: string, label: string): boolean {
+  const needle = normalizeName(label);
+  if (!needle) return false;
+  return new RegExp(`(^| )${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}( |$)`).test(normalizeName(prompt));
+}

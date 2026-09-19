@@ -152,7 +152,9 @@
         "kind": "web",
         "accessed": "2026-09-08"
       }
-    ]
+    ],
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
@@ -977,7 +979,9 @@
       "mustMention": [
         "Fredrikstad stadion"
       ]
-    }
+    },
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
@@ -1007,7 +1011,9 @@
       "mustMention": [
         "Sarpsborg stadion"
       ]
-    }
+    },
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
@@ -1038,7 +1044,9 @@
       "mustMention": [
         "Haugesund stadion"
       ]
-    }
+    },
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
@@ -1189,7 +1197,9 @@
       "mustMention": [
         "Bryne stadion"
       ]
-    }
+    },
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
@@ -1364,7 +1374,9 @@
       "mustMention": [
         "Vikinghordene"
       ]
-    }
+    },
+    "enabled": false,
+    "notes": "Avskrudd: spørsmålsteksten staver svaret. Arenaen er oppkalt etter klubben, så ingen omskriving av et arena-til-klubb-spørsmål unngår det - den som ikke kan norsk fotball svarer like raskt som den som kan det."
   },
   {
     "kind": "trivia",
