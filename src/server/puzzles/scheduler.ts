@@ -4,6 +4,9 @@ import { schema as s, type GameId } from "@/server/db";
 import { addDays } from "@/lib/dates";
 import { lineupSimilarity } from "./manglerXi";
 
+/** How far back the scheduler looks when it spaces repeats apart. */
+export const RECENT_DAYS = 14;
+
 export type RotationPolicy = { statuses: string[] };
 export const DEFAULT_ROTATION: RotationPolicy = { statuses: ["verified", "single_source"] };
 
@@ -91,9 +94,33 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   // that were already filled. Dropping only the bad day would leave the game with
   // nothing to show on it, so the rest of the unlocked future is rebuilt behind it
   // and closes the gap. Locked days are the editor's choice and stay put.
+  const puzzleFingerprints = new Map(all.map((p) => [p.id, p.fingerprint]));
   const eligibleIds = new Set(eligible.map((p) => p.id));
-  const future = await db.select().from(s.schedule).where(and(eq(s.schedule.game, game), gte(s.schedule.date, fromDate), eq(s.schedule.locked, false)));
-  if (future.some((e) => !eligibleIds.has(e.puzzleId))) await clearFutureSchedule(db, game, fromDate);
+  const future = await db.select().from(s.schedule).where(and(eq(s.schedule.game, game), gte(s.schedule.date, fromDate), eq(s.schedule.locked, false))).orderBy(asc(s.schedule.date));
+  let rebuild = future.some((e) => !eligibleIds.has(e.puzzleId));
+
+  // A calendar that breaks the rule it was written under is rebuilt too.
+  //
+  // The check above only fires when a puzzle becomes unplayable. It cannot see a change
+  // to how puzzles should be *ordered*: when Finn spilleren's fingerprint was corrected
+  // so that two rounds with the same answer finally scored as similar, every future day
+  // had already been written under the broken key and stayed exactly as clustered as
+  // before - the same person three times in twelve days. So ask the calendar whether it
+  // still satisfies the spacing rule, rather than trusting that it was written under it.
+  if (!rebuild) {
+    const seen = new Map<string, number>();
+    for (const [i, e] of future.entries()) {
+      const fp = puzzleFingerprints.get(e.puzzleId);
+      if (!fp) continue;
+      const previous = seen.get(fp);
+      if (previous != null && i - previous < RECENT_DAYS) {
+        rebuild = true;
+        break;
+      }
+      seen.set(fp, i);
+    }
+  }
+  if (rebuild) await clearFutureSchedule(db, game, fromDate);
 
   const existing = await db.select().from(s.schedule).where(eq(s.schedule.game, game)).orderBy(asc(s.schedule.date));
   const used = new Set(existing.map((e) => e.puzzleId));
@@ -104,7 +131,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   let exhaustedAt: string | null = null;
 
   // Recent = the 14 scheduled days before fromDate, in order.
-  const recentRows = existing.filter((e) => e.date < fromDate).slice(-14);
+  const recentRows = existing.filter((e) => e.date < fromDate).slice(-RECENT_DAYS);
   const recent: Recent[] = recentRows.map((e) => {
     const p = puzzleById.get(e.puzzleId);
     return p ? { fingerprint: p.fingerprint, era: p.era, tags: p.tags, difficulty: p.difficulty, payload: p.payload } : { fingerprint: "", era: null, tags: [], difficulty: 3, payload: {} };
@@ -129,7 +156,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
     used.add(pick.id);
     added += 1;
     recent.push({ fingerprint: pick.fingerprint, era: pick.era, tags: pick.tags, difficulty: pick.difficulty, payload: pick.payload });
-    if (recent.length > 14) recent.shift();
+    if (recent.length > RECENT_DAYS) recent.shift();
   }
   return { added, exhaustedAt };
 }

@@ -78,3 +78,19 @@ describe("Finn spilleren gjentar ikke samme svar", () => {
     expect(similarity("brede-hangeland:a", "brede-hangeland:b")).toBe(0);
   });
 });
+
+describe("kalenderen repareres når regelen den ble skrevet under endres", () => {
+  it("bygger framtiden på nytt hvis den bryter sin egen avstandsregel", () => {
+    // Sjekken som fantes fra før fyrer bare når en oppgave blir uspillbar. Den kan ikke
+    // se en endring i hvordan oppgaver skal *sorteres*: da fingeravtrykket i Finn
+    // spilleren ble rettet, sto hver eneste framtidige dag allerede skrevet under den
+    // ødelagte nøkkelen og forble like klumpete som før. Rettelsen var altså korrekt og
+    // helt uten virkning til kalenderen ble bygget på nytt.
+    const scheduler = read("src", "server", "puzzles", "scheduler.ts");
+    expect(scheduler).toContain("RECENT_DAYS");
+    expect(scheduler).toMatch(/if \(rebuild\) await clearFutureSchedule/);
+    // Avstandsvinduet må være det samme som utvelgelsen faktisk bruker, ellers ville
+    // sjekken bedømt kalenderen etter en annen regel enn den ble skrevet under.
+    expect(scheduler).toContain("recentRows = existing.filter((e) => e.date < fromDate).slice(-RECENT_DAYS)");
+  });
+});
