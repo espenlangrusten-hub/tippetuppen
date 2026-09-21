@@ -1,42 +1,98 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { formatDateNo, msUntilNextOsloMidnight, osloDateKey } from "@/lib/dates";
 import { BASE_PATH } from "@/lib/site";
-import { betaCorrect, type BetaQuestion } from "@/lib/straffespark-beta";
+import {
+  betaCorrect,
+  dailyStraffesparkRound,
+  MIN_STRAFFESPARK_REPEAT_DAYS,
+  type BetaQuestion,
+} from "@/lib/straffespark-beta";
 
-export function BetaGame({ questions }: { questions: BetaQuestion[] }) {
+export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
+  // Keep the server-rendered shell date-neutral. The browser resolves Oslo's calendar
+  // date after hydration, so a static GitHub Pages build can still change round every
+  // midnight without a deploy.
+  const [dateKey, setDateKey] = useState<string | null>(null);
   const [index, setIndex] = useState(0);
   const [guess, setGuess] = useState("");
   const [results, setResults] = useState<boolean[]>([]);
   const [mediaError, setMediaError] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const update = () => {
+      setDateKey(osloDateKey());
+      timer = setTimeout(update, msUntilNextOsloMidnight() + 750);
+    };
+    update();
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
+
+  const questions = useMemo(() => (dateKey ? dailyStraffesparkRound(pool, dateKey) : []), [pool, dateKey]);
+
+  // A tab left open across midnight becomes the new daily game instead of carrying over
+  // yesterday's score and question index.
+  useEffect(() => {
+    if (!dateKey) return;
+    setIndex(0);
+    setGuess("");
+    setResults([]);
+    setMediaError(false);
+  }, [dateKey]);
+
+  useEffect(() => {
+    if (dateKey) heading.current?.focus();
+  }, [index, dateKey]);
+
   const answered = results.length > index;
-  const complete = index === questions.length;
+  const complete = questions.length > 0 && index === questions.length;
   const score = results.filter(Boolean).length;
   const q = questions[index];
-  useEffect(() => { heading.current?.focus(); }, [index]);
 
   function submit(skip = false) {
-    if (answered || complete || (!skip && !guess.trim())) return;
+    if (!q || answered || complete || (!skip && !guess.trim())) return;
     setResults((previous) => previous.length === index ? [...previous, !skip && betaCorrect(q, guess)] : previous);
+  }
+
+  const intro = (
+    <header>
+      <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-bold uppercase text-gold">Dagens runde</span>
+      <h1 className="mt-3 font-display text-4xl font-bold uppercase">Straffespark, 5 kjappe</h1>
+      <p className="mt-2 text-sm text-mist">
+        Fem nye spørsmål hver dag. Samme spørsmål kommer ikke tilbake før det har gått minst {MIN_STRAFFESPARK_REPEAT_DAYS} dager.
+      </p>
+      {dateKey && <p className="mt-1 text-xs text-mist">{formatDateNo(dateKey)}</p>}
+    </header>
+  );
+
+  if (!dateKey || !q && !complete) {
+    return (
+      <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
+        {intro}
+        <section className="card p-6 text-center">
+          <p className="text-mist">Laster dagens fem straffespark …</p>
+        </section>
+      </div>
+    );
   }
 
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
-      <header>
-        <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-bold uppercase text-gold">Beta-versjon</span>
-        <h1 className="mt-3 font-display text-4xl font-bold uppercase">Straffespark, 5 kjappe</h1>
-        <p className="mt-2 text-sm text-mist">Én fast testrunde. Fem spørsmål, ett om gangen. Riktig svar gir ett mål. Ingen ligapoeng — prøv så mange ganger du vil.</p>
-      </header>
+      {intro}
       <ol aria-label="Dine fem straffespark" className="flex justify-center gap-4 text-2xl">
         {questions.map((item, i) => <li key={item.id} aria-label={`Spørsmål ${i + 1}: ${i < results.length ? results[i] ? "mål" : "bom" : "ikke besvart"}`}>{i < results.length ? results[i] ? "⚽" : "✕" : "○"}</li>)}
       </ol>
       {complete ? (
         <section className="card p-6 text-center">
           <h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Du scoret {score} av 5!</h2>
-          <p className="mt-2 text-mist">{score === 5 ? "Full pott — fem strake i nettet!" : "Takk for at du testet Straffespark."}</p>
-          <button className="btn btn-primary mt-5" onClick={() => { setIndex(0); setResults([]); setGuess(""); setMediaError(false); }}>Spill testrunden igjen</button>
+          <p className="mt-2 text-mist">{score === 5 ? "Full pott — fem strake i nettet!" : "Ny femmer kommer i morgen."}</p>
+          <button className="btn btn-primary mt-5" onClick={() => { setIndex(0); setResults([]); setGuess(""); setMediaError(false); }}>Spill dagens runde igjen</button>
           <Link href="/" className="mt-4 block underline">Til forsiden</Link>
         </section>
       ) : (
