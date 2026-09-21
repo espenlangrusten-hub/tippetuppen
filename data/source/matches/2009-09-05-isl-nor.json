@@ -47,13 +47,13 @@
     {
       "name": "Kjetil Wæhler",
       "pos": "OUT",
-      "no": 3,
-      "captain": true
+      "no": 3
     },
     {
       "name": "Brede Hangeland",
       "pos": "OUT",
-      "no": 5
+      "no": 5,
+      "captain": true
     },
     {
       "name": "John Arne Semundseth Riise",
