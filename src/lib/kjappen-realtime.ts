@@ -11,7 +11,8 @@
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 const API_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 const DEBOUNCE_MS = 30;
-const SAFETY_POLL_MS = 550;
+const CONNECTED_SAFETY_POLL_MS = 8_000;
+const DISCONNECTED_POLL_MS = 1_000;
 const RECONNECT_DELAYS = [1_000, 2_000, 5_000, 10_000] as const;
 
 function realtimeUrl() {
@@ -37,13 +38,20 @@ function debug(...args: unknown[]) {
 }
 
 export function subscribeKjappen(code: string, playerId: string, onChange: () => void) {
-  // Realtime remains the fast path. The 550 ms fallback keeps all screens converged even
-  // when a websocket is unavailable, while the server-side state path is now read-only
-  // unless a timer really crosses a phase boundary.
-  const safetyPoll = setInterval(onChange, SAFETY_POLL_MS);
+  // Realtime is the fast path. Poll quickly only while the socket is unavailable; once
+  // connected, keep a sparse safety poll so a missed frame cannot strand a screen.
+  let safetyPoll: ReturnType<typeof setInterval> | null = null;
+  const setSafetyPoll = (ms: number) => {
+    if (safetyPoll) clearInterval(safetyPoll);
+    safetyPoll = setInterval(onChange, ms);
+  };
+  setSafetyPoll(DISCONNECTED_POLL_MS);
+
   const url = realtimeUrl();
   if (!url || !API_KEY || typeof WebSocket === "undefined") {
-    return () => clearInterval(safetyPoll);
+    return () => {
+      if (safetyPoll) clearInterval(safetyPoll);
+    };
   }
 
   const topic = `realtime:kjappen:${code}`;
@@ -53,6 +61,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
   let refreshTimer: ReturnType<typeof setTimeout> | null = null;
   let closed = false;
   let ref = 0;
+  let joinRef: string | null = null;
   let reconnectAttempt = 0;
 
   const clearHeartbeat = () => {
@@ -85,15 +94,15 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
     socket.onopen = () => {
       reconnectAttempt = 0;
-      debug("connected", { code, playerId });
+      debug("socket connected", { code, playerId });
 
-      send("phx_join", {
+      joinRef = send("phx_join", {
         config: {
           broadcast: { ack: false, self: false },
           presence: { enabled: false },
           private: false,
         },
-      });
+      }) ?? null;
 
       clearHeartbeat();
       heartbeat = setInterval(() => {
@@ -108,8 +117,24 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
         const msg = JSON.parse(String(event.data)) as {
           topic?: string;
           event?: string;
-          payload?: { event?: string; payload?: BroadcastPayload };
+          ref?: string;
+          payload?: { status?: string; event?: string; payload?: BroadcastPayload };
         };
+
+        // A TCP/WebSocket open does not mean the Realtime channel was accepted. Keep the
+        // one-second fallback until Phoenix confirms our join; otherwise a failed join
+        // could silently turn into an eight-second multiplayer delay.
+        if (msg.topic === topic && msg.event === "phx_reply" && msg.ref === joinRef) {
+          if (msg.payload?.status === "ok") {
+            setSafetyPoll(CONNECTED_SAFETY_POLL_MS);
+            debug("channel joined", { code, playerId });
+          } else {
+            debug("channel join failed", { code, playerId, status: msg.payload?.status });
+            socket?.close();
+          }
+          return;
+        }
+
         if (msg.topic !== topic || msg.event !== "broadcast" || msg.payload?.event !== "state_changed") return;
 
         // Do not skip the actor. Its POST normally has the newest state already, but if
@@ -128,7 +153,9 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
     socket.onclose = () => {
       clearHeartbeat();
+      joinRef = null;
       if (closed) return;
+      setSafetyPoll(DISCONNECTED_POLL_MS);
 
       const delay = RECONNECT_DELAYS[Math.min(reconnectAttempt, RECONNECT_DELAYS.length - 1)];
       reconnectAttempt += 1;
@@ -141,7 +168,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
   return () => {
     closed = true;
-    clearInterval(safetyPoll);
+    if (safetyPoll) clearInterval(safetyPoll);
     clearHeartbeat();
     if (reconnect) clearTimeout(reconnect);
     if (refreshTimer) clearTimeout(refreshTimer);

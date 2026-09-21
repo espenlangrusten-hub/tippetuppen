@@ -17,6 +17,7 @@ type View = {
   round: number;
   questionCount: number;
   secondsLeft: number;
+  endsAt?: number | null;
   buzzedBy: string | null;
   you: string | null;
   players: PodiumPlayer[];
@@ -47,6 +48,7 @@ export function KjappenGame() {
   const [guess, setGuess] = useState("");
   const [left, setLeft] = useState(0);
   const answerBox = useRef<HTMLInputElement>(null);
+  const viewRef = useRef<View | null>(null);
 
   const apply = useCallback((reply: View) => {
     if (!reply.ok) {
@@ -54,6 +56,7 @@ export function KjappenGame() {
       return null;
     }
     setError("");
+    viewRef.current = reply;
     setView(reply);
     setLeft(reply.secondsLeft);
     return reply;
@@ -74,6 +77,7 @@ export function KjappenGame() {
 
   const leave = useCallback(() => {
     remember(null);
+    viewRef.current = null;
     setView(null);
     setScreen("welcome");
     setCode("");
@@ -93,6 +97,7 @@ export function KjappenGame() {
       const reply = await apiPost<View>("/kjappen/state", seat);
       if (!reply.ok) {
         remember(null);
+        viewRef.current = null;
         setView(null);
         setScreen("welcome");
         setError(reply.error || "Runden finnes ikke lenger");
@@ -101,37 +106,52 @@ export function KjappenGame() {
       // A seat we restored from storage into a round that is already over belongs to a
       // previous visit. Showing its finale again would greet a returning player with
       // somebody else's result instead of the front door.
-      if (reply.phase === "done" && !view) {
+      if (reply.phase === "done" && !viewRef.current) {
         remember(null);
+        viewRef.current = null;
         setView(null);
         setScreen("welcome");
         return;
       }
       apply(reply);
     } catch { /* fallback polling will try again */ }
-  }, [seat, apply, remember, view]);
+  }, [seat, apply, remember]);
 
   useEffect(() => {
     if (!seat) return;
     return subscribeKjappen(seat.code, seat.playerId, () => { void refresh(); });
   }, [seat, refresh]);
 
-  // Lobby and opening countdown are deliberately polled more aggressively than the
-  // rest of the round. Starting is the one transition every player must see at once;
-  // Realtime remains the fast path, while this makes the fallback fast enough that a
-  // player does not jump straight from the lobby into question one. A focus/visibility
-  // refresh also catches a device immediately when the player returns to the game.
+  // Realtime broadcasts handle normal state changes. We only need an immediate read
+  // when restoring a seat, an exact read when the authoritative phase deadline expires,
+  // and focus/visibility recovery. subscribeKjappen supplies the socket fallback.
   const syncPhase = view?.phase;
+  const syncEndsAt = view?.endsAt ?? null;
+  const syncSecondsLeft = view?.secondsLeft ?? 0;
   useEffect(() => {
     if (!seat) return;
     let stopped = false;
+    let deadline: ReturnType<typeof setTimeout> | null = null;
     const sync = () => {
       if (!stopped) void refresh();
     };
 
-    sync();
-    const fast = !syncPhase || syncPhase === "lobby" || syncPhase === "countdown";
-    const every = setInterval(sync, fast ? 350 : 1000);
+    // A seat restored from localStorage has no view yet. Create/join already return a
+    // complete view, so they do not need another immediate round trip.
+    if (!viewRef.current) sync();
+
+    if (
+      syncPhase === "countdown" ||
+      syncPhase === "question" ||
+      syncPhase === "answering" ||
+      syncPhase === "reveal"
+    ) {
+      // The current server returns endsAt. During a rolling deploy, fall back to the
+      // older secondsLeft field so site/function deployment order cannot break a game.
+      const remaining = syncEndsAt != null ? syncEndsAt - Date.now() : syncSecondsLeft * 1000;
+      deadline = setTimeout(sync, Math.max(75, remaining + 75));
+    }
+
     const onFocus = () => sync();
     const onVisibility = () => {
       if (document.visibilityState === "visible") sync();
@@ -141,11 +161,11 @@ export function KjappenGame() {
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
       stopped = true;
-      clearInterval(every);
+      if (deadline) clearTimeout(deadline);
       window.removeEventListener("focus", onFocus);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  }, [seat, refresh, syncPhase]);
+  }, [seat, refresh, syncPhase, syncEndsAt, syncSecondsLeft]);
 
   const ticking = view && (view.phase === "countdown" || view.phase === "question" || view.phase === "answering" || view.phase === "reveal");
   useEffect(() => {
