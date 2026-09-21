@@ -183,7 +183,7 @@ const straffesparkAnswer = z.object({
   aliases: z.array(z.string()).default([]),
 });
 
-export const STRAFFESPARK_CATEGORIES = ["spiller", "trener", "stadion", "klubb", "supportere"] as const;
+export const STRAFFESPARK_CATEGORIES = ["spiller", "trener", "stadion", "klubb", "supportere", "landslag", "resultat"] as const;
 
 /**
  * Kjappen's own question bank.

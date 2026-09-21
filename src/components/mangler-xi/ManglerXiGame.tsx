@@ -478,10 +478,10 @@ function Shirt({ p, ps, active, onClick, finished }: { p: MaskedPlayer; ps: Play
       onClick={onClick}
       disabled={finished || ps.solved || ps.failed}
       className="flex w-16 flex-col items-center gap-0.5 sm:w-24"
-      aria-label={`Drakt ${p.no ?? p.pos}, ${POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
+      aria-label={`Drakt ${p.no != null ? p.no : "med ukjent nummer"}, ${POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
     >
       <div className={`shirt ${cls} ${active ? "shirt-active" : ""}`}>
-        <span className="text-lg">{p.no ?? p.pos}</span>
+        <span className="text-lg">{p.no ?? "?"}</span>
         {p.captain && <span className="absolute -right-1 bottom-0 rounded bg-ink px-1 text-[9px] text-snow">C</span>}
         {p.goals > 0 && <span className="absolute -left-1 -top-1 text-xs">{p.goals > 1 ? `⚽×${p.goals}` : "⚽"}</span>}
       </div>

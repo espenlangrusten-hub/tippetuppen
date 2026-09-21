@@ -44,9 +44,9 @@ export function TodayCards() {
           {done[game.slug] && <span className={s.completed}>✓ Fullført</span>}
           <span className={i === 0 ? s.primary : s.arrow}>{i === 0 && (done[game.slug] ? "Se resultat" : game.action)} <span aria-hidden="true">→</span></span>
         </Link>)}
-        <Link href="/straffespark/" className={s.game + " " + s.penalty} aria-label="Prøv Straffespark, 5 kjappe – beta">
+        <Link href="/straffespark/" className={s.game + " " + s.penalty} aria-label="Spill Straffespark, dagens 5">
           <Image src={BASE_PATH + "/design/penalty.webp"} alt="" fill sizes="(max-width: 760px) 50vw, 390px" />
-          <div className={s.gameTitle}><h2>Straffespark, 5 kjappe <span className={s.beta}>Beta</span></h2><p>Fem spørsmål. Fem sjanser.</p></div>
+          <div className={s.gameTitle}><h2>Straffespark, 5 kjappe</h2><p>Fem nye spørsmål hver dag.</p></div>
           <div className={s.balls} aria-hidden="true">{[0,1,2,3,4].map((n) => <span key={n}>⚽</span>)}</div>
           <span className={s.arrow} aria-hidden="true">→</span>
         </Link>
@@ -56,7 +56,7 @@ export function TodayCards() {
           <span className={s.arrow} aria-hidden="true">→</span>
         </Link>
       </section>
-      <aside className={s.sidebar}><TopPlayers /><div className={s.daily}><span aria-hidden="true">▦</span><div><h2>Nye utfordringer hver dag</h2><p>Kl. 00:00 norsk tid</p><small>Straffespark er en fast betarunde.</small></div></div></aside>
+      <aside className={s.sidebar}><TopPlayers /><div className={s.daily}><span aria-hidden="true">▦</span><div><h2>Nye utfordringer hver dag</h2><p>Kl. 00:00 norsk tid</p><small>Straffespark får fem nye spørsmål hver dag.</small></div></div></aside>
     </div>
   </div>;
 }

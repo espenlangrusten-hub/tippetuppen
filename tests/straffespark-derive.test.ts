@@ -8,7 +8,7 @@ const derived = deriveStraffesparkTrivia(ds);
 
 describe("questions derived from the registry", () => {
   it("produces a pool worth drawing from", () => {
-    expect(derived.length).toBeGreaterThan(80);
+    expect(derived.length).toBeGreaterThan(700);
     expect(new Set(derived.map((q) => q.id)).size).toBe(derived.length);
   });
 
@@ -78,8 +78,9 @@ describe("what may be served", () => {
 
   it("has enough playable questions in enough categories for a round", () => {
     const pool = summarizePool(ds.straffespark);
-    // A round is one photo, three trivia from different categories and one chant.
-    expect(pool.playable).toBeGreaterThan(60);
-    expect(Object.keys(pool.byCategory).length).toBeGreaterThanOrEqual(3);
+    // Five questions per day with a 100-day no-repeat promise requires at least 500
+    // individually playable questions in the bank.
+    expect(pool.playable).toBeGreaterThanOrEqual(500);
+    expect(Object.keys(pool.byCategory).length).toBeGreaterThanOrEqual(5);
   });
 });

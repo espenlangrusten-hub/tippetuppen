@@ -4,20 +4,60 @@ import { isPlayable } from "@/data/straffespark";
 import type { BetaQuestion } from "@/lib/straffespark-beta";
 import { BetaGame } from "./BetaGame";
 
-export const metadata: Metadata = { title: "Straffespark, 5 kjappe – Beta", description: "Prøv fem kjappe spørsmål om norsk fotball. Ett spørsmål om gangen." };
+export const metadata: Metadata = {
+  title: "Straffespark – dagens 5",
+  description: "Fem nye spørsmål om norsk fotball hver dag. Ett spørsmål om gangen.",
+};
+
+// The beta media files were manually prepared for the public site under neutral filenames.
+// Trivia needs no override. Add future photo/audio questions here only after their public
+// asset has been committed, so a daily draw can never land on a broken media question.
+const PUBLIC_MEDIA: Record<string, string> = {
+  "str-foto-erling-haaland": "shot-1.jpg",
+  "str-sang-lillestrom": "shot-5-20260909.mp3",
+};
 
 export default function Page() {
   const ds = loadDataset();
-  const ids = ["str-foto-erling-haaland", "str-stadion-21", "str-auto-toppscorer-1992", "str-auto-cup-1994", "str-sang-lillestrom"];
-  const questions: BetaQuestion[] = ids.map((id) => {
-    const q = ds.straffespark.find((item) => item.id === id);
-    if (!q || !isPlayable(q)) throw new Error(`Beta question unavailable: ${id}`);
-    if (q.kind === "photo") {
-      const player = ds.players.get(q.playerId);
-      if (!player) throw new Error(`Missing player: ${q.playerId}`);
-      return { id, kind: q.kind, prompt: "Hvem skjuler seg i bildet?", answer: player.displayName, aliases: [player.fullName, player.surname, ...player.aliases.map((a) => a.alias)], media: { ...q.image, file: "shot-1.jpg" }, sources: q.sources };
-    }
-    return { id, kind: q.kind, prompt: q.prompt, answer: q.answer.label, aliases: q.answer.aliases ?? [], sources: q.sources, ...(q.kind === "chant" ? { media: { ...q.audio, file: "shot-5-20260909.mp3" } } : { fact: q.fact }) };
-  });
-  return <BetaGame questions={questions} />;
+
+  const pool: BetaQuestion[] = ds.straffespark
+    .filter((q) => isPlayable(q))
+    .filter((q) => q.kind === "trivia" || !!PUBLIC_MEDIA[q.id])
+    .map((q) => {
+      if (q.kind === "photo") {
+        const player = ds.players.get(q.playerId);
+        if (!player) throw new Error(`Missing player: ${q.playerId}`);
+        return {
+          id: q.id,
+          kind: q.kind,
+          prompt: q.prompt || "Hvem skjuler seg i bildet?",
+          answer: player.displayName,
+          aliases: [player.fullName, player.surname, ...player.aliases.map((a) => a.alias)],
+          media: { ...q.image, file: PUBLIC_MEDIA[q.id] },
+          sources: q.sources.map((s) => ({ title: s.title, url: s.url })),
+        };
+      }
+      if (q.kind === "chant") {
+        return {
+          id: q.id,
+          kind: q.kind,
+          prompt: q.prompt,
+          answer: q.answer.label,
+          aliases: q.answer.aliases ?? [],
+          media: { ...q.audio, file: PUBLIC_MEDIA[q.id] },
+          sources: q.sources.map((s) => ({ title: s.title, url: s.url })),
+        };
+      }
+      return {
+        id: q.id,
+        kind: q.kind,
+        prompt: q.prompt,
+        answer: q.answer.label,
+        aliases: q.answer.aliases ?? [],
+        fact: q.fact,
+        sources: q.sources.map((s) => ({ title: s.title, url: s.url })),
+      };
+    });
+
+  return <BetaGame pool={pool} />;
 }

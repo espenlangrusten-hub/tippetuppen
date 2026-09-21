@@ -1,7 +1,7 @@
 {
   "id": "2009-09-05-isl-nor",
   "date": "2009-09-05",
-  "competition": "friendly",
+  "competition": "wc-qual",
   "opponent": "Island",
   "opponentCode": "ISL",
   "norwayHome": false,
@@ -17,6 +17,13 @@
   "status": "single_source",
   "sources": [
     {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697603",
+      "title": "Island - Norge 05.09.2009 – Norges Fotballforbund",
+      "kind": "web",
+      "accessed": "2026-09-22",
+      "note": "Dato, kamptype og norske draktnumre kontrollert mot NFF."
+    },
+    {
       "url": "https://www.rsssf.org/tablesn/noo-intres2009.html",
       "title": "www.rsssf.org – Norge mot Island, 2009-09-05",
       "kind": "web",
@@ -24,52 +31,69 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startellever, kamptype og draktnumre dokumentert. Utespillernes eksakte roller er ikke dokumentert i importkilden.",
   "goalsPartial": true,
   "lineup": [
     {
       "name": "Jon Knudsen",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Tom Høgli",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 2
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 5,
+      "captain": true
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 6
     },
     {
       "name": "Morten Opsahl Moldskred",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 15
     },
     {
       "name": "Christian Grindheim",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 16
     },
     {
       "name": "Magne Hoset",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 11
     },
     {
       "name": "Erik Andre Huseklepp",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 18
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     }
-  ]
+  ],
+  "stage": "VM-kvalifisering 2010, gruppe 9",
+  "venue": "Laugardalsvöllur",
+  "city": "Reykjavik",
+  "manager": "Egil Olsen",
+  "formation": "4-4-2"
 }

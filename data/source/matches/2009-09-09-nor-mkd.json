@@ -1,75 +1,125 @@
 {
   "id": "2009-09-09-nor-mkd",
   "date": "2009-09-09",
-  "competition": "friendly",
-  "opponent": "Nord-Makedonia",
+  "competition": "wc-qual",
+  "stage": "VM-kvalifisering 2010, gruppe 9",
+  "opponent": "Makedonia",
   "opponentCode": "MKD",
   "norwayHome": true,
   "score": [
     2,
     1
   ],
+  "venue": "Ullevaal Stadion",
+  "city": "Oslo",
+  "manager": "Egil Olsen",
+  "formation": "4-4-2",
   "importance": 2,
   "tags": [
-    "import:verified-xi-workbook",
-    "position:undocumented"
+    "kvalik"
   ],
   "status": "single_source",
+  "goalsPartial": true,
   "sources": [
     {
-      "url": "https://www.rsssf.org/tablesn/noo-intres2009.html",
-      "title": "www.rsssf.org – Norge mot Nord-Makedonia, 2009-09-09",
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698475",
+      "title": "Norge - Makedonia 09.09.2009 – Norges Fotballforbund",
       "kind": "web",
-      "accessed": "2026-09-11",
-      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+      "accessed": "2026-09-22",
+      "note": "Dato, resultat, startellever og norske draktnumre kontrollert mot NFF."
+    },
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2009.html",
+      "title": "Norway International Matches – Details 2009 – RSSSF",
+      "kind": "web",
+      "accessed": "2026-09-01",
+      "note": "Full Norway XI, formation, captain, substitutes and scorers confirmed in search excerpt (minutes not captured)"
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
-  "goalsPartial": true,
+  "notes": "Dato, startellever, roller og draktnumre dokumentert; tidligere duplikatrad med feil dato er slått sammen i denne kampen.",
   "lineup": [
     {
       "name": "Jon Knudsen",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Jon Inge Høiland",
-      "pos": "OUT"
+      "pos": "RB",
+      "no": 2
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "OUT"
+      "pos": "CB",
+      "no": 3
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "CB",
+      "captain": true,
+      "no": 5
     },
     {
-      "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "name": "John Arne Riise",
+      "pos": "LB",
+      "no": 6
     },
     {
-      "name": "Bjørn Helge Semundseth Riise",
-      "pos": "OUT"
+      "name": "Bjørn Helge Riise",
+      "pos": "RM",
+      "no": 7
     },
     {
       "name": "Henning Hauger",
-      "pos": "OUT"
+      "pos": "CM",
+      "no": 9
     },
     {
       "name": "Christian Grindheim",
-      "pos": "OUT"
+      "pos": "CM",
+      "no": 16
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "LM",
+      "no": 11
     },
     {
       "name": "Thorstein Helstad",
-      "pos": "OUT"
+      "pos": "CF",
+      "no": 17
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "CF",
+      "no": 10
+    }
+  ],
+  "subs": [
+    {
+      "name": "Fredrik Winsnes",
+      "pos": "CM",
+      "on": 71
+    },
+    {
+      "name": "Morten Moldskred",
+      "pos": "RM",
+      "on": 76
+    },
+    {
+      "name": "Daniel Braaten",
+      "pos": "CF",
+      "on": 84
+    }
+  ],
+  "goals": [
+    {
+      "team": "norway",
+      "name": "Thorstein Helstad"
+    },
+    {
+      "team": "norway",
+      "name": "John Arne Riise"
     }
   ]
 }
