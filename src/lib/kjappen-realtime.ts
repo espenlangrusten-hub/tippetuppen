@@ -102,7 +102,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
           presence: { enabled: false },
           private: false,
         },
-      });
+      }) ?? null;
 
       clearHeartbeat();
       heartbeat = setInterval(() => {
