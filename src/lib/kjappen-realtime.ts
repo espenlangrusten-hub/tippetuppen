@@ -61,6 +61,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
   let refreshTimer: ReturnType<typeof setTimeout> | null = null;
   let closed = false;
   let ref = 0;
+  let joinRef: string | null = null;
   let reconnectAttempt = 0;
 
   const clearHeartbeat = () => {
@@ -93,10 +94,9 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
     socket.onopen = () => {
       reconnectAttempt = 0;
-      setSafetyPoll(CONNECTED_SAFETY_POLL_MS);
-      debug("connected", { code, playerId });
+      debug("socket connected", { code, playerId });
 
-      send("phx_join", {
+      joinRef = send("phx_join", {
         config: {
           broadcast: { ack: false, self: false },
           presence: { enabled: false },
@@ -117,8 +117,24 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
         const msg = JSON.parse(String(event.data)) as {
           topic?: string;
           event?: string;
-          payload?: { event?: string; payload?: BroadcastPayload };
+          ref?: string;
+          payload?: { status?: string; event?: string; payload?: BroadcastPayload };
         };
+
+        // A TCP/WebSocket open does not mean the Realtime channel was accepted. Keep the
+        // one-second fallback until Phoenix confirms our join; otherwise a failed join
+        // could silently turn into an eight-second multiplayer delay.
+        if (msg.topic === topic && msg.event === "phx_reply" && msg.ref === joinRef) {
+          if (msg.payload?.status === "ok") {
+            setSafetyPoll(CONNECTED_SAFETY_POLL_MS);
+            debug("channel joined", { code, playerId });
+          } else {
+            debug("channel join failed", { code, playerId, status: msg.payload?.status });
+            socket?.close();
+          }
+          return;
+        }
+
         if (msg.topic !== topic || msg.event !== "broadcast" || msg.payload?.event !== "state_changed") return;
 
         // Do not skip the actor. Its POST normally has the newest state already, but if
@@ -137,6 +153,7 @@ export function subscribeKjappen(code: string, playerId: string, onChange: () =>
 
     socket.onclose = () => {
       clearHeartbeat();
+      joinRef = null;
       if (closed) return;
       setSafetyPoll(DISCONNECTED_POLL_MS);
 
