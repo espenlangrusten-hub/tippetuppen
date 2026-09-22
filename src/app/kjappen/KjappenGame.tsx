@@ -307,7 +307,7 @@ export function KjappenGame() {
       if (view.outcome?.kind === "timeout") return `Tiden gikk ut. Svaret var ${view.answer}.`;
       if (view.outcome?.guess && outcomePlayer) {
         return view.outcome.kind === "correct"
-          ? `${outcomePlayer.name} svarte «${view.outcome.guess}». Riktig!`
+          ? `${outcomePlayer.name} svarte «${view.outcome.guess}». Riktig! Svaret var ${view.answer}.`
           : `${outcomePlayer.name} svarte «${view.outcome.guess}». Riktig svar var ${view.answer}.`;
       }
       return `Svaret var ${view.answer}.`;
@@ -320,6 +320,9 @@ export function KjappenGame() {
     if (view.phase === "lobby") return `Del koden ${view.code} med de andre.`;
     if (cancelled) return "Runden er avbrutt.";
     if (finished) return "Vi har en vinner";
+    // Fasiten er hovedinnholdet på tavlen i reveal-fasen, slik at alle spillere
+    // ser det autoritative svaret før neste spørsmål – også når svaret var riktig.
+    if (view.phase === "reveal") return `Riktig svar: ${view.answer ?? "—"}`;
     return view.prompt ?? "";
   };
 
@@ -348,7 +351,7 @@ export function KjappenGame() {
         sub: buzzedPlayer ? `${buzzedPlayer.name} rakk knappen først` : "Noen rakk knappen først",
         onPress: () => {}, disabled: true, taken: true,
       };
-    if (view.phase === "reveal") return { label: "VENT PÅ NESTE", sub: "Neste spørsmål kommer", onPress: () => {}, disabled: true, taken: true };
+    if (view.phase === "reveal") return { label: "VENT PÅ NESTE", sub: `${left} sek til neste spørsmål`, onPress: () => {}, disabled: true, taken: true };
     return { label: "NY RUNDE", sub: "Tilbake til start", onPress: leave, disabled: false };
   };
   const button = rig();

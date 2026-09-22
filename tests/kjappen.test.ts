@@ -162,6 +162,14 @@ describe("Kjappen's own question bank", () => {
     }
   });
 
+  it("knows Haaland moved from Bryne to Molde", () => {
+    const q = bank.find((item) => item.id === "kj-klubb-haaland-bryne");
+    expect(q?.answer.label).toBe("Bryne");
+    expect(q && isCorrectAnswer([q.answer.label, ...q.answer.aliases], "Bryne")).toBe(true);
+    expect(q && isCorrectAnswer([q.answer.label, ...q.answer.aliases], "Bryne FK")).toBe(true);
+    expect(q && isCorrectAnswer([q.answer.label, ...q.answer.aliases], "Molde")).toBe(false);
+  });
+
   it("does not ask anything Straffespark already asks", () => {
     const ds = loadDataset();
     const asked = new Set(ds.straffespark.flatMap((q) => (q.kind === "trivia" ? [normalizeName(q.prompt)] : [])));
