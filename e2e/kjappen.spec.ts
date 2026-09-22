@@ -97,6 +97,13 @@ test("two players share a round, and only the one who buzzed may answer", async 
   await expect(host.locator(".kj-verdict-wrong")).toBeVisible({ timeout: 15000 });
   await expect(host.locator(".kj-said")).toHaveText("åpenbart feil svar");
   await expect(host.locator(".kj-podium-score", { hasText: "-100" })).toBeVisible();
+  // Fasiten skal stå på hovedtavlen hos ALLE spillere før neste spørsmål.
+  // Dette er uavhengig av om innsendt svar var riktig, galt eller tidsavbrutt.
+  await expect(host.locator(".kj-board-question")).toContainText("Riktig svar:", { timeout: 15000 });
+  const revealedAnswer = ((await host.locator(".kj-board-question").textContent()) ?? "").trim();
+  expect(revealedAnswer).not.toContain("åpenbart feil svar");
+  await expect(guest.locator(".kj-board-question")).toHaveText(revealedAnswer, { timeout: 15000 });
+
   // And a bar that says the next question is on its way.
   await expect(host.locator(".kj-sweep")).toBeVisible();
 
