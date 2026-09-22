@@ -2,11 +2,34 @@
 // The answers must never leave this function: only word lengths are exposed.
 import { layoutPitch } from "./pitch.ts";
 import type { ManglerXiPayload } from "./types.ts";
+import type { Position } from "./positions.ts";
+
+/** Display defaults apply only where the match has no recorded position. */
+export function displayPosition(name: string, recorded: Position): Position {
+  if (recorded !== "OUT") return recorded;
+  const normalized = name.toLocaleLowerCase("nb-NO");
+  if (normalized.includes("bjørnebye")) return "LB";
+  if (normalized.includes("hoftun")) return "CB";
+  if (normalized.includes("heggem")) return "RB";
+  return recorded;
+}
+
+// The published Tunisia round still contains the old all-OUT payload. Keep its
+// answers and puzzle ID stable while presenting the same corrected pitch to all.
+const TUNISIA_POSITIONS: Position[] = ["GK", "RB", "CB", "MF", "MF", "MF", "CB", "MF", "LB", "FW", "FW"];
+const TUNISIA_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 10];
 
 export function maskManglerXi(p: { puzzleId: string; number: number; date: string; title: string; payload: ManglerXiPayload }) {
   const pl = p.payload;
+  const tunisia = pl.matchId === "1990-11-07-tun-nor";
+  const players = pl.players.map((x, i) => ({
+    ...x,
+    pos: tunisia ? TUNISIA_POSITIONS[i] : displayPosition(x.displayName, x.pos),
+    no: tunisia ? TUNISIA_NUMBERS[i] : x.no,
+    captain: tunisia ? i === 10 : x.captain,
+  }));
   const layout = layoutPitch(
-    pl.players.map((x) => ({ pos: x.pos, order: x.order })),
+    players.map((x) => ({ pos: x.pos, order: x.order })),
     pl.formation,
   );
   const slot = new Map<number, { row: number; col: number; cols: number }>();
@@ -29,7 +52,7 @@ export function maskManglerXi(p: { puzzleId: string; number: number; date: strin
     formation: pl.formation,
     status: pl.status,
     opponentScorers: pl.opponentScorers,
-    players: pl.players.map((x, i) => ({
+    players: players.map((x, i) => ({
       index: i,
       pos: x.pos,
       no: x.no,
