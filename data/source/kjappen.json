@@ -1102,5 +1102,35 @@
         "cupfinale"
       ]
     }
+  },
+  {
+    "id": "kj-klubb-haaland-bryne",
+    "category": "klubb",
+    "prompt": "Hvilken klubb gikk Erling Haaland fra da han signerte for Molde som 16-åring?",
+    "answer": {
+      "label": "Bryne",
+      "aliases": [
+        "Bryne FK"
+      ]
+    },
+    "fact": "Haaland gikk fra Bryne til Molde før 2017-sesongen.",
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://www.mancity.com/features/haaland/bryne/fk/",
+        "title": "Erling Haaland: The Boy From Bryne – Manchester City",
+        "kind": "web",
+        "accessed": "2026-09-22",
+        "note": "Manchester City beskriver at Haaland forlot Bryne og signerte for Molde ved slutten av 2016-sesongen."
+      }
+    ],
+    "verify": {
+      "subject": "Erling Haaland",
+      "mustMention": [
+        "Bryne",
+        "Molde"
+      ]
+    }
   }
 ]
