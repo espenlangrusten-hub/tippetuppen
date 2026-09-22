@@ -280,6 +280,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const triesTotal = state.players.reduce((a, p) => a + triesUsed(p), 0);
   const scoreline = puzzle.norwayHome ? `Norge ${puzzle.score[0]}–${puzzle.score[1]} ${puzzle.opponent}` : `${puzzle.opponent} ${puzzle.score[1]}–${puzzle.score[0]} Norge`;
   const broadPositionsOnly = puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania";
+  const interpretiveTunisia = puzzle.matchDate === "1990-11-07" && puzzle.opponent === "Tunisia";
 
   return (
     <div className="mxi-shell flex flex-col gap-5 pb-64 sm:pb-72" style={panelHeight ? { paddingBottom: panelHeight + 24 } : undefined}>
@@ -301,6 +302,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         <div className="mt-2 text-sm text-mist">
           {puzzle.manager ? `Landslagssjef: ${puzzle.manager}` : ""}
           {!broadPositionsOnly && puzzle.formation ? ` · ${puzzle.formation}` : ""}
+          {interpretiveTunisia ? " · Vist som 4–4–2 (tolket plassering)" : ""}
           {puzzle.opponentScorers.length ? ` · Mål ${puzzle.opponent}: ${formatScorers(puzzle.opponentScorers)}` : ""}
         </div>
       </div>
