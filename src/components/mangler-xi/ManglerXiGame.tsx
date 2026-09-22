@@ -29,6 +29,13 @@ type GameState = {
 
 const POS_LABEL = POSITION_LABEL;
 
+function albaniaPosition(index: number) {
+  if (index === 0) return "Keeper";
+  if (index === 3 || (index >= 6 && index <= 8)) return "Midtbane";
+  if (index >= 9) return "Angriper";
+  return "Forsvarer";
+}
+
 function initState(p: MaskedPuzzle): GameState {
   return { v: 1, puzzleId: p.puzzleId, players: p.players.map(() => ({ guesses: [], tiles: [], solved: false, failed: false })), active: null, finished: false, gaveUp: false, startedAt: null, finishedAt: null, revealed: null, notes: null };
 }
@@ -172,7 +179,9 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         finish({ ...next, players: withNames }, false, rev.players ?? null, rev.notes ?? null);
       } else if (ps.solved || ps.failed) {
         // Auto-advance to the next open shirt in display order.
-        const order = [...puzzle.players].sort((a, b) => b.row - a.row || a.col - b.col).map((p) => p.index);
+        const order = puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania"
+          ? [9, 10, 3, 6, 7, 8, 1, 2, 4, 5, 0]
+          : [...puzzle.players].sort((a, b) => b.row - a.row || a.col - b.col).map((p) => p.index);
         const from = order.indexOf(i);
         const nextIdx = [...order.slice(from + 1), ...order.slice(0, from)].find((k) => !players[k].solved && !players[k].failed) ?? null;
         setState({ ...next, active: nextIdx });
@@ -253,7 +262,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     // The sourced match groups are stable in lineup order, so correct today's board too.
     if (puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania") {
       const byIndex = new Map(puzzle.players.map((p) => [p.index, p]));
-      return [[9, 10], [6, 7, 8], [1, 2, 3, 4, 5], [0]].map((group) => group.map((i) => byIndex.get(i)!).filter(Boolean));
+      return [[9, 10], [3, 6, 7, 8], [1, 2, 4, 5], [0]].map((group) => group.map((i) => byIndex.get(i)!).filter(Boolean));
     }
     const byRow = new Map<number, MaskedPlayer[]>();
     for (const p of puzzle.players) {
@@ -310,7 +319,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       </div>
 
       {/* Pitch */}
-      {broadPositionsOnly && <p className="px-1 text-sm text-mist">Kilden viser 5 forsvarere, 3 midtbanespillere og 2 angripere. Nøyaktige roller og draktnumre er ukjent.</p>}
+      {broadPositionsOnly && <p className="px-1 text-sm text-mist">Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
       <div className="pitch mxi-pitch relative overflow-hidden rounded-2xl border border-pitch-line/30 px-2 py-5 sm:px-5 sm:py-8">
         <div className="pointer-events-none absolute inset-3 rounded-lg border-2 border-pitch-line/50" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-pitch-line/50" />
@@ -322,7 +331,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
               {row.map((p) => {
                 const ps = state.players[p.index];
                 const isActive = state.active === p.index;
-                return <Shirt key={p.index} p={p} ps={ps} active={isActive} onClick={() => selectPlayer(p.index)} finished={state.finished} positionLabel={broadPositionsOnly ? (p.index === 0 ? "Keeper" : p.index <= 5 ? "Forsvarer" : p.index <= 8 ? "Midtbane" : "Angriper") : undefined} />;
+                return <Shirt key={p.index} p={p} ps={ps} active={isActive} onClick={() => selectPlayer(p.index)} finished={state.finished} positionLabel={broadPositionsOnly ? albaniaPosition(p.index) : undefined} />;
               })}
             </div>
           ))}
@@ -337,7 +346,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
               <li key={p.index} className="flex items-center gap-2">
                 <span className="w-7 text-right font-display text-lg text-mist">{p.no ?? ""}</span>
                 <span className={state.players[p.index].solved ? "" : "text-flag-2"}>{state.revealed?.[p.index]?.name}</span>
-                <span className="text-xs text-fog">{broadPositionsOnly ? (p.index === 0 ? "Keeper" : p.index <= 5 ? "Forsvarer" : p.index <= 8 ? "Midtbane" : "Angriper") : POS_LABEL[p.pos]}</span>
+                <span className="text-xs text-fog">{broadPositionsOnly ? albaniaPosition(p.index) : POS_LABEL[p.pos]}</span>
                 {p.captain && <span className="rounded bg-ink-3 px-1 text-[10px]">C</span>}
                 {p.goals > 0 && <span>{"⚽".repeat(p.goals)}</span>}
               </li>
@@ -357,7 +366,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                 <div className="flex items-center justify-between px-1 text-xs text-mist">
                   <span>
                     {active.no != null && <b className="font-display text-base text-snow">#{active.no} </b>}
-                    {broadPositionsOnly ? (active.index === 0 ? "Keeper" : active.index <= 5 ? "Forsvarer" : active.index <= 8 ? "Midtbane" : "Angriper") : POS_LABEL[active.pos]}
+                    {broadPositionsOnly ? albaniaPosition(active.index) : POS_LABEL[active.pos]}
                     {active.captain ? " · kaptein" : ""}
                     {active.goals ? ` · ${"⚽".repeat(active.goals)}` : ""}
                   </span>
