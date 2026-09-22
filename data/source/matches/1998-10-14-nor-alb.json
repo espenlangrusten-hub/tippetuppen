@@ -1,7 +1,7 @@
 {
   "id": "1998-10-14-nor-alb",
   "date": "1998-10-14",
-  "competition": "friendly",
+  "competition": "euro-qual",
   "opponent": "Albania",
   "opponentCode": "ALB",
   "norwayHome": true,
@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:broad-groups"
   ],
   "status": "single_source",
   "sources": [
@@ -21,10 +21,10 @@
       "title": "www.11v11.com – Norge mot Albania, 1998-10-14",
       "kind": "web",
       "accessed": "2026-09-11",
-      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+      "note": "Kilden oppgir komplett startellever og brede posisjonsgrupper: 5 forsvarere, 3 midtbanespillere og 2 angripere. Den oppgir ikke nøyaktig formasjon eller draktnumre."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren og brede posisjonsgrupper (5 forsvarere, 3 midtbanespillere, 2 angripere) er dokumentert hos 11v11. Nøyaktig formasjon, individuelle roller og draktnumre er ikke oppgitt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +33,43 @@
     },
     {
       "name": "Henning Berg",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Alf-Inge Håland",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Vegard Heggem",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Erik Hoftun",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Kjetil André Rekdal",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Ståle Solbakken",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Jostein Flo",
-      "pos": "OUT"
+      "pos": "FW"
     },
     {
       "name": "Tore André Flo",
-      "pos": "OUT"
+      "pos": "FW"
     }
   ]
 }
