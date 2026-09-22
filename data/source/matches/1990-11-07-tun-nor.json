@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:interpretive"
   ],
   "status": "single_source",
   "sources": [
@@ -21,55 +21,73 @@
       "title": "www.fotball.no – Norge mot Tunisia, 1990-11-07",
       "kind": "web",
       "accessed": "2026-09-11",
-      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+      "note": "Komplett startellever og draktnumre. Ingen formasjon oppgitt."
+    },
+    {
+      "url": "https://www.11v11.com/matches/tunisia-v-norway-07-november-1990-242625/",
+      "title": "11v11 – Tunisia mot Norge, 1990-11-07",
+      "kind": "web",
+      "note": "Brede posisjonsgrupper; klassifiserer Roger Nilsen som forsvarer. Eksakt formasjon er ikke oppgitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Draktnumrene er fra NFF. Visningen grupperer laget som 4–4–2, med Bjørnebye på venstreback og Roger Nilsen på midtbanen. Eksakt kampformasjon er ikke dokumentert; plasseringen av Nilsen er en tolkning (han ble erstattet av Erik Mykland).",
   "goalsPartial": true,
   "lineup": [
     {
       "name": "Einar Rossbach",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Pål Lydersen",
-      "pos": "OUT"
+      "pos": "RB",
+      "no": 2
     },
     {
       "name": "Tore Pedersen",
-      "pos": "OUT"
+      "pos": "CB",
+      "no": 3
     },
     {
       "name": "Roger Nilsen",
-      "pos": "OUT"
+      "pos": "MF",
+      "no": 4
     },
     {
       "name": "Erik Stensrud Pedersen",
-      "pos": "OUT"
+      "pos": "MF",
+      "no": 5
     },
     {
       "name": "Kåre Ingebrigtsen",
-      "pos": "OUT"
+      "pos": "MF",
+      "no": 6
     },
     {
       "name": "Claus Lehland Eftevaag",
-      "pos": "OUT"
+      "pos": "CB",
+      "no": 7
     },
     {
       "name": "Øyvind Leonhardsen",
-      "pos": "OUT"
+      "pos": "MF",
+      "no": 8
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "OUT"
+      "pos": "LB",
+      "no": 9
     },
     {
       "name": "Tore André Dahlum",
-      "pos": "OUT"
+      "pos": "FW",
+      "no": 11
     },
     {
       "name": "Gøran Sørloth",
-      "pos": "OUT"
+      "pos": "FW",
+      "no": 10,
+      "captain": true
     }
   ]
 }
