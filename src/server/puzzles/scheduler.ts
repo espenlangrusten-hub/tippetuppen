@@ -1,7 +1,7 @@
 import { and, asc, eq, gte, sql } from "drizzle-orm";
 import type { Db } from "@/server/db";
 import { schema as s, type GameId } from "@/server/db";
-import { addDays } from "@/lib/dates";
+import { addDays, osloDateKey } from "@/lib/dates";
 import { lineupSimilarity } from "./manglerXi";
 
 /** How far back the scheduler looks when it spaces repeats apart. */
@@ -85,6 +85,10 @@ function hash(str: string): number {
  * (locked or already scheduled) entries. Returns the number of new entries.
  */
 export async function extendSchedule(db: Db, game: GameId, fromDate: string, days: number): Promise<{ added: number; exhaustedAt: string | null }> {
+  const today = osloDateKey();
+  const todayRows = fromDate <= today ? await db.select({ date: s.schedule.date }).from(s.schedule)
+    .where(and(eq(s.schedule.game, game), eq(s.schedule.date, today))) : [];
+  const startDate = todayRows.length ? addDays(today, 1) : fromDate;
   const policy = await getRotationPolicy(db);
   const all = await db.select().from(s.puzzles).where(and(eq(s.puzzles.game, game), eq(s.puzzles.enabled, true), eq(s.puzzles.eligible, true)));
   const eligible = all.filter((p) => policy.statuses.includes(String((p.payload as { status?: string }).status ?? "verified")));
@@ -96,7 +100,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   // and closes the gap. Locked days are the editor's choice and stay put.
   const puzzleFingerprints = new Map(all.map((p) => [p.id, p.fingerprint]));
   const eligibleIds = new Set(eligible.map((p) => p.id));
-  const future = await db.select().from(s.schedule).where(and(eq(s.schedule.game, game), gte(s.schedule.date, fromDate), eq(s.schedule.locked, false))).orderBy(asc(s.schedule.date));
+  const future = await db.select().from(s.schedule).where(and(eq(s.schedule.game, game), gte(s.schedule.date, startDate), eq(s.schedule.locked, false))).orderBy(asc(s.schedule.date));
   let rebuild = future.some((e) => !eligibleIds.has(e.puzzleId));
 
   // A calendar that breaks the rule it was written under is rebuilt too.
@@ -120,7 +124,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
       seen.set(fp, i);
     }
   }
-  if (rebuild) await clearFutureSchedule(db, game, fromDate);
+  if (rebuild) await clearFutureSchedule(db, game, startDate);
 
   const existing = await db.select().from(s.schedule).where(eq(s.schedule.game, game)).orderBy(asc(s.schedule.date));
   const used = new Set(existing.map((e) => e.puzzleId));
@@ -131,15 +135,15 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
   let exhaustedAt: string | null = null;
   const pending: { game: GameId; date: string; number: number; puzzleId: string }[] = [];
 
-  // Recent = the 14 scheduled days before fromDate, in order.
-  const recentRows = existing.filter((e) => e.date < fromDate).slice(-RECENT_DAYS);
+  // Recent = the 14 scheduled days before startDate, in order.
+  const recentRows = existing.filter((e) => e.date < startDate).slice(-RECENT_DAYS);
   const recent: Recent[] = recentRows.map((e) => {
     const p = puzzleById.get(e.puzzleId);
     return p ? { fingerprint: p.fingerprint, era: p.era, tags: p.tags, difficulty: p.difficulty, payload: p.payload } : { fingerprint: "", era: null, tags: [], difficulty: 3, payload: {} };
   });
 
   for (let i = 0; i < days; i++) {
-    const date = addDays(fromDate, i);
+    const date = addDays(startDate, i);
     const ex = byDate.get(date);
     if (ex) {
       const p = puzzleById.get(ex.puzzleId);

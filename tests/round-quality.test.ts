@@ -91,6 +91,6 @@ describe("kalenderen repareres når regelen den ble skrevet under endres", () =>
     expect(scheduler).toMatch(/if \(rebuild\) await clearFutureSchedule/);
     // Avstandsvinduet må være det samme som utvelgelsen faktisk bruker, ellers ville
     // sjekken bedømt kalenderen etter en annen regel enn den ble skrevet under.
-    expect(scheduler).toContain("recentRows = existing.filter((e) => e.date < fromDate).slice(-RECENT_DAYS)");
+    expect(scheduler).toContain("recentRows = existing.filter((e) => e.date < startDate).slice(-RECENT_DAYS)");
   });
 });
