@@ -12,13 +12,13 @@ export function ManglerXiScreen() {
   const state = useGamePuzzle<MaskedPuzzle>("mangler-xi", nr);
 
   return (
-    <div>
-      <div className="mb-3 flex items-baseline justify-between">
-        <h1 className="font-display text-3xl font-bold uppercase">
+    <div className="mxi-page">
+      <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
+        <h1 className="font-display text-4xl font-bold uppercase sm:text-5xl">
           🇳🇴 Mangler XI{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
         </h1>
         {state.status === "ready" && (
-          <span className="text-xs text-mist">{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
+          <span className="text-sm text-mist">{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
         )}
       </div>
       {state.status === "loading" && <GameSkeleton />}
