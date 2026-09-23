@@ -28,6 +28,10 @@ export function maskManglerXi(p: { puzzleId: string; number: number; date: strin
     no: tunisia ? TUNISIA_NUMBERS[i] : x.no,
     captain: tunisia ? i === 10 : x.captain,
   }));
+  // A partial, repeated or implausible set must not appear authoritative on the pitch.
+  const numbers = players.map((x) => x.no);
+  const completeNumbers = players.length === 11 && numbers.every((n) => Number.isInteger(n) && n! >= 1 && n! <= 99)
+    && new Set(numbers).size === 11;
   const layout = layoutPitch(
     players.map((x) => ({ pos: x.pos, order: x.order })),
     pl.formation,
@@ -55,7 +59,7 @@ export function maskManglerXi(p: { puzzleId: string; number: number; date: strin
     players: players.map((x, i) => ({
       index: i,
       pos: x.pos,
-      no: x.no,
+      no: completeNumbers ? x.no : null,
       captain: x.captain,
       goals: x.goals,
       wordLengths: x.answer.split(" ").map((w) => w.length),
