@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export function Header() {
   const path = usePathname();
-  const links = [{href:"/",name:"Hjem",icon:"⌂"},{href:"/#spill",name:"Spill",icon:"⚽"},{href:"/liga/",name:"Liga",icon:"♜"},{href:"/arkiv/",name:"Arkiv",icon:"▤"}];
+  const links = [{href:"/",name:"Hjem",icon:"⌂"},{href:"/#spill",name:"Spill",icon:"⚽"},{href:"/liga/",name:"Liga",icon:"♜"},{href:"/arkiv/",name:"Arkiv",icon:"▤"},{href:"/kontakt/",name:"Kontakt",icon:"✉"}];
   return <>
     <header className="stadium-header"><div className="stadium-header-inner">
       <Link href="/" className="stadium-brand" aria-label="Tippetuppen – forsiden"><span aria-hidden="true">⚽</span>TIPPE<b>TUPPEN</b></Link>

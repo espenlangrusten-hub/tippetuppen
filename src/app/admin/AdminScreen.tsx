@@ -27,6 +27,7 @@ const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloe
 const pct = (part: Count, whole: Count) => (Number(whole) > 0 ? `${Math.round((100 * Number(part)) / Number(whole))} %` : "–");
 
 const KEY = "tt1:adminKey";
+type Message = { id: number; created_at: string; title: string; message: string; sender: string; emailed_at: string | null; email_error: string | null };
 type Game = "mangler-xi" | "maalloes" | "finn-spilleren";
 
 export function AdminScreen() {
@@ -34,6 +35,7 @@ export function AdminScreen() {
   const [game, setGame] = useState<Game>("mangler-xi");
   const [data, setData] = useState<Overview | null>(null);
   const [stats, setStats] = useState<Stats | null>(null);
+  const [messages, setMessages] = useState<Message[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -56,6 +58,7 @@ export function AdminScreen() {
           setError("Feil nøkkel.");
           setData(null);
           setStats(null);
+          setMessages(null);
           return;
         }
         setData((await res.json()) as Overview);
@@ -63,6 +66,10 @@ export function AdminScreen() {
         const statsRes = await fetch(`${API_URL}/admin/stats?days=30`, { headers: { "x-admin-key": k } });
         if (!statsRes.ok) { setStats(null); throw new Error("Stats unavailable"); }
         setStats((await statsRes.json()) as Stats);
+        // The inbox is read here rather than trusted to email: a message is stored even
+        // when the mail provider is down or not configured yet.
+        const inbox = await fetch(`${API_URL}/admin/messages`, { headers: { "x-admin-key": k } });
+        setMessages(inbox.ok ? ((await inbox.json()) as { messages: Message[] }).messages : null);
         try {
           sessionStorage.setItem(KEY, k);
         } catch {
@@ -122,6 +129,27 @@ export function AdminScreen() {
       </form>
 
       {error && <p className="text-flag-2">{error}</p>}
+
+      {messages && (
+        <section className="card p-4">
+          <h2 className="font-display text-xl font-bold uppercase">Henvendelser</h2>
+          {messages.length === 0 ? <p className="mt-1 text-sm text-mist">Ingen meldinger ennå.</p> : (
+            <ul className="mt-2 flex flex-col divide-y divide-line">
+              {messages.map((m) => (
+                <li key={m.id} className="py-3">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <b className="text-snow">{m.title}</b>
+                    <span className="text-xs text-fog">{new Date(m.created_at).toLocaleString("nb-NO", { timeZone: "Europe/Oslo" })}</span>
+                  </div>
+                  <p className="mt-1 whitespace-pre-wrap text-sm text-mist">{m.message}</p>
+                  <p className="mt-1 text-xs"><a className="underline" href={`mailto:${m.sender}?subject=${encodeURIComponent("Sv: " + m.title)}`}>{m.sender}</a>
+                    {" · "}{m.emailed_at ? <span className="text-correct">sendt på e-post</span> : <span className="text-flag-2" title={m.email_error ?? ""}>ikke sendt på e-post{m.email_error ? `: ${m.email_error}` : ""}</span>}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
       {data?.runway && (
         <section className="card p-4">

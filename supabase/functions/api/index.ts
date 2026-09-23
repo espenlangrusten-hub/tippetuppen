@@ -16,10 +16,12 @@
  *   POST /maalloes/submit      lock in five answers, return the full board
  *   POST /kjappen/*            multiplayer quiz show: create, join, start, buzz, answer, state
  *   POST /events               anonymous analytics
+ *   POST /contact              contact form: stored, then emailed to the admin
  *   GET  /admin/overview       schedule + runway (requires x-admin-key)
  *   GET  /admin/stats          anonymous traffic and completion figures (requires x-admin-key)
  *   POST /admin/replace        swap the puzzle on a date (requires x-admin-key)
  *   POST /admin/enable         enable/disable a puzzle (requires x-admin-key)
+ *   GET  /admin/messages       contact form inbox (requires x-admin-key)
  */
 import { sql } from "../_shared/db.ts";
 import { cors, json, bad } from "../_shared/http.ts";
@@ -32,6 +34,7 @@ import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.
 import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
 import { finnRoute } from "../_shared/finn.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
+import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
 const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
@@ -440,8 +443,13 @@ Deno.serve(async (req) => {
       return json({ ok: true });
     }
 
+    if (req.method === "POST" && route === "/contact") {
+      return await contactRoute(req, await visitorHash(req, osloDateKey()));
+    }
+
     if (route.startsWith("/admin")) {
       if (!adminOk(req)) return json({ ok: false, error: "unauthorised" }, 401);
+      if (req.method === "GET" && route === "/admin/messages") return await contactInbox();
       const db = sql();
       const today = osloDateKey();
 

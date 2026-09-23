@@ -551,3 +551,29 @@ export const finnAttempts = tt.table(
   },
   (t) => [index("finn_attempts_puzzle").on(t.puzzleId), index("finn_attempts_user").on(t.userId), uniqueIndex("finn_attempts_user_puzzle").on(t.userId, t.puzzleId)],
 );
+
+/**
+ * Messages sent through /kontakt.
+ *
+ * Stored first, emailed second: the static site has no mail server of its own, and a
+ * message that only ever existed as an outgoing email is lost the first time the mail
+ * provider is down or not yet configured. The admin page reads them from here, so
+ * nothing depends on the email arriving. RLS is enabled with no policies, like users
+ * and sessions: only the Edge Function's own connection can read a sender's address.
+ */
+export const contactMessages = tt.table(
+  "contact_messages",
+  {
+    id: bigserial("id", { mode: "number" }).primaryKey(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    title: text("title").notNull(),
+    message: text("message").notNull(),
+    sender: text("sender").notNull(),
+    /** Daily-rotating hash, as in events; used only to rate-limit. */
+    visitor: text("visitor").notNull(),
+    emailedAt: timestamp("emailed_at", { withTimezone: true }),
+    /** Why the email did not go out, when it did not. Null once delivered. */
+    emailError: text("email_error"),
+  },
+  (t) => [index("contact_messages_created").on(t.createdAt), index("contact_messages_visitor").on(t.visitor, t.createdAt)],
+);
