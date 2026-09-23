@@ -63,7 +63,7 @@ body {
 }
 
 /* Mangler XI carries the same dark stadium surfaces and lime accents as the home page. */
-.mxi-page { width: min(100%, 66rem); margin-inline: auto; }
+.mxi-page { width: min(100%, 78rem); margin-inline: auto; }
 .mxi-match {
   border: 1px solid rgb(255 255 255 / 0.12);
   border-radius: 1.4rem;
@@ -74,12 +74,20 @@ body {
 .mxi-pitch { box-shadow: 0 22px 50px -28px rgb(0 0 0 / 0.8); }
 .mxi-guess-panel { box-shadow: 0 -16px 45px rgb(0 0 0 / 0.32); }
 @media (min-width: 1024px) {
-  .mxi-shell { padding-right: 21rem; }
+  /* Break out of the shared 48rem page column; the game needs a real desktop pitch. */
+  .mxi-page { width: min(calc(100vw - 3rem), 78rem); position: relative; left: 50%; transform: translateX(-50%); margin: 0; }
+  .mxi-shell { display: grid; grid-template-columns: minmax(0, 1fr) 21rem; align-items: start; column-gap: 1.5rem; padding-bottom: 2rem !important; }
+  .mxi-shell > :not(.mxi-guess-panel) { grid-column: 1; min-width: 0; }
+  .mxi-shell > .mxi-match { grid-column: 1 / -1; }
   .mxi-guess-panel {
-    --mxi-row-width: 20rem;
-    inset: 6rem max(1rem, calc((100vw - 66rem) / 2)) auto auto;
-    width: 20rem;
-    max-height: calc(100dvh - 7rem);
+    --mxi-row-width: 21rem;
+    position: sticky;
+    inset: auto;
+    top: 1rem;
+    grid-column: 2;
+    grid-row: 2 / span 8;
+    width: 21rem;
+    max-height: calc(100dvh - 2rem);
     overflow-y: auto;
     border: 1px solid #354367;
     border-radius: 1.3rem;
@@ -87,6 +95,10 @@ body {
   }
   .mxi-guess-panel .key { min-width: 0; height: 2.5rem; font-size: 0.85rem; }
   .mxi-guess-panel .key-wide { font-size: 0.7rem; }
+  .mxi-pitch { min-height: 610px; display: flex; align-items: stretch; }
+  .mxi-pitch > .relative { display: flex; width: 100%; flex-direction: column; justify-content: space-around; }
+  .mxi-pitch .shirt { width: 4.2rem; height: 3.95rem; }
+  .mxi-pitch button { width: 7rem; }
 }
 
 /* Tile width is set per row (see TileRow) so a long two-word surname such as
