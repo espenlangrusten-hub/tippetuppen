@@ -1,6 +1,9 @@
 .shell { --lime: #b0f334; width: min(calc(100vw - 40px), 1160px); margin-left: 50%; transform: translateX(-50%); color: #f6f8ff; }
 .backdrop { position: absolute; pointer-events: none; z-index: -1; width: 100vw; height: 1050px; top: -86px; left: 50%; transform: translateX(-50%); mask-image: linear-gradient(#000 45%, transparent 95%); }
 .backdrop img { object-fit: cover; object-position: center top; }
+.updateNotice { display: grid; gap: 5px; margin: 18px 0 6px; padding: 20px 26px; border: 2px solid #b0f334; border-radius: 14px; background: #071b25f2; box-shadow: 0 0 30px #b0f33435; text-align: center; }
+.updateNotice strong { color: #b0f334; font: 700 clamp(27px, 3.5vw, 43px)/1 var(--font-display); text-transform: uppercase; }
+.updateNotice span { font-size: clamp(14px, 1.5vw, 18px); }
 .hero { display: flex; align-items: center; justify-content: space-between; gap: 26px; padding: 15px 0 24px; min-height: 182px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; margin-bottom: 8px; }
 .eyebrow::before, .eyebrow::after { content: ""; width: 30px; height: 2px; background: var(--lime); }
