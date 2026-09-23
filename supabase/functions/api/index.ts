@@ -25,7 +25,7 @@ import { sql } from "../_shared/db.ts";
 import { cors, json, bad } from "../_shared/http.ts";
 import { maskManglerXi } from "../_shared/masking.ts";
 import { evaluate } from "../_shared/guess.ts";
-import { osloDateKey, addDays, isValidDateKey } from "../_shared/dates.ts";
+import { osloDateKey, addDays, isValidDateKey, monthStart, monthEnd, previousMonth } from "../_shared/dates.ts";
 import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
@@ -112,6 +112,31 @@ async function updateMxiProgress(userId: string, puzzleId: string, index: number
   });
 }
 
+type LeagueRow = { rank: number; username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
+
+/** One league table over a date range, ranked the one way the site ranks everywhere. */
+async function leagueTable(from: string, to: string, username: string | null, limit: number) {
+  const [board] = await sql()<{ rows: LeagueRow[]; me: LeagueRow | null; registered: number }[]>`
+    with totals as (
+      select u.username,
+             sum(r.league_points)::int as points,
+             count(r.id)::int as played,
+             coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
+             coalesce(sum((r.details->>'found')::int) filter (where r.game = 'mangler-xi'), 0)::int as xi_solved,
+             coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
+      from tippetuppen.users u join tippetuppen.league_results r on r.user_id = u.id
+      where r.date between ${from} and ${to}
+      group by u.id, u.username
+    ), ranked as (
+      select (row_number() over (order by points desc, played desc, maalloes_total asc, username asc))::int as rank, totals.*
+      from totals
+    )
+    select coalesce((select jsonb_agg(to_jsonb(r) order by rank) from ranked r where rank <= ${limit}), '[]'::jsonb) as rows,
+           (select to_jsonb(r) from ranked r where username = ${username}) as me,
+           (select count(*)::int from tippetuppen.users) as registered`;
+  return board;
+}
+
 async function payloadFor(puzzleId: string, game: Game) {
   const rows = await sql()<{ payload: unknown; game: string }[]>`
     select p.payload, p.game from tippetuppen.puzzles p
@@ -189,29 +214,27 @@ Deno.serve(async (req) => {
     }
 
     if (req.method === "GET" && route === "/leaderboard") {
+      // Månedens Tippetupp: the table runs from the first of the Oslo calendar month and
+      // starts from nothing on the first day of the next. Nothing is stored or closed at
+      // midnight - there is no scheduler to do it - so last month's winner is simply
+      // read back from last month's results. League results are never rewritten after
+      // the day they are played, which is what makes that reading stable.
       const to = osloDateKey();
-      const from = addDays(to, -29);
+      const from = monthStart(to);
+      const last = previousMonth(to);
       const user = await currentUser(req);
-      type Row = { rank: number; username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
-      const [board] = await sql()<{ rows: Row[]; me: Row | null; registered: number }[]>`
-        with totals as (
-          select u.username,
-                 sum(r.league_points)::int as points,
-                 count(r.id)::int as played,
-                 coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
-                 coalesce(sum((r.details->>'found')::int) filter (where r.game = 'mangler-xi'), 0)::int as xi_solved,
-                 coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
-          from tippetuppen.users u join tippetuppen.league_results r on r.user_id = u.id
-          where r.date between ${from} and ${to}
-          group by u.id, u.username
-        ), ranked as (
-          select (row_number() over (order by points desc, played desc, maalloes_total asc, username asc))::int as rank, totals.*
-          from totals
-        )
-        select coalesce((select jsonb_agg(to_jsonb(r) order by rank) from ranked r where rank <= 100), '[]'::jsonb) as rows,
-               (select to_jsonb(r) from ranked r where username = ${user?.username ?? null}) as me,
-               (select count(*)::int from tippetuppen.users) as registered`;
-      return json({ ok: true, from, to, ...board }, 200, { "cache-control": "private, no-store" });
+      const board = await leagueTable(from, to, user?.username ?? null, 100);
+      const previous = await leagueTable(last.from, last.to, null, 1);
+      const top = previous.rows[0];
+      return json({
+        ok: true, from, to,
+        month: { from, to, end: monthEnd(to) },
+        // Whoever the table itself put first: a tie on points is broken exactly as it was
+        // on screen all month (more days played, then lower Målløs total), so the gold
+        // name never disagrees with the row that sat at number one.
+        champion: top ? { month: last.from.slice(0, 7), username: top.username, points: top.points, played: top.played } : null,
+        ...board,
+      }, 200, { "cache-control": "private, no-store" });
     }
 
     if (req.method === "GET" && route === "/today") {
@@ -291,14 +314,32 @@ Deno.serve(async (req) => {
 
     if (req.method === "POST" && route === "/reveal") {
       const body = await req.json().catch(() => null);
-      const { puzzleId, index, hint } = (body ?? {}) as { puzzleId?: string; index?: number; hint?: boolean };
+      const { puzzleId, index, hint, kind, n } = (body ?? {}) as
+        { puzzleId?: string; index?: number; hint?: boolean; kind?: string; n?: number };
       if (typeof puzzleId !== "string") return bad("bad request");
       const payload = (await payloadFor(puzzleId, "mangler-xi")) as ManglerXiPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
+      // A hint request that names nobody is a bad request, not a surrender. Falling
+      // through to the branch below handed back all eleven answers and, for a signed-in
+      // player, closed the round - from a typo in an index.
+      if (hint && (typeof index !== "number" || !payload.players[index])) return bad("bad request");
       if (hint && typeof index === "number" && payload.players[index]) {
+        const player = payload.players[index];
+        // One fact per request, never the list. Handing over every fact at once would
+        // sell the whole sheet for the price of a single guess to anyone who opens the
+        // network tab, and the guess is what the hint is supposed to cost.
+        if (kind === "fact") {
+          const at = typeof n === "number" && n >= 0 ? Math.floor(n) : 0;
+          const fact = player.facts?.[at];
+          // Nothing left to tell: no fact, and no guess spent for it.
+          if (!fact) return json({ ok: true, fact: null, remaining: 0 });
+          const user = await currentUser(req);
+          if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
+          return json({ ok: true, fact, remaining: Math.max(0, (player.facts?.length ?? 0) - at - 1) });
+        }
         const user = await currentUser(req);
         if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
-        return json({ ok: true, letter: payload.players[index].answer[0] });
+        return json({ ok: true, letter: player.answer[0] });
       }
       const user = await currentUser(req);
       if (user) await updateMxiProgress(user.id, puzzleId, null, false, true);

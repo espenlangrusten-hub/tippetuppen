@@ -31,7 +31,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startellever, kamptype og draktnumre dokumentert. Utespillernes eksakte roller er ikke dokumentert i importkilden.",
+  "notes": "Startellever, kamptype og draktnumre dokumentert. Utespillernes eksakte roller er ikke dokumentert i importkilden. Formasjonen er ikke oppgitt: kilden dokumenterer elleveren, ikke rollene.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -94,6 +94,5 @@
   "stage": "VM-kvalifisering 2010, gruppe 9",
   "venue": "Laugardalsvöllur",
   "city": "Reykjavik",
-  "manager": "Egil Olsen",
-  "formation": "4-4-2"
+  "manager": "Egil Olsen"
 }

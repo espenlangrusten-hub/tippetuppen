@@ -13,7 +13,11 @@ import { Keyboard } from "./Keyboard";
 import { formatShortDateNo } from "@/lib/dates";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
 
-type PlayerState = { guesses: string[]; tiles: TileState[][]; solved: boolean; failed: boolean; name?: string; hint?: string };
+type PlayerState = { guesses: string[]; tiles: TileState[][]; solved: boolean; failed: boolean; name?: string; hint?: string;
+  /** Facts bought with a guess. */
+  facts?: string[];
+  /** The fact a correct answer hands over. Free, so it is kept out of the tally. */
+  reward?: string };
 type GameState = {
   v: 1;
   puzzleId: string;
@@ -41,7 +45,7 @@ function initState(p: MaskedPuzzle): GameState {
 }
 
 function triesUsed(ps: PlayerState) {
-  return ps.guesses.length + (ps.hint ? 1 : 0);
+  return ps.guesses.length + (ps.hint ? 1 : 0) + (ps.facts?.length ?? 0);
 }
 
 export function formatScorers(names: string[]): string {
@@ -149,7 +153,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     setBusy(true);
     try {
       if (!state.startedAt) track({ name: "game_start", game: "mangler-xi", puzzleId: puzzle.puzzleId, archive: isArchive });
-      const data = await apiPost<{ ok: boolean; tiles?: TileState[]; solved?: boolean; name?: string; guess?: string; error?: string }>("/guess", {
+      const data = await apiPost<{ ok: boolean; tiles?: TileState[]; solved?: boolean; name?: string; guess?: string; fact?: string; error?: string }>("/guess", {
         puzzleId: puzzle.puzzleId,
         index: state.active,
         guess,
@@ -163,6 +167,8 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       if (data.solved) {
         ps.solved = true;
         ps.name = data.name;
+        // Getting him right earns the fact; it is not one of the bought ones.
+        if (data.fact) ps.reward = data.fact;
       } else if (triesUsed(ps) >= MAX_TRIES) {
         ps.failed = true;
       }
@@ -231,6 +237,29 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         setState({ ...state, players: state.players.map((p, j) => (j === i ? { ...p, hint: d.letter } : p)), startedAt: state.startedAt ?? new Date().toISOString() });
         setTyped(d.letter + typed.slice(1));
       }
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const factHint = async () => {
+    if (!state || state.active == null || !activeState || busy) return;
+    const bought = activeState.facts?.length ?? 0;
+    if (triesUsed(activeState) >= MAX_TRIES - 1) return showToast("Ikke nok forsøk igjen");
+    setBusy(true);
+    try {
+      const d = await apiPost<{ ok: boolean; fact?: string | null; remaining?: number }>("/reveal", {
+        puzzleId: puzzle.puzzleId, index: state.active, hint: true, kind: "fact", n: bought,
+      });
+      if (!d.ok) return;
+      // The server spends no guess when it has nothing left to tell, so neither do we.
+      if (!d.fact) return showToast("Ingen flere fakta om denne spilleren");
+      const i = state.active;
+      setState({
+        ...state,
+        players: state.players.map((p, j) => (j === i ? { ...p, facts: [...(p.facts ?? []), d.fact!] } : p)),
+        startedAt: state.startedAt ?? new Date().toISOString(),
+      });
     } finally {
       setBusy(false);
     }
@@ -354,6 +383,30 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
               </li>
             ))}
           </ol>
+          {/* What the round taught you, gathered where there is room to read it. The
+              toast that fires on a correct guess is a celebration, not a place for a
+              sentence. Every line here is computed from the match archive, so it is
+              checkable against the same sources as the lineup above. */}
+          {(() => {
+            const learned = puzzle.players
+              .map((p) => ({ name: state.revealed?.[p.index]?.name, fact: state.players[p.index].reward, facts: state.players[p.index].facts ?? [] }))
+              .map((x) => ({ name: x.name, lines: [...(x.fact ? [x.fact] : []), ...x.facts] }))
+              .filter((x) => x.name && x.lines.length);
+            if (!learned.length) return null;
+            return (
+              <div className="mt-3 border-t border-line pt-3">
+                <h4 className="font-display text-base font-bold uppercase text-mist">Visste du</h4>
+                <ul className="mt-1.5 flex flex-col gap-1.5 text-sm">
+                  {learned.map((x) => (
+                    <li key={x.name}>
+                      <b className="text-snow">{x.name}:</b>{" "}
+                      <span className="text-mist">{x.lines.join(" ")}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })()}
           {state.notes && <p className="mt-3 text-sm text-mist">{state.notes}</p>}
           <p className="mt-2 text-xs text-fog">Kildestatus: {puzzle.status === "verified" ? "bekreftet av flere kilder" : puzzle.status === "single_source" ? "bekreftet mot kamparkiv" : "under verifisering"}.</p>
         </div>
@@ -379,8 +432,24 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                         💡 Første bokstav
                       </button>
                     )}
+                    <button type="button" onClick={factHint} className="ml-2 rounded-md bg-ink-3 px-2 py-0.5 font-semibold text-snow hover:bg-line-2">
+                      📋 Fakta
+                    </button>
                   </span>
                 </div>
+                {/* Both hints cost a guess, so what they bought stays on screen for the
+                    rest of the round. Losing it after one more try would mean paying
+                    twice for the same sentence. */}
+                {!!activeState.facts?.length && (
+                  <ul className="mt-2 flex flex-col gap-1 rounded-lg bg-ink-2 p-2.5 text-left text-xs text-mist">
+                    {activeState.facts.map((f, fi) => (
+                      <li key={fi} className="flex gap-2">
+                        <span aria-hidden className="text-fog">•</span>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="mt-1.5 flex flex-col items-center gap-1">
                   {/* Every guess so far, not just the last two: with six tries you cannot
                       reason about which letters are still open if the earlier rows are gone.

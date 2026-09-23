@@ -404,6 +404,62 @@ body {
 .home-leaderboard-links { padding: 1rem 1.25rem 1.2rem; display: grid; gap: 0.9rem; border-top: 1px solid rgb(255 255 255 / 0.065); font-size: 0.76rem; }
 .home-leaderboard-links > a { display: flex; justify-content: space-between; color: #9af5ac; font-weight: 750; }
 .home-leaderboard-links div { display: flex; gap: 1rem; color: var(--color-mist); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Månedens Tippetupp ────────────────────────────────────────────────────────
+   Last month's winner, in gold, above the table. The shine runs once, on arrival:
+   the name is a celebration seen a few times a month, not a control touched a hundred
+   times a day, so it has earned one moment of motion and no more. Nothing loops. */
+.league-champion {
+  padding: 1.15rem 1.25rem 1.05rem;
+  display: grid; justify-items: center; gap: 0.2rem; text-align: center;
+  border-bottom: 1px solid rgb(241 196 86 / 0.18);
+  background: radial-gradient(120% 150% at 50% -10%, rgb(241 196 86 / 0.2), transparent 62%);
+}
+.league-champion-kicker {
+  color: #e8c267; font-size: 0.64rem; font-weight: 750; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.league-champion-name {
+  max-width: 100%;
+  font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 700;
+  line-height: 1; letter-spacing: 0.01em; text-transform: uppercase; overflow-wrap: anywhere;
+  background: linear-gradient(100deg, #a8741f 0%, #e9b94a 22%, #fff4c7 40%, #f4d27a 50%, #c48d2c 72%, #f1c456 100%);
+  background-size: 240% 100%; background-position: 0% 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 2px 12px rgb(241 196 86 / 0.28));
+  animation: league-champion-shine 1.6s cubic-bezier(0.23, 1, 0.32, 1) 300ms 1 both;
+}
+.league-champion-points { color: var(--color-mist); font-size: 0.78rem; font-weight: 650; }
+@keyframes league-champion-shine {
+  from { background-position: 100% 0; opacity: 0.001; transform: translateY(4px); }
+  to { background-position: 0% 0; opacity: 1; transform: translateY(0); }
+}
+
+/* No winner yet: an empty gold frame, so the space reads as a prize still to be won. */
+.league-champion-open {
+  margin: 0.9rem 0.9rem 0; border: 1px dashed rgb(241 196 86 / 0.45); border-radius: 1rem;
+  background: rgb(241 196 86 / 0.05);
+}
+.league-champion-wait { max-width: 30ch; color: var(--color-snow); font-size: 0.84rem; line-height: 1.45; }
+
+.league-pulse {
+  margin: 0; padding: 0.7rem 1.25rem; display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem;
+  border-bottom: 1px solid rgb(255 255 255 / 0.065); color: var(--color-mist); font-size: 0.8rem;
+}
+.league-pulse b { color: var(--color-snow); font-weight: 750; }
+.league-pulse-urgent b { color: #f4ca64; }
+.league-pulse-dot {
+  width: 0.45rem; height: 0.45rem; flex: 0 0 auto; align-self: center; border-radius: 50%;
+  background: #f4ca64; box-shadow: 0 0 0 3px rgb(244 202 100 / 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Gentler, not gone: the name still arrives, it just does not travel or sweep. */
+  .league-champion-name { animation: league-champion-fade 200ms ease both; }
+}
+@keyframes league-champion-fade { from { opacity: 0.001; } to { opacity: 1; } }
+@media (prefers-contrast: more) {
+  .league-champion-name { background: none; color: #f6d27a; filter: none; }
+}
 .home-how-it-works { padding: 2rem 0 1rem; display: grid; grid-template-columns: 0.8fr 2fr; gap: 3rem; border-top: 1px solid rgb(255 255 255 / 0.09); }
 .home-how-it-works h2 { margin-top: 0.55rem; line-height: 0.95; }
 .home-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }

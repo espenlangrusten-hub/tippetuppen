@@ -5,7 +5,7 @@ import { normalizeName, toTileString } from "./names.ts";
 import type { ManglerXiPayload } from "./types.ts";
 
 export type GuessResult =
-  | { ok: true; tiles: TileState[]; solved: boolean; name?: string; guess: string }
+  | { ok: true; tiles: TileState[]; solved: boolean; name?: string; guess: string; fact?: string }
   | { ok: false; error: "length" | "not-found" | "invalid" };
 
 export function evaluate(payload: ManglerXiPayload, index: number, rawGuess: string): GuessResult {
@@ -17,8 +17,11 @@ export function evaluate(payload: ManglerXiPayload, index: number, rawGuess: str
   const aliasHit =
     player.aliases.some((a) => normalizeName(a) === normalizeName(rawGuess)) || normalizeName(rawGuess) === normalizeName(answer);
   const solvedTiles = () => answer.split("").map((c) => (c === " " ? "space" : "correct")) as TileState[];
+  // Getting him right is what earns the fact, so it costs nothing and arrives with the
+  // name. Only the first one: the rest stay behind the hint, which costs a guess.
+  const reward = player.facts?.[0];
   if (guess.length !== answer.length) {
-    if (aliasHit) return { ok: true, tiles: solvedTiles(), solved: true, name: player.displayName, guess: answer };
+    if (aliasHit) return { ok: true, tiles: solvedTiles(), solved: true, name: player.displayName, guess: answer, fact: reward };
     return { ok: false, error: "length" };
   }
   const aligned = answer
@@ -33,5 +36,6 @@ export function evaluate(payload: ManglerXiPayload, index: number, rawGuess: str
     solved,
     name: solved ? player.displayName : undefined,
     guess: solved ? answer : aligned,
+    fact: solved ? reward : undefined,
   };
 }
