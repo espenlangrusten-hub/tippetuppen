@@ -17,6 +17,9 @@ export function Footer() {
           <Link href="/statistikk" className="hover:text-snow">
             Statistikk
           </Link>
+          <Link href="/kontakt" className="hover:text-snow">
+            Kontakt
+          </Link>
         </div>
         <p>
           Nye spill hver dag kl. 00:00 norsk tid. Laget for norske fotballfans. Kampdata er hentet fra offentlige kamparkiver og merket med kildestatus.

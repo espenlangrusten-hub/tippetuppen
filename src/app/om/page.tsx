@@ -17,7 +17,7 @@ export default function Page() {
       </p>
       <h2 className="font-display text-2xl font-bold uppercase">Data og kilder</h2>
       <p className="text-mist">
-        Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/personvern" className="underline">kontaktinformasjonen</Link>.
+        Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/kontakt" className="underline">kontaktskjemaet</Link>.
       </p>
       <h2 className="font-display text-2xl font-bold uppercase">Uavhengig</h2>
       <p className="text-mist">Tippetuppen er et uavhengig hobbyprosjekt og har ingen tilknytning til Norges Fotballforbund, Norsk Toppfotball eller noen klubb. Spillene er inspirert av klassiske daglige ordspill, med egne regler, egen design og egen norsk database.</p>

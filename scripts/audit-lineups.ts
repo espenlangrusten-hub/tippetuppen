@@ -46,7 +46,6 @@ const ds = loadDataset();
 
 /** Positions that mean "we know he started, we do not know where he stood". */
 const UNDOCUMENTED = "OUT";
-const GK = "GK";
 const KEEPER_OK = new Set(["GK"]);
 const DEF = new Set(["RB", "CB", "LB", "DF"]);
 const MID = new Set(["DM", "CM", "RM", "LM", "AM", "MF"]);
