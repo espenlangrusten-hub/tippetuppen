@@ -500,14 +500,14 @@ function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedP
       aria-label={`Drakt ${p.no != null ? p.no : "med ukjent nummer"}, ${positionLabel ?? POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
     >
       <div className={`shirt ${cls} ${active ? "shirt-active" : ""}`}>
-        <span className="text-lg">{p.no ?? "?"}</span>
-        {p.captain && <span className="absolute -right-1 bottom-0 rounded bg-ink px-1 text-[9px] text-snow">C</span>}
+        {p.no != null && <span className="text-lg">{p.no}</span>}
         {p.goals > 0 && <span className="absolute -left-1 -top-1 text-xs">{p.goals > 1 ? `⚽×${p.goals}` : "⚽"}</span>}
       </div>
       <div className={`max-w-full truncate rounded px-1 font-display text-[11px] font-bold tracking-wider sm:text-xs ${ps.solved ? "bg-correct text-ink" : ps.failed ? "bg-flag/80 text-white" : "bg-white/90 text-ink"}`}>
         {label}
         {!ps.solved && !ps.failed && used > 0 && <span className="ml-1 text-fog">{used}</span>}
       </div>
+      {p.captain && <span className="text-[10px] text-mist">Kaptein</span>}
     </button>
   );
 }
