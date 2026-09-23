@@ -2,7 +2,7 @@
   "id": "2013-06-11-nor-mkd",
   "date": "2013-06-11",
   "competition": "friendly",
-  "opponent": "Nord-Makedonia",
+  "opponent": "Makedonia",
   "opponentCode": "MKD",
   "norwayHome": true,
   "score": [
@@ -24,7 +24,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt. Motstanderen heter her det landet het på kampdagen; «Nord-Makedonia» kom senere.",
   "goalsPartial": true,
   "lineup": [
     {
