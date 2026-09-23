@@ -251,7 +251,9 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       const d = await apiPost<{ ok: boolean; fact?: string | null; remaining?: number }>("/reveal", {
         puzzleId: puzzle.puzzleId, index: state.active, hint: true, kind: "fact", n: bought,
       });
-      if (!d.ok) return;
+      // Refused by the server: nothing was spent, so say so instead of a button that
+      // silently does nothing.
+      if (!d.ok) return showToast("Fikk ikke hentet fakta – prøv igjen");
       // The server spends no guess when it has nothing left to tell, so neither do we.
       if (!d.fact) return showToast("Ingen flere fakta om denne spilleren");
       const i = state.active;
