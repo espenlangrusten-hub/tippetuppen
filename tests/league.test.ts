@@ -29,4 +29,24 @@ describe('league XI state',()=>{
     expect(advanceXi(s,0,false,false,true)).toBe(false); expect(s.attempts[0]).toBe(1);
     advanceXi(s,null,false,true,false); expect(advanceXi(s,1,true,false,false)).toBe(false);
   });
+  it('lets a signed-in player buy several facts, one guess each, and still the letter once', ()=>{
+    // The letter and the facts shared one flag, so a signed-in player got exactly one hint
+    // per shirt: the second fact, or the letter after a fact, came back 409 "finished".
+    const s=initial();
+    expect(advanceXi(s,0,false,false,'fact')).toBe(true);
+    expect(advanceXi(s,0,false,false,'fact')).toBe(true);
+    expect(advanceXi(s,0,false,false,'letter')).toBe(true);
+    expect(advanceXi(s,0,false,false,'letter')).toBe(false);
+    expect(s.attempts[0]).toBe(3);
+  });
+  it('never sells a hint that leaves no guess to use it on', ()=>{
+    const s=initial(); for(let i=0;i<5;i++) advanceXi(s,0,false,false,'fact');
+    expect(s.attempts[0]).toBe(5);
+    expect(advanceXi(s,0,false,false,'fact')).toBe(false);
+    expect(advanceXi(s,0,true,false,false)).toBe(true); expect(s.solved[0]).toBe(true);
+  });
+  it('still reads a bare true as the letter, for callers written before facts', ()=>{
+    const s=initial(); advanceXi(s,0,false,false,true);
+    expect(advanceXi(s,0,false,false,'letter')).toBe(false);
+  });
 });

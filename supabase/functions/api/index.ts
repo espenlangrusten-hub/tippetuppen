@@ -29,7 +29,7 @@ import { osloDateKey, addDays, isValidDateKey, monthStart, monthEnd, previousMon
 import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
-import { advanceXi, xiScore, type XiState } from "../_shared/league.ts";
+import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
 import { finnRoute } from "../_shared/finn.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
@@ -91,7 +91,7 @@ function present(game: Game, r: ScheduledRow) {
   };
 }
 
-async function updateMxiProgress(userId: string, puzzleId: string, index: number | null, solved: boolean, finishNow = false, hint = false) {
+async function updateMxiProgress(userId: string, puzzleId: string, index: number | null, solved: boolean, finishNow = false, hint: XiHint = false) {
   return await sql().begin(async (tx) => {
     const initial: XiState = { attempts: Array(11).fill(0), solved: Array(11).fill(false) };
     await tx`insert into tippetuppen.game_progress (user_id,puzzle_id,game,state)
@@ -334,11 +334,11 @@ Deno.serve(async (req) => {
           // Nothing left to tell: no fact, and no guess spent for it.
           if (!fact) return json({ ok: true, fact: null, remaining: 0 });
           const user = await currentUser(req);
-          if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
+          if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, "fact")) return bad("finished", 409);
           return json({ ok: true, fact, remaining: Math.max(0, (player.facts?.length ?? 0) - at - 1) });
         }
         const user = await currentUser(req);
-        if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
+        if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, "letter")) return bad("finished", 409);
         return json({ ok: true, letter: player.answer[0] });
       }
       const user = await currentUser(req);
