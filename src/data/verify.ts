@@ -1,5 +1,4 @@
 import { normalizeName } from "@/lib/names";
-import type { StraffesparkQuestion } from "./straffespark";
 import type { z } from "zod";
 import type * as S from "./schema";
 
@@ -31,7 +30,9 @@ export type Verdict =
  * as "confirmed in a search excerpt" elsewhere in this dataset; it is not proof of the
  * exact relation, and the note it writes says so.
  */
-export function verdictFor(entry: StraffesparkQuestion, page: WikiPage, today: string): Verdict {
+export type Checkable = { id: string; status: string; sources: unknown[]; notes?: string; verify?: { subject: string; mustMention: string[] } };
+
+export function verdictFor(entry: Checkable, page: WikiPage, today: string): Verdict {
   if (!entry.verify) return { ok: false, note: "Ingen oppslag definert: legg inn verify.subject og verify.mustMention." };
   const { subject, mustMention } = entry.verify;
   if (!page) return { ok: false, note: `Fant ingen artikkel om «${subject}» på Wikipedia.` };
@@ -55,7 +56,7 @@ export function verdictFor(entry: StraffesparkQuestion, page: WikiPage, today: s
 }
 
 /** Apply a verdict to an entry, leaving everything the verdict does not speak to alone. */
-export function applyVerdict<T extends StraffesparkQuestion>(entry: T, verdict: Verdict): T {
+export function applyVerdict<T extends Checkable>(entry: T, verdict: Verdict): T {
   if (!verdict.ok) return { ...entry, notes: verdict.note };
   // The note said what a human still had to check; the source now answers it.
   const next = { ...entry, status: "single_source" as const, sources: [...entry.sources, verdict.source] };
@@ -64,6 +65,6 @@ export function applyVerdict<T extends StraffesparkQuestion>(entry: T, verdict: 
 }
 
 /** The entries a verification run should look at: written from memory, with a lookup defined. */
-export function pendingVerification(pool: StraffesparkQuestion[]): StraffesparkQuestion[] {
+export function pendingVerification<T extends Checkable>(pool: T[]): T[] {
   return pool.filter((q) => q.status === "recall" && q.verify);
 }

@@ -1,35 +1,16 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Header() {
-  return (
-    <header className="sticky top-0 z-40 border-b border-line bg-ink/85 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
-        <Link href="/" className="font-display text-2xl font-bold uppercase tracking-wide">
-          <span className="text-flag">Tippe</span>tuppen
-        </Link>
-        <nav className="flex items-center gap-0.5 text-[13px] font-semibold sm:gap-1 sm:text-sm">
-          <Link href="/mangler-xi" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
-            Mangler XI
-          </Link>
-          <Link href="/maalloes" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
-            Målløs
-          </Link>
-          <Link href="/finn-spilleren" className="hidden whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:block sm:px-2.5">
-            Finn spilleren
-          </Link>
-          <Link href="/arkiv" className="whitespace-nowrap rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow sm:px-2.5">
-            Arkiv
-          </Link>
-          <Link href="/statistikk" aria-label="Statistikk" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-              <rect x="3" y="10" width="3" height="7" rx="1" />
-              <rect x="8.5" y="5" width="3" height="12" rx="1" />
-              <rect x="14" y="8" width="3" height="9" rx="1" />
-            </svg>
-          </Link>
-          <Link href="/liga" aria-label="Liga og innlogging" className="rounded-lg px-2 py-1.5 text-mist hover:bg-ink-3 hover:text-snow">🏆</Link>
-        </nav>
-      </div>
-    </header>
-  );
+  const path = usePathname();
+  const links = [{href:"/",name:"Hjem",icon:"⌂"},{href:"/#spill",name:"Spill",icon:"⚽"},{href:"/liga/",name:"Liga",icon:"♜"},{href:"/arkiv/",name:"Arkiv",icon:"▤"}];
+  return <>
+    <header className="stadium-header"><div className="stadium-header-inner">
+      <Link href="/" className="stadium-brand" aria-label="Tippetuppen – forsiden"><span aria-hidden="true">⚽</span>TIPPE<b>TUPPEN</b></Link>
+      <nav aria-label="Hovedmeny">{links.map((l) => <Link key={l.href} href={l.href} aria-current={path === l.href ? "page" : undefined}>{l.name}</Link>)}</nav>
+      <Link href="/liga/" className="stadium-profile"><span aria-hidden="true">♙</span><span>Min profil</span></Link>
+    </div></header>
+    {path === "/" && <nav className="stadium-mobile-nav" aria-label="Mobilmeny">{[...links.slice(0,3),{href:"/liga/#login",name:"Profil",icon:"♙"}].map((l) => <Link key={l.name} href={l.href} aria-current={path === l.href ? "page" : undefined}><span aria-hidden="true">{l.icon}</span>{l.name}</Link>)}</nav>}
+  </>;
 }

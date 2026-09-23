@@ -1,0 +1,75 @@
+{
+  "id": "1998-10-14-nor-alb",
+  "date": "1998-10-14",
+  "competition": "euro-qual",
+  "opponent": "Albania",
+  "opponentCode": "ALB",
+  "norwayHome": true,
+  "score": [
+    2,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:interpretive"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.11v11.com/matches/norway-v-albania-14-october-1998-265841/",
+      "title": "www.11v11.com – Norge mot Albania, 1998-10-14",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Kilden dokumenterer startelleveren og grupperer Håland som forsvarer. Plasseringen hans på midtbanen i spillets 4–4–2-visning er en redaksjonell tolkning; eksakt kampformasjon er ikke dokumentert."
+    }
+  ],
+  "notes": "Vises med fire forsvarere, fire midtbanespillere (Alf-Inge Håland på midtbanen) og to angripere. Den eksakte kampformasjonen og draktnumrene er ikke dokumentert; 11v11 grupperer Håland som forsvarer.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "DF"
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "DF"
+    },
+    {
+      "name": "Alf-Inge Håland",
+      "pos": "MF"
+    },
+    {
+      "name": "Vegard Heggem",
+      "pos": "DF"
+    },
+    {
+      "name": "Erik Hoftun",
+      "pos": "DF"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "MF"
+    },
+    {
+      "name": "Ståle Solbakken",
+      "pos": "MF"
+    },
+    {
+      "name": "Roar Strand",
+      "pos": "MF"
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "FW"
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "FW"
+    }
+  ]
+}

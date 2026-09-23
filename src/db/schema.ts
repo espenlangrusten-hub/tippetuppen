@@ -135,6 +135,12 @@ export const matches = tt.table(
     tags: jsonb("tags").$type<string[]>().notNull().default([]),
     status: text("status").$type<DataStatus>().notNull().default("recall"),
     lineupComplete: boolean("lineup_complete").notNull().default(false),
+    /** Whether the goal list for this match is known to be complete.
+     *  Mirrors the source files' `goalsPartial`, inverted. It has to reach the database
+     *  because the question generators read from here, not from the JSON: without it a
+     *  generator cannot tell "nobody scored" from "we never recorded who scored", and
+     *  will happily build a scoring question on a match whose scorers are unknown. */
+    goalsComplete: boolean("goals_complete").notNull().default(false),
     notes: text("notes"),
     sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
     createdAt: timestamp("created_at", { withTimezone: true })
@@ -477,6 +483,58 @@ export const leagueResults = tt.table(
   ],
 );
 
+// ---------------------------------------------------------------------------
+// Kjappen: the multiplayer quiz show (separate from the daily games)
+// ---------------------------------------------------------------------------
+
+/** Question bank, seeded from the sourced trivia in data/source. Answers never leave the server. */
+export const kjappenQuestions = tt.table("kjappen_questions", {
+  id: text("id").primaryKey(),
+  prompt: text("prompt").notNull(),
+  answer: text("answer").notNull(),
+  aliases: jsonb("aliases").$type<string[]>().notNull().default([]),
+  fact: text("fact"),
+  sources: jsonb("sources").$type<SourceRef[]>().notNull().default([]),
+});
+
+export const kjappenGames = tt.table(
+  "kjappen_games",
+  {
+    code: text("code").primaryKey(), // short, read-aloud join code
+    phase: text("phase").$type<"lobby" | "question" | "answering" | "reveal" | "done">().notNull().default("lobby"),
+    round: integer("round").notNull().default(0),
+    /** The five questions drawn when the game was created, in order. */
+    questionIds: jsonb("question_ids").$type<string[]>().notNull().default([]),
+    buzzedBy: text("buzzed_by"),
+    /** When the running phase expires. The game has no process of its own between
+     *  requests, so this is what makes a countdown real rather than cosmetic. */
+    endsAt: timestamp("ends_at", { withTimezone: true }),
+    /** What happened on the question just shown, for the reveal screen. */
+    lastOutcome: jsonb("last_outcome").$type<{ kind: string; playerId: string | null; delta: number; guess?: string } | null>(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("kjappen_games_created").on(t.createdAt)],
+);
+
+export const kjappenPlayers = tt.table(
+  "kjappen_players",
+  {
+    id: text("id").primaryKey(), // secret: whoever holds it plays as this seat
+    code: text("code").notNull().references(() => kjappenGames.code, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    seat: integer("seat").notNull(), // 1..4, decides podium order
+    /** Which contestant portrait this player wears. Dealt on the server when the seat is
+     *  taken, unique within the game, and never redealt - so a reconnect comes back with
+     *  the same face and every screen agrees on who is who. */
+    avatar: integer("avatar").notNull().default(2),
+    score: integer("score").notNull().default(0),
+    host: boolean("host").notNull().default(false),
+    joinedAt: timestamp("joined_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [uniqueIndex("kjappen_players_seat").on(t.code, t.seat), index("kjappen_players_code").on(t.code)],
+);
+
 export const finnAttempts = tt.table(
   "finn_attempts",
   {
@@ -484,6 +542,9 @@ export const finnAttempts = tt.table(
     puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
     userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
     hintNumber: integer("hint_number").notNull().default(1),
+    // Wrong guesses, in order. A wrong guess opens the next hint rather than ending the
+    // round, so the round has to remember them to come back the same after a refresh.
+    guesses: jsonb("guesses").$type<string[]>().notNull().default([]),
     finished: boolean("finished").notNull().default(false),
     result: jsonb("result").$type<{ correct: boolean; score: number; answer: string; explanation: string }>(),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),

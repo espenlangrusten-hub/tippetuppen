@@ -1,0 +1,75 @@
+{
+  "id": "2007-02-07-cro-nor",
+  "date": "2007-02-07",
+  "competition": "friendly",
+  "opponent": "Kroatia",
+  "opponentCode": "CRO",
+  "norwayHome": false,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698433",
+      "title": "www.fotball.no – Norge mot Kroatia, 2007-02-07",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Håkon Eikemo Opdal",
+      "pos": "GK"
+    },
+    {
+      "name": "Erik Bjørnstad Hagen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Marius Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Anders Rambekk",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristofer Krüger Hæstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Gunnar Solskjær",
+      "pos": "OUT"
+    }
+  ]
+}

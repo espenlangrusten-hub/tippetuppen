@@ -56,30 +56,12 @@ jobs:
         with:
           fetch-depth: 2
 
-      # setup-cli resolves "latest" through the GitHub API, which is rate limited on
-      # shared runners; a graphics-only commit once failed the whole deploy there
-      # without the function having changed at all. Skip the round trip entirely
-      # unless this push actually touched the function. A manual run always deploys.
-      - name: Har funksjonen endret seg?
-        id: changed
-        run: |
-          set -euo pipefail
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || ! git rev-parse HEAD^ >/dev/null 2>&1; then
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "Deployer funksjonen (manuell kjøring eller ingen forrige commit)."
-          elif git diff --quiet HEAD^ HEAD -- supabase/functions; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Funksjonen er uendret i denne commiten – hopper over." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
+      # Deploy the complete desired state on every run. HEAD^ is not the last
+      # deployed commit: a newer push can cancel a run before its API deploy.
       - uses: supabase/setup-cli@v1
-        if: steps.changed.outputs.changed == 'true'
         with:
           version: latest
       - name: Deploy api function
-        if: steps.changed.outputs.changed == 'true'
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: supabase functions deploy api --project-ref "${{ secrets.SUPABASE_PROJECT_REF }}"

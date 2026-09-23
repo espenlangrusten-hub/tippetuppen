@@ -1,0 +1,75 @@
+{
+  "id": "1990-06-06-nor-den",
+  "date": "1990-06-06",
+  "competition": "friendly",
+  "opponent": "Danmark",
+  "opponentCode": "DEN",
+  "norwayHome": true,
+  "score": [
+    1,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.national-football-teams.com/matches/report/30865/Norway_Denmark.html",
+      "title": "www.national-football-teams.com – Norge mot Danmark, 1990-06-06",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bent André Skammelsrud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Ove Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erland Johnsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ola By Rise",
+      "pos": "GK"
+    },
+    {
+      "name": "Jørn Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Dag Riisnæs",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per Ove Ludvigsen",
+      "pos": "OUT"
+    }
+  ]
+}

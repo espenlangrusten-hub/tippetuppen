@@ -1,0 +1,75 @@
+{
+  "id": "2008-10-15-nor-ned",
+  "date": "2008-10-15",
+  "competition": "friendly",
+  "opponent": "Nederland",
+  "opponentCode": "NED",
+  "norwayHome": true,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698434",
+      "title": "www.fotball.no – Norge mot Nederland, 2008-10-15",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Jon Knudsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Jon Inge Høiland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil Wæhler",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Hauger",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Lærum Winsnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "2008-08-20-nor-irl",
+  "date": "2008-08-20",
+  "competition": "friendly",
+  "opponent": "Irland",
+  "opponentCode": "IRL",
+  "norwayHome": true,
+  "score": [
+    1,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697566",
+      "title": "www.fotball.no – Norge mot Irland, 2008-08-20",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Daniel Fredheim Holm",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Lærum Winsnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Strømstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohammed Abdellaoue",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thorstein Helstad",
+      "pos": "OUT"
+    }
+  ]
+}

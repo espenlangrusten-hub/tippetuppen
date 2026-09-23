@@ -1,0 +1,93 @@
+{
+  "id": "1990-11-07-tun-nor",
+  "date": "1990-11-07",
+  "competition": "friendly",
+  "opponent": "Tunisia",
+  "opponentCode": "TUN",
+  "norwayHome": false,
+  "score": [
+    3,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:interpretive"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698027",
+      "title": "www.fotball.no – Norge mot Tunisia, 1990-11-07",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett startellever og draktnumre. Ingen formasjon oppgitt."
+    },
+    {
+      "url": "https://www.11v11.com/matches/tunisia-v-norway-07-november-1990-242625/",
+      "title": "11v11 – Tunisia mot Norge, 1990-11-07",
+      "kind": "web",
+      "note": "Brede posisjonsgrupper; klassifiserer Roger Nilsen som forsvarer. Eksakt formasjon er ikke oppgitt."
+    }
+  ],
+  "notes": "Draktnumrene er fra NFF. Visningen grupperer laget som 4–4–2, med Bjørnebye på venstreback og Roger Nilsen på midtbanen. Eksakt kampformasjon er ikke dokumentert; plasseringen av Nilsen er en tolkning (han ble erstattet av Erik Mykland).",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Einar Rossbach",
+      "pos": "GK",
+      "no": 1
+    },
+    {
+      "name": "Pål Lydersen",
+      "pos": "RB",
+      "no": 2
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "CB",
+      "no": 3
+    },
+    {
+      "name": "Roger Nilsen",
+      "pos": "MF",
+      "no": 4
+    },
+    {
+      "name": "Erik Stensrud Pedersen",
+      "pos": "MF",
+      "no": 5
+    },
+    {
+      "name": "Kåre Ingebrigtsen",
+      "pos": "MF",
+      "no": 6
+    },
+    {
+      "name": "Claus Lehland Eftevaag",
+      "pos": "CB",
+      "no": 7
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "MF",
+      "no": 8
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "LB",
+      "no": 9
+    },
+    {
+      "name": "Tore André Dahlum",
+      "pos": "FW",
+      "no": 11
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "FW",
+      "no": 10,
+      "captain": true
+    }
+  ]
+}

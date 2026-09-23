@@ -1,0 +1,75 @@
+{
+  "id": "2015-09-03-bul-nor",
+  "date": "2015-09-03",
+  "competition": "friendly",
+  "opponent": "Bulgaria",
+  "opponentCode": "BUL",
+  "norwayHome": false,
+  "score": [
+    1,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2015.html",
+      "title": "www.rsssf.org – Norge mot Bulgaria, 2015-09-03",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Ørjan Håskjold Nyland",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Even Hovland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Banor Tettey",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jone Samuelsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Markus Henriksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jo Inge Berget",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Søderlund",
+      "pos": "OUT"
+    }
+  ]
+}

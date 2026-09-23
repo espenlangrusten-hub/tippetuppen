@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalizeName, toTileString, resolveGuess, defaultAliases, slugify } from "@/lib/names";
+import { normalizeName, toTileString, resolveGuess, defaultAliases, slugify, matchKey } from "@/lib/names";
 
 describe("normalizeName", () => {
   it("maps Norwegian letters and accents", () => {
@@ -62,5 +62,43 @@ describe("defaultAliases / slugify", () => {
     expect(a).toContain("OG Solskjær");
     expect(a).toContain("Ole Solskjær");
     expect(slugify("Ole Gunnar Solskjær")).toBe("ole-gunnar-solskjaer");
+  });
+});
+
+describe("spacing in an answer", () => {
+  it("treats a name as the same however the spaces fall", () => {
+    expect(matchKey("HamKam")).toBe(matchKey("ham kam"));
+    expect(matchKey("Ham-Kam")).toBe(matchKey("HamKam"));
+    expect(matchKey("Bodø/Glimt")).toBe(matchKey("bodoglimt"));
+    expect(matchKey("Sarpsborg 08")).toBe("sarpsborg08");
+  });
+
+  it("does not collapse two different names into one", () => {
+    expect(matchKey("Molde")).not.toBe(matchKey("Moss"));
+    expect(matchKey("Start")).not.toBe(matchKey("Stabæk"));
+  });
+
+  it("accepts the guess that only differs by a space", () => {
+    const clubs = [
+      { id: "hamkam", aliases: ["HamKam", "Hamarkameratene"] },
+      { id: "molde", aliases: ["Molde", "Molde FK"] },
+    ];
+    expect(resolveGuess("ham kam", clubs)).toEqual({ kind: "match", id: "hamkam" });
+    expect(resolveGuess("HamKam", clubs)).toEqual({ kind: "match", id: "hamkam" });
+    expect(resolveGuess("hamarkameratene", clubs)).toEqual({ kind: "match", id: "hamkam" });
+  });
+
+  it("still refuses a name nobody offered", () => {
+    expect(resolveGuess("vålerenga", [{ id: "molde", aliases: ["Molde"] }])).toEqual({ kind: "none" });
+  });
+
+  it("leaves an exact match exactly where it was", () => {
+    // The loose pass only runs when the strict one found nothing, so a name that is
+    // already an alias of one candidate cannot be pulled towards another.
+    const players = [
+      { id: "a", aliases: ["Erik Mykland"] },
+      { id: "b", aliases: ["ErikMykland"] },
+    ];
+    expect(resolveGuess("Erik Mykland", players)).toEqual({ kind: "match", id: "a" });
   });
 });

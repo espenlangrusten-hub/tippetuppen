@@ -18,7 +18,15 @@ export type MaalloesPuzzleRow = {
   sourceRef: string;
 };
 
-const MIN_ANSWERS = 6;
+/**
+ * How many valid answers a Målløs puzzle needs before it is worth playing.
+ *
+ * The game asks for five and rewards picking the rarest. At six valid answers that is
+ * not a choice - you name five of six, four of the five scores are forced, and a single
+ * slip costs the full 100. Twelve leaves a real decision on every line. It costs 70 of
+ * 602 puzzles, which is well inside the runway.
+ */
+const MIN_ANSWERS = 12;
 const clamp = (x: number, lo = 1, hi = 95) => Math.max(lo, Math.min(hi, Math.round(x)));
 
 /** Relative recall strength. Converted to a five-pick inclusion probability per puzzle below. */
@@ -153,11 +161,22 @@ function makePuzzle(opts: {
 
 const INTRO = "Fem svar. Velg svar vi anslår at færrest vil velge. Poengene er faste for alle som spiller oppgaven.";
 
-// Arkivet dekker et utvalg av landskampene, ikke alle. Spørsmål som spenner over et år
-// eller et tiår må si det, ellers blir en spiller som faktisk startet en kamp vi ikke har
-// vurdert som feil svar. Vi navngir ikke arkivet: siden har allerede et arkiv over
-// tidligere oppgaver, og to arkiver i samme setning forvirrer mer enn det opplyser.
-const SCOPE = " (av kampene som er med i spillet)";
+/**
+ * Hvilken periode spørsmålene gjelder.
+ *
+ * Startelleven er kjent for hver eneste kamp i arkivet, så et spørsmål om hvem som
+ * startet har et fullstendig svarrom - det eneste en spiller ikke kan vite er hvor
+ * arkivet begynner. Tidligere sto det en henvisning til «kampene som er med i spillet»,
+ * som ikke besvarte det: den fortalte spilleren at svarrommet var kuttet, men ikke hvor.
+ * Perioden regnes ut fra kampene og følger dem hvis arkivet utvides.
+ */
+const scopeFor = (ms: { date: string }[]) => {
+  if (!ms.length) return "";
+  const years = ms.map((m) => Number(m.date.slice(0, 4)));
+  const from = Math.min(...years);
+  const to = Math.max(...years);
+  return from === to ? "" : ` (${from}\u2013${to})`;
+};
 
 export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]> {
   // Sequential on purpose: a pooled connection (Supabase's transaction pooler) will
@@ -385,7 +404,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         id: "mal-cup-winners",
         kind: "cup-winners",
         category: "NM-cupen",
-        question: `Navngi et lag som har vunnet NM-cupen for menn siden ${Math.min(...cup.map((h) => h.year))}`,
+        question: `Navngi et lag som har vunnet NM-cupen for menn i perioden ${Math.min(...cup.map((h) => h.year))}–${Math.max(...cup.map((h) => h.year))}`,
         intro: INTRO,
         answerKind: "club",
         answers: Array.from(wins).map(([c, years]) => clubAnswer(ctx, c, years.length > 3 ? 15 : 0, `${years.length} ${years.length === 1 ? "tittel" : "titler"} (${years.join(", ")})`)),
@@ -405,7 +424,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         id: "mal-top-scorers",
         kind: "top-scorers",
         category: "Toppscorere",
-        question: `Navngi en toppscorer i norsk toppdivisjon siden ${Math.min(...topScorers.map((h) => h.year))}`,
+        question: `Navngi en toppscorer i norsk toppdivisjon i perioden ${Math.min(...topScorers.map((h) => h.year))}–${Math.max(...topScorers.map((h) => h.year))}`,
         intro: INTRO,
         answerKind: "player",
         answers: Array.from(byPlayer).map(([p, years]) => playerAnswer(ctx, p, years.length > 1 ? 10 : 0, `Toppscorer ${years.join(", ")}`)),
@@ -518,7 +537,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-year-${year}`,
       kind: "starters-year",
-      question: `Navngi en spiller som startet en av Norges landskamper fra ${year}${SCOPE}`,
+      question: `Navngi en spiller som startet en av Norges landskamper fra ${year}`,
       matches: yearMatches,
       era: Math.floor(year / 10) * 10,
     });
@@ -532,7 +551,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
       pushStarterGroup({
         id: `mal-starters-${result.key}-${year}`,
         kind: `starters-result-${result.key}`,
-        question: `Navngi en spiller som startet ${result.label} for Norge i ${year}${SCOPE}`,
+        question: `Navngi en spiller som startet ${result.label} for Norge i ${year}`,
         matches: result.matches,
         era: Math.floor(year / 10) * 10,
         quality: 3,
@@ -546,7 +565,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-years-${first}-${second}`,
       kind: "starters-two-years",
-      question: `Navngi en spiller som startet en landskamp for Norge i ${first} eller ${second}${SCOPE}`,
+      question: `Navngi en spiller som startet en landskamp for Norge i ${first} eller ${second}`,
       matches: [...matchesByYear.get(first)!, ...matchesByYear.get(second)!],
       era: Math.floor(first / 10) * 10,
       quality: 3.1,
@@ -558,7 +577,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     pushStarterGroup({
       id: `mal-starters-opponent-${slugify(opponent)}`,
       kind: "starters-opponent",
-      question: `Navngi en spiller som startet en Norge-kamp mot ${opponent}${SCOPE}`,
+      question: `Navngi en spiller som startet en Norge-kamp mot ${opponent}${scopeFor(opponentMatches)}`,
       matches: opponentMatches,
       era: null,
       quality: 3.3,
@@ -579,7 +598,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
       pushStarterGroup({
         id: `mal-starters-decade-${result.key}-${decade}`,
         kind: `starters-decade-${result.key}`,
-        question: `Navngi en spiller som startet en landskamp Norge ${result.label} på ${decade}-tallet${SCOPE}`,
+        question: `Navngi en spiller som startet en landskamp Norge ${result.label} på ${decade}-tallet`,
         matches: result.matches,
         era: decade,
         quality: 3.4,
@@ -645,7 +664,16 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
     for (const g of goals) if (g.team === "norway" && g.playerId && ms.some((m) => m.id === g.matchId)) set.set(g.playerId, (set.get(g.playerId) ?? 0) + 1);
     return set;
   };
-  const tMatches = okMatches.filter((m) => m.competitionId === "world-cup" || m.competitionId === "euro");
+  /**
+   * A scoring question may only be built on matches whose goal list is known complete.
+   *
+   * Målløs charges 100 points - the maximum - for an answer it cannot resolve, so a
+   * scorer the archive never recorded does not merely go missing: the player who names
+   * him is punished for being right. Lineups are complete for every match, which is why
+   * the starter questions above need no such filter; goals are not.
+   */
+  const scoredMatches = okMatches.filter((m) => m.goalsComplete);
+  const tMatches = scoredMatches.filter((m) => m.competitionId === "world-cup" || m.competitionId === "euro");
   const tScorers = scorers(tMatches);
   if (tScorers.size >= MIN_ANSWERS)
     push(
@@ -653,7 +681,7 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         id: "mal-scorers-tournaments",
         kind: "scorers-tournaments",
         category: "Landslaget",
-        question: "Navngi en spiller som har scoret for Norge i et VM- eller EM-sluttspill",
+        question: `Navngi en spiller som har scoret for Norge i et VM- eller EM-sluttspill (${Math.min(...tMatches.map((m) => Number(m.date.slice(0, 4))))}\u2013${Math.max(...tMatches.map((m) => Number(m.date.slice(0, 4))))})`,
         intro: INTRO,
         answerKind: "player",
         answers: Array.from(tScorers).map(([p, n]) => playerAnswer(ctx, p, n > 1 ? 10 : 0, `${n} mål`)),
@@ -663,24 +691,17 @@ export async function buildMaalloesPuzzles(db: Db): Promise<MaalloesPuzzleRow[]>
         quality: 4.5,
       }),
     );
-  const allScorers = scorers(okMatches);
-  if (allScorers.size >= 15)
-    push(
-      makePuzzle({
-        id: "mal-scorers-all",
-        kind: "scorers-all",
-        category: "Landslaget",
-        question: `Navngi en spiller som har scoret for Norge${SCOPE}`,
-        intro: INTRO,
-        answerKind: "player",
-        answers: Array.from(allScorers).map(([p, n]) => playerAnswer(ctx, p, n > 2 ? 12 : 0, `${n} mål i disse kampene`)),
-        explanation: `Spillet dekker ${okMatches.length} landskamper.`,
-        sourceIds: okMatches.map((m) => m.id),
-        status: "single_source",
-        era: null,
-        quality: 3,
-      }),
-    );
+  /**
+   * There is deliberately no "name a player who has scored for Norway" question.
+   *
+   * It reads as a question any Norwegian football fan can answer, and it is - but the
+   * archive holds a verified goal list for only a fraction of the matches, so most
+   * correct answers resolve to nothing and cost the player the full 100. Narrowing it to
+   * the matches we do have would not fix that: the player still cannot see which ones
+   * those are. A question whose scope is invisible has no honest wording, so it is gone
+   * rather than reworded. The tournament question above survives because a World Cup or
+   * Euro finals squad is a closed set the player can reason about.
+   */
   // Squads.
   const bySquad = new Map<string, typeof squads>();
   for (const sq of squads) bySquad.set(sq.tournamentId, [...(bySquad.get(sq.tournamentId) ?? []), sq]);

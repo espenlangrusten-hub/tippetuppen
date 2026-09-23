@@ -28,6 +28,14 @@ on:
     # 03:15 UTC every Monday: tops the schedule up long before it can run out.
     - cron: "15 3 * * 1"
 
+# One at a time. Two runs against the same database fight over the seed transaction:
+# the second waits on a lock the first holds and dies on the statement timeout, which is
+# exactly what happened when three pull requests were merged in quick succession.
+# Queue rather than cancel - a cancelled run would leave the schedule un-topped-up.
+concurrency:
+  group: tippetuppen-data
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest

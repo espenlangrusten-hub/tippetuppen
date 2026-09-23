@@ -30,6 +30,18 @@ export function normalizeName(input: string): string {
   return s;
 }
 
+/**
+ * Comparison key that also ignores where the spaces fall.
+ *
+ * "HamKam", "Ham-Kam" and "ham kam" are one club written three ways, and a player who
+ * types the spacing differently from the registry has not got the answer wrong. Used as
+ * a second pass after the strict comparison, never instead of it, so a name that already
+ * matches exactly keeps resolving exactly as before.
+ */
+export function matchKey(input: string): string {
+  return normalizeName(input).replace(/ /g, "");
+}
+
 /** Tokens of a normalized name. */
 export function nameTokens(input: string): string[] {
   const n = normalizeName(input);
@@ -96,6 +108,12 @@ export function resolveGuess(guess: string, candidates: Candidate[]): MatchResul
   const exact = candidates.filter((c) => c.aliases.some((a) => normalizeName(a) === g));
   if (exact.length === 1) return { kind: "match", id: exact[0].id };
   if (exact.length > 1) return { kind: "ambiguous", ids: exact.map((c) => c.id) };
+  // Same name, different spacing: "ham kam" for HamKam. Only reached when the strict
+  // pass found nothing, so it can add an answer but never change one.
+  const key = matchKey(guess);
+  const spaced = candidates.filter((c) => c.aliases.some((a) => matchKey(a) === key));
+  if (spaced.length === 1) return { kind: "match", id: spaced[0].id };
+  if (spaced.length > 1) return { kind: "ambiguous", ids: spaced.map((c) => c.id) };
   // Token subset match: every guessed token must appear in the candidate's full alias tokens.
   const gTokens = g.split(" ");
   const partial = candidates.filter((c) =>

@@ -990,16 +990,16 @@
  {
   "kind": "top_scorer",
   "year": 2011,
-  "player": "Sigurd Rushfeldt",
+  "player": "Mustafa Abdellaoue",
   "value": 17,
   "status": "single_source",
   "sources": [
    {
-    "url": "https://scorerstats.com/historical-top-scorers/eliteserien",
-    "title": "Historical top scorers in Eliteserien – scorerstats",
+    "url": "https://en.wikipedia.org/wiki/List_of_Eliteserien_top_scorers",
+    "title": "List of Eliteserien top scorers – Wikipedia",
     "kind": "web",
-    "accessed": "2026-09-01",
-    "note": "2008–2023: goals, nationality and club confirmed in search excerpt; player names matched to those facts"
+    "accessed": "2026-09-09",
+    "note": "2011-raden lest: Mustafa Abdellaoue, Tromsø, 17 mål. Erstatter feilaktig Sigurd Rushfeldt."
    }
   ]
  },
@@ -1210,5 +1210,21 @@
     "note": "2008–2023: goals, nationality and club confirmed in search excerpt; player names matched to those facts"
    }
   ]
+ },
+ {
+  "kind": "top_scorer",
+  "year": 2024,
+  "player": "Kristian Eriksen",
+  "value": 14,
+  "status": "single_source",
+  "sources": [{"url":"https://www.moldefk.no/om-klubben/var-historie/2020-2023/2024/eliteserien-2024","title":"Eliteserien 2024 – Molde FK","kind":"web","accessed":"2026-09-09","note":"Lest: Kristian Eriksen ble toppscorer med 14 mål."}]
+ },
+ {
+  "kind": "top_scorer",
+  "year": 2025,
+  "player": "Daniel Karlsbakk",
+  "value": 18,
+  "status": "single_source",
+  "sources": [{"url":"https://www.sarpsborg08.no/nyheter/karlsbakk-toppscorer-2025-det-er-helt-sykt","title":"Karlsbakk toppscorer 2025 – Sarpsborg 08","kind":"web","accessed":"2026-09-09","note":"Lest: Daniel Karlsbakk, 18 mål, toppscorer i Eliteserien 2025."}]
  }
 ]

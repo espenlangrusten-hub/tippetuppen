@@ -30,6 +30,7 @@ function isFirstVisit(): boolean {
 /** Fire-and-forget, cookieless analytics. The Edge Function derives an anonymous daily visitor hash. */
 export function track(p: Payload) {
   if (typeof window === "undefined") return;
+  if (/\/admin(?:\/|$)/.test(window.location.pathname)) return;
   apiBeacon({ ...p, path: window.location.pathname, isNew: isFirstVisit() });
 }
 

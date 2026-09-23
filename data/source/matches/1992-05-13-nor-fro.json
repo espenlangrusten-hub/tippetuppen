@@ -1,0 +1,75 @@
+{
+  "id": "1992-05-13-nor-fro",
+  "date": "1992-05-13",
+  "competition": "friendly",
+  "opponent": "Færøyene",
+  "opponentCode": "FRO",
+  "norwayHome": true,
+  "score": [
+    2,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698030",
+      "title": "www.fotball.no – Norge mot Færøyene, 1992-05-13",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Frode Grodås",
+      "pos": "GK"
+    },
+    {
+      "name": "Henning Stille Berg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Roger Nilsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "OUT"
+    },
+    {
+      "name": "Karl-Petter Løken",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Roar Bohinen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil André Rekdal",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Leonhardsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jahn Ivar Jakobsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frank Strandli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Gøran Sørloth",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -29,6 +29,13 @@ type GameState = {
 
 const POS_LABEL = POSITION_LABEL;
 
+function albaniaPosition(index: number) {
+  if (index === 0) return "Keeper";
+  if (index === 3 || (index >= 6 && index <= 8)) return "Midtbane";
+  if (index >= 9) return "Angriper";
+  return "Forsvarer";
+}
+
 function initState(p: MaskedPuzzle): GameState {
   return { v: 1, puzzleId: p.puzzleId, players: p.players.map(() => ({ guesses: [], tiles: [], solved: false, failed: false })), active: null, finished: false, gaveUp: false, startedAt: null, finishedAt: null, revealed: null, notes: null };
 }
@@ -172,7 +179,9 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         finish({ ...next, players: withNames }, false, rev.players ?? null, rev.notes ?? null);
       } else if (ps.solved || ps.failed) {
         // Auto-advance to the next open shirt in display order.
-        const order = [...puzzle.players].sort((a, b) => b.row - a.row || a.col - b.col).map((p) => p.index);
+        const order = puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania"
+          ? [9, 10, 3, 6, 7, 8, 1, 2, 4, 5, 0]
+          : [...puzzle.players].sort((a, b) => b.row - a.row || a.col - b.col).map((p) => p.index);
         const from = order.indexOf(i);
         const nextIdx = [...order.slice(from + 1), ...order.slice(0, from)].find((k) => !players[k].solved && !players[k].failed) ?? null;
         setState({ ...next, active: nextIdx });
@@ -249,6 +258,12 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   };
 
   const rows = useMemo(() => {
+    // Older published daily payloads retain their old pitch coordinates until rebuilt.
+    // The sourced match groups are stable in lineup order, so correct today's board too.
+    if (puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania") {
+      const byIndex = new Map(puzzle.players.map((p) => [p.index, p]));
+      return [[9, 10], [3, 6, 7, 8], [1, 2, 4, 5], [0]].map((group) => group.map((i) => byIndex.get(i)!).filter(Boolean));
+    }
     const byRow = new Map<number, MaskedPlayer[]>();
     for (const p of puzzle.players) {
       if (!byRow.has(p.row)) byRow.set(p.row, []);
@@ -264,27 +279,30 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const found = state.players.filter((p) => p.solved).length;
   const triesTotal = state.players.reduce((a, p) => a + triesUsed(p), 0);
   const scoreline = puzzle.norwayHome ? `Norge ${puzzle.score[0]}–${puzzle.score[1]} ${puzzle.opponent}` : `${puzzle.opponent} ${puzzle.score[1]}–${puzzle.score[0]} Norge`;
+  const broadPositionsOnly = puzzle.matchDate === "1998-10-14" && puzzle.opponent === "Albania";
+  const interpretiveTunisia = puzzle.matchDate === "1990-11-07" && puzzle.opponent === "Tunisia";
 
   return (
-    <div className="flex flex-col gap-4 pb-64 sm:pb-72" style={panelHeight ? { paddingBottom: panelHeight + 24 } : undefined}>
+    <div className="mxi-shell flex flex-col gap-5 pb-64 sm:pb-72" style={panelHeight ? { paddingBottom: panelHeight + 24 } : undefined}>
       {/* Match header */}
-      <div className="card p-4">
-        <div className="flex items-center justify-between text-xs uppercase tracking-widest text-mist">
+      <div className="mxi-match p-5 sm:p-7">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold uppercase tracking-widest text-[#9af5ac]">
           <span>
             Mangler XI #{puzzle.number}
             {isArchive && " · arkiv"}
           </span>
           <span>{formatShortDateNo(puzzle.matchDate)}</span>
         </div>
-        <div className="mt-1 font-display text-3xl font-bold uppercase leading-none sm:text-4xl">{scoreline}</div>
-        <div className="mt-1 text-sm text-mist">
-          {puzzle.stage ?? puzzle.competition}
+        <div className="mt-4 font-display text-4xl font-bold uppercase leading-none sm:text-6xl">{scoreline}</div>
+        <div className="mt-3 text-base text-mist">
+          {broadPositionsOnly ? "EM-kvalifisering 1998" : puzzle.stage ?? puzzle.competition}
           {puzzle.venue ? ` · ${puzzle.venue}` : ""}
           {puzzle.city ? `, ${puzzle.city}` : ""}
         </div>
-        <div className="mt-1 text-sm text-mist">
+        <div className="mt-2 text-sm text-mist">
           {puzzle.manager ? `Landslagssjef: ${puzzle.manager}` : ""}
-          {puzzle.formation ? ` · ${puzzle.formation}` : ""}
+          {!broadPositionsOnly && puzzle.formation ? ` · ${puzzle.formation}` : ""}
+          {interpretiveTunisia ? " · Vist som 4–4–2 (tolket plassering)" : ""}
           {puzzle.opponentScorers.length ? ` · Mål ${puzzle.opponent}: ${formatScorers(puzzle.opponentScorers)}` : ""}
         </div>
       </div>
@@ -293,28 +311,29 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
 
       {/* Score and give-up sit above the pitch, not on it: overlaid at the bottom they
           ended up behind the guess panel, and overlaid at the top they covered a shirt. */}
-      <div className="flex items-center justify-between px-1">
-        <span className="font-display text-xl font-bold text-snow">{found}/11</span>
+      <div className="mxi-progress flex items-center justify-between px-4 py-3">
+        <span className="font-display text-2xl font-bold text-snow"><span className="text-[#9af5ac]">{found}</span>/11 funnet</span>
         {!state.finished && (
-          <button type="button" onClick={() => setConfirmGiveUp(true)} className="rounded-lg bg-ink-3 px-3 py-1 text-xs font-semibold text-mist hover:bg-line-2 hover:text-snow">
+          <button type="button" onClick={() => setConfirmGiveUp(true)} className="rounded-lg bg-ink-3 px-3 py-2 text-sm font-semibold text-mist hover:bg-line-2 hover:text-snow">
             Gi opp
           </button>
         )}
       </div>
 
       {/* Pitch */}
-      <div className="pitch relative overflow-hidden rounded-2xl border border-pitch-line/30 px-2 py-4">
+      {broadPositionsOnly && <p className="px-1 text-sm text-mist">Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
+      <div className="pitch mxi-pitch relative overflow-hidden rounded-2xl border border-pitch-line/30 px-2 py-5 sm:px-5 sm:py-8">
         <div className="pointer-events-none absolute inset-3 rounded-lg border-2 border-pitch-line/50" />
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-pitch-line/50" />
         <div className="pointer-events-none absolute left-1/2 top-3 h-14 w-40 -translate-x-1/2 border-2 border-t-0 border-pitch-line/50" />
         <div className="pointer-events-none absolute bottom-3 left-1/2 h-14 w-40 -translate-x-1/2 border-2 border-b-0 border-pitch-line/50" />
-        <div className="relative flex flex-col gap-3">
+        <div className="relative flex flex-col gap-5 sm:gap-9">
           {rows.map((row, ri) => (
             <div key={ri} className="flex justify-around">
               {row.map((p) => {
                 const ps = state.players[p.index];
                 const isActive = state.active === p.index;
-                return <Shirt key={p.index} p={p} ps={ps} active={isActive} onClick={() => selectPlayer(p.index)} finished={state.finished} />;
+                return <Shirt key={p.index} p={p} ps={ps} active={isActive} onClick={() => selectPlayer(p.index)} finished={state.finished} positionLabel={broadPositionsOnly ? albaniaPosition(p.index) : undefined} />;
               })}
             </div>
           ))}
@@ -329,7 +348,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
               <li key={p.index} className="flex items-center gap-2">
                 <span className="w-7 text-right font-display text-lg text-mist">{p.no ?? ""}</span>
                 <span className={state.players[p.index].solved ? "" : "text-flag-2"}>{state.revealed?.[p.index]?.name}</span>
-                <span className="text-xs text-fog">{POS_LABEL[p.pos]}</span>
+                <span className="text-xs text-fog">{broadPositionsOnly ? albaniaPosition(p.index) : POS_LABEL[p.pos]}</span>
                 {p.captain && <span className="rounded bg-ink-3 px-1 text-[10px]">C</span>}
                 {p.goals > 0 && <span>{"⚽".repeat(p.goals)}</span>}
               </li>
@@ -342,14 +361,14 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
 
       {/* Guess panel */}
       {!state.finished && (
-        <div ref={panelRef} className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-ink/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
+        <div ref={panelRef} className="mxi-guess-panel fixed inset-x-0 bottom-0 z-30 border-t border-line bg-ink/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
           <div className="mx-auto max-w-3xl px-2 pt-2 pb-2">
             {active && activeState ? (
               <>
                 <div className="flex items-center justify-between px-1 text-xs text-mist">
                   <span>
                     {active.no != null && <b className="font-display text-base text-snow">#{active.no} </b>}
-                    {POS_LABEL[active.pos]}
+                    {broadPositionsOnly ? albaniaPosition(active.index) : POS_LABEL[active.pos]}
                     {active.captain ? " · kaptein" : ""}
                     {active.goals ? ` · ${"⚽".repeat(active.goals)}` : ""}
                   </span>
@@ -408,7 +427,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       {showIntro && (
         <Modal onClose={dismissIntro} title="Slik spiller du Mangler XI">
           <ol className="list-decimal space-y-2 pl-5 text-sm text-mist">
-            <li>Dette er Norges startellever fra en ekte landskamp. Du ser motstander, resultat og posisjoner – men ikke navnene.</li>
+            <li>Dette er Norges startellever fra en ekte landskamp. Du ser motstander og resultat; posisjoner vises når de er dokumentert i kilden.</li>
             <li>Trykk på en drakt og skriv etternavnet bokstav for bokstav. Prikkene viser hvor mange bokstaver navnet har.</li>
             <li>
               Etter hvert forsøk farges bokstavene: <span className="rounded bg-correct px-1 text-ink">grønn</span> riktig plass, <span className="rounded bg-present px-1 text-ink">gul</span> finnes i navnet, grå finnes ikke.
@@ -445,7 +464,7 @@ function TileRow({ letters, states, small, activeIndex, hint }: { letters: strin
   const gap = small ? 0.125 : 0.25;
   const cap = small ? "1.5rem" : "2.35rem";
   const style = {
-    "--tile-w": `min(${cap}, calc((100vw - 1.5rem - ${((n - 1) * gap).toFixed(3)}rem) / ${n}))`,
+    "--tile-w": `min(${cap}, calc((var(--mxi-row-width, 100vw) - 1.5rem - ${((n - 1) * gap).toFixed(3)}rem) / ${n}))`,
   } as React.CSSProperties;
   return (
     <div className={`flex ${small ? "gap-0.5" : "gap-1"}`} style={style} aria-label={states ? `Forsøk: ${letters}` : "Ditt forsøk"}>
@@ -468,7 +487,7 @@ function TileRow({ letters, states, small, activeIndex, hint }: { letters: strin
   );
 }
 
-function Shirt({ p, ps, active, onClick, finished }: { p: MaskedPlayer; ps: PlayerState; active: boolean; onClick: () => void; finished: boolean }) {
+function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedPlayer; ps: PlayerState; active: boolean; onClick: () => void; finished: boolean; positionLabel?: string }) {
   const cls = ps.solved ? "shirt-solved" : ps.failed ? "shirt-failed" : p.pos === "GK" ? "shirt-gk" : "";
   const label = ps.name ? ps.name.split(" ").slice(-1)[0].toUpperCase() : p.wordLengths.map((n) => "·".repeat(n)).join(" ");
   const used = triesUsed(ps);
@@ -478,17 +497,17 @@ function Shirt({ p, ps, active, onClick, finished }: { p: MaskedPlayer; ps: Play
       onClick={onClick}
       disabled={finished || ps.solved || ps.failed}
       className="flex w-16 flex-col items-center gap-0.5 sm:w-24"
-      aria-label={`Drakt ${p.no ?? p.pos}, ${POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
+      aria-label={`Drakt ${p.no != null ? p.no : "med ukjent nummer"}, ${positionLabel ?? POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
     >
       <div className={`shirt ${cls} ${active ? "shirt-active" : ""}`}>
-        <span className="text-lg">{p.no ?? p.pos}</span>
-        {p.captain && <span className="absolute -right-1 bottom-0 rounded bg-ink px-1 text-[9px] text-snow">C</span>}
+        {p.no != null && <span className="text-lg">{p.no}</span>}
         {p.goals > 0 && <span className="absolute -left-1 -top-1 text-xs">{p.goals > 1 ? `⚽×${p.goals}` : "⚽"}</span>}
       </div>
       <div className={`max-w-full truncate rounded px-1 font-display text-[11px] font-bold tracking-wider sm:text-xs ${ps.solved ? "bg-correct text-ink" : ps.failed ? "bg-flag/80 text-white" : "bg-white/90 text-ink"}`}>
         {label}
         {!ps.solved && !ps.failed && used > 0 && <span className="ml-1 text-fog">{used}</span>}
       </div>
+      {p.captain && <span className="text-[10px] text-mist">Kaptein</span>}
     </button>
   );
 }

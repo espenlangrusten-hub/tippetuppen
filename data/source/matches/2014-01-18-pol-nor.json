@@ -1,0 +1,75 @@
+{
+  "id": "2014-01-18-pol-nor",
+  "date": "2014-01-18",
+  "competition": "friendly",
+  "opponent": "Polen",
+  "opponentCode": "POL",
+  "norwayHome": false,
+  "score": [
+    0,
+    3
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2014.html",
+      "title": "www.rsssf.org – Norge mot Polen, 2014-01-18",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Kenneth Høie",
+      "pos": "GK"
+    },
+    {
+      "name": "Espen Ruud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Strandberg",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Kristiansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Yann-Erik de Lanlay",
+      "pos": "OUT"
+    },
+    {
+      "name": "Abdisalam Ibrahim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Thomas Kind Bendiksen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ola Kamara",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Andre Huseklepp",
+      "pos": "OUT"
+    }
+  ]
+}

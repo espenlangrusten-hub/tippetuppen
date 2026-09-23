@@ -1,0 +1,75 @@
+{
+  "id": "2013-11-19-nor-sco",
+  "date": "2013-11-19",
+  "competition": "friendly",
+  "opponent": "Skottland",
+  "opponentCode": "SCO",
+  "norwayHome": true,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2013.html",
+      "title": "www.rsssf.org – Norge mot Skottland, 2013-11-19",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Ørjan Håskjold Nyland",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tore Reginiussen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per Ciljan Skjelbred",
+      "pos": "OUT"
+    },
+    {
+      "name": "Magnus Wolff Eikrem",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ruben Yttergård Jenssen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Marcus Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ola Kamara",
+      "pos": "OUT"
+    }
+  ]
+}

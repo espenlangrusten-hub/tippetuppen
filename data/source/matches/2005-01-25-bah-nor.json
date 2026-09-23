@@ -1,0 +1,75 @@
+{
+  "id": "2005-01-25-bah-nor",
+  "date": "2005-01-25",
+  "competition": "friendly",
+  "opponent": "Bahrain",
+  "opponentCode": "BAH",
+  "norwayHome": false,
+  "score": [
+    1,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697592",
+      "title": "www.fotball.no – Norge mot Bahrain, 2005-01-25",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Espen Johnsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ole Christer Basma",
+      "pos": "OUT"
+    },
+    {
+      "name": "Frode Kippe",
+      "pos": "OUT"
+    },
+    {
+      "name": "Petter Normann Rudi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Lars Iver Strand",
+      "pos": "OUT"
+    },
+    {
+      "name": "Ardian Gashi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erlend Kaldestad Hanstveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Øyvind Storflor",
+      "pos": "OUT"
+    },
+    {
+      "name": "Raymond Kvisvik",
+      "pos": "OUT"
+    },
+    {
+      "name": "Bengt Henning Sæternes",
+      "pos": "OUT"
+    }
+  ]
+}

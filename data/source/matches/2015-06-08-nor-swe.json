@@ -1,0 +1,75 @@
+{
+  "id": "2015-06-08-nor-swe",
+  "date": "2015-06-08",
+  "competition": "friendly",
+  "opponent": "Sverige",
+  "opponentCode": "SWE",
+  "norwayHome": true,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2015.html",
+      "title": "www.rsssf.org – Norge mot Sverige, 2015-06-08",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Ørjan Håskjold Nyland",
+      "pos": "GK"
+    },
+    {
+      "name": "Omar Elabdellaoui",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nordtveit",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Tom Høgli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Banor Tettey",
+      "pos": "OUT"
+    },
+    {
+      "name": "Stefan Johansen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per Ciljan Skjelbred",
+      "pos": "OUT"
+    },
+    {
+      "name": "Håvard Nielsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Joshua King",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -42,6 +42,7 @@ jobs:
         timeout-minutes: 5
         env:
           DATABASE_URL: postgres://postgres@127.0.0.1:5544/postgres
+          ADMIN_KEY: local-ci-admin-stats-only
         run: |
           set -euo pipefail
           npm run db:migrate

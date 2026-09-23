@@ -1,0 +1,46 @@
+.caption {
+  position: absolute;
+  z-index: 2;
+  right: 76px;
+  bottom: 14px;
+  left: auto;
+  max-width: calc(100% - 96px);
+  display: grid;
+  gap: 2px;
+  text-align: right;
+  text-shadow: 0 2px 8px #000, 0 0 14px #060c24;
+  pointer-events: none;
+}
+
+.caption p {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.05;
+  white-space: nowrap;
+}
+
+.caption > span {
+  color: #c4cce1;
+  font-size: 12px;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .caption {
+    right: 55px;
+    bottom: 10px;
+    max-width: calc(100% - 68px);
+    gap: 1px;
+  }
+
+  .caption p {
+    font-size: 10px;
+  }
+
+  .caption > span {
+    font-size: 9px;
+  }
+}

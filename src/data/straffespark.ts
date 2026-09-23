@@ -14,6 +14,7 @@ export type DeriveInput = {
   honours: Honour[];
   clubs: Club[];
   players: Map<string, PlayerRecord>;
+  matches: S.MatchFile[];
 };
 
 /**
@@ -148,6 +149,59 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
     }
   }
 
+  // The national-team match archive is large enough to turn Straffespark into a true
+  // daily game instead of a short beta loop. These are deliberately simple factual
+  // questions whose answer is fully determined by the same sourced match row Mangler XI
+  // already uses. Two independent prompts per eligible match take the playable pool well
+  // beyond 500 questions, which lets the daily rotation keep every individual question
+  // out of circulation for at least 100 days.
+  const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
+  const dateLabel = (date: string) => {
+    const [year, month, day] = date.split("-").map(Number);
+    return `${day}. ${months[month - 1]} ${year}`;
+  };
+
+  for (const match of input.matches) {
+    if (!isPlayable({ enabled: true, status: match.status }) || match.sources.length === 0) continue;
+    const year = Number(match.date.slice(0, 4));
+    const date = dateLabel(match.date);
+    const era = year >= 1990 && year <= 2026 ? year : undefined;
+    const matchDifficulty = clamp(ageDifficulty(year) + (match.importance <= 2 ? 1 : 0));
+
+    out.push({
+      kind: "trivia",
+      id: `str-auto-landslag-${match.id}`,
+      category: "landslag",
+      enabled: true,
+      prompt: `Hvilket landslag møtte Norge ${date}?`,
+      answer: { label: match.opponent, aliases: [] },
+      fact: `Norge møtte ${match.opponent} ${date}.`,
+      era,
+      difficulty: matchDifficulty,
+      status: match.status,
+      sources: match.sources,
+    });
+
+    const home = match.norwayHome ? "Norge" : match.opponent;
+    const away = match.norwayHome ? match.opponent : "Norge";
+    const homeScore = match.norwayHome ? match.score[0] : match.score[1];
+    const awayScore = match.norwayHome ? match.score[1] : match.score[0];
+    const result = `${homeScore}-${awayScore}`;
+    out.push({
+      kind: "trivia",
+      id: `str-auto-resultat-${match.id}`,
+      category: "resultat",
+      enabled: true,
+      prompt: `Hva ble sluttresultatet i ${home}–${away} ${date}?`,
+      answer: { label: result, aliases: [] },
+      fact: `Kampen endte ${homeScore}–${awayScore}.`,
+      era,
+      difficulty: clamp(matchDifficulty + 1),
+      status: match.status,
+      sources: match.sources,
+    });
+  }
+
   return out;
 }
 
@@ -156,8 +210,11 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
  * source. Entries written from memory sit at `recall` until a verifier attaches the page
  * that confirms them - the same bar every other fact in the dataset is held to, and the
  * reason a wrong answer cannot quietly become a question.
+ *
+ * Deliberately structural rather than tied to one file's type: Kjappen keeps its own
+ * bank, and both are held to this bar.
  */
-export function isPlayable(q: StraffesparkQuestion): boolean {
+export function isPlayable(q: { enabled: boolean; status: string }): boolean {
   return q.enabled && (q.status === "verified" || q.status === "single_source");
 }
 
@@ -183,4 +240,18 @@ export function summarizePool(pool: StraffesparkQuestion[]): PoolSummary {
     }
   }
   return summary;
+}
+
+/**
+ * Står svaret som et eget ord i spørsmålet?
+ *
+ * «Brann Stadion» inneholder «Brann» som eget ord - svaret kan leses rett av teksten.
+ * «Høddvoll» inneholder «Hødd» bare som forstavelse inne i et lengre ord, og å komme fra
+ * det til klubben krever at man vet hvem Hødd er. Ordgrensen er nettopp skillet mellom å
+ * lese svaret og å kunne det.
+ */
+export function answerIsSpelledOut(prompt: string, label: string): boolean {
+  const needle = normalizeName(label);
+  if (!needle) return false;
+  return new RegExp(`(^| )${needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}( |$)`).test(normalizeName(prompt));
 }

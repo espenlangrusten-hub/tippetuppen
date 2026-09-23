@@ -1,0 +1,207 @@
+/* Typography pass for Kjappen.
+   The premium skin originally mixed Inter, pixel type and Barlow. The result felt more
+   like a generic app than the illustrated quiz-show logo. Keep one strong condensed
+   display face across the experience, with size/spacing tuned for readability. */
+
+.kj-v2,
+.kj-v2 button,
+.kj-v2 input {
+  font-family: var(--font-display);
+}
+
+/* Override the more specific font choices in both the original set and v2 skin. */
+.kj-v2 [class^="kj-"],
+.kj-v2 [class*=" kj-"] {
+  font-family: var(--font-display);
+}
+
+.kj-v2 .kj-entry-kicker {
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.kj-v2 .kj-tagline {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.015em;
+}
+
+.kj-v2 .kj-entry-title {
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.kj-v2 .kj-entry-note {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.kj-v2 .kj-btn {
+  font-size: 1.03rem;
+  font-weight: 700;
+  letter-spacing: 0.065em;
+}
+
+.kj-v2 .kj-btn-ghost,
+.kj-v2 .kj-code-chip {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-label {
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+}
+
+.kj-v2 .kj-input {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.kj-v2 .kj-input-code {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.kj-v2 .kj-panel {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-panel-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-host-plate {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-bubble {
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  font-weight: 600;
+}
+
+.kj-v2 .kj-bubble-fact {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.kj-v2 .kj-board-strip {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.kj-v2 .kj-board-round {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.kj-v2 .kj-board-question {
+  font-size: clamp(1.55rem, 2.35vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0.005em;
+}
+
+.kj-v2 .kj-board-timer > span {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-ready-kicker {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.kj-v2 .kj-ready-title {
+  font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.kj-v2 .kj-ready-number {
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.kj-v2 .kj-ready-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.kj-v2 .kj-podium-name {
+  font-size: clamp(0.82rem, 1.25vw, 1.03rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.kj-v2 .kj-podium-score {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 700;
+}
+
+.kj-v2 .kj-buzzer-label {
+  font-size: clamp(0.88rem, 1.4vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.055em;
+}
+
+.kj-v2 .kj-buzzer-status strong {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+
+.kj-v2 .kj-buzzer-status > span {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.kj-v2 .kj-meta-card b {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.kj-v2 .kj-meta-card small,
+.kj-v2 .kj-rules {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.kj-v2 .kj-winner-board strong,
+.kj-v2 .kj-champ-name {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.kj-v2 .kj-champ-score,
+.kj-v2 .kj-final-score {
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .kj-v2 .kj-tagline { font-size: 1.08rem; }
+  .kj-v2 .kj-entry-note { font-size: 0.78rem; }
+  .kj-v2 .kj-btn { font-size: 0.96rem; }
+  .kj-v2 .kj-board-question { font-size: clamp(1.25rem, 5.5vw, 1.65rem); }
+  .kj-v2 .kj-board-strip { font-size: 0.82rem; }
+  .kj-v2 .kj-ready-title { font-size: clamp(1.3rem, 6vw, 1.75rem); }
+  .kj-v2 .kj-ready-sub { font-size: 0.8rem; }
+  .kj-v2 .kj-podium-name { font-size: 0.72rem; }
+  .kj-v2 .kj-podium-score { font-size: 1.05rem; }
+  .kj-v2 .kj-buzzer-label { font-size: 0.88rem; }
+  .kj-v2 .kj-buzzer-status strong { font-size: 0.86rem; }
+  .kj-v2 .kj-buzzer-status > span { font-size: 0.72rem; }
+}

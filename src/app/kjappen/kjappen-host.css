@@ -1,0 +1,54 @@
+/* Full-body presenter: preserve alpha and show both shoes on every viewport. */
+.kj-v2:not(.kj-shell-entry) .kj-host { overflow: visible !important; }
+.kj-v2:not(.kj-shell-entry) .kj-host-frame {
+  display: grid !important;
+  place-items: end center;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  animation: none !important;
+}
+.kj-v2:not(.kj-shell-entry) .kj-host-frame::before,
+.kj-v2:not(.kj-shell-entry) .kj-host-frame::after,
+.kj-v2:not(.kj-shell-entry) .kj-host-plate { display: none !important; }
+.kj-v2:not(.kj-shell-entry) .kj-host-frame img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 180px !important;
+  height: clamp(140px, 27vh, 270px) !important;
+  aspect-ratio: 2 / 3 !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: drop-shadow(0 4px 8px #0006);
+  animation: none !important;
+}
+@media (max-width: 760px) {
+  .kj-v2:not(.kj-shell-entry) .kj-host {
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame img {
+    height: 96px !important;
+    max-width: 64px !important;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .kj-v2:not(.kj-shell-entry) .kj-host-frame img { height: 80px !important; }
+}

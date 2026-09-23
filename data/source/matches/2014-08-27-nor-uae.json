@@ -1,0 +1,75 @@
+{
+  "id": "2014-08-27-nor-uae",
+  "date": "2014-08-27",
+  "competition": "friendly",
+  "opponent": "De forente arabiske emirater",
+  "opponentCode": "UAE",
+  "norwayHome": true,
+  "score": [
+    0,
+    0
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2014.html",
+      "title": "www.rsssf.org – Norge mot De forente arabiske emirater, 2014-08-27",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Rune Almenning Jarstein",
+      "pos": "GK"
+    },
+    {
+      "name": "Martin Linnes",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Hagen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Vegard Forren",
+      "pos": "OUT"
+    },
+    {
+      "name": "Per-Egil Flo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Yann-Erik de Lanlay",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jone Samuelsen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Martin Ødegaard",
+      "pos": "OUT"
+    },
+    {
+      "name": "Mohamed Elyounoussi",
+      "pos": "OUT"
+    },
+    {
+      "name": "Marcus Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Fredrik Gulbrandsen",
+      "pos": "OUT"
+    }
+  ]
+}

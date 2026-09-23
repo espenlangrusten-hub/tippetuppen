@@ -1,0 +1,75 @@
+{
+  "id": "2011-02-09-pol-nor",
+  "date": "2011-02-09",
+  "competition": "friendly",
+  "opponent": "Polen",
+  "opponentCode": "POL",
+  "norwayHome": false,
+  "score": [
+    0,
+    1
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.rsssf.org/tablesn/noo-intres2011.html",
+      "title": "www.rsssf.org – Norge mot Polen, 2011-02-09",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Jon Knudsen",
+      "pos": "GK"
+    },
+    {
+      "name": "Espen Ruud",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kjetil Wæhler",
+      "pos": "OUT"
+    },
+    {
+      "name": "Brede Hangeland",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Arne Semundseth Riise",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Andre Huseklepp",
+      "pos": "OUT"
+    },
+    {
+      "name": "Alexander Banor Tettey",
+      "pos": "OUT"
+    },
+    {
+      "name": "Henning Hauger",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "tippetuppen"."kjappen_players" ADD COLUMN "avatar" integer DEFAULT 2 NOT NULL;

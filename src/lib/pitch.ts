@@ -12,6 +12,8 @@ export function positionDepth(pos: Position): number {
   switch (pos) {
     case "GK":
       return 0;
+    case "OUT":
+      return 25;
     case "CB":
     case "DF":
       return 10;
@@ -109,6 +111,12 @@ export function layoutPitch(players: { pos: Position; order: number }[], formati
       groups.push(ranked.slice(at, at + size));
       at += size;
     }
+  } else if (outfield.length > 0 && outfield.every((p) => p.pos === "OUT")) {
+    // The source names the starters but not their roles. Two neutral rows keep
+    // the board readable without pretending that a player was a defender or a
+    // forward.
+    const split = Math.ceil(outfield.length / 2);
+    groups = [outfield.slice(0, split), outfield.slice(split)];
   } else {
     const byLine = new Map<number, typeof ranked>();
     for (const p of ranked) {
@@ -138,8 +146,9 @@ export function layoutPitch(players: { pos: Position; order: number }[], formati
  * a back three in a 3-5-2 has them in the midfield five, a back five has them in
  * defence. Every other position belongs to exactly one line.
  */
-export function positionKind(pos: Position): "keeper" | "defence" | "wingback" | "midfield" | "attack" {
+export function positionKind(pos: Position): "keeper" | "outfield" | "defence" | "wingback" | "midfield" | "attack" {
   if (pos === "RWB" || pos === "LWB") return "wingback";
+  if (pos === "OUT") return "outfield";
   const d = positionDepth(pos);
   if (d === 0) return "keeper";
   if (d < 20) return "defence";

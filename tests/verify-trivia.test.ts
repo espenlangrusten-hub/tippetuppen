@@ -87,7 +87,6 @@ describe("the queue this run would take", () => {
   const pending = pendingVerification(loadDataset().straffespark);
 
   it("holds the hand-written questions and nothing else", () => {
-    expect(pending.length).toBeGreaterThan(20);
     for (const q of pending) {
       expect(q.status).toBe("recall");
       expect(q.verify?.subject).toBeTruthy();

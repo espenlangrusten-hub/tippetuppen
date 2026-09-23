@@ -18,9 +18,10 @@ const step = (msg: string) => console.log(`[${new Date().toISOString().slice(11,
 
 const handle = await getDbHandle();
 const db = handle.db;
-// Hint changes apply to future rounds; started/published rounds keep their clues.
-const publishedFinn = new Set((await db.select({ id: s.schedule.puzzleId }).from(s.schedule)
-  .where(sql`${s.schedule.game} = 'finn-spilleren' and ${s.schedule.date} <= ${osloDateKey()}`)).map((r) => r.id));
+// A published round is the same puzzle and answers for everyone, even after a
+// source correction or a new import. Apply those changes to future rounds only.
+const published = new Set((await db.select({ id: s.schedule.puzzleId }).from(s.schedule)
+  .where(sql`${s.schedule.date} <= ${osloDateKey()}`)).map((r) => r.id));
 
 step("Reading matches and lineups…");
 const mxi = await buildManglerXiPuzzles(db);
@@ -30,17 +31,17 @@ const finn = await buildFinnSpillerenPuzzles(db);
 step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
 let upserts = 0;
 for (const p of [...mxi, ...mal, ...finn]) {
-  if (p.game === "finn-spilleren" && publishedFinn.has(p.id)) continue;
+  if (published.has(p.id)) continue;
   const row = { id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef };
   await db
     .insert(s.puzzles)
     .values(row)
-    .onConflictDoUpdate({ target: s.puzzles.id, set: { title: row.title, payload: row.payload, difficulty: row.difficulty, quality: row.quality, era: row.era, tags: row.tags, fingerprint: row.fingerprint, sourceRef: row.sourceRef } });
+    .onConflictDoUpdate({ target: s.puzzles.id, set: { eligible: true, title: row.title, payload: row.payload, difficulty: row.difficulty, quality: row.quality, era: row.era, tags: row.tags, fingerprint: row.fingerprint, sourceRef: row.sourceRef } });
   upserts++;
   if (upserts % 20 === 0) step(`  …${upserts} puzzles written`);
 }
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
-const known = new Set([...mxi, ...mal, ...finn].map((p) => p.id));
+const known = new Set([...mxi, ...mal, ...finn].map((p) => p.id).concat([...published]));
 const existing = await db.select({ id: s.puzzles.id }).from(s.puzzles);
 for (const e of existing) if (!known.has(e.id)) await db.update(s.puzzles).set({ eligible: false }).where(eq(s.puzzles.id, e.id));
 

@@ -1,0 +1,75 @@
+{
+  "id": "2005-09-03-svn-nor",
+  "date": "2005-09-03",
+  "competition": "friendly",
+  "opponent": "Slovenia",
+  "opponentCode": "SVN",
+  "norwayHome": false,
+  "score": [
+    3,
+    2
+  ],
+  "importance": 2,
+  "tags": [
+    "import:verified-xi-workbook",
+    "position:undocumented"
+  ],
+  "status": "single_source",
+  "sources": [
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697642",
+      "title": "www.fotball.no – Norge mot Slovenia, 2005-09-03",
+      "kind": "web",
+      "accessed": "2026-09-11",
+      "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    }
+  ],
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "goalsPartial": true,
+  "lineup": [
+    {
+      "name": "Thomas Harald Myhre",
+      "pos": "GK"
+    },
+    {
+      "name": "André Bergdølmo",
+      "pos": "OUT"
+    },
+    {
+      "name": "Claus Lundekvam",
+      "pos": "OUT"
+    },
+    {
+      "name": "Erik Bjørnstad Hagen",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jon Inge Høiland",
+      "pos": "OUT"
+    },
+    {
+      "name": "Kristofer Krüger Hæstad",
+      "pos": "OUT"
+    },
+    {
+      "name": "Jan Gunnar Solli",
+      "pos": "OUT"
+    },
+    {
+      "name": "Christian Grindheim",
+      "pos": "OUT"
+    },
+    {
+      "name": "Morten Gamst Pedersen",
+      "pos": "OUT"
+    },
+    {
+      "name": "John Carew",
+      "pos": "OUT"
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT"
+    }
+  ]
+}

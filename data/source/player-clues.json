@@ -448,5 +448,101 @@
         "accessed": "2026-09-08"
       }
     ]
+  },
+  {
+    "playerId": "jan-age-fjortoft",
+    "hints": [
+      "Jeg spilte for Gursken og Hødd før HamKam.",
+      "Jeg ble født i Ålesund i 1967.",
+      "Jeg spilte for Rapid Wien før jeg gikk til Swindon Town i 1993."
+    ],
+    "sources": [
+      {
+        "url": "https://de.wikipedia.org/wiki/Jan_%C3%85ge_Fj%C3%B8rtoft",
+        "title": "Jan Åge Fjørtoft",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "ronny-johnsen",
+    "hints": [
+      "Jeg spilte for Sem og Stokke som ung, og startet som spiss i Eik-Tønsberg.",
+      "Jeg ble født i Sandefjord i 1969.",
+      "Jeg gikk fra Beşiktaş til Manchester United sommeren 1996."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ronny_Johnsen",
+        "title": "Ronny Johnsen",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "stefan-johansen",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Vardø før jeg gikk til Bodø/Glimt.",
+      "Jeg ble født i Vardø i 1991.",
+      "Jeg gikk fra Strømsgodset til Celtic i 2014 og videre til Fulham i 2016."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Stefan_Johansen",
+        "title": "Stefan Johansen",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "markus-henriksen",
+    "hints": [
+      "Jeg spilte ungdomsfotball i Trond IL og Rosenborg.",
+      "Jeg ble født i Trondheim i 1992.",
+      "Jeg gikk fra Rosenborg til AZ i 2012 og spilte senere for Hull City."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Markus_Henriksen",
+        "title": "Markus Henriksen",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "vegard-heggem",
+    "hints": [
+      "Jeg spilte for Rennebu og Orkdal før jeg kom til Rosenborg.",
+      "Jeg ble født i Trondheim i 1975.",
+      "Jeg gikk fra Rosenborg til Liverpool i 1998."
+    ],
+    "sources": [
+      {
+        "url": "https://www.lfchistory.net/players/315",
+        "title": "Vegard Heggem",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
+  },
+  {
+    "playerId": "thomas-myhre",
+    "hints": [
+      "Jeg kom fra Moss til Viking i 1993 og tok over som førstekeeper.",
+      "Jeg ble født i Sarpsborg.",
+      "Everton hentet meg fra Viking i november 1997."
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Thomas_Myhre",
+        "title": "Thomas Myhre",
+        "kind": "web",
+        "accessed": "2026-09-08"
+      }
+    ]
   }
 ]

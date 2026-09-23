@@ -13,14 +13,19 @@
  * The build sandbox cannot reach wikipedia.org; run it through the
  * "Verifiser spørsmål" GitHub Action.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { straffesparkFile } from "../../src/data/schema";
-import { articleMatchesSubject, pendingVerification, verdictFor, type WikiPage } from "../../src/data/verify";
+import { kjappenFile, straffesparkFile } from "../../src/data/schema";
+import { articleMatchesSubject, pendingVerification, verdictFor, type Checkable, type WikiPage } from "../../src/data/verify";
 
 const API = "https://no.wikipedia.org/w/api.php";
 const UA = "Tippetuppen trivia verifier (https://github.com/espenlangrusten-hub/tippetuppen)";
-const POOL = path.join(process.cwd(), "data", "source", "straffespark.json");
+// Both banks are checked the same way; a question written from memory is a question
+// written from memory whichever game it belongs to.
+const POOLS = [
+  { file: path.join(process.cwd(), "data", "source", "straffespark.json"), schema: straffesparkFile },
+  { file: path.join(process.cwd(), "data", "source", "kjappen.json"), schema: kjappenFile },
+] as const;
 
 type ApiPage = { title: string; missing?: boolean; extract?: string; fullurl?: string };
 
@@ -53,44 +58,51 @@ async function fetchArticle(subject: string): Promise<WikiPage> {
 async function main() {
   const args = process.argv.slice(2);
   const limitArg = args.indexOf("--limit");
-  const limit = limitArg >= 0 ? Number(args[limitArg + 1]) : Infinity;
+  let budget = limitArg >= 0 ? Number(args[limitArg + 1]) : Infinity;
   const today = new Date().toISOString().slice(0, 10);
-
-  const raw = JSON.parse(readFileSync(POOL, "utf8")) as Record<string, unknown>[];
-  const parsed = straffesparkFile.parse(raw);
-  const byId = new Map(raw.map((entry) => [String(entry.id), entry]));
-
-  const queue = pendingVerification(parsed).slice(0, limit);
-  console.log(`${queue.length} spørsmål å kontrollere.`);
   let promoted = 0;
   let flagged = 0;
 
-  for (const entry of queue) {
-    const subject = entry.verify!.subject;
-    let page: WikiPage = null;
-    try {
-      page = await fetchArticle(subject);
-    } catch (err) {
-      console.log(`  ${entry.id}: oppslaget feilet (${(err as Error).message})`);
-      continue; // A network hiccup is not evidence against the question; leave it untouched.
+  for (const pool of POOLS) {
+    if (budget <= 0) break;
+    if (!existsSync(pool.file)) continue;
+    const raw = JSON.parse(readFileSync(pool.file, "utf8")) as Record<string, unknown>[];
+    // The two banks have different shapes; the checker only needs the fields they share.
+    const parsed = pool.schema.parse(raw) as Checkable[];
+    const byId = new Map(raw.map((entry) => [String(entry.id), entry]));
+
+    const queue = pendingVerification(parsed).slice(0, budget);
+    budget -= queue.length;
+    console.log(`${path.basename(pool.file)}: ${queue.length} spørsmål å kontrollere.`);
+
+    for (const entry of queue) {
+      const subject = entry.verify!.subject;
+      let page: WikiPage = null;
+      try {
+        page = await fetchArticle(subject);
+      } catch (err) {
+        console.log(`  ${entry.id}: oppslaget feilet (${(err as Error).message})`);
+        continue; // A network hiccup is not evidence against the question.
+      }
+      const verdict = verdictFor(entry, page, today);
+      const target = byId.get(entry.id)!;
+      if (verdict.ok) {
+        delete target.notes;
+        target.status = "single_source";
+        target.sources = [...(Array.isArray(target.sources) ? target.sources : []), verdict.source];
+        promoted++;
+        console.log(`  ✓ ${entry.id}: ${verdict.note}`);
+      } else {
+        target.notes = verdict.note;
+        flagged++;
+        console.log(`  ? ${entry.id}: ${verdict.note}`);
+      }
+      await new Promise((r) => setTimeout(r, 300)); // be a polite API client
     }
-    const verdict = verdictFor(entry, page, today);
-    const target = byId.get(entry.id)!;
-    if (verdict.ok) {
-      delete target.notes;
-      target.status = "single_source";
-      target.sources = [...(Array.isArray(target.sources) ? target.sources : []), verdict.source];
-      promoted++;
-      console.log(`  ✓ ${entry.id}: ${verdict.note}`);
-    } else {
-      target.notes = verdict.note;
-      flagged++;
-      console.log(`  ? ${entry.id}: ${verdict.note}`);
-    }
-    await new Promise((r) => setTimeout(r, 300)); // be a polite API client
+
+    writeFileSync(pool.file, JSON.stringify(raw, null, 2) + "\n");
   }
 
-  writeFileSync(POOL, JSON.stringify(raw, null, 2) + "\n");
   console.log(`\nGodkjent: ${promoted}. Til manuell sjekk: ${flagged}.`);
 }
 

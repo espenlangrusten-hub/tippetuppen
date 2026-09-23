@@ -1,0 +1,344 @@
+/* Kjappen lobby cleanup -----------------------------------------------------
+   Keeps the arcade/game-show look, but gives the lobby a much clearer hierarchy.
+   Loaded last so these rules only override presentation, never game logic.
+   ------------------------------------------------------------------------- */
+
+.kj-v2.kj-shell-lobby .kj-panel-left,
+.kj-v2.kj-shell-lobby .kj-panel-right,
+.kj-v2.kj-shell-lobby .kj-meta-row,
+.kj-v2.kj-shell-lobby .kj-rules,
+.kj-v2.kj-shell-lobby .kj-code-chip {
+  display: none !important;
+}
+
+.kj-v2.kj-shell-lobby .kj-top {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: .15rem;
+  padding-bottom: .3rem;
+}
+
+.kj-v2.kj-shell-lobby .kj-top::after {
+  left: 24%;
+  right: 24%;
+}
+
+.kj-v2.kj-shell-lobby .kj-top-mid {
+  width: 100%;
+  align-items: center;
+}
+
+.kj-v2.kj-shell-lobby .kj-top-mid .kj-logo {
+  width: clamp(12rem, 20vh, 17rem);
+  margin: -.45rem auto 0;
+}
+
+.kj-v2.kj-shell-lobby .kj-top-row {
+  min-height: 2rem;
+  margin-top: -.45rem;
+  justify-content: center;
+}
+
+.kj-v2.kj-shell-lobby .kj-main {
+  z-index: 12;
+  grid-template-columns: clamp(11.5rem, 15vw, 14rem) minmax(0, 1fr);
+  gap: clamp(1rem, 1.8vw, 1.5rem);
+  width: min(76rem, 94%);
+  max-width: 76rem;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.kj-v2.kj-shell-lobby .kj-host {
+  position: relative;
+  z-index: 18;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  overflow: visible;
+}
+
+.kj-v2.kj-shell-lobby .kj-host-frame {
+  flex: 0 0 auto;
+}
+
+.kj-v2.kj-shell-lobby .kj-bubble {
+  position: relative;
+  z-index: 20;
+  display: block;
+  width: 100%;
+  min-height: 4.4rem;
+  padding: .75rem .8rem;
+  overflow: visible;
+  color: #0d1737;
+  background: #f8fbff;
+  border: 3px solid #111941;
+  box-shadow: 0 6px 0 #02051a, 0 0 22px rgb(65 226 255 / .18);
+  font-size: clamp(.74rem, .95vw, .9rem);
+  line-height: 1.32;
+}
+
+.kj-v2.kj-shell-lobby .kj-bubble p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.kj-v2.kj-shell-lobby .kj-center {
+  gap: .55rem;
+  align-self: stretch;
+}
+
+/* Lobby marquee ------------------------------------------------------------
+   This is deliberately a stage prop rather than a web card. The category strip is
+   removed completely in the lobby: one message, one illuminated code display. */
+.kj-v2.kj-shell-lobby .kj-board-lobby {
+  position: relative;
+  display: grid !important;
+  place-items: center;
+  min-height: clamp(7.5rem, 14vh, 10rem);
+  padding: clamp(1rem, 2.2vw, 1.7rem) clamp(1.4rem, 3.2vw, 3rem);
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: visible;
+  clip-path: polygon(1.45rem 0, calc(100% - 1.45rem) 0, 100% 1.45rem, 100% calc(100% - 1.45rem), calc(100% - 1.45rem) 100%, 1.45rem 100%, 0 calc(100% - 1.45rem), 0 1.45rem);
+  -webkit-clip-path: polygon(1.45rem 0, calc(100% - 1.45rem) 0, 100% 1.45rem, 100% calc(100% - 1.45rem), calc(100% - 1.45rem) 100%, 1.45rem 100%, 0 calc(100% - 1.45rem), 0 1.45rem);
+  background:
+    linear-gradient(90deg, #31dbff, #8c48ff 24%, #ffbe3f 50%, #8c48ff 76%, #31dbff) top / 100% 4px no-repeat,
+    linear-gradient(90deg, #31dbff, #8c48ff 24%, #ffbe3f 50%, #8c48ff 76%, #31dbff) bottom / 100% 4px no-repeat,
+    radial-gradient(85% 130% at 50% 0%, rgb(38 106 230 / .26), transparent 58%),
+    linear-gradient(180deg, rgb(7 22 72 / .98), rgb(5 11 43 / .99));
+  box-shadow:
+    0 0 0 1px rgb(46 224 255 / .32),
+    inset 0 0 0 1px rgb(255 255 255 / .045),
+    inset 0 -2rem 4rem rgb(18 4 70 / .28),
+    0 1rem 2.6rem rgb(0 0 0 / .32),
+    0 0 2rem rgb(48 215 255 / .2);
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby::before {
+  content: "";
+  position: absolute;
+  inset: .35rem .4rem;
+  opacity: .28;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, rgb(93 211 255 / .18) 1px, transparent 1.2px) 0 0 / 9px 9px,
+    linear-gradient(90deg, transparent, rgb(255 255 255 / .035) 48%, rgb(255 255 255 / .08) 50%, rgb(255 255 255 / .035) 52%, transparent);
+  clip-path: inherit;
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 38%;
+  height: 1px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, transparent, rgb(88 224 255 / .24), transparent);
+  box-shadow: 0 0 18px rgb(56 217 255 / .35);
+  pointer-events: none;
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-head {
+  display: none !important;
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 58rem;
+  margin: 0 !important;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0 !important;
+  font-weight: 950;
+  line-height: 1.02;
+  letter-spacing: .025em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 4px 0 rgb(0 0 0 / .42), 0 0 22px rgb(93 217 255 / .16);
+}
+
+.kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question::after {
+  content: "DEL KODEN MED DE ANDRE";
+  display: block;
+  font-size: clamp(1.55rem, 2.55vw, 2.55rem);
+  line-height: 1.02;
+}
+
+/* Illuminated cabinet display for the join code. It belongs to the stage instead of
+   looking like a second generic card below the first one. */
+.kj-v2.kj-shell-lobby .kj-code-big {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(28rem, 68%);
+  min-height: clamp(6rem, 11vh, 8rem);
+  margin: .1rem auto 0;
+  padding: 1.55rem 1.2rem .7rem;
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 1rem, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 1rem 100%, 0 calc(100% - 1rem), 0 1rem);
+  -webkit-clip-path: polygon(1rem 0, calc(100% - 1rem) 0, 100% 1rem, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 1rem 100%, 0 calc(100% - 1rem), 0 1rem);
+  background:
+    linear-gradient(90deg, #ffcf4a, #ff8d31 48%, #ffcf4a) top / 100% 3px no-repeat,
+    linear-gradient(180deg, rgb(21 26 83 / .98), rgb(7 10 39 / .99));
+  color: #ffd252;
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 5.4vw, 5rem);
+  font-weight: 950;
+  line-height: .88;
+  letter-spacing: .22em;
+  text-indent: .22em;
+  text-shadow: 0 4px 0 #634000, 0 0 18px rgb(255 202 63 / .35);
+  box-shadow:
+    inset 0 0 0 2px rgb(255 214 83 / .18),
+    inset 0 -1rem 2.5rem rgb(0 0 0 / .25),
+    0 .6rem 0 rgb(3 5 24 / .72),
+    0 1rem 2.6rem rgb(0 0 0 / .3),
+    0 0 1.8rem rgb(255 194 53 / .12);
+}
+
+.kj-v2.kj-shell-lobby .kj-code-big::before {
+  content: "SPILLKODE";
+  position: absolute;
+  top: .55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #75eaff;
+  font-family: var(--font-display);
+  font-size: clamp(.62rem, .9vw, .82rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: .2em;
+  text-indent: .2em;
+  text-shadow: 0 0 10px rgb(70 220 255 / .4);
+}
+
+.kj-v2.kj-shell-lobby .kj-code-big::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: .42rem;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffc944, transparent);
+  box-shadow: 0 0 10px rgb(255 198 55 / .45);
+}
+
+/* Keep contestants below the host message instead of colliding with it. */
+.kj-v2.kj-shell-lobby .kj-contestants {
+  z-index: 8;
+  width: min(58rem, 78%);
+  margin: .9rem auto 0;
+  padding-top: 0;
+  gap: clamp(.7rem, 1.4vw, 1.25rem);
+}
+
+.kj-v2.kj-shell-lobby .kj-floor {
+  margin-top: .65rem;
+  z-index: 10;
+}
+
+/* In the lobby the red arcade control is the start-game control. */
+.kj-v2.kj-shell-lobby .kj-buzzer-label {
+  font-size: 0 !important;
+  color: #fff;
+}
+
+.kj-v2.kj-shell-lobby .kj-buzzer-label::after {
+  content: "SPILL KJAPPEN";
+  display: inline-block;
+  font-size: clamp(.72rem, 1.25vw, 1rem);
+  font-weight: 950;
+  letter-spacing: .09em;
+  color: #fff;
+  text-shadow: 0 2px 0 rgb(92 0 10 / .7), 0 0 10px rgb(255 255 255 / .2);
+}
+
+.kj-v2.kj-shell-lobby .kj-buzzer-status strong {
+  display: none;
+}
+
+.kj-v2.kj-shell-lobby .kj-buzzer-status span {
+  color: #e9efff;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 760px) {
+  .kj-v2.kj-shell-lobby .kj-top-mid .kj-logo {
+    width: min(8.8rem, 32vw);
+    margin-top: -.4rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-top-row {
+    margin-top: -.4rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-main {
+    width: 100%;
+    grid-template-columns: minmax(5.8rem, 25vw) minmax(0, 1fr);
+    gap: .55rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-bubble {
+    min-height: 0;
+    padding: .48rem .5rem;
+    border-width: 2px;
+    font-size: .62rem;
+    line-height: 1.24;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-board-lobby {
+    min-height: 6.3rem;
+    padding: .8rem .85rem;
+    clip-path: polygon(.75rem 0, calc(100% - .75rem) 0, 100% .75rem, 100% calc(100% - .75rem), calc(100% - .75rem) 100%, .75rem 100%, 0 calc(100% - .75rem), 0 .75rem);
+    -webkit-clip-path: polygon(.75rem 0, calc(100% - .75rem) 0, 100% .75rem, 100% calc(100% - .75rem), calc(100% - .75rem) 100%, .75rem 100%, 0 calc(100% - .75rem), 0 .75rem);
+  }
+
+  .kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question {
+    margin: 0 !important;
+    font-size: 0 !important;
+    line-height: 1.06;
+    letter-spacing: .018em;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-board-lobby .kj-board-question::after {
+    font-size: clamp(.88rem, 4.1vw, 1.18rem);
+    line-height: 1.06;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-code-big {
+    width: min(15.5rem, 86%);
+    min-height: 5rem;
+    padding: 1.35rem .65rem .55rem;
+    font-size: clamp(1.85rem, 8.7vw, 2.75rem);
+    letter-spacing: .19em;
+    text-indent: .19em;
+    clip-path: polygon(.7rem 0, calc(100% - .7rem) 0, 100% .7rem, 100% calc(100% - .7rem), calc(100% - .7rem) 100%, .7rem 100%, 0 calc(100% - .7rem), 0 .7rem);
+    -webkit-clip-path: polygon(.7rem 0, calc(100% - .7rem) 0, 100% .7rem, 100% calc(100% - .7rem), calc(100% - .7rem) 100%, .7rem 100%, 0 calc(100% - .7rem), 0 .7rem);
+  }
+
+  .kj-v2.kj-shell-lobby .kj-code-big::before {
+    top: .45rem;
+    font-size: .52rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-contestants {
+    width: 100%;
+    margin-top: .65rem;
+    gap: .28rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-floor {
+    margin-top: .35rem;
+  }
+
+  .kj-v2.kj-shell-lobby .kj-buzzer-label::after {
+    font-size: .66rem;
+  }
+}

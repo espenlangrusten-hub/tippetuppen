@@ -1,5 +1,7 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { describe, it, expect } from "vitest";
-import { loadDataset } from "@/data/load";
+import { loadDataset, MEDIA_DIR } from "@/data/load";
 import { straffesparkFile, STRAFFESPARK_CATEGORIES } from "@/data/schema";
 
 const ds = loadDataset();
@@ -21,6 +23,18 @@ describe("straffespark question pool", () => {
       expect(media.credit, `${q.id} credit`).not.toMatch(/^TODO/);
       expect(media.licence, `${q.id} licence`).not.toMatch(/^TODO/);
     }
+  });
+
+  it("looks for media where the files actually live", () => {
+    // The check above is only worth anything if it can pass: an earlier version resolved
+    // the folder to data/source/media, so every enabled question reported a missing file.
+    expect(existsSync(path.join(MEDIA_DIR, "straffespark", "README.md"))).toBe(true);
+    for (const q of pool) {
+      if (q.kind === "trivia" || !q.enabled) continue;
+      const media = q.kind === "photo" ? q.image : q.audio;
+      expect(existsSync(path.join(MEDIA_DIR, "straffespark", media.file)), `${q.id} file`).toBe(true);
+    }
+    expect(ds.problems.filter((p) => p.startsWith("straffespark"))).toEqual([]);
   });
 
   it("points photo questions at players the registry knows", () => {
