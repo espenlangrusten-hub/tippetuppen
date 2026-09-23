@@ -80,6 +80,7 @@ describe("edge: masking", () => {
     expect(masked.players[0].wordLengths).toEqual([6]);
     expect(masked.players[1].wordLengths).toEqual([6, 5]);
     expect(masked.players[0]).toHaveProperty("row");
+    expect(masked.players.every((p) => p.no === null)).toBe(true);
   });
 });
 
