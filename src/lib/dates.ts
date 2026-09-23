@@ -42,6 +42,37 @@ export function msUntilNextOsloMidnight(now: Date = new Date()): number {
   return hi - now.getTime();
 }
 
+/**
+ * Calendar months, for the monthly league.
+ *
+ * Month names are spelled out rather than taken from Intl: the Edge Function runs this
+ * same file under Deno, and a runtime without full Norwegian locale data would quietly
+ * print "September" in English on one side and "september" on the other.
+ */
+export const MONTHS_NO = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"] as const;
+
+/** First day of the month the key falls in. */
+export function monthStart(key: string): string {
+  return `${key.slice(0, 7)}-01`;
+}
+
+/** Last day of the month the key falls in; February knows about leap years. */
+export function monthEnd(key: string): string {
+  const [y, m] = key.split("-").map(Number);
+  return new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10);
+}
+
+/** The whole calendar month before the one the key falls in. */
+export function previousMonth(key: string): { from: string; to: string } {
+  const to = addDays(monthStart(key), -1);
+  return { from: monthStart(to), to };
+}
+
+/** "september" for any key in September. */
+export function monthNameNo(key: string): string {
+  return MONTHS_NO[Number(key.slice(5, 7)) - 1];
+}
+
 const long = new Intl.DateTimeFormat("nb-NO", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" });
 export function formatDateNo(key: string): string {
   const [y, m, d] = key.split("-").map(Number);
