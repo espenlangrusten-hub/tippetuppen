@@ -30,6 +30,10 @@ export function TodayCards() {
   }, []);
   return <div className={s.shell}>
     <div className={s.backdrop} aria-hidden="true"><Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="100vw" /></div>
+    <aside className={s.updateNotice} role="status">
+      <strong>Tippetuppen er under oppdatering</strong>
+      <span>Vi forbedrer Mangler XI på PC og kvalitetssikrer draktnumrene. Spillene er tilgjengelige mens vi jobber.</span>
+    </aside>
     <section className={s.hero}>
       <div><p className={s.eyebrow}>Dagens fotballutfordring</p><h1>Hvor godt kjenner<br />du norsk fotball?</h1></div>
       <div className={s.intro}><p>Daglige utfordringer og quiz med venner.</p><Link href="/statistikk/" className={s.streak}>🔥 {streak ? streak + (streak === 1 ? " dag på rad" : " dager på rad") : "Klar for dagens utfordring?"}</Link></div>
