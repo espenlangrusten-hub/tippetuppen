@@ -61,10 +61,13 @@ jobs:
       - uses: supabase/setup-cli@v1
         with:
           version: latest
+      # --use-api bundles on Supabase's side. The default bundles locally in Docker and
+      # pulls the edge-runtime image from ghcr.io, whose rate limit failed deploys #100
+      # and #102 before any of our code ran.
       - name: Deploy api function
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-        run: supabase functions deploy api --project-ref "${{ secrets.SUPABASE_PROJECT_REF }}"
+        run: supabase functions deploy api --use-api --project-ref "${{ secrets.SUPABASE_PROJECT_REF }}"
 
   site:
     name: Build and publish site

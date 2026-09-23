@@ -4,3 +4,6 @@ project_id = "tippetuppen"
 # The game API is called from a static site with no login, so no JWT is required.
 # Authorisation for the admin routes is a separate ADMIN_KEY header checked in code.
 verify_jwt = false
+# Named explicitly: the server-side bundler (deploy --use-api) does not walk up from
+# functions/api to find the import map the way Deno itself does.
+import_map = "./functions/deno.json"
