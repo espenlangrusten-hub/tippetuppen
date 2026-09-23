@@ -291,14 +291,32 @@ Deno.serve(async (req) => {
 
     if (req.method === "POST" && route === "/reveal") {
       const body = await req.json().catch(() => null);
-      const { puzzleId, index, hint } = (body ?? {}) as { puzzleId?: string; index?: number; hint?: boolean };
+      const { puzzleId, index, hint, kind, n } = (body ?? {}) as
+        { puzzleId?: string; index?: number; hint?: boolean; kind?: string; n?: number };
       if (typeof puzzleId !== "string") return bad("bad request");
       const payload = (await payloadFor(puzzleId, "mangler-xi")) as ManglerXiPayload | null;
       if (!payload) return json({ ok: false, error: "not-found" }, 404);
+      // A hint request that names nobody is a bad request, not a surrender. Falling
+      // through to the branch below handed back all eleven answers and, for a signed-in
+      // player, closed the round - from a typo in an index.
+      if (hint && (typeof index !== "number" || !payload.players[index])) return bad("bad request");
       if (hint && typeof index === "number" && payload.players[index]) {
+        const player = payload.players[index];
+        // One fact per request, never the list. Handing over every fact at once would
+        // sell the whole sheet for the price of a single guess to anyone who opens the
+        // network tab, and the guess is what the hint is supposed to cost.
+        if (kind === "fact") {
+          const at = typeof n === "number" && n >= 0 ? Math.floor(n) : 0;
+          const fact = player.facts?.[at];
+          // Nothing left to tell: no fact, and no guess spent for it.
+          if (!fact) return json({ ok: true, fact: null, remaining: 0 });
+          const user = await currentUser(req);
+          if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
+          return json({ ok: true, fact, remaining: Math.max(0, (player.facts?.length ?? 0) - at - 1) });
+        }
         const user = await currentUser(req);
         if (user && !await updateMxiProgress(user.id, puzzleId, index, false, false, true)) return bad("finished", 409);
-        return json({ ok: true, letter: payload.players[index].answer[0] });
+        return json({ ok: true, letter: player.answer[0] });
       }
       const user = await currentUser(req);
       if (user) await updateMxiProgress(user.id, puzzleId, null, false, true);

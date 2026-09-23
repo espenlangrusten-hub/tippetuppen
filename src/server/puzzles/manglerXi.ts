@@ -3,6 +3,7 @@ import type { Db } from "@/server/db";
 import { schema as s } from "@/server/db";
 import { toTileString } from "@/lib/names";
 import type { ManglerXiPayload } from "./types";
+import { factsFor, factsForPuzzle, type FactMatch } from "../playerFacts";
 
 const COMP_LABEL: Record<string, string> = {
   "world-cup": "VM",
@@ -40,6 +41,31 @@ export async function buildManglerXiPuzzles(db: Db) {
     aliasByPlayer.get(a.playerId)!.push(a.alias);
   }
 
+  // The facts are derived from a player's whole career, not from the match being built,
+  // so they are computed once over every match rather than per puzzle.
+  const factMatches = new Map<string, FactMatch>(
+    matches.map((m) => [
+      m.id,
+      {
+        id: m.id,
+        date: m.date,
+        opponent: m.opponent,
+        competitionLabel: competitionLabel(m.competitionId, m.date),
+        norwayHome: m.norwayHome,
+        score: [m.norwayScore, m.opponentScore] as [number, number],
+      },
+    ]),
+  );
+  const factApps = apps.map((a) => ({
+    matchId: a.matchId,
+    playerId: a.playerId,
+    starter: a.starter,
+    position: a.position,
+    shirtNumber: a.shirtNumber,
+    captain: a.captain,
+  }));
+  const factGoals = goals.filter((g) => g.team === "norway").map((g) => ({ matchId: g.matchId, playerId: g.playerId }));
+
   const out: {
     id: string;
     game: "mangler-xi";
@@ -71,6 +97,7 @@ export async function buildManglerXiPuzzles(db: Db) {
         captain: a.captain,
         goals: mGoals.filter((g) => g.team === "norway" && g.playerId === p.id).length,
         aliases: aliasByPlayer.get(p.id) ?? [p.displayName, p.surname],
+        facts: factsForPuzzle(factsFor(p.id, p.displayName, factMatches, factApps, factGoals, p.surname), m.id),
       };
     });
     const year = Number(m.date.slice(0, 4));

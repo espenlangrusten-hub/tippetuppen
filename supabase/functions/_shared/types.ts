@@ -26,6 +26,9 @@ export type ManglerXiPayload = {
     captain: boolean;
     goals: number;
     aliases: string[];
+    /** Derived facts about this player. The answer never appears in them.
+     *  Optional: puzzles built before this existed are still stored without it. */
+    facts?: string[];
   }[];
   opponentScorers: string[];
 };

@@ -26,6 +26,9 @@ export type ManglerXiPayload = {
     captain: boolean;
     goals: number; // Norway goals scored in this match
     aliases: string[]; // for free-text matching
+    /** Derived facts about this player, safe to show: the answer never appears in them.
+     *  Optional because puzzles built before this existed are still stored without it. */
+    facts?: string[];
   }[];
   opponentScorers: string[];
 };
