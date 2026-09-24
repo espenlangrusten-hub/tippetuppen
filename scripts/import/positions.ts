@@ -117,6 +117,7 @@ function drawsAs(lineup: { pos: Position }[], formation: string): boolean {
   });
 }
 
+const ROLES_WRITE = false;
 const ROLE: Record<string, Position> = { DEFENDER: "DF", MIDFIELDER: "MF", FORWARD: "FW" };
 const lineOf = (pos: Position) => {
   const k = positionKind(pos);
@@ -125,7 +126,7 @@ const lineOf = (pos: Position) => {
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".json")).sort();
 const report = { coords: [] as string[], roles: [] as string[], skipped: [] as string[], notFound: [] as string[], numbersSeen: [] as string[] };
-const calib = { lr: { agree: 0, flip: 0 }, role: { agree: 0, total: 0 }, both: { written: 0, right: 0 } };
+const calib = { lr: { agree: 0, flip: 0 }, role: { agree: 0, total: 0 }, both: { written: 0, right: 0 }, coords: { total: 0, shape: 0, misses: [] as string[] } };
 type Plan = { file: string; original: string; m: Match; field: UPlayer[]; uefaId: string; matched: Map<string, UPlayer> };
 const plans: Plan[] = [];
 
@@ -155,6 +156,19 @@ for (const file of files) {
         if (l < r) calib.lr.agree++;
         else if (l > r) calib.lr.flip++;
       }
+    // Would the coordinates have given the documented formation and lines?
+    const gk = m.lineup.find((p) => p.pos === "GK");
+    const gy = gk ? matched.get(gk.name)?.fieldCoordinate?.y : undefined;
+    const outC = m.lineup.filter((p) => p !== gk);
+    const cs = outC.map((p) => matched.get(p.name)?.fieldCoordinate);
+    if (gy != null && matched.size === 11 && cs.every((c) => c?.x != null && c?.y != null)) {
+      const up = cs.reduce((a, c) => a + c!.y!, 0) / cs.length > gy ? 1 : -1;
+      const ls = lines(outC.map((p, i) => ({ name: p.name, x: cs[i]!.x!, y: up * cs[i]!.y! })));
+      const shape = ls?.map((l) => l.length).join("-");
+      calib.coords.total++;
+      if (shape && shape === (m as { formation?: string }).formation) calib.coords.shape++;
+      else calib.coords.misses.push(`${label}: dokumentert ${(m as { formation?: string }).formation ?? "–"}, koordinatene gir ${shape ?? "ingen"}`);
+    }
     // Would the order + role rule have got this documented match right?
     const outD = m.lineup.filter((p) => p.pos !== "GK");
     const rolesD = outD.map((p) => ROLE[matched.get(p.name)?.player?.fieldPosition ?? ""]);
@@ -223,7 +237,9 @@ for (const { file, original, m, uefaId, matched } of plans) {
     const [d, mf, f] = [count("DF"), count("MF"), count("FW")];
     const byOrder = out.map((_, i) => (i < d ? "DF" : i < d + mf ? "MF" : "FW") as Position);
     const agree = roles.every((r, i) => r === byOrder[i]);
-    if (roles.every(Boolean) && agree && d >= 3 && d <= 5 && mf >= 2 && mf <= 6 && f >= 1 && f <= 3) {
+    // Tried on the documented matches this rule got 7 of 10 fully right - not good enough to
+    // draw. It stays in the report so a human can finish the obvious ones.
+    if (ROLES_WRITE && roles.every(Boolean) && agree && d >= 3 && d <= 5 && mf >= 2 && mf <= 6 && f >= 1 && f <= 3) {
       assigned = new Map(out.map((p, i) => [p.name, roles[i]]));
       formation = `${d}-${mf}-${f}`;
       how = "roles";
@@ -261,11 +277,12 @@ const lines_ = [
   `- Kamper med udokumenterte posisjoner som fikk posisjoner: **${written}** (fra koordinater: ${report.coords.length}, fra roller: ${report.roles.length})`,
   `- Kalibrering venstre/høyre mot dokumenterte kamper: ${calib.lr.agree} stemmer, ${calib.lr.flip} motsatt → ${flipX ? "x speilvendt" : "x brukt som den er"}`,
   `- UEFAs spillerrolle alene mot dokumentert linje: ${calib.role.agree} av ${calib.role.total} (${Math.round(roleRate * 100)} %) – ikke nok alene`,
+  `- Koordinatene mot dokumenterte kamper: ${calib.coords.shape} av ${calib.coords.total} gir den dokumenterte formasjonen`,
   `- Rolle + rekkefølge enige, prøvd på dokumenterte kamper: ${calib.both.written} kamper ville fått linjer, ${calib.both.right} av dem helt riktig`,
   `- Hoppet over: ${report.skipped.length}, ikke funnet hos UEFA: ${report.notFound.length}`,
   "",
 ];
-for (const [title, list] of [["Fra koordinater", report.coords], ["Fra roller", report.roles], ["Hoppet over", report.skipped], ["Ikke funnet hos UEFA", report.notFound], ["Detaljer for de nærmeste dagenes kamper", report.numbersSeen]] as const) {
+for (const [title, list] of [["Fra koordinater", report.coords], ["Fra roller", report.roles], ["Koordinater som bommet på dokumenterte kamper", calib.coords.misses], ["Hoppet over", report.skipped], ["Ikke funnet hos UEFA", report.notFound], ["Detaljer for de nærmeste dagenes kamper", report.numbersSeen]] as const) {
   lines_.push(`<details><summary>${title} (${list.length})</summary>`, "");
   for (const l of list) lines_.push(`- ${l}`);
   lines_.push("</details>", "");
