@@ -37,6 +37,13 @@ jobs:
           cache: npm
       - run: npm ci
 
+      # Start from main's match files, never from an earlier run's output: a run that
+      # removed one side of a conflict would otherwise let the next run forget it.
+      - name: Start fra kampdataene på main
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          git checkout FETCH_HEAD -- data/source/matches
+
       - name: Hent numre
         run: node --import tsx scripts/import/shirt-numbers.ts
 
@@ -48,7 +55,7 @@ jobs:
       - name: Commit endringene
         run: |
           set -euo pipefail
-          if [ -z "$(git status --porcelain data/source/matches)" ]; then
+          if git diff --quiet HEAD -- data/source/matches; then
             echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
