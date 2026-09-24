@@ -1,0 +1,66 @@
+name: Importer kampfakta
+
+# Stadium, Norway's scorers and the starting captain from UEFA's match data, written to
+# data/source/match-facts.json for the Straffespark questions (src/data/match-facts.ts has
+# the rules). Commits the result to the branch it ran on, with the report in the job
+# summary.
+#
+# A push that touches the importer starts it: the assistant working on this repository
+# can push but cannot dispatch a workflow. A push made by this job does not start it
+# again - GitHub never triggers workflows from the job's own token.
+
+on:
+  workflow_dispatch:
+  push:
+    # Never on main: a merge would commit straight to the default branch without review.
+    branches-ignore: [main]
+    paths:
+      - scripts/import/match-facts.ts
+      - src/data/match-facts.ts
+      - .github/workflows/import-match-facts.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-match-facts-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hent kampfakta
+        run: node --import tsx scripts/import/match-facts.ts
+
+      # Straffespark serves these facts as answers; nothing that fails validation gets that far.
+      - name: Valider dataene
+        run: npm run data:validate
+
+      - name: Commit endringene
+        run: |
+          set -euo pipefail
+          git add data/source/match-facts.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -F - <<EOF
+          Kampfakta fra UEFA: stadion, målscorere og kaptein
+
+          $(sed -n '3,4p' match-facts-report.md)
+
+          Avvik og det som ble holdt tilbake står i jobbsammendraget for kjøring
+          ${{ github.run_id }}.
+          EOF
+          git push origin HEAD:${{ github.ref_name }}

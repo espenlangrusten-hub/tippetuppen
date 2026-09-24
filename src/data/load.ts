@@ -73,6 +73,7 @@ export type Dataset = {
   kjappen: z.infer<typeof S.kjappenFile>;
   coaches: z.infer<typeof S.coachFile>;
   coachQuiz: z.infer<typeof S.coachQuizFile>;
+  matchFacts: z.infer<typeof S.matchFactsFile>;
   problems: string[];
 };
 
@@ -94,6 +95,7 @@ export function loadDataset(): Dataset {
   const kjappen = readJson(S.kjappenFile, "kjappen.json", []);
   const coaches = readJson(S.coachFile, "trenere.json", []);
   const coachQuiz = readJson(S.coachQuizFile, "trenerquiz.json", []);
+  const matchFacts = readJson(S.matchFactsFile, "match-facts.json", []);
 
   const matchDir = path.join(DATA_DIR, "matches");
   const matches: S.MatchFile[] = existsSync(matchDir)
@@ -321,6 +323,19 @@ export function loadDataset(): Dataset {
     });
   }
 
+  // UEFA's facts are answers to Straffespark questions, so each has to belong to a match
+  // we hold, and a captain has to be one of that match's starters.
+  const matchById = new Map(matches.map((m) => [m.id, m]));
+  const factIds = new Set<string>();
+  for (const f of matchFacts) {
+    const m = matchById.get(f.match);
+    if (!m) problems.push(`match-facts: unknown match ${f.match}`);
+    if (factIds.has(f.match)) problems.push(`match-facts: ${f.match} listed twice`);
+    factIds.add(f.match);
+    if (m && f.captain && !m.lineup.some((p) => p.name === f.captain)) problems.push(`match-facts ${f.match}: captain ${f.captain} is not in the starting eleven`);
+    if (m && f.scorers && f.scorers.length !== m.score[0]) problems.push(`match-facts ${f.match}: ${f.scorers.length} scorers for ${m.score[0]} goals`);
+  }
+
   // Straffespark. A round of five is drawn from this pool, so a broken entry would
   // surface as a question nobody can answer rather than as an error somewhere.
   // Most of the pool is derived from the registry rather than written by hand; a
@@ -400,5 +415,5 @@ export function loadDataset(): Dataset {
     if (leaked) problems.push(`trenerquiz ${q.id}: the prompt gives away the answer (${leaked})`);
   }
 
-  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, coaches, coachQuiz, problems };
+  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, coaches, coachQuiz, matchFacts, problems };
 }
