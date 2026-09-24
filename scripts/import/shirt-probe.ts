@@ -44,34 +44,50 @@ function* walk(v: unknown): Generator<Record<string, unknown>> {
 }
 const mentionsNorway = (o: unknown) => /norway|norge|"NOR"/i.test(JSON.stringify(o));
 
+const plain = (s: string) => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ø/gi, "o").replace(/æ/gi, "ae").replace(/å/gi, "a").toLowerCase();
+const surname = (s: string) => plain(s).split(/\s+/).pop()!;
+
+/** The senior men's Norway match on a date: not youth, not women, not futsal. */
+function seniorNorway(list: unknown): Record<string, unknown> | undefined {
+  if (!Array.isArray(list)) return undefined;
+  return list.find((x) => {
+    const m = x as { homeTeam?: { internationalName?: string }; awayTeam?: { internationalName?: string }; competition?: { metaData?: { name?: string } } };
+    const comp = m.competition?.metaData?.name ?? "";
+    const norway = m.homeTeam?.internationalName === "Norway" || m.awayTeam?.internationalName === "Norway";
+    return norway && !/under|women|futsal|youth|u-?\d\d|olymp/i.test(comp);
+  }) as Record<string, unknown> | undefined;
+}
+
 async function uefa() {
   section("UEFA");
-  const sample = [anchors.find((m) => m.date === "2023-10-15"), anchors.find((m) => m.date === "2006-09-02"), anchors.find((m) => m.date === "2009-09-09")].filter(Boolean) as Match[];
-  for (const m of sample) {
-    const listUrl = `https://match.uefa.com/v5/matches?fromDate=${m.date}&toDate=${m.date}&limit=100&offset=0&order=ASC`;
-    const list = await get(listUrl);
-    console.log(`\n[${m.date} ${m.opponent}] ${listUrl}\n  status ${list.status} ${list.type} ${list.body.length} tegn`);
-    if (list.status !== 200) { console.log("  " + head(list.body, 400)); continue; }
-    let json: unknown;
-    try { json = JSON.parse(list.body); } catch { console.log("  ikke JSON: " + head(list.body, 400)); continue; }
-    const first = Array.isArray(json) ? json[0] : json;
-    console.log("  nøkler i første kamp: " + Object.keys((first ?? {}) as object).join(", "));
-    const norway = (Array.isArray(json) ? json : []).find((x) => mentionsNorway((x as { homeTeam?: unknown }).homeTeam) || mentionsNorway((x as { awayTeam?: unknown }).awayTeam)) as Record<string, unknown> | undefined;
-    if (!norway) { console.log(`  fant ingen Norge-kamp blant ${Array.isArray(json) ? json.length : "?"} kamper`); continue; }
-    console.log(`  Norge-kamp: id=${norway.id} ${head(JSON.stringify({ home: (norway.homeTeam as { internationalName?: string })?.internationalName, away: (norway.awayTeam as { internationalName?: string })?.internationalName, competition: (norway.competition as { metaData?: { name?: string } })?.metaData?.name }), 300)}`);
-    const lu = await get(`https://match.uefa.com/v5/matches/${norway.id}/lineups`);
-    console.log(`  lineups: status ${lu.status} ${lu.body.length} tegn`);
-    if (lu.status !== 200) { console.log("  " + head(lu.body, 400)); continue; }
-    console.log("  utdrag: " + head(lu.body, 1500));
-    // Compare with the numbers we already hold for this match.
-    const players = [...walk(JSON.parse(lu.body))].filter((o) => "jerseyNumber" in o || "shirtNumber" in o);
-    console.log(`  objekter med nummer: ${players.length}`);
-    for (const ours of m.lineup) {
-      const hit = players.find((p) => JSON.stringify(p).toLowerCase().includes(ours.name.split(" ").pop()!.toLowerCase()));
-      const theirs = hit ? (hit.jerseyNumber ?? hit.shirtNumber) : undefined;
-      console.log(`    ${ours.name.padEnd(28)} vår ${String(ours.no ?? "-").padStart(2)}  UEFA ${String(theirs ?? "?").padStart(2)}${theirs != null && ours.no != null && Number(theirs) !== ours.no ? "  ≠" : ""}`);
+  // Every match we already hold numbers for, plus one per era without them, to see how far back it goes.
+  const eras = ["1992-10-14", "1995-06-07", "1997-09-10", "1999-06-05", "2001-06-06", "2003-09-06"];
+  const dates = [...anchors.map((m) => m.date), ...eras.filter((d) => matches.some((m) => m.date === d))];
+  let agree = 0, differ = 0, missing = 0;
+  for (const date of dates) {
+    const list = await get(`https://match.uefa.com/v5/matches?fromDate=${date}&toDate=${date}&limit=200&offset=0&order=ASC`);
+    const m = seniorNorway(list.status === 200 ? JSON.parse(list.body) : null);
+    const ours = matches.find((x) => x.date === date)!;
+    if (!m) { console.log(`${date} ${ours.opponent}: ingen senior-kamp hos UEFA`); continue; }
+    const comp = (m.competition as { metaData?: { name?: string } })?.metaData?.name;
+    const lu = await get(`https://match.uefa.com/v5/matches/${m.id}/lineups`);
+    if (lu.status !== 200) { console.log(`${date} ${ours.opponent}: ${comp}, lineups status ${lu.status}`); continue; }
+    const json = JSON.parse(lu.body) as Record<string, { field?: unknown[]; bench?: unknown[]; team?: { internationalName?: string } }>;
+    const side = Object.values(json).find((t) => t && typeof t === "object" && t.team?.internationalName === "Norway");
+    const starters = (side?.field ?? []) as { jerseyNumber?: number; player?: { internationalName?: string } }[];
+    const row: string[] = [];
+    let a = 0, d = 0, x = 0;
+    for (const p of ours.lineup) {
+      const hit = starters.find((s) => surname(s.player?.internationalName ?? "") === surname(p.name));
+      if (!hit) { x++; continue; }
+      if (p.no == null) continue;
+      if (hit.jerseyNumber === p.no) a++; else { d++; row.push(`${p.name} vår ${p.no} UEFA ${hit.jerseyNumber}`); }
     }
+    agree += a; differ += d; missing += x;
+    console.log(`${date} ${ours.opponent.padEnd(14)} ${comp}: ${starters.length} startere hos UEFA, ${11 - x}/11 navn funnet${ours.lineup.some((p) => p.no != null) ? `, like ${a}, ulike ${d}` : ""}${row.length ? "  ≠ " + row.join("; ") : ""}`);
+    if (date === dates[0]) console.log("  nøkler i side-objekt: " + Object.keys(side ?? {}).join(", "));
   }
+  console.log(`\nSUM mot våre numre: like ${agree}, ulike ${differ}, spillere ikke funnet ${missing}`);
 }
 
 async function wikipedia() {
@@ -99,23 +115,25 @@ async function wikipedia() {
 
 async function nff() {
   section("FOTBALL.NO");
-  for (const url of [
-    "https://www.fotball.no/fotballdata/turnering/terminliste/?fiksId=39899",
-    "https://www.fotball.no/fotballdata/turnering/hjem/?fiksId=39899",
-    "https://www.fotball.no/landslag/norge-a-herrer/",
-  ]) {
-    const r = await get(url, "text/html");
-    const links = [...new Set(r.body.match(/fotballdata\/kamp\/\?fiksId=\d+/g) ?? [])];
-    console.log(`${url}\n  status ${r.status} ${r.body.length} tegn, ${links.length} kamplenker: ${links.slice(0, 5).join(" ")}`);
-    if (!links.length) continue;
-    for (const link of links.slice(0, 2)) {
-      const k = await get(`https://www.fotball.no/${link}`, "text/html");
-      const text = k.body.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
-      const idx = text.search(/tropp|oppstilling|startellever|lagoppstilling/i);
-      console.log(`  ${link}: status ${k.status}, ${k.body.length} tegn, tropp-ord ${idx >= 0 ? "ja" : "nei"}`);
-      console.log("    " + (idx >= 0 ? text.slice(Math.max(0, idx - 200), idx + 1200) : head(text, 600)));
-    }
-    break;
+  const r = await get("https://www.fotball.no/fotballdata/turnering/terminliste/?fiksId=39899", "text/html");
+  const dates = (r.body.match(/\b\d{2}\.\d{2}\.\d{2,4}\b/g) ?? []);
+  console.log(`terminliste: ${r.status}, ${dates.length} datoer, første ${dates[0]}, siste ${dates[dates.length - 1]}`);
+  const options = [...r.body.matchAll(/<option[^>]*value="([^"]*)"[^>]*>([^<]*)</g)].map((m) => `${m[1]}=${m[2].trim()}`);
+  console.log(`  <option>: ${options.slice(0, 60).join(" | ")}`);
+  const forms = [...r.body.matchAll(/<(form|select)[^>]*>/g)].map((m) => m[0]).slice(0, 10);
+  console.log(`  skjema: ${forms.join(" ")}`);
+  const links = [...new Set(r.body.match(/fotballdata\/[a-z]+\/[a-z]*\/?\?[^"'\s<]+/g) ?? [])];
+  console.log(`  lenketyper: ${[...new Set(links.map((l) => l.replace(/\d+/g, "N")))].join(" ")}`);
+  for (const q of ["&season=2005", "&seasonId=2005", "&year=2005", "&aar=2005"]) {
+    const t = await get(`https://www.fotball.no/fotballdata/turnering/terminliste/?fiksId=39899${q}`, "text/html");
+    const d = t.body.match(/\b\d{2}\.\d{2}\.\d{2,4}\b/g) ?? [];
+    console.log(`  ${q}: ${t.status}, ${d.length} datoer, første ${d[0]}, siste ${d[d.length - 1]}`);
+  }
+  // Older matches: search fotball.no for a known old national team match.
+  for (const url of ["https://www.fotball.no/fotballdata/lag/kamper/?fiksId=39899", "https://www.fotball.no/fotballdata/turnering/tabell/?fiksId=39899"]) {
+    const t = await get(url, "text/html");
+    const d = t.body.match(/\b\d{2}\.\d{2}\.\d{2,4}\b/g) ?? [];
+    console.log(`  ${url}: ${t.status}, ${d.length} datoer, første ${d[0]}, siste ${d[d.length - 1]}`);
   }
 }
 
