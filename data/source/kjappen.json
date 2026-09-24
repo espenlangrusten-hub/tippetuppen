@@ -807,22 +807,15 @@
     },
     "fact": "Det var ny rekord for én Premier League-sesong.",
     "difficulty": 3,
-    "status": "single_source",
-    "sources": [
-      {
-        "url": "https://no.wikipedia.org/wiki/Erling_Braut_Haaland",
-        "title": "Erling Braut Haaland – Wikipedia",
-        "kind": "web",
-        "accessed": "2026-09-15",
-        "note": "Artikkelteksten nevner «36». Automatisk kontroll, ikke lest av et menneske."
-      }
-    ],
+    "status": "recall",
+    "sources": [],
     "verify": {
       "subject": "Erling Haaland",
       "mustMention": [
         "36"
       ]
-    }
+    },
+    "notes": "Tilbake til recall: godkjent på at et kort tall sto et sted i artikkelen, ikke på at artikkelen sier dette. Sjekk svaret for hånd."
   },
   {
     "id": "kj-hendelse-rbk-13",
@@ -836,22 +829,15 @@
       ]
     },
     "difficulty": 4,
-    "status": "single_source",
-    "sources": [
-      {
-        "url": "https://no.wikipedia.org/wiki/Rosenborg_Ballklub",
-        "title": "Rosenborg Ballklub – Wikipedia",
-        "kind": "web",
-        "accessed": "2026-09-15",
-        "note": "Artikkelteksten nevner «13». Automatisk kontroll, ikke lest av et menneske."
-      }
-    ],
+    "status": "recall",
+    "sources": [],
     "verify": {
       "subject": "Rosenborg Ballklub",
       "mustMention": [
         "13"
       ]
-    }
+    },
+    "notes": "Tilbake til recall: godkjent på at et kort tall sto et sted i artikkelen, ikke på at artikkelen sier dette. Sjekk svaret for hånd."
   },
   {
     "id": "kj-klubb-haaland-salzburg",
