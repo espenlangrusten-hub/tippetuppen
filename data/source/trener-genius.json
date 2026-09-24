@@ -1,0 +1,458 @@
+[
+  {
+    "sourceId": "tq-nils-arne-eggen-1",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 1,
+    "category": "Trenerlegenden",
+    "distractors": [
+      "Egil Olsen",
+      "Åge Hareide",
+      "Kjetil Rekdal"
+    ],
+    "fact": "Eggen tok 14 seriegull med Rosenborg og ett med Moss.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-7",
+    "expectedAnswer": "Moss",
+    "difficulty": 2,
+    "category": "Klubbskiftet",
+    "distractors": [
+      "Brann",
+      "Viking",
+      "Lillestrøm"
+    ],
+    "fact": "Moss var Eggens klubb i 1986 og 1987, før Rosenborg igjen i 1988.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-10",
+    "expectedAnswer": "6",
+    "difficulty": 2,
+    "category": "Pokalskapet",
+    "distractors": [
+      "4",
+      "5",
+      "8"
+    ],
+    "fact": "Eggen vant seks cupmesterskap som trener.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-14",
+    "expectedAnswer": "Orkdal IF",
+    "difficulty": 3,
+    "category": "Der det startet",
+    "distractors": [
+      "Rosenborg",
+      "Vålerenga",
+      "Moss"
+    ],
+    "fact": "Eggen begynte på A-laget til Orkdal som 15-åring.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-1",
+    "expectedAnswer": "Benny Lennartsson",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Tom Prahl",
+      "Erik Hamrén",
+      "Jan Jönsson"
+    ],
+    "fact": "Lennartsson ledet Viking til seriemesterskapet i 1991.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-3",
+    "expectedAnswer": "1989",
+    "difficulty": 2,
+    "category": "Cupminnet",
+    "distractors": [
+      "1988",
+      "1990",
+      "1991"
+    ],
+    "fact": "Viking slo Molde 2–1 i cupfinalen i 1989.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-6",
+    "expectedAnswer": "Bryne",
+    "difficulty": 2,
+    "category": "Finalemotstanderen",
+    "distractors": [
+      "Molde",
+      "Odd",
+      "Brann"
+    ],
+    "fact": "Viking vant finalen i 2001 med 3–0 mot Bryne.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-5",
+    "expectedAnswer": "1988",
+    "difficulty": 3,
+    "category": "Opprykket",
+    "distractors": [
+      "1986",
+      "1987",
+      "1989"
+    ],
+    "fact": "Lennartsson kom i 1988 og tok Viking opp på første forsøk.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-1",
+    "expectedAnswer": "Egil Olsen",
+    "difficulty": 1,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Nils Johan Semb",
+      "Åge Hareide",
+      "Egil Johansen"
+    ],
+    "fact": "Egil Olsen fikk navnet Drillo som spiller i Vålerenga.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-3",
+    "expectedAnswer": "Wimbledon",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Watford",
+      "Wolverhampton",
+      "West Ham"
+    ],
+    "fact": "Etter Vålerenga tok Olsen over Wimbledon i 1999.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-6",
+    "expectedAnswer": "Lyn",
+    "difficulty": 2,
+    "category": "Oslo-fotball",
+    "distractors": [
+      "Frigg",
+      "Vålerenga",
+      "Skeid"
+    ],
+    "fact": "Olsen trente Lyn fra 1985 til 1988.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-10",
+    "expectedAnswer": "Aalesund",
+    "difficulty": 3,
+    "category": "Før landslaget",
+    "distractors": [
+      "Tromsø",
+      "Molde",
+      "Start"
+    ],
+    "fact": "Olsen var Aalesund-trener i 1989, før landslagsperioden.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-2",
+    "expectedAnswer": "Tom Nordlie",
+    "difficulty": 1,
+    "category": "Sølvlaget",
+    "distractors": [
+      "Tom Prahl",
+      "Benny Lennartsson",
+      "Kjetil Rekdal"
+    ],
+    "fact": "Nordlie tok Start fra opprykk i 2004 til seriesølv i 2005.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-4",
+    "expectedAnswer": "Lillestrøm",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Start",
+      "Viking",
+      "Odd"
+    ],
+    "fact": "Nordlie vant cupen med Lillestrøm i 2007.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-12",
+    "expectedAnswer": "Viking",
+    "difficulty": 2,
+    "category": "Redningsmannen",
+    "distractors": [
+      "Start",
+      "Sandefjord",
+      "Fredrikstad"
+    ],
+    "fact": "Nordlie reddet Viking i 2006 før trenerbyttet med Uwe Rösler.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-13",
+    "expectedAnswer": "Kongsvinger",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "HamKam",
+      "Elverum",
+      "Nybergsund"
+    ],
+    "fact": "Nordlie overtok Kongsvinger høsten 2008 og reddet plassen.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-1",
+    "expectedAnswer": "Åge Hareide",
+    "difficulty": 1,
+    "category": "Dobbeltriumfen",
+    "distractors": [
+      "Nils Arne Eggen",
+      "Ola By Rise",
+      "Trond Sollied"
+    ],
+    "fact": "Rosenborg vant både serie og cup med Hareide i 2003.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Åge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-2",
+    "expectedAnswer": "Molde",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Rosenborg",
+      "Viking",
+      "Hødd"
+    ],
+    "fact": "Molde vant cupen i 1994 med Hareide som trener.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Åge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-5",
+    "expectedAnswer": "Nils Johan Semb",
+    "difficulty": 2,
+    "category": "Landslagsbenken",
+    "distractors": [
+      "Egil Olsen",
+      "Tord Grip",
+      "Per-Mathias Høgmo"
+    ],
+    "fact": "Hareide etterfulgte Nils Johan Semb som landslagssjef i 2003.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Åge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-6",
+    "expectedAnswer": "Molde",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Viking",
+      "Hødd",
+      "Rosenborg"
+    ],
+    "fact": "Hareide hadde to trenerperioder i Molde før Helsingborg.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Åge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-1",
+    "expectedAnswer": "Kjetil Rekdal",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Tom Nordlie",
+      "Martin Andresen",
+      "Vidar Davidsen"
+    ],
+    "fact": "Rekdal ledet Vålerenga til seriegull i 2005.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-2",
+    "expectedAnswer": "Aalesund",
+    "difficulty": 2,
+    "category": "Cupspesialisten",
+    "distractors": [
+      "Vålerenga",
+      "Molde",
+      "Brann"
+    ],
+    "fact": "Aalesund vant cupen med Rekdal både i 2009 og 2011.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-3",
+    "expectedAnswer": "Kaiserslautern",
+    "difficulty": 2,
+    "category": "Tysk fotball",
+    "distractors": [
+      "Hertha Berlin",
+      "Köln",
+      "Hamburg"
+    ],
+    "fact": "Rekdal trente Kaiserslautern i 2007–2008.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-4",
+    "expectedAnswer": "Lierse",
+    "difficulty": 3,
+    "category": "Belgisk fotball",
+    "distractors": [
+      "Genk",
+      "Gent",
+      "Club Brugge"
+    ],
+    "fact": "Rekdal trente Lierse etter sin første periode i Vålerenga.",
+    "reviewedAt": "2026-09-24",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  }
+]

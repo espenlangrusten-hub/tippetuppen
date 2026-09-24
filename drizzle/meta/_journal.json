@@ -78,6 +78,13 @@
       "when": 1790193583463,
       "tag": "0010_complete_cerise",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1790254615294,
+      "tag": "0011_trener_genius",
+      "breakpoints": true
     }
   ]
 }
