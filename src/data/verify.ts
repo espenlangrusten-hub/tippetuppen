@@ -37,8 +37,16 @@ export function verdictFor(entry: Checkable, page: WikiPage, today: string): Ver
   const { subject, mustMention } = entry.verify;
   if (!page) return { ok: false, note: `Fant ingen artikkel om «${subject}» på Wikipedia.` };
 
-  const haystack = normalizeName(page.extract);
-  const missing = mustMention.filter((needle) => !haystack.includes(normalizeName(needle)));
+  // Whole words only: a substring test found «20» inside «2006» and «1» almost
+  // anywhere, and waved questions through on it.
+  const haystack = ` ${normalizeName(page.extract)} `;
+  const mentions = (needle: string) => haystack.includes(` ${normalizeName(needle)} `);
+  // A bare small number proves nothing even as a whole word: «36» somewhere in an article
+  // about Haaland is not «36 goals in 2022/23». Those answers go to a person.
+  const bare = mustMention.filter((needle) => /^\d{1,3}$/.test(normalizeName(needle)));
+  if (bare.length)
+    return { ok: false, note: `Tallet ${bare.map((m) => `«${m}»`).join(" og ")} kan ikke bekreftes med et tekstsøk i «${page.title}». Sjekk svaret for hånd.` };
+  const missing = mustMention.filter((needle) => !mentions(needle));
   if (missing.length)
     return { ok: false, note: `Artikkelen «${page.title}» nevner ikke ${missing.map((m) => `«${m}»`).join(" og ")}. Sjekk svaret for hånd.` };
 

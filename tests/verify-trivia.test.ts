@@ -53,6 +53,26 @@ describe("verifying a question against an article", () => {
     expect(verdictFor(q, page("Lagerbäck ble ansatt i Norge."), "2026-09-08").ok).toBe(false);
     expect(verdictFor(q, page("Lagerbäck overtok Norge i 2017."), "2026-09-08").ok).toBe(true);
   });
+
+  it("krever hele ord, så et årstall ikke bekrefter et tall inni seg", () => {
+    // «20» used to pass inside «2006».
+    const q = entry({ verify: { subject: "Tromsø IL", mustMention: ["Alf"] } });
+    expect(verdictFor(q, page("Klubben spiller på Alfheim."), "2026-09-24").ok).toBe(false);
+    expect(verdictFor(q, page("Stadionet heter Alf sitt."), "2026-09-24").ok).toBe(true);
+  });
+
+  it("sender et kort tall til en person i stedet for å godkjenne det", () => {
+    const q = entry({ verify: { subject: "Erling Haaland", mustMention: ["36"] } });
+    const v = verdictFor(q, page("Han scoret 36 mål i Premier League."), "2026-09-24");
+    expect(v.ok).toBe(false);
+    expect(v.note).toContain("for hånd");
+  });
+
+  it("godtar fortsatt et årstall som står som eget ord", () => {
+    const q = entry({ verify: { subject: "Tromsø IL", mustMention: ["1996"] } });
+    expect(verdictFor(q, page("Tromsø vant cupen i 1996."), "2026-09-24").ok).toBe(true);
+    expect(verdictFor(q, page("Tromsø vant cupen i 19966."), "2026-09-24").ok).toBe(false);
+  });
 });
 
 describe("applying a verdict", () => {
