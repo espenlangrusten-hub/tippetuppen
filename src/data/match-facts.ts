@@ -56,7 +56,7 @@ const CONNECTOR = new Set(["de", "du", "des", "di", "del", "della", "do", "da", 
  * ("Wembley", "Vélodrome"). A stripped name that is just the city is dropped - typing
  * "Boston" is knowing where, not knowing the ground.
  */
-export function stadiumNames(names: string[], city?: string, avoid: string[] = []): string[] {
+export function stadiumNames(names: string[], city?: string, avoid: string[] = [], shortened = true): string[] {
   const out: string[] = [];
   const seen = new Set<string>();
   const banned = new Set([city, ...avoid].filter(Boolean).map((x) => normalizeName(x!)));
@@ -74,11 +74,35 @@ export function stadiumNames(names: string[], city?: string, avoid: string[] = [
       add(name.replace(quoted[0], ""), false);
       add(quoted[1], false);
     } else add(name, false);
+    // "National Football Stadium at Windsor Park": the ground is what comes after "at".
+    const at = name.match(/ at (.+)$/i);
+    if (at) add(at[1], false);
   }
-  for (const name of [...out]) {
+  for (const name of shortened ? [...out] : []) {
     const words = name.split(" ");
     const kept = words.filter((w) => !GENERIC.has(normalizeName(w)));
-    if (kept.length && kept.length < words.length && !CONNECTOR.has(normalizeName(kept[0]))) add(kept.join(" "), true);
+    if (kept.length && kept.length < words.length && !CONNECTOR.has(normalizeName(kept[0])) && !WEAK.has(normalizeName(kept.join(" ")))) add(kept.join(" "), true);
   }
   return out;
 }
+
+// Names that say what a ground is, not which one: a question answered "National Stadium"
+// tests nothing, and the stripped form would accept "National" for half of Europe.
+const WEAK = new Set(["national", "national football", "olympic", "olympic park", "municipal", "city", "central", "republican", "miejski", "stadion miejski", "national stadium", "olympic stadium", "municipal stadium", "city stadium", "central stadium", "republican stadium"]);
+
+/**
+ * The name to show as the answer, or null when no name is worth asking for. Our own
+ * name wins when the match file has one; otherwise the shortest name UEFA gives that is
+ * not written in capitals ("LA CARTUJA DE SEVILLA") - the short one is what fans say.
+ */
+export function stadiumLabel(ours: string | undefined, names: string[]): string | null {
+  if (ours && !WEAK.has(normalizeName(ours))) return ours;
+  const core = (n: string) => n.split(" ").filter((w) => !GENERIC.has(normalizeName(w))).join(" ");
+  // "Viking" next to "Viking Stadion" is the same name cut short, and reads like a club or
+  // a town; "Parken" and "San Siro" stand on their own and stay.
+  const cut = (n: string) => names.some((m) => m !== n && normalizeName(core(m)) === normalizeName(n));
+  const candidates = names.filter((n) => n !== n.toUpperCase() && !WEAK.has(normalizeName(n)) && !cut(n));
+  if (!candidates.length) return null;
+  return [...candidates].sort((a, b) => (WEAK.has(normalizeName(core(a))) ? 1 : 0) - (WEAK.has(normalizeName(core(b))) ? 1 : 0) || a.length - b.length)[0];
+}
+

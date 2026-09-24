@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { loadDataset } from "@/data/load";
-import { resolveName, sameScorers, stadiumNames } from "@/data/match-facts";
+import { resolveName, sameScorers, stadiumLabel, stadiumNames } from "@/data/match-facts";
 import { answerIsSpelledOut, describeMatch, isPlayable } from "@/data/straffespark";
 import { dailyStraffesparkRound, DAILY_STRAFFESPARK_SIZE, MIN_STRAFFESPARK_REPEAT_DAYS } from "@/lib/straffespark-beta";
 import { normalizeName } from "@/lib/names";
@@ -40,6 +40,19 @@ describe("stadionnavn en spiller kan skrive", () => {
   it("deler opp «Stadion Feijenoord 'De Kuip'» og tar bort Stadion-ordet", () => {
     expect(stadiumNames(["Stadion Feijenoord 'De Kuip'"], "Rotterdam")).toEqual(["Stadion Feijenoord", "De Kuip", "Feijenoord"]);
     expect(stadiumNames(["Wembley Stadium"], "London")).toEqual(["Wembley Stadium", "Wembley"]);
+  });
+
+  it("viser et fullt, lesbart navn som svar", () => {
+    expect(stadiumLabel(undefined, ["LA CARTUJA DE SEVILLA", "La Cartuja Stadium"])).toBe("La Cartuja Stadium");
+    expect(stadiumLabel(undefined, ["Viking", "Viking Stadion"])).toBe("Viking Stadion");
+    expect(stadiumLabel(undefined, ["Stadion Feijenoord", "De Kuip"])).toBe("De Kuip");
+    expect(stadiumLabel("Parc Lescure", ["Stade Chaban-Delmas"])).toBe("Parc Lescure");
+    expect(stadiumNames(["National Football Stadium at Windsor Park"], "Belfast", [], false)).toContain("Windsor Park");
+  });
+
+  it("stiller ikke spørsmål der navnet bare sier hva slags bane det er", () => {
+    expect(stadiumLabel(undefined, ["National Stadium"])).toBeNull();
+    expect(stadiumLabel(undefined, ["Olympic Park"])).toBeNull();
   });
 
   it("godtar ikke byen eller et halvt navn som stadion", () => {

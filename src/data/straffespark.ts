@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { normalizeName, slugify } from "@/lib/names";
+import { nameTokens, normalizeName, slugify } from "@/lib/names";
 import * as S from "./schema";
 import type { PlayerRecord } from "./load";
-import { stadiumNames } from "./match-facts";
+import { stadiumLabel, stadiumNames } from "./match-facts";
 
 export type StraffesparkQuestion = z.infer<typeof S.straffesparkFile>[number];
 type Trivia = Extract<StraffesparkQuestion, { kind: "trivia" }>;
@@ -189,10 +189,22 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
     if (seen.get(d)! > 1) described.set(m.id, `${d} (${dateLabel(m.date).replace(/ \d{4}$/, "")})`);
   }
 
-  const playerAnswers = (name: string) => {
-    const p = input.players.get(slugify(name));
-    return [name, p?.displayName, p?.fullName, ...(p?.aliases ?? []).map((a) => a.alias), p?.surname ?? name.split(" ").at(-1)];
+  // The registry holds some players under more than one spelling ("Henning Berg",
+  // "Henning Stille Berg"). The answer shown is the shortest; every spelling is accepted.
+  const registryNames = [...new Set([...input.players.values()].map((p) => p.displayName))];
+  // Only a spelling whose every name is in the other counts: "Bjørn Johnsen" and "Bjørn
+  // Maars Johnsen" share first and last name but could still be two people.
+  const within = (a: string, b: string) => {
+    const [ta, tb] = [nameTokens(a), nameTokens(b)];
+    return ta.length >= 2 && ta.every((t) => tb.includes(t));
   };
+  const spellings = (name: string) => registryNames.filter((n) => normalizeName(n) !== normalizeName(name) && (within(n, name) || within(name, n)));
+  const shortName = (name: string) => [name, ...spellings(name)].sort((a, b) => a.split(" ").length - b.split(" ").length || a.length - b.length)[0];
+  const playerAnswers = (name: string) =>
+    [name, ...spellings(name)].flatMap((n) => {
+      const p = input.players.get(slugify(n));
+      return [n, p?.displayName, p?.fullName, ...(p?.aliases ?? []).map((a) => a.alias), p?.surname ?? n.split(" ").at(-1)];
+    });
   const listNames = (names: string[]) => (names.length < 2 ? names.join("") : `${names.slice(0, -1).join(", ")} og ${names.at(-1)}`);
 
   for (const match of playable) {
@@ -207,7 +219,7 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
 
     const scorers = facts.scorers ?? [];
     const real = scorers.filter((g) => g.kind !== "og");
-    const names = [...new Set(real.map((g) => g.name))];
+    const names = [...new Set(real.map((g) => shortName(g.name)))];
     if (names.length) {
       const goals = match.score[0];
       const ask =
@@ -223,7 +235,7 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
         enabled: true,
         prompt: `${intro}. ${ask}`,
         answer: { label, aliases: extraAliases(label, names.flatMap(playerAnswers)) },
-        fact: `Norges mål: ${scorers.map((g) => (g.kind === "og" ? `selvmål${minute(g)}` : `${g.name}${minute(g)}`)).join(", ")}.`,
+        fact: `Norges mål: ${scorers.map((g) => (g.kind === "og" ? `selvmål${minute(g)}` : `${shortName(g.name)}${minute(g)}`)).join(", ")}.`,
         era,
         difficulty: matchDifficulty,
         status: confirmed ? "verified" : "single_source",
@@ -233,14 +245,15 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
 
     if (facts.captain) {
       const ours = match.lineup.find((p) => p.captain)?.name;
+      const captain = shortName(facts.captain);
       out.push({
         kind: "trivia",
         id: `str-auto-kaptein-${match.id}`,
         category: "spiller",
         enabled: true,
         prompt: `${intro}. Hvem var Norges kaptein?`,
-        answer: { label: facts.captain, aliases: extraAliases(facts.captain, playerAnswers(facts.captain)) },
-        fact: `${facts.captain} bar kapteinsbindet.`,
+        answer: { label: captain, aliases: extraAliases(captain, playerAnswers(facts.captain)) },
+        fact: `${captain} bar kapteinsbindet.`,
         era,
         difficulty: matchDifficulty,
         status: ours === facts.captain ? "verified" : "single_source",
@@ -254,8 +267,12 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
       // Norway's home ground is where nine in ten home matches are played; asking for it
       // is a free point. Any other home ground is a real question.
       const ullevaal = all.some((n) => /ullev(a|aa)l/.test(normalizeName(n)));
-      const label = all[0];
-      if (label && !(match.norwayHome && !st.neutral && ullevaal) && !answerIsSpelledOut(intro, label)) {
+      // The answer shown is always a full name; the shortened ones are accepted, not shown.
+      const label = stadiumLabel(match.venue, stadiumNames([...(match.venue ? [match.venue] : []), ...st.names], st.city, [], false));
+      // UEFA knows some grounds only by a short name that is also the city ("Hong Kong",
+      // "Sharjah"): as an answer it says where, not which ground.
+      const isCity = !!label && !!st.city && normalizeName(label) === normalizeName(st.city);
+      if (label && !isCity && !(match.norwayHome && !st.neutral && ullevaal) && !answerIsSpelledOut(intro, label)) {
         const ours = match.venue ? stadiumNames([match.venue]) : [];
         const agrees = ours.some((o) => stadiumNames(st.names).some((n) => normalizeName(n) === normalizeName(o)));
         out.push({
@@ -264,7 +281,8 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
           category: "stadion",
           enabled: true,
           prompt: `${intro}. På hvilket stadion ble kampen spilt?`,
-          answer: { label, aliases: extraAliases(label, all) },
+          // "Tianhe" is what UEFA calls it; "Tianhe Stadium" is what a player types.
+          answer: { label, aliases: extraAliases(label, [...all, ...(stadiumNames([label]).length === 1 && !/\b(stad|arena|park|oval|center|centre|ground)/i.test(label) ? [`${label} Stadium`, `${label} Stadion`] : [])]) },
           fact: `Kampen ble spilt på ${label}${st.city ? ` i ${st.city}` : ""}.`,
           era,
           difficulty: clamp(matchDifficulty + 1),
