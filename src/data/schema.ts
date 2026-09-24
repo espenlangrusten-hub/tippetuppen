@@ -98,6 +98,37 @@ export const matchFile = z.object({
 });
 export type MatchFile = z.infer<typeof matchFile>;
 
+/**
+ * What UEFA's match data adds to a match file: the stadium under every name UEFA gives
+ * it, Norway's scorers and the starting captain. Written by scripts/import/match-facts.ts
+ * and read by the Straffespark question builder.
+ *
+ * Kept apart from the match files on purpose. A scorer in a match file has to be in the
+ * lineup or on the bench, and most matches have no bench recorded; here a scorer is a
+ * name UEFA gives, resolved to our spelling where that can be done without doubt.
+ * A field is left out when UEFA disagrees with the match file or with itself - the
+ * importer's report lists every such match.
+ */
+export const matchFactsFile = z.array(
+  z.object({
+    match: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z]{3}-[a-z]{3}$/),
+    uefa: z.string().regex(/^\d+$/), // match.uefa.com/v5/matches/{uefa}
+    stadium: z
+      .object({
+        names: z.array(z.string().min(1)).min(1), // official name first, then the others UEFA gives
+        city: z.string().optional(),
+        country: z.string().length(3).optional(), // country code of where it was played
+        neutral: z.boolean().optional(), // true when that is neither team's country
+      })
+      .optional(),
+    scorers: z
+      .array(z.object({ name: z.string().min(1), minute: z.number().int().optional(), kind: z.enum(["goal", "pen", "og"]) }))
+      .optional(), // every goal credited to Norway, own goals included; absent when it does not add up
+    captain: z.string().min(1).optional(), // a name from the match file's starting eleven
+  }),
+);
+export type MatchFacts = z.infer<typeof matchFactsFile>[number];
+
 export const seasonFile = z.array(
   z.object({
     id: z.string(),
