@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { borrowNumber, completeNumbers, decide, dropDuplicates, matchStarters, sameName } from "@/data/shirts";
+import { borrowNumber, completeNumbers, decide, dropDuplicates, matchStarters, sameName, squadWindowClashes } from "@/data/shirts";
 
 describe("hvem er hvem i en kilde", () => {
   it("kjenner igjen samme spiller med og uten mellomnavn", () => {
@@ -71,5 +71,24 @@ describe("når drakter får nummer", () => {
     expect(completeNumbers(eleven)).toBe(true);
     expect(completeNumbers(eleven.map((p, i) => (i === 3 ? { no: null } : p)))).toBe(false);
     expect(completeNumbers(eleven.map((p, i) => (i === 3 ? { no: 1 } : p)))).toBe(false);
+  });
+});
+
+describe("ett vindu, ett nummer", () => {
+  const m = (id: string, date: string, no: number) => ({ id, date, lineup: [{ name: "Håvard Nordtveit", no }] });
+
+  it("fanger to numre med få dagers mellomrom fra 2006", () => {
+    // Our England friendly and UEFA's Italy qualifier six days later disagree like this.
+    const c = squadWindowClashes([m("2014-09-03-eng-nor", "2014-09-03", 8), m("2014-09-09-nor-ita", "2014-09-09", 6)]);
+    expect(c).toHaveLength(1);
+    expect(c[0]).toMatchObject({ earlier: "2014-09-03-eng-nor", later: "2014-09-09-nor-ita", days: 6 });
+  });
+
+  it("godtar at numrene skiftet mellom kamper før 2006, da de fulgte posisjonen", () => {
+    expect(squadWindowClashes([m("2003-11-15-esp-nor", "2003-11-15", 3), m("2003-11-19-nor-esp", "2003-11-19", 4)])).toEqual([]);
+  });
+
+  it("godtar nytt nummer ved en ny samling", () => {
+    expect(squadWindowClashes([m("a", "2022-03-25", 19), m("b", "2022-06-02", 9)])).toEqual([]);
   });
 });

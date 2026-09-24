@@ -11,7 +11,7 @@
  */
 import { appendFileSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { borrowNumber, completeNumbers, decide, dropDuplicates, matchStarters, sameName, type SourcePlayer } from "../../src/data/shirts";
+import { borrowNumber, completeNumbers, decide, dropDuplicates, matchStarters, sameName, squadWindowClashes, type SourcePlayer } from "../../src/data/shirts";
 import { parseLineupTable, type ParsedLineupRow } from "../../src/data/wikitext";
 import { parseNffStarters, serialize, type Match } from "./shirt-format";
 
@@ -201,6 +201,25 @@ async function main() {
     }
   }
 
+  // What the pitch may show. Two numbers for one player inside a squad window cancel
+  // each other out in both matches; after that, only a complete eleven keeps its numbers.
+  // Partial numbers were still worth collecting: they are what borrowing lends from.
+  const windowStripped = new Set<string>();
+  for (const c of squadWindowClashes(documented)) {
+    windowStripped.add(c.later);
+    windowStripped.add(c.earlier);
+    conflicts.push(`${c.earlier} og ${c.later}: ${c.name} har ${c.earlierNo} og ${c.laterNo} med ${c.days} dagers mellomrom – begge kampene mister numrene`);
+  }
+  let partial = 0;
+  for (const { m } of matches) {
+    if (!windowStripped.has(m.id) && completeNumbers(m.lineup)) continue;
+    if (m.lineup.some((p) => p.no != null)) partial++;
+    for (const p of m.lineup) {
+      delete p.no;
+      delete p.noInferred;
+    }
+  }
+
   for (const { file, m } of matches) {
     const target = path.join(DIR, file);
     const original = readFileSync(target, "utf8");
@@ -213,7 +232,9 @@ async function main() {
     "## Draktnumre",
     "",
     `- Kamper med komplett startellever med numre: **${before} → ${after.length}** av ${matches.length}`,
-    `- Av dem med minst ett lånt nummer: ${withBorrowed} (lånte numre totalt: ${borrowed})`,
+    `- Av dem med minst ett lånt nummer: ${withBorrowed} (lånte numre forsøkt: ${borrowed})`,
+    `- Kamper med noen, men ikke alle numre – skrevet uten numre: ${partial}`,
+    `- Kamper som mistet numrene på grunn av to numre i samme vindu: ${windowStripped.size}`,
     `- Kilder brukt: UEFA ${used.uefa} kamper, Wikipedia ${used.wikipedia}, fotball.no ${used.nff}`,
     `- Ikke funnet hos UEFA: ${notFound.length}`,
     "",

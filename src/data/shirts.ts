@@ -111,3 +111,35 @@ export function completeNumbers(lineup: { no?: number | null }[]): boolean {
   const nos = lineup.map((p) => p.no);
   return lineup.length === 11 && nos.every((n) => Number.isInteger(n) && n! >= 1 && n! <= 99) && new Set(nos).size === 11;
 }
+
+export const SQUAD_WINDOW_DAYS = 10;
+type Worn = { id: string; date: string; lineup: { name: string; no?: number | null }[] };
+
+/**
+ * Same player, two numbers, at most ten days apart: in the squad-number era one of the
+ * two was never on a shirt. Returns each clash once, later match first. Before September
+ * 2006 Norway numbered every eleven 1–11 by position, so a change inside a window is what
+ * the documented matches show, not an error.
+ */
+export function squadWindowClashes(matches: Worn[]): { later: string; earlier: string; name: string; laterNo: number; earlierNo: number; days: number }[] {
+  const byPlayer = new Map<string, { id: string; date: string; no: number; name: string }[]>();
+  for (const m of matches) {
+    if (m.date < SQUAD_NUMBERS_FROM) continue;
+    for (const p of m.lineup) {
+      if (p.no == null) continue;
+      const key = normalizeName(p.name);
+      byPlayer.set(key, [...(byPlayer.get(key) ?? []), { id: m.id, date: m.date, no: p.no, name: p.name }]);
+    }
+  }
+  const out: ReturnType<typeof squadWindowClashes> = [];
+  for (const worn of byPlayer.values()) {
+    const sorted = worn.slice().sort((a, b) => a.date.localeCompare(b.date));
+    for (let i = 0; i < sorted.length - 1; i++) {
+      const a = sorted[i];
+      const b = sorted[i + 1];
+      const apart = days(a.date, b.date);
+      if (apart <= SQUAD_WINDOW_DAYS && a.no !== b.no) out.push({ later: b.id, earlier: a.id, name: b.name, laterNo: b.no, earlierNo: a.no, days: Math.round(apart) });
+    }
+  }
+  return out;
+}

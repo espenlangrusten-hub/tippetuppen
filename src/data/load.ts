@@ -4,6 +4,7 @@ import { z } from "zod";
 import { slugify, defaultAliases, normalizeName } from "@/lib/names";
 import { layoutPitch, parseFormation, positionKind } from "@/lib/pitch";
 import * as S from "./schema";
+import { squadWindowClashes } from "./shirts";
 import { deriveStraffesparkTrivia } from "./straffespark";
 import type { DataStatus, Position } from "@/db/schema";
 
@@ -267,25 +268,9 @@ export function loadDataset(): Dataset {
 
   // A squad keeps its numbers for the whole international window, so the same player
   // wearing two numbers days apart means at least one of them was never on a shirt.
-  const numberByPlayer = new Map<string, { date: string; no: number; match: string; name: string }[]>();
-  for (const m of matches) {
-    for (const st of m.lineup) {
-      if (st.no == null) continue;
-      const key = normalizeName(st.name);
-      numberByPlayer.set(key, [...(numberByPlayer.get(key) ?? []), { date: m.date, no: st.no, match: m.id, name: st.name }]);
-    }
-  }
-  const WINDOW_DAYS = 10;
-  for (const [, worn] of numberByPlayer) {
-    const sorted = worn.slice().sort((a, b) => a.date.localeCompare(b.date));
-    for (let i = 0; i < sorted.length - 1; i++) {
-      const a = sorted[i];
-      const b = sorted[i + 1];
-      const apart = (Date.parse(b.date) - Date.parse(a.date)) / 86_400_000;
-      if (apart <= WINDOW_DAYS && a.no !== b.no)
-        problems.push(`${b.match}: ${b.name} wears ${b.no}, but ${a.no} in ${a.match} ${Math.round(apart)} days earlier – one squad window, one number`);
-    }
-  }
+  // From September 2006 only: before that every eleven was numbered 1–11 by position.
+  for (const c of squadWindowClashes(matches))
+    problems.push(`${c.later}: ${c.name} wears ${c.laterNo}, but ${c.earlierNo} in ${c.earlier} ${c.days} days earlier – one squad window, one number`);
 
   for (const s of seasons) {
     if (!compIds.has(s.competition)) problems.push(`season ${s.id}: unknown competition ${s.competition}`);
