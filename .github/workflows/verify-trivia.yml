@@ -41,7 +41,7 @@ jobs:
 
       - name: Slå opp på Wikipedia
         env:
-          LIMIT: ${{ inputs.limit || '40' }}
+          LIMIT: ${{ inputs.limit || '450' }}
         run: |
           set -euo pipefail
           node --import tsx scripts/import/verify-trivia.ts --limit "$LIMIT" | tee verify.log
