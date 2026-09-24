@@ -32,12 +32,13 @@ import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
 import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
+import { geniusRoute } from "../_shared/trener-genius-routes.ts";
 import { finnRoute } from "../_shared/finn.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
-const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
+const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const;
 type Game = (typeof GAMES)[number];
 const isGame = (g: string | null): g is Game => !!g && (GAMES as readonly string[]).includes(g);
 
@@ -75,6 +76,7 @@ function present(game: Game, r: ScheduledRow) {
       puzzle: { puzzleId: r.puzzle_id, number: r.number, date: r.date, title: r.title, role: pl.role, hintCount: pl.hints.length, status: pl.status },
     };
   }
+  if (game === "trener-genius") return { game, isArchive, today, puzzle: { number: r.number, date: r.date, title: "Trener Genius", questionCount: 4 } };
   const pl = r.payload as MaalloesPayload;
   return {
     game,
@@ -420,6 +422,7 @@ Deno.serve(async (req) => {
       return json(saved);
     }
 
+    if (req.method === "POST" && route.startsWith("/trener-genius/")) return geniusRoute(req, route.split("/").at(-1)!);
     if (req.method === "POST" && route.startsWith("/finn-spilleren/")) return finnRoute(req, route.split("/").at(-1)!);
 
     // Kjappen: the multiplayer quiz show. Separate from the daily games - its own

@@ -308,7 +308,7 @@ export const playerClubSpells = tt.table(
 // Puzzles and schedule
 // ---------------------------------------------------------------------------
 
-export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren"] as const;
+export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const;
 export type GameId = (typeof GAMES)[number];
 
 export const puzzles = tt.table(
@@ -577,3 +577,12 @@ export const contactMessages = tt.table(
   },
   (t) => [index("contact_messages_created").on(t.createdAt), index("contact_messages_visitor").on(t.visitor, t.createdAt)],
 );
+
+/** Server-owned daily coach quiz attempts. Guest UUIDs are capabilities, never public IDs. */
+export const geniusAttempts = tt.table("genius_attempts", {
+  id: text("id").primaryKey(),
+  puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+  userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
+  state: jsonb("state").$type<Record<string, unknown>>().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, t => [uniqueIndex("genius_attempts_user_puzzle").on(t.userId, t.puzzleId), index("genius_attempts_puzzle").on(t.puzzleId)]);

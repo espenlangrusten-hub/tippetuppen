@@ -51,10 +51,26 @@ jobs:
     needs: preflight
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # Serialize database preparation with the separate data workflow.
+    concurrency:
+      group: tippetuppen-data
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Prepare database before publishing the new game
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          npm run db:migrate
+          node --import tsx scripts/schedule.ts --days 400
 
       # Deploy the complete desired state on every run. HEAD^ is not the last
       # deployed commit: a newer push can cancel a run before its API deploy.
@@ -71,7 +87,7 @@ jobs:
 
   site:
     name: Build and publish site
-    needs: preflight
+    needs: [preflight, function]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment:

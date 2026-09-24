@@ -62,7 +62,7 @@ export function LeagueScreen() {
   const copy = month ? monthCopy(month.month, month.champion) : null;
 
   return <div className="flex flex-col gap-4">
-    <section><h1 className="font-display text-4xl font-bold uppercase">🏆 Tippetuppen-ligaen</h1><p className="mt-2 text-mist">Én måned om gangen. Tabellen nullstilles den første i hver måned, og den som står øverst når måneden er omme, blir månedens Tippetupp. Alle tre spill omregnes til 0–100 ligapoeng per dag, så de teller like mye.</p></section>
+    <section><h1 className="font-display text-4xl font-bold uppercase">🏆 Tippetuppen-ligaen</h1><p className="mt-2 text-mist">Én måned om gangen. Tabellen nullstilles den første i hver måned, og den som står øverst når måneden er omme, blir månedens Tippetupp. Mangler XI, Målløs, Finn spilleren og Trener Genius gir hver opptil 100 ligapoeng per dag.</p></section>
     <section id={mode} className="card p-5 scroll-mt-20">
       {user ? <div className="flex items-center justify-between gap-3"><div><div className="text-sm text-mist">Logget inn som</div><div className="font-display text-2xl font-bold">{user.username}</div></div><button className="btn btn-secondary" onClick={logout}>Logg ut</button></div> : <>
         <div className="mb-4 flex gap-2"><button className={`btn ${mode === "login" ? "btn-primary" : "btn-secondary"}`} onClick={() => setMode("login")}>Logg inn</button><button className={`btn ${mode === "register" ? "btn-primary" : "btn-secondary"}`} onClick={() => setMode("register")}>Ny spiller</button></div>
@@ -72,7 +72,7 @@ export function LeagueScreen() {
     </section>
     <section className="card overflow-hidden">
       {copy && <MonthChampion copy={copy} />}
-      <div className="border-b border-line p-4"><h2 className="font-display text-2xl font-bold uppercase">Topp 100 – {copy ? copy.month : "denne måneden"}</h2><p className="text-xs text-mist">Mangler XI belønner spillere funnet og færre forsøk. Målløs belønner lav totalsum. Finn spilleren følger hintpoengene.</p></div>
+      <div className="border-b border-line p-4"><h2 className="font-display text-2xl font-bold uppercase">Topp 100 – {copy ? copy.month : "denne måneden"}</h2><p className="text-xs text-mist">Mangler XI belønner spillere funnet og færre forsøk. Målløs belønner lav totalsum. Finn spilleren følger hintpoengene. Trener Genius gir 25 for riktig svar, eller +50/−25 når du går offensivt; sluttresultatet begrenses til 0–100.</p></div>
       {copy && <MonthPulse copy={copy} />}
       {boardStatus === "loading" ? <p className="p-5 text-mist" role="status">Henter ligaen …</p>
         : boardStatus === "error" ? <div className="p-5" role="status"><p className="text-mist">Kunne ikke hente ligaen.</p><button className="mt-2 underline" onClick={() => void load()}>Prøv igjen</button></div>
