@@ -1,0 +1,38 @@
+name: Importer posisjoner
+
+# Report on UEFA's lineups for starting elevens whose source does not give positions
+# (pos "OUT"): roles, coordinates and how each reading compares with the matches whose
+# positions are documented. Writes nothing - neither reading passed that check (see
+# scripts/import/positions.ts) - so the job only produces the summary. A push that touches the importer starts it: the assistant
+# working on this repository can push but cannot dispatch a workflow.
+
+on:
+  workflow_dispatch:
+  push:
+    # Never on main: a merge would commit straight to the default branch without review.
+    branches-ignore: [main]
+    paths:
+      - scripts/import/positions.ts
+      - .github/workflows/import-positions.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: import-positions-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hent posisjoner (bare rapport)
+        run: node --import tsx scripts/import/positions.ts

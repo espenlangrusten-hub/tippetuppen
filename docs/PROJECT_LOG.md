@@ -2,6 +2,37 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-25 – Posisjoner i Mangler XI, og en manuell retting av dagens oppgave
+
+304 av 362 kamper har startelleveren dokumentert, men ikke posisjonene (`pos: "OUT"`).
+Banen tegnet dem som to rader à fem, som ser ut som en formasjon ingen spiller. Dagens
+oppgave (25.9., Norge–Tsjekkia 2011) var en av dem.
+
+**Manuell databaseendring 2026-09-25 ca. 00:35 (Oslo).** `tippetuppen.puzzles`, rad
+`mxi-2011-08-10-nor-cze` (publisert, bygges ikke om av `schedule.ts`). I `payload` er bare
+disse feltene endret; spillere, svar, alias og fakta er uendret:
+
+| Felt | Før | Etter |
+|---|---|---|
+| `formation` | `null` | `"4-5-1"` |
+| `players[*].pos` (i rekkefølge) | `GK, OUT ×10` | `GK, DF ×4, MF ×5, FW` |
+| `notes` | «Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.» | «Startelleveren er dokumentert. Linjene (4-5-1) er satt der UEFAs spillerroller og rekkefølgen i kilden er enige; venstre/høyre og draktnumre er ikke dokumentert.» |
+
+Grunnlag: UEFAs lagoppstilling (match 2008441) har Høgli, Demidov, Wæhler og Riise som
+forsvarere, Hauger, Grindheim og Gamst Pedersen som midtbane og Abdellaoue som angrep
+(Huseklepp og Tettey uten rolle), og kilden vår lister spillerne i samme rekkefølge.
+Wæhler har alltid startet som midtstopper og Hauger/Grindheim alltid på sentral midtbane i
+de kampene rollene er dokumentert. Venstre/høyre og draktnumre er ikke dokumentert noe sted
+(UEFA har 0 for alle), så de er ikke satt. Kampfilen har fått samme endring.
+
+Tilbakestilling: sett `formation` til `null`, `notes` til den gamle teksten og alle
+`players[*].pos` unntatt keeper til `"OUT"`.
+
+For resten av kampene henter `scripts/import/positions.ts` posisjoner fra UEFAs
+koordinater der de finnes (fra ca. 2010), kalibrert mot kampene med dokumenterte
+posisjoner. UEFAs spillerroller alene ga riktig linje i 85 % av tilfellene, og sammen med
+rekkefølgen i kilden bare 7 av 10 helt riktige kamper; de brukes derfor ikke automatisk.
+
 ## 2026-09-06 – Datakvalitet, 365 dager Målløs og NFF-import
 
 Produksjonsrevisjonen fant 47 kamper, 82 puslespill og bare 30–40 dagers reell
