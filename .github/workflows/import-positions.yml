@@ -1,8 +1,9 @@
 name: Importer posisjoner
 
-# Playing positions and formation from UEFA's lineups for starting elevens whose source
-# does not give them (pos "OUT"). Commits the result to the branch it ran on, with the
-# report in the job summary. A push that touches the importer starts it: the assistant
+# Report on UEFA's lineups for starting elevens whose source does not give positions
+# (pos "OUT"): roles, coordinates and how each reading compares with the matches whose
+# positions are documented. Writes nothing - neither reading passed that check (see
+# scripts/import/positions.ts) - so the job only produces the summary. A push that touches the importer starts it: the assistant
 # working on this repository can push but cannot dispatch a workflow.
 
 on:
@@ -15,7 +16,7 @@ on:
       - .github/workflows/import-positions.yml
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: import-positions-${{ github.ref }}
@@ -33,34 +34,5 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # Start from main's match files, never from an earlier run's output.
-      - name: Start fra kampdataene på main
-        run: |
-          git fetch --no-tags --depth=1 origin main
-          git checkout FETCH_HEAD -- data/source/matches
-
-      - name: Hent posisjoner
+      - name: Hent posisjoner (bare rapport)
         run: node --import tsx scripts/import/positions.ts
-
-      # The pitch is drawn from these; nothing that fails validation gets that far.
-      - name: Valider dataene
-        run: npm run data:validate
-
-      - name: Commit endringene
-        run: |
-          set -euo pipefail
-          git add data/source/matches
-          if git diff --cached --quiet; then
-            echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -F - <<EOF
-          Posisjoner og formasjon fra UEFAs lagoppstillinger
-
-          $(sed -n '3,6p' positions-report.md)
-
-          Det som ble hoppet over står i jobbsammendraget for kjøring ${{ github.run_id }}.
-          EOF
-          git push origin HEAD:${{ github.ref_name }}
