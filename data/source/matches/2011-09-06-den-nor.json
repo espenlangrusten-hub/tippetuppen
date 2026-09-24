@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:uefa-lineup"
+    "position:undocumented"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
-  "notes": "Startelleveren er dokumentert.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,54 +41,53 @@
     },
     {
       "name": "Tom Høgli",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 2
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 3
     },
     {
       "name": "Brede Hangeland",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 5
     },
     {
       "name": "Espen Ruud",
-      "pos": "RWB",
+      "pos": "OUT",
       "no": 13
     },
     {
       "name": "Erik Andre Huseklepp",
-      "pos": "RM",
+      "pos": "OUT",
       "no": 18
     },
     {
       "name": "Alexander Banor Tettey",
-      "pos": "LM",
+      "pos": "OUT",
       "no": 14
     },
     {
       "name": "Håvard Nordtveit",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 17
     },
     {
       "name": "Christian Grindheim",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 16
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "LWB",
+      "pos": "OUT",
       "no": 6
     },
     {
       "name": "Mohammed Abdellaoue",
-      "pos": "CF",
+      "pos": "OUT",
       "no": 9
     }
-  ],
-  "formation": "5-4-1"
+  ]
 }

@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:uefa-lineup"
+    "position:undocumented"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
-  "notes": "Startelleveren er dokumentert.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,54 +41,53 @@
     },
     {
       "name": "Jonas Svensson",
-      "pos": "RB",
+      "pos": "OUT",
       "no": 16
     },
     {
       "name": "Stefan Strandberg",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 4
     },
     {
       "name": "Even Hovland",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 3
     },
     {
       "name": "Haitam Aleesami",
-      "pos": "LB",
+      "pos": "OUT",
       "no": 2
     },
     {
       "name": "Pål André Helland",
-      "pos": "RM",
+      "pos": "OUT",
       "no": 21
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 15
     },
     {
       "name": "Ole Kristian Selnæs",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 18
     },
     {
       "name": "Adama Diomandé",
-      "pos": "LM",
+      "pos": "OUT",
       "no": 20
     },
     {
       "name": "Joshua King",
-      "pos": "CF",
+      "pos": "OUT",
       "no": 7
     },
     {
       "name": "Markus Henriksen",
-      "pos": "CF",
+      "pos": "OUT",
       "no": 10
     }
-  ],
-  "formation": "4-4-2"
+  ]
 }

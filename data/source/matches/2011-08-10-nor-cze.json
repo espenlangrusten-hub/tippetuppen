@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:uefa-role"
   ],
   "status": "single_source",
   "sources": [
@@ -22,9 +22,16 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/2008441/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-25",
+      "note": "Spillerroller: Høgli, Demidov, Wæhler, Riise forsvar; Hauger, Grindheim, Gamst Pedersen midtbane; Abdellaoue angrep; Huseklepp og Tettey uten rolle. Ingen draktnumre eller koordinater."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Linjene (4-5-1) er satt der UEFAs spillerroller og rekkefølgen i kilden er enige; venstre/høyre og draktnumre er ikke dokumentert.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +40,44 @@
     },
     {
       "name": "Tom Høgli",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Vadim Demidov",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Erik Andre Huseklepp",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Alexander Banor Tettey",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Henning Hauger",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Christian Grindheim",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Mohammed Abdellaoue",
-      "pos": "OUT"
+      "pos": "FW"
     }
-  ]
+  ],
+  "formation": "4-5-1"
 }

@@ -118,6 +118,12 @@ function drawsAs(lineup: { pos: Position }[], formation: string): boolean {
 }
 
 const ROLES_WRITE = false;
+// UEFA's coordinates are a drawing template, not a formation: full-backs and wide men sit a
+// full line ahead of the players inside them (a 4-4-2 reads 234 236 | 383 385 | 594 597 |
+// 724 727 | 876 879). Read by depth they gave the documented formation in 8 of 22 matches,
+// so nothing is written from them either; the report is what this script is for until a
+// reading that passes that check exists.
+const COORDS_WRITE = false;
 const ROLE: Record<string, Position> = { DEFENDER: "DF", MIDFIELDER: "MF", FORWARD: "FW" };
 const lineOf = (pos: Position) => {
   const k = positionKind(pos);
@@ -216,7 +222,7 @@ for (const { file, original, m, uefaId, matched } of plans) {
   let how = "";
 
   const keeperY = keeper ? matched.get(keeper.name)!.fieldCoordinate?.y : undefined;
-  if (keeper && keeperY != null && coords.every((c) => c?.x != null && c?.y != null)) {
+  if (COORDS_WRITE && keeper && keeperY != null && coords.every((c) => c?.x != null && c?.y != null)) {
     // The keeper stands at his own goal; if UEFA drew this match the other way up, turn it.
     const up = coords.reduce((a, c) => a + c!.y!, 0) / coords.length > keeperY ? 1 : -1;
     const placed = out.map((p, i) => ({ name: p.name, x: (flipX ? -1 : 1) * up * coords[i]!.x!, y: up * coords[i]!.y! }));

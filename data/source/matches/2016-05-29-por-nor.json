@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:uefa-lineup"
+    "position:undocumented"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
-  "notes": "Startelleveren er dokumentert.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,54 +41,53 @@
     },
     {
       "name": "Martin Linnes",
-      "pos": "LB",
+      "pos": "OUT",
       "no": 17
     },
     {
       "name": "Even Hovland",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 3
     },
     {
       "name": "Stefan Strandberg",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 4
     },
     {
       "name": "Anders Trondsen",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 21
     },
     {
       "name": "Veton Berisha",
-      "pos": "CF",
+      "pos": "OUT",
       "no": 14
     },
     {
       "name": "Stefan Johansen",
-      "pos": "RB",
+      "pos": "OUT",
       "no": 8
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 19
     },
     {
       "name": "Valon Berisha",
-      "pos": "LM",
+      "pos": "OUT",
       "no": 20
     },
     {
       "name": "Markus Henriksen",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 10
     },
     {
       "name": "Joshua King",
-      "pos": "RM",
+      "pos": "OUT",
       "no": 7
     }
-  ],
-  "formation": "4-5-1"
+  ]
 }
