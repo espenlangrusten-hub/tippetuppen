@@ -1,5 +1,5 @@
 /**
- * Check the hand-written Straffespark questions against Norwegian Wikipedia.
+ * Check the hand-written Straffespark, Kjappen and coach-quiz questions against Norwegian Wikipedia.
  *
  * Questions written from memory sit at `recall` and never reach a player. This reads
  * the article each one names in its `verify` block, checks that the article text
@@ -15,7 +15,7 @@
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { kjappenFile, straffesparkFile } from "../../src/data/schema";
+import { coachQuizFile, kjappenFile, straffesparkFile } from "../../src/data/schema";
 import { articleMatchesSubject, pendingVerification, verdictFor, type Checkable, type WikiPage } from "../../src/data/verify";
 
 const API = "https://no.wikipedia.org/w/api.php";
@@ -25,6 +25,7 @@ const UA = "Tippetuppen trivia verifier (https://github.com/espenlangrusten-hub/
 const POOLS = [
   { file: path.join(process.cwd(), "data", "source", "straffespark.json"), schema: straffesparkFile },
   { file: path.join(process.cwd(), "data", "source", "kjappen.json"), schema: kjappenFile },
+  { file: path.join(process.cwd(), "data", "source", "trenerquiz.json"), schema: coachQuizFile },
 ] as const;
 
 type ApiPage = { title: string; missing?: boolean; extract?: string; fullurl?: string };

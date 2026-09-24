@@ -70,6 +70,8 @@ export type Dataset = {
   spells: z.infer<typeof S.spellFile>;
   straffespark: z.infer<typeof S.straffesparkFile>;
   kjappen: z.infer<typeof S.kjappenFile>;
+  coaches: z.infer<typeof S.coachFile>;
+  coachQuiz: z.infer<typeof S.coachQuizFile>;
   problems: string[];
 };
 
@@ -89,6 +91,8 @@ export function loadDataset(): Dataset {
   const spells = readJson(S.spellFile, "spells.json", []);
   let straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
   const kjappen = readJson(S.kjappenFile, "kjappen.json", []);
+  const coaches = readJson(S.coachFile, "trenere.json", []);
+  const coachQuiz = readJson(S.coachQuizFile, "trenerquiz.json", []);
 
   const matchDir = path.join(DATA_DIR, "matches");
   const matches: S.MatchFile[] = existsSync(matchDir)
@@ -386,5 +390,30 @@ export function loadDataset(): Dataset {
     if (dupes.length) problems.push(`kjappen ${q.id}: alias ${dupes[0]} repeats the answer`);
   }
 
-  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, problems };
+  // The coach bank: the same promises again, plus one of its own - every question names
+  // a coach in trenere.json, because that is where a reviewer finds the leads behind it.
+  const coachIds = new Set<string>();
+  for (const c of coaches) {
+    if (coachIds.has(c.id)) problems.push(`trenere: duplicate id ${c.id}`);
+    coachIds.add(c.id);
+    if (c.status !== "recall" && c.status !== "rejected" && c.leads.length === 0)
+      problems.push(`trenere ${c.id}: status ${c.status} with nothing behind it`);
+  }
+  for (const q of coachQuiz) {
+    if (straffesparkIds.has(q.id)) problems.push(`trenerquiz: id ${q.id} collides with another question`);
+    straffesparkIds.add(q.id);
+    if (!coachIds.has(q.coachId)) problems.push(`trenerquiz ${q.id}: unknown coach ${q.coachId}`);
+    if (asked.has(normalizeName(q.prompt))) problems.push(`trenerquiz ${q.id}: this question is already asked elsewhere`);
+    asked.add(normalizeName(q.prompt));
+    if (q.status !== "recall" && q.sources.length === 0) problems.push(`trenerquiz ${q.id}: status ${q.status} requires a source`);
+    if (!normalizeName(q.answer.label)) problems.push(`trenerquiz ${q.id}: answer normalises to nothing`);
+    const dupes = q.answer.aliases.filter((a) => normalizeName(a) === normalizeName(q.answer.label));
+    if (dupes.length) problems.push(`trenerquiz ${q.id}: alias ${dupes[0]} repeats the answer`);
+    // A question that prints its own answer is not a question.
+    const prompt = ` ${normalizeName(q.prompt)} `;
+    const leaked = [q.answer.label, ...q.answer.aliases].find((a) => normalizeName(a) && prompt.includes(` ${normalizeName(a)} `));
+    if (leaked) problems.push(`trenerquiz ${q.id}: the prompt gives away the answer (${leaked})`);
+  }
+
+  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, coaches, coachQuiz, problems };
 }

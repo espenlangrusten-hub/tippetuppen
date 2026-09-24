@@ -1,0 +1,2301 @@
+[
+  {
+    "id": "nils-arne-eggen",
+    "name": "Nils Arne Eggen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 1978,
+        "to": 1982
+      },
+      {
+        "club": "Moss",
+        "from": 1986,
+        "to": 1987
+      },
+      {
+        "club": "Rosenborg",
+        "from": 1988,
+        "to": 1997
+      },
+      {
+        "club": "Rosenborg",
+        "from": 1999,
+        "to": 2002
+      },
+      {
+        "club": "Rosenborg",
+        "from": 2010,
+        "to": 2010
+      }
+    ],
+    "honours": [
+      "Seriegull med Moss 1987",
+      "14 seriegull med Rosenborg",
+      "15 seriegull og 6 cupgull totalt",
+      "The double med Rosenborg 1988",
+      "Kniksen årets trener 1990"
+    ],
+    "episodes": [
+      "Sabbatsår i 1998",
+      "Sa opp i brev til Nils Skutle i 1993, oppsigelsen ble avvist samme kveld",
+      "Overtok Rosenborg igjen 1. juni 2010 da Erik Hamrén gikk til Sveriges landslag",
+      "Godfot-teorien og boka «Godfoten»",
+      "Vokste opp på Fannrem i Orkdal, debuterte for Orkdal IF som 15-åring"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Nils_Arne_Eggen",
+      "https://www.rbkweb.no/trener/eggen",
+      "https://www.dagbladet.no/sport/her-er-eggens-75-beste-sitater/63010248",
+      "https://www.nettavisen.no/sport/fotball/nils-arne-eggen-sa-opp-jobben-i-1993-jeg-tente-pa-alle-plugger/s/12-95-3423543943"
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen"
+    }
+  },
+  {
+    "id": "arne-dokken",
+    "name": "Arne Dokken",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 1985,
+        "to": 1985
+      }
+    ],
+    "honours": [
+      "Seriegull med Rosenborg 1985 som midlertidig trener"
+    ],
+    "episodes": [
+      "Overtok da Bjørn Hansen gikk av i august 1985"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/1985_Norwegian_First_Division"
+    ],
+    "verify": {
+      "subject": "Arne Dokken"
+    }
+  },
+  {
+    "id": "bjorn-hansen",
+    "name": "Bjørn Hansen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": null,
+        "to": 1985
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Gikk av i august 1985 fordi han mente han ikke klarte å motivere spillerne"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Bj%C3%B8rn_Hansen_(footballer)"
+    ],
+    "verify": {
+      "subject": "Bjørn Hansen (fotballspiller)"
+    }
+  },
+  {
+    "id": "harald-sunde",
+    "name": "Harald Sunde",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 1983,
+        "to": 1983
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Hovedtrener i Rosenborg i 1983"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Harald_Sunde_(footballer)"
+    ],
+    "verify": {
+      "subject": "Harald Sunde"
+    }
+  },
+  {
+    "id": "trond-sollied",
+    "name": "Trond Sollied",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Bodø/Glimt",
+        "from": 1992,
+        "to": 1996
+      },
+      {
+        "club": "Rosenborg",
+        "from": 1998,
+        "to": 1998
+      },
+      {
+        "club": "Gent",
+        "from": 1999,
+        "to": 2000
+      },
+      {
+        "club": "Club Brugge",
+        "from": 2000,
+        "to": 2005
+      },
+      {
+        "club": "Olympiakos",
+        "from": 2005,
+        "to": 2006
+      },
+      {
+        "club": "Heerenveen",
+        "from": 2008,
+        "to": 2009
+      }
+    ],
+    "honours": [
+      "Vant 1. divisjon med Glimt 1992",
+      "Sølv og cupgull med Glimt 1993",
+      "Seriegull med Rosenborg 1998",
+      "Belgisk mester med Club Brugge 2003 og 2004"
+    ],
+    "episodes": [
+      "Assistent i Rosenborg 1997, hovedtrener i Eggens sabbatsår 1998"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Trond_Sollied",
+      "https://snl.no/Trond_Johan_Sollied"
+    ],
+    "verify": {
+      "subject": "Trond Sollied"
+    }
+  },
+  {
+    "id": "age-hareide",
+    "name": "Åge Hareide",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": null,
+        "to": 1991
+      },
+      {
+        "club": "Molde",
+        "from": 1993,
+        "to": 1997
+      },
+      {
+        "club": "Helsingborg",
+        "from": 1998,
+        "to": 1999
+      },
+      {
+        "club": "Brøndby",
+        "from": 2000,
+        "to": 2002
+      },
+      {
+        "club": "Rosenborg",
+        "from": 2003,
+        "to": 2003
+      }
+    ],
+    "honours": [
+      "Cupgull med Molde 1994",
+      "Svensk mester med Helsingborg 1999",
+      "Dansk mester med Brøndby 2002",
+      "Serie og cup med Rosenborg 2003"
+    ],
+    "episodes": [
+      "Ble landslagssjef etter 2003 og tok over etter Nils Johan Semb"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/%C3%85ge_Hareide",
+      "https://www.aftenposten.no/sport/fotball/i/2G9lpa/slik-er-viking-klare-hareides-trenerkarriere"
+    ],
+    "verify": {
+      "subject": "Åge Hareide"
+    }
+  },
+  {
+    "id": "ola-by-rise",
+    "name": "Ola By Rise",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 2004,
+        "to": 2004
+      }
+    ],
+    "honours": [
+      "Seriegull med Rosenborg 2004"
+    ],
+    "episodes": [
+      "Assistent for Hareide 2003",
+      "Sparket samme høst som han vant gull og kvalifiserte laget for Champions League",
+      "Snakket som spiller om Eggens «verbale giljotin»"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Ola_By_Rise"
+    ],
+    "verify": {
+      "subject": "Ola By Rise"
+    }
+  },
+  {
+    "id": "per-joar-hansen",
+    "name": "Per Joar Hansen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 2005,
+        "to": 2005
+      },
+      {
+        "club": "Aalesund",
+        "from": 2006,
+        "to": 2007
+      }
+    ],
+    "honours": [
+      "Opprykk med Aalesund 2006"
+    ],
+    "episodes": [
+      "Gikk av i Rosenborg midt i 2005 etter en rekke dårlige resultater"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Per_Joar_Hansen",
+      "https://en.wikipedia.org/wiki/Per_Joar_Hansen"
+    ],
+    "verify": {
+      "subject": "Per Joar Hansen"
+    }
+  },
+  {
+    "id": "per-mathias-hogmo",
+    "name": "Per-Mathias Høgmo",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Tromsø",
+        "from": 1992,
+        "to": 1992
+      },
+      {
+        "club": "Moss",
+        "from": 1995,
+        "to": 1996
+      },
+      {
+        "club": "Tromsø",
+        "from": 2004,
+        "to": 2004
+      },
+      {
+        "club": "Rosenborg",
+        "from": 2005,
+        "to": 2006
+      },
+      {
+        "club": "Tromsø",
+        "from": 2008,
+        "to": null
+      }
+    ],
+    "honours": [
+      "OL-gull med kvinnelandslaget 2000"
+    ],
+    "episodes": [
+      "Overtok Rosenborg midt i 2005 etter Per Joar Hansen",
+      "Borte fra Rosenborg høsten 2006 da Knut Tørum sikret gullet",
+      "Senere Djurgården og A-landslaget 2013–2016"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo"
+    }
+  },
+  {
+    "id": "knut-torum",
+    "name": "Knut Tørum",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 2006,
+        "to": 2006
+      }
+    ],
+    "honours": [
+      "Seriegull med Rosenborg 2006",
+      "Kniksen årets trener 2006"
+    ],
+    "episodes": [
+      "Tok 28 av 30 mulige poeng høsten 2006 og sikret Rosenborgs 20. seriegull"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Knut_T%C3%B8rum"
+    ],
+    "verify": {
+      "subject": "Knut Tørum"
+    }
+  },
+  {
+    "id": "erik-hamren",
+    "name": "Erik Hamrén",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 2008,
+        "to": 2010
+      }
+    ],
+    "honours": [
+      "Dansk mester med AaB 2007/08",
+      "Seriegull med Rosenborg 2009"
+    ],
+    "episodes": [
+      "Tiltrådte i Rosenborg 1. juni 2008",
+      "Forlot Rosenborg i 2010 for å bli Sveriges landslagssjef på heltid"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+    ],
+    "verify": {
+      "subject": "Erik Hamrén"
+    }
+  },
+  {
+    "id": "tom-lund",
+    "name": "Tom Lund",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lillestrøm",
+        "from": 1985,
+        "to": 1987
+      },
+      {
+        "club": "Lillestrøm",
+        "from": 1990,
+        "to": 1990
+      }
+    ],
+    "honours": [
+      "Cupgull med LSK 1985",
+      "Seriegull med LSK 1986"
+    ],
+    "episodes": [
+      "Spilte for Lillestrøm 1967–1982"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.nettavisen.no/sport/lillestrom-legenden-tom-lund-er-dod/s/5-95-3054096",
+      "https://en.wikipedia.org/wiki/Tom_Lund"
+    ],
+    "verify": {
+      "subject": "Tom Lund"
+    }
+  },
+  {
+    "id": "arne-erlandsen",
+    "name": "Arne Erlandsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lillestrøm",
+        "from": 1998,
+        "to": 2004
+      }
+    ],
+    "honours": [
+      "Sølv med LSK 2001",
+      "Kniksen årets trener 2001",
+      "Årets trener i Sverige 2006 med IFK Göteborg"
+    ],
+    "episodes": [
+      "Dro til IFK Göteborg etter 2004-sesongen"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.nrk.no/sport/erlandsen-tar-over-som-lsk-trener-1.13141821",
+      "https://en.wikipedia.org/wiki/Arne_Erlandsen"
+    ],
+    "verify": {
+      "subject": "Arne Erlandsen"
+    }
+  },
+  {
+    "id": "uwe-rosler",
+    "name": "Uwe Rösler",
+    "nicknames": [],
+    "nationality": "GER",
+    "spells": [
+      {
+        "club": "Lillestrøm",
+        "from": 2005,
+        "to": 2006
+      },
+      {
+        "club": "Viking",
+        "from": 2006,
+        "to": 2009
+      },
+      {
+        "club": "Molde",
+        "from": 2010,
+        "to": 2010
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Toppscorer for Manchester City tre sesonger på rad",
+      "Spilte selv for LSK 2002–2003",
+      "Sparket i LSK 13. november 2006 og byttet deretter jobb med Tom Nordlie"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+    ],
+    "verify": {
+      "subject": "Uwe Rösler"
+    }
+  },
+  {
+    "id": "tom-nordlie",
+    "name": "Tom Nordlie",
+    "nicknames": [
+      "Keiko"
+    ],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Odd",
+        "from": 1998,
+        "to": 1999
+      },
+      {
+        "club": "Vålerenga",
+        "from": 2000,
+        "to": 2000
+      },
+      {
+        "club": "Sandefjord",
+        "from": 2001,
+        "to": 2003
+      },
+      {
+        "club": "Start",
+        "from": 2004,
+        "to": 2006
+      },
+      {
+        "club": "Viking",
+        "from": 2006,
+        "to": 2006
+      },
+      {
+        "club": "Lillestrøm",
+        "from": 2006,
+        "to": 2008
+      },
+      {
+        "club": "Kongsvinger",
+        "from": 2008,
+        "to": 2009
+      }
+    ],
+    "honours": [
+      "Opprykk med Odd 1998",
+      "Opprykk med Start 2004",
+      "Sølv med Start 2005",
+      "Kniksen årets trener 2005",
+      "Cupgull med LSK 2007"
+    ],
+    "episodes": [
+      "Kallenavnet «Keiko» fra en Sandefjord-supporter som sammenlignet ham med spekkhoggeren fra Free Willy",
+      "Sparket i Vålerenga etter nedrykk i 2000",
+      "Sandefjord ledet 1–0 og 3–2 i kvalik mot Vålerenga 2003, men tapte 5–3",
+      "Sparket i LSK 29. mai 2008 etter 6 poeng på 8 kamper"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Tom_Nordlie",
+      "https://snl.no/Tom_Nordlie",
+      "https://www.vg.no/sport/i/QllzWx/slik-fikk-han-navnet-keiko"
+    ],
+    "verify": {
+      "subject": "Tom Nordlie"
+    }
+  },
+  {
+    "id": "henning-berg",
+    "name": "Henning Berg",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lyn",
+        "from": 2005,
+        "to": 2008
+      },
+      {
+        "club": "Lillestrøm",
+        "from": 2008,
+        "to": null
+      }
+    ],
+    "honours": [
+      "3. plass med Lyn 2005"
+    ],
+    "episodes": [
+      "Sparket i LSK i 2011 etter ett poeng på åtte kamper",
+      "Senere Blackburn 2012"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Henning_Berg",
+      "https://snl.no/Henning_Berg"
+    ],
+    "verify": {
+      "subject": "Henning Berg"
+    }
+  },
+  {
+    "id": "benny-lennartsson",
+    "name": "Benny Lennartsson",
+    "nicknames": [
+      "Mannen med mössan"
+    ],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 1988,
+        "to": 1991
+      },
+      {
+        "club": "Viking",
+        "from": 2000,
+        "to": 2001
+      }
+    ],
+    "honours": [
+      "Opprykk med Viking 1988",
+      "Cupgull med Viking 1989",
+      "Seriegull med Viking 1991",
+      "Cupgull med Viking 2001"
+    ],
+    "episodes": [
+      "Sluttet etter seriegullet i 1991",
+      "Også bandyspiller"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.eliteserien.no/nyheter/mannen-med-mossan",
+      "https://en.wikipedia.org/wiki/Benny_Lennartsson"
+    ],
+    "verify": {
+      "subject": "Benny Lennartsson"
+    }
+  },
+  {
+    "id": "bjarne-berntsen",
+    "name": "Bjarne Berntsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Bryne",
+        "from": 1987,
+        "to": 1987
+      },
+      {
+        "club": "Viking",
+        "from": 1992,
+        "to": 1995
+      },
+      {
+        "club": "Viking",
+        "from": 2004,
+        "to": 2004
+      }
+    ],
+    "honours": [
+      "Cupgull med Bryne 1987"
+    ],
+    "episodes": [
+      "Overtok Viking 15. juni 1992 etter Arne Larsen Økland",
+      "Fungerende Viking-trener våren 2004 til Roy Hodgson kom"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Bjarne_Berntsen",
+      "https://branntall.no/1987/10/25/bryne-brann/"
+    ],
+    "verify": {
+      "subject": "Bjarne Berntsen"
+    }
+  },
+  {
+    "id": "arne-larsen-okland",
+    "name": "Arne Larsen Økland",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 1992,
+        "to": 1992
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Viking-trener før Bjarne Berntsen tok over i juni 1992"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Arne_Larsen_%C3%98kland"
+    ],
+    "verify": {
+      "subject": "Arne Larsen Økland"
+    }
+  },
+  {
+    "id": "poul-erik-andreasen",
+    "name": "Poul Erik Andreasen",
+    "nicknames": [],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 1996,
+        "to": 1999
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Poul_Erik_Andreasen"
+    ],
+    "verify": {
+      "subject": "Poul Erik Andreasen"
+    }
+  },
+  {
+    "id": "kjell-inge-olsen",
+    "name": "Kjell Inge Olsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": null,
+        "to": 2004
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Gikk av som Viking-trener 13. april 2004"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Kjell_Inge_Olsen"
+    ],
+    "verify": {
+      "subject": "Kjell Inge Olsen"
+    }
+  },
+  {
+    "id": "roy-hodgson",
+    "name": "Roy Hodgson",
+    "nicknames": [],
+    "nationality": "ENG",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 2004,
+        "to": 2005
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Ansatt i Viking 12. juli 2004"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Roy_Hodgson"
+    ],
+    "verify": {
+      "subject": "Roy Hodgson"
+    }
+  },
+  {
+    "id": "tom-prahl",
+    "name": "Tom Prahl",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 2006,
+        "to": null
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over Viking 1. januar 2006 etter Roy Hodgson",
+      "Trente Halmstad 1996–2001"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Tom_Prahl"
+    ],
+    "verify": {
+      "subject": "Tom Prahl"
+    }
+  },
+  {
+    "id": "teitur-thordarson",
+    "name": "Teitur Thordarson",
+    "nicknames": [],
+    "nationality": "ISL",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 1988,
+        "to": 1990
+      },
+      {
+        "club": "Brann",
+        "from": 2000,
+        "to": 2002
+      },
+      {
+        "club": "Lyn",
+        "from": null,
+        "to": null
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Trente Flora Tallinn og Estlands landslag 1996–1999"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Teitur_Thordarson",
+      "https://historie.brann.no/hovedtrenere"
+    ],
+    "verify": {
+      "subject": "Teitur Thordarson"
+    }
+  },
+  {
+    "id": "kalle-bjorklund",
+    "name": "Kalle Björklund",
+    "nicknames": [],
+    "nationality": null,
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 1991,
+        "to": 1992
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://historie.brann.no/hovedtrenere"
+    ],
+    "verify": {
+      "subject": "Kalle Björklund"
+    }
+  },
+  {
+    "id": "hallvar-thoresen",
+    "name": "Hallvar Thoresen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 1993,
+        "to": 1995
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Hallvar_Thoresen",
+      "https://historie.brann.no/hovedtrenere"
+    ],
+    "verify": {
+      "subject": "Hallvar Thoresen"
+    }
+  },
+  {
+    "id": "kjell-tennfjord",
+    "name": "Kjell Tennfjord",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 1995,
+        "to": 1998
+      }
+    ],
+    "honours": [
+      "4. plass med Brann 1996",
+      "Sølv med Brann 1997",
+      "Kvartfinale i cupvinnercupen 1997"
+    ],
+    "episodes": [
+      "Forfremmet til manager i juli 1998 da Harald Aabrekk ble hovedtrener",
+      "Sagt opp i mai 1999 av direktør Harry Herstad, og saksøkte Brann"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Kjell_Tennfjord",
+      "https://www.aftenposten.no/sport/fotball/i/g73dkB/slik-var-tennfjords-fire-aar-med-intriger"
+    ],
+    "verify": {
+      "subject": "Kjell Tennfjord"
+    }
+  },
+  {
+    "id": "harald-aabrekk",
+    "name": "Harald Aabrekk",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Sogndal",
+        "from": 1990,
+        "to": 1992
+      },
+      {
+        "club": "Tromsø",
+        "from": 1993,
+        "to": 1995
+      },
+      {
+        "club": "Brann",
+        "from": 1998,
+        "to": 1999
+      },
+      {
+        "club": "Haugesund",
+        "from": 2002,
+        "to": 2005
+      },
+      {
+        "club": "Vålerenga",
+        "from": 2007,
+        "to": 2007
+      },
+      {
+        "club": "Sogndal",
+        "from": 2010,
+        "to": 2011
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Trente Stryn 1987–1989"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Harald_Aabrekk"
+    ],
+    "verify": {
+      "subject": "Harald Aabrekk"
+    }
+  },
+  {
+    "id": "mons-ivar-mjelde",
+    "name": "Mons Ivar Mjelde",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 2003,
+        "to": 2008
+      }
+    ],
+    "honours": [
+      "Cupgull med Brann 2004",
+      "Seriegull med Brann 2007"
+    ],
+    "episodes": [
+      "Cupgullet 2004 var Branns første trofé på 22 år",
+      "Seriegullet 2007 var Branns første på 44 år",
+      "Gikk av 8. oktober 2008"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+    ],
+    "verify": {
+      "subject": "Mons Ivar Mjelde"
+    }
+  },
+  {
+    "id": "steinar-nilsen",
+    "name": "Steinar Nilsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Tromsø",
+        "from": 2006,
+        "to": 2008
+      },
+      {
+        "club": "Brann",
+        "from": 2009,
+        "to": 2010
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Gikk av som Brann-trener 21. mai 2010"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Steinar_Nilsen"
+    ],
+    "verify": {
+      "subject": "Steinar Nilsen"
+    }
+  },
+  {
+    "id": "rune-skarsfjord",
+    "name": "Rune Skarsfjord",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 2010,
+        "to": 2010
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over Brann 21. mai 2010"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://historie.brann.no/sesonger/sesongen-2010/spillerstall"
+    ],
+    "verify": {
+      "subject": "Rune Skarsfjord"
+    }
+  },
+  {
+    "id": "endre-blindheim",
+    "name": "Endre Blindheim",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Brann",
+        "from": 1985,
+        "to": 1985
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://historie.brann.no/sesonger/1985/spillerstall"
+    ],
+    "verify": {
+      "subject": "Endre Blindheim"
+    }
+  },
+  {
+    "id": "egil-olsen",
+    "name": "Egil Olsen",
+    "nicknames": [
+      "Drillo"
+    ],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lyn",
+        "from": 1985,
+        "to": 1988
+      },
+      {
+        "club": "Aalesund",
+        "from": 1989,
+        "to": 1989
+      },
+      {
+        "club": "Vålerenga",
+        "from": 1998,
+        "to": 1999
+      },
+      {
+        "club": "Wimbledon",
+        "from": 1999,
+        "to": 2000
+      }
+    ],
+    "honours": [
+      "Landslagssjef 1990–1998",
+      "To VM-sluttspill"
+    ],
+    "episodes": [
+      "Fikk kallenavnet som Vålerenga-spiller 1966–67",
+      "Nedbrettede gummistøvler som varemerke",
+      "Forlot Vålerenga sommeren 1999 for Wimbledon",
+      "Sparket i Wimbledon etter åtte strake tap våren 2000"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Egil_Olsen",
+      "https://snl.no/Egil_Olsen"
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)"
+    }
+  },
+  {
+    "id": "gunder-bengtsson",
+    "name": "Gunder Bengtsson",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1983,
+        "to": 1985
+      },
+      {
+        "club": "Molde",
+        "from": 2001,
+        "to": 2003
+      }
+    ],
+    "honours": [
+      "Seriegull med Vålerenga 1983 og 1984",
+      "UEFA-cupen med IFK Göteborg 1987"
+    ],
+    "episodes": [
+      "Assistent for Sven-Göran Eriksson i IFK Göteborg",
+      "Sparket i Molde 22. mai 2003",
+      "Født i Torsby 1946"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Gunder_Bengtsson"
+    ],
+    "verify": {
+      "subject": "Gunder Bengtsson"
+    }
+  },
+  {
+    "id": "olle-nordin",
+    "name": "Olle Nordin",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1985,
+        "to": 1985
+      },
+      {
+        "club": "Vålerenga",
+        "from": 1990,
+        "to": 1992
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Sveriges landslagssjef 1986–1990"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Olle_Nordin",
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Olle Nordin"
+    }
+  },
+  {
+    "id": "vidar-davidsen",
+    "name": "Vidar Davidsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1993,
+        "to": 1997
+      }
+    ],
+    "honours": [
+      "Opprykk med Vålerenga 1993",
+      "Cupgull med Vålerenga 1997"
+    ],
+    "episodes": [
+      "Delte trenerjobben med Lars Tjærnås i 1997"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Vidar_Terje_Davidsen"
+    ],
+    "verify": {
+      "subject": "Vidar Davidsen"
+    }
+  },
+  {
+    "id": "lars-tjaernas",
+    "name": "Lars Tjærnås",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1997,
+        "to": 1998
+      }
+    ],
+    "honours": [
+      "Cupgull med Vålerenga 1997"
+    ],
+    "episodes": [
+      "Erstattet av Egil Olsen 9. august 1998"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Lars Tjærnås"
+    }
+  },
+  {
+    "id": "kjetil-rekdal",
+    "name": "Kjetil Rekdal",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 2001,
+        "to": 2006
+      },
+      {
+        "club": "Aalesund",
+        "from": 2008,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Seriegull med Vålerenga 2005",
+      "Cupgull med Aalesund 2009 og 2011"
+    ],
+    "episodes": [
+      "Trente Lierse og Kaiserslautern mellom Vålerenga og Aalesund",
+      "Tok over Aalesund 4. september 2008 etter Sören Åkeby"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Kjetil_Rekdal",
+      "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal"
+    }
+  },
+  {
+    "id": "petter-myhre",
+    "name": "Petter Myhre",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 2006,
+        "to": 2007
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over etter Rekdal 22. august 2006",
+      "Erstattet av Harald Aabrekk 27. juli 2007"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Petter Myhre"
+    }
+  },
+  {
+    "id": "martin-andresen",
+    "name": "Martin Andresen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 2008,
+        "to": 2010
+      }
+    ],
+    "honours": [
+      "Cupgull med Vålerenga 2008"
+    ],
+    "episodes": [
+      "Manager i Vålerenga med Tor Ole Skullerud som hovedtrener 2008–09"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Martin Andresen"
+    }
+  },
+  {
+    "id": "tor-ole-skullerud",
+    "name": "Tor Ole Skullerud",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 2008,
+        "to": 2009
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Hovedtrener i Vålerenga til 26. august 2009"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Tor Ole Skullerud"
+    }
+  },
+  {
+    "id": "erik-brakstad",
+    "name": "Erik Brakstad",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 1998,
+        "to": 2000
+      }
+    ],
+    "honours": [
+      "Sølv med Molde 1998 og 1999"
+    ],
+    "episodes": [
+      "Molde ble i 1999 den andre norske klubben i Champions League"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Erik_Brakstad"
+    ],
+    "verify": {
+      "subject": "Erik Brakstad"
+    }
+  },
+  {
+    "id": "reidar-vagnes",
+    "name": "Reidar Vågnes",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 2004,
+        "to": 2004
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Assistent under Erik Brakstad",
+      "11. plass med Molde 2004"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Reidar_V%C3%A5gnes"
+    ],
+    "verify": {
+      "subject": "Reidar Vågnes"
+    }
+  },
+  {
+    "id": "bosse-johansson",
+    "name": "Bosse Johansson",
+    "nicknames": [
+      "Bosse"
+    ],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 2005,
+        "to": 2005
+      }
+    ],
+    "honours": [
+      "Cupgull med Molde 2005"
+    ],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/2005_Norwegian_Football_Cup_final"
+    ],
+    "verify": {
+      "subject": "Bo Johansson"
+    }
+  },
+  {
+    "id": "arild-stavrum",
+    "name": "Arild Stavrum",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 2006,
+        "to": 2006
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Presentert julaften 2005",
+      "Molde rykket ned i 2006 og han fikk sparken"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.nrk.no/sport/fotball/stavrum-fikk-sparken-1.1291502"
+    ],
+    "verify": {
+      "subject": "Arild Stavrum"
+    }
+  },
+  {
+    "id": "kjell-jonevret",
+    "name": "Kjell Jonevret",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 2007,
+        "to": 2010
+      }
+    ],
+    "honours": [
+      "Double med Djurgården 2005",
+      "Opprykk med Molde 2007",
+      "Sølv med Molde 2009"
+    ],
+    "episodes": [
+      "Sparket 30. august 2010 og erstattet av Uwe Rösler"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Kjell_Jonevret"
+    ],
+    "verify": {
+      "subject": "Kjell Jonevret"
+    }
+  },
+  {
+    "id": "karsten-johannessen",
+    "name": "Karsten Johannessen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Start",
+        "from": 1954,
+        "to": 1996
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Start-trener i 18 sesonger fordelt på ni perioder fra 1954 til 1996"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.fvn.no/sport/start/i/RRjd0x/22-trenere-paa-25-sesonger-dette-er-starts-trenerhistorie"
+    ],
+    "verify": {
+      "subject": "Karsten Johannessen"
+    }
+  },
+  {
+    "id": "kare-ingebrigtsen",
+    "name": "Kåre Ingebrigtsen",
+    "nicknames": [
+      "Brutter'n"
+    ],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Ranheim",
+        "from": 2006,
+        "to": 2007
+      },
+      {
+        "club": "Bodø/Glimt",
+        "from": 2008,
+        "to": 2011
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Kallenavnet kommer fra vennskapet med Jahn Ivar «Mini» Jacobsen",
+      "Spilte for Manchester City 1992–94 og scoret tre mål i én FA-cupkamp mot Leicester"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+      "https://snl.no/K%C3%A5re_Ingebrigtsen"
+    ],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen"
+    }
+  },
+  {
+    "id": "stale-solbakken",
+    "name": "Ståle Solbakken",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "HamKam",
+        "from": 2003,
+        "to": 2005
+      }
+    ],
+    "honours": [
+      "Vant 1. divisjon med HamKam 2003",
+      "5. plass med HamKam 2004"
+    ],
+    "episodes": [
+      "Spillerkarrieren tok slutt i mars 2001 etter hjertestans",
+      "Dro til FC København etter 2005"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+      "https://www.hamkam.no/nyheter/historiske-hamkam-helter-stale-solbakken"
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken"
+    }
+  },
+  {
+    "id": "ronny-deila",
+    "name": "Ronny Deila",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Strømsgodset",
+        "from": 2008,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Cupgull med Strømsgodset 2010"
+    ],
+    "episodes": [
+      "Spillende assistent under Dag-Eilev Fagermo fra 2006",
+      "Startet trenerkarrieren i Brodd"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/Ronny_Deila"
+    ],
+    "verify": {
+      "subject": "Ronny Deila"
+    }
+  },
+  {
+    "id": "dag-eilev-fagermo",
+    "name": "Dag-Eilev Fagermo",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Strømsgodset",
+        "from": 2006,
+        "to": 2007
+      },
+      {
+        "club": "Odd",
+        "from": 2008,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Opprykk med Strømsgodset 2006",
+      "Opprykk med Odd 2008"
+    ],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Dag-Eilev_Fagermo"
+    ],
+    "verify": {
+      "subject": "Dag-Eilev Fagermo"
+    }
+  },
+  {
+    "id": "knut-torbjorn-eggen",
+    "name": "Knut Torbjørn Eggen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Fredrikstad",
+        "from": 2002,
+        "to": 2006
+      }
+    ],
+    "honours": [
+      "Cupgull med Fredrikstad 2006"
+    ],
+    "episodes": [
+      "Sønn av Nils Arne Eggen"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.bt.no/sport/i/GGGzWV/knut-torbjoern-eggen-er-doed"
+    ],
+    "verify": {
+      "subject": "Knut Torbjørn Eggen"
+    }
+  },
+  {
+    "id": "anders-gronhagen",
+    "name": "Anders Grönhagen",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Fredrikstad",
+        "from": 2007,
+        "to": 2009
+      }
+    ],
+    "honours": [
+      "Sølv med Fredrikstad 2008"
+    ],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Anders_Gr%C3%B6nhagen"
+    ],
+    "verify": {
+      "subject": "Anders Grönhagen"
+    }
+  },
+  {
+    "id": "jan-jonsson",
+    "name": "Jan Jönsson",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Stabæk",
+        "from": 2005,
+        "to": 2010
+      },
+      {
+        "club": "Rosenborg",
+        "from": 2011,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Vant 1. divisjon med Stabæk 2005",
+      "Seriegull med Stabæk 2008"
+    ],
+    "episodes": [
+      "Sparket i Rosenborg tidlig i 2012"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.rbkweb.no/trener/joensson",
+      "https://en.wikipedia.org/wiki/Jan_J%C3%B6nsson"
+    ],
+    "verify": {
+      "subject": "Jan Jönsson"
+    }
+  },
+  {
+    "id": "soren-akeby",
+    "name": "Sören Åkeby",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Aalesund",
+        "from": 2008,
+        "to": 2008
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Sparket 31. august 2008 etter 19 serierunder"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/S%C3%B6ren_%C3%85keby",
+      "https://www.aftenposten.no/sport/fotball/i/jdOeo0/aalesund-har-sparket-fire-av-sine-seks-eliteserietrenere"
+    ],
+    "verify": {
+      "subject": "Sören Åkeby"
+    }
+  },
+  {
+    "id": "ivar-morten-normark",
+    "name": "Ivar Morten Normark",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Aalesund",
+        "from": 2001,
+        "to": 2005
+      },
+      {
+        "club": "Tromsø",
+        "from": 2006,
+        "to": 2006
+      }
+    ],
+    "honours": [
+      "Opprykk med Aalesund 2002"
+    ],
+    "episodes": [
+      "Sparket i Tromsø 26. juli 2006 etter sju måneder"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Ivar_Morten_Normark"
+    ],
+    "verify": {
+      "subject": "Ivar Morten Normark"
+    }
+  },
+  {
+    "id": "otto-ulseth",
+    "name": "Otto Ulseth",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Tromsø",
+        "from": 2005,
+        "to": 2005
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Overtok etter Høgmo i 2005 med Steinar Nilsen som assistent"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Steinar_Nilsen"
+    ],
+    "verify": {
+      "subject": "Otto Ulseth"
+    }
+  },
+  {
+    "id": "terje-skarsfjord",
+    "name": "Terje Skarsfjord",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Tromsø",
+        "from": 1996,
+        "to": 1996
+      }
+    ],
+    "honours": [
+      "Cupgull med Tromsø 1996"
+    ],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Terje_Skarsfjord"
+    ],
+    "verify": {
+      "subject": "Terje Skarsfjord"
+    }
+  },
+  {
+    "id": "arne-andreassen",
+    "name": "Arne Andreassen",
+    "nicknames": [
+      "Pøsen"
+    ],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Tromsø",
+        "from": 1986,
+        "to": 1986
+      }
+    ],
+    "honours": [
+      "Cupgull med Tromsø 1986"
+    ],
+    "episodes": [
+      "Overtok da Dagfinn Rognmo fikk sparken i 1986"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.nrk.no/tromsogfinnmark/tromsos-forste-cupfinale-pa-16-ar-1.8337382"
+    ],
+    "verify": {
+      "subject": "Arne Andreassen"
+    }
+  },
+  {
+    "id": "einar-sigmundstad",
+    "name": "Einar Sigmundstad",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Strømsgodset",
+        "from": 1991,
+        "to": 1991
+      }
+    ],
+    "honours": [
+      "Cupgull med Strømsgodset 1991"
+    ],
+    "episodes": [
+      "Delte jobben med Tor Røste Fossen"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Einar_Sigmundstad"
+    ],
+    "verify": {
+      "subject": "Einar Sigmundstad"
+    }
+  },
+  {
+    "id": "tor-roste-fossen",
+    "name": "Tor Røste Fossen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rosenborg",
+        "from": 1973,
+        "to": 1974
+      },
+      {
+        "club": "Start",
+        "from": 1975,
+        "to": 1977
+      },
+      {
+        "club": "Strømsgodset",
+        "from": 1991,
+        "to": 1991
+      }
+    ],
+    "honours": [
+      "Landslagssjef 1978–1987",
+      "Bronse med Start 1975",
+      "Cupgull med Strømsgodset 1991"
+    ],
+    "episodes": [
+      "Keeper i Rosenborg da klubben vant serien 1967 og 1969",
+      "Norge slo England 2–1 på Ullevaal i 1981"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+      "https://www.vg.no/sport/i/nqqXB/tor-roeste-fossen-er-doed-mannen-som-hadde-et-bra-lag"
+    ],
+    "verify": {
+      "subject": "Tor Røste Fossen"
+    }
+  },
+  {
+    "id": "arne-sandsto",
+    "name": "Arne Sandstø",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Odd",
+        "from": 2000,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Cupgull med Odd 2000"
+    ],
+    "episodes": [
+      "Tok over Odd etter Tom Nordlie"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Arne_Sandst%C3%B8",
+      "https://www.varden.no/sport/n/3pJLRA/avsloerer-var-tiltenkt-annen-rolle-foer-sjokkreturen"
+    ],
+    "verify": {
+      "subject": "Arne Sandstø"
+    }
+  },
+  {
+    "id": "sture-fladmark",
+    "name": "Sture Fladmark",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lyn",
+        "from": 2002,
+        "to": 2002
+      }
+    ],
+    "honours": [
+      "Bronse med Lyn 2002",
+      "Kniksen årets trener 2002"
+    ],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Sture_Fladmark"
+    ],
+    "verify": {
+      "subject": "Sture Fladmark"
+    }
+  },
+  {
+    "id": "per-brogeland",
+    "name": "Per Brogeland",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Kongsvinger",
+        "from": 1992,
+        "to": 1995
+      }
+    ],
+    "honours": [
+      "Sølv med Kongsvinger 1992"
+    ],
+    "episodes": [
+      "Uavgjort hjemme mot Juventus i UEFA-cupen 1993"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Per_Brogeland"
+    ],
+    "verify": {
+      "subject": "Per Brogeland"
+    }
+  },
+  {
+    "id": "jostein-grindhaug",
+    "name": "Jostein Grindhaug",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Haugesund",
+        "from": 2009,
+        "to": null
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://snl.no/FK_Haugesund"
+    ],
+    "verify": {
+      "subject": "Jostein Grindhaug"
+    }
+  },
+  {
+    "id": "tommy-berntsen",
+    "name": "Tommy Berntsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lyn",
+        "from": null,
+        "to": 2004
+      }
+    ],
+    "honours": [
+      "Cupfinale med Lyn 2004"
+    ],
+    "episodes": [
+      "Tok over etter at Teitur Thordarson gikk av"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Tommy_Berntsen"
+    ],
+    "verify": {
+      "subject": "Tommy Berntsen"
+    }
+  },
+  {
+    "id": "brede-skistad",
+    "name": "Brede Skistad",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Start",
+        "from": 1990,
+        "to": 1994
+      }
+    ],
+    "honours": [
+      "Bronse med Start 1991 og 1992"
+    ],
+    "episodes": [
+      "Sluttet av helsegrunner og ga jobben til assistenten Erik Ruthford Pedersen"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Brede_Skistad"
+    ],
+    "verify": {
+      "subject": "Brede Skistad"
+    }
+  },
+  {
+    "id": "erik-ruthford-pedersen",
+    "name": "Erik Ruthford Pedersen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Start",
+        "from": 1982,
+        "to": 1984
+      },
+      {
+        "club": "Start",
+        "from": 1995,
+        "to": null
+      }
+    ],
+    "honours": [],
+    "episodes": [],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Erik_Ruthford_Pedersen"
+    ],
+    "verify": {
+      "subject": "Erik Ruthford Pedersen"
+    }
+  },
+  {
+    "id": "einar-aas",
+    "name": "Einar Aas",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Moss",
+        "from": 1989,
+        "to": 1989
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over i august 1989 etter Anders Fægri og Roar Breivik; Moss endte sist"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Moss_FK"
+    ],
+    "verify": {
+      "subject": "Einar Aas"
+    }
+  },
+  {
+    "id": "svein-ivar-sigernes",
+    "name": "Svein Ivar Sigernes",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Kongsvinger",
+        "from": 1984,
+        "to": null
+      },
+      {
+        "club": "Vålerenga",
+        "from": 1987,
+        "to": 1988
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Erstattet av Alf Inge Notkewich i Vålerenga 30. juni 1988"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.kil.no/om-klubben/lagetfradedypeskoger/17-ar-i-toppen",
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Svein Ivar Sigernes"
+    }
+  },
+  {
+    "id": "peter-engelbrektsson",
+    "name": "Peter Engelbrektsson",
+    "nicknames": [],
+    "nationality": null,
+    "spells": [
+      {
+        "club": "HamKam",
+        "from": 1993,
+        "to": null
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "HamKam-trener høsten 1993"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Hamarkameratene"
+    ],
+    "verify": {
+      "subject": "Peter Engelbrektsson"
+    }
+  },
+  {
+    "id": "david-hay",
+    "name": "David Hay",
+    "nicknames": [],
+    "nationality": "SCO",
+    "spells": [
+      {
+        "club": "Lillestrøm",
+        "from": 1989,
+        "to": 1989
+      }
+    ],
+    "honours": [
+      "Seriegull med Lillestrøm 1989"
+    ],
+    "episodes": [
+      "Celtic-manager 1983–1987",
+      "Jann Lund var assistent i 1989"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://kfl.no/wiki/index.php/1989",
+      "https://en.wikipedia.org/wiki/David_Hay"
+    ],
+    "verify": {
+      "subject": "David Hay"
+    }
+  },
+  {
+    "id": "svein-kvia",
+    "name": "Svein Kvia",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 1986,
+        "to": 1987
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Viking-trener i tre perioder: 1977, 1984 og 1986–87"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Svein_Kvia"
+    ],
+    "verify": {
+      "subject": "Svein Kvia"
+    }
+  },
+  {
+    "id": "kjell-schou-andreassen",
+    "name": "Kjell Schou-Andreassen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Viking",
+        "from": 1987,
+        "to": 1987
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tidligere landslagstrener sammen med Nils Arne Eggen",
+      "Trente Bryne fra 1977"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Kjell_Schou-Andreassen"
+    ],
+    "verify": {
+      "subject": "Kjell Schou-Andreassen"
+    }
+  },
+  {
+    "id": "tor-thodesen",
+    "name": "Tor Thodesen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Sandefjord",
+        "from": 2005,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Opprykk med Sandefjord 2005",
+      "Cupfinale med Sandefjord 2006",
+      "Årets trener kåret av kollegene 2006"
+    ],
+    "episodes": [
+      "Sandefjord slo Moss 4–3 i siste runde i 2005"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Tor_Thodesen"
+    ],
+    "verify": {
+      "subject": "Tor Thodesen"
+    }
+  },
+  {
+    "id": "alf-inge-notkewich",
+    "name": "Alf Inge Notkewich",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1988,
+        "to": 1989
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over Vålerenga 30. juni 1988"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Alf Inge Notkewich"
+    }
+  },
+  {
+    "id": "dag-vestlund",
+    "name": "Dag Vestlund",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Vålerenga",
+        "from": 1986,
+        "to": 1986
+      },
+      {
+        "club": "Vålerenga",
+        "from": 1990,
+        "to": 1990
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Tok over Vålerenga 21. juli 1986",
+      "Erstattet av Olle Nordin 12. august 1990"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://www.vpn.no/2010/03/12/trenere/"
+    ],
+    "verify": {
+      "subject": "Dag Vestlund"
+    }
+  }
+]

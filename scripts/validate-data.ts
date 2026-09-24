@@ -23,6 +23,13 @@ console.log(
 
 const pool = summarizePool(ds.straffespark);
 console.log(`Straffespark: ${pool.playable} spillbare av ${pool.total}`, pool.byKind, "kategorier:", pool.byCategory, "venter:", pool.waiting);
+const quizByLevel: Record<number, number> = {};
+const quizByStatus: Record<string, number> = {};
+for (const q of ds.coachQuiz) {
+  quizByLevel[q.difficulty] = (quizByLevel[q.difficulty] ?? 0) + 1;
+  quizByStatus[q.status] = (quizByStatus[q.status] ?? 0) + 1;
+}
+console.log(`Trenere: ${ds.coaches.length}. Trenerquiz: ${ds.coachQuiz.length} spørsmål`, "nivå:", quizByLevel, "status:", quizByStatus);
 if (ds.problems.length) {
   console.error(`\n${ds.problems.length} problem(s):`);
   for (const p of ds.problems) console.error(" - " + p);

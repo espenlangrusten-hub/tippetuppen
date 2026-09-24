@@ -232,3 +232,46 @@ export const straffesparkFile = z.array(
     }),
   ]),
 );
+
+/**
+ * Coaches in the Norwegian top flight, 1985–2010.
+ *
+ * Built from search excerpts, not from articles anyone has read, so every entry sits at
+ * `recall`. `leads` are where the facts were seen; they are pointers for a reviewer,
+ * not sources, and nothing may be promoted on the strength of them. `verify.subject` is
+ * the Norwegian Wikipedia article the question bank checks its answers against.
+ */
+export const coachFile = z.array(
+  z.object({
+    id: z.string().min(1),
+    name: z.string().min(1),
+    nicknames: z.array(z.string()).default([]),
+    nationality: z.string().nullable().default(null),
+    spells: z.array(z.object({ club: z.string().min(1), from: z.number().int().nullable(), to: z.number().int().nullable() })).default([]),
+    honours: z.array(z.string()).default([]),
+    episodes: z.array(z.string()).default([]),
+    status: dataStatus.default("recall"),
+    leads: z.array(z.string()).default([]),
+    verify: z.object({ subject: z.string().min(1) }),
+  }),
+);
+
+/**
+ * 400 questions about those coaches, graded 1–3: 1 is general knowledge, 2 is for the
+ * interested, 3 is for the obsessive. Same shape and the same confidence rule as
+ * Kjappen's bank - a question written from memory sits at `recall` and never reaches a
+ * player until the Wikipedia check (scripts/import/verify-trivia.ts) or a person has
+ * attached a source. No game reads this file yet.
+ */
+export const coachQuizFile = z.array(
+  z.object({
+    ...straffesparkBase,
+    era: z.number().int().min(1960).max(2026).optional(),
+    difficulty: z.number().int().min(1).max(3),
+    coachId: z.string().min(1),
+    category: z.literal("trener"),
+    prompt: z.string().min(8),
+    answer: straffesparkAnswer,
+    fact: z.string().optional(),
+  }),
+);
