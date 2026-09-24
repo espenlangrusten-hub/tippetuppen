@@ -22,13 +22,6 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2013839/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
@@ -36,58 +29,47 @@
   "lineup": [
     {
       "name": "Ørjan Håskjold Nyland",
-      "pos": "GK",
-      "no": 12
+      "pos": "GK"
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT",
-      "no": 14
+      "pos": "OUT"
     },
     {
       "name": "Håvard Nordtveit",
-      "pos": "OUT",
-      "no": 6
+      "pos": "OUT"
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT",
-      "no": 21
+      "pos": "OUT"
     },
     {
       "name": "Per-Egil Flo",
-      "pos": "OUT",
-      "no": 16
+      "pos": "OUT"
     },
     {
       "name": "Mats Møller Dæhli",
-      "pos": "OUT",
-      "no": 20
+      "pos": "OUT"
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "OUT",
-      "no": 15
+      "pos": "OUT"
     },
     {
       "name": "Stefan Johansen",
-      "pos": "OUT",
-      "no": 8
+      "pos": "OUT"
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "OUT",
-      "no": 19
+      "pos": "OUT"
     },
     {
       "name": "Håvard Nielsen",
-      "pos": "OUT",
-      "no": 18
+      "pos": "OUT"
     },
     {
       "name": "Joshua King",
-      "pos": "OUT",
-      "no": 7
+      "pos": "OUT"
     }
   ]
 }

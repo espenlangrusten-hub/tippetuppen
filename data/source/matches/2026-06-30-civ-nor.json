@@ -14,27 +14,9 @@
   "tags": ["vm", "vm-2026", "sluttspill"],
   "status": "verified",
   "sources": [
-    {
-      "url": "https://www.fotball.no/landslag/norge-a-herrer/vm-2026/",
-      "title": "Medieguide VM 2026 - Norges Fotballforbund",
-      "kind": "web",
-      "accessed": "2026-09-15",
-      "note": "NFF dokumenterer kampen, datoen, arenaen og resultatet 1–2."
-    },
-    {
-      "url": "https://www.reuters.com/sports/soccer/norway-back-with-big-guns-ivory-coast-make-three-changes-2026-06-30/",
-      "title": "Norway back with big guns as Ivory Coast make three changes - Reuters",
-      "kind": "web",
-      "accessed": "2026-09-15",
-      "note": "Reuters dokumenterer Norges komplette startellever."
-    },
-    {
-      "url": "https://www.reuters.com/sports/soccer/haaland-hero-again-norway-edge-ivory-coast-advance-world-cup-2026-06-30/",
-      "title": "Haaland the hero again as Norway edge Ivory Coast to advance at World Cup - Reuters",
-      "kind": "web",
-      "accessed": "2026-09-15",
-      "note": "Reuters dokumenterer sluttresultatet og målscorerne."
-    },
+    { "url": "https://www.fotball.no/landslag/norge-a-herrer/vm-2026/", "title": "Medieguide VM 2026 - Norges Fotballforbund", "kind": "web", "accessed": "2026-09-15", "note": "NFF dokumenterer kampen, datoen, arenaen og resultatet 1–2." },
+    { "url": "https://www.reuters.com/sports/soccer/norway-back-with-big-guns-ivory-coast-make-three-changes-2026-06-30/", "title": "Norway back with big guns as Ivory Coast make three changes - Reuters", "kind": "web", "accessed": "2026-09-15", "note": "Reuters dokumenterer Norges komplette startellever." },
+    { "url": "https://www.reuters.com/sports/soccer/haaland-hero-again-norway-edge-ivory-coast-advance-world-cup-2026-06-30/", "title": "Haaland the hero again as Norway edge Ivory Coast to advance at World Cup - Reuters", "kind": "web", "accessed": "2026-09-15", "note": "Reuters dokumenterer sluttresultatet og målscorerne." },
     { "url": "https://match.uefa.com/v5/matches/2048974/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Antonio Nusa ga Norge ledelsen, før Erling Haaland avgjorde i sluttminuttene og sendte Norge til åttedelsfinalen.",

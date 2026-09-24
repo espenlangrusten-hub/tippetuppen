@@ -22,13 +22,6 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2015102/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
@@ -36,58 +29,47 @@
   "lineup": [
     {
       "name": "Rune Almenning Jarstein",
-      "pos": "GK",
-      "no": 1
+      "pos": "GK"
     },
     {
       "name": "Martin Linnes",
-      "pos": "OUT",
-      "no": 2
+      "pos": "OUT"
     },
     {
       "name": "Steffen Hagen",
-      "pos": "OUT",
-      "no": 21
+      "pos": "OUT"
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT",
-      "no": 23
+      "pos": "OUT"
     },
     {
       "name": "Per-Egil Flo",
-      "pos": "OUT",
-      "no": 3
+      "pos": "OUT"
     },
     {
       "name": "Yann-Erik de Lanlay",
-      "pos": "OUT",
-      "no": 14
+      "pos": "OUT"
     },
     {
       "name": "Jone Samuelsen",
-      "pos": "OUT",
-      "no": 9
+      "pos": "OUT"
     },
     {
       "name": "Martin Ødegaard",
-      "pos": "OUT",
-      "no": 15
+      "pos": "OUT"
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "OUT",
-      "no": 10
+      "pos": "OUT"
     },
     {
       "name": "Marcus Pedersen",
-      "pos": "OUT",
-      "no": 19
+      "pos": "OUT"
     },
     {
       "name": "Fredrik Gulbrandsen",
-      "pos": "OUT",
-      "no": 8
+      "pos": "OUT"
     }
   ]
 }
