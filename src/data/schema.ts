@@ -117,7 +117,8 @@ export const matchFactsFile = z.array(
       .object({
         names: z.array(z.string().min(1)).min(1), // official name first, then the others UEFA gives
         city: z.string().optional(),
-        country: z.string().length(3).optional(), // where it was played; neither team's = neutral
+        country: z.string().length(3).optional(), // country code of where it was played
+        neutral: z.boolean().optional(), // true when that is neither team's country
       })
       .optional(),
     scorers: z

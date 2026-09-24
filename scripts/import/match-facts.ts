@@ -41,7 +41,7 @@ async function get(url: string): Promise<unknown> {
   return null;
 }
 
-type Named = { internationalName?: string };
+type Named = { internationalName?: string; countryCode?: string };
 type Uefa = {
   id: string;
   homeTeam?: Named & { id?: string };
@@ -113,7 +113,13 @@ for (const m of matches) {
     entry.stadium = { names };
     const city = u.match.stadium?.city?.translations?.name?.EN;
     if (city) entry.stadium.city = city;
-    if (u.match.stadium?.countryCode?.length === 3) entry.stadium.country = u.match.stadium.countryCode;
+    const country = u.match.stadium?.countryCode;
+    if (country?.length === 3) {
+      entry.stadium.country = country;
+      // UEFA's own country codes on both sides, so no mapping from our codes is needed.
+      const teams = [u.match.homeTeam?.countryCode, u.match.awayTeam?.countryCode];
+      if (teams.every(Boolean)) entry.stadium.neutral = !teams.includes(country);
+    }
   }
 
   const norwayHomeAtUefa = isNorway(u.match.homeTeam);
