@@ -38,6 +38,15 @@ describe("skriving av kampfiler", () => {
     expect(out.split("\n").length - original.split("\n").length).toBe(1);
   });
 
+  it("fjerner en kilde uten å formatere om resten", () => {
+    const original = read("1991-06-05-nor-ita.json");
+    const m = JSON.parse(original) as Match;
+    m.sources.pop();
+    const out = serialize(original, m);
+    expect(JSON.parse(out)).toEqual(m);
+    expect(original.split("\n").length - out.split("\n").length).toBe(1);
+  });
+
   it("skriver en uendret fil tegn for tegn likt", () => {
     for (const file of ["1991-06-05-nor-ita.json", "1990-02-04-nor-kor.json"]) {
       const original = read(file);

@@ -45,14 +45,13 @@ export function serialize(original: string, m: Match): string {
     const comma = lines[i].trimEnd().endsWith(",") ? "," : "";
     lines[i] = `${lines[i].match(/^\s*/)![0]}${inline(p)}${comma}`;
   }
-  const added = m.sources.slice(was.sources.length);
-  if (added.length) {
+  if (JSON.stringify(m.sources) !== JSON.stringify(was.sources)) {
+    // Sources sit one per line in these files; rewrite just that block.
     const open = lines.findIndex((l) => /^\s*"sources": \[$/.test(l));
     const close = open < 0 ? -1 : lines.findIndex((l, i) => i > open && /^\s*\],?$/.test(l));
     if (close < 0) return plain;
-    const indent = lines[open + 1].match(/^\s*/)![0];
-    lines[close - 1] = lines[close - 1].replace(/,?$/, ",");
-    lines.splice(close, 0, ...added.map((src, i) => `${indent}${inline(src)}${i < added.length - 1 ? "," : ""}`));
+    const indent = (lines[open + 1] ?? "").match(/^\s*/)![0] || "    ";
+    lines.splice(open + 1, close - open - 1, ...m.sources.map((src, i) => `${indent}${inline(src)}${i < m.sources.length - 1 ? "," : ""}`));
   }
   const out = lines.join("\n");
   return JSON.stringify(JSON.parse(out)) === JSON.stringify(m) ? out : plain;

@@ -134,6 +134,7 @@ async function main() {
   const lineupDoubts: string[] = [];
   const notFound: string[] = [];
   const used = { uefa: 0, wikipedia: 0, nff: 0 };
+  const uefaIds = new Map<string, string>();
 
   for (const { m } of matches) {
     const u = await uefa(m);
@@ -166,11 +167,7 @@ async function main() {
     if (u && [...fromU.values()].some((x) => x != null)) used.uefa++;
     if (w) used.wikipedia++;
     if (n) used.nff++;
-    const addSource = (src: Source) => {
-      if (!m.sources.some((s) => s.url === src.url)) m.sources.push(src);
-    };
-    if (u && [...fromU.values()].some((x) => x != null))
-      addSource({ url: `https://match.uefa.com/v5/matches/${u.id}/lineups`, title: "UEFA – kampdata med lagoppstilling", kind: "api", accessed: today, note: "Draktnumre for startelleveren, kontrollert mot våre navn." });
+    if (u && [...fromU.values()].some((x) => x != null)) uefaIds.set(m.id, u.id);
     await sleep(200);
   }
 
@@ -211,8 +208,15 @@ async function main() {
     conflicts.push(`${c.earlier} og ${c.later}: ${c.name} har ${c.earlierNo} og ${c.laterNo} med ${c.days} dagers mellomrom – begge kampene mister numrene`);
   }
   let partial = 0;
+  const isUefaSource = (src: Source) => src.url?.startsWith("https://match.uefa.com/") ?? false;
   for (const { m } of matches) {
-    if (!windowStripped.has(m.id) && completeNumbers(m.lineup)) continue;
+    // UEFA is named as a source only where its numbers are still in the file.
+    m.sources = m.sources.filter((src) => !isUefaSource(src));
+    if (!windowStripped.has(m.id) && completeNumbers(m.lineup)) {
+      const id = uefaIds.get(m.id);
+      if (id) m.sources.push({ url: `https://match.uefa.com/v5/matches/${id}/lineups`, title: "UEFA – kampdata med lagoppstilling", kind: "api", accessed: today, note: "Draktnumre for startelleveren, kontrollert mot våre navn." });
+      continue;
+    }
     if (m.lineup.some((p) => p.no != null)) partial++;
     for (const p of m.lineup) {
       delete p.no;
