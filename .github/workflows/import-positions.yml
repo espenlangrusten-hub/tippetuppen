@@ -1,0 +1,60 @@
+name: Importer posisjoner
+
+# Playing positions and formation from UEFA's lineups for starting elevens whose source
+# does not give them (pos "OUT"). Commits the result to the branch it ran on, with the
+# report in the job summary. A push that touches the importer starts it: the assistant
+# working on this repository can push but cannot dispatch a workflow.
+
+on:
+  workflow_dispatch:
+  push:
+    # Never on main: a merge would commit straight to the default branch without review.
+    branches-ignore: [main]
+    paths:
+      - scripts/import/positions.ts
+      - .github/workflows/import-positions.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-positions-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Hent posisjoner
+        run: node --import tsx scripts/import/positions.ts
+
+      # The pitch is drawn from these; nothing that fails validation gets that far.
+      - name: Valider dataene
+        run: npm run data:validate
+
+      - name: Commit endringene
+        run: |
+          set -euo pipefail
+          git add data/source/matches
+          if git diff --cached --quiet; then
+            echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -F - <<EOF
+          Posisjoner og formasjon fra UEFAs lagoppstillinger
+
+          $(sed -n '3,6p' positions-report.md)
+
+          Det som ble hoppet over står i jobbsammendraget for kjøring ${{ github.run_id }}.
+          EOF
+          git push origin HEAD:${{ github.ref_name }}
