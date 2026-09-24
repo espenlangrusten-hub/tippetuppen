@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/", 1, "daily"),
     page("/mangler-xi/", 0.9, "daily"),
     page("/maalloes/", 0.9, "daily"),
+    page("/trener-genius/", 0.9, "daily"),
     page("/arkiv/", 0.6, "daily"),
     page("/om/", 0.3, "monthly"),
     page("/personvern/", 0.2, "monthly"),
