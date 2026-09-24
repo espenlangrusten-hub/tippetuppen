@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { apiPost, apiBeacon } from "@/lib/api";
 import { storedUser } from "@/lib/auth";
-import { BASE_PATH } from "@/lib/site";
+import { BASE_PATH, SITE_URL } from "@/lib/site";
 import { addRecord } from "@/lib/storage";
 import type { GeniusResponse } from "@/lib/trener-genius";
 import s from "./TrenerGenius.module.css";
@@ -67,7 +67,7 @@ export function TrenerGeniusGame() {
 
   const share = async () => {
     if (!game) return;
-    const text = `Trener Genius #${game.number} · ${game.date}\n${game.answers.map(a => a.offensive ? a.correct ? "⭐" : "🟥" : a.correct ? "🟩" : "⬜").join("")}\n${game.points}/100 poeng\ntippetuppen.no/trener-genius/`;
+    const text = `Trener Genius #${game.number} · ${game.date}\n${game.answers.map(a => a.offensive ? a.correct ? "⭐" : "🟥" : a.correct ? "🟩" : "⬜").join("")}\n${game.points}/100 poeng\n${SITE_URL}/trener-genius/`;
     try { await navigator.clipboard.writeText(text); setShareText("Resultatet er kopiert!"); }
     catch { setShareText(text); }
   };
