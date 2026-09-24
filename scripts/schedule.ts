@@ -32,16 +32,33 @@ const finn = await buildFinnSpillerenPuzzles(db);
 const genius = buildGeniusPuzzles();
 step(`Built ${genius.length} reviewed Trener Genius rounds.`);
 step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
+// Written 200 at a time: one statement per puzzle took over ten minutes once Trener
+// Genius joined the pool, and pushed the data job past its timeout.
+const rows = [...mxi, ...mal, ...finn, ...genius]
+  .filter((p) => !published.has(p.id))
+  .map((p) => ({ id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef }));
 let upserts = 0;
-for (const p of [...mxi, ...mal, ...finn, ...genius]) {
-  if (published.has(p.id)) continue;
-  const row = { id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef };
+for (let i = 0; i < rows.length; i += 200) {
+  const batch = rows.slice(i, i + 200);
   await db
     .insert(s.puzzles)
-    .values(row)
-    .onConflictDoUpdate({ target: s.puzzles.id, set: { eligible: true, title: row.title, payload: row.payload, difficulty: row.difficulty, quality: row.quality, era: row.era, tags: row.tags, fingerprint: row.fingerprint, sourceRef: row.sourceRef } });
-  upserts++;
-  if (upserts % 20 === 0) step(`  …${upserts} puzzles written`);
+    .values(batch)
+    .onConflictDoUpdate({
+      target: s.puzzles.id,
+      set: {
+        eligible: true,
+        title: sql`excluded.title`,
+        payload: sql`excluded.payload`,
+        difficulty: sql`excluded.difficulty`,
+        quality: sql`excluded.quality`,
+        era: sql`excluded.era`,
+        tags: sql`excluded.tags`,
+        fingerprint: sql`excluded.fingerprint`,
+        sourceRef: sql`excluded.source_ref`,
+      },
+    });
+  upserts += batch.length;
+  step(`  …${upserts} puzzles written`);
 }
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
 const known = new Set([...mxi, ...mal, ...finn, ...genius].map((p) => p.id).concat([...published]));
