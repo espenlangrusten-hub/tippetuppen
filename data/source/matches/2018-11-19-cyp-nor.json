@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:uefa-lineup"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,53 +41,54 @@
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT",
+      "pos": "RB",
       "no": 14
     },
     {
       "name": "Sigurd Rosted",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 5
     },
     {
       "name": "Håvard Nordtveit",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 6
     },
     {
       "name": "Birger Meling",
-      "pos": "OUT",
+      "pos": "LB",
       "no": 2
     },
     {
       "name": "Ole Kristian Selnæs",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 18
     },
     {
       "name": "Markus Henriksen",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 19
     },
     {
       "name": "Iver Fossum",
-      "pos": "OUT",
+      "pos": "RM",
       "no": 23
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "OUT",
+      "pos": "LM",
       "no": 11
     },
     {
       "name": "Ola Kamara",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 7
     },
     {
       "name": "Tarik Elyounoussi",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 10
     }
-  ]
+  ],
+  "formation": "4-4-2"
 }

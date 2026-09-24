@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:uefa-lineup"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,53 +41,54 @@
     },
     {
       "name": "Jarl-André Storbæk",
-      "pos": "OUT",
+      "pos": "RB",
       "no": 34
     },
     {
       "name": "Erik Hagen",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 3
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 5
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT",
+      "pos": "LB",
       "no": 6
     },
     {
       "name": "Jan Gunnar Solli",
-      "pos": "OUT",
+      "pos": "RW",
       "no": 28
     },
     {
       "name": "Bjørn Helge Semundseth Riise",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 21
     },
     {
       "name": "Martin Andresen",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 8
     },
     {
       "name": "Christian Grindheim",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 19
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT",
+      "pos": "LW",
       "no": 11
     },
     {
       "name": "Thorstein Helstad",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 32
     }
-  ]
+  ],
+  "formation": "4-3-3"
 }

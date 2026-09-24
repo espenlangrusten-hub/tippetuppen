@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:uefa-lineup"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Posisjoner og formasjon fra UEFAs lagoppstilling for kampen."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,53 +41,54 @@
     },
     {
       "name": "Haitam Aleesami",
-      "pos": "OUT",
+      "pos": "LB",
       "no": 2
     },
     {
       "name": "Even Hovland",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 5
     },
     {
       "name": "Kristoffer Ajer",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 3
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT",
+      "pos": "RB",
       "no": 14
     },
     {
       "name": "Markus Henriksen",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 19
     },
     {
       "name": "Stefan Johansen",
-      "pos": "OUT",
+      "pos": "RM",
       "no": 8
     },
     {
       "name": "Mathias Normann",
-      "pos": "OUT",
+      "pos": "CM",
       "no": 21
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "OUT",
+      "pos": "LM",
       "no": 11
     },
     {
       "name": "Erling Braut Haaland",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 23
     },
     {
       "name": "Alexander Sørloth",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 9
     }
-  ]
+  ],
+  "formation": "4-4-2"
 }
