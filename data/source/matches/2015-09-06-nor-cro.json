@@ -16,21 +16,22 @@
   "status": "single_source",
   "sources": [
     { "url": "https://hns.team/en/news/12196/norway-beats-croatia-20-in-oslo/", "title": "Norway beats Croatia 2:0 in Oslo – Croatian Football Federation", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://www.uefa.com/uefaeuro/match/2014003--norway-vs-croatia/", "title": "Norway 2-0 Croatia | UEFA EURO 2016", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.uefa.com/uefaeuro/match/2014003--norway-vs-croatia/", "title": "Norway 2-0 Croatia | UEFA EURO 2016", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2014003/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Jo Inge Berget scoret og tvang fram Ćorlukas selvmål. Kroatias første tap i kvaliken.",
   "lineup": [
-    { "name": "Ørjan Nyland", "pos": "GK" },
-    { "name": "Omar Elabdellaoui", "pos": "RB" },
-    { "name": "Even Hovland", "pos": "CB" },
-    { "name": "Vegard Forren", "pos": "CB" },
-    { "name": "Tom Høgli", "pos": "LB" },
-    { "name": "Jo Inge Berget", "pos": "RM" },
-    { "name": "Markus Henriksen", "pos": "CM" },
-    { "name": "Alexander Tettey", "pos": "CM" },
-    { "name": "Per Ciljan Skjelbred", "pos": "CM", "captain": true },
-    { "name": "Stefan Johansen", "pos": "LM" },
-    { "name": "Alexander Søderlund", "pos": "CF" }
+    { "name": "Ørjan Nyland", "pos": "GK", "no": 12 },
+    { "name": "Omar Elabdellaoui", "pos": "RB", "no": 14 },
+    { "name": "Even Hovland", "pos": "CB", "no": 3 },
+    { "name": "Vegard Forren", "pos": "CB", "no": 21 },
+    { "name": "Tom Høgli", "pos": "LB", "no": 2 },
+    { "name": "Jo Inge Berget", "pos": "RM", "no": 19 },
+    { "name": "Markus Henriksen", "pos": "CM", "no": 10 },
+    { "name": "Alexander Tettey", "pos": "CM", "no": 5 },
+    { "name": "Per Ciljan Skjelbred", "pos": "CM", "captain": true, "no": 15 },
+    { "name": "Stefan Johansen", "pos": "LM", "no": 8 },
+    { "name": "Alexander Søderlund", "pos": "CF", "no": 9 }
   ],
   "goals": [
     { "team": "norway", "name": "Jo Inge Berget", "minute": 51 },

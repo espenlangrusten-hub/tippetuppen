@@ -19,17 +19,17 @@
   ],
   "notes": "Rooneys straffe avgjorde en glissen Wembley-kveld. Startelleveren og draktnumrene er bekreftet mot lagoppstillingene, men posisjonene er tilordnet etter spillernes vanlige roller.",
   "lineup": [
-    { "name": "Ørjan Nyland", "no": 12, "pos": "GK" },
-    { "name": "Omar Elabdellaoui", "no": 16, "pos": "RB" },
-    { "name": "Håvard Nordtveit", "no": 8, "pos": "CB" },
-    { "name": "Vegard Forren", "no": 23, "pos": "CB" },
-    { "name": "Martin Linnes", "no": 17, "pos": "LB" },
-    { "name": "Tarik Elyounoussi", "no": 10, "pos": "RM" },
-    { "name": "Per Ciljan Skjelbred", "no": 15, "pos": "CM", "captain": true },
-    { "name": "Ruben Yttergård Jenssen", "no": 19, "pos": "CM" },
-    { "name": "Mats Møller Dæhli", "no": 20, "pos": "LM" },
-    { "name": "Stefan Johansen", "no": 6, "pos": "AM" },
-    { "name": "Joshua King", "no": 7, "pos": "CF" }
+    { "name": "Ørjan Nyland", "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "pos": "RB" },
+    { "name": "Håvard Nordtveit", "pos": "CB" },
+    { "name": "Vegard Forren", "pos": "CB" },
+    { "name": "Martin Linnes", "pos": "LB" },
+    { "name": "Tarik Elyounoussi", "pos": "RM" },
+    { "name": "Per Ciljan Skjelbred", "pos": "CM", "captain": true },
+    { "name": "Ruben Yttergård Jenssen", "pos": "CM" },
+    { "name": "Mats Møller Dæhli", "pos": "LM" },
+    { "name": "Stefan Johansen", "pos": "AM" },
+    { "name": "Joshua King", "pos": "CF" }
   ],
   "goals": [{ "team": "opponent", "scorer": "Wayne Rooney", "minute": 68, "kind": "pen" }]
 }

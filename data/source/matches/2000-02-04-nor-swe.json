@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/61759/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
@@ -29,47 +36,58 @@
   "lineup": [
     {
       "name": "Morten Bakke",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "André Bergdølmo",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 2
     },
     {
       "name": "Bjørn Otto Bragstad",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 4
     },
     {
       "name": "Mike Kjølø",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 5
     },
     {
       "name": "Roger Nilsen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Ørjan Berg",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 7
     },
     {
       "name": "Bent André Skammelsrud",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 6
     },
     {
       "name": "Ole Martin Årst",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 11
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     },
     {
       "name": "Andreas Lund",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 9
     }
   ]
 }

@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/2014046/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
@@ -29,47 +36,58 @@
   "lineup": [
     {
       "name": "Ørjan Håskjold Nyland",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 12
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 14
     },
     {
       "name": "Even Hovland",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 21
     },
     {
       "name": "Haitam Aleesami",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 16
     },
     {
       "name": "Alexander Banor Tettey",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 5
     },
     {
       "name": "Stefan Johansen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 15
     },
     {
       "name": "Markus Henriksen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     },
     {
       "name": "Jo Inge Berget",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 19
     },
     {
       "name": "Alexander Søderlund",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 9
     }
   ]
 }

@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Kilden dokumenterer startelleveren og grupperer Håland som forsvarer. Plasseringen hans på midtbanen i spillets 4–4–2-visning er en redaksjonell tolkning; eksakt kampformasjon er ikke dokumentert."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/54894/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Vises med fire forsvarere, fire midtbanespillere (Alf-Inge Håland på midtbanen) og to angripere. Den eksakte kampformasjonen og draktnumrene er ikke dokumentert; 11v11 grupperer Håland som forsvarer.",
@@ -29,47 +36,58 @@
   "lineup": [
     {
       "name": "Frode Grodås",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Henning Berg",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 4
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 5
     },
     {
       "name": "Alf-Inge Håland",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 2
     },
     {
       "name": "Vegard Heggem",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 8
     },
     {
       "name": "Erik Hoftun",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 3
     },
     {
       "name": "Kjetil André Rekdal",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 10
     },
     {
       "name": "Ståle Solbakken",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 7
     },
     {
       "name": "Roar Strand",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 11
     },
     {
       "name": "Jostein Flo",
-      "pos": "FW"
+      "pos": "FW",
+      "no": 6
     },
     {
       "name": "Tore André Flo",
-      "pos": "FW"
+      "pos": "FW",
+      "no": 9
     }
   ]
 }

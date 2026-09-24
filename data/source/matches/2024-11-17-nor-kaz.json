@@ -16,21 +16,22 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.footballcritic.com/uefa-nations-league-norway-kazakhstan/lineups/3277668", "title": "Norway vs Kazakhstan (5-0) Nov 17, 2024 Lineups – FootballCritic", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI and scorers confirmed in search excerpt" },
-    { "url": "https://www.skysports.com/football/norway-vs-kazakhstan/teams/503663", "title": "Starting Lineups – Norway vs Kazakhstan | 17.11.2024 – Sky Sports", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.skysports.com/football/norway-vs-kazakhstan/teams/503663", "title": "Starting Lineups – Norway vs Kazakhstan | 17.11.2024 – Sky Sports", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2040174/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Haaland-hat-trick, og Norge sikret gruppeseier og opprykk til liga A.",
   "lineup": [
-    { "name": "Egil Selvik", "pos": "GK" },
-    { "name": "Marcus Holmgren Pedersen", "pos": "RB" },
-    { "name": "Stian Gregersen", "pos": "CB" },
-    { "name": "Leo Østigård", "pos": "CB" },
-    { "name": "Julian Ryerson", "pos": "LB" },
-    { "name": "Kristian Thorstvedt", "pos": "DM" },
-    { "name": "Sander Berge", "pos": "DM" },
-    { "name": "Alexander Sørloth", "pos": "RW" },
-    { "name": "Morten Thorsby", "pos": "AM" },
-    { "name": "Antonio Nusa", "pos": "LW" },
-    { "name": "Erling Haaland", "pos": "CF", "captain": true }
+    { "name": "Egil Selvik", "pos": "GK", "no": 1 },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB", "no": 16 },
+    { "name": "Stian Gregersen", "pos": "CB", "no": 3 },
+    { "name": "Leo Østigård", "pos": "CB", "no": 4 },
+    { "name": "Julian Ryerson", "pos": "LB", "no": 14 },
+    { "name": "Kristian Thorstvedt", "pos": "DM", "no": 18 },
+    { "name": "Sander Berge", "pos": "DM", "no": 8 },
+    { "name": "Alexander Sørloth", "pos": "RW", "no": 7 },
+    { "name": "Morten Thorsby", "pos": "AM", "no": 2 },
+    { "name": "Antonio Nusa", "pos": "LW", "no": 20 },
+    { "name": "Erling Haaland", "pos": "CF", "captain": true, "no": 9 }
   ],
   "goals": [
     { "team": "norway", "name": "Erling Haaland", "minute": 24 },

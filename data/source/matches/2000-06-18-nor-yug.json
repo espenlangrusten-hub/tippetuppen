@@ -16,21 +16,22 @@
   "status": "verified",
   "sources": [
     { "url": "https://www.uefa.com/uefaeuro/match/64859--norway-vs-yugoslavia/lineups/", "title": "Norway 0-1 Yugoslavia | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05", "note": "UEFAs offisielle kampside." },
-    { "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2000_Group_C", "title": "UEFA Euro 2000 Group C – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling og manuelt mot UEFA." }
+    { "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2000_Group_C", "title": "UEFA Euro 2000 Group C – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling og manuelt mot UEFA." },
+    { "url": "https://match.uefa.com/v5/matches/64859/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Savo Milošević scoret kampens eneste mål etter åtte minutter.",
   "lineup": [
-    { "name": "Thomas Myhre", "pos": "GK" },
-    { "name": "Vegard Heggem", "pos": "RB", "off": 35 },
-    { "name": "Dan Eggen", "pos": "CB" },
-    { "name": "Bjørn Otto Bragstad", "pos": "CB" },
-    { "name": "André Bergdølmo", "pos": "LB" },
-    { "name": "Eirik Bakke", "pos": "CM", "off": 76 },
-    { "name": "Bent Skammelsrud", "pos": "CM", "captain": true },
-    { "name": "Erik Mykland", "pos": "CM" },
-    { "name": "Steffen Iversen", "pos": "CF", "off": 71 },
-    { "name": "Tore André Flo", "pos": "CF" },
-    { "name": "Ole Gunnar Solskjær", "pos": "CF" }
+    { "name": "Thomas Myhre", "pos": "GK", "no": 1 },
+    { "name": "Vegard Heggem", "pos": "RB", "off": 35, "no": 14 },
+    { "name": "Dan Eggen", "pos": "CB", "no": 16 },
+    { "name": "Bjørn Otto Bragstad", "pos": "CB", "no": 3 },
+    { "name": "André Bergdølmo", "pos": "LB", "no": 2 },
+    { "name": "Eirik Bakke", "pos": "CM", "off": 76, "no": 19 },
+    { "name": "Bent Skammelsrud", "pos": "CM", "captain": true, "no": 11 },
+    { "name": "Erik Mykland", "pos": "CM", "no": 7 },
+    { "name": "Steffen Iversen", "pos": "CF", "off": 71, "no": 18 },
+    { "name": "Tore André Flo", "pos": "CF", "no": 9 },
+    { "name": "Ole Gunnar Solskjær", "pos": "CF", "no": 20 }
   ],
   "subs": [
     { "name": "Stig Inge Bjørnebye", "pos": "CB", "on": 35 },

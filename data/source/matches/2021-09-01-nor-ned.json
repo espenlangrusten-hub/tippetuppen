@@ -16,7 +16,8 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.espn.com/soccer/match/_/gameId/590363", "title": "Norway 1-1 Netherlands (Sep 1, 2021) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
-    { "url": "https://int.soccerway.com/matches/2021/09/01/europe/wc-qualifying-europe/norway/netherlands/3430159/", "title": "Norway vs. Netherlands – 1 September 2021 – Soccerway", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://int.soccerway.com/matches/2021/09/01/europe/wc-qualifying-europe/norway/netherlands/3430159/", "title": "Norway vs. Netherlands – 1 September 2021 – Soccerway", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2030844/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Haaland ga ledelsen mot van Gaals Nederland før Klaassen utlignet.",
   "lineup": [

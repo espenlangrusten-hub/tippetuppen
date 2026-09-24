@@ -31,6 +31,13 @@
       "kind": "web",
       "accessed": "2026-09-07",
       "note": "Startellever og 4-4-2 kontrollert. Innbytterkoblingene avviker fra NFF og brukes ikke."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/2024355/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Generiske posisjonsgrupper fra ESPN. Startelleveren er kontrollert mot NFF separat fra innbytterne. Innbyttere er ikke registrert.",

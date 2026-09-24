@@ -16,21 +16,22 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.englandstats.com/matches.php?mid=696", "title": "Norway 2-0 England, 2 June 1993 – englandstats.com", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt: Thorstvedt, Halle, Pedersen, Bratseth (c), Bjørnebye, Flo, Mykland, Leonhardsen, Fjørtoft, Rekdal, Bohinen" },
-    { "url": "http://www.rsssf.no/1993/NOR-ENG", "title": "WC qualifier in Oslo, June 2, 1993 – RSSSF Norway", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "http://www.rsssf.no/1993/NOR-ENG", "title": "WC qualifier in Oslo, June 2, 1993 – RSSSF Norway", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/5380/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Seieren som i praksis sendte Norge til VM 1994 og England hjem. Leonhardsen og Bohinen scoret rett før og rett etter pause.",
   "lineup": [
-    { "name": "Erik Thorstvedt", "pos": "GK" },
-    { "name": "Gunnar Halle", "pos": "RB" },
-    { "name": "Tore Pedersen", "pos": "CB" },
-    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
-    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
-    { "name": "Jostein Flo", "pos": "RM" },
-    { "name": "Erik Mykland", "pos": "CM" },
-    { "name": "Kjetil Rekdal", "pos": "CM" },
-    { "name": "Lars Bohinen", "pos": "CM" },
-    { "name": "Øyvind Leonhardsen", "pos": "LM" },
-    { "name": "Jan Åge Fjørtoft", "pos": "CF" }
+    { "name": "Erik Thorstvedt", "pos": "GK", "no": 1 },
+    { "name": "Gunnar Halle", "pos": "RB", "no": 2 },
+    { "name": "Tore Pedersen", "pos": "CB", "no": 3 },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true, "no": 4 },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB", "no": 5 },
+    { "name": "Jostein Flo", "pos": "RM", "no": 6 },
+    { "name": "Erik Mykland", "pos": "CM", "no": 7 },
+    { "name": "Kjetil Rekdal", "pos": "CM", "no": 9 },
+    { "name": "Lars Bohinen", "pos": "CM", "no": 10 },
+    { "name": "Øyvind Leonhardsen", "pos": "LM", "no": 8 },
+    { "name": "Jan Åge Fjørtoft", "pos": "CF", "no": 11 }
   ],
   "goals": [
     { "team": "norway", "name": "Øyvind Leonhardsen", "minute": 43 },

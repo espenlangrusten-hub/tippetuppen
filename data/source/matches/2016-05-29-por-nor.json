@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/2019596/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
@@ -29,47 +36,58 @@
   "lineup": [
     {
       "name": "Rune Almenning Jarstein",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Martin Linnes",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 17
     },
     {
       "name": "Even Hovland",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Stefan Strandberg",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 4
     },
     {
       "name": "Anders Trondsen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 21
     },
     {
       "name": "Veton Berisha",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 14
     },
     {
       "name": "Stefan Johansen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 19
     },
     {
       "name": "Valon Berisha",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 20
     },
     {
       "name": "Markus Henriksen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     },
     {
       "name": "Joshua King",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 7
     }
   ]
 }
