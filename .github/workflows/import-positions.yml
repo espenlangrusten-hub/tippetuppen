@@ -33,6 +33,12 @@ jobs:
           cache: npm
       - run: npm ci
 
+      # Start from main's match files, never from an earlier run's output.
+      - name: Start fra kampdataene på main
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          git checkout FETCH_HEAD -- data/source/matches
+
       - name: Hent posisjoner
         run: node --import tsx scripts/import/positions.ts
 

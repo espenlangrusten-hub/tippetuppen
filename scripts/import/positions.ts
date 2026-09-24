@@ -65,16 +65,31 @@ async function uefaEleven(m: Match): Promise<{ id: string; field: UPlayer[] } | 
 
 type Placed = { name: string; x: number; y: number };
 
-/** Split outfielders into lines from their depth: a new line wherever the gap is wide. */
-function lines(outfield: Placed[]): Placed[][] {
+// The shapes a lineup may be read as. UEFA draws full-backs and wide men a little higher
+// than the players inside them, so a naive split on depth reads 4-4-2 as 2-2-2-2-2.
+const SHAPES = [
+  [4, 4, 2], [4, 3, 3], [4, 5, 1], [3, 5, 2], [5, 3, 2], [3, 4, 3], [5, 4, 1], [4, 6, 0],
+  [4, 2, 3, 1], [4, 1, 4, 1], [4, 4, 1, 1], [4, 3, 2, 1], [4, 1, 3, 2], [4, 2, 2, 2], [3, 4, 2, 1], [3, 4, 1, 2],
+].filter((f) => !f.includes(0));
+
+/**
+ * Read the lines off the depths: the shape with the fewest lines in which every line is
+ * tighter than the gap to the next. Null when no shape separates cleanly.
+ */
+function lines(outfield: Placed[]): Placed[][] | null {
   const sorted = [...outfield].sort((a, b) => a.y - b.y);
-  const span = sorted.at(-1)!.y - sorted[0].y || 1;
-  const out: Placed[][] = [[sorted[0]]];
-  for (let i = 1; i < sorted.length; i++) {
-    if (sorted[i].y - sorted[i - 1].y > span * 0.12) out.push([]);
-    out.at(-1)!.push(sorted[i]);
+  let best: { groups: Placed[][]; margin: number } | null = null;
+  for (const shape of SHAPES) {
+    const groups: Placed[][] = [];
+    let at = 0;
+    for (const n of shape) groups.push(sorted.slice(at, (at += n)));
+    const spread = Math.max(...groups.map((g) => g.at(-1)!.y - g[0].y));
+    const gap = Math.min(...groups.slice(1).map((g, i) => g[0].y - groups[i].at(-1)!.y));
+    if (gap <= spread) continue;
+    const margin = gap - spread;
+    if (!best || groups.length < best.groups.length || (groups.length === best.groups.length && margin > best.margin)) best = { groups, margin };
   }
-  return out;
+  return best?.groups ?? null;
 }
 
 /** Positions for one line, left to right, from its place in the formation and its size. */
@@ -110,7 +125,7 @@ const lineOf = (pos: Position) => {
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".json")).sort();
 const report = { coords: [] as string[], roles: [] as string[], skipped: [] as string[], notFound: [] as string[], numbersSeen: [] as string[] };
-const calib = { lr: { agree: 0, flip: 0 }, role: { agree: 0, total: 0 }, coordLine: { agree: 0, total: 0 } };
+const calib = { lr: { agree: 0, flip: 0 }, role: { agree: 0, total: 0 }, both: { written: 0, right: 0 } };
 type Plan = { file: string; original: string; m: Match; field: UPlayer[]; uefaId: string; matched: Map<string, UPlayer> };
 const plans: Plan[] = [];
 
@@ -140,6 +155,18 @@ for (const file of files) {
         if (l < r) calib.lr.agree++;
         else if (l > r) calib.lr.flip++;
       }
+    // Would the order + role rule have got this documented match right?
+    const outD = m.lineup.filter((p) => p.pos !== "GK");
+    const rolesD = outD.map((p) => ROLE[matched.get(p.name)?.player?.fieldPosition ?? ""]);
+    if (rolesD.every(Boolean) && matched.size === 11) {
+      const cnt = (r: Position) => rolesD.filter((x) => x === r).length;
+      const [d, mf] = [cnt("DF"), cnt("MF")];
+      const byOrder = outD.map((_, i) => (i < d ? "DF" : i < d + mf ? "MF" : "FW"));
+      if (rolesD.every((r, i) => r === byOrder[i])) {
+        calib.both.written++;
+        if (outD.every((p, i) => lineOf(p.pos as Position) == null || lineOf(p.pos as Position) === rolesD[i])) calib.both.right++;
+      }
+    }
     for (const p of m.lineup) {
       const f = matched.get(p.name);
       const ours = lineOf(p.pos as Position);
@@ -152,19 +179,17 @@ for (const file of files) {
     }
     continue;
   }
+  if (["2011-08-10", "1995-02-06", "2005-01-28"].includes(m.date))
+    report.numbersSeen.push(`${label}: ${[...matched].map(([n, f]) => `${n} #${f.jerseyNumber ?? "–"} ${f.player?.fieldPosition ?? "?"} ${f.fieldCoordinate ? `(${f.fieldCoordinate.x},${f.fieldCoordinate.y})` : ""}`).join(", ")}`);
   if (matched.size !== 11) {
     report.skipped.push(`${label}: ${11 - matched.size} av våre startere er ikke i UEFAs ellever`);
     continue;
   }
-  if (m.date === "2011-08-10")
-    report.numbersSeen.push(`${label}: ${[...matched].map(([n, f]) => `${n} ${f.jerseyNumber ?? "–"}`).join(", ")}`);
   plans.push({ file, original, m, field: u.field, uefaId: u.id, matched });
 }
 
 const flipX = calib.lr.flip > calib.lr.agree;
 const roleRate = calib.role.total ? calib.role.agree / calib.role.total : 0;
-// UEFA's filed role is only good enough for the lines if it matched ours this often.
-const useRoles = roleRate >= 0.85;
 
 let written = 0;
 for (const { file, original, m, uefaId, matched } of plans) {
@@ -182,23 +207,30 @@ for (const { file, original, m, uefaId, matched } of plans) {
     const up = coords.reduce((a, c) => a + c!.y!, 0) / coords.length > keeperY ? 1 : -1;
     const placed = out.map((p, i) => ({ name: p.name, x: (flipX ? -1 : 1) * up * coords[i]!.x!, y: up * coords[i]!.y! }));
     const ls = lines(placed);
-    const back = ls[0].length;
-    const pos = ls.map((l, i) => linePositions(i, ls.length, l.length, back));
-    if (ls.length >= 3 && ls.length <= 4 && pos.every(Boolean)) {
+    const pos = ls?.map((l, i) => linePositions(i, ls.length, l.length, ls[0].length));
+    if (ls && pos?.every(Boolean)) {
       assigned = new Map();
       ls.forEach((l, i) => [...l].sort((a, b) => a.x - b.x).forEach((p, j) => assigned!.set(p.name, pos[i]![j])));
       formation = ls.map((l) => l.length).join("-");
       how = "coords";
-    } else report.skipped.push(`${label}: UEFAs koordinater gir linjene ${ls.map((l) => l.length).join("-")}, som ikke er en formasjon vi tegner`);
-  } else if (keeper && useRoles) {
+    } else report.skipped.push(`${label}: UEFAs koordinater skiller ikke linjene tydelig (dybder ${placed.map((p) => Math.round(p.y)).sort((a, b) => a - b).join(" ")})`);
+  } else if (keeper) {
+    // Two independent readings of the lines: the order our source lists the starters in
+    // (keeper, defence, midfield, attack) and the role UEFA files each player under.
+    // Written only when they agree on every one of the ten.
     const roles = out.map((p) => ROLE[matched.get(p.name)!.player?.fieldPosition ?? ""]);
     const count = (r: Position) => roles.filter((x) => x === r).length;
     const [d, mf, f] = [count("DF"), count("MF"), count("FW")];
-    if (roles.every(Boolean) && d >= 3 && d <= 5 && mf >= 2 && mf <= 6 && f >= 1 && f <= 3) {
+    const byOrder = out.map((_, i) => (i < d ? "DF" : i < d + mf ? "MF" : "FW") as Position);
+    const agree = roles.every((r, i) => r === byOrder[i]);
+    if (roles.every(Boolean) && agree && d >= 3 && d <= 5 && mf >= 2 && mf <= 6 && f >= 1 && f <= 3) {
       assigned = new Map(out.map((p, i) => [p.name, roles[i]]));
       formation = `${d}-${mf}-${f}`;
       how = "roles";
-    } else report.skipped.push(`${label}: rollene hos UEFA gir ${d}-${mf}-${f}${roles.every(Boolean) ? "" : " (noen mangler rolle)"}`);
+    } else
+      report.skipped.push(
+        `${label}: ${roles.every(Boolean) ? `rollene hos UEFA (${d}-${mf}-${f}) og rekkefølgen i kilden vår er ikke enige: ${out.map((p, i) => `${p.name.split(" ").at(-1)} ${roles[i]}${roles[i] === byOrder[i] ? "" : "≠" + byOrder[i]}`).join(", ")}` : "noen mangler rolle hos UEFA"}`,
+      );
   } else if (!keeper) report.skipped.push(`${label}: ingen keeper i vår ellever`);
 
   if (!assigned) continue;
@@ -228,11 +260,12 @@ const lines_ = [
   "",
   `- Kamper med udokumenterte posisjoner som fikk posisjoner: **${written}** (fra koordinater: ${report.coords.length}, fra roller: ${report.roles.length})`,
   `- Kalibrering venstre/høyre mot dokumenterte kamper: ${calib.lr.agree} stemmer, ${calib.lr.flip} motsatt → ${flipX ? "x speilvendt" : "x brukt som den er"}`,
-  `- UEFAs spillerrolle mot dokumentert linje: ${calib.role.agree} av ${calib.role.total} (${Math.round(roleRate * 100)} %) → ${useRoles ? "brukt" : "IKKE brukt"} der koordinater mangler`,
+  `- UEFAs spillerrolle alene mot dokumentert linje: ${calib.role.agree} av ${calib.role.total} (${Math.round(roleRate * 100)} %) – ikke nok alene`,
+  `- Rolle + rekkefølge enige, prøvd på dokumenterte kamper: ${calib.both.written} kamper ville fått linjer, ${calib.both.right} av dem helt riktig`,
   `- Hoppet over: ${report.skipped.length}, ikke funnet hos UEFA: ${report.notFound.length}`,
   "",
 ];
-for (const [title, list] of [["Fra koordinater", report.coords], ["Fra roller", report.roles], ["Hoppet over", report.skipped], ["Ikke funnet hos UEFA", report.notFound], ["Draktnumre UEFA oppgir (dagens kamp)", report.numbersSeen]] as const) {
+for (const [title, list] of [["Fra koordinater", report.coords], ["Fra roller", report.roles], ["Hoppet over", report.skipped], ["Ikke funnet hos UEFA", report.notFound], ["Detaljer for de nærmeste dagenes kamper", report.numbersSeen]] as const) {
   lines_.push(`<details><summary>${title} (${list.length})</summary>`, "");
   for (const l of list) lines_.push(`- ${l}`);
   lines_.push("</details>", "");
