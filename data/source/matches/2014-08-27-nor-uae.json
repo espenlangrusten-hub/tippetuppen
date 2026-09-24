@@ -36,47 +36,58 @@
   "lineup": [
     {
       "name": "Rune Almenning Jarstein",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Martin Linnes",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 2
     },
     {
       "name": "Steffen Hagen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 21
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 23
     },
     {
       "name": "Per-Egil Flo",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Yann-Erik de Lanlay",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 14
     },
     {
       "name": "Jone Samuelsen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 9
     },
     {
       "name": "Martin Ødegaard",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 15
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     },
     {
       "name": "Marcus Pedersen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 19
     },
     {
       "name": "Fredrik Gulbrandsen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     }
   ]
 }

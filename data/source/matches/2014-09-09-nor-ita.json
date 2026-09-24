@@ -36,47 +36,58 @@
   "lineup": [
     {
       "name": "Ørjan Håskjold Nyland",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 12
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 14
     },
     {
       "name": "Håvard Nordtveit",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 6
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 21
     },
     {
       "name": "Per-Egil Flo",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 16
     },
     {
       "name": "Mats Møller Dæhli",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 20
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 15
     },
     {
       "name": "Stefan Johansen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 8
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 19
     },
     {
       "name": "Håvard Nielsen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 18
     },
     {
       "name": "Joshua King",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 7
     }
   ]
 }
