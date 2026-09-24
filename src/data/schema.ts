@@ -49,6 +49,9 @@ export const playerFile = z.array(
 const lineupEntry = z.object({
   name: z.string(), // full display name, resolved to a player id via slug
   no: z.number().int().optional(),
+  // true when `no` was borrowed from the matches either side (src/data/shirts.ts),
+  // not given by a source for this match.
+  noInferred: z.boolean().optional(),
   pos: z.enum(POSITIONS),
   captain: z.boolean().optional(),
   off: z.number().int().optional(), // minute substituted off
