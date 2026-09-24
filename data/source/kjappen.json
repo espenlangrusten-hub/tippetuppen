@@ -108,7 +108,8 @@
         "1995",
         "kvinnelandslag"
       ]
-    }
+    },
+    "notes": "Artikkelen «Even Pellerud» nevner ikke «1995». Sjekk svaret for hånd."
   },
   {
     "id": "kj-trener-hogmo-ol2000",
@@ -185,7 +186,8 @@
         "2022",
         "Norge"
       ]
-    }
+    },
+    "notes": "Artikkelen «Gemma Grainger» nevner ikke «2022». Sjekk svaret for hånd."
   },
   {
     "id": "kj-trener-hareide-rbk",
@@ -1064,8 +1066,16 @@
       ]
     },
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Eliteserien_i_fotball_for_menn",
+        "title": "Eliteserien i fotball for menn – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tippeligaen» og «2017». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Eliteserien i fotball",
       "mustMention": [

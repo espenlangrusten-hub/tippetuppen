@@ -13,8 +13,16 @@
     "fact": "14 seriegull med Rosenborg og ett med Moss.",
     "era": 2002,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -37,8 +45,16 @@
     "fact": "Teorien handler om å dyrke det spillerne er gode på.",
     "era": 1995,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «godfot». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -62,8 +78,16 @@
     "fact": "I tillegg vant han ett seriegull med Moss.",
     "era": 2002,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -85,8 +109,16 @@
     "fact": "Det er Moss' eneste seriegull.",
     "era": 1987,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Moss» og «1987». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -109,8 +141,16 @@
     "fact": "Rosenborg vant 13 strake seriegull fra 1992 til 2004.",
     "era": 1996,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -132,8 +172,16 @@
     "fact": "Undertittelen er «samhandling – veien til suksess».",
     "era": 1999,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Godfoten». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -155,8 +203,16 @@
     "fact": "Han ledet Moss til seriegull i 1987.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -178,8 +234,16 @@
     "fact": "Trond Sollied var hovedtrener det året.",
     "era": 1998,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -201,8 +265,16 @@
     "fact": "Han hadde vært borte fra Rosenborg i åtte år.",
     "era": 2010,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2010». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -224,8 +296,16 @@
     "fact": "Han vant 15 seriegull og 6 cupgull.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «6». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -248,8 +328,16 @@
     "fact": "Rosenborg vant ligaen sju poeng foran Lillestrøm.",
     "era": 1988,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1988». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -271,8 +359,16 @@
     "fact": "Han forsvarte med det sin manglende ydmykhet.",
     "era": 1998,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -294,8 +390,16 @@
     "fact": "Sitatet er blant Dagbladets 75 beste Eggen-sitater.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Champions League». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -326,7 +430,8 @@
         "Orkdal",
         "Orkdal IF"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Orkdal IF». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-15",
@@ -342,8 +447,16 @@
     "fact": "Kniksenprisen for årets trener ble delt ut fra 1990.",
     "era": 1990,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1990». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -365,8 +478,16 @@
     "fact": "Han sendte brevet til daglig leder Nils Skutle og kjørte hjem til Orkdal.",
     "era": 1993,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1993». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -396,7 +517,8 @@
         "Skutle",
         "Nils Skutle"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Skutle» og «Nils Skutle». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-18",
@@ -412,8 +534,16 @@
     "fact": "By Rise ble senere selv Rosenborg-trener.",
     "era": 1993,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «By Rise» og «Ola By Rise». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -436,8 +566,16 @@
     "fact": "Han overtok etter Erik Hamrén 1. juni 2010.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2010». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -459,8 +597,16 @@
     "fact": "Etter den perioden trente han Moss, før han kom tilbake i 1988.",
     "era": 1982,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1978». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -491,7 +637,8 @@
         "Fredrikstad",
         "Knut Torbjørn Eggen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Fredrikstad». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arne-dokken-1",
@@ -507,8 +654,16 @@
     "fact": "Han overtok da Bjørn Hansen gikk av i august.",
     "era": 1985,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Dokken",
+        "title": "Arne Dokken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «1985». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Dokken",
       "mustMention": [
@@ -539,7 +694,8 @@
         "Rosenborg",
         "1985"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bjørn Hansen» nevner ikke «Rosenborg» og «1985». Sjekk svaret for hånd."
   },
   {
     "id": "tq-bjorn-hansen-2",
@@ -565,7 +721,8 @@
         "Rosenborg",
         "1985"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bjørn Hansen» nevner ikke «Rosenborg» og «1985». Sjekk svaret for hånd."
   },
   {
     "id": "tq-harald-sunde-1",
@@ -589,7 +746,8 @@
         "Rosenborg",
         "1983"
       ]
-    }
+    },
+    "notes": "Artikkelen «Harald Sunde» nevner ikke «Rosenborg» og «1983». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-1",
@@ -613,7 +771,8 @@
         "Rosenborg",
         "1998"
       ]
-    }
+    },
+    "notes": "Artikkelen «Trond Sollied» nevner ikke «1998». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-2",
@@ -630,8 +789,16 @@
     "fact": "Glimt hadde vunnet 1. divisjon året før.",
     "era": 1993,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Glimt» og «1993» og «Bodø/Glimt». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -655,8 +822,16 @@
     "fact": "Han vant også to belgiske cuptitler der.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brugge» og «Club Brugge». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -688,7 +863,8 @@
         "1997",
         "Assistenttrener"
       ]
-    }
+    },
+    "notes": "Artikkelen «Trond Sollied» nevner ikke «1997» og «Assistenttrener». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-5",
@@ -705,8 +881,16 @@
     "fact": "Han trente Gent 1999–2000 før Club Brugge.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Gent». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -728,8 +912,16 @@
     "fact": "Han kom dit fra Club Brugge.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Olymp» og «Olympiakos». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -752,8 +944,16 @@
     "fact": "Året etter tok de sølv og cupgull i toppdivisjonen.",
     "era": 1992,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1992». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -775,8 +975,16 @@
     "fact": "Tidligere hadde han trent i Belgia og Hellas.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Heerenveen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -799,8 +1007,16 @@
     "fact": "Han ble landslagssjef etter sesongen.",
     "era": 2003,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2003». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -824,8 +1040,16 @@
     "fact": "Molde slo Rosenborg i semifinalen.",
     "era": 1994,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «1994». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -849,8 +1073,16 @@
     "fact": "Han trente Helsingborg 1998–1999.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Helsingborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -872,8 +1104,16 @@
     "fact": "Det var Brøndbys første mesterskap siden 1998.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brøndby». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -895,8 +1135,16 @@
     "fact": "Hareide hadde bare én sesong i Rosenborg.",
     "era": 2003,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Semb» og «Nils Johan Semb». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -920,8 +1168,16 @@
     "fact": "Andre periode varte fra 1993 til 1997.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -945,8 +1201,16 @@
     "fact": "Hareide var Molde-trener.",
     "era": 1994,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1994» og «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -972,8 +1236,16 @@
     "fact": "Han vant serie og cup i sin eneste sesong.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2003» og «1». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -996,8 +1268,16 @@
     "fact": "Han hadde også ført laget til Champions League.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ola_By_Rise",
+        "title": "Ola By Rise – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ola By Rise",
       "mustMention": [
@@ -1020,8 +1300,16 @@
     "fact": "Han tok over da Hareide ble landslagssjef.",
     "era": 2003,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ola_By_Rise",
+        "title": "Ola By Rise – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Hareide» og «Assistenttrener». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ola By Rise",
       "mustMention": [
@@ -1044,8 +1332,16 @@
     "fact": "Rosenborg endte på 7. plass det året.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per_Joar_Hansen",
+        "title": "Per Joar Hansen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per Joar Hansen",
       "mustMention": [
@@ -1070,8 +1366,16 @@
     "fact": "Han trente Aalesund 2006–2007.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per_Joar_Hansen",
+        "title": "Per Joar Hansen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per Joar Hansen",
       "mustMention": [
@@ -1093,8 +1397,16 @@
     "fact": "Aalesund rykket opp i 2006.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per_Joar_Hansen",
+        "title": "Per Joar Hansen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per Joar Hansen",
       "mustMention": [
@@ -1117,8 +1429,16 @@
     "fact": "Han trente kvinnelandslaget 1997–2000.",
     "era": 2000,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2000» og «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1142,8 +1462,16 @@
     "fact": "Han var Rosenborg-trener 2005–2006.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1167,8 +1495,16 @@
     "fact": "Han trente også Moss på 1990-tallet.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1190,8 +1526,16 @@
     "fact": "Han gikk derfra til kvinnelandslaget.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1214,8 +1558,16 @@
     "fact": "Tørum tok 28 av 30 mulige poeng.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -1238,8 +1590,16 @@
     "fact": "Han tok 28 av 30 mulige poeng.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Knut_T%C3%B8rum",
+        "title": "Knut Tørum – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Knut Tørum",
       "mustMention": [
@@ -1269,7 +1629,8 @@
       "mustMention": [
         "28"
       ]
-    }
+    },
+    "notes": "Artikkelen «Knut Tørum» nevner ikke «28». Sjekk svaret for hånd."
   },
   {
     "id": "tq-knut-torum-3",
@@ -1286,8 +1647,16 @@
     "fact": "Knut Tørum var trener da gullet ble sikret.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Knut_T%C3%B8rum",
+        "title": "Knut Tørum – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2006» og «20». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Knut Tørum",
       "mustMention": [
@@ -1311,8 +1680,16 @@
     "fact": "Han tiltrådte 1. juni 2008.",
     "era": 2009,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2009» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Hamrén",
       "mustMention": [
@@ -1345,7 +1722,8 @@
       "mustMention": [
         "AaB"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Hamrén» nevner ikke «AaB». Sjekk svaret for hånd."
   },
   {
     "id": "tq-erik-hamren-3",
@@ -1363,8 +1741,16 @@
     "fact": "Nils Arne Eggen tok over Rosenborg.",
     "era": 2010,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sverige». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Hamrén",
       "mustMention": [
@@ -1386,8 +1772,16 @@
     "fact": "Han vant serien året etter.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008» og «1. juni». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Hamrén",
       "mustMention": [
@@ -1418,7 +1812,8 @@
         "2010",
         "22"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Hamrén» nevner ikke «22». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tom-lund-1",
@@ -1434,8 +1829,16 @@
     "fact": "Han hadde vunnet cupen med LSK året før.",
     "era": 1986,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund",
+        "title": "Tom Lund – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm» og «1986». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Lund",
       "mustMention": [
@@ -1458,8 +1861,16 @@
     "fact": "Han spilte selv for LSK 1967–1982.",
     "era": 1990,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund",
+        "title": "Tom Lund – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Lund",
       "mustMention": [
@@ -1481,8 +1892,16 @@
     "fact": "Året etter kom seriegullet.",
     "era": 1985,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund",
+        "title": "Tom Lund – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1985». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Lund",
       "mustMention": [
@@ -1505,8 +1924,16 @@
     "fact": "Tom Lund var LSK-trener.",
     "era": 1986,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund",
+        "title": "Tom Lund – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1986» og «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Lund",
       "mustMention": [
@@ -1529,8 +1956,16 @@
     "fact": "Han tok sølv med LSK i 2001.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen",
+        "title": "Arne Erlandsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Erlandsen",
       "mustMention": [
@@ -1553,8 +1988,16 @@
     "fact": "Erlandsen var LSK-trener 1998–2004.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen",
+        "title": "Arne Erlandsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2001». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Erlandsen",
       "mustMention": [
@@ -1577,8 +2020,16 @@
     "fact": "Han ble kåret til årets trener i Sverige i 2006.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen",
+        "title": "Arne Erlandsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Göteborg» og «IFK Göteborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Erlandsen",
       "mustMention": [
@@ -1601,8 +2052,16 @@
     "fact": "Han trente IFK Göteborg 2005–2006.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen",
+        "title": "Arne Erlandsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Erlandsen",
       "mustMention": [
@@ -1625,8 +2084,16 @@
     "fact": "Han spilte selv for LSK 2002–2003.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -1649,8 +2116,16 @@
     "fact": "Tom Nordlie gikk til LSK.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -1674,8 +2149,16 @@
     "fact": "Molde lå på 14. plass.",
     "era": 2010,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2010». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -1696,8 +2179,16 @@
     "fact": "Han gikk deretter til Viking.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2006» og «13. november». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -1721,8 +2212,16 @@
     "fact": "Han scoret 50 mål på 152 kamper for klubben.",
     "era": 1996,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Manchester City». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -1753,7 +2252,8 @@
         "2002",
         "2002–2003"
       ]
-    }
+    },
+    "notes": "Artikkelen «Uwe Rösler» nevner ikke «2002–2003». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tom-nordlie-1",
@@ -1776,7 +2276,8 @@
       "mustMention": [
         "Keiko"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tom Nordlie» nevner ikke «Keiko». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tom-nordlie-2",
@@ -1793,8 +2294,16 @@
     "fact": "Start hadde rykket opp året før.",
     "era": 2005,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1827,7 +2336,8 @@
         "Keiko",
         "Spekkhogger"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tom Nordlie» nevner ikke «Keiko» og «Spekkhogger». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tom-nordlie-4",
@@ -1844,8 +2354,16 @@
     "fact": "LSK endte også på 4. plass i serien.",
     "era": 2007,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm» og «2007». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1870,8 +2388,16 @@
     "fact": "Han fikk sparken etter sesongen.",
     "era": 2000,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1894,8 +2420,16 @@
     "fact": "Start tok sølv det året.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1917,8 +2451,16 @@
     "fact": "Nordlie trente Sandefjord 2001–2003.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sandefjord». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1942,8 +2484,16 @@
     "fact": "Odd ble nummer sju året etter.",
     "era": 1998,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Odd» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1968,8 +2518,16 @@
     "fact": "Tom Nordlie var Sandefjord-trener.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sandefjord» og «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -1992,8 +2550,16 @@
     "fact": "Han ble sparket 29. mai.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008» og «6». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -2018,8 +2584,16 @@
     "fact": "Etter sesongen gikk han til Vålerenga.",
     "era": 1999,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Odd» og «7». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -2042,8 +2616,16 @@
     "fact": "Han byttet i praksis jobb med Uwe Rösler.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -2066,8 +2648,16 @@
     "fact": "Han kom tilbake dit i en ny periode senere.",
     "era": 2009,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Kongsvinger». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -2089,8 +2679,16 @@
     "fact": "Lyn endte på 3. plass.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lyn» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -2114,8 +2712,16 @@
     "fact": "Han ble sparket der i 2011.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -2139,8 +2745,16 @@
     "fact": "Lyn var med i gullkampen.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005» og «3». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -2165,8 +2779,16 @@
     "fact": "Viking ledet serien fra start til slutt.",
     "era": 1991,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «1991» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2201,7 +2823,8 @@
         "Viking",
         "Mössan"
       ]
-    }
+    },
+    "notes": "Artikkelen «Benny Lennartsson» nevner ikke «Mössan». Sjekk svaret for hånd."
   },
   {
     "id": "tq-benny-lennartsson-3",
@@ -2217,8 +2840,16 @@
     "fact": "Viking ble nummer seks i serien samme år.",
     "era": 1989,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1989». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2240,8 +2871,16 @@
     "fact": "Viking slo Bryne 3–0 i finalen.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2001» og «Viking». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2264,8 +2903,16 @@
     "fact": "Han sluttet etter gullet i 1991.",
     "era": 1988,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1988». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2287,8 +2934,16 @@
     "fact": "Benny Lennartsson var Viking-trener.",
     "era": 2001,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2001» og «Bryne». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2316,7 +2971,8 @@
       "mustMention": [
         "bandy"
       ]
-    }
+    },
+    "notes": "Artikkelen «Benny Lennartsson» nevner ikke «bandy». Sjekk svaret for hånd."
   },
   {
     "id": "tq-benny-lennartsson-8",
@@ -2334,8 +2990,16 @@
     "fact": "Viking tapte cupfinalen i 2000 og vant den i 2001.",
     "era": 2001,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2000» og «3». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -2358,8 +3022,16 @@
     "fact": "Bryne slo Brann 1–0 i finalen.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Bjarne_Berntsen",
+        "title": "Bjarne Berntsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Bryne» og «1987». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Bjarne Berntsen",
       "mustMention": [
@@ -2390,7 +3062,8 @@
         "Viking",
         "1992"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bjarne Berntsen» nevner ikke «1992». Sjekk svaret for hånd."
   },
   {
     "id": "tq-bjarne-berntsen-3",
@@ -2406,8 +3079,16 @@
     "fact": "Hodgson kom 12. juli 2004.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Bjarne_Berntsen",
+        "title": "Bjarne Berntsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Bjarne Berntsen",
       "mustMention": [
@@ -2438,7 +3119,8 @@
         "Bryne",
         "Brann"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bjarne Berntsen» nevner ikke «Brann». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arne-larsen-okland-1",
@@ -2462,7 +3144,8 @@
         "Viking",
         "1992"
       ]
-    }
+    },
+    "notes": "Artikkelen «Arne Larsen Økland» nevner ikke «1992». Sjekk svaret for hånd."
   },
   {
     "id": "tq-poul-erik-andreasen-1",
@@ -2478,8 +3161,16 @@
     "fact": "Benny Lennartsson kom tilbake i 2000.",
     "era": 1997,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Poul_Erik_Andreasen",
+        "title": "Poul Erik Andreasen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «dansk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Poul Erik Andreasen",
       "mustMention": [
@@ -2502,8 +3193,16 @@
     "fact": "Bjarne Berntsen tok over midlertidig.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Inge_Olsen",
+        "title": "Kjell Inge Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Inge Olsen",
       "mustMention": [
@@ -2526,8 +3225,16 @@
     "fact": "Han ble ansatt 12. juli 2004.",
     "era": 2004,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «engelsk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Roy Hodgson",
       "mustMention": [
@@ -2557,7 +3264,8 @@
         "2004",
         "12. juli"
       ]
-    }
+    },
+    "notes": "Artikkelen «Roy Hodgson» nevner ikke «12. juli». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tom-prahl-1",
@@ -2573,8 +3281,16 @@
     "fact": "Han kom fra svensk fotball.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Prahl",
+        "title": "Tom Prahl – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Prahl",
       "mustMention": [
@@ -2597,8 +3313,16 @@
     "fact": "Han trente også Lyn.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Teitur_%C3%9E%C3%B3r%C3%B0arson",
+        "title": "Teitur Þórðarson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «islandsk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Teitur Thordarson",
       "mustMention": [
@@ -2629,7 +3353,8 @@
       "mustMention": [
         "Estland"
       ]
-    }
+    },
+    "notes": "Artikkelen «Teitur Þórðarson» nevner ikke «Estland». Sjekk svaret for hånd."
   },
   {
     "id": "tq-teitur-thordarson-3",
@@ -2646,8 +3371,16 @@
     "fact": "Lyn nådde cupfinalen i 2004.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Teitur_%C3%9E%C3%B3r%C3%B0arson",
+        "title": "Teitur Þórðarson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lyn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Teitur Thordarson",
       "mustMention": [
@@ -2677,7 +3410,8 @@
       "mustMention": [
         "Brann"
       ]
-    }
+    },
+    "notes": "Fant ingen artikkel om «Kalle Björklund» på Wikipedia."
   },
   {
     "id": "tq-hallvar-thoresen-1",
@@ -2693,8 +3427,16 @@
     "fact": "Kjell Tennfjord tok over i 1995.",
     "era": 1994,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Hallvar_Thoresen",
+        "title": "Hallvar Thoresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Hallvar Thoresen",
       "mustMention": [
@@ -2716,8 +3458,16 @@
     "fact": "Brann nådde også kvartfinalen i cupvinnercupen.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «1997». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -2742,8 +3492,16 @@
     "fact": "Samme år tok Brann sølv i serien.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1997» og «Cupvinnercupen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -2766,8 +3524,16 @@
     "fact": "Harald Aabrekk ble hovedtrener.",
     "era": 1998,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -2798,7 +3564,8 @@
         "Herstad",
         "Harry Herstad"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «Herstad» og «Harry Herstad». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjell-tennfjord-5",
@@ -2822,7 +3589,8 @@
         "1998",
         "11"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «11». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjell-tennfjord-6",
@@ -2839,8 +3607,16 @@
     "fact": "Året etter tok Brann sølv.",
     "era": 1996,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1996» og «4». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -2863,8 +3639,16 @@
     "fact": "Han var Brann-trener 1998–1999.",
     "era": 1998,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk",
+        "title": "Harald Aabrekk – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Harald Aabrekk",
       "mustMention": [
@@ -2888,8 +3672,16 @@
     "fact": "Han var også spiller i Sogndal.",
     "era": 2010,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk",
+        "title": "Harald Aabrekk – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sogndal». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Harald Aabrekk",
       "mustMention": [
@@ -2918,7 +3710,8 @@
       "mustMention": [
         "Tromsø"
       ]
-    }
+    },
+    "notes": "Artikkelen «Harald Aabrekk» nevner ikke «Tromsø». Sjekk svaret for hånd."
   },
   {
     "id": "tq-harald-aabrekk-4",
@@ -2942,7 +3735,8 @@
       "mustMention": [
         "Haugesund"
       ]
-    }
+    },
+    "notes": "Artikkelen «Harald Aabrekk» nevner ikke «Haugesund». Sjekk svaret for hånd."
   },
   {
     "id": "tq-harald-aabrekk-5",
@@ -2958,8 +3752,16 @@
     "fact": "Martin Andresen tok over året etter.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk",
+        "title": "Harald Aabrekk – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «2007». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Harald Aabrekk",
       "mustMention": [
@@ -2989,7 +3791,8 @@
       "mustMention": [
         "Stryn"
       ]
-    }
+    },
+    "notes": "Artikkelen «Harald Aabrekk» nevner ikke «Stryn». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-1",
@@ -3005,8 +3808,16 @@
     "fact": "Det var Branns første seriegull på 44 år.",
     "era": 2007,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «2007». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -3030,8 +3841,16 @@
     "fact": "Forrige gull var i 1963.",
     "era": 2007,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «44». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -3053,8 +3872,16 @@
     "fact": "Brann slo Lyn i finalen.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -3082,7 +3909,8 @@
         "2008",
         "8. oktober"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «8. oktober». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-5",
@@ -3107,7 +3935,8 @@
         "2004",
         "22"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «22». Sjekk svaret for hånd."
   },
   {
     "id": "tq-steinar-nilsen-1",
@@ -3123,8 +3952,16 @@
     "fact": "Han hadde tidligere trent Tromsø.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Steinar_Nilsen",
+        "title": "Steinar Nilsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Steinar Nilsen",
       "mustMention": [
@@ -3146,8 +3983,16 @@
     "fact": "Han hadde vært assistent for Otto Ulseth.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Steinar_Nilsen",
+        "title": "Steinar Nilsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Steinar Nilsen",
       "mustMention": [
@@ -3169,8 +4014,16 @@
     "fact": "Han erstattet Steinar Nilsen.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Rune_Skarsfjord",
+        "title": "Rune Skarsfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «2010». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Rune Skarsfjord",
       "mustMention": [
@@ -3193,8 +4046,16 @@
     "fact": "Han står som hovedtrener for 1985 i Branns egen historikk.",
     "era": 1985,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Endre_Blindheim",
+        "title": "Endre Blindheim – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «1985». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Endre Blindheim",
       "mustMention": [
@@ -3218,8 +4079,16 @@
     "fact": "Han fikk kallenavnet som spiller.",
     "era": 1994,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Drillo». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3243,8 +4112,16 @@
     "fact": "Det begynte med regnvær på hans første landslagstrening.",
     "era": 1994,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Drillo» og «Gummistøvler». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3267,8 +4144,16 @@
     "fact": "Klubben var eid av nordmennene Røkke og Gjelsten.",
     "era": 1999,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Wimbledon». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3290,8 +4175,16 @@
     "fact": "Norge kvalifiserte seg til to VM-sluttspill.",
     "era": 1994,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1990» og «1998» og «1990–1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3317,8 +4210,16 @@
     "fact": "Han hadde tatt over Vålerenga i august 1998.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «1999». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3342,8 +4243,16 @@
     "fact": "Etterpå trente han Aalesund i 1989.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lyn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3367,8 +4276,16 @@
     "fact": "Han fikk navnet i sesongene 1966 og 1967.",
     "era": 1985,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «Drillo». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3391,8 +4308,16 @@
     "fact": "Han ble sparket av styreleder Bjørn Rune Gjelsten.",
     "era": 2000,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Wimbledon» og «8». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3425,7 +4350,8 @@
         "sone",
         "Sonforsvar"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «Sonforsvar». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-10",
@@ -3443,8 +4369,16 @@
     "fact": "Han hadde trent Lyn 1985–1988.",
     "era": 1989,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «1989». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3475,7 +4409,8 @@
         "Vålerenga",
         "Knut Arild Løberg"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «Knut Arild Løberg». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-12",
@@ -3500,7 +4435,8 @@
         "1998",
         "Lars Tjærnås"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «Lars Tjærnås». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-13",
@@ -3518,8 +4454,16 @@
     "fact": "Norge var nummer to på rankingen på 1990-tallet.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «FIFA» og «2». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3542,8 +4486,16 @@
     "fact": "Wimbledon var norskeid på den tiden.",
     "era": 2000,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Gjelsten» og «Bjørn Rune Gjelsten». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -3566,8 +4518,16 @@
     "fact": "Han hadde vært assistent for Sven-Göran Eriksson.",
     "era": 1984,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «1983» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3593,8 +4553,16 @@
     "fact": "Han trente IFK Göteborg 1985–1987.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «UEFA» og «UEFA-cupen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3618,8 +4586,16 @@
     "fact": "Odd Berg overtok.",
     "era": 2003,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3642,8 +4618,16 @@
     "fact": "Bengtsson tok over da Eriksson dro til Benfica i 1982.",
     "era": 1982,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Eriksson» og «Sven-Göran Eriksson». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3664,8 +4648,16 @@
     "fact": "Han trente også Panathinaikos.",
     "era": 1990,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Feyenoord». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3693,7 +4685,8 @@
         "2003",
         "22. mai"
       ]
-    }
+    },
+    "notes": "Artikkelen «Gunder Bengtsson» nevner ikke «22. mai». Sjekk svaret for hånd."
   },
   {
     "id": "tq-gunder-bengtsson-7",
@@ -3707,8 +4700,16 @@
     "fact": "Deretter gikk han til Feyenoord.",
     "era": 1988,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Panathinaikos». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -3739,7 +4740,8 @@
         "1985",
         "svensk"
       ]
-    }
+    },
+    "notes": "Artikkelen «Olle Nordin» nevner ikke «1985». Sjekk svaret for hånd."
   },
   {
     "id": "tq-olle-nordin-2",
@@ -3755,8 +4757,16 @@
     "fact": "Han trente Vålerenga i 1985 og 1990–1992.",
     "era": 1990,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Olle_Nordin",
+        "title": "Olle Nordin – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Olle Nordin",
       "mustMention": [
@@ -3779,8 +4789,16 @@
     "fact": "Han fortsatte ut 1992.",
     "era": 1990,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Olle_Nordin",
+        "title": "Olle Nordin – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «1990». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Olle Nordin",
       "mustMention": [
@@ -3812,7 +4830,8 @@
         "Frölunda",
         "Västra Frölunda"
       ]
-    }
+    },
+    "notes": "Artikkelen «Olle Nordin» nevner ikke «Frölunda» og «Västra Frölunda». Sjekk svaret for hånd."
   },
   {
     "id": "tq-vidar-davidsen-1",
@@ -3828,8 +4847,16 @@
     "fact": "Han var trener til og med 1997.",
     "era": 1993,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Vidar_Davidsen",
+        "title": "Vidar Davidsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «1993». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Vidar Davidsen",
       "mustMention": [
@@ -3852,8 +4879,16 @@
     "fact": "Samme år rykket Vålerenga opp.",
     "era": 1997,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Vidar_Davidsen",
+        "title": "Vidar Davidsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1997». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Vidar Davidsen",
       "mustMention": [
@@ -3875,8 +4910,16 @@
     "fact": "De vant cupen og rykket opp.",
     "era": 1997,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Tj%C3%A6rn%C3%A5s",
+        "title": "Lars Tjærnås – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Lars Tjærnås",
       "mustMention": [
@@ -3898,8 +4941,16 @@
     "fact": "Det var Vålerengas første gull siden 1984.",
     "era": 2005,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -3924,8 +4975,16 @@
     "fact": "Han tok over Aalesund i september 2008.",
     "era": 2011,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «2009». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -3949,8 +5008,16 @@
     "fact": "Han kom dit fra Lierse.",
     "era": 2007,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Kaiserslautern». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -3972,8 +5039,16 @@
     "fact": "Han gikk dit fra Vålerenga.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lierse». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4003,7 +5078,8 @@
         "Aalesund",
         "Sören Åkeby"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «Sören Åkeby». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-6",
@@ -4021,8 +5097,16 @@
     "fact": "Rosenborg hadde vunnet hvert år fra 1992 til 2004.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005» og «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4053,7 +5137,8 @@
         "Vålerenga",
         "Rådhusplassen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «Rådhusplassen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-8",
@@ -4071,8 +5156,16 @@
     "fact": "Kampen ble spilt i Skien 29. oktober.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «2005» og «Odd». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4098,8 +5191,16 @@
     "fact": "Laget holdt likevel unna Start og Lyn.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005» og «0». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4120,8 +5221,16 @@
     "fact": "Sören Åkeby var sparket fire dager før.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «2008» og «4. september». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4153,7 +5262,8 @@
         "Vålerenga",
         "Petter Myhre"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «Petter Myhre». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-12",
@@ -4177,7 +5287,8 @@
         "2005",
         "46"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «46». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-13",
@@ -4193,8 +5304,16 @@
     "fact": "Han trente klubben til august 2006.",
     "era": 2001,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2001». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -4216,8 +5335,16 @@
     "fact": "Harald Aabrekk tok over etter ham.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Petter_Myhre",
+        "title": "Petter Myhre – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Petter Myhre",
       "mustMention": [
@@ -4239,8 +5366,16 @@
     "fact": "Vålerenga vant cupen i 2008.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga» og «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Martin Andresen",
       "mustMention": [
@@ -4263,8 +5398,16 @@
     "fact": "Tor Ole Skullerud var hovedtrener.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Martin Andresen",
       "mustMention": [
@@ -4286,8 +5429,16 @@
     "fact": "Andresen fortsatte som manager i 2010.",
     "era": 2009,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_Ole_Skullerud",
+        "title": "Tor Ole Skullerud – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Ole Skullerud",
       "mustMention": [
@@ -4309,8 +5460,16 @@
     "fact": "Molde spilte i Champions League i 1999.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad",
+        "title": "Erik Brakstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Brakstad",
       "mustMention": [
@@ -4333,8 +5492,16 @@
     "fact": "Molde var den andre norske klubben i Champions League.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad",
+        "title": "Erik Brakstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1999». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Brakstad",
       "mustMention": [
@@ -4367,7 +5534,8 @@
         "Champions League",
         "1"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Brakstad» nevner ikke «Champions League». Sjekk svaret for hånd."
   },
   {
     "id": "tq-reidar-vagnes-1",
@@ -4383,8 +5551,16 @@
     "fact": "Han hadde vært assistent for Erik Brakstad.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Reidar_V%C3%A5gnes",
+        "title": "Reidar Vågnes – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Reidar Vågnes",
       "mustMention": [
@@ -4409,8 +5585,16 @@
     "fact": "Molde slo Lillestrøm 4–2 etter ekstraomganger.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Bo_Johansson",
+        "title": "Bo Johansson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2005» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Bo Johansson",
       "mustMention": [
@@ -4443,7 +5627,8 @@
         "Molde",
         "Lillestrøm"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bo Johansson» nevner ikke «Lillestrøm». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arild-stavrum-1",
@@ -4459,8 +5644,16 @@
     "fact": "Molde endte på 14. plass.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arild_Stavrum",
+        "title": "Arild Stavrum – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arild Stavrum",
       "mustMention": [
@@ -4482,8 +5675,16 @@
     "fact": "Molde vant 1. divisjon.",
     "era": 2007,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret",
+        "title": "Kjell Jonevret – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2007» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Jonevret",
       "mustMention": [
@@ -4507,8 +5708,16 @@
     "fact": "Han fikk sparken året etter.",
     "era": 2009,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret",
+        "title": "Kjell Jonevret – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2009». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Jonevret",
       "mustMention": [
@@ -4531,8 +5740,16 @@
     "fact": "Han kom til Molde i desember 2006.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret",
+        "title": "Kjell Jonevret – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Djurgården». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Jonevret",
       "mustMention": [
@@ -4555,8 +5772,16 @@
     "fact": "Uwe Rösler tok over.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret",
+        "title": "Kjell Jonevret – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2010» og «14». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Jonevret",
       "mustMention": [
@@ -4579,8 +5804,16 @@
     "fact": "Han regnes som klubbens viktigste trener gjennom tidene.",
     "era": 1996,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Karsten_Johannessen",
+        "title": "Karsten Johannessen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Karsten Johannessen",
       "mustMention": [
@@ -4602,8 +5835,16 @@
     "fact": "Periodene strakte seg fra 1954 til 1996.",
     "era": 1996,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Karsten_Johannessen",
+        "title": "Karsten Johannessen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start» og «18». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Karsten Johannessen",
       "mustMention": [
@@ -4626,8 +5867,16 @@
     "fact": "Start rykket ned det året.",
     "era": 1996,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Karsten_Johannessen",
+        "title": "Karsten Johannessen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1996». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Karsten Johannessen",
       "mustMention": [
@@ -4649,8 +5898,16 @@
     "fact": "Han trente Start 1990–1994.",
     "era": 1992,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Brede_Skistad",
+        "title": "Brede Skistad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Brede Skistad",
       "mustMention": [
@@ -4672,8 +5929,16 @@
     "fact": "Han hadde vært trener i fem sesonger.",
     "era": 1994,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Brede_Skistad",
+        "title": "Brede Skistad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start» og «1994». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Brede Skistad",
       "mustMention": [
@@ -4696,8 +5961,16 @@
     "fact": "I 1995 overtok han etter Brede Skistad.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Ruthford_Pedersen",
+        "title": "Erik Ruthford Pedersen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Ruthford Pedersen",
       "mustMention": [
@@ -4719,8 +5992,16 @@
     "fact": "Han var landslagssjef fra 1978 til 1987.",
     "era": 1981,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «England» og «1981». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -4743,8 +6024,16 @@
     "fact": "Senere vant han cupen med Strømsgodset.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1978» og «1987» og «1978–1987». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -4770,8 +6059,16 @@
     "fact": "Strømsgodset slo Rosenborg 3–2 i finalen.",
     "era": 1991,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Strømsgodset» og «1991». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -4795,8 +6092,16 @@
     "fact": "Han ble senere både Rosenborg-trener og landslagssjef.",
     "era": 1969,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «Keeper». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -4821,8 +6126,16 @@
     "fact": "Tor Røste Fossen og Einar Sigmundstad var Godset-trenere.",
     "era": 1991,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1991» og «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -4845,8 +6158,16 @@
     "fact": "Fossen sluttet etter sesongen.",
     "era": 1991,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Einar_Sigmundstad",
+        "title": "Einar Sigmundstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Strømsgodset» og «1991». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Einar Sigmundstad",
       "mustMention": [
@@ -4869,8 +6190,16 @@
     "fact": "Han var spiller og senere trener i Rosenborg.",
     "era": 2010,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -4902,7 +6231,8 @@
         "Jacobsen",
         "Jahn Ivar Jacobsen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kåre Ingebrigtsen» nevner ikke «Jacobsen» og «Jahn Ivar Jacobsen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kare-ingebrigtsen-3",
@@ -4919,8 +6249,16 @@
     "fact": "Assistenten Cato André Hansen tok over.",
     "era": 2010,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Glimt» og «Bodø/Glimt». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -4944,8 +6282,16 @@
     "fact": "Han scoret tre mål i én FA-cupkamp.",
     "era": 1993,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Manchester City». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -4968,8 +6314,16 @@
     "fact": "Han gikk derfra til Glimt i 2008.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Ranheim». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -4999,7 +6353,8 @@
         "Leicester",
         "Leicester City"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kåre Ingebrigtsen» nevner ikke «Leicester City». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kare-ingebrigtsen-7",
@@ -5024,7 +6379,8 @@
         "Glimt",
         "Cato André Hansen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kåre Ingebrigtsen» nevner ikke «Cato André Hansen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-stale-solbakken-1",
@@ -5040,8 +6396,16 @@
     "fact": "Han fikk Kniksenprisen som årets trener i 2004.",
     "era": 2003,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «HamKam». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5066,8 +6430,16 @@
     "fact": "Han ble der i flere sesonger med stor suksess.",
     "era": 2005,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «København» og «FC København». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5091,8 +6463,16 @@
     "fact": "HamKam var nyopprykket.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2004» og «5». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5117,8 +6497,16 @@
     "fact": "Han ble deretter trener.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2001» og «Hjertestans». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5148,7 +6536,8 @@
       "mustMention": [
         "Alta"
       ]
-    }
+    },
+    "notes": "Artikkelen «Ståle Solbakken» nevner ikke «Alta». Sjekk svaret for hånd."
   },
   {
     "id": "tq-stale-solbakken-6",
@@ -5164,8 +6553,16 @@
     "fact": "HamKam ble nummer fem som nyopprykket.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2004». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5187,8 +6584,16 @@
     "fact": "HamKam rykket ned etter 1995-sesongen.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1995». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -5210,8 +6615,16 @@
     "fact": "Han ble hovedtrener i 2008.",
     "era": 2010,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Strømsgodset» og «2010». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -5234,8 +6647,16 @@
     "fact": "Deila overtok som hovedtrener i 2008.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Fagermo» og «Dag-Eilev Fagermo». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -5258,8 +6679,16 @@
     "fact": "Året etter kom han til Strømsgodset.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brodd». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -5283,8 +6712,16 @@
     "fact": "Han gikk til Vålerenga i 2020.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Dag-Eilev_Fagermo",
+        "title": "Dag-Eilev Fagermo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Odd» og «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Dag-Eilev Fagermo",
       "mustMention": [
@@ -5309,8 +6746,16 @@
     "fact": "Klubben ble nummer elleve i 2007.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Dag-Eilev_Fagermo",
+        "title": "Dag-Eilev Fagermo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Strømsgodset» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Dag-Eilev Fagermo",
       "mustMention": [
@@ -5333,8 +6778,16 @@
     "fact": "Fredrikstad slo Sandefjord 3–0.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Knut_Torbj%C3%B8rn_Eggen",
+        "title": "Knut Torbjørn Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Fredrikstad» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Knut Torbjørn Eggen",
       "mustMention": [
@@ -5365,7 +6818,8 @@
         "2006",
         "Sandefjord"
       ]
-    }
+    },
+    "notes": "Artikkelen «Knut Torbjørn Eggen» nevner ikke «Sandefjord». Sjekk svaret for hånd."
   },
   {
     "id": "tq-knut-torbjorn-eggen-3",
@@ -5381,8 +6835,16 @@
     "fact": "Han trente Fredrikstad 2002–2006.",
     "era": 2001,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Knut_Torbj%C3%B8rn_Eggen",
+        "title": "Knut Torbjørn Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Knut Torbjørn Eggen",
       "mustMention": [
@@ -5405,8 +6867,16 @@
     "fact": "Han kom til klubben i 2007.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Anders_Gr%C3%B6nhagen",
+        "title": "Anders Grönhagen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Fredrikstad» og «2008» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Anders Grönhagen",
       "mustMention": [
@@ -5431,8 +6901,16 @@
     "fact": "Han hadde overtatt laget i 1. divisjon i 2005.",
     "era": 2008,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Stabæk» og «2008» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -5458,8 +6936,16 @@
     "fact": "Tre år senere vant de serien.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Stabæk» og «2005» og «1. divisjon». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -5485,8 +6971,16 @@
     "fact": "Han tok to bronsemedaljer der.",
     "era": 2011,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -5508,8 +7002,16 @@
     "fact": "Han tok over fra 1. januar 2011.",
     "era": 2012,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «2». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -5532,8 +7034,16 @@
     "fact": "Han ble sparket 31. august.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/S%C3%B6ren_%C3%85keby",
+        "title": "Sören Åkeby – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «19». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sören Åkeby",
       "mustMention": [
@@ -5554,8 +7064,16 @@
     "fact": "Kjetil Rekdal tok over fire dager senere.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/S%C3%B6ren_%C3%85keby",
+        "title": "Sören Åkeby – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008» og «31. august». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sören Åkeby",
       "mustMention": [
@@ -5579,8 +7097,16 @@
     "fact": "Han var ansatt for 2008-sesongen.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/S%C3%B6ren_%C3%85keby",
+        "title": "Sören Åkeby – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «Svensk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sören Åkeby",
       "mustMention": [
@@ -5603,8 +7129,16 @@
     "fact": "Han ble sparket etter nedrykket i 2005.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ivar_Morten_Normark",
+        "title": "Ivar Morten Normark – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ivar Morten Normark",
       "mustMention": [
@@ -5627,8 +7161,16 @@
     "fact": "Han kom fra Aalesund.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ivar_Morten_Normark",
+        "title": "Ivar Morten Normark – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ivar Morten Normark",
       "mustMention": [
@@ -5651,8 +7193,16 @@
     "fact": "Høgmo gikk til Rosenborg.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Otto_Ulseth",
+        "title": "Otto Ulseth – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Otto Ulseth",
       "mustMention": [
@@ -5675,8 +7225,16 @@
     "fact": "Treneren Dagfinn Rognmo hadde fått sparken tidligere i sesongen.",
     "era": 1986,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Andreassen",
+        "title": "Arne Andreassen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1986» og «Tromsø». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Andreassen",
       "mustMention": [
@@ -5699,8 +7257,16 @@
     "fact": "Han tok over etter Dagfinn Rognmo.",
     "era": 1986,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Andreassen",
+        "title": "Arne Andreassen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «1986». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Andreassen",
       "mustMention": [
@@ -5723,8 +7289,16 @@
     "fact": "Arne «Pøsen» Andreassen tok over.",
     "era": 1986,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Andreassen",
+        "title": "Arne Andreassen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «1986» og «Dagfinn Rognmo». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Andreassen",
       "mustMention": [
@@ -5748,8 +7322,16 @@
     "fact": "Tromsø slo Bodø/Glimt i finalen.",
     "era": 1996,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Terje_Skarsfjord",
+        "title": "Terje Skarsfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «1996». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Terje Skarsfjord",
       "mustMention": [
@@ -5781,7 +7363,8 @@
         "1996",
         "Bodø/Glimt"
       ]
-    }
+    },
+    "notes": "Artikkelen «Terje Skarsfjord» nevner ikke «Bodø/Glimt». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arne-sandsto-1",
@@ -5797,8 +7380,16 @@
     "fact": "Odd slo Viking 2–1 etter ekstraomganger.",
     "era": 2000,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Sandst%C3%B8",
+        "title": "Arne Sandstø – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Odd» og «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Sandstø",
       "mustMention": [
@@ -5821,8 +7412,16 @@
     "fact": "Nordlie gikk til Vålerenga.",
     "era": 2000,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Sandst%C3%B8",
+        "title": "Arne Sandstø – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Odd» og «Tom Nordlie». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Sandstø",
       "mustMention": [
@@ -5853,7 +7452,8 @@
         "2000",
         "12"
       ]
-    }
+    },
+    "notes": "Artikkelen «Arne Sandstø» nevner ikke «12». Sjekk svaret for hånd."
   },
   {
     "id": "tq-sture-fladmark-1",
@@ -5869,8 +7469,16 @@
     "fact": "Han fikk Kniksenprisen som årets trener.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Sture_Fladmark",
+        "title": "Sture Fladmark – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lyn» og «2002». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sture Fladmark",
       "mustMention": [
@@ -5893,8 +7501,16 @@
     "fact": "Lyn tok bronse.",
     "era": 2002,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Sture_Fladmark",
+        "title": "Sture Fladmark – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2002». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Sture Fladmark",
       "mustMention": [
@@ -5916,8 +7532,16 @@
     "fact": "Han trente Kongsvinger 1992–1995.",
     "era": 1992,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per_Brogeland",
+        "title": "Per Brogeland – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Kongsvinger» og «1992». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per Brogeland",
       "mustMention": [
@@ -5945,7 +7569,8 @@
       "mustMention": [
         "Juventus"
       ]
-    }
+    },
+    "notes": "Artikkelen «Per Brogeland» nevner ikke «Juventus». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tommy-berntsen-1",
@@ -5969,7 +7594,8 @@
         "Lyn",
         "2004"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tommy Berntsen» nevner ikke «2004». Sjekk svaret for hånd."
   },
   {
     "id": "tq-jostein-grindhaug-1",
@@ -5985,8 +7611,16 @@
     "fact": "Han hadde senere en ny periode i klubben.",
     "era": 2009,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jostein_Grindhaug",
+        "title": "Jostein Grindhaug – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Haugesund». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jostein Grindhaug",
       "mustMention": [
@@ -6016,7 +7650,8 @@
         "Moss",
         "1989"
       ]
-    }
+    },
+    "notes": "Artikkelen «Einar Aas» nevner ikke «1989». Sjekk svaret for hånd."
   },
   {
     "id": "tq-svein-ivar-sigernes-1",
@@ -6032,8 +7667,16 @@
     "fact": "Kongsvinger spilte 17 år på rad i toppdivisjonen.",
     "era": 1984,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Svein_Ivar_Sigernes",
+        "title": "Svein Ivar Sigernes – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Kongsvinger». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Svein Ivar Sigernes",
       "mustMention": [
@@ -6055,8 +7698,16 @@
     "fact": "Rosenborg gikk videre til kvartfinalen i Champions League.",
     "era": 1996,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Milan». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6078,8 +7729,16 @@
     "fact": "Roar Strand og Harald Martin Brattbakk scoret.",
     "era": 1997,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Real Madrid». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6102,8 +7761,16 @@
     "fact": "Seieren sendte Rosenborg til kvartfinalen.",
     "era": 1996,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Milan». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6126,8 +7793,16 @@
     "fact": "Laget slo Milan på San Siro i gruppespillet.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «kvartfinale» og «Kvartfinalen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6159,7 +7834,8 @@
         "Rosenborg",
         "Jahn Ivar Jacobsen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Jahn Ivar Jacobsen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-27",
@@ -6184,7 +7860,8 @@
         "Rosenborg",
         "Ronaldo"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Ronaldo». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-28",
@@ -6200,8 +7877,16 @@
     "fact": "Rosenborg vant også 13 seriegull i samme periode.",
     "era": 2002,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Champions League» og «8». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6234,7 +7919,8 @@
         "Real Madrid",
         "Katt"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Katt». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-30",
@@ -6252,8 +7938,16 @@
     "fact": "Eggen var skeptisk til at norske spillere dro ut for å utvikle seg.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -6286,7 +7980,8 @@
         "Real Madrid",
         "19 147"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «19 147». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-15",
@@ -6304,8 +7999,16 @@
     "fact": "Kampen kalles «Mirakelet i Marseille».",
     "era": 1998,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brasil». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6327,8 +8030,16 @@
     "fact": "Kjetil Rekdal avgjorde på straffe.",
     "era": 1998,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brasil». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6350,8 +8061,16 @@
     "fact": "Tore André Flo hadde utlignet minutter før.",
     "era": 1998,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brasil» og «Kjetil Rekdal». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6372,8 +8091,16 @@
     "fact": "Øyvind Leonhardsen og Lars Bohinen scoret.",
     "era": 1993,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «England». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6396,8 +8123,16 @@
     "fact": "Norge kvalifiserte seg med gruppeseier.",
     "era": 1994,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1994» og «USA». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6418,8 +8153,16 @@
     "fact": "Rundt 60 000 tilskuere så kampen.",
     "era": 1998,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1998» og «23. juni». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -6452,7 +8195,8 @@
         "England",
         "Leonhardsen og Bohinen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «Leonhardsen og Bohinen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tor-roste-fossen-6",
@@ -6468,8 +8212,16 @@
     "fact": "Han hadde vært keeper i Rosenborg.",
     "era": 1978,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -6491,8 +8243,16 @@
     "fact": "Han trente Start i tre sesonger.",
     "era": 1975,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Start». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -6514,8 +8274,16 @@
     "fact": "Aalesund slo Molde på straffespark.",
     "era": 2009,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Aalesund» og «2009». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -6539,8 +8307,16 @@
     "fact": "Det endte 2–2 etter ekstraomganger og 5–4 på straffer.",
     "era": 2009,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2009» og «Molde». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -6563,8 +8339,16 @@
     "fact": "Finalen ble spilt på Ullevaal 6. november 2011.",
     "era": 2011,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2011» og «Brann». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -6594,7 +8378,8 @@
       "mustMention": [
         "2002"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «2002». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-18",
@@ -6620,7 +8405,8 @@
         "2002",
         "Odd"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «2002». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjetil-rekdal-19",
@@ -6644,7 +8430,8 @@
         "2009",
         "5–4"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «5–4». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-6",
@@ -6668,7 +8455,8 @@
         "2007",
         "Viking"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «Viking». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-7",
@@ -6692,7 +8480,8 @@
         "2007",
         "Viking"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «Viking». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-8",
@@ -6718,7 +8507,8 @@
         "2007",
         "Aalesund"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «Aalesund». Sjekk svaret for hånd."
   },
   {
     "id": "tq-mons-ivar-mjelde-9",
@@ -6742,7 +8532,8 @@
         "Brann",
         "Erlend Hanstveit"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «Erlend Hanstveit». Sjekk svaret for hånd."
   },
   {
     "id": "tq-jan-jonsson-5",
@@ -6768,7 +8559,8 @@
         "2008",
         "Vålerenga"
       ]
-    }
+    },
+    "notes": "Artikkelen «Jan Jönsson» nevner ikke «Vålerenga». Sjekk svaret for hånd."
   },
   {
     "id": "tq-jan-jonsson-6",
@@ -6784,8 +8576,16 @@
     "fact": "Han hadde et tett samarbeid med Veigar Páll Gunnarsson.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Stabæk» og «Daniel Nannskog». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -6806,8 +8606,16 @@
     "fact": "Laget spilte det mange kalte drømmefotball.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Stabæk» og «Alanzinho». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -6831,8 +8639,16 @@
     "fact": "Finalen ble spilt 9. november.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson",
+        "title": "Jan Jönsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008» og «Stabæk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Jan Jönsson",
       "mustMention": [
@@ -6863,7 +8679,8 @@
         "Stabæk",
         "Nadderud"
       ]
-    }
+    },
+    "notes": "Artikkelen «Jan Jönsson» nevner ikke «Nadderud». Sjekk svaret for hånd."
   },
   {
     "id": "tq-erik-brakstad-4",
@@ -6887,7 +8704,8 @@
         "Molde",
         "Olympiakos"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Brakstad» nevner ikke «Olympiakos». Sjekk svaret for hånd."
   },
   {
     "id": "tq-erik-brakstad-5",
@@ -6905,8 +8723,16 @@
     "fact": "Molde møtte Real Madrid, Porto og Olympiakos.",
     "era": 1999,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad",
+        "title": "Erik Brakstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «1». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Brakstad",
       "mustMention": [
@@ -6937,7 +8763,8 @@
         "Molde",
         "Porto"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Brakstad» nevner ikke «Porto». Sjekk svaret for hånd."
   },
   {
     "id": "tq-age-hareide-9",
@@ -6954,8 +8781,16 @@
     "fact": "Det var Moldes første cuptittel.",
     "era": 1994,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1994» og «Lyn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -6987,7 +8822,8 @@
         "2007",
         "Haugesund"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tom Nordlie» nevner ikke «Haugesund». Sjekk svaret for hånd."
   },
   {
     "id": "tq-ronny-deila-4",
@@ -7011,7 +8847,8 @@
         "2010",
         "Follo"
       ]
-    }
+    },
+    "notes": "Artikkelen «Ronny Deila» nevner ikke «Follo». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-9",
@@ -7037,7 +8874,8 @@
         "1993",
         "Strømsgodset"
       ]
-    }
+    },
+    "notes": "Artikkelen «Trond Sollied» nevner ikke «Strømsgodset». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-10",
@@ -7055,8 +8893,16 @@
     "fact": "Glimt vant cupen i 1993.",
     "era": 1993,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Glimt» og «Spiller». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -7079,8 +8925,16 @@
     "fact": "Han fikk også Kniksenprisen som årets trener.",
     "era": 1990,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «1990». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7103,8 +8957,16 @@
     "fact": "Han var tilbake etter sabbatsåret i 1998.",
     "era": 1999,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «1999». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7127,8 +8989,16 @@
     "fact": "Rosenborg hadde vunnet 13 år på rad.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
@@ -7151,8 +9021,16 @@
     "fact": "Det var Vålerengas fjerde cuptittel.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008» og «Stabæk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Martin Andresen",
       "mustMention": [
@@ -7176,8 +9054,16 @@
     "fact": "Den første kom i 1994.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Bo_Johansson",
+        "title": "Bo Johansson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Bo Johansson",
       "mustMention": [
@@ -7200,8 +9086,16 @@
     "fact": "Det ble 1–1 i Bergen og 3–0 til Liverpool i returen.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Liverpool». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -7223,8 +9117,16 @@
     "fact": "Brann vant 2–1 hjemme og spilte 2–2 borte.",
     "era": 1996,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord",
+        "title": "Kjell Tennfjord – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «PSV». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Tennfjord",
       "mustMention": [
@@ -7254,7 +9156,8 @@
         "Liverpool",
         "Geir Hasund"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «Geir Hasund». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjell-tennfjord-10",
@@ -7278,7 +9181,8 @@
         "Brugge",
         "Cercle Brugge"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «Brugge» og «Cercle Brugge». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjell-tennfjord-11",
@@ -7301,7 +9205,8 @@
       "mustMention": [
         "Shelbourne"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «Shelbourne». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-34",
@@ -7317,8 +9222,16 @@
     "fact": "Rosenborg tapte returkampen 1–4.",
     "era": 1995,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Blackburn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7341,8 +9254,16 @@
     "fact": "Det var Rosenborgs første Champions League-sesong.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Legia» og «Legia Warszawa». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7366,8 +9287,16 @@
     "fact": "Blackburn og Legia var også i gruppa.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Spartak» og «Spartak Moskva». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7390,8 +9319,16 @@
     "fact": "Rosenborg måtte gjennom kvalifiseringen.",
     "era": 1995,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1995». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7414,8 +9351,16 @@
     "fact": "Han hadde tapt kvalik med Vålerenga, Sandefjord og Fredrikstad.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -7437,8 +9382,16 @@
     "fact": "Start tapte 3–1 mot Fredrikstad i siste runde.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005» og «Start». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -7462,8 +9415,16 @@
     "fact": "Tom Nordlie var Start-trener.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2005» og «Fredrikstad». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
@@ -7487,8 +9448,16 @@
     "fact": "Hareide kom til Stavanger 1. desember 2009.",
     "era": 2009,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «Uwe Rösler». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Åge Hareide",
       "mustMention": [
@@ -7520,7 +9489,8 @@
         "2003",
         "Bodø/Glimt"
       ]
-    }
+    },
+    "notes": "Artikkelen «Åge Hareide» nevner ikke «Bodø/Glimt». Sjekk svaret for hånd."
   },
   {
     "id": "tq-erik-brakstad-7",
@@ -7544,7 +9514,8 @@
         "Molde",
         "Real Madrid"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Brakstad» nevner ikke «Real Madrid». Sjekk svaret for hånd."
   },
   {
     "id": "tq-erik-brakstad-8",
@@ -7560,8 +9531,16 @@
     "fact": "Poengene kom mot Olympiakos.",
     "era": 1999,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad",
+        "title": "Erik Brakstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «3». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Brakstad",
       "mustMention": [
@@ -7584,8 +9563,16 @@
     "fact": "Nils Arne Eggen var trener i de fleste av dem.",
     "era": 2004,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «13». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7608,8 +9595,16 @@
     "fact": "Historien ble fortalt i Dagbladet mange år senere.",
     "era": 1987,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7631,8 +9626,16 @@
     "fact": "Til sammen ble det 22 sesonger.",
     "era": 2010,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «5». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7655,8 +9658,16 @@
     "fact": "Tor Røste Fossen var assistent.",
     "era": 1971,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1971». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Nils Arne Eggen",
       "mustMention": [
@@ -7678,8 +9689,16 @@
     "fact": "Rekken ble brutt av Vålerenga året etter.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ola_By_Rise",
+        "title": "Ola By Rise – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2004» og «13». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ola By Rise",
       "mustMention": [
@@ -7708,7 +9727,8 @@
         "2009",
         "27. september"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Hamrén» nevner ikke «27. september». Sjekk svaret for hånd."
   },
   {
     "id": "tq-per-mathias-hogmo-6",
@@ -7726,8 +9746,16 @@
     "fact": "Før det hadde han vunnet OL-gull med kvinnelandslaget.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «U21» og «U21-landslaget». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -7761,7 +9789,8 @@
         "2013",
         "Norges A-landslag"
       ]
-    }
+    },
+    "notes": "Artikkelen «Per-Mathias Høgmo» nevner ikke «Norges A-landslag». Sjekk svaret for hånd."
   },
   {
     "id": "tq-per-mathias-hogmo-8",
@@ -7777,8 +9806,16 @@
     "fact": "Han hadde trent Tromsø siden 2008.",
     "era": 2013,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Djurgården». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per-Mathias Høgmo",
       "mustMention": [
@@ -7810,7 +9847,8 @@
         "2006",
         "Kniksenprisen"
       ]
-    }
+    },
+    "notes": "Artikkelen «Knut Tørum» nevner ikke «Kniksenprisen». Sjekk svaret for hånd."
   },
   {
     "id": "tq-trond-sollied-11",
@@ -7826,8 +9864,16 @@
     "fact": "Han vant også to cuptitler.",
     "era": 2004,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brugge» og «2». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
@@ -7858,7 +9904,8 @@
         "1967",
         "1967–1982"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tom Lund» nevner ikke «1967–1982». Sjekk svaret for hånd."
   },
   {
     "id": "tq-uwe-rosler-7",
@@ -7882,7 +9929,8 @@
         "Manchester City",
         "50"
       ]
-    }
+    },
+    "notes": "Artikkelen «Uwe Rösler» nevner ikke «50». Sjekk svaret for hånd."
   },
   {
     "id": "tq-henning-berg-4",
@@ -7900,8 +9948,16 @@
     "fact": "Han hadde vært LSK-trener siden 2008.",
     "era": 2011,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2011» og «1». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -7924,8 +9980,16 @@
     "fact": "Klubben hadde nettopp rykket ned fra Premier League.",
     "era": 2012,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Blackburn». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Henning Berg",
       "mustMention": [
@@ -7949,8 +10013,16 @@
     "fact": "Viking ledet serien fra start til slutt.",
     "era": 1991,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1991» og «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -7974,8 +10046,16 @@
     "fact": "Viking var nyopprykket.",
     "era": 1989,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1989» og «6». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -8000,8 +10080,16 @@
     "fact": "Senere ble han A-landslagssjef.",
     "era": 1985,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «U21» og «U21-landslaget». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -8024,8 +10112,16 @@
     "fact": "Han spilte senere for Vålerenga og Sarpsborg.",
     "era": 1985,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Østsiden». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -8047,8 +10143,16 @@
     "fact": "Han hadde før det spilt for Vålerenga.",
     "era": 1985,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sarpsborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
@@ -8068,8 +10172,16 @@
     "fact": "Han ble født i 1946.",
     "era": 1984,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Torsby». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -8098,7 +10210,8 @@
       "mustMention": [
         "Marítimo"
       ]
-    }
+    },
+    "notes": "Artikkelen «Gunder Bengtsson» nevner ikke «Marítimo». Sjekk svaret for hånd."
   },
   {
     "id": "tq-gunder-bengtsson-10",
@@ -8115,8 +10228,16 @@
     "fact": "Han hadde tidligere trent IFK Göteborg.",
     "era": 1994,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Örgryte». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -8139,8 +10260,16 @@
     "fact": "Han hadde vunnet to seriegull med Vålerenga like før.",
     "era": 1987,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Göteborg» og «IFK Göteborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -8164,8 +10293,16 @@
     "fact": "Han trente Viking 1996–1999.",
     "era": 1997,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Poul_Erik_Andreasen",
+        "title": "Poul Erik Andreasen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «dansk» og «Danmark». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Poul Erik Andreasen",
       "mustMention": [
@@ -8190,8 +10327,16 @@
     "fact": "Han hadde to perioder i Brann.",
     "era": 2001,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Teitur_%C3%9E%C3%B3r%C3%B0arson",
+        "title": "Teitur Þórðarson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «islandsk» og «Island». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Teitur Thordarson",
       "mustMention": [
@@ -8218,8 +10363,16 @@
     "fact": "Han var toppscorer for Manchester City.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm» og «tysk» og «Tyskland». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Uwe Rösler",
       "mustMention": [
@@ -8253,7 +10406,8 @@
         "svensk",
         "Sverige"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Jonevret» nevner ikke «Sverige». Sjekk svaret for hånd."
   },
   {
     "id": "tq-jan-jonsson-10",
@@ -8279,7 +10433,8 @@
         "svensk",
         "Sverige"
       ]
-    }
+    },
+    "notes": "Artikkelen «Jan Jönsson» nevner ikke «Sverige». Sjekk svaret for hånd."
   },
   {
     "id": "tq-benny-lennartsson-11",
@@ -8296,8 +10451,16 @@
     "fact": "«Mössan» er svensk for lue.",
     "era": 1991,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking» og «svensk» og «Sverige». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -8329,7 +10492,8 @@
         "Rosenborg",
         "141"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kåre Ingebrigtsen» nevner ikke «141». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kare-ingebrigtsen-9",
@@ -8347,8 +10511,16 @@
     "fact": "Han vant seriegull der i 2015 og 2016.",
     "era": 2014,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kåre Ingebrigtsen",
       "mustMention": [
@@ -8370,8 +10542,16 @@
     "fact": "Han hadde vunnet cupen tre år tidligere.",
     "era": 2013,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2013». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -8393,8 +10573,16 @@
     "fact": "Han tok over i 2003.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «6». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -8426,7 +10614,8 @@
         "Vancouver",
         "Vancouver Whitecaps"
       ]
-    }
+    },
+    "notes": "Artikkelen «Teitur Þórðarson» nevner ikke «Vancouver» og «Vancouver Whitecaps». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tor-roste-fossen-8",
@@ -8442,8 +10631,16 @@
     "fact": "Året etter vant Rosenborg serie og cup med Nils Arne Eggen.",
     "era": 1970,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen",
+        "title": "Tor Røste Fossen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «George Curtis». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Røste Fossen",
       "mustMention": [
@@ -8475,7 +10672,8 @@
         "Stabæk",
         "Veigar Páll Gunnarsson"
       ]
-    }
+    },
+    "notes": "Artikkelen «Jan Jönsson» nevner ikke «Veigar Páll Gunnarsson». Sjekk svaret for hånd."
   },
   {
     "id": "tq-peter-engelbrektsson-1",
@@ -8498,7 +10696,8 @@
       "mustMention": [
         "HamKam"
       ]
-    }
+    },
+    "notes": "Artikkelen «Peter Engelbrektsson» nevner ikke «HamKam». Sjekk svaret for hånd."
   },
   {
     "id": "tq-david-hay-1",
@@ -8514,8 +10713,16 @@
     "fact": "Han hadde tidligere vært manager i Celtic.",
     "era": 1989,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/David_Hay",
+        "title": "David Hay – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Lillestrøm» og «1989» og «skotsk». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "David Hay",
       "mustMention": [
@@ -8540,8 +10747,16 @@
     "fact": "Han var Celtic-manager fra 1983 til 1987.",
     "era": 1989,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/David_Hay",
+        "title": "David Hay – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Celtic». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "David Hay",
       "mustMention": [
@@ -8572,7 +10787,8 @@
         "1989",
         "Jann Lund"
       ]
-    }
+    },
+    "notes": "Artikkelen «David Hay» nevner ikke «Jann Lund». Sjekk svaret for hånd."
   },
   {
     "id": "tq-david-hay-4",
@@ -8588,8 +10804,16 @@
     "fact": "Det var klubbens femte seriegull.",
     "era": 1989,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/David_Hay",
+        "title": "David Hay – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1989». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "David Hay",
       "mustMention": [
@@ -8620,7 +10844,8 @@
         "Lillestrøm",
         "Jan Åge Fjørtoft"
       ]
-    }
+    },
+    "notes": "Artikkelen «David Hay» nevner ikke «Jan Åge Fjørtoft». Sjekk svaret for hånd."
   },
   {
     "id": "tq-david-hay-6",
@@ -8642,7 +10867,8 @@
         "1989",
         "24. september"
       ]
-    }
+    },
+    "notes": "Artikkelen «David Hay» nevner ikke «24. september». Sjekk svaret for hånd."
   },
   {
     "id": "tq-svein-kvia-1",
@@ -8658,8 +10884,16 @@
     "fact": "Han hadde også vært Viking-trener i 1977 og 1984.",
     "era": 1986,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Svein_Kvia",
+        "title": "Svein Kvia – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Svein Kvia",
       "mustMention": [
@@ -8681,8 +10915,16 @@
     "fact": "Han hadde også trent Bryne på slutten av 1970-tallet.",
     "era": 1987,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Schou-Andreassen",
+        "title": "Kjell Schou-Andreassen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Viking». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Schou-Andreassen",
       "mustMention": [
@@ -8704,8 +10946,16 @@
     "fact": "Viking spilte på nivå to i 1987 og 1988.",
     "era": 1988,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1988» og «1986». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -8737,7 +10987,8 @@
         "Lyn",
         "3. divisjon"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «3. divisjon». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-26",
@@ -8761,7 +11012,8 @@
         "Lyn",
         "Andreas Morisbak"
       ]
-    }
+    },
+    "notes": "Artikkelen «Egil Olsen» nevner ikke «Andreas Morisbak». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tor-thodesen-1",
@@ -8777,8 +11029,16 @@
     "fact": "Opprykket kom etter en dramatisk siste runde.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_Thodesen",
+        "title": "Tor Thodesen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sandefjord» og «2005». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Thodesen",
       "mustMention": [
@@ -8801,8 +11061,16 @@
     "fact": "Tor Thodesen var i sin første sesong som trener.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_Thodesen",
+        "title": "Tor Thodesen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sandefjord» og «Moss». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Thodesen",
       "mustMention": [
@@ -8825,8 +11093,16 @@
     "fact": "Sandefjord var nyopprykket og nådde cupfinalen.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_Thodesen",
+        "title": "Tor Thodesen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2006» og «Årets trener». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Thodesen",
       "mustMention": [
@@ -8849,8 +11125,16 @@
     "fact": "Sandefjord tapte 3–0 for Fredrikstad.",
     "era": 2006,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tor_Thodesen",
+        "title": "Tor Thodesen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Sandefjord» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Tor Thodesen",
       "mustMention": [
@@ -8873,8 +11157,16 @@
     "fact": "Han gikk til Brann etter sesongen.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Steinar_Nilsen",
+        "title": "Steinar Nilsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Steinar Nilsen",
       "mustMention": [
@@ -8899,8 +11191,16 @@
     "fact": "Per-Mathias Høgmo tok over.",
     "era": 2005,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per_Joar_Hansen",
+        "title": "Per Joar Hansen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Rosenborg» og «7». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Per Joar Hansen",
       "mustMention": [
@@ -8930,7 +11230,8 @@
       "mustMention": [
         "1992"
       ]
-    }
+    },
+    "notes": "Artikkelen «Per-Mathias Høgmo» nevner ikke «1992». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arild-stavrum-2",
@@ -8948,8 +11249,16 @@
     "fact": "Molde rykket ned.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arild_Stavrum",
+        "title": "Arild Stavrum – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «14». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arild Stavrum",
       "mustMention": [
@@ -8973,8 +11282,16 @@
     "fact": "Han ble ansatt i desember og tok over et nedrykket lag.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret",
+        "title": "Kjell Jonevret – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Kjell Jonevret",
       "mustMention": [
@@ -8997,8 +11314,16 @@
     "fact": "Vågnes ble selv hovedtrener i 2004.",
     "era": 1999,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Reidar_V%C3%A5gnes",
+        "title": "Reidar Vågnes – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «Erik Brakstad». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Reidar Vågnes",
       "mustMention": [
@@ -9021,8 +11346,16 @@
     "fact": "Han trente Molde 1998–2000.",
     "era": 2000,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad",
+        "title": "Erik Brakstad – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Erik Brakstad",
       "mustMention": [
@@ -9045,8 +11378,16 @@
     "fact": "Reidar Vågnes tok over etter sesongen.",
     "era": 2003,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Molde» og «Odd Berg». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Gunder Bengtsson",
       "mustMention": [
@@ -9078,7 +11419,8 @@
         "2010",
         "13"
       ]
-    }
+    },
+    "notes": "Artikkelen «Erik Hamrén» nevner ikke «13». Sjekk svaret for hånd."
   },
   {
     "id": "tq-jan-jonsson-12",
@@ -9102,7 +11444,8 @@
         "Rosenborg",
         "2012"
       ]
-    }
+    },
+    "notes": "Artikkelen «Jan Jönsson» nevner ikke «2012». Sjekk svaret for hånd."
   },
   {
     "id": "tq-ronny-deila-6",
@@ -9118,8 +11461,16 @@
     "fact": "Han hadde vært spillende assistent siden 2006.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2008». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ronny Deila",
       "mustMention": [
@@ -9142,8 +11493,16 @@
     "fact": "Fagermo gikk til Odd etter sesongen.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Dag-Eilev_Fagermo",
+        "title": "Dag-Eilev Fagermo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Strømsgodset» og «11». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Dag-Eilev Fagermo",
       "mustMention": [
@@ -9173,7 +11532,8 @@
       "mustMention": [
         "2002"
       ]
-    }
+    },
+    "notes": "Artikkelen «Ivar Morten Normark» nevner ikke «2002». Sjekk svaret for hånd."
   },
   {
     "id": "tq-harald-aabrekk-7",
@@ -9191,8 +11551,16 @@
     "fact": "Han tok over etter Petter Myhre.",
     "era": 2007,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk",
+        "title": "Harald Aabrekk – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Harald Aabrekk",
       "mustMention": [
@@ -9214,8 +11582,16 @@
     "fact": "Han var trener til høsten 2008.",
     "era": 2003,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2003». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
@@ -9246,7 +11622,8 @@
         "2004",
         "Lyn"
       ]
-    }
+    },
+    "notes": "Artikkelen «Mons Ivar Mjelde» nevner ikke «Lyn». Sjekk svaret for hånd."
   },
   {
     "id": "tq-kjell-tennfjord-12",
@@ -9271,7 +11648,8 @@
         "Brann",
         "1993"
       ]
-    }
+    },
+    "notes": "Artikkelen «Kjell Tennfjord» nevner ikke «1993». Sjekk svaret for hånd."
   },
   {
     "id": "tq-teitur-thordarson-6",
@@ -9296,7 +11674,8 @@
         "Flora",
         "Flora Tallinn"
       ]
-    }
+    },
+    "notes": "Artikkelen «Teitur Þórðarson» nevner ikke «Flora» og «Flora Tallinn». Sjekk svaret for hånd."
   },
   {
     "id": "tq-hallvar-thoresen-2",
@@ -9312,8 +11691,16 @@
     "fact": "Han var trener til 1995.",
     "era": 1993,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Hallvar_Thoresen",
+        "title": "Hallvar Thoresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Brann» og «1993». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Hallvar Thoresen",
       "mustMention": [
@@ -9336,8 +11723,16 @@
     "fact": "Viking tok bronse både i 2000 og 2001.",
     "era": 2000,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson",
+        "title": "Benny Lennartsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «2000». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Benny Lennartsson",
       "mustMention": [
@@ -9359,8 +11754,16 @@
     "fact": "Han tok sølv med laget året etter.",
     "era": 2007,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Anders_Gr%C3%B6nhagen",
+        "title": "Anders Grönhagen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Fredrikstad» og «2007». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Anders Grönhagen",
       "mustMention": [
@@ -9383,8 +11786,16 @@
     "fact": "Han forlot HamKam etter 2005-sesongen.",
     "era": 2006,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «København» og «2006». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
@@ -9416,7 +11827,8 @@
         "1988",
         "Lillestrøm"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Lillestrøm». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-43",
@@ -9440,7 +11852,8 @@
         "1988",
         "54"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «54». Sjekk svaret for hånd."
   },
   {
     "id": "tq-nils-arne-eggen-44",
@@ -9465,7 +11878,8 @@
         "1988",
         "Britannia"
       ]
-    }
+    },
+    "notes": "Artikkelen «Nils Arne Eggen» nevner ikke «Britannia». Sjekk svaret for hånd."
   },
   {
     "id": "tq-tor-roste-fossen-9",
@@ -9489,7 +11903,8 @@
         "Toten",
         "Østre Toten"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tor Røste Fossen» nevner ikke «Toten» og «Østre Toten». Sjekk svaret for hånd."
   },
   {
     "id": "tq-svein-ivar-sigernes-2",
@@ -9505,8 +11920,16 @@
     "fact": "Notkewich fortsatte også i 1989.",
     "era": 1988,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Svein_Ivar_Sigernes",
+        "title": "Svein Ivar Sigernes – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Svein Ivar Sigernes",
       "mustMention": [
@@ -9528,8 +11951,16 @@
     "fact": "Han hadde tatt over midt i 1988.",
     "era": 1989,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Alf_Inge_Notkevich",
+        "title": "Alf Inge Notkevich – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Vålerenga». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Alf Inge Notkewich",
       "mustMention": [
@@ -9558,7 +11989,8 @@
       "mustMention": [
         "Vålerenga"
       ]
-    }
+    },
+    "notes": "Fant ingen artikkel om «Dag Vestlund» på Wikipedia."
   },
   {
     "id": "tq-einar-aas-2",
@@ -9584,7 +12016,8 @@
         "Moss",
         "Sist"
       ]
-    }
+    },
+    "notes": "Artikkelen «Einar Aas» nevner ikke «Sist». Sjekk svaret for hånd."
   },
   {
     "id": "tq-arne-andreassen-4",
@@ -9598,8 +12031,16 @@
     "fact": "Han hadde spilt for Tromsø selv.",
     "era": 1986,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Arne_Andreassen",
+        "title": "Arne Andreassen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «Tromsø» og «Pøsen». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Arne Andreassen",
       "mustMention": [
@@ -9628,7 +12069,8 @@
         "Keiko",
         "Free Willy"
       ]
-    }
+    },
+    "notes": "Artikkelen «Tom Nordlie» nevner ikke «Keiko» og «Free Willy». Sjekk svaret for hånd."
   },
   {
     "id": "tq-bjorn-hansen-3",
@@ -9652,7 +12094,8 @@
         "1985",
         "August"
       ]
-    }
+    },
+    "notes": "Artikkelen «Bjørn Hansen» nevner ikke «1985» og «August». Sjekk svaret for hånd."
   },
   {
     "id": "tq-egil-olsen-27",
@@ -9670,8 +12113,16 @@
     "fact": "Norge slo Brasil i VM 1998.",
     "era": 1998,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-09-24",
+        "note": "Artikkelteksten nevner «1994» og «1998». Automatisk kontroll, ikke lest av et menneske."
+      }
+    ],
     "verify": {
       "subject": "Egil Olsen (fotballtrener)",
       "mustMention": [
