@@ -1,0 +1,29 @@
+name: Prøvehent kampfakta
+
+# Read-only probe: what UEFA's match data holds on stadium, scorers and captain, and how
+# well it agrees with our own match files. Results in the job summary. A push that
+# touches the probe starts it, since the assistant can push but not dispatch.
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [main]
+    paths:
+      - scripts/import/match-facts-probe.ts
+      - .github/workflows/probe-match-facts.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node --import tsx scripts/import/match-facts-probe.ts
