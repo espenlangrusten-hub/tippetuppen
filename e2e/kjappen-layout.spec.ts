@@ -1,16 +1,20 @@
 import { test, expect } from "@playwright/test";
 
-test("homepage caption sits beside the Kjappen arrow", async ({ page }) => {
+test("homepage caption sits above the Kjappen play button without overlap", async ({ page }) => {
   await page.goto("/");
   const card = page.getByRole("link", { name: "Spill Kjappen quizshow med venner" });
   const caption = card.locator("div").filter({ has: page.getByText("2–4 spillere · 5 spørsmål", { exact: true }) }).last();
-  const arrow = card.locator("span[aria-hidden=true]");
+  const play = card.getByText("Spill Kjappen", { exact: false }).last();
   const c = await caption.boundingBox();
-  const a = await arrow.boundingBox();
+  const a = await play.boundingBox();
+  const bounds = await card.boundingBox();
+  await expect(play).toBeVisible();
   expect(c).not.toBeNull();
   expect(a).not.toBeNull();
-  expect(c!.x + c!.width).toBeLessThanOrEqual(a!.x);
-  expect(Math.abs(c!.y + c!.height - a!.y - a!.height)).toBeLessThan(12);
+  expect(c!.y + c!.height).toBeLessThanOrEqual(a!.y);
+  expect(a!.x).toBeGreaterThanOrEqual(bounds!.x);
+  expect(a!.x + a!.width).toBeLessThanOrEqual(bounds!.x + bounds!.width);
+  expect(a!.y + a!.height).toBeLessThanOrEqual(bounds!.y + bounds!.height);
 });
 
 test("full body host loads without a frame or crop", async ({ page }, info) => {
