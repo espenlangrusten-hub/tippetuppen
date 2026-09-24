@@ -341,7 +341,7 @@ export function loadDataset(): Dataset {
   // Most of the pool is derived from the registry rather than written by hand; a
   // hand-written question wins a collision, since it was written on purpose.
   const written = new Set(straffespark.map((q) => (q.kind === "trivia" ? normalizeName(q.prompt) : "")));
-  const derived = deriveStraffesparkTrivia({ seasons, honours, clubs, players, matches }).filter((q) => !written.has(normalizeName(q.prompt)));
+  const derived = deriveStraffesparkTrivia({ seasons, honours, clubs, players, matches, matchFacts }).filter((q) => !written.has(normalizeName(q.prompt)));
   straffespark = [...straffespark, ...derived];
   const straffesparkIds = new Set<string>();
   const mediaDir = path.join(MEDIA_DIR, "straffespark");

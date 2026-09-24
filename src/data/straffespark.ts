@@ -2,6 +2,7 @@ import { z } from "zod";
 import { normalizeName, slugify } from "@/lib/names";
 import * as S from "./schema";
 import type { PlayerRecord } from "./load";
+import { stadiumNames } from "./match-facts";
 
 export type StraffesparkQuestion = z.infer<typeof S.straffesparkFile>[number];
 type Trivia = Extract<StraffesparkQuestion, { kind: "trivia" }>;
@@ -9,7 +10,29 @@ type Season = z.infer<typeof S.seasonFile>[number];
 type Honour = z.infer<typeof S.honourFile>[number];
 type Club = z.infer<typeof S.clubFile>[number];
 
+const MONTHS = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
+const dateLabel = (date: string) => {
+  const [year, month, day] = date.split("-").map(Number);
+  return `${day}. ${MONTHS[month - 1]} ${year}`;
+};
+
+/**
+ * A match as a fan remembers it: "Norge slo England 2–0 hjemme i 1993", "Norge tapte
+ * 0–2 borte mot Nederland i 2021", "Norge spilte 1–1 mot Mexico i VM 1994". Home or
+ * away is left out for tournaments and neutral grounds, where it would be wrong.
+ */
+export function describeMatch(m: Pick<S.MatchFile, "score" | "date" | "competition" | "opponent" | "norwayHome">, neutral: boolean): string {
+  const [n, o] = m.score;
+  const year = m.date.slice(0, 4);
+  const tournament = m.competition === "world-cup" || m.competition === "euro";
+  const when = tournament ? `i ${m.competition === "euro" ? "EM" : "VM"} ${year}` : `i ${year}`;
+  const where = tournament || neutral ? "" : m.norwayHome ? " hjemme" : " borte";
+  if (n > o) return `Norge slo ${m.opponent} ${n}–${o}${where} ${when}`;
+  return `Norge ${n < o ? "tapte" : "spilte"} ${n}–${o}${where} mot ${m.opponent} ${when}`;
+}
+
 export type DeriveInput = {
+  matchFacts?: S.MatchFacts[];
   seasons: Season[];
   honours: Honour[];
   clubs: Club[];
@@ -149,57 +172,107 @@ export function deriveStraffesparkTrivia(input: DeriveInput): Trivia[] {
     }
   }
 
-  // The national-team match archive is large enough to turn Straffespark into a true
-  // daily game instead of a short beta loop. These are deliberately simple factual
-  // questions whose answer is fully determined by the same sourced match row Mangler XI
-  // already uses. Two independent prompts per eligible match take the playable pool well
-  // beyond 500 questions, which lets the daily rotation keep every individual question
-  // out of circulation for at least 100 days.
-  const months = ["januar", "februar", "mars", "april", "mai", "juni", "juli", "august", "september", "oktober", "november", "desember"];
-  const dateLabel = (date: string) => {
-    const [year, month, day] = date.split("-").map(Number);
-    return `${day}. ${months[month - 1]} ${year}`;
-  };
+  // National-team matches, asked about through what happened in them: who scored, who
+  // wore the armband, where it was played. The match is named by its result, place and
+  // year ("Norge slo England 2–0 hjemme i 1993"), never by its date alone - a date is
+  // something to look up, a result is something to remember. The answers come from
+  // UEFA's match data (data/source/match-facts.json), checked against the match file
+  // where it has the same fact; a question agreeing with both counts as verified.
+  const factsByMatch = new Map((input.matchFacts ?? []).map((f) => [f.match, f]));
+  const playable = input.matches.filter((m) => isPlayable({ enabled: true, status: m.status }) && m.sources.length > 0);
+  const described = new Map(playable.map((m) => [m.id, describeMatch(m, factsByMatch.get(m.id)?.stadium?.neutral ?? false)]));
+  // Two matches that read the same - Malta away 2–0 twice in one year - get the date too.
+  const seen = new Map<string, number>();
+  for (const d of described.values()) seen.set(d, (seen.get(d) ?? 0) + 1);
+  for (const m of playable) {
+    const d = described.get(m.id)!;
+    if (seen.get(d)! > 1) described.set(m.id, `${d} (${dateLabel(m.date).replace(/ \d{4}$/, "")})`);
+  }
 
-  for (const match of input.matches) {
-    if (!isPlayable({ enabled: true, status: match.status }) || match.sources.length === 0) continue;
+  const playerAnswers = (name: string) => {
+    const p = input.players.get(slugify(name));
+    return [name, p?.displayName, p?.fullName, ...(p?.aliases ?? []).map((a) => a.alias), p?.surname ?? name.split(" ").at(-1)];
+  };
+  const listNames = (names: string[]) => (names.length < 2 ? names.join("") : `${names.slice(0, -1).join(", ")} og ${names.at(-1)}`);
+
+  for (const match of playable) {
+    const facts = factsByMatch.get(match.id);
+    if (!facts) continue;
     const year = Number(match.date.slice(0, 4));
-    const date = dateLabel(match.date);
     const era = year >= 1990 && year <= 2026 ? year : undefined;
     const matchDifficulty = clamp(ageDifficulty(year) + (match.importance <= 2 ? 1 : 0));
+    const intro = described.get(match.id)!;
+    const uefa = { url: `https://match.uefa.com/v5/matches/${facts.uefa}`, title: "UEFA – kampdata", kind: "api" as const };
+    const sources = [uefa, ...match.sources.filter((s) => !s.url?.startsWith("https://match.uefa.com/"))];
 
-    out.push({
-      kind: "trivia",
-      id: `str-auto-landslag-${match.id}`,
-      category: "landslag",
-      enabled: true,
-      prompt: `Hvilket landslag møtte Norge ${date}?`,
-      answer: { label: match.opponent, aliases: [] },
-      fact: `Norge møtte ${match.opponent} ${date}.`,
-      era,
-      difficulty: matchDifficulty,
-      status: match.status,
-      sources: match.sources,
-    });
+    const scorers = facts.scorers ?? [];
+    const real = scorers.filter((g) => g.kind !== "og");
+    const names = [...new Set(real.map((g) => g.name))];
+    if (names.length) {
+      const goals = match.score[0];
+      const ask =
+        goals === 1 ? "Hvem scoret målet?" : names.length === 1 && real.length === goals ? `Hvem scoret ${goals === 2 ? "begge" : "alle"} Norges mål?` : "Nevn én av Norges målscorere.";
+      const label = listNames(names);
+      const listed = (match.goals ?? []).filter((g) => g.team === "norway");
+      const confirmed = !match.goalsPartial && listed.length === goals && listed.some((g) => g.kind !== "og");
+      const minute = (g: (typeof scorers)[number]) => (g.minute != null ? ` (${g.minute}.${g.kind === "pen" ? ", straffe" : ""})` : g.kind === "pen" ? " (straffe)" : "");
+      out.push({
+        kind: "trivia",
+        id: `str-auto-scorer-${match.id}`,
+        category: "landslag",
+        enabled: true,
+        prompt: `${intro}. ${ask}`,
+        answer: { label, aliases: extraAliases(label, names.flatMap(playerAnswers)) },
+        fact: `Norges mål: ${scorers.map((g) => (g.kind === "og" ? `selvmål${minute(g)}` : `${g.name}${minute(g)}`)).join(", ")}.`,
+        era,
+        difficulty: matchDifficulty,
+        status: confirmed ? "verified" : "single_source",
+        sources,
+      });
+    }
 
-    const home = match.norwayHome ? "Norge" : match.opponent;
-    const away = match.norwayHome ? match.opponent : "Norge";
-    const homeScore = match.norwayHome ? match.score[0] : match.score[1];
-    const awayScore = match.norwayHome ? match.score[1] : match.score[0];
-    const result = `${homeScore}-${awayScore}`;
-    out.push({
-      kind: "trivia",
-      id: `str-auto-resultat-${match.id}`,
-      category: "resultat",
-      enabled: true,
-      prompt: `Hva ble sluttresultatet i ${home}–${away} ${date}?`,
-      answer: { label: result, aliases: [] },
-      fact: `Kampen endte ${homeScore}–${awayScore}.`,
-      era,
-      difficulty: clamp(matchDifficulty + 1),
-      status: match.status,
-      sources: match.sources,
-    });
+    if (facts.captain) {
+      const ours = match.lineup.find((p) => p.captain)?.name;
+      out.push({
+        kind: "trivia",
+        id: `str-auto-kaptein-${match.id}`,
+        category: "spiller",
+        enabled: true,
+        prompt: `${intro}. Hvem var Norges kaptein?`,
+        answer: { label: facts.captain, aliases: extraAliases(facts.captain, playerAnswers(facts.captain)) },
+        fact: `${facts.captain} bar kapteinsbindet.`,
+        era,
+        difficulty: matchDifficulty,
+        status: ours === facts.captain ? "verified" : "single_source",
+        sources,
+      });
+    }
+
+    const st = facts.stadium;
+    if (st) {
+      const all = stadiumNames([...(match.venue ? [match.venue] : []), ...st.names], st.city, [match.opponent, "Norge", "Norway"]);
+      // Norway's home ground is where nine in ten home matches are played; asking for it
+      // is a free point. Any other home ground is a real question.
+      const ullevaal = all.some((n) => /ullev(a|aa)l/.test(normalizeName(n)));
+      const label = all[0];
+      if (label && !(match.norwayHome && !st.neutral && ullevaal) && !answerIsSpelledOut(intro, label)) {
+        const ours = match.venue ? stadiumNames([match.venue]) : [];
+        const agrees = ours.some((o) => stadiumNames(st.names).some((n) => normalizeName(n) === normalizeName(o)));
+        out.push({
+          kind: "trivia",
+          id: `str-auto-stadion-${match.id}`,
+          category: "stadion",
+          enabled: true,
+          prompt: `${intro}. På hvilket stadion ble kampen spilt?`,
+          answer: { label, aliases: extraAliases(label, all) },
+          fact: `Kampen ble spilt på ${label}${st.city ? ` i ${st.city}` : ""}.`,
+          era,
+          difficulty: clamp(matchDifficulty + 1),
+          status: agrees ? "verified" : "single_source",
+          sources,
+        });
+      }
+    }
   }
 
   return out;
