@@ -32,6 +32,13 @@
       "kind": "web",
       "accessed": "2026-09-07",
       "note": "Startelleveren og formasjonen kryssjekket mot den søkeindekserte lagoppstillingen. Generiske posisjoner beholdt der eksakt side ikke er dokumentert."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/2036278/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "NFFs startoppstilling er kontrollert separat fra innbytterlisten. Innbyttere er ikke fullstendig registrert. Posisjonsgrupper følger ESPN; ingen udokumenterte sideplasseringer.",

@@ -17,21 +17,22 @@
   "sources": [
     { "url": "https://www.national-football-teams.com/matches/report/564/Slovenia_Norway.html", "title": "Slovenia vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
     { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698413", "title": "Slovenia – Norge 21.06.2000 – Norges Fotballforbund", "kind": "web", "accessed": "2026-09-01" },
-    { "url": "https://www.uefa.com/uefaeuro/match/64862--slovenia-vs-norway/lineups/", "title": "Slovenia 0-0 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05" }
+    { "url": "https://www.uefa.com/uefaeuro/match/64862--slovenia-vs-norway/lineups/", "title": "Slovenia 0-0 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05" },
+    { "url": "https://match.uefa.com/v5/matches/64862/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "0–0 i Arnhem var ikke nok: Spania snudde mot Jugoslavia på overtid, og Norge røk ut på målforskjell.",
   "lineup": [
-    { "name": "Thomas Myhre", "pos": "GK" },
-    { "name": "André Bergdølmo", "pos": "RB" },
-    { "name": "Bjørn Otto Bragstad", "pos": "CB" },
-    { "name": "Dan Eggen", "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
-    { "name": "Steffen Iversen", "pos": "RM" },
-    { "name": "Erik Mykland", "pos": "CM" },
-    { "name": "Ståle Solbakken", "pos": "CM", "captain": true },
-    { "name": "Ole Gunnar Solskjær", "pos": "LM" },
-    { "name": "John Carew", "pos": "CF", "off": 61 },
-    { "name": "Tore André Flo", "pos": "CF" }
+    { "name": "Thomas Myhre", "pos": "GK", "no": 1 },
+    { "name": "André Bergdølmo", "pos": "RB", "no": 2 },
+    { "name": "Bjørn Otto Bragstad", "pos": "CB", "no": 3 },
+    { "name": "Dan Eggen", "pos": "CB", "no": 16 },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB", "no": 22 },
+    { "name": "Steffen Iversen", "pos": "RM", "no": 18 },
+    { "name": "Erik Mykland", "pos": "CM", "no": 7 },
+    { "name": "Ståle Solbakken", "pos": "CM", "captain": true, "no": 8 },
+    { "name": "Ole Gunnar Solskjær", "pos": "LM", "no": 20 },
+    { "name": "John Carew", "pos": "CF", "off": 61, "no": 17 },
+    { "name": "Tore André Flo", "pos": "CF", "no": 9 }
   ],
   "subs": [
     { "name": "Eirik Bakke", "pos": "CM", "on": 61 },

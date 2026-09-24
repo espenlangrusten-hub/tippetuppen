@@ -19,17 +19,17 @@
   ],
   "notes": "0–0 var ikke nok: alle fire lag i gruppe E endte på fire poeng, og Norge røk ut på målforskjell. Posisjonene er usikre: kildene beskriver Egil Olsens 4-5-1 med Jostein Flo som bred høyreside, mens de registrerte rollene gir fem forsvarere og to spisser. Holdes utenfor rotasjon til oppstillingen er bekreftet.",
   "lineup": [
-    { "name": "Erik Thorstvedt", "pos": "GK" },
-    { "name": "Gunnar Halle", "pos": "RB" },
-    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
-    { "name": "Henning Berg", "pos": "CB" },
-    { "name": "Erland Johnsen", "pos": "CB" },
-    { "name": "Stig Inge Bjørnebye", "pos": "LB" },
-    { "name": "Erik Mykland", "pos": "CM" },
-    { "name": "Kjetil Rekdal", "pos": "CM" },
-    { "name": "Øyvind Leonhardsen", "pos": "LM" },
-    { "name": "Jostein Flo", "pos": "RW" },
-    { "name": "Gøran Sørloth", "pos": "CF" }
+    { "name": "Erik Thorstvedt", "pos": "GK", "no": 1 },
+    { "name": "Gunnar Halle", "pos": "RB", "no": 2 },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true, "no": 4 },
+    { "name": "Henning Berg", "pos": "CB", "no": 20 },
+    { "name": "Erland Johnsen", "pos": "CB", "no": 3 },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB", "no": 5 },
+    { "name": "Erik Mykland", "pos": "CM", "no": 7 },
+    { "name": "Kjetil Rekdal", "pos": "CM", "no": 10 },
+    { "name": "Øyvind Leonhardsen", "pos": "LM", "no": 8 },
+    { "name": "Jostein Flo", "pos": "RW", "no": 6 },
+    { "name": "Gøran Sørloth", "pos": "CF", "no": 16 }
   ],
   "goals": []
 }

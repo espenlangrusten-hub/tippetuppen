@@ -28,7 +28,8 @@
       "kind": "web",
       "accessed": "2026-09-15",
       "note": "Uavhengig kontroll av startellever, formasjon, resultat og målscorere."
-    }
+    },
+    { "url": "https://match.uefa.com/v5/matches/2048373/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Frankrike vant gruppefinalen 4–1. Norge hvilte ti av spillerne som startet den foregående kampen mot Senegal.",
   "lineup": [

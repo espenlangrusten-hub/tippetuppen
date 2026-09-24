@@ -17,7 +17,8 @@
   "goalsPartial": true,
   "sources": [
     { "url": "https://www.espn.com/soccer/match/_/gameId/725008/moldova-norway", "title": "Norway v Moldova – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
-    { "url": "https://www.thestar.com.my/sport/football/2025/09/10/soccer-haaland-hits-five-as-norway-thrash-moldova-11-1-in-world-cup-qualifier", "title": "Haaland hits five as Norway thrash Moldova 11-1 – Reuters/The Star", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.thestar.com.my/sport/football/2025/09/10/soccer-haaland-hits-five-as-norway-thrash-moldova-11-1-in-world-cup-qualifier", "title": "Haaland hits five as Norway thrash Moldova 11-1 – Reuters/The Star", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2044247/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Norges største landslagsseier noensinne. Haaland scoret fem, innbytter Thelo Aasgaard fire. Målliste ufullstendig.",
   "lineup": [

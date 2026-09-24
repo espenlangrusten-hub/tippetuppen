@@ -15,7 +15,8 @@
   "tags": ["kvalik"],
   "status": "single_source",
   "sources": [
-    { "url": "https://www.rsssf.org/tablesn/noo-intres2004.html", "title": "Norway International Matches – Details 2004 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation, captain, substitutions and scorers (Riseth 39, Kutuzov 78) confirmed in search excerpt. The search summary mislabelled the opponent; the date and the Belarusian scorer identify the match as Norway–Belarus." }
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2004.html", "title": "Norway International Matches – Details 2004 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation, captain, substitutions and scorers (Riseth 39, Kutuzov 78) confirmed in search excerpt. The search summary mislabelled the opponent; the date and the Belarusian scorer identify the match as Norway–Belarus." },
+    { "url": "https://match.uefa.com/v5/matches/75297/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Riseth ga ledelsen, men Kutuzov utlignet for Hviterussland.",
   "lineup": [

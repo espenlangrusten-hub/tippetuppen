@@ -15,7 +15,8 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.rsssf.org/tablesn/noo-intres2009.html", "title": "Norway International Matches – Details 2009 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Formation, goalkeeper, back four, Braaten and Grindheim confirmed in search excerpt" },
-    { "url": "https://www.skysports.com/football/germany-vs-norway/teams/13365", "title": "Starting Lineups – Germany vs Norway | 11.02.2009 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Skjelbred, Andresen, Riise and Pedersen confirmed in search excerpt; the two excerpts together cover all eleven. Positions in midfield are approximate." }
+    { "url": "https://www.skysports.com/football/germany-vs-norway/teams/13365", "title": "Starting Lineups – Germany vs Norway | 11.02.2009 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Skjelbred, Andresen, Riise and Pedersen confirmed in search excerpt; the two excerpts together cover all eleven. Positions in midfield are approximate." },
+    { "url": "https://match.uefa.com/v5/matches/2000012/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Drillos første kamp i comebacket – og Tysklands første tap på hjemmebane på 17 år. Grindheim scoret.",
   "lineup": [

@@ -16,21 +16,22 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.espn.com/soccer/story/_/id/49278406/brazil-vs-norway-live-world-cup-2026-updates-score-commentary-result", "title": "Brazil 1-2 Norway: Haaland scores brace – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
-    { "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-norway-match-report-highlights", "title": "Brazil 1-2 Norway | Match report & highlights | FIFA", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/brazil-norway-match-report-highlights", "title": "Brazil 1-2 Norway | Match report & highlights | FIFA", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2048989/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "To sene Haaland-mål sendte Norge til VM-kvartfinale for første gang. Brasil slått igjen, 28 år etter Marseille.",
   "lineup": [
-    { "name": "Ørjan Nyland", "pos": "GK" },
-    { "name": "Julian Ryerson", "pos": "RB" },
-    { "name": "Kristoffer Ajer", "pos": "CB" },
-    { "name": "Torbjørn Heggem", "pos": "CB" },
-    { "name": "David Møller Wolfe", "pos": "LB" },
-    { "name": "Martin Ødegaard", "pos": "CM", "captain": true },
-    { "name": "Sander Berge", "pos": "CM" },
-    { "name": "Patrick Berg", "pos": "CM" },
-    { "name": "Alexander Sørloth", "pos": "RW" },
-    { "name": "Erling Haaland", "pos": "CF" },
-    { "name": "Antonio Nusa", "pos": "LW" }
+    { "name": "Ørjan Nyland", "pos": "GK", "no": 1 },
+    { "name": "Julian Ryerson", "pos": "RB", "no": 26 },
+    { "name": "Kristoffer Ajer", "pos": "CB", "no": 3 },
+    { "name": "Torbjørn Heggem", "pos": "CB", "no": 17 },
+    { "name": "David Møller Wolfe", "pos": "LB", "no": 5 },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true, "no": 10 },
+    { "name": "Sander Berge", "pos": "CM", "no": 8 },
+    { "name": "Patrick Berg", "pos": "CM", "no": 6 },
+    { "name": "Alexander Sørloth", "pos": "RW", "no": 7 },
+    { "name": "Erling Haaland", "pos": "CF", "no": 9 },
+    { "name": "Antonio Nusa", "pos": "LW", "no": 20 }
   ],
   "goals": [
     { "team": "norway", "name": "Erling Haaland", "minute": 79 },

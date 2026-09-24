@@ -17,7 +17,8 @@
   "goalsPartial": true,
   "sources": [
     { "url": "https://www.rsssf.org/tablesn/noo-intres2006.html", "title": "Norway International Matches – Details 2006 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation and captain confirmed in search excerpt" },
-    { "url": "https://www.national-football-teams.com/matches/report/1738/Hungary_Norway.html", "title": "Hungary vs. Norway 2006-09-02 – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.national-football-teams.com/matches/report/1738/Hungary_Norway.html", "title": "Hungary vs. Norway 2006-09-02 – National Football Teams", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/83873/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Norges største borteseier i en kvalik siden 2001. Målscorere ikke registrert.",
   "lineup": [

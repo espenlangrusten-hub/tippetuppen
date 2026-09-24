@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/301881/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt. Motstanderen heter her det landet het på kampdagen; «Nord-Makedonia» kom senere.",
@@ -29,47 +36,58 @@
   "lineup": [
     {
       "name": "Jon Knudsen",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1
     },
     {
       "name": "Jon Inge Høiland",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 2
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 3
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 5
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 6
     },
     {
       "name": "Fredrik Lærum Winsnes",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 4
     },
     {
       "name": "Daniel Omoya Braaten",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 9
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 15
     },
     {
       "name": "Christian Grindheim",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 16
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 11
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "OUT",
+      "no": 10
     }
   ]
 }

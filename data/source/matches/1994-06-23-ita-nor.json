@@ -16,7 +16,8 @@
   "status": "verified",
   "sources": [
     { "url": "https://www.fifa.com/en/match-centre/match/17/84/337/3064", "title": "Italy vs Norway | 1994 FIFA World Cup", "kind": "web", "accessed": "2026-09-05", "note": "FIFAs offisielle kampside." },
-    { "url": "https://en.wikipedia.org/wiki/1994_FIFA_World_Cup_Group_E", "title": "1994 FIFA World Cup Group E – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling." }
+    { "url": "https://en.wikipedia.org/wiki/1994_FIFA_World_Cup_Group_E", "title": "1994 FIFA World Cup Group E – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling." },
+    { "url": "https://match.uefa.com/v5/matches/61831/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Italia vant etter Dino Baggios scoring. Gianluca Pagliuca ble utvist tidlig i kampen.",
   "lineup": [

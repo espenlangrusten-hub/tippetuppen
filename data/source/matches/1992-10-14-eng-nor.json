@@ -15,7 +15,8 @@
   "status": "single_source",
   "sources": [
     { "url": "https://www.englandstats.com/matches.php?mid=690", "title": "England 1-1 Norway, 14 October 1992 – englandstats.com", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://www.national-football-teams.com/matches/report/30171/England_Norway.html", "title": "England vs. Norway 1992-10-14 – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.national-football-teams.com/matches/report/30171/England_Norway.html", "title": "England vs. Norway 1992-10-14 – National Football Teams", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/5366/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Rekdal utlignet med et venstrebeinsskudd fra 20 meter på Wembley. Posisjonene i forsvaret er ikke kildebelagt i detalj.",
   "lineup": [

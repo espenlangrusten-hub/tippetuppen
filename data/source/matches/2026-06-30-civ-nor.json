@@ -34,21 +34,22 @@
       "kind": "web",
       "accessed": "2026-09-15",
       "note": "Reuters dokumenterer sluttresultatet og målscorerne."
-    }
+    },
+    { "url": "https://match.uefa.com/v5/matches/2048974/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Antonio Nusa ga Norge ledelsen, før Erling Haaland avgjorde i sluttminuttene og sendte Norge til åttedelsfinalen.",
   "lineup": [
-    { "name": "Ørjan Nyland", "pos": "GK" },
-    { "name": "Marcus Holmgren Pedersen", "pos": "RB" },
-    { "name": "Kristoffer Ajer", "pos": "CB" },
-    { "name": "Torbjørn Heggem", "pos": "CB" },
-    { "name": "David Møller Wolfe", "pos": "LB" },
-    { "name": "Martin Ødegaard", "pos": "CM", "captain": true },
-    { "name": "Sander Berge", "pos": "CM" },
-    { "name": "Patrick Berg", "pos": "CM" },
-    { "name": "Alexander Sørloth", "pos": "RW" },
-    { "name": "Erling Haaland", "pos": "CF" },
-    { "name": "Antonio Nusa", "pos": "LW" }
+    { "name": "Ørjan Nyland", "pos": "GK", "no": 1 },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB", "no": 16 },
+    { "name": "Kristoffer Ajer", "pos": "CB", "no": 3 },
+    { "name": "Torbjørn Heggem", "pos": "CB", "no": 17 },
+    { "name": "David Møller Wolfe", "pos": "LB", "no": 5 },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true, "no": 10 },
+    { "name": "Sander Berge", "pos": "CM", "no": 8 },
+    { "name": "Patrick Berg", "pos": "CM", "no": 6 },
+    { "name": "Alexander Sørloth", "pos": "RW", "no": 7 },
+    { "name": "Erling Haaland", "pos": "CF", "no": 9 },
+    { "name": "Antonio Nusa", "pos": "LW", "no": 20 }
   ],
   "goals": [
     { "team": "norway", "name": "Antonio Nusa", "minute": 39 },

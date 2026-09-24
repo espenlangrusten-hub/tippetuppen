@@ -29,6 +29,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/301879/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startellever, kamptype og draktnumre dokumentert. Utespillernes eksakte roller er ikke dokumentert i importkilden. Formasjonen er ikke oppgitt: kilden dokumenterer elleveren, ikke rollene.",

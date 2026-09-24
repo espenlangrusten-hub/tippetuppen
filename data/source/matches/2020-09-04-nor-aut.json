@@ -16,21 +16,22 @@
   "status": "single_source",
   "sources": [
     { "url": "https://int.soccerway.com/matches/2020/09/04/europe/uefa-nations-league/norway/austria/3243375/", "title": "Norway vs. Austria – 4 September 2020 – Soccerway", "kind": "web", "accessed": "2026-09-01", "note": "Confirmed Norway XI in search excerpt (Ødegaard out injured; King started)" },
-    { "url": "https://www.espn.com/soccer/match/_/gameId/570779/austria-norway", "title": "Austria 2-1 Norway (Sep 4, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://www.espn.com/soccer/match/_/gameId/570779/austria-norway", "title": "Austria 2-1 Norway (Sep 4, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2029983/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Erling Haalands første mål for Norge, i en tom Ullevaal under pandemien.",
   "lineup": [
-    { "name": "Rune Almenning Jarstein", "pos": "GK" },
-    { "name": "Omar Elabdellaoui", "pos": "RB" },
-    { "name": "Kristoffer Ajer", "pos": "CB" },
-    { "name": "Tore Reginiussen", "pos": "CB" },
-    { "name": "Haitam Aleesami", "pos": "LB" },
-    { "name": "Morten Thorsby", "pos": "RM" },
-    { "name": "Mathias Normann", "pos": "CM" },
-    { "name": "Sander Berge", "pos": "CM" },
-    { "name": "Stefan Johansen", "pos": "LM", "captain": true },
-    { "name": "Erling Haaland", "pos": "CF" },
-    { "name": "Joshua King", "pos": "CF" }
+    { "name": "Rune Almenning Jarstein", "pos": "GK", "no": 1 },
+    { "name": "Omar Elabdellaoui", "pos": "RB", "no": 14 },
+    { "name": "Kristoffer Ajer", "pos": "CB", "no": 3 },
+    { "name": "Tore Reginiussen", "pos": "CB", "no": 4 },
+    { "name": "Haitam Aleesami", "pos": "LB", "no": 2 },
+    { "name": "Morten Thorsby", "pos": "RM", "no": 20 },
+    { "name": "Mathias Normann", "pos": "CM", "no": 21 },
+    { "name": "Sander Berge", "pos": "CM", "no": 15 },
+    { "name": "Stefan Johansen", "pos": "LM", "captain": true, "no": 8 },
+    { "name": "Erling Haaland", "pos": "CF", "no": 23 },
+    { "name": "Joshua King", "pos": "CF", "no": 7 }
   ],
   "goals": [
     { "team": "opponent", "scorer": "Michael Gregoritsch", "minute": 35 },

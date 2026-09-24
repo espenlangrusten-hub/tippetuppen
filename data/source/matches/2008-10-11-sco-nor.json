@@ -15,21 +15,22 @@
   "tags": ["kvalik"],
   "status": "single_source",
   "sources": [
-    { "url": "https://www.rsssf.org/tablesn/noo-intres2008.html", "title": "Norway International Matches – Details 2008 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, formation, captain and substitutions confirmed in search excerpt" }
+    { "url": "https://www.rsssf.org/tablesn/noo-intres2008.html", "title": "Norway International Matches – Details 2008 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, formation, captain and substitutions confirmed in search excerpt" },
+    { "url": "https://match.uefa.com/v5/matches/301871/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Målløst på Hampden foran 51 300. Hareides nest siste kvalikkamp som landslagssjef.",
   "lineup": [
-    { "name": "Jon Knudsen", "pos": "GK" },
-    { "name": "Jon Inge Høiland", "pos": "RB" },
-    { "name": "Kjetil Wæhler", "pos": "CB" },
-    { "name": "Brede Hangeland", "pos": "CB", "captain": true },
-    { "name": "John Arne Riise", "pos": "LB" },
-    { "name": "Bjørn Helge Riise", "pos": "RM", "off": 56 },
-    { "name": "Fredrik Winsnes", "pos": "CM" },
-    { "name": "Christian Grindheim", "pos": "CM" },
-    { "name": "Fredrik Strømstad", "pos": "LM", "off": 77 },
-    { "name": "Steffen Iversen", "pos": "CF" },
-    { "name": "John Carew", "pos": "CF" }
+    { "name": "Jon Knudsen", "pos": "GK", "no": 1 },
+    { "name": "Jon Inge Høiland", "pos": "RB", "no": 2 },
+    { "name": "Kjetil Wæhler", "pos": "CB", "no": 3 },
+    { "name": "Brede Hangeland", "pos": "CB", "captain": true, "no": 5 },
+    { "name": "John Arne Riise", "pos": "LB", "no": 6 },
+    { "name": "Bjørn Helge Riise", "pos": "RM", "off": 56, "no": 9 },
+    { "name": "Fredrik Winsnes", "pos": "CM", "no": 4 },
+    { "name": "Christian Grindheim", "pos": "CM", "no": 8 },
+    { "name": "Fredrik Strømstad", "pos": "LM", "off": 77, "no": 7 },
+    { "name": "Steffen Iversen", "pos": "CF", "no": 14 },
+    { "name": "John Carew", "pos": "CF", "no": 10 }
   ],
   "subs": [
     { "name": "Daniel Braaten", "pos": "RM", "on": 56, "for": "Bjørn Helge Riise" },
