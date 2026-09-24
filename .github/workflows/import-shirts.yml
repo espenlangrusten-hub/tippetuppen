@@ -12,6 +12,9 @@ name: Importer draktnumre
 on:
   workflow_dispatch:
   push:
+    # Never on main: a merge would re-run the import on top of its own output and
+    # commit straight to the default branch without review.
+    branches-ignore: [main]
     paths:
       - scripts/import/shirt-numbers.ts
       - scripts/import/shirt-format.ts
