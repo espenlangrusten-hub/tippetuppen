@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:uefa-role"
+    "position:undocumented"
   ],
   "status": "single_source",
   "sources": [
@@ -22,16 +22,9 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/75312/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Linjene (forsvar, midtbane, angrep) etter spillernes rolle hos UEFA; kampens formasjon er ikke dokumentert."
     }
   ],
-  "notes": "Startelleveren er dokumentert.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -40,44 +33,43 @@
     },
     {
       "name": "André Bergdølmo",
-      "pos": "DF"
+      "pos": "OUT"
     },
     {
       "name": "Claus Lundekvam",
-      "pos": "DF"
+      "pos": "OUT"
     },
     {
       "name": "Erik Bjørnstad Hagen",
-      "pos": "DF"
+      "pos": "OUT"
     },
     {
       "name": "Jon Inge Høiland",
-      "pos": "DF"
+      "pos": "OUT"
     },
     {
       "name": "Kristofer Krüger Hæstad",
-      "pos": "MF"
+      "pos": "OUT"
     },
     {
       "name": "Jan Gunnar Solli",
-      "pos": "MF"
+      "pos": "OUT"
     },
     {
       "name": "Christian Grindheim",
-      "pos": "MF"
+      "pos": "OUT"
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "MF"
+      "pos": "OUT"
     },
     {
       "name": "John Carew",
-      "pos": "FW"
+      "pos": "OUT"
     },
     {
       "name": "Steffen Iversen",
-      "pos": "FW"
+      "pos": "OUT"
     }
-  ],
-  "formation": "4-4-2"
+  ]
 }

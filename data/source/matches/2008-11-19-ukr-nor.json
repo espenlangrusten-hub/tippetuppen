@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:uefa-role"
+    "position:undocumented"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Linjene (forsvar, midtbane, angrep) etter spillernes rolle hos UEFA; kampens formasjon er ikke dokumentert."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
-  "notes": "Startelleveren er dokumentert.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,54 +41,53 @@
     },
     {
       "name": "Tom Høgli",
-      "pos": "DF",
+      "pos": "OUT",
       "no": 2
     },
     {
       "name": "Tore Reginiussen",
-      "pos": "DF",
+      "pos": "OUT",
       "no": 4
     },
     {
       "name": "Brede Hangeland",
-      "pos": "DF",
+      "pos": "OUT",
       "no": 5
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "DF",
+      "pos": "OUT",
       "no": 6
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "MF",
+      "pos": "OUT",
       "no": 11
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "MF",
+      "pos": "OUT",
       "no": 9
     },
     {
       "name": "Christian Grindheim",
-      "pos": "MF",
+      "pos": "OUT",
       "no": 16
     },
     {
       "name": "Trond Olsen",
-      "pos": "FW",
+      "pos": "OUT",
       "no": 20
     },
     {
       "name": "Daniel Fredheim Holm",
-      "pos": "FW",
+      "pos": "OUT",
       "no": 8
     },
     {
       "name": "Mohammed Abdellaoue",
-      "pos": "FW",
+      "pos": "OUT",
       "no": 10
     }
-  ],
-  "formation": "4-3-3"
+  ]
 }
