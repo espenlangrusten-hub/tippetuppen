@@ -61,22 +61,22 @@
     },
     {
       "name": "Ole Kristian Selnæs",
-      "pos": "DM",
+      "pos": "CM",
       "no": 18
     },
     {
       "name": "Markus Henriksen",
-      "pos": "DM",
+      "pos": "CM",
       "no": 19
     },
     {
       "name": "Stefan Johansen",
-      "pos": "AM",
+      "pos": "RM",
       "no": 8
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "AM",
+      "pos": "LM",
       "no": 11
     },
     {
@@ -90,5 +90,5 @@
       "no": 7
     }
   ],
-  "formation": "4-2-2-2"
+  "formation": "4-4-2"
 }

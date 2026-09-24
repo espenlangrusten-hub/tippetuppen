@@ -56,7 +56,7 @@
     },
     {
       "name": "Espen Ruud",
-      "pos": "RB",
+      "pos": "RWB",
       "no": 13
     },
     {
@@ -71,7 +71,7 @@
     },
     {
       "name": "Håvard Nordtveit",
-      "pos": "DM",
+      "pos": "CB",
       "no": 17
     },
     {
@@ -81,7 +81,7 @@
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "LB",
+      "pos": "LWB",
       "no": 6
     },
     {
@@ -90,5 +90,5 @@
       "no": 9
     }
   ],
-  "formation": "4-1-4-1"
+  "formation": "5-4-1"
 }

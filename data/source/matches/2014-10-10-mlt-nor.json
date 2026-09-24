@@ -41,7 +41,7 @@
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "DM",
+      "pos": "RB",
       "no": 14
     },
     {
@@ -56,22 +56,22 @@
     },
     {
       "name": "Martin Linnes",
-      "pos": "DM",
+      "pos": "LB",
       "no": 17
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "RW",
+      "pos": "CM",
       "no": 15
     },
     {
       "name": "Alexander Banor Tettey",
-      "pos": "LW",
+      "pos": "CM",
       "no": 5
     },
     {
       "name": "Stefan Johansen",
-      "pos": "AM",
+      "pos": "CM",
       "no": 8
     },
     {
@@ -90,5 +90,5 @@
       "no": 10
     }
   ],
-  "formation": "2-2-3-3"
+  "formation": "4-3-3"
 }

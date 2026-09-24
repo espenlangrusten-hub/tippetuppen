@@ -51,7 +51,7 @@
     },
     {
       "name": "Brede Hangeland",
-      "pos": "DM",
+      "pos": "LB",
       "no": 5
     },
     {
@@ -66,7 +66,7 @@
     },
     {
       "name": "Markus Henriksen",
-      "pos": "DM",
+      "pos": "RB",
       "no": 7
     },
     {
@@ -90,5 +90,5 @@
       "no": 17
     }
   ],
-  "formation": "2-2-4-2"
+  "formation": "4-4-2"
 }

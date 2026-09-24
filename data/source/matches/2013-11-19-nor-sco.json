@@ -12,7 +12,7 @@
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:uefa-role"
   ],
   "status": "single_source",
   "sources": [
@@ -28,10 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Linjene (forsvar, midtbane, angrep) etter spillernes rolle hos UEFA; kampens formasjon er ikke dokumentert."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,53 +41,54 @@
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 16
     },
     {
       "name": "Tore Reginiussen",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 4
     },
     {
       "name": "Vegard Forren",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 23
     },
     {
       "name": "Tom Høgli",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 2
     },
     {
       "name": "Per Ciljan Skjelbred",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 15
     },
     {
       "name": "Magnus Wolff Eikrem",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 11
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 19
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 8
     },
     {
       "name": "Marcus Pedersen",
-      "pos": "OUT",
+      "pos": "FW",
       "no": 18
     },
     {
       "name": "Ola Kamara",
-      "pos": "OUT",
+      "pos": "FW",
       "no": 14
     }
-  ]
+  ],
+  "formation": "4-4-2"
 }
