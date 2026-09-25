@@ -1168,7 +1168,7 @@
     "id": "tq-age-hareide-7",
     "coachId": "age-hareide",
     "category": "trener",
-    "prompt": "Hvilken seriemester slo Molde ut i cupsemifinalen i 1994, på vei mot cupgullet?",
+    "prompt": "Hvilken seriemester ble slått ut av Molde i cupsemifinalen i 1994?",
     "answer": {
       "label": "Rosenborg",
       "aliases": [
