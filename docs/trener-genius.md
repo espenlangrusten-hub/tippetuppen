@@ -18,8 +18,26 @@ questions or source facts are sent before answering. Day rollover locks old roun
 
 `data/source/trenerquiz.json` is the existing coach bank and remains untouched.
 `data/source/trener-genius.json` adds reviewed distractors, difficulty, facts and
-sources for 24 questions, producing six unique daily rounds. **This is a starter
-set, not a full launch runway.** Expand the reviewed layer before sustained release.
+sources. The first 24 entries (six rounds, 24 September) were written by hand. On
+25 September 112 more were added, giving 34 daily rounds (to about 28 October).
+
+The 112 were drafted from the bank's single-source questions with these rules, then
+read through one by one:
+- A wrong coach is never one who, according to `trenere.json`, coached the club named
+  in the question in the year it names; it is from the same era, and from the same
+  country when the question says «svensk», «dansk» and so on.
+- A wrong club is never one the coach has coached, and is an established top-flight
+  side (no Sarpsborg 08 in a 1994 question) - from the same region when the question
+  says «Oslo-klubb», «nordnorsk», «Telemark-klubb» or «østlandsklubb», and from the
+  right country for Danish, Swedish, Belgian, Dutch, Greek and German clubs.
+- Wrong years are the neighbouring years; wrong countries were checked against the
+  match archive (no other 2–0 home win in 1993, no other 2–1 win at the 1998 World Cup).
+- New entries are ordered by a hash, so questions about the same club and season land
+  on different days.
+
+`trenere.json` itself is still at `recall`, so the first rule is only as good as the
+coaching spells it lists. The next extension needs more easy (level 1) questions: 38
+of the bank's sourced questions are easy, and each round uses one.
 Unreviewed bank entries are deliberately excluded. If no daily round exists, the
 screen says the round is not ready; it does not silently repeat questions.
 
