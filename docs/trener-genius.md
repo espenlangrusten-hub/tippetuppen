@@ -18,8 +18,40 @@ questions or source facts are sent before answering. Day rollover locks old roun
 
 `data/source/trenerquiz.json` is the existing coach bank and remains untouched.
 `data/source/trener-genius.json` adds reviewed distractors, difficulty, facts and
-sources for 24 questions, producing six unique daily rounds. **This is a starter
-set, not a full launch runway.** Expand the reviewed layer before sustained release.
+sources. The first 24 entries (six rounds, 24 September) were written by hand. On
+25 September 117 more were added, giving 33 daily rounds (to about 27 October).
+
+**Source check.** A bank question at `single_source` only means its article
+contains the `verify` keywords - «Arne Erlandsen» and «2006», say - not that the
+article says what the question claims. So on 25 September the article sentences
+behind every new entry were printed (a one-off Action; the sandbox cannot reach
+Wikipedia) and read against the question, the answer and the fact shown after it:
+- 16 were dropped because the article does not back the claim (nicknames, quotes,
+  exact dates, a caretaker spell, the Fredrikstad cup coach in 2006).
+- 30 prompts were narrowed to what the article says. Three were wrong as written:
+  Club Brugge won in 2003 and 2005, not 2004; Hareide left Brøndby *before* the 2002
+  title; Tom Lund coached Lillestrøm 1985–1988, not –1987.
+- Facts the article does not support were replaced with ones it does (one was wrong:
+  Strømsgodset finished 10th in 2007, not 11th).
+- 21 unused candidates whose article states answer and year in the same sentence
+  replaced them, skipping any that another question or fact would give away.
+
+**Wrong answers** were drafted with these rules, then read through one by one:
+- A wrong coach is never one who, according to `trenere.json`, coached the club named
+  in the question in the year it names; it is from the same era, and from the same
+  country when the question says «svensk», «dansk» and so on.
+- A wrong club is never one the coach has coached, and is an established top-flight
+  side (no Sarpsborg 08 in a 1994 question) - from the same region or city when the
+  question says «Oslo-klubb», «nordnorsk», «Göteborg-klubb» and so on, and from the
+  right country for Danish, Swedish, Belgian, Dutch, Greek and German clubs.
+- Wrong years are the neighbouring years; wrong countries were checked against the
+  match archive (no other 2–0 home win in 1993, no other 2–1 win at the 1998 World Cup).
+- New entries are ordered by a hash, so questions about the same club and season land
+  on different days.
+
+`trenere.json` itself is still at `recall`, so the wrong-coach rule is only as good as
+the coaching spells it lists. The next extension needs more easy (level 1) questions:
+every sourced easy question in the bank is now used, and each round takes one.
 Unreviewed bank entries are deliberately excluded. If no daily round exists, the
 screen says the round is not ready; it does not silently repeat questions.
 

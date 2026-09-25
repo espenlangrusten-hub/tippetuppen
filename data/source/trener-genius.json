@@ -454,5 +454,2228 @@
         "url": "https://en.wikipedia.org/wiki/Kjetil_Rekdal"
       }
     ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-4",
+    "expectedAnswer": "Viking",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Strømsgodset",
+      "Stabæk",
+      "Sandefjord"
+    ],
+    "fact": "Viking slo Bryne 3–0 i finalen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-3",
+    "expectedAnswer": "Helsingborg",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "IFK Göteborg",
+      "Hammarby",
+      "Örgryte"
+    ],
+    "fact": "Han trente også Molde og Rosenborg til cupmesterskap.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arne-erlandsen-1",
+    "expectedAnswer": "Arne Erlandsen",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Otto Ulseth",
+      "Olle Nordin",
+      "Bjarne Berntsen"
+    ],
+    "fact": "Han tok sølv med LSK i 2001.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arne Erlandsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-5",
+    "expectedAnswer": "Per-Mathias Høgmo",
+    "difficulty": 3,
+    "category": "Gullåret",
+    "distractors": [
+      "Kjell Inge Olsen",
+      "Åge Hareide",
+      "Steinar Nilsen"
+    ],
+    "fact": "Høgmo ble sykmeldt sommeren 2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-7",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "Strømsgodset",
+      "Tromsø",
+      "Bodø/Glimt"
+    ],
+    "fact": "Det var Hareides andre periode som Molde-trener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arne-erlandsen-2",
+    "expectedAnswer": "2001",
+    "difficulty": 2,
+    "category": "Sølvlaget",
+    "distractors": [
+      "2000",
+      "2002",
+      "2003"
+    ],
+    "fact": "Erlandsen var LSK-trener 1998–2004.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arne Erlandsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-brakstad-1",
+    "expectedAnswer": "Erik Brakstad",
+    "difficulty": 2,
+    "category": "Sølvlaget",
+    "distractors": [
+      "Gunder Bengtsson",
+      "Ivar Morten Normark",
+      "Kalle Björklund"
+    ],
+    "fact": "Molde spilte i Champions League i 1999.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Erik Brakstad – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-3",
+    "expectedAnswer": "Tromsø",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Mjølner",
+      "Bodø/Glimt",
+      "Alta"
+    ],
+    "fact": "Han trente også Moss på 1990-tallet.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjell-jonevret-2",
+    "expectedAnswer": "2009",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "2008",
+      "2010",
+      "2011"
+    ],
+    "fact": "Han fikk sparken året etter.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjell Jonevret – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-20",
+    "expectedAnswer": "1978",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "1977",
+      "1979",
+      "1980"
+    ],
+    "fact": "Etter den perioden trente han Moss, før han kom tilbake i 1988.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-2",
+    "expectedAnswer": "Gummistøvler",
+    "difficulty": 1,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Tresko",
+      "Joggesko",
+      "Slippers"
+    ],
+    "fact": "Han var norsk landslagssjef 1990–1998.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-dag-eilev-fagermo-2",
+    "expectedAnswer": "Strømsgodset",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Aalesund",
+      "Molde",
+      "Lillestrøm"
+    ],
+    "fact": "Strømsgodset endte på 10.-plass i eliteserien i 2007.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Dag-Eilev Fagermo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Dag-Eilev_Fagermo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-lund-4",
+    "expectedAnswer": "Lillestrøm",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "Aalesund",
+      "Viking",
+      "Vålerenga"
+    ],
+    "fact": "Tom Lund var LSK-trener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Lund – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-18",
+    "expectedAnswer": "England",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Nederland",
+      "Polen",
+      "Tyrkia"
+    ],
+    "fact": "Øyvind Leonhardsen og Lars Bohinen scoret.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arild-stavrum-1",
+    "expectedAnswer": "Arild Stavrum",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Dag-Eilev Fagermo",
+      "Tom Prahl",
+      "Nils Arne Eggen"
+    ],
+    "fact": "Stavrum hadde selv spilt for Molde.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arild Stavrum – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arild_Stavrum"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-9",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Haugesund",
+      "Aalesund",
+      "Molde"
+    ],
+    "fact": "Tom Nordlie var Sandefjord-trener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arne-erlandsen-3",
+    "expectedAnswer": "IFK Göteborg",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Hammarby",
+      "Malmö FF",
+      "Djurgården"
+    ],
+    "fact": "Han ble kåret til årets trener i Sverige i 2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arne Erlandsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-2",
+    "expectedAnswer": "Lillestrøm",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Kongsvinger",
+      "Moss",
+      "Sandefjord"
+    ],
+    "fact": "Han tok over dagen etter at Lillestrøm tapte 3–1 mot Vålerenga.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-6",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Molde",
+      "HamKam",
+      "Lillestrøm"
+    ],
+    "fact": "Rosenborg hadde vunnet hvert år fra 1992 til 2004.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-steinar-nilsen-1",
+    "expectedAnswer": "Steinar Nilsen",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Kjell Jonevret",
+      "Martin Andresen",
+      "Ronny Deila"
+    ],
+    "fact": "Han hadde tidligere trent Tromsø.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Steinar Nilsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Steinar_Nilsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjell-jonevret-1",
+    "expectedAnswer": "Kjell Jonevret",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Jan Jönsson",
+      "Erik Hamrén",
+      "Benny Lennartsson"
+    ],
+    "fact": "Molde vant 1. divisjon.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjell Jonevret – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-19",
+    "expectedAnswer": "USA",
+    "difficulty": 1,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Italia",
+      "Frankrike",
+      "Tyskland"
+    ],
+    "fact": "Norge kvalifiserte seg med gruppeseier.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-3",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Molde",
+      "Brann",
+      "Kongsvinger"
+    ],
+    "fact": "I tillegg vant han ett seriegull med Moss.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-17",
+    "expectedAnswer": "Kjetil Rekdal",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Per Brogeland",
+      "Gunder Bengtsson",
+      "Ståle Solbakken"
+    ],
+    "fact": "Tore André Flo hadde utlignet minutter før.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-32",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 1,
+    "category": "Cupgullet",
+    "distractors": [
+      "Åge Hareide",
+      "Alf Inge Notkewich",
+      "Poul Erik Andreasen"
+    ],
+    "fact": "Han fikk også Kniksenprisen som årets trener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-uwe-rosler-3",
+    "expectedAnswer": "Uwe Rösler",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Erik Hamrén",
+      "Roy Hodgson",
+      "Mons Ivar Mjelde"
+    ],
+    "fact": "Han hadde selv spilt for Lillestrøm.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Uwe Rösler – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-15",
+    "expectedAnswer": "1990",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1989",
+      "1991",
+      "1992"
+    ],
+    "fact": "Kniksenprisen for årets trener ble delt ut fra 1990.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-3",
+    "expectedAnswer": "2004",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "2003",
+      "2005",
+      "2006"
+    ],
+    "fact": "Brann slo Lyn i finalen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-22",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Peter Engelbrektsson",
+      "Kjell Inge Olsen",
+      "Bjarne Berntsen"
+    ],
+    "fact": "Rosenborg gikk videre til kvartfinalen i Champions League.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-5",
+    "expectedAnswer": "Feyenoord",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Ajax",
+      "Twente",
+      "PSV"
+    ],
+    "fact": "Han trente også Panathinaikos.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-3",
+    "expectedAnswer": "Club Brugge",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Standard Liège",
+      "Genk",
+      "Lierse"
+    ],
+    "fact": "Han hadde tidligere trent Gent.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-8",
+    "expectedAnswer": "1998",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1997",
+      "1999",
+      "2000"
+    ],
+    "fact": "Trond Sollied var hovedtrener det året.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-3",
+    "expectedAnswer": "Molde",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Kongsvinger",
+      "Lyn",
+      "Fredrikstad"
+    ],
+    "fact": "Molde hadde dårlig uttelling i cupen under ham.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-hallvar-thoresen-1",
+    "expectedAnswer": "Hallvar Thoresen",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Lars Tjærnås",
+      "Benny Lennartsson",
+      "Olle Nordin"
+    ],
+    "fact": "Kjell Tennfjord tok over i 1995.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Hallvar Thoresen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Hallvar_Thoresen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-14",
+    "expectedAnswer": "Kjetil Rekdal",
+    "difficulty": 1,
+    "category": "Cupgullet",
+    "distractors": [
+      "Trond Sollied",
+      "Arild Stavrum",
+      "Martin Andresen"
+    ],
+    "fact": "Aalesund slo Molde på straffespark.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-harald-aabrekk-5",
+    "expectedAnswer": "Harald Aabrekk",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Tom Prahl",
+      "Sören Åkeby",
+      "Benny Lennartsson"
+    ],
+    "fact": "Vålerenga vant cupen året etter.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Harald Aabrekk – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-lund-2",
+    "expectedAnswer": "Tom Lund",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Arne Larsen Økland",
+      "Dag Vestlund",
+      "Egil Olsen"
+    ],
+    "fact": "Han var med på å vinne cupen i 1985 og seriegullet i 1986.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Lund – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-lund-3",
+    "expectedAnswer": "1985",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "1984",
+      "1986",
+      "1987"
+    ],
+    "fact": "Året etter kom seriegullet.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Lund – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-1",
+    "expectedAnswer": "Ronny Deila",
+    "difficulty": 1,
+    "category": "Cupgullet",
+    "distractors": [
+      "Bjarne Berntsen",
+      "Mons Ivar Mjelde",
+      "Otto Ulseth"
+    ],
+    "fact": "Han ble hovedtrener i 2008.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-4",
+    "expectedAnswer": "1990–1998",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "1988–1996",
+      "1992–2000",
+      "1990–1996"
+    ],
+    "fact": "Norge kvalifiserte seg til to VM-sluttspill.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-5",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Molde",
+      "Sogndal",
+      "Kongsvinger"
+    ],
+    "fact": "Wimbledon var eid av nordmennene Kjell Inge Røkke og Bjørn Rune Gjelsten.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-1",
+    "expectedAnswer": "Ståle Solbakken",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Teitur Thordarson",
+      "Bjarne Berntsen",
+      "Nils Arne Eggen"
+    ],
+    "fact": "Innsatsen hans i HamKam vakte oppsikt også i utlandet.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-uwe-rosler-1",
+    "expectedAnswer": "Uwe Rösler",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Otto Rehhagel",
+      "Felix Magath",
+      "Jupp Heynckes"
+    ],
+    "fact": "Han spilte selv for LSK 2002–2003.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Uwe Rösler – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-knut-torum-1",
+    "expectedAnswer": "Knut Tørum",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Jostein Grindhaug",
+      "Rune Skarsfjord",
+      "Peter Engelbrektsson"
+    ],
+    "fact": "Han ble fast hovedtrener i desember 2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Knut Tørum – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Knut_T%C3%B8rum"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjell-tennfjord-1",
+    "expectedAnswer": "Kjell Tennfjord",
+    "difficulty": 2,
+    "category": "Sølvlaget",
+    "distractors": [
+      "Tommy Berntsen",
+      "Poul Erik Andreasen",
+      "Benny Lennartsson"
+    ],
+    "fact": "Brann nådde også kvartfinalen i cupvinnercupen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjell Tennfjord – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjell_Tennfjord"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-7",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 2,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Molde",
+      "Lillestrøm",
+      "Bodø/Glimt"
+    ],
+    "fact": "Som spiller var han også i Frigg og Sarpsborg.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-4",
+    "expectedAnswer": "Moss",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Bodø/Glimt",
+      "Strømsgodset",
+      "Stabæk"
+    ],
+    "fact": "Det er Moss' eneste seriegull.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-hamren-1",
+    "expectedAnswer": "Erik Hamrén",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Kjell Jonevret",
+      "Bosse Johansson",
+      "Jan Jönsson"
+    ],
+    "fact": "I november 2009 ble det klart at han skulle ta over Sveriges landslag.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-9",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 1,
+    "category": "Trenerruten",
+    "distractors": [
+      "Sandefjord",
+      "Stabæk",
+      "Bryne"
+    ],
+    "fact": "Han vant seriegull der i 2015 og 2016.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-brede-skistad-1",
+    "expectedAnswer": "Brede Skistad",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Endre Blindheim",
+      "Einar Sigmundstad",
+      "Gunder Bengtsson"
+    ],
+    "fact": "Han trente Start 1990–1994.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Brede Skistad – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Brede_Skistad"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-6",
+    "expectedAnswer": "Godfoten",
+    "difficulty": 1,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Rosenborg-veien",
+      "Trenerboka",
+      "Laget over alt"
+    ],
+    "fact": "Undertittelen er «samhandling – veien til suksess».",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-15",
+    "expectedAnswer": "Egil Olsen",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Arne Sandstø",
+      "Per-Mathias Høgmo",
+      "Per Brogeland"
+    ],
+    "fact": "Kampen kalles «Mirakelet i Marseille».",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jan-jonsson-3",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Moss",
+      "Odd",
+      "Haugesund"
+    ],
+    "fact": "Han tok to bronsemedaljer der.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Jan Jönsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jan-jonsson-1",
+    "expectedAnswer": "Jan Jönsson",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Kjell Jonevret",
+      "Erik Hamrén",
+      "Bosse Johansson"
+    ],
+    "fact": "Han hadde overtatt laget i 1. divisjon i 2005.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Jan Jönsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Jan_J%C3%B6nsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-2",
+    "expectedAnswer": "FC København",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "AGF",
+      "OB",
+      "Brøndby"
+    ],
+    "fact": "Han ble der i flere sesonger med stor suksess.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-endre-blindheim-1",
+    "expectedAnswer": "Endre Blindheim",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Olle Nordin",
+      "Kalle Björklund",
+      "Alf Inge Notkewich"
+    ],
+    "fact": "Han står som hovedtrener for 1985 i Branns egen historikk.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Endre Blindheim – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Endre_Blindheim"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-5",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Frigg",
+      "Skeid",
+      "Lyn"
+    ],
+    "fact": "Vålerenga tapte kvalifiseringen mot Sogndal.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tor-roste-fossen-3",
+    "expectedAnswer": "Strømsgodset",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Stabæk",
+      "Bodø/Glimt",
+      "Haugesund"
+    ],
+    "fact": "Strømsgodset slo Rosenborg 3–2 i finalen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tor Røste Fossen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-8",
+    "expectedAnswer": "Heerenveen",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Ajax",
+      "Feyenoord",
+      "PSV"
+    ],
+    "fact": "Tidligere hadde han trent i Belgia og Hellas.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-1",
+    "expectedAnswer": "Henning Berg",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Rune Skarsfjord",
+      "Petter Myhre",
+      "Erik Brakstad"
+    ],
+    "fact": "Lyn endte på 3. plass.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-1",
+    "expectedAnswer": "Per-Mathias Høgmo",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Kjell Tennfjord",
+      "Poul Erik Andreasen",
+      "Arne Sandstø"
+    ],
+    "fact": "Han trente kvinnelandslaget 1997–2000.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ola-by-rise-1",
+    "expectedAnswer": "Ola By Rise",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Peter Engelbrektsson",
+      "Poul Erik Andreasen",
+      "Per Joar Hansen"
+    ],
+    "fact": "Han hadde også ført laget til Champions League.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ola By Rise – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ola_By_Rise"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-1",
+    "expectedAnswer": "Mons Ivar Mjelde",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Tom Prahl",
+      "Knut Tørum",
+      "Tommy Berntsen"
+    ],
+    "fact": "Det var Branns første seriegull på 44 år.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-harald-aabrekk-1",
+    "expectedAnswer": "Harald Aabrekk",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Terje Skarsfjord",
+      "Ivar Morten Normark",
+      "Lars Tjærnås"
+    ],
+    "fact": "Senere trente han også Vålerenga og Sogndal.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Harald Aabrekk – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-5",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Peter Engelbrektsson",
+      "Alf Inge Notkewich",
+      "Tommy Berntsen"
+    ],
+    "fact": "Rosenborg vant 13 strake seriegull fra 1992 til 2004.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-3",
+    "expectedAnswer": "Bodø/Glimt",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Harstad",
+      "Mjølner",
+      "Alta"
+    ],
+    "fact": "Han ble ansatt i november 2007.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arne-erlandsen-4",
+    "expectedAnswer": "2006",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "2005",
+      "2007",
+      "2008"
+    ],
+    "fact": "Han trente IFK Göteborg 2005–2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arne Erlandsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arne_Erlandsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-8",
+    "expectedAnswer": "Odd",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Urædd",
+      "Notodden",
+      "Pors"
+    ],
+    "fact": "Odd ble nummer sju året etter.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-2",
+    "expectedAnswer": "Per-Mathias Høgmo",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Mons Ivar Mjelde",
+      "Sture Fladmark",
+      "Henning Berg"
+    ],
+    "fact": "Han var Rosenborg-trener 2005–2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-16",
+    "expectedAnswer": "Brasil",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Skottland",
+      "Marokko",
+      "Italia"
+    ],
+    "fact": "Kjetil Rekdal avgjorde på straffe.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-11",
+    "expectedAnswer": "1988",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1987",
+      "1989",
+      "1990"
+    ],
+    "fact": "Han kom tilbake etter en kort periode som U21-landslagstrener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-9",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Knut Tørum",
+      "Kjell Inge Olsen",
+      "Steinar Nilsen"
+    ],
+    "fact": "Han hadde vært borte fra Rosenborg i åtte år.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-7",
+    "expectedAnswer": "Panathinaikos",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "AEK Athen",
+      "Olympiakos",
+      "PAOK"
+    ],
+    "fact": "Deretter gikk han til Feyenoord.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-1",
+    "expectedAnswer": "Roy Hodgson",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Terry Venables",
+      "Harry Redknapp",
+      "Steve McClaren"
+    ],
+    "fact": "Han hadde tidligere ført Sveits til VM 1994.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-brakstad-2",
+    "expectedAnswer": "1999",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1998",
+      "2000",
+      "2001"
+    ],
+    "fact": "Molde var den andre norske klubben i Champions League.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Erik Brakstad – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Erik_Brakstad"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tor-roste-fossen-2",
+    "expectedAnswer": "1978–1987",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "1976–1985",
+      "1980–1989",
+      "1978–1985"
+    ],
+    "fact": "Senere vant han cupen med Strømsgodset.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tor Røste Fossen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-2",
+    "expectedAnswer": "Bodø/Glimt",
+    "difficulty": 1,
+    "category": "Cupgullet",
+    "distractors": [
+      "Mjølner",
+      "Alta",
+      "Harstad"
+    ],
+    "fact": "Klubben hadde rykket opp året før.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-23",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Sture Fladmark",
+      "Erik Brakstad",
+      "Lars Tjærnås"
+    ],
+    "fact": "Rosenborg spilte i Champions League sju ganger med ham som trener.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-lund-1",
+    "expectedAnswer": "Tom Lund",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Åge Hareide",
+      "Per-Mathias Høgmo",
+      "Kalle Björklund"
+    ],
+    "fact": "Han hadde vunnet cupen med LSK året før.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tom Lund – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Lund"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-rune-skarsfjord-1",
+    "expectedAnswer": "Rune Skarsfjord",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Anders Grönhagen",
+      "Roy Hodgson",
+      "Tor Ole Skullerud"
+    ],
+    "fact": "Han erstattet Steinar Nilsen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Rune Skarsfjord – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Rune_Skarsfjord"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjell-inge-olsen-1",
+    "expectedAnswer": "Kjell Inge Olsen",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Ståle Solbakken",
+      "Poul Erik Andreasen",
+      "Bosse Johansson"
+    ],
+    "fact": "Han tok over Viking i 2003.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjell Inge Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjell_Inge_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-harald-aabrekk-2",
+    "expectedAnswer": "Sogndal",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Start",
+      "Moss",
+      "Lyn"
+    ],
+    "fact": "Han var også spiller i Sogndal.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Harald Aabrekk – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Harald_Aabrekk"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-27",
+    "expectedAnswer": "Egil Olsen",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Kalle Björklund",
+      "Teitur Thordarson",
+      "Per-Mathias Høgmo"
+    ],
+    "fact": "Norge slo Brasil i VM 1998.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-joar-hansen-1",
+    "expectedAnswer": "Per Joar Hansen",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Ola By Rise",
+      "Kjell Jonevret",
+      "Tommy Berntsen"
+    ],
+    "fact": "I desember 2005 ble han trener i Aalesund.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per Joar Hansen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per_Joar_Hansen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-7",
+    "expectedAnswer": "1992",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "1991",
+      "1993",
+      "1994"
+    ],
+    "fact": "Året etter ble de cupmester.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-5",
+    "expectedAnswer": "Gent",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Lierse",
+      "Anderlecht",
+      "Standard Liège"
+    ],
+    "fact": "Han trente Gent 1999–2000 før Club Brugge.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-4",
+    "expectedAnswer": "Moss",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Lyn",
+      "Fredrikstad",
+      "HamKam"
+    ],
+    "fact": "Han gikk derfra til kvinnelandslaget.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-4",
+    "expectedAnswer": "Brøndby",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "FC Midtjylland",
+      "AaB",
+      "AGF"
+    ],
+    "fact": "Det var Brøndbys første mesterskap siden 1998.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-steinar-nilsen-2",
+    "expectedAnswer": "Tromsø",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Rosenborg",
+      "Sandefjord",
+      "Start"
+    ],
+    "fact": "Som spiller vant han cupen med Tromsø i 1996.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Steinar Nilsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Steinar_Nilsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-2",
+    "expectedAnswer": "Dag-Eilev Fagermo",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Rune Skarsfjord",
+      "Reidar Vågnes",
+      "Ola By Rise"
+    ],
+    "fact": "Deila overtok som hovedtrener i 2008.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-arne-dokken-1",
+    "expectedAnswer": "Arne Dokken",
+    "difficulty": 3,
+    "category": "Gullåret",
+    "distractors": [
+      "Brede Skistad",
+      "Kjell Inge Olsen",
+      "Harald Sunde"
+    ],
+    "fact": "Han ble trener for Rosenborg i august 1985.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Arne Dokken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Arne_Dokken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tor-roste-fossen-1",
+    "expectedAnswer": "Tor Røste Fossen",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Egil Olsen",
+      "Svein Ivar Sigernes",
+      "Endre Blindheim"
+    ],
+    "fact": "Han var landslagssjef fra 1978 til 1987.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tor Røste Fossen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-karsten-johannessen-1",
+    "expectedAnswer": "Karsten Johannessen",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Erik Brakstad",
+      "Bjarne Berntsen",
+      "Arne Larsen Økland"
+    ],
+    "fact": "Han regnes som klubbens viktigste trener gjennom tidene.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Karsten Johannessen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Karsten_Johannessen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-dag-eilev-fagermo-1",
+    "expectedAnswer": "Odd",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Molde",
+      "Vålerenga",
+      "Haugesund"
+    ],
+    "fact": "Han gikk til Vålerenga i 2020.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Dag-Eilev Fagermo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Dag-Eilev_Fagermo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-uwe-rosler-2",
+    "expectedAnswer": "Uwe Rösler",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Svein Ivar Sigernes",
+      "Roy Hodgson",
+      "Tor Ole Skullerud"
+    ],
+    "fact": "Tom Nordlie gikk til LSK.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Uwe Rösler – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-19",
+    "expectedAnswer": "2010",
+    "difficulty": 3,
+    "category": "Gullåret",
+    "distractors": [
+      "2009",
+      "2011",
+      "2012"
+    ],
+    "fact": "Rosenborg vant 14 seriegull med ham, Moss ett.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-16",
+    "expectedAnswer": "Brann",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Tromsø",
+      "Lillestrøm",
+      "Strømsgodset"
+    ],
+    "fact": "Aalesund hadde også vunnet cupen i 2009.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-9",
+    "expectedAnswer": "Lyn",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Fredrikstad",
+      "Lillestrøm",
+      "HamKam"
+    ],
+    "fact": "Hareide trente senere også Helsingborg, Brøndby og Rosenborg.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-11",
+    "expectedAnswer": "IFK Göteborg",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Djurgården",
+      "Helsingborg",
+      "Örgryte"
+    ],
+    "fact": "Han hadde også trent Vålerenga til to seriegull.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-5",
+    "expectedAnswer": "2013",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "2012",
+      "2014",
+      "2015"
+    ],
+    "fact": "Han hadde vunnet cupen tre år tidligere.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-david-hay-1",
+    "expectedAnswer": "David Hay",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Walter Smith",
+      "Graeme Souness",
+      "Alex McLeish"
+    ],
+    "fact": "Han hadde tidligere vært manager i Celtic.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "David Hay – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/David_Hay"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tor-thodesen-1",
+    "expectedAnswer": "Tor Thodesen",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Reidar Vågnes",
+      "Kjell Inge Olsen",
+      "Jostein Grindhaug"
+    ],
+    "fact": "Han var også sportslig leder i klubben.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tor Thodesen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tor_Thodesen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-11",
+    "expectedAnswer": "2003",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "2002",
+      "2004",
+      "2005"
+    ],
+    "fact": "Han overtok etter islendingen Teitur Thordarson.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-benny-lennartsson-13",
+    "expectedAnswer": "2000",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1999",
+      "2001",
+      "2002"
+    ],
+    "fact": "Han fikk Kniksenprisen som årets trener samme år.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Benny Lennartsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Benny_Lennartsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjell-jonevret-3",
+    "expectedAnswer": "Djurgården",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Malmö FF",
+      "IFK Göteborg",
+      "Hammarby"
+    ],
+    "fact": "Djurgården vant også cupen i 2004.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjell Jonevret – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjell_Jonevret"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-5",
+    "expectedAnswer": "Ranheim",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Sogndal",
+      "Sandefjord",
+      "Molde"
+    ],
+    "fact": "Laget spilte da i 2. divisjon.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-6",
+    "expectedAnswer": "2004",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "2003",
+      "2005",
+      "2006"
+    ],
+    "fact": "Prisen kom for jobben i HamKam.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-martin-andresen-3",
+    "expectedAnswer": "Stabæk",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "Rosenborg",
+      "Fredrikstad",
+      "Bodø/Glimt"
+    ],
+    "fact": "Det var Martin Andresens første tittel med Vålerenga.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Martin Andresen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-37",
+    "expectedAnswer": "1995",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "1994",
+      "1996",
+      "1997"
+    ],
+    "fact": "Rosenborg slo ut tyrkiske Beşiktaş i kvalifiseringen.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-10",
+    "expectedAnswer": "Uwe Rösler",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Knut Torbjørn Eggen",
+      "Ronny Deila",
+      "Erik Hamrén"
+    ],
+    "fact": "Hareide kom fra svenske Örgryte.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-8",
+    "expectedAnswer": "Djurgården",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Malmö FF",
+      "AIK",
+      "IFK Göteborg"
+    ],
+    "fact": "Han tok over Djurgården i mai 2013.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-5",
+    "expectedAnswer": "Blackburn",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Southampton",
+      "West Ham",
+      "Fulham"
+    ],
+    "fact": "Klubben hadde nettopp rykket ned fra Premier League.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-10",
+    "expectedAnswer": "Örgryte",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "GAIS",
+      "BK Häcken",
+      "Västra Frölunda"
+    ],
+    "fact": "Senere trente han PAOK og Apollon Limassol.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-anders-gronhagen-2",
+    "expectedAnswer": "2007",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "2006",
+      "2008",
+      "2009"
+    ],
+    "fact": "Han hadde trent flere svenske klubber før.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Anders Grönhagen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Anders_Gr%C3%B6nhagen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tor-roste-fossen-7",
+    "expectedAnswer": "Start",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Lyn",
+      "Viking",
+      "Stabæk"
+    ],
+    "fact": "Han trente Start i tre sesonger.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Tor Røste Fossen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tor_R%C3%B8ste_Fossen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-vidar-davidsen-2",
+    "expectedAnswer": "1997",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "1996",
+      "1998",
+      "1999"
+    ],
+    "fact": "Davidsen var Vålerenga-trener 1993–1997.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Vidar Davidsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Vidar_Davidsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-13",
+    "expectedAnswer": "2001",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "2000",
+      "2002",
+      "2003"
+    ],
+    "fact": "Han trente klubben til august 2006.",
+    "reviewedAt": "2026-09-25",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
   }
 ]

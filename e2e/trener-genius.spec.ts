@@ -33,7 +33,9 @@ test("Trener Genius persists a round, guards answers and awards league points on
       await page.getByRole("button",{name:/50\/50-hjelp/}).click();
       await expect(page.getByRole("button",{name:/50\/50 brukt/})).toBeDisabled();
     }
-    await page.getByRole("group",{name:"Svaralternativer"}).getByRole("button").filter({hasText:correct}).click();
+    // Whole-label match: a substring filter picks "Notodden" as well as "Odd".
+    const exactly = new RegExp(`^[A-D] ${correct.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}$`);
+    await page.getByRole("group",{name:"Svaralternativer"}).getByRole("button",{name:exactly}).click();
     await page.getByRole("button",{name:/Lås (offensivt svar|svaret)/}).click();
     await expect(page.getByRole("button",{name:index===3?/Se resultatet/:/Neste spørsmål/})).toBeVisible();
     const replay = await (await request.post(`${api}/trener-genius/answer`,{headers,data:{attemptId:start.attemptId,index,option:0}})).json();

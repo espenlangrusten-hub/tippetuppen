@@ -311,7 +311,7 @@
         "88"
       ]
     },
-    "fact": "Rosenborg vant ligaen sju poeng foran Lillestrøm.",
+    "fact": "Han kom tilbake etter en kort periode som U21-landslagstrener.",
     "era": 1988,
     "difficulty": 2,
     "status": "single_source",
@@ -549,7 +549,7 @@
         "10"
       ]
     },
-    "fact": "Han overtok etter Erik Hamrén 1. juni 2010.",
+    "fact": "Rosenborg vant 14 seriegull med ham, Moss ett.",
     "era": 2010,
     "difficulty": 3,
     "status": "single_source",
@@ -637,7 +637,7 @@
         "Dokken"
       ]
     },
-    "fact": "Han overtok da Bjørn Hansen gikk av i august.",
+    "fact": "Han ble trener for Rosenborg i august 1985.",
     "era": 1985,
     "difficulty": 3,
     "status": "single_source",
@@ -764,7 +764,7 @@
     "id": "tq-trond-sollied-2",
     "coachId": "trond-sollied",
     "category": "trener",
-    "prompt": "Hvilken nordnorsk klubb tok sølv og cupgull som nyopprykket i 1993 med Trond Sollied som trener?",
+    "prompt": "Hvilken nordnorsk klubb vant cupen i 1993 som nyopprykket, med Trond Sollied som trener?",
     "answer": {
       "label": "Bodø/Glimt",
       "aliases": [
@@ -772,7 +772,7 @@
         "FK Bodø/Glimt"
       ]
     },
-    "fact": "Glimt hadde vunnet 1. divisjon året før.",
+    "fact": "Klubben hadde rykket opp året før.",
     "era": 1993,
     "difficulty": 1,
     "status": "single_source",
@@ -798,14 +798,14 @@
     "id": "tq-trond-sollied-3",
     "coachId": "trond-sollied",
     "category": "trener",
-    "prompt": "Hvilken belgisk klubb ble to ganger seriemester med Trond Sollied som trener, i 2003 og 2004?",
+    "prompt": "Hvilken belgisk klubb ble to ganger seriemester med Trond Sollied som trener?",
     "answer": {
       "label": "Club Brugge",
       "aliases": [
         "Brugge"
       ]
     },
-    "fact": "Han vant også to belgiske cuptitler der.",
+    "fact": "Han hadde tidligere trent Gent.",
     "era": 2004,
     "difficulty": 2,
     "status": "single_source",
@@ -913,14 +913,14 @@
     "id": "tq-trond-sollied-7",
     "coachId": "trond-sollied",
     "category": "trener",
-    "prompt": "Hvilket år vant Bodø/Glimt 1. divisjon med Trond Sollied som ny trener?",
+    "prompt": "Hvilket år rykket Bodø/Glimt opp i eliteserien med Trond Sollied som trener?",
     "answer": {
       "label": "1992",
       "aliases": [
         "92"
       ]
     },
-    "fact": "Året etter tok de sølv og cupgull i toppdivisjonen.",
+    "fact": "Året etter ble de cupmester.",
     "era": 1992,
     "difficulty": 3,
     "status": "single_source",
@@ -944,7 +944,7 @@
     "id": "tq-trond-sollied-8",
     "coachId": "trond-sollied",
     "category": "trener",
-    "prompt": "Hvilken nederlandsk klubb trente Trond Sollied i 2008–2009?",
+    "prompt": "Hvilken nederlandsk klubb har Trond Sollied vært trener for?",
     "answer": {
       "label": "Heerenveen",
       "aliases": [
@@ -1041,7 +1041,7 @@
     "id": "tq-age-hareide-3",
     "coachId": "age-hareide",
     "category": "trener",
-    "prompt": "Hvilken svensk klubb vant serie og cup med Åge Hareide som trener i 1999?",
+    "prompt": "Hvilken svensk klubb trente Åge Hareide til både seriemesterskap og cupmesterskap?",
     "answer": {
       "label": "Helsingborg",
       "aliases": [
@@ -1049,7 +1049,7 @@
         "HIF"
       ]
     },
-    "fact": "Han trente Helsingborg 1998–1999.",
+    "fact": "Han trente også Molde og Rosenborg til cupmesterskap.",
     "era": 1999,
     "difficulty": 2,
     "status": "single_source",
@@ -1073,7 +1073,7 @@
     "id": "tq-age-hareide-4",
     "coachId": "age-hareide",
     "category": "trener",
-    "prompt": "Hvilken dansk klubb ble mester med Åge Hareide i 2002, før han straks gikk av?",
+    "prompt": "Hvilken dansk klubb forlot Åge Hareide rett før den ble seriemester i 2002?",
     "answer": {
       "label": "Brøndby",
       "aliases": [
@@ -1168,7 +1168,7 @@
     "id": "tq-age-hareide-7",
     "coachId": "age-hareide",
     "category": "trener",
-    "prompt": "Hvilket lag slo Molde i semifinalen på vei mot cupgullet i 1994?",
+    "prompt": "Hvilken seriemester ble slått ut av Molde i cupsemifinalen i 1994?",
     "answer": {
       "label": "Rosenborg",
       "aliases": [
@@ -1177,7 +1177,7 @@
         "Rosenborg Ballklub"
       ]
     },
-    "fact": "Hareide var Molde-trener.",
+    "fact": "Det var Hareides andre periode som Molde-trener.",
     "era": 1994,
     "difficulty": 3,
     "status": "single_source",
@@ -1230,7 +1230,7 @@
     "id": "tq-ola-by-rise-1",
     "coachId": "ola-by-rise",
     "category": "trener",
-    "prompt": "Hvilken Rosenborg-trener vant seriegull i 2004, men fikk sparken samme høst?",
+    "prompt": "Hvem var Rosenborgs hovedtrener da klubben vant seriegull i 2004?",
     "answer": {
       "label": "Ola By Rise",
       "aliases": [
@@ -1301,7 +1301,7 @@
         "Hansen"
       ]
     },
-    "fact": "Rosenborg endte på 7. plass det året.",
+    "fact": "I desember 2005 ble han trener i Aalesund.",
     "era": 2005,
     "difficulty": 2,
     "status": "single_source",
@@ -1442,7 +1442,7 @@
     "id": "tq-per-mathias-hogmo-3",
     "coachId": "per-mathias-hogmo",
     "category": "trener",
-    "prompt": "Hvilken nordnorsk klubb trente Per-Mathias Høgmo i tre perioder: 1992, 2004 og fra 2008?",
+    "prompt": "Hvilken nordnorsk klubb tok Per-Mathias Høgmo med i Royal League i 2004?",
     "answer": {
       "label": "Tromsø",
       "aliases": [
@@ -1474,7 +1474,7 @@
     "id": "tq-per-mathias-hogmo-4",
     "coachId": "per-mathias-hogmo",
     "category": "trener",
-    "prompt": "Hvilken østlandsklubb trente Per-Mathias Høgmo i 1995–1996?",
+    "prompt": "Hvilken østlandsklubb førte Per-Mathias Høgmo opp i eliteserien i 1995?",
     "answer": {
       "label": "Moss",
       "aliases": [
@@ -1513,7 +1513,7 @@
         "Hogmo"
       ]
     },
-    "fact": "Tørum tok 28 av 30 mulige poeng.",
+    "fact": "Høgmo ble sykmeldt sommeren 2006.",
     "era": 2006,
     "difficulty": 3,
     "status": "single_source",
@@ -1538,14 +1538,14 @@
     "id": "tq-knut-torum-1",
     "coachId": "knut-torum",
     "category": "trener",
-    "prompt": "Hvem ledet Rosenborg til seriegull høsten 2006 og fikk Kniksenprisen som årets trener?",
+    "prompt": "Hvem ledet Rosenborg til seriegull høsten 2006, mens Per-Mathias Høgmo var sykmeldt?",
     "answer": {
       "label": "Knut Tørum",
       "aliases": [
         "Tørum"
       ]
     },
-    "fact": "Han tok 28 av 30 mulige poeng.",
+    "fact": "Han ble fast hovedtrener i desember 2006.",
     "era": 2006,
     "difficulty": 2,
     "status": "single_source",
@@ -1628,7 +1628,7 @@
         "Hamren"
       ]
     },
-    "fact": "Han tiltrådte 1. juni 2008.",
+    "fact": "I november 2009 ble det klart at han skulle ta over Sveriges landslag.",
     "era": 2009,
     "difficulty": 1,
     "status": "single_source",
@@ -1795,14 +1795,14 @@
     "id": "tq-tom-lund-2",
     "coachId": "tom-lund",
     "category": "trener",
-    "prompt": "Hvilken Lillestrøm-legende trente klubben 1985–1987 og igjen i 1990?",
+    "prompt": "Hvilken Lillestrøm-legende trente klubben 1985–1988 og igjen i 1990?",
     "answer": {
       "label": "Tom Lund",
       "aliases": [
         "Lund"
       ]
     },
-    "fact": "Han spilte selv for LSK 1967–1982.",
+    "fact": "Han var med på å vinne cupen i 1985 og seriegullet i 1986.",
     "era": 1990,
     "difficulty": 2,
     "status": "single_source",
@@ -2082,7 +2082,7 @@
     "id": "tq-uwe-rosler-3",
     "coachId": "uwe-rosler",
     "category": "trener",
-    "prompt": "Hvem tok over Molde 30. august 2010 etter at Kjell Jonevret fikk sparken?",
+    "prompt": "Hvem tok over som Molde-trener høsten 2010, etter at Kjell Jonevret fikk sparken?",
     "answer": {
       "label": "Uwe Rösler",
       "aliases": [
@@ -2090,7 +2090,7 @@
         "Rosler"
       ]
     },
-    "fact": "Molde lå på 14. plass.",
+    "fact": "Han hadde selv spilt for Lillestrøm.",
     "era": 2010,
     "difficulty": 2,
     "status": "single_source",
@@ -2329,7 +2329,7 @@
         "Vaalerenga"
       ]
     },
-    "fact": "Han fikk sparken etter sesongen.",
+    "fact": "Vålerenga tapte kvalifiseringen mot Sogndal.",
     "era": 2000,
     "difficulty": 2,
     "status": "single_source",
@@ -2450,7 +2450,7 @@
     "id": "tq-tom-nordlie-9",
     "coachId": "tom-nordlie",
     "category": "trener",
-    "prompt": "Hvilket lag slo Sandefjord 5–3 i kvalifiseringen i 2003, etter at Sandefjord hadde ledet både 1–0 og 3–2?",
+    "prompt": "Hvilket lag slo Tom Nordlies Sandefjord i kvalifiseringen til eliteserien i 2003?",
     "answer": {
       "label": "Vålerenga",
       "aliases": [
@@ -2639,7 +2639,7 @@
         "Lillestrøm SK"
       ]
     },
-    "fact": "Han ble sparket der i 2011.",
+    "fact": "Han tok over dagen etter at Lillestrøm tapte 3–1 mot Vålerenga.",
     "era": 2008,
     "difficulty": 2,
     "status": "single_source",
@@ -3099,14 +3099,14 @@
     "id": "tq-kjell-inge-olsen-1",
     "coachId": "kjell-inge-olsen",
     "category": "trener",
-    "prompt": "Hvilken Viking-trener gikk av 13. april 2004?",
+    "prompt": "Hvilken Viking-trener ga seg etter 0–4 mot Tromsø i seriestarten 2004?",
     "answer": {
       "label": "Kjell Inge Olsen",
       "aliases": [
         "Olsen"
       ]
     },
-    "fact": "Bjarne Berntsen tok over midlertidig.",
+    "fact": "Han tok over Viking i 2003.",
     "era": 2004,
     "difficulty": 3,
     "status": "single_source",
@@ -3138,7 +3138,7 @@
         "Hodgson"
       ]
     },
-    "fact": "Han ble ansatt 12. juli 2004.",
+    "fact": "Han hadde tidligere ført Sveits til VM 1994.",
     "era": 2004,
     "difficulty": 1,
     "status": "single_source",
@@ -3538,14 +3538,14 @@
     "id": "tq-harald-aabrekk-1",
     "coachId": "harald-aabrekk",
     "category": "trener",
-    "prompt": "Hvem tok over som Brann-trener i juli 1998, da Kjell Tennfjord ble manager?",
+    "prompt": "Hvem kom til Brann som spillerutvikler i 1998 og ble hovedtrener senere samme år?",
     "answer": {
       "label": "Harald Aabrekk",
       "aliases": [
         "Aabrekk"
       ]
     },
-    "fact": "Han var Brann-trener 1998–1999.",
+    "fact": "Senere trente han også Vålerenga og Sogndal.",
     "era": 1998,
     "difficulty": 2,
     "status": "single_source",
@@ -3570,7 +3570,7 @@
     "id": "tq-harald-aabrekk-2",
     "coachId": "harald-aabrekk",
     "category": "trener",
-    "prompt": "Hvilken klubb trente Harald Aabrekk både 1990–1992 og 2010–2011?",
+    "prompt": "Hvilken klubb trente Harald Aabrekk i 2010 og 2011?",
     "answer": {
       "label": "Sogndal",
       "aliases": [
@@ -3651,14 +3651,14 @@
     "id": "tq-harald-aabrekk-5",
     "coachId": "harald-aabrekk",
     "category": "trener",
-    "prompt": "Hvem tok over som Vålerenga-trener 27. juli 2007 etter Petter Myhre?",
+    "prompt": "Hvem trente Vålerenga i 2007 og gikk tilbake til Brann etter sesongen?",
     "answer": {
       "label": "Harald Aabrekk",
       "aliases": [
         "Aabrekk"
       ]
     },
-    "fact": "Martin Andresen tok over året etter.",
+    "fact": "Vålerenga vant cupen året etter.",
     "era": 2007,
     "difficulty": 3,
     "status": "single_source",
@@ -3844,7 +3844,7 @@
     "id": "tq-steinar-nilsen-1",
     "coachId": "steinar-nilsen",
     "category": "trener",
-    "prompt": "Hvem var Brann-trener til 21. mai 2010, da Rune Skarsfjord tok over?",
+    "prompt": "Hvem trakk seg som Brann-trener i mai 2010, etter cuptap mot Fyllingen?",
     "answer": {
       "label": "Steinar Nilsen",
       "aliases": [
@@ -3882,7 +3882,7 @@
         "Tromsø IL"
       ]
     },
-    "fact": "Han hadde vært assistent for Otto Ulseth.",
+    "fact": "Som spiller vant han cupen med Tromsø i 1996.",
     "era": 2007,
     "difficulty": 3,
     "status": "single_source",
@@ -3906,7 +3906,7 @@
     "id": "tq-rune-skarsfjord-1",
     "coachId": "rune-skarsfjord",
     "category": "trener",
-    "prompt": "Hvem tok over som Brann-trener 21. mai 2010?",
+    "prompt": "Hvem ble midlertidig Brann-trener i mai 2010, etter at Steinar Nilsen gikk av?",
     "answer": {
       "label": "Rune Skarsfjord",
       "aliases": [
@@ -4011,7 +4011,7 @@
         "nedbrettede gummistøvler"
       ]
     },
-    "fact": "Det begynte med regnvær på hans første landslagstrening.",
+    "fact": "Han var norsk landslagssjef 1990–1998.",
     "era": 1994,
     "difficulty": 1,
     "status": "single_source",
@@ -4109,7 +4109,7 @@
         "Vaalerenga"
       ]
     },
-    "fact": "Han hadde tatt over Vålerenga i august 1998.",
+    "fact": "Wimbledon var eid av nordmennene Kjell Inge Røkke og Bjørn Rune Gjelsten.",
     "era": 1999,
     "difficulty": 2,
     "status": "single_source",
@@ -4175,7 +4175,7 @@
         "Vaalerenga"
       ]
     },
-    "fact": "Han fikk navnet i sesongene 1966 og 1967.",
+    "fact": "Som spiller var han også i Frigg og Sarpsborg.",
     "era": 1985,
     "difficulty": 2,
     "status": "single_source",
@@ -4463,7 +4463,7 @@
     "id": "tq-gunder-bengtsson-3",
     "coachId": "gunder-bengtsson",
     "category": "trener",
-    "prompt": "Hvilken norsk klubb trente Gunder Bengtsson fra 2001 til han fikk sparken i mai 2003?",
+    "prompt": "Hvilken norsk klubb kom Gunder Bengtsson til som trener i 2001?",
     "answer": {
       "label": "Molde",
       "aliases": [
@@ -4471,7 +4471,7 @@
         "MFK"
       ]
     },
-    "fact": "Odd Berg overtok.",
+    "fact": "Molde hadde dårlig uttelling i cupen under ham.",
     "era": 2003,
     "difficulty": 2,
     "status": "single_source",
@@ -4528,7 +4528,7 @@
     "id": "tq-gunder-bengtsson-5",
     "coachId": "gunder-bengtsson",
     "category": "trener",
-    "prompt": "Hvilken nederlandsk klubb trente Gunder Bengtsson i 1990–1991?",
+    "prompt": "Hvilken nederlandsk klubb ansatte Gunder Bengtsson som hovedtrener i desember 1989?",
     "answer": {
       "label": "Feyenoord",
       "aliases": []
@@ -4757,14 +4757,14 @@
     "id": "tq-vidar-davidsen-2",
     "coachId": "vidar-davidsen",
     "category": "trener",
-    "prompt": "Hvilket år vant Vålerenga cupen med Vidar Davidsen og Lars Tjærnås som trenere?",
+    "prompt": "Hvilket år vant Vålerenga cupen og rykket opp, med Vidar Davidsen som trener?",
     "answer": {
       "label": "1997",
       "aliases": [
         "97"
       ]
     },
-    "fact": "Samme år rykket Vålerenga opp.",
+    "fact": "Davidsen var Vålerenga-trener 1993–1997.",
     "era": 1997,
     "difficulty": 3,
     "status": "single_source",
@@ -5331,7 +5331,7 @@
     "id": "tq-erik-brakstad-1",
     "coachId": "erik-brakstad",
     "category": "trener",
-    "prompt": "Hvem var Molde-trener da klubben tok sølv i 1998 og 1999?",
+    "prompt": "Hvem var Molde-trener fra 1998 til 2000?",
     "answer": {
       "label": "Erik Brakstad",
       "aliases": [
@@ -5515,14 +5515,14 @@
     "id": "tq-arild-stavrum-1",
     "coachId": "arild-stavrum",
     "category": "trener",
-    "prompt": "Hvilken Molde-trener ble presentert på julaften 2005 og fikk sparken etter nedrykket i 2006?",
+    "prompt": "Hvilken tidligere Molde-spiller ble ansatt som Molde-trener på julaften 2005?",
     "answer": {
       "label": "Arild Stavrum",
       "aliases": [
         "Stavrum"
       ]
     },
-    "fact": "Molde endte på 14. plass.",
+    "fact": "Stavrum hadde selv spilt for Molde.",
     "era": 2006,
     "difficulty": 2,
     "status": "single_source",
@@ -5618,7 +5618,7 @@
         "DIF"
       ]
     },
-    "fact": "Han kom til Molde i desember 2006.",
+    "fact": "Djurgården vant også cupen i 2004.",
     "era": 2005,
     "difficulty": 3,
     "status": "single_source",
@@ -5755,7 +5755,7 @@
     "id": "tq-brede-skistad-1",
     "coachId": "brede-skistad",
     "category": "trener",
-    "prompt": "Hvem var Start-trener da klubben tok bronse i både 1991 og 1992?",
+    "prompt": "Hvem trente Start til han trakk seg etter 1994-sesongen på grunn av sykdom?",
     "answer": {
       "label": "Brede Skistad",
       "aliases": [
@@ -6105,7 +6105,7 @@
     "id": "tq-kare-ingebrigtsen-3",
     "coachId": "kare-ingebrigtsen",
     "category": "trener",
-    "prompt": "Hvilken nordnorsk klubb trente Kåre Ingebrigtsen fra 2008 til sommeren 2011?",
+    "prompt": "Hvilken nordnorsk klubb trente Kåre Ingebrigtsen fra 2008 til våren 2011?",
     "answer": {
       "label": "Bodø/Glimt",
       "aliases": [
@@ -6113,7 +6113,7 @@
         "FK Bodø/Glimt"
       ]
     },
-    "fact": "Assistenten Cato André Hansen tok over.",
+    "fact": "Han ble ansatt i november 2007.",
     "era": 2010,
     "difficulty": 2,
     "status": "single_source",
@@ -6170,7 +6170,7 @@
     "id": "tq-kare-ingebrigtsen-5",
     "coachId": "kare-ingebrigtsen",
     "category": "trener",
-    "prompt": "Hvilken trondheimsklubb trente Kåre Ingebrigtsen i 2006–2007, før Bodø/Glimt?",
+    "prompt": "Hvilken klubb trente Kåre Ingebrigtsen i 2007-sesongen, før Bodø/Glimt?",
     "answer": {
       "label": "Ranheim",
       "aliases": [
@@ -6178,7 +6178,7 @@
         "Ranheim Fotball"
       ]
     },
-    "fact": "Han gikk derfra til Glimt i 2008.",
+    "fact": "Laget spilte da i 2. divisjon.",
     "era": 2007,
     "difficulty": 3,
     "status": "single_source",
@@ -6260,7 +6260,7 @@
         "Solbakken"
       ]
     },
-    "fact": "Han fikk Kniksenprisen som årets trener i 2004.",
+    "fact": "Innsatsen hans i HamKam vakte oppsikt også i utlandet.",
     "era": 2003,
     "difficulty": 1,
     "status": "single_source",
@@ -6410,7 +6410,7 @@
         "04"
       ]
     },
-    "fact": "HamKam ble nummer fem som nyopprykket.",
+    "fact": "Prisen kom for jobben i HamKam.",
     "era": 2004,
     "difficulty": 3,
     "status": "single_source",
@@ -6560,7 +6560,7 @@
     "id": "tq-dag-eilev-fagermo-1",
     "coachId": "dag-eilev-fagermo",
     "category": "trener",
-    "prompt": "Hvilken klubb rykket opp med Dag-Eilev Fagermo som trener i 2008, og ble værende hos ham i tolv år?",
+    "prompt": "Hvilken klubb førte Dag-Eilev Fagermo til opprykk i sin første sesong der, i 2008?",
     "answer": {
       "label": "Odd",
       "aliases": [
@@ -6594,7 +6594,7 @@
     "id": "tq-dag-eilev-fagermo-2",
     "coachId": "dag-eilev-fagermo",
     "category": "trener",
-    "prompt": "Hvilken klubb førte Dag-Eilev Fagermo opp i toppdivisjonen i 2006, før han gikk til Odd?",
+    "prompt": "Hvilken klubb førte Dag-Eilev Fagermo opp i toppdivisjonen i 2006?",
     "answer": {
       "label": "Strømsgodset",
       "aliases": [
@@ -6603,7 +6603,7 @@
         "Strømsgodset IF"
       ]
     },
-    "fact": "Klubben ble nummer elleve i 2007.",
+    "fact": "Strømsgodset endte på 10.-plass i eliteserien i 2007.",
     "era": 2006,
     "difficulty": 2,
     "status": "single_source",
@@ -6819,7 +6819,7 @@
     "id": "tq-jan-jonsson-3",
     "coachId": "jan-jonsson",
     "category": "trener",
-    "prompt": "Hvilken klubb tok Jan Jönsson over fra 1. januar 2011, etter Stabæk?",
+    "prompt": "Hvilken klubb gikk Jan Jönsson til etter Stabæk, og tok to bronsemedaljer med?",
     "answer": {
       "label": "Rosenborg",
       "aliases": [
@@ -7572,7 +7572,7 @@
         "Eggen"
       ]
     },
-    "fact": "Roar Strand og Harald Martin Brattbakk scoret.",
+    "fact": "Rosenborg spilte i Champions League sju ganger med ham som trener.",
     "era": 1997,
     "difficulty": 1,
     "status": "single_source",
@@ -8161,14 +8161,14 @@
     "id": "tq-kjetil-rekdal-16",
     "coachId": "kjetil-rekdal",
     "category": "trener",
-    "prompt": "Hvilket lag slo Aalesund 2–1 i cupfinalen 2011, med Kjetil Rekdal som trener?",
+    "prompt": "Hvilket lag møtte Aalesund i cupfinalen 2011, med Kjetil Rekdal som trener?",
     "answer": {
       "label": "Brann",
       "aliases": [
         "SK Brann"
       ]
     },
-    "fact": "Finalen ble spilt på Ullevaal 6. november 2011.",
+    "fact": "Aalesund hadde også vunnet cupen i 2009.",
     "era": 2011,
     "difficulty": 2,
     "status": "single_source",
@@ -8595,7 +8595,7 @@
     "id": "tq-age-hareide-9",
     "coachId": "age-hareide",
     "category": "trener",
-    "prompt": "Hvilket lag tapte 3–2 mot Molde i cupfinalen 1994, med Åge Hareide som Molde-trener?",
+    "prompt": "Hvilket lag tapte cupfinalen mot Molde på Ullevaal i 1994?",
     "answer": {
       "label": "Lyn",
       "aliases": [
@@ -8603,7 +8603,7 @@
         "Lyn Oslo"
       ]
     },
-    "fact": "Det var Moldes første cuptittel.",
+    "fact": "Hareide trente senere også Helsingborg, Brøndby og Rosenborg.",
     "era": 1994,
     "difficulty": 2,
     "status": "single_source",
@@ -8835,7 +8835,7 @@
     "id": "tq-martin-andresen-3",
     "coachId": "martin-andresen",
     "category": "trener",
-    "prompt": "Hvilket lag slo Vålerenga 4–1 i cupfinalen 2008, med Martin Andresen som manager?",
+    "prompt": "Hvilket lag tapte 4–1 for Vålerenga i cupfinalen 2008?",
     "answer": {
       "label": "Stabæk",
       "aliases": [
@@ -8843,7 +8843,7 @@
         "Stabæk IF"
       ]
     },
-    "fact": "Det var Vålerengas fjerde cuptittel.",
+    "fact": "Det var Martin Andresens første tittel med Vålerenga.",
     "era": 2008,
     "difficulty": 3,
     "status": "single_source",
@@ -9134,7 +9134,7 @@
         "95"
       ]
     },
-    "fact": "Rosenborg måtte gjennom kvalifiseringen.",
+    "fact": "Rosenborg slo ut tyrkiske Beşiktaş i kvalifiseringen.",
     "era": 1995,
     "difficulty": 3,
     "status": "single_source",
@@ -9263,7 +9263,7 @@
         "Rosler"
       ]
     },
-    "fact": "Hareide kom til Stavanger 1. desember 2009.",
+    "fact": "Hareide kom fra svenske Örgryte.",
     "era": 2009,
     "difficulty": 3,
     "status": "single_source",
@@ -9593,7 +9593,7 @@
         "Djurgårdens IF"
       ]
     },
-    "fact": "Han hadde trent Tromsø siden 2008.",
+    "fact": "Han tok over Djurgården i mai 2013.",
     "era": 2013,
     "difficulty": 3,
     "status": "single_source",
@@ -9994,7 +9994,7 @@
         "ØIS"
       ]
     },
-    "fact": "Han hadde tidligere trent IFK Göteborg.",
+    "fact": "Senere trente han PAOK og Apollon Limassol.",
     "era": 1994,
     "difficulty": 3,
     "status": "single_source",
@@ -10026,7 +10026,7 @@
         "Gøteborg"
       ]
     },
-    "fact": "Han hadde vunnet to seriegull med Vålerenga like før.",
+    "fact": "Han hadde også trent Vålerenga til to seriegull.",
     "era": 1987,
     "difficulty": 2,
     "status": "single_source",
@@ -10261,7 +10261,7 @@
     "id": "tq-kare-ingebrigtsen-9",
     "coachId": "kare-ingebrigtsen",
     "category": "trener",
-    "prompt": "Hvilken klubb ble Kåre Ingebrigtsen trener for i 2014, etter Bodø/Glimt?",
+    "prompt": "Hvilken klubb ble Kåre Ingebrigtsen midlertidig hovedtrener for i juli 2014?",
     "answer": {
       "label": "Rosenborg",
       "aliases": [
@@ -10781,7 +10781,7 @@
         "Thodesen"
       ]
     },
-    "fact": "Opprykket kom etter en dramatisk siste runde.",
+    "fact": "Han var også sportslig leder i klubben.",
     "era": 2005,
     "difficulty": 2,
     "status": "single_source",
@@ -11313,7 +11313,7 @@
         "03"
       ]
     },
-    "fact": "Han var trener til høsten 2008.",
+    "fact": "Han overtok etter islendingen Teitur Thordarson.",
     "era": 2003,
     "difficulty": 2,
     "status": "single_source",
@@ -11454,7 +11454,7 @@
         "00"
       ]
     },
-    "fact": "Viking tok bronse både i 2000 og 2001.",
+    "fact": "Han fikk Kniksenprisen som årets trener samme år.",
     "era": 2000,
     "difficulty": 2,
     "status": "single_source",
@@ -11485,7 +11485,7 @@
         "07"
       ]
     },
-    "fact": "Han tok sølv med laget året etter.",
+    "fact": "Han hadde trent flere svenske klubber før.",
     "era": 2007,
     "difficulty": 3,
     "status": "single_source",
