@@ -1,0 +1,21 @@
+name: Midlertidig – kildesetninger for Trener Genius
+
+# Report only: prints the article sentences behind each question. Removed before merge.
+on:
+  push:
+    branches: ["claude/norwegian-daily-football-8o5ffr"]
+    paths: ["scripts/tmp/genius-evidence.mjs", ".github/workflows/tmp-genius-evidence.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/tmp/genius-evidence.mjs
