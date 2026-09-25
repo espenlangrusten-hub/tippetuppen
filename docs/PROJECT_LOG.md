@@ -28,6 +28,16 @@ de kampene rollene er dokumentert. Venstre/høyre og draktnumre er ikke dokument
 Tilbakestilling: sett `formation` til `null`, `notes` til den gamle teksten og alle
 `players[*].pos` unntatt keeper til `"OUT"`.
 
+**Draktnumre, samme natt (ca. 01:30).** Etter avtale lånes et nummer når spilleren brukte
+det samme nummeret i flere landskamper før og/eller etter. `players[*].no` er satt til
+1, 2, 4, 3, 6, 18, 14, 8, 16, 11, 9 (Jarstein, Høgli, Demidov, Wæhler, Riise, Huseklepp,
+Tettey, Hauger, Grindheim, Gamst Pedersen, Abdellaoue). Alle unntatt Tettey har samme
+nummer i nærmeste dokumenterte kamp både før og etter (juni og september/oktober 2011);
+Tettey har 14 i de tre neste kampene (september–oktober 2011) og ingen tidligere i
+perioden. Elleve ulike numre, ingen andre landskamper innen ti dager. I kampfilen er
+numrene merket `noInferred: true`, så de ikke lånes videre. Tilbakestilling: sett
+`players[*].no` til `null`.
+
 For resten av kampene henter `scripts/import/positions.ts` posisjoner fra UEFAs
 koordinater der de finnes (fra ca. 2010), kalibrert mot kampene med dokumenterte
 posisjoner. UEFAs spillerroller alene ga riktig linje i 85 % av tilfellene, og sammen med

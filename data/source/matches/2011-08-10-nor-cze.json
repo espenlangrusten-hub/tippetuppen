@@ -31,52 +31,74 @@
       "note": "Spillerroller: Høgli, Demidov, Wæhler, Riise forsvar; Hauger, Grindheim, Gamst Pedersen midtbane; Abdellaoue angrep; Huseklepp og Tettey uten rolle. Ingen draktnumre eller koordinater."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Linjene (4-5-1) er satt der UEFAs spillerroller og rekkefølgen i kilden er enige; venstre/høyre og draktnumre er ikke dokumentert.",
+  "notes": "Startelleveren er dokumentert. Linjene (4-5-1) er satt der UEFAs spillerroller og rekkefølgen i kilden er enige; venstre/høyre er ikke dokumentert. Draktnumrene er lånt fra kampene rundt: hver spiller brukte samme nummer i flere landskamper før og/eller etter (Tettey bare etter), og UEFA har ikke numre for denne kampen.",
   "goalsPartial": true,
   "lineup": [
     {
       "name": "Rune Almenning Jarstein",
-      "pos": "GK"
+      "pos": "GK",
+      "no": 1,
+      "noInferred": true
     },
     {
       "name": "Tom Høgli",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 2,
+      "noInferred": true
     },
     {
       "name": "Vadim Demidov",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 4,
+      "noInferred": true
     },
     {
       "name": "Kjetil Wæhler",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 3,
+      "noInferred": true
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "DF"
+      "pos": "DF",
+      "no": 6,
+      "noInferred": true
     },
     {
       "name": "Erik Andre Huseklepp",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 18,
+      "noInferred": true
     },
     {
       "name": "Alexander Banor Tettey",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 14,
+      "noInferred": true
     },
     {
       "name": "Henning Hauger",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 8,
+      "noInferred": true
     },
     {
       "name": "Christian Grindheim",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 16,
+      "noInferred": true
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "MF"
+      "pos": "MF",
+      "no": 11,
+      "noInferred": true
     },
     {
       "name": "Mohammed Abdellaoue",
-      "pos": "FW"
+      "pos": "FW",
+      "no": 9,
+      "noInferred": true
     }
   ],
   "formation": "4-5-1"
