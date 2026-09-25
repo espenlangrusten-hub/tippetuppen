@@ -1,6 +1,7 @@
 "use client";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiPost } from "@/lib/api";
+import { track } from "@/components/analytics/Beacon";
 import { subscribeKjappen } from "@/lib/kjappen-realtime";
 import { ANSWER_SECONDS, BUZZ_SECONDS, MAX_PLAYERS, REVEAL_SECONDS, type Phase } from "@/lib/kjappen";
 import {
@@ -181,6 +182,23 @@ export function KjappenGame() {
   const round = view?.round;
 
   useEffect(() => setGuess(""), [round, phase]);
+
+  // One start and one finish per round and player, measured like the daily games.
+  const tracked = useRef<{ code?: string; start?: boolean; done?: boolean }>({});
+  const roundCode = view?.code;
+  const cancelledRound = view?.phase === "done" && view?.outcome?.kind === "cancelled";
+  useEffect(() => {
+    if (!roundCode || !phase) return;
+    if (tracked.current.code !== roundCode) tracked.current = { code: roundCode };
+    if (phase === "countdown" && !tracked.current.start) {
+      tracked.current.start = true;
+      track({ name: "game_start", game: "kjappen", puzzleId: roundCode });
+    }
+    if (phase === "done" && !cancelledRound && tracked.current.start && !tracked.current.done) {
+      tracked.current.done = true;
+      track({ name: "game_complete", game: "kjappen", puzzleId: roundCode });
+    }
+  }, [roundCode, phase, cancelledRound]);
   useEffect(() => {
     if (phase === "answering" && iBuzzed) answerBox.current?.focus();
   }, [phase, iBuzzed]);

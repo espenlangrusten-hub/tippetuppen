@@ -8,10 +8,11 @@ import "./kjappen-responsive.css";
 import "./kjappen-host.css";
 import { KjappenGame } from "./KjappenGame";
 
-// Kept out of the index while Kjappen is being polished and tested. Viewport-fit pass active.
+// Out in the open as a beta, but kept out of the index while it is still being polished.
 export const metadata: Metadata = {
-  title: "Kjappen – test",
+  title: "Kjappen (beta)",
   description: "Quizshow for inntil fire spillere. Fem spørsmål om norsk fotball.",
+  alternates: { canonical: "/kjappen" },
   robots: { index: false, follow: false },
 };
 

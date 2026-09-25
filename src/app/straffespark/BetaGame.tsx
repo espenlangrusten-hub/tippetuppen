@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { formatDateNo, msUntilNextOsloMidnight, osloDateKey } from "@/lib/dates";
 import { BASE_PATH } from "@/lib/site";
+import { track } from "@/components/analytics/Beacon";
 import {
   betaCorrect,
   dailyStraffesparkRound,
@@ -55,8 +56,15 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
   const score = results.filter(Boolean).length;
   const q = questions[index];
 
+  // Measured like the other daily games, so the statistics show whether it is played.
+  const round = dateKey ? `straffespark-${dateKey}` : undefined;
+  useEffect(() => {
+    if (complete && round) track({ name: "game_complete", game: "straffespark", puzzleId: round, props: { score } });
+  }, [complete, round, score]);
+
   function submit(skip = false) {
     if (!q || answered || complete || (!skip && !guess.trim())) return;
+    if (index === 0 && results.length === 0) track({ name: "game_start", game: "straffespark", puzzleId: round });
     setResults((previous) => previous.length === index ? [...previous, !skip && betaCorrect(q, guess)] : previous);
   }
 

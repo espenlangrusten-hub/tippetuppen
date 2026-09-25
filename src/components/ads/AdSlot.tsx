@@ -25,9 +25,10 @@ const SIZE: Record<AdPlacement, { minHeight: number; format: string }> = {
 
 
 /**
- * Advertising abstraction. Renders a mock placeholder in development or when
- * AdSense is not configured, and a real AdSense unit in production. Slots are
- * never placed inside the play area; they sit below completed content.
+ * Advertising abstraction. Renders a real AdSense unit when AdSense is configured, a
+ * labelled placeholder in development, and nothing at all otherwise - an empty dashed
+ * "Annonseplass" box in production told every visitor about ads that were never there.
+ * Slots are never placed inside the play area; they sit below completed content.
  */
 export function AdSlot({ placement, className = "" }: { placement: AdPlacement; className?: string }) {
   const ref = useRef<HTMLModElement>(null);
@@ -46,6 +47,8 @@ export function AdSlot({ placement, className = "" }: { placement: AdPlacement; 
       /* ad blocker or script not loaded */
     }
   }, [live, status]);
+
+  if (!live && process.env.NODE_ENV === "production") return null;
 
   return (
     <div className={`w-full ${className}`} style={{ minHeight: size.minHeight }} data-ad-placement={placement} aria-label="Annonse">

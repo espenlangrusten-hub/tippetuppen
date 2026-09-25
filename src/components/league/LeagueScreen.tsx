@@ -3,6 +3,8 @@ import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api";
 import { clearSession, saveSession, storedUser, type SessionUser } from "@/lib/auth";
 import { monthCopy, type Champion, type LeagueMonth } from "@/lib/monthlyLeague";
+
+const SHOW_REGISTERED_FROM = 100;
 import { MonthChampion, MonthPulse } from "./MonthChampion";
 
 type Row = { rank: number; username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
@@ -86,7 +88,9 @@ export function LeagueScreen() {
         </>}
 
     </section>
-    <div className="text-center text-mist"><div className="text-xs uppercase tracking-widest">Registrerte spillere</div><div className="mt-1 font-display text-3xl text-snow">{boardStatus === "ready" && registered !== null ? registered.toLocaleString("nb-NO") : "–"}</div></div>
+    {/* A public head count only helps once it is a crowd; "10 spillere" tells a newcomer the
+        league is empty. */}
+    {boardStatus === "ready" && registered !== null && registered >= SHOW_REGISTERED_FROM && <div className="text-center text-mist"><div className="text-xs uppercase tracking-widest">Registrerte spillere</div><div className="mt-1 font-display text-3xl text-snow">{registered.toLocaleString("nb-NO")}</div></div>}
   </div>;
 }
 
