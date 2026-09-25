@@ -9,11 +9,10 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: `${SITE_NAME} – ${SITE_TAGLINE}`, template: `%s – ${SITE_NAME}` },
-  description: "Norsk fotballquiz hver dag: Mangler XI (landslagets startellever) og Målløs (finn de sjeldneste svarene om Eliteserien og norsk fotball). Gratis, nytt spill ved midnatt.",
+  description: "Norsk fotballquiz hver dag: fyll ut landslagets startellever i Mangler XI, finn de sjeldneste svarene i Målløs, gjett spilleren, ta fem kjappe straffespark og test trenerkunnskapen. Gratis, nye spill ved midnatt.",
   keywords: ["fotballquiz", "norsk fotballquiz", "landslaget quiz", "Eliteserien quiz", "Tippeligaen quiz", "daglig fotballspill"],
-  openGraph: { type: "website", locale: "nb_NO", siteName: SITE_NAME, title: `${SITE_NAME} – ${SITE_TAGLINE}`, description: "Dagens norske fotballspill: Mangler XI og Målløs." },
+  openGraph: { type: "website", locale: "nb_NO", siteName: SITE_NAME, title: `${SITE_NAME} – ${SITE_TAGLINE}`, description: "Dagens norske fotballspill: Mangler XI, Målløs, Finn spilleren, Straffespark og Trener Genius." },
   twitter: { card: "summary_large_image" },
-  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
 

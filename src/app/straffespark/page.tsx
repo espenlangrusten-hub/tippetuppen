@@ -7,6 +7,7 @@ import { BetaGame } from "./BetaGame";
 export const metadata: Metadata = {
   title: "Straffespark – dagens 5",
   description: "Fem nye spørsmål om norsk fotball hver dag. Ett spørsmål om gangen.",
+  alternates: { canonical: "/straffespark" },
 };
 
 // The beta media files were manually prepared for the public site under neutral filenames.

@@ -194,6 +194,9 @@ body {
   color: var(--color-snow);
 }
 .input:focus { outline: 2px solid var(--color-sky); outline-offset: 0; }
+/* Headings that take focus from code (so a screen reader announces the new question)
+   are not controls; the browser's default ring around them read as a stray box. */
+[tabindex="-1"]:focus { outline: none; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
