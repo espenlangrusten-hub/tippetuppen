@@ -1,7 +1,7 @@
 // Temporary: prints the source sentences behind each Trener Genius entry so a person
 // can check the claim itself, not just that the article mentions the keywords.
 import { readFileSync } from "node:fs";
-const R = JSON.parse(readFileSync("data/source/trener-genius.json", "utf8"));
+const R = JSON.parse(readFileSync(process.argv[2] ?? "data/source/trener-genius.json", "utf8"));
 const Q = JSON.parse(readFileSync("data/source/trenerquiz.json", "utf8"));
 const UA = "Tippetuppen trivia evidence (https://github.com/espenlangrusten-hub/tippetuppen)";
 const cache = new Map();
