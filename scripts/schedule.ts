@@ -3,6 +3,7 @@
  * Usage: tsx scripts/schedule.ts [--days 400] [--from YYYY-MM-DD]
  */
 import { buildGeniusPuzzles } from "../src/server/puzzles/trenerGenius";
+import { buildConnectionPuzzles } from "../src/server/puzzles/fotballkoblinger";
 import { eq, sql } from "drizzle-orm";
 import { getDbHandle, schema as s } from "../src/server/db";
 import { buildManglerXiPuzzles } from "../src/server/puzzles/manglerXi";
@@ -30,11 +31,22 @@ step(`Built ${mxi.length} Mangler XI puzzles. Reading club and honours data…`)
 const mal = await buildMaalloesPuzzles(db);
 const finn = await buildFinnSpillerenPuzzles(db);
 const genius = buildGeniusPuzzles();
+const connections = buildConnectionPuzzles();
+// Keep the independent connection bank searchable for editorial review and later
+// corrections. This table has RLS and no client grants; only the Edge Function sees answers.
+for (let i = 0; i < connections.groups.length; i += 100) {
+  await db.insert(s.connectionGroups).values(connections.groups.slice(i, i + 100))
+    .onConflictDoUpdate({ target: s.connectionGroups.id, set: {
+      label: sql`excluded.label`, members: sql`excluded.members`, matchIds: sql`excluded.match_ids`,
+      sources: sql`excluded.sources`, status: sql`excluded.status`,
+    } });
+}
+step(`Built ${connections.puzzles.length} Fotballkoblinger days from ${connections.groups.length} unique connections.`);
 step(`Built ${genius.length} reviewed Trener Genius rounds.`);
 step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
 // Written 200 at a time: one statement per puzzle took over ten minutes once Trener
 // Genius joined the pool, and pushed the data job past its timeout.
-const rows = [...mxi, ...mal, ...finn, ...genius]
+const rows = [...mxi, ...mal, ...finn, ...genius, ...connections.puzzles]
   .filter((p) => !published.has(p.id))
   .map((p) => ({ id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef }));
 let upserts = 0;
@@ -61,13 +73,13 @@ for (let i = 0; i < rows.length; i += 200) {
   step(`  …${upserts} puzzles written`);
 }
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
-const known = new Set([...mxi, ...mal, ...finn, ...genius].map((p) => p.id).concat([...published]));
+const known = new Set([...mxi, ...mal, ...finn, ...genius, ...connections.puzzles].map((p) => p.id).concat([...published]));
 const existing = await db.select({ id: s.puzzles.id }).from(s.puzzles);
 for (const e of existing) if (!known.has(e.id)) await db.update(s.puzzles).set({ eligible: false }).where(eq(s.puzzles.id, e.id));
 
 console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs, ${finn.length} Finn spilleren (${upserts} upserted).`);
 step("Scheduling days…");
-for (const game of ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const) {
+for (const game of ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "fotballkoblinger"] as const) {
   const r = await extendSchedule(db, game, from, days);
   const runway = await runwayFor(db, game, osloDateKey());
   console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${runway.eligiblePuzzles} eligible, ${runway.belowPolicy} below policy).`);

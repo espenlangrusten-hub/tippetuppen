@@ -17,14 +17,14 @@ const games = [
 ] as const;
 
 export function TodayCards() {
-  const [done, setDone] = useState<Partial<Record<GameSlug | "trener-genius", boolean>>>({});
+  const [done, setDone] = useState<Partial<Record<GameSlug | "trener-genius" | "fotballkoblinger", boolean>>>({});
   const [streak, setStreak] = useState<number | null>(null);
   useEffect(() => {
     let active = true;
     apiGet<{ ok: boolean; today?: string }>("/today?game=mangler-xi").then((r) => {
       if (!active || !r.today) return;
-      setStreak(computeStreak([...games.map(g=>g.slug), "trener-genius"].flatMap(slug=>loadRecords(slug)), r.today).current);
-      setDone(Object.fromEntries([...games.map(g=>g.slug), "trener-genius"].map(slug=>[slug, loadRecords(slug).some(record=>record.date === r.today && !record.archive)])));
+      setStreak(computeStreak([...games.map(g=>g.slug), "trener-genius", "fotballkoblinger"].flatMap(slug=>loadRecords(slug)), r.today).current);
+      setDone(Object.fromEntries([...games.map(g=>g.slug), "trener-genius", "fotballkoblinger"].map(slug=>[slug, loadRecords(slug).some(record=>record.date === r.today && !record.archive)])));
     }).catch(() => {});
     return () => { active = false; };
   }, []);
@@ -59,6 +59,12 @@ export function TodayCards() {
         <Image src={BASE_PATH + "/trener-genius/dugout.webp"} alt="" fill sizes="(max-width: 760px) 100vw, 1200px" />
         <div className={s.geniusCopy}><span className={s.newBadge}>NYHET</span><h2>TRENER <span>GENIUS</span></h2><p>Fire spørsmål. Ett taktisk valg.</p><span className={s.playButton}>{done["trener-genius"] ? "Se resultat" : "Ta plass på benken"} <span aria-hidden="true">→</span></span></div>
         {done["trener-genius"] && <span className={s.completed}>✓ Fullført</span>}
+      </Link>
+      <Link href="/fotballkoblinger/" className={s.connections} aria-label={done.fotballkoblinger ? "Se resultat for Fotballkoblinger" : "Spill Fotballkoblinger"}>
+        <div className={s.connectionsCopy}><span className={s.newBadge}>NYHET</span><h2>FOTBALL<span>KOBLINGER</span></h2><p>16 navn. Fire sammenhenger.</p>
+          <span className={s.playButton}>{done.fotballkoblinger ? "Se resultat" : "Finn koblingene"} <span aria-hidden="true">→</span></span></div>
+        <div className={s.connectionsArt} aria-hidden="true"><span>01</span><span>09</span><span>10</span><span>11</span></div>
+        {done.fotballkoblinger && <span className={s.completed}>✓ Fullført</span>}
       </Link>
     </div>
   </div>;

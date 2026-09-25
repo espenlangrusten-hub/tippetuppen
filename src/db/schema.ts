@@ -308,7 +308,7 @@ export const playerClubSpells = tt.table(
 // Puzzles and schedule
 // ---------------------------------------------------------------------------
 
-export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const;
+export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "fotballkoblinger"] as const;
 export type GameId = (typeof GAMES)[number];
 
 export const puzzles = tt.table(
@@ -586,3 +586,22 @@ export const geniusAttempts = tt.table("genius_attempts", {
   state: jsonb("state").$type<Record<string, unknown>>().notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, t => [uniqueIndex("genius_attempts_user_puzzle").on(t.userId, t.puzzleId), index("genius_attempts_puzzle").on(t.puzzleId)]);
+
+/** Dedicated, source-backed connection bank. Readable only by the server database role. */
+export const connectionGroups = tt.table("connection_groups", {
+  id: text("id").primaryKey(),
+  label: text("label").notNull(),
+  members: jsonb("members").$type<string[]>().notNull(),
+  matchIds: jsonb("match_ids").$type<string[]>().notNull(),
+  sources: jsonb("sources").$type<{ title: string; url: string }[]>().notNull(),
+  status: text("status").$type<DataStatus>().notNull(),
+});
+
+/** A guest's random UUID is a capability; account attempts are unique per day. */
+export const connectionAttempts = tt.table("connection_attempts", {
+  id: text("id").primaryKey(),
+  puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+  userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
+  state: jsonb("state").$type<Record<string, unknown>>().notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, t => [uniqueIndex("connection_attempts_user_puzzle").on(t.userId, t.puzzleId), index("connection_attempts_puzzle").on(t.puzzleId)]);
