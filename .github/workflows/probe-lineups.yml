@@ -1,0 +1,29 @@
+name: Sonde lagoppstillinger
+
+# Report only: compares every starting eleven with UEFA's and ESPN's, and shows where
+# ESPN has a formation and a position per starter. Writes nothing. A push that touches
+# the probe starts it: the assistant working on this repository cannot dispatch.
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [main]
+    paths:
+      - scripts/import/lineup-probe.ts
+      - .github/workflows/probe-lineups.yml
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node --import tsx scripts/import/lineup-probe.ts
