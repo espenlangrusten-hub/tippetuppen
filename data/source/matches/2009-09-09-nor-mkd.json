@@ -18,7 +18,7 @@
   "tags": [
     "kvalik"
   ],
-  "status": "verified",
+  "status": "single_source",
   "goalsPartial": true,
   "sources": [
     {
@@ -40,14 +40,7 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/236537",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Dato, startellever, roller og draktnumre dokumentert; tidligere duplikatrad med feil dato er slått sammen i denne kampen.",

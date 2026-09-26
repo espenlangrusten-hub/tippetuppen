@@ -6,120 +6,35 @@
   "opponent": "Spania",
   "opponentCode": "ESP",
   "norwayHome": true,
-  "score": [
-    1,
-    1
-  ],
+  "score": [1, 1],
   "venue": "Ullevaal Stadion",
   "city": "Oslo",
   "manager": "Lars Lagerbäck",
   "formation": "4-5-1",
   "importance": 4,
-  "tags": [
-    "kvalik",
-    "ikonisk",
-    "spania"
-  ],
-  "status": "verified",
+  "tags": ["kvalik", "ikonisk", "spania"],
+  "status": "single_source",
   "sources": [
-    {
-      "url": "https://www.espn.com/soccer/report?gameId=528921",
-      "title": "Norway 1-1 Spain (Oct 12, 2019) – ESPN",
-      "kind": "web",
-      "accessed": "2026-09-01",
-      "note": "Full Norway XI with shirt numbers confirmed in search excerpt"
-    },
-    {
-      "url": "https://www.thestar.com.my/sport/football/2019/10/13/king039s-penalty-ends-spain039s-100-percent-record",
-      "title": "King's penalty ends Spain's 100 percent record – Reuters/The Star",
-      "kind": "web",
-      "accessed": "2026-09-01"
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2026238/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/528921",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    }
+    { "url": "https://www.espn.com/soccer/report?gameId=528921", "title": "Norway 1-1 Spain (Oct 12, 2019) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.thestar.com.my/sport/football/2019/10/13/king039s-penalty-ends-spain039s-100-percent-record", "title": "King's penalty ends Spain's 100 percent record – Reuters/The Star", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2026238/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Joshua Kings straffe på overtid fikk Ullevaal til å eksplodere. Spanias første poengtap i kvaliken.",
   "lineup": [
-    {
-      "name": "Rune Almenning Jarstein",
-      "no": 1,
-      "pos": "GK"
-    },
-    {
-      "name": "Omar Elabdellaoui",
-      "no": 14,
-      "pos": "RB"
-    },
-    {
-      "name": "Kristoffer Ajer",
-      "no": 3,
-      "pos": "CB"
-    },
-    {
-      "name": "Håvard Nordtveit",
-      "no": 6,
-      "pos": "CB"
-    },
-    {
-      "name": "Haitam Aleesami",
-      "no": 2,
-      "pos": "LB"
-    },
-    {
-      "name": "Martin Ødegaard",
-      "no": 20,
-      "pos": "RM"
-    },
-    {
-      "name": "Ole Selnæs",
-      "no": 18,
-      "pos": "CM"
-    },
-    {
-      "name": "Sander Berge",
-      "no": 15,
-      "pos": "CM"
-    },
-    {
-      "name": "Markus Henriksen",
-      "no": 19,
-      "pos": "CM"
-    },
-    {
-      "name": "Stefan Johansen",
-      "no": 8,
-      "pos": "LM",
-      "captain": true
-    },
-    {
-      "name": "Joshua King",
-      "no": 7,
-      "pos": "CF"
-    }
+    { "name": "Rune Almenning Jarstein", "no": 1, "pos": "GK" },
+    { "name": "Omar Elabdellaoui", "no": 14, "pos": "RB" },
+    { "name": "Kristoffer Ajer", "no": 3, "pos": "CB" },
+    { "name": "Håvard Nordtveit", "no": 6, "pos": "CB" },
+    { "name": "Haitam Aleesami", "no": 2, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 20, "pos": "RM" },
+    { "name": "Ole Selnæs", "no": 18, "pos": "CM" },
+    { "name": "Sander Berge", "no": 15, "pos": "CM" },
+    { "name": "Markus Henriksen", "no": 19, "pos": "CM" },
+    { "name": "Stefan Johansen", "no": 8, "pos": "LM", "captain": true },
+    { "name": "Joshua King", "no": 7, "pos": "CF" }
   ],
   "goals": [
-    {
-      "team": "opponent",
-      "scorer": "Saúl Ñíguez",
-      "minute": 47
-    },
-    {
-      "team": "norway",
-      "name": "Joshua King",
-      "minute": 94,
-      "kind": "pen"
-    }
+    { "team": "opponent", "scorer": "Saúl Ñíguez", "minute": 47 },
+    { "team": "norway", "name": "Joshua King", "minute": 94, "kind": "pen" }
   ]
 }

@@ -9,13 +9,12 @@
     0,
     1
   ],
-  "formation": "4-3-3",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:espn-opta"
+    "position:undocumented"
   ],
-  "status": "verified",
+  "status": "single_source",
   "sources": [
     {
       "url": "https://www.rsssf.org/tablesn/noo-intres2016.html",
@@ -23,16 +22,9 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/464420",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26). Formasjon 4-3-3 og roller fra ESPN (Opta)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt. Formasjon og roller fra ESPN (Opta), der elleveren er identisk med vår.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,43 +33,43 @@
     },
     {
       "name": "Jonas Svensson",
-      "pos": "RB"
+      "pos": "OUT"
     },
     {
       "name": "Even Hovland",
-      "pos": "CB"
+      "pos": "OUT"
     },
     {
       "name": "Stefan Strandberg",
-      "pos": "CB"
+      "pos": "OUT"
     },
     {
       "name": "Haitam Aleesami",
-      "pos": "LB"
+      "pos": "OUT"
     },
     {
       "name": "Veton Berisha",
-      "pos": "RW"
+      "pos": "OUT"
     },
     {
       "name": "Magnus Wolff Eikrem",
-      "pos": "RM"
+      "pos": "OUT"
     },
     {
       "name": "Ole Kristian Selnæs",
-      "pos": "CM"
+      "pos": "OUT"
     },
     {
       "name": "Stefan Johansen",
-      "pos": "LM"
+      "pos": "OUT"
     },
     {
       "name": "Jo Inge Berget",
-      "pos": "LW"
+      "pos": "OUT"
     },
     {
       "name": "Joshua King",
-      "pos": "CF"
+      "pos": "OUT"
     }
   ]
 }

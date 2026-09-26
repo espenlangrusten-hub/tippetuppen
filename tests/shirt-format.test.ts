@@ -70,3 +70,19 @@ describe("fotball.no sin kamptekst", () => {
     expect(parseNffStarters("Norge Startoppstilling: 1 Ørjan Nyland Innbyttere:")).toBeNull();
   });
 });
+
+describe("skriving av status, notater og formasjon", () => {
+  it("endrer bare de linjene som er endret i en håndformatert fil", () => {
+    const original = read("1991-06-05-nor-ita.json");
+    const m = JSON.parse(original) as Match;
+    m.status = "verified";
+    m.notes = `${m.notes} Kontrollert.`;
+    m.sources.push({ url: "https://match.uefa.com/v5/matches/1/lineups", title: "UEFA", kind: "api" });
+    const out = serialize(original, m);
+    expect(JSON.parse(out)).toEqual(m);
+    const before = new Set(original.split("\n"));
+    const changed = out.split("\n").filter((l) => !before.has(l));
+    expect(out.split("\n").length - original.split("\n").length).toBe(1);
+    expect(changed.length).toBeLessThanOrEqual(4);
+  });
+});

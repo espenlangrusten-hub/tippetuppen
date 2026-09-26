@@ -17,7 +17,7 @@
   "sources": [
     { "url": "https://www.uefa.com/uefaeuro/match/64858--spain-vs-norway/lineups/", "title": "Spain 0-1 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05", "note": "UEFAs offisielle kampside." },
     { "url": "https://en.wikipedia.org/wiki/UEFA_Euro_2000_Group_C", "title": "UEFA Euro 2000 Group C – full match line-ups", "kind": "web", "accessed": "2026-09-05", "note": "Elleveren og posisjonene er kontrollert maskinelt mot kampens lagoppstilling og manuelt mot UEFA." },
-    { "url": "https://match.uefa.com/v5/matches/64858/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
+    { "url": "https://match.uefa.com/v5/matches/64858/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Iversens hodestøt etter Myhres lange utspark ga Norges eneste EM-seier noensinne.",
   "lineup": [

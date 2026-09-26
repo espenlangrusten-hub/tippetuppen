@@ -9,13 +9,12 @@
     2,
     4
   ],
-  "formation": "4-1-4-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:espn-opta"
+    "position:undocumented"
   ],
-  "status": "verified",
+  "status": "single_source",
   "sources": [
     {
       "url": "https://www.rsssf.org/tablesn/noo-intres2013.html",
@@ -29,17 +28,10 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/370672",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26). Formasjon 4-1-4-1 og roller fra ESPN (Opta)."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt. Formasjon og roller fra ESPN (Opta), der elleveren er identisk med vår.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -49,52 +41,52 @@
     },
     {
       "name": "Omar Elabdellaoui",
-      "pos": "RB",
+      "pos": "OUT",
       "no": 16
     },
     {
       "name": "Brede Hangeland",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 5
     },
     {
       "name": "Vegard Forren",
-      "pos": "CB",
+      "pos": "OUT",
       "no": 23
     },
     {
       "name": "Tom Høgli",
-      "pos": "LB",
+      "pos": "OUT",
       "no": 2
     },
     {
       "name": "Daniel Omoya Braaten",
-      "pos": "RM",
+      "pos": "OUT",
       "no": 21
     },
     {
       "name": "Markus Henriksen",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 7
     },
     {
       "name": "Stefan Johansen",
-      "pos": "DM",
+      "pos": "OUT",
       "no": 14
     },
     {
       "name": "Magnus Wolff Eikrem",
-      "pos": "CM",
+      "pos": "OUT",
       "no": 11
     },
     {
       "name": "Tarik Elyounoussi",
-      "pos": "LM",
+      "pos": "OUT",
       "no": 10
     },
     {
       "name": "Mohammed Abdellaoue",
-      "pos": "CF",
+      "pos": "OUT",
       "no": 9
     }
   ]

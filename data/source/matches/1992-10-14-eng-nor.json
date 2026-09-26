@@ -6,100 +6,33 @@
   "opponent": "England",
   "opponentCode": "ENG",
   "norwayHome": false,
-  "score": [
-    1,
-    1
-  ],
+  "score": [1, 1],
   "venue": "Wembley",
   "city": "London",
   "manager": "Egil Olsen",
   "importance": 4,
-  "tags": [
-    "england",
-    "kvalik",
-    "wembley"
-  ],
-  "status": "verified",
+  "tags": ["england", "kvalik", "wembley"],
+  "status": "single_source",
   "sources": [
-    {
-      "url": "https://www.englandstats.com/matches.php?mid=690",
-      "title": "England 1-1 Norway, 14 October 1992 – englandstats.com",
-      "kind": "web",
-      "accessed": "2026-09-01",
-      "note": "Full Norway XI confirmed in search excerpt"
-    },
-    {
-      "url": "https://www.national-football-teams.com/matches/report/30171/England_Norway.html",
-      "title": "England vs. Norway 1992-10-14 – National Football Teams",
-      "kind": "web",
-      "accessed": "2026-09-01"
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/5366/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    }
+    { "url": "https://www.englandstats.com/matches.php?mid=690", "title": "England 1-1 Norway, 14 October 1992 – englandstats.com", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
+    { "url": "https://www.national-football-teams.com/matches/report/30171/England_Norway.html", "title": "England vs. Norway 1992-10-14 – National Football Teams", "kind": "web", "accessed": "2026-09-01" }
   ],
   "notes": "Rekdal utlignet med et venstrebeinsskudd fra 20 meter på Wembley. Posisjonene i forsvaret er ikke kildebelagt i detalj.",
   "lineup": [
-    {
-      "name": "Erik Thorstvedt",
-      "pos": "GK"
-    },
-    {
-      "name": "Gunnar Halle",
-      "pos": "RB"
-    },
-    {
-      "name": "Tore Pedersen",
-      "pos": "CB"
-    },
-    {
-      "name": "Rune Bratseth",
-      "pos": "CB",
-      "captain": true
-    },
-    {
-      "name": "Roger Nilsen",
-      "pos": "LB"
-    },
-    {
-      "name": "Kåre Ingebrigtsen",
-      "pos": "RM"
-    },
-    {
-      "name": "Erik Mykland",
-      "pos": "CM"
-    },
-    {
-      "name": "Kjetil Rekdal",
-      "pos": "CM"
-    },
-    {
-      "name": "Stig Inge Bjørnebye",
-      "pos": "LM"
-    },
-    {
-      "name": "Jahn Ivar Jakobsen",
-      "pos": "SS"
-    },
-    {
-      "name": "Gøran Sørloth",
-      "pos": "CF"
-    }
+    { "name": "Erik Thorstvedt", "pos": "GK" },
+    { "name": "Gunnar Halle", "pos": "RB" },
+    { "name": "Tore Pedersen", "pos": "CB" },
+    { "name": "Rune Bratseth", "pos": "CB", "captain": true },
+    { "name": "Roger Nilsen", "pos": "LB" },
+    { "name": "Kåre Ingebrigtsen", "pos": "RM" },
+    { "name": "Erik Mykland", "pos": "CM" },
+    { "name": "Kjetil Rekdal", "pos": "CM" },
+    { "name": "Stig Inge Bjørnebye", "pos": "LM" },
+    { "name": "Jahn Ivar Jakobsen", "pos": "SS" },
+    { "name": "Gøran Sørloth", "pos": "CF" }
   ],
   "goals": [
-    {
-      "team": "opponent",
-      "scorer": "David Platt",
-      "minute": 56
-    },
-    {
-      "team": "norway",
-      "name": "Kjetil Rekdal",
-      "minute": 77
-    }
+    { "team": "opponent", "scorer": "David Platt", "minute": 56 },
+    { "team": "norway", "name": "Kjetil Rekdal", "minute": 77 }
   ]
 }

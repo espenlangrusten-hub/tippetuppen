@@ -6,117 +6,35 @@
   "opponent": "Skottland",
   "opponentCode": "SCO",
   "norwayHome": false,
-  "score": [
-    1,
-    1
-  ],
+  "score": [1, 1],
   "venue": "Parc Lescure",
   "city": "Bordeaux",
   "manager": "Egil Olsen",
   "formation": "4-5-1",
   "importance": 3,
-  "tags": [
-    "vm"
-  ],
-  "status": "verified",
+  "tags": ["vm"],
+  "status": "single_source",
   "sources": [
-    {
-      "url": "https://www.11v11.com/matches/scotland-v-norway-16-june-1998-265579/",
-      "title": "Scotland v Norway, 16 June 1998 – 11v11 match report",
-      "kind": "web",
-      "accessed": "2026-09-01",
-      "note": "Full Norway XI confirmed in search excerpt (incl. Solbakken and Roar Strand)"
-    },
-    {
-      "url": "https://www.national-football-teams.com/matches/report/32839/Scotland_Norway.html",
-      "title": "Scotland vs. Norway – National Football Teams",
-      "kind": "web",
-      "accessed": "2026-09-01"
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/55687/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/198094",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    }
+    { "url": "https://www.11v11.com/matches/scotland-v-norway-16-june-1998-265579/", "title": "Scotland v Norway, 16 June 1998 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt (incl. Solbakken and Roar Strand)" },
+    { "url": "https://www.national-football-teams.com/matches/report/32839/Scotland_Norway.html", "title": "Scotland vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/55687/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Tore André Flo ga Norge ledelsen rett etter pause før Craig Burley utlignet.",
   "lineup": [
-    {
-      "name": "Frode Grodås",
-      "pos": "GK",
-      "no": 1
-    },
-    {
-      "name": "Henning Berg",
-      "pos": "RB",
-      "no": 4
-    },
-    {
-      "name": "Dan Eggen",
-      "pos": "CB",
-      "no": 15
-    },
-    {
-      "name": "Ronny Johnsen",
-      "pos": "CB",
-      "no": 3
-    },
-    {
-      "name": "Stig Inge Bjørnebye",
-      "pos": "LB",
-      "no": 5
-    },
-    {
-      "name": "Håvard Flo",
-      "pos": "RM",
-      "no": 17
-    },
-    {
-      "name": "Ståle Solbakken",
-      "pos": "CM",
-      "no": 6
-    },
-    {
-      "name": "Kjetil Rekdal",
-      "pos": "CM",
-      "captain": true,
-      "no": 10
-    },
-    {
-      "name": "Roar Strand",
-      "pos": "CM",
-      "no": 22
-    },
-    {
-      "name": "Vidar Riseth",
-      "pos": "LM",
-      "no": 21
-    },
-    {
-      "name": "Tore André Flo",
-      "pos": "CF",
-      "no": 9
-    }
+    { "name": "Frode Grodås", "pos": "GK", "no": 1 },
+    { "name": "Henning Berg", "pos": "RB", "no": 4 },
+    { "name": "Dan Eggen", "pos": "CB", "no": 15 },
+    { "name": "Ronny Johnsen", "pos": "CB", "no": 3 },
+    { "name": "Stig Inge Bjørnebye", "pos": "LB", "no": 5 },
+    { "name": "Håvard Flo", "pos": "RM", "no": 17 },
+    { "name": "Ståle Solbakken", "pos": "CM", "no": 6 },
+    { "name": "Kjetil Rekdal", "pos": "CM", "captain": true, "no": 10 },
+    { "name": "Roar Strand", "pos": "CM", "no": 22 },
+    { "name": "Vidar Riseth", "pos": "LM", "no": 21 },
+    { "name": "Tore André Flo", "pos": "CF", "no": 9 }
   ],
   "goals": [
-    {
-      "team": "norway",
-      "name": "Tore André Flo",
-      "minute": 46
-    },
-    {
-      "team": "opponent",
-      "scorer": "Craig Burley",
-      "minute": 66
-    }
+    { "team": "norway", "name": "Tore André Flo", "minute": 46 },
+    { "team": "opponent", "scorer": "Craig Burley", "minute": 66 }
   ]
 }

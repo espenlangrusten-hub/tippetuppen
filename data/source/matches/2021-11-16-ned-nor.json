@@ -6,111 +6,35 @@
   "opponent": "Nederland",
   "opponentCode": "NED",
   "norwayHome": false,
-  "score": [
-    0,
-    2
-  ],
+  "score": [0, 2],
   "venue": "De Kuip",
   "city": "Rotterdam",
   "manager": "Ståle Solbakken",
   "formation": "4-3-3",
   "importance": 3,
-  "tags": [
-    "kvalik",
-    "avgjørende"
-  ],
-  "status": "verified",
+  "tags": ["kvalik", "avgjørende"],
+  "status": "single_source",
   "sources": [
-    {
-      "url": "https://www.espn.co.uk/football/report/_/gameId/590211",
-      "title": "Netherlands 2-0 Norway (16 Nov, 2021) – ESPN",
-      "kind": "web",
-      "accessed": "2026-09-01",
-      "note": "Full Norway XI (4-3-3) confirmed in search excerpt Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.skysports.com/football/netherlands-vs-norway/teams/441769",
-      "title": "Starting Lineups – Netherlands vs Norway | 16.11.2021 – Sky Sports",
-      "kind": "web",
-      "accessed": "2026-09-01"
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2031005/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    }
+    { "url": "https://www.espn.co.uk/football/report/_/gameId/590211", "title": "Netherlands 2-0 Norway (16 Nov, 2021) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI (4-3-3) confirmed in search excerpt" },
+    { "url": "https://www.skysports.com/football/netherlands-vs-norway/teams/441769", "title": "Starting Lineups – Netherlands vs Norway | 16.11.2021 – Sky Sports", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2031005/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Uten Haaland holdt Norge 0–0 til det 84. minutt bak lukkede dører i Rotterdam. VM-drømmen røk på tampen.",
   "lineup": [
-    {
-      "name": "Ørjan Nyland",
-      "pos": "GK",
-      "no": 12
-    },
-    {
-      "name": "Marcus Holmgren Pedersen",
-      "pos": "RB",
-      "no": 22
-    },
-    {
-      "name": "Stefan Strandberg",
-      "pos": "CB",
-      "no": 4
-    },
-    {
-      "name": "Andreas Hanche-Olsen",
-      "pos": "CB",
-      "no": 21
-    },
-    {
-      "name": "Birger Meling",
-      "pos": "LB",
-      "no": 5
-    },
-    {
-      "name": "Martin Ødegaard",
-      "pos": "CM",
-      "captain": true,
-      "no": 10
-    },
-    {
-      "name": "Morten Thorsby",
-      "pos": "CM",
-      "no": 2
-    },
-    {
-      "name": "Mathias Normann",
-      "pos": "CM",
-      "no": 6
-    },
-    {
-      "name": "Mohamed Elyounoussi",
-      "pos": "RW",
-      "no": 11
-    },
-    {
-      "name": "Alexander Sørloth",
-      "pos": "CF",
-      "no": 9
-    },
-    {
-      "name": "Ola Solbakken",
-      "pos": "LW",
-      "no": 18
-    }
+    { "name": "Ørjan Nyland", "pos": "GK", "no": 12 },
+    { "name": "Marcus Holmgren Pedersen", "pos": "RB", "no": 22 },
+    { "name": "Stefan Strandberg", "pos": "CB", "no": 4 },
+    { "name": "Andreas Hanche-Olsen", "pos": "CB", "no": 21 },
+    { "name": "Birger Meling", "pos": "LB", "no": 5 },
+    { "name": "Martin Ødegaard", "pos": "CM", "captain": true, "no": 10 },
+    { "name": "Morten Thorsby", "pos": "CM", "no": 2 },
+    { "name": "Mathias Normann", "pos": "CM", "no": 6 },
+    { "name": "Mohamed Elyounoussi", "pos": "RW", "no": 11 },
+    { "name": "Alexander Sørloth", "pos": "CF", "no": 9 },
+    { "name": "Ola Solbakken", "pos": "LW", "no": 18 }
   ],
   "goals": [
-    {
-      "team": "opponent",
-      "scorer": "Steven Bergwijn",
-      "minute": 84
-    },
-    {
-      "team": "opponent",
-      "scorer": "Memphis Depay",
-      "minute": 91
-    }
+    { "team": "opponent", "scorer": "Steven Bergwijn", "minute": 84 },
+    { "team": "opponent", "scorer": "Memphis Depay", "minute": 91 }
   ]
 }

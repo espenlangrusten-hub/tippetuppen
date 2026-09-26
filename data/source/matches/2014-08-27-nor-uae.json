@@ -9,13 +9,12 @@
     0,
     0
   ],
-  "formation": "4-4-2",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:espn-opta"
+    "position:undocumented"
   ],
-  "status": "verified",
+  "status": "single_source",
   "sources": [
     {
       "url": "https://www.rsssf.org/tablesn/noo-intres2014.html",
@@ -23,23 +22,9 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2015102/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/409302",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26). Formasjon 4-4-2 og roller fra ESPN (Opta)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt. Formasjon og roller fra ESPN (Opta), der elleveren er identisk med vår.",
+  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -48,43 +33,43 @@
     },
     {
       "name": "Martin Linnes",
-      "pos": "RB"
+      "pos": "OUT"
     },
     {
       "name": "Steffen Hagen",
-      "pos": "CB"
+      "pos": "OUT"
     },
     {
       "name": "Vegard Forren",
-      "pos": "CB"
+      "pos": "OUT"
     },
     {
       "name": "Per-Egil Flo",
-      "pos": "LB"
+      "pos": "OUT"
     },
     {
       "name": "Yann-Erik de Lanlay",
-      "pos": "RM"
+      "pos": "OUT"
     },
     {
       "name": "Jone Samuelsen",
-      "pos": "CM"
+      "pos": "OUT"
     },
     {
       "name": "Martin Ødegaard",
-      "pos": "CM"
+      "pos": "OUT"
     },
     {
       "name": "Mohamed Elyounoussi",
-      "pos": "LM"
+      "pos": "OUT"
     },
     {
       "name": "Marcus Pedersen",
-      "pos": "CF"
+      "pos": "OUT"
     },
     {
       "name": "Fredrik Gulbrandsen",
-      "pos": "CF"
+      "pos": "OUT"
     }
   ]
 }

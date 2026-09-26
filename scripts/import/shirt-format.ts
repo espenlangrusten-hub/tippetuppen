@@ -53,6 +53,22 @@ export function serialize(original: string, m: Match): string {
     const indent = (lines[open + 1] ?? "").match(/^\s*/)![0] || "    ";
     lines.splice(open + 1, close - open - 1, ...m.sources.map((src, i) => `${indent}${inline(src)}${i < m.sources.length - 1 ? "," : ""}`));
   }
+  // Scalar fields and the one-line tags array sit on a line of their own; replace just
+  // that line, or add a new "formation" next to the venue or score like the other files.
+  for (const key of ["status", "notes", "formation", "tags"] as const) {
+    if (JSON.stringify(m[key]) === JSON.stringify(was[key])) continue;
+    const value = JSON.stringify(m[key]).replace(/","/g, '", "');
+    const at = lines.findIndex((l) => l.startsWith(`  "${key}": `));
+    if (at >= 0) {
+      if (m[key] === undefined) return plain;
+      const comma = lines[at].trimEnd().endsWith(",") ? "," : "";
+      lines[at] = `  "${key}": ${value}${comma}`;
+    } else if (key === "formation" && m.formation) {
+      const after = ["venue", "score"].map((k) => lines.findIndex((l) => l.startsWith(`  "${k}": `))).find((i) => i >= 0);
+      if (after == null || !lines[after].trimEnd().endsWith(",")) return plain;
+      lines.splice(after + 1, 0, `  "formation": ${value},`);
+    } else return plain;
+  }
   const out = lines.join("\n");
   return JSON.stringify(JSON.parse(out)) === JSON.stringify(m) ? out : plain;
 }

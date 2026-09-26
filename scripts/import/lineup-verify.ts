@@ -164,7 +164,9 @@ async function main() {
       starters.forEach((p, i) => (p.pos = roles.pos[i]));
       m.formation = roles.formation;
       m.tags = [...(m.tags ?? []).filter((t) => !t.startsWith("position:")), "position:espn-opta"];
-      m.notes = `${m.notes ? `${m.notes} ` : ""}Formasjon og roller fra ESPN (Opta), der elleveren er identisk med vår.`;
+      // The old note said the roles were deliberately left out; now they are not.
+      const was = (m.notes ?? "").replace(/\s*Utespillernes roller og draktnumre er bevisst ikke antatt\./, "").trim();
+      m.notes = `${was ? `${was} ` : ""}Formasjon og roller fra ESPN (Opta), der elleveren er identisk med vår.`;
       report.positioned++;
       positioned.push(`${m.id}: ${roles.formation}`);
     } else if (typeof roles === "string") skipped.push(`${m.id}: ${roles}`);

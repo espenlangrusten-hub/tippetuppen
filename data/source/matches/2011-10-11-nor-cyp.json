@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:undocumented"
   ],
-  "status": "verified",
+  "status": "single_source",
   "sources": [
     {
       "url": "https://www.rsssf.org/tablesn/noo-intres2011.html",
@@ -28,14 +28,7 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.espn.com/soccer/match/_/gameId/308575",
-      "title": "ESPN – lagoppstilling (Opta)",
-      "kind": "web",
-      "accessed": "2026-09-26",
-      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",

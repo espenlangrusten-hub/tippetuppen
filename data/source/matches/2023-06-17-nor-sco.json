@@ -6,117 +6,36 @@
   "opponent": "Skottland",
   "opponentCode": "SCO",
   "norwayHome": true,
-  "score": [
-    1,
-    2
-  ],
+  "score": [1, 2],
   "venue": "Ullevaal Stadion",
   "city": "Oslo",
   "manager": "Ståle Solbakken",
   "formation": "4-3-3",
   "importance": 3,
-  "tags": [
-    "kvalik",
-    "kollaps"
-  ],
-  "status": "verified",
+  "tags": ["kvalik", "kollaps"],
+  "status": "single_source",
   "sources": [
-    {
-      "url": "https://www.espn.com/soccer/report/_/gameId/655309",
-      "title": "Norway 1-2 Scotland (Jun 17, 2023) – ESPN",
-      "kind": "web",
-      "accessed": "2026-09-01",
-      "note": "Full Norway XI with shirt numbers confirmed in search excerpt Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    },
-    {
-      "url": "https://www.uefa.com/european-qualifiers/match/2036336--norway-vs-scotland/",
-      "title": "Norway-Scotland | European Qualifiers 2024 | UEFA",
-      "kind": "web",
-      "accessed": "2026-09-01"
-    },
-    {
-      "url": "https://match.uefa.com/v5/matches/2036336/lineups",
-      "title": "UEFA – kampdata med lagoppstilling",
-      "kind": "api",
-      "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
-    }
+    { "url": "https://www.espn.com/soccer/report/_/gameId/655309", "title": "Norway 1-2 Scotland (Jun 17, 2023) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers confirmed in search excerpt" },
+    { "url": "https://www.uefa.com/european-qualifiers/match/2036336--norway-vs-scotland/", "title": "Norway-Scotland | European Qualifiers 2024 | UEFA", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2036336/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
   "notes": "Haaland scoret på straffe og ble byttet ut – så scoret Skottland to ganger på tre minutter.",
   "lineup": [
-    {
-      "name": "Ørjan Nyland",
-      "no": 1,
-      "pos": "GK"
-    },
-    {
-      "name": "Julian Ryerson",
-      "no": 14,
-      "pos": "RB"
-    },
-    {
-      "name": "Leo Østigård",
-      "no": 15,
-      "pos": "CB"
-    },
-    {
-      "name": "Stefan Strandberg",
-      "no": 4,
-      "pos": "CB"
-    },
-    {
-      "name": "Birger Meling",
-      "no": 5,
-      "pos": "LB"
-    },
-    {
-      "name": "Martin Ødegaard",
-      "no": 10,
-      "pos": "CM",
-      "captain": true
-    },
-    {
-      "name": "Patrick Berg",
-      "no": 6,
-      "pos": "CM"
-    },
-    {
-      "name": "Fredrik Aursnes",
-      "no": 16,
-      "pos": "CM"
-    },
-    {
-      "name": "Ola Solbakken",
-      "no": 17,
-      "pos": "RW"
-    },
-    {
-      "name": "Erling Haaland",
-      "no": 9,
-      "pos": "CF"
-    },
-    {
-      "name": "Alexander Sørloth",
-      "no": 19,
-      "pos": "LW"
-    }
+    { "name": "Ørjan Nyland", "no": 1, "pos": "GK" },
+    { "name": "Julian Ryerson", "no": 14, "pos": "RB" },
+    { "name": "Leo Østigård", "no": 15, "pos": "CB" },
+    { "name": "Stefan Strandberg", "no": 4, "pos": "CB" },
+    { "name": "Birger Meling", "no": 5, "pos": "LB" },
+    { "name": "Martin Ødegaard", "no": 10, "pos": "CM", "captain": true },
+    { "name": "Patrick Berg", "no": 6, "pos": "CM" },
+    { "name": "Fredrik Aursnes", "no": 16, "pos": "CM" },
+    { "name": "Ola Solbakken", "no": 17, "pos": "RW" },
+    { "name": "Erling Haaland", "no": 9, "pos": "CF" },
+    { "name": "Alexander Sørloth", "no": 19, "pos": "LW" }
   ],
   "goals": [
-    {
-      "team": "norway",
-      "name": "Erling Haaland",
-      "minute": 61,
-      "kind": "pen"
-    },
-    {
-      "team": "opponent",
-      "scorer": "Lyndon Dykes",
-      "minute": 87
-    },
-    {
-      "team": "opponent",
-      "scorer": "Kenny McLean",
-      "minute": 89
-    }
+    { "team": "norway", "name": "Erling Haaland", "minute": 61, "kind": "pen" },
+    { "team": "opponent", "scorer": "Lyndon Dykes", "minute": 87 },
+    { "team": "opponent", "scorer": "Kenny McLean", "minute": 89 }
   ]
 }
