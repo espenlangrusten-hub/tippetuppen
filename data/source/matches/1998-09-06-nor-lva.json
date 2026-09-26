@@ -9,10 +9,11 @@
     1,
     3
   ],
+  "formation": "4-3-3",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -31,7 +32,7 @@
       "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-3-3 fra nærmeste kamp med dokumentert formasjon (2000-06-13), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Frank Strandli står etter UEFAs registrerte rolle; Petter Normann Rudi har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -41,52 +42,52 @@
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 5
     },
     {
       "name": "Vegard Heggem",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 2
     },
     {
       "name": "Erik Hoftun",
-      "pos": "OUT",
+      "pos": "DF",
       "no": 4
     },
     {
       "name": "Ronny Johnsen",
-      "pos": "OUT",
+      "pos": "CB",
       "no": 3
     },
     {
       "name": "Kjetil André Rekdal",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 10
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 6
     },
     {
       "name": "Ståle Solbakken",
-      "pos": "OUT",
+      "pos": "MF",
       "no": 7
     },
     {
       "name": "Tore André Flo",
-      "pos": "OUT",
+      "pos": "FW",
       "no": 9
     },
     {
       "name": "Ole Gunnar Solskjær",
-      "pos": "OUT",
+      "pos": "CF",
       "no": 11
     },
     {
       "name": "Frank Strandli",
-      "pos": "OUT",
+      "pos": "FW",
       "no": 8
     }
   ]

@@ -9,10 +9,11 @@
     2,
     2
   ],
+  "formation": "4-5-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "single_source",
   "sources": [
@@ -24,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1998-06-16), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +34,43 @@
     },
     {
       "name": "Gunnar Halle",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Henning Berg",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Erik Hoftun",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Bent André Skammelsrud",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Vidar Riseth",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Erik Mykland",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Øyvind Leonhardsen",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Håvard Flo",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "Tore André Flo",
-      "pos": "OUT"
+      "pos": "CF"
     }
   ]
 }

@@ -39,7 +39,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2008-10-11), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Jarl-André Storbæk har ingen og står der det var plass).",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2008-10-11), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Jarl-André Storbæk står etter UEFAs registrerte rolle).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -79,7 +79,7 @@
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "LW",
+      "pos": "LM",
       "no": 11
     },
     {

@@ -32,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1994-06-23), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Ørjan Berg har ingen og står der det var plass).",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1994-06-23), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Ørjan Berg står etter UEFAs registrerte rolle).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -65,7 +65,7 @@
     },
     {
       "name": "Jahn Ivar Jakobsen",
-      "pos": "SS"
+      "pos": "AM"
     },
     {
       "name": "Kjetil André Rekdal",

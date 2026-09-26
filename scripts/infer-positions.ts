@@ -7,17 +7,21 @@
  * marked as such (tag "position:inferred" and a note), rather than shown as two neutral
  * rows of five.
  *  1. Each outfield player gets the position from his nearest match in time where his
- *     position is documented. A player with no documented position anywhere is placed
- *     only if he is the one gap and exactly one line has room for him.
+ *     position is documented. A player with none gets UEFA's registered role (defender,
+ *     midfielder, forward) from his nearest match in data/source/player-roles.json. One
+ *     player with neither is placed where there is room; two or more and the match is
+ *     left alone.
  *  2. The formation comes from the nearest documented formations of the same national
  *     coach (any coach when his are undocumented), by distance in days. The players must fit it: the back line holds
  *     only defenders, no defender stands further up, and the front line holds only
- *     forwards. Of those that fit, the one leaving fewest players in a line their position
- *     does not belong to wins, the nearer one on a tie. If none fits, the match keeps "OUT".
+ *     forwards. A player the formation puts in another line moves to the nearest position
+ *     there, keeping his side (a right-back in midfield plays right midfield, a striker
+ *     there plays attacking midfield). The formation needing fewest moves wins, the nearer
+ *     one on a tie; more than two moves and the match keeps "OUT".
  * Inferred positions never feed another inference, and the Mangler XI fact sheet ignores
  * them, so a guessed role never turns into "always started as a centre-back".
  */
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { layoutPitch, parseFormation, positionKind } from "../src/lib/pitch";
 import { POSITIONS, type Position } from "../src/lib/positions";
@@ -26,6 +30,8 @@ import { serialize, type Match } from "./import/shirt-format";
 
 const DIR = path.join(process.cwd(), "data", "source", "matches");
 export const INFERRED = "position:inferred";
+/** Players the formation may move to a neighbouring line before the match is left alone. */
+const MAX_MOVED = 2;
 type Starter = { name: string; pos: string; no?: number | null };
 type File = Match & { status: string; formation?: string | null; tags?: string[]; notes?: string; lineup: Starter[] };
 
@@ -55,6 +61,36 @@ export function fits(pos: Position[], formation: string): boolean {
   return !rows.some((r) => r.some((s) => pos[s.index] === "AM") && r.some((s) => ["CF", "SS", "FW"].includes(pos[s.index])));
 }
 
+/** The nearest position in another line, keeping the side: a right-back pushed into midfield plays right midfield. */
+const MOVE: Record<"defence" | "midfield" | "attack", Partial<Record<Position, Position>>> = {
+  defence: { RM: "RB", LM: "LB", RW: "RB", LW: "LB", DM: "CB", CM: "CB", MF: "DF", AM: "CB", CF: "CB", SS: "CB", FW: "DF" },
+  midfield: { RB: "RM", LB: "LM", CB: "DM", DF: "MF", RW: "RM", LW: "LM", CF: "AM", SS: "AM", FW: "MF" },
+  attack: { RM: "RW", LM: "LW", CM: "SS", DM: "SS", MF: "FW", AM: "SS", RB: "RW", LB: "LW", CB: "CF", DF: "FW" },
+};
+
+/**
+ * Fit the players to a formation, moving anyone the formation puts in another line to
+ * the nearest position in that line. Returns the positions and how many moved.
+ */
+export function placeIn(pos: Position[], formation: string): { pos: Position[]; moved: number } | null {
+  if (!parseFormation(formation, pos.filter((p) => p !== "GK").length)) return null;
+  const rows = layoutPitch(pos.map((p, order) => ({ pos: p, order })), formation).rows.slice(1);
+  const next = pos.slice();
+  let moved = 0;
+  rows.forEach((r, i) => {
+    const want = i === 0 ? "defence" : i === rows.length - 1 ? "attack" : "midfield";
+    for (const slot of r) {
+      const kind = positionKind(pos[slot.index]);
+      if (kind === want || kind === "wingback") continue;
+      const to = MOVE[want][pos[slot.index]];
+      if (!to) return;
+      next[slot.index] = to;
+      moved++;
+    }
+  });
+  return fits(next, formation) ? { pos: next, moved } : null;
+}
+
 /** Players standing in a line their position does not belong to: a forward in midfield, a midfielder up front. */
 export function misfits(pos: Position[], formation: string): number {
   const rows = layoutPitch(pos.map((p, order) => ({ pos: p, order })), formation).rows.slice(1);
@@ -69,7 +105,10 @@ export function misfits(pos: Position[], formation: string): number {
 /** Starters' player ids by match, as the loader resolves them (aliases merged). */
 export type Ids = Map<string, string[]>;
 
-export function inferAll(files: File[], ids: Ids) {
+/** UEFA's registered role per match and player (scripts/import/player-roles.ts). */
+export type Roles = { match: string; date: string; roles: Record<string, "GK" | "DF" | "MF" | "FW"> }[];
+
+export function inferAll(files: File[], ids: Ids, uefaRoles: Roles = []) {
   const docs = files.filter(documented);
   // Every documented start per player, for "his nearest documented match".
   const seen = new Map<string, { date: string; pos: Position }[]>();
@@ -77,8 +116,10 @@ export function inferAll(files: File[], ids: Ids) {
     const id = ids.get(m.id)![i];
     seen.set(id, [...(seen.get(id) ?? []), { date: m.date, pos: p.pos as Position }]);
   });
+  const registered = new Map<string, { date: string; pos: Position }[]>();
+  for (const r of uefaRoles) for (const [id, role] of Object.entries(r.roles)) if (role !== "GK") registered.set(id, [...(registered.get(id) ?? []), { date: r.date, pos: role }]);
   const shapes = docs.filter((m) => m.formation).map((m) => ({ date: m.date, id: m.id, formation: m.formation! }));
-  const out = new Map<string, { pos: Position[]; formation: string; from: string; unknown: string[] }>();
+  const out = new Map<string, { pos: Position[]; formation: string; from: string; unknown: string[]; byRole: string[] }>();
   const skipped: string[] = [];
 
   for (const m of files) {
@@ -86,11 +127,16 @@ export function inferAll(files: File[], ids: Ids) {
     if (!undocumented(m) && !(m.tags ?? []).includes(INFERRED)) continue;
     const starters = m.lineup.slice(0, 11);
     const unknown: number[] = [];
+    const byRole: number[] = [];
+    const nearest = (h: { date: string; pos: Position }[]) => h.slice().sort((a, b) => days(a.date, m.date) - days(b.date, m.date))[0].pos;
     const pos = starters.map((p, i) => {
       if (p.pos === "GK") return "GK" as Position;
       const hist = (seen.get(ids.get(m.id)![i]) ?? []).filter((h) => h.pos !== "GK");
-      if (!hist.length) { unknown.push(i); return "OUT" as Position; }
-      return hist.slice().sort((a, b) => days(a.date, m.date) - days(b.date, m.date))[0].pos;
+      if (hist.length) return nearest(hist);
+      const role = registered.get(ids.get(m.id)![i]) ?? [];
+      if (role.length) { byRole.push(i); return nearest(role); }
+      unknown.push(i);
+      return "OUT" as Position;
     });
     if (pos.filter((p) => p === "GK").length !== 1) { skipped.push(`${m.id}: ingen keeper`); continue; }
     if (unknown.length > 1) { skipped.push(`${m.id}: ${unknown.length} spillere uten dokumentert posisjon`); continue; }
@@ -102,21 +148,21 @@ export function inferAll(files: File[], ids: Ids) {
       .sort((a, b) => days(a.date, m.date) - days(b.date, m.date))
       .filter((s, i, all) => all.findIndex((x) => x.formation === s.formation) === i)
       .slice(0, 8);
-    // Of the nearest formations the players fit, the one that leaves fewest of them in a
-    // line their position does not belong to; the nearer one when two are equal.
+    // Of the nearest formations, the one that needs fewest players moved to another line
+    // (at most two); the nearer one when two are equal.
     let chosen: { pos: Position[]; formation: string; from: string } | null = null;
-    let best = Infinity;
+    let best = MAX_MOVED + 1;
     for (const c of candidates) {
-      // The one player with no documented position goes where there is room, midfield
-      // first - the line most players stand in - then defence, then attack.
+      // The one player with nothing to go on stands where there is room, midfield first -
+      // the line most players stand in - then defence, then attack.
       const tries: Position[][] = unknown.length ? (["MF", "DF", "FW"] as Position[]).map((g) => pos.map((p, i) => (i === unknown[0] ? g : p))) : [pos];
-      const ok = tries.find((t) => fits(t, c.formation));
-      if (!ok) continue;
-      const miss = misfits(ok, c.formation);
-      if (miss < best) { best = miss; chosen = { pos: ok, formation: c.formation, from: c.id }; }
+      const placed = tries.map((t) => placeIn(t, c.formation)).find((x) => x != null);
+      if (!placed || placed.moved >= best) continue;
+      best = placed.moved;
+      chosen = { pos: placed.pos, formation: c.formation, from: c.id };
     }
     if (!chosen) { skipped.push(`${m.id}: posisjonene passer ingen av de ${candidates.length} nærmeste formasjonene`); continue; }
-    out.set(m.id, { ...chosen, unknown: unknown.map((i) => starters[i].name) });
+    out.set(m.id, { ...chosen, unknown: unknown.map((i) => starters[i].name), byRole: byRole.map((i) => starters[i].name) });
   }
   return { out, skipped };
 }
@@ -129,7 +175,9 @@ function main() {
   const ds = loadDataset();
   const ids: Ids = new Map();
   for (const a of ds.appearances.filter((x) => x.starter).sort((x, y) => x.order - y.order)) ids.set(a.matchId, [...(ids.get(a.matchId) ?? []), a.playerId]);
-  const { out, skipped } = inferAll(files, ids);
+  const rolesFile = path.join(DIR, "..", "player-roles.json");
+  const uefaRoles = existsSync(rolesFile) ? (JSON.parse(readFileSync(rolesFile, "utf8")) as Roles) : [];
+  const { out, skipped } = inferAll(files, ids, uefaRoles);
   let written = 0;
   for (const [i, f] of names.entries()) {
     const m = files[i];
@@ -137,7 +185,11 @@ function main() {
     if (!r) continue;
     m.lineup.slice(0, 11).forEach((p, j) => (p.pos = r.pos[j]));
     const fromDate = r.from.slice(0, 10);
-    const note = `Posisjonene er utledet, ikke dokumentert: formasjonen ${r.formation} fra nærmeste kamp med dokumentert formasjon (${fromDate}), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon${r.unknown.length ? ` (${r.unknown[0]} har ingen og står der det var plass)` : ""}.`;
+    const extra = [
+      r.byRole.length ? `${r.byRole.join(", ")} står etter UEFAs registrerte rolle` : "",
+      r.unknown.length ? `${r.unknown[0]} har ingen av delene og står der det var plass` : "",
+    ].filter(Boolean).join("; ");
+    const note = `Posisjonene er utledet, ikke dokumentert: formasjonen ${r.formation} fra nærmeste kamp med dokumentert formasjon (${fromDate}), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon${extra ? ` (${extra})` : ""}.`;
     const was = (m.notes ?? "").replace(/\s*Posisjonene er utledet, ikke dokumentert:[^.]*\([^)]*\)[^.]*\./, "").replace(/\s*Utespillernes roller og draktnumre er bevisst ikke antatt\./, "").replace(/\s*Utespillernes roller er bevisst ikke antatt\./, "").trim();
     m.notes = `${was ? `${was} ` : ""}${note}`;
     m.tags = [...(m.tags ?? []).filter((t) => !t.startsWith("position:")), INFERRED];

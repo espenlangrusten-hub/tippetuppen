@@ -9,10 +9,11 @@
     1,
     2
   ],
+  "formation": "4-4-2",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "single_source",
   "sources": [
@@ -24,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2005-11-12), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Jarl-André Storbæk, Bård Borgersen, Petter Vaagan Moen, Alex Marcel Lund Valencia, Ole Martin Årst, Raymond Kvisvik står etter UEFAs registrerte rolle; Petter Normann Rudi har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +34,43 @@
     },
     {
       "name": "Jarl-André Storbæk",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Bård Borgersen",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Trond Erik Bertelsen",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Magne Hoseth",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Petter Vaagan Moen",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Alex Marcel Lund Valencia",
-      "pos": "OUT"
+      "pos": "FW"
     },
     {
       "name": "Ole Martin Årst",
-      "pos": "OUT"
+      "pos": "FW"
     },
     {
       "name": "Raymond Kvisvik",
-      "pos": "OUT"
+      "pos": "MF"
     }
   ]
 }

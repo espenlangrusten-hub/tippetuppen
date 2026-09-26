@@ -2,6 +2,31 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-26 – Utledningen utvidet: UEFA-roller og flytting til nærmeste linje
+
+To utvidelser av `scripts/infer-positions.ts`, etter avtale:
+- **UEFA-roller.** En spiller uten dokumentert posisjon får UEFAs registrerte rolle
+  (forsvarer, midtbane eller spiss) fra sin nærmeste kamp. Rollene hentes av
+  `scripts/import/player-roles.ts` (workflow «Importer spillerroller») til
+  `data/source/player-roles.json`. Der ligger 2 831 roller fra de 316 kampene der UEFA
+  har nøyaktig vår ellever. Rollen er spillerens faste posisjon, ikke rollen i kampen, og
+  ga riktig linje for 85 % av de dokumenterte starterne. Den brukes derfor bare når
+  noe bedre mangler.
+- **Flytting.** En spiller som formasjonen setter i en annen linje, flyttes til nærmeste
+  posisjon der, på samme side:
+  - en høyreback på midtbanen blir høyre midtbane,
+  - en midtstopper blir defensiv midtbane,
+  - en spiss bak spissen blir offensiv midtbane.
+
+  Formasjonen som krever færrest flyttinger vinner, og ved likt antall den nærmeste i
+  tid. Krever alle formasjonene mer enn to flyttinger, utledes ikke kampen.
+
+**Resultat:** 218 kamper er utledet, mot 127. Formasjonene er 100 i 4-5-1, 83 i 4-4-2,
+19 i 4-3-3, 10 i 4-1-4-1 og 6 i 4-2-3-1. 37 spillbare kamper står fortsatt uten
+posisjoner:
+- 20 passer ingen formasjon med høyst to flyttinger.
+- 17 har to eller flere spillere uten både dokumentert posisjon og UEFA-rolle.
+
 ## 2026-09-26 – Utledede posisjoner der kildene mangler dem
 
 Etter avtale: der ingen kilde dokumenterer posisjonene, utledes de i stedet for å vises

@@ -1,0 +1,48 @@
+name: Importer spillerroller
+
+# UEFA's registered role for every starter in the matches where UEFA lists exactly our
+# eleven, written to data/source/player-roles.json for scripts/infer-positions.ts.
+# Commits the result to the branch it ran on. A push that touches the importer starts it:
+# the assistant working on this repository can push but cannot dispatch a workflow. A push
+# made by this job does not start it again.
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [main]
+    paths:
+      - scripts/import/player-roles.ts
+      - .github/workflows/import-player-roles.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-player-roles-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Hent roller fra UEFA
+        run: node --import tsx scripts/import/player-roles.ts | tee roles.log
+      - name: Commit endringene
+        run: |
+          set -euo pipefail
+          if git diff --quiet HEAD -- data/source/player-roles.json && [ -z "$(git status --porcelain data/source/player-roles.json)" ]; then
+            echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source/player-roles.json
+          git commit -q -m "Spillerroller fra UEFA" -m "$(cat roles.log)"
+          git push origin HEAD:${{ github.ref_name }}

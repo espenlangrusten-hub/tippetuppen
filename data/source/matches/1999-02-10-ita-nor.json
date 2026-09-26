@@ -25,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2000-06-21), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen og står der det var plass).",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2000-06-21), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -50,7 +50,7 @@
     },
     {
       "name": "Håvard Flo",
-      "pos": "RM"
+      "pos": "RW"
     },
     {
       "name": "Erik Mykland",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "FW"
+      "pos": "MF"
     },
     {
       "name": "Ståle Solbakken",

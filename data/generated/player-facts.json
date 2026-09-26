@@ -15017,24 +15017,6 @@
           ]
         },
         {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2006-11-15-srb-nor",
-            "2007-02-07-cro-nor",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2007-11-17-nor-tur",
-            "2007-11-21-mlt-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor"
-          ]
-        },
-        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 23.",
           "matchIds": [
@@ -18270,15 +18252,6 @@
           ]
         },
         {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1998-09-06-nor-lva",
-            "1999-01-20-isr-nor",
-            "2000-01-31-nor-isl"
-          ]
-        },
-        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 1.",
           "matchIds": [
@@ -19072,14 +19045,6 @@
           ]
         },
         {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2000-02-04-nor-swe",
-            "2001-01-24-kor-nor"
-          ]
-        },
-        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 1.",
           "matchIds": [
@@ -19134,14 +19099,6 @@
         {
           "kind": "omfang",
           "text": "Startet 2 kamper i arkivet, alle i 2004.",
-          "matchIds": [
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
           "matchIds": [
             "2004-01-22-swe-nor",
             "2004-01-25-hon-nor"
@@ -20062,13 +20019,6 @@
           "matchIds": [
             "1997-01-18-nor-kor"
           ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1997-01-18-nor-kor"
-          ]
         }
       ]
     },
@@ -20661,13 +20611,6 @@
         {
           "kind": "debut",
           "text": "Startet sin første kamp i arkivet mot Polen 2014-01-18, Privatlandskamp. Det endte Polen 3–0 Norge.",
-          "matchIds": [
-            "2014-01-18-pol-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
           "matchIds": [
             "2014-01-18-pol-nor"
           ]

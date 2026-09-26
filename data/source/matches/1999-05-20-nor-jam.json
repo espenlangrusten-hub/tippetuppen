@@ -9,7 +9,7 @@
     6,
     0
   ],
-  "formation": "4-3-3",
+  "formation": "4-4-2",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
@@ -32,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-3-3 fra nærmeste kamp med dokumentert formasjon (2000-06-13), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen og står der det var plass).",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2000-06-21), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -69,7 +69,7 @@
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "FW"
+      "pos": "MF"
     },
     {
       "name": "Tore André Flo",

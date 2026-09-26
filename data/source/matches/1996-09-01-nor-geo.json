@@ -32,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1998-06-16), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen og står der det var plass).",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1998-06-16), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -49,7 +49,7 @@
     },
     {
       "name": "Alf-Inge Håland",
-      "pos": "MF"
+      "pos": "DF"
     },
     {
       "name": "Ronny Johnsen",
@@ -69,11 +69,11 @@
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "DF"
+      "pos": "MF"
     },
     {
       "name": "Jan Åge Fjørtoft",
-      "pos": "CF"
+      "pos": "AM"
     },
     {
       "name": "Ole Gunnar Solskjær",

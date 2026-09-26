@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { coachOn, fits, misfits } from "../scripts/infer-positions";
+import { coachOn, fits, misfits, placeIn } from "../scripts/infer-positions";
 import { loadDataset } from "@/data/load";
 import type { Position } from "@/lib/positions";
 
@@ -15,6 +15,11 @@ describe("utledede posisjoner", () => {
   it("teller spillere som står i en linje posisjonen ikke hører til", () => {
     expect(misfits(p("GK RB CB CB LB CM CM CM CF CF CF"), "4-3-3")).toBe(0);
     expect(misfits(p("GK RB CB CB LB CM CM CM CF CF CF"), "4-4-2")).toBe(1);
+  });
+
+  it("flytter en spiller til nærmeste posisjon i linjen formasjonen gir ham, på samme side", () => {
+    expect(placeIn(p("GK CB CB LB RB RB CM MF LM CF CF"), "4-5-1")).toEqual({ pos: p("GK CB CB LB RB RM CM MF LM AM CF"), moved: 2 });
+    expect(placeIn(p("GK RB CB CB LB CM CM CM CF CF CF"), "4-3-3")).toEqual({ pos: p("GK RB CB CB LB CM CM CM CF CF CF"), moved: 0 });
   });
 
   it("skiller Egil Olsens to perioder", () => {
