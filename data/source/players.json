@@ -1,7 +1,7 @@
 [
   {
-    "id": "jan-ove-jakobsen",
-    "fullName": "Jan Ove Jakobsen",
+    "id": "jahn-ivar-jakobsen",
+    "fullName": "Jahn Ivar Jakobsen",
     "displayName": "Mini Jakobsen",
     "surname": "Jakobsen",
     "aliases": [
@@ -111,7 +111,10 @@
     "fullName": "Kjetil Rekdal",
     "surname": "Rekdal",
     "fame": 5,
-    "caps": 83
+    "caps": 83,
+    "aliases": [
+      "Kjetil André Rekdal"
+    ]
   },
   {
     "id": "erik-mykland",
@@ -146,7 +149,10 @@
     "fullName": "Henning Berg",
     "surname": "Berg",
     "fame": 5,
-    "caps": 100
+    "caps": 100,
+    "aliases": [
+      "Henning Stille Berg"
+    ]
   },
   {
     "id": "stig-inge-bjornebye",
@@ -253,7 +259,10 @@
     "id": "lars-bohinen",
     "fullName": "Lars Bohinen",
     "surname": "Bohinen",
-    "fame": 4
+    "fame": 4,
+    "aliases": [
+      "Lars Roar Bohinen"
+    ]
   },
   {
     "id": "jostein-flo",
@@ -279,7 +288,8 @@
     "surname": "Riise",
     "aliases": [
       "JA Riise",
-      "J.A. Riise"
+      "J.A. Riise",
+      "John Arne Semundseth Riise"
     ],
     "fame": 5,
     "caps": 110
@@ -290,7 +300,8 @@
     "surname": "Riise",
     "aliases": [
       "BH Riise",
-      "B.H. Riise"
+      "B.H. Riise",
+      "Bjørn Helge Semundseth Riise"
     ],
     "fame": 3
   },
@@ -347,7 +358,10 @@
     "id": "erik-huseklepp",
     "fullName": "Erik Huseklepp",
     "surname": "Huseklepp",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Erik Andre Huseklepp"
+    ]
   },
   {
     "id": "leo-ostigard",
@@ -616,7 +630,10 @@
     "id": "erik-hagen",
     "fullName": "Erik Hagen",
     "surname": "Hagen",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Erik Bjørnstad Hagen"
+    ]
   },
   {
     "id": "jan-gunnar-solli",
@@ -629,7 +646,8 @@
     "fullName": "Kristofer Hæstad",
     "surname": "Hæstad",
     "aliases": [
-      "Haestad"
+      "Haestad",
+      "Kristofer Krüger Hæstad"
     ],
     "fame": 2
   },
@@ -687,7 +705,8 @@
     "fullName": "Ole Selnæs",
     "surname": "Selnæs",
     "aliases": [
-      "Selnaes"
+      "Selnaes",
+      "Ole Kristian Selnæs"
     ],
     "fame": 2
   },
@@ -759,7 +778,10 @@
     "id": "alexander-tettey",
     "fullName": "Alexander Tettey",
     "surname": "Tettey",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Alexander Banor Tettey"
+    ]
   },
   {
     "id": "jo-inge-berget",
@@ -951,7 +973,10 @@
     "id": "daniel-braaten",
     "fullName": "Daniel Braaten",
     "surname": "Braaten",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Daniel Omoya Braaten"
+    ]
   },
   {
     "id": "martin-andresen",
@@ -1008,7 +1033,10 @@
     "id": "fredrik-winsnes",
     "fullName": "Fredrik Winsnes",
     "surname": "Winsnes",
-    "fame": 2
+    "fame": 2,
+    "aliases": [
+      "Fredrik Lærum Winsnes"
+    ]
   },
   {
     "id": "espen-johnsen",
@@ -1020,13 +1048,19 @@
     "id": "christer-basma",
     "fullName": "Christer Basma",
     "surname": "Basma",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Ole Christer Basma"
+    ]
   },
   {
     "id": "petter-rudi",
     "fullName": "Petter Rudi",
     "surname": "Rudi",
-    "fame": 3
+    "fame": 3,
+    "aliases": [
+      "Petter Normann Rudi"
+    ]
   },
   {
     "id": "henning-hauger",
