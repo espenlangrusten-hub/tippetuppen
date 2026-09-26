@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:uefa-role"
   ],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     {
       "url": "https://www.rsssf.org/tablesn/noo-intres2011.html",
@@ -28,7 +28,14 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-25",
-      "note": "Spillerroller: Høgli, Demidov, Wæhler, Riise forsvar; Hauger, Grindheim, Gamst Pedersen midtbane; Abdellaoue angrep; Huseklepp og Tettey uten rolle. Ingen draktnumre eller koordinater."
+      "note": "Spillerroller: Høgli, Demidov, Wæhler, Riise forsvar; Hauger, Grindheim, Gamst Pedersen midtbane; Abdellaoue angrep; Huseklepp og Tettey uten rolle. Ingen draktnumre eller koordinater. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
+    },
+    {
+      "url": "https://www.espn.com/soccer/match/_/gameId/315437",
+      "title": "ESPN – lagoppstilling (Opta)",
+      "kind": "web",
+      "accessed": "2026-09-26",
+      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
   "notes": "Startelleveren er dokumentert. Linjene (4-5-1) er satt der UEFAs spillerroller og rekkefølgen i kilden er enige; venstre/høyre er ikke dokumentert. Draktnumrene er lånt fra kampene rundt: hver spiller brukte samme nummer i flere landskamper før og/eller etter (Tettey bare etter), og UEFA har ikke numre for denne kampen.",
