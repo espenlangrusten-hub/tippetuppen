@@ -94,8 +94,7 @@ const ROLE: Record<string, Position> = {
 const LINE: Partial<Record<Position, number>> = { CB: 0, LB: 0, RB: 0, LWB: 0, RWB: 0, DM: 1, CM: 2, LM: 2, RM: 2, AM: 3, LW: 4, RW: 4, CF: 4 };
 
 /** ESPN's roles mapped onto our starters, or a reason they cannot be used. */
-export function positionsFromEspn(ours: string[], e: { formation: string | null; starters: EspnStarter[] }): { pos: Position[]; formation: string } | string {
-  if (!e.formation) return "ingen formasjon";
+export function positionsFromEspn(ours: string[], e: { formation: string | null; starters: EspnStarter[] }): { pos: Position[]; formation: string; derived: boolean } | string {
   const roles = new Map<string, string>();
   for (const name of ours) {
     const hit = e.starters.filter((s) => matchStarters([name], [s]).size === 1);
@@ -113,12 +112,15 @@ export function positionsFromEspn(ours: string[], e: { formation: string | null;
   pos.forEach((p, i) => { if (p !== "GK") lines.set(LINE[p]!, [...(lines.get(LINE[p]!) ?? []), i]); });
   const expected = [...lines.keys()].sort((a, b) => a - b).map((l) => lines.get(l)!);
   const shape = expected.map((g) => g.length).join("-");
-  if (shape !== e.formation) return `rollene gir ${shape}, ESPN sier ${e.formation}`;
-  if (!parseFormation(e.formation, 10)) return `formasjonen ${e.formation} kan ikke tegnes`;
-  const rows = layoutPitch(pos.map((p, order) => ({ pos: p, order })), e.formation).rows.slice(1);
+  // Some matches carry the roles but no formation string; the roles are the data, so the
+  // formation is the lines they stand in. A string that disagrees with them is not used.
+  if (e.formation && shape !== e.formation) return `rollene gir ${shape}, ESPN sier ${e.formation}`;
+  const formation = e.formation ?? shape;
+  if (!parseFormation(formation, 10)) return `formasjonen ${formation} kan ikke tegnes`;
+  const rows = layoutPitch(pos.map((p, order) => ({ pos: p, order })), formation).rows.slice(1);
   const drawn = rows.map((r) => r.map((s) => s.index).sort((a, b) => a - b).join(","));
   if (drawn.join("|") !== expected.map((g) => g.slice().sort((a, b) => a - b).join(",")).join("|")) return "banen tegner andre linjer enn ESPN";
-  return { pos, formation: e.formation };
+  return { pos, formation, derived: !e.formation };
 }
 
 type Starter = Match["lineup"][number] & { pos?: string; no?: number | null; captain?: boolean };
@@ -154,7 +156,7 @@ export function canonicalNames(theirs: string[], known: string[], registry: Set<
 let registryNames = new Set<string>();
 function corrected(m: Match & { goals?: { team: string; name?: string; kind?: string }[]; subs?: { name: string }[] }, u: { id: string; starters: SourcePlayer[] }, e: { id: string; formation: string | null; starters: EspnStarter[] }, known: string[]) {
   if (u.starters.length !== 11 || e.starters.length !== 11) return "UEFA eller ESPN har ikke elleve startere";
-  if (matchStarters(u.starters.map((s) => s.name), e.starters).size !== 11) return "UEFA og ESPN er ikke enige";
+  if (matchStarters(u.starters.map((s) => fold(s.name)), e.starters.map((s) => ({ ...s, name: fold(s.name) }))).size !== 11) return "UEFA og ESPN er ikke enige";
   const names = canonicalNames(u.starters.map((s) => s.name), known, registryNames);
   if (!names) return "et navn passer ingen eller flere kjente spillere";
   const keeper = e.starters.find((s) => s.role === "G");
@@ -249,10 +251,11 @@ async function main() {
     if (espnExact) {
       const url = `https://www.espn.com/soccer/match/_/gameId/${e!.id}`;
       const src = m.sources.find((s) => s.url?.includes(`gameId/${e!.id}`));
-      const extra = roles && typeof roles !== "string" ? ` Formasjon ${roles.formation} og roller fra ESPN (Opta).` : "";
-      const note = `${confirm}${extra}`;
-      if (src) { if (!src.note?.includes("identisk med vår")) src.note = `${src.note ? `${src.note} ` : ""}${note}`; }
-      else m.sources.push({ url, title: "ESPN – lagoppstilling (Opta)", kind: "web", accessed: today, note });
+      const extra = roles && typeof roles !== "string" ? ` ${roles.derived ? `Roller fra ESPN (Opta); formasjonen ${roles.formation} er linjene de står i.` : `Formasjon ${roles.formation} og roller fra ESPN (Opta).`}` : "";
+      if (src) {
+        if (!src.note?.includes("identisk med vår")) src.note = `${src.note ? `${src.note} ` : ""}${confirm}`;
+        if (extra && !src.note?.includes("fra ESPN (Opta)")) src.note = `${src.note}${extra}`;
+      } else m.sources.push({ url, title: "ESPN – lagoppstilling (Opta)", kind: "web", accessed: today, note: `${confirm}${extra}` });
     }
     if (roles && typeof roles !== "string") {
       starters.forEach((p, i) => (p.pos = roles.pos[i]));

@@ -13,7 +13,7 @@ const espn = {
 
 describe("posisjoner fra ESPN brukes bare når banen blir lik ESPNs", () => {
   it("leser en ensom «F» blant detaljerte roller som midtspiss", () => {
-    expect(positionsFromEspn(ours, espn)).toEqual({ formation: "4-1-4-1", pos: ["GK", "RB", "CB", "CB", "LB", "DM", "CM", "CM", "LM", "RM", "CF"] });
+    expect(positionsFromEspn(ours, espn)).toEqual({ formation: "4-1-4-1", derived: false, pos: ["GK", "RB", "CB", "CB", "LB", "DM", "CM", "CM", "LM", "RM", "CF"] });
   });
 
   it("bruker ikke grove roller (D/M) selv om resten er detaljert", () => {
@@ -24,7 +24,11 @@ describe("posisjoner fra ESPN brukes bare når banen blir lik ESPNs", () => {
   it("oversetter Opta-rollene og beholder formasjonen", () => {
     const withStriker = { ...espn, starters: espn.starters.map((s) => (s.role === "F" ? { ...s, role: "CF" } : s)) };
     const r = positionsFromEspn(ours, withStriker);
-    expect(r).toEqual({ formation: "4-1-4-1", pos: ["GK", "RB", "CB", "CB", "LB", "DM", "CM", "CM", "LM", "RM", "CF"] });
+    expect(r).toEqual({ formation: "4-1-4-1", derived: false, pos: ["GK", "RB", "CB", "CB", "LB", "DM", "CM", "CM", "LM", "RM", "CF"] });
+  });
+
+  it("avleder formasjonen av rollene når ESPN ikke oppgir den", () => {
+    expect(positionsFromEspn(ours, { ...espn, formation: null })).toMatchObject({ formation: "4-1-4-1", derived: true });
   });
 
   it("avviser en formasjon rollene ikke beskriver", () => {
