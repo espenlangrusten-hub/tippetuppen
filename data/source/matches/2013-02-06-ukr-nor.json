@@ -9,10 +9,11 @@
     0,
     2
   ],
+  "formation": "4-1-4-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -31,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-1-4-1 fra nærmeste kamp med dokumentert formasjon (2013-03-22), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Vegar Eggen Hedenstad har ingen og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -40,43 +41,43 @@
     },
     {
       "name": "Vegar Eggen Hedenstad",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Tore Reginiussen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Tarik Elyounoussi",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Markus Henriksen",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Magnus Wolff Eikrem",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Ruben Yttergård Jenssen",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Håvard Nielsen",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Daniel Omoya Braaten",
-      "pos": "OUT"
+      "pos": "RM"
     }
   ]
 }

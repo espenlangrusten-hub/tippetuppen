@@ -11,6 +11,7 @@
     1
   ],
   "venue": "Stade Vélodrome",
+  "formation": "4-5-1",
   "city": "Marseille",
   "manager": "Egil Olsen",
   "importance": 5,
@@ -19,7 +20,7 @@
     "ikonisk",
     "brasil",
     "lineup:uefa-espn",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -52,7 +53,7 @@
       "note": "Samme elleve som UEFA. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Rettet 2026-09-26: UEFA og ESPN (Opta) har samme elleve, med Roar Strand der vår tidligere kilde hadde Erik Mykland. Elleveren, draktnumrene (UEFA) og eventuelle roller (ESPN) er hentet derfra.",
+  "notes": "Rettet 2026-09-26: UEFA og ESPN (Opta) har samme elleve, med Roar Strand der vår tidligere kilde hadde Erik Mykland. Elleveren, draktnumrene (UEFA) og eventuelle roller (ESPN) er hentet derfra. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1998-06-27), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon.",
   "lineup": [
     {
       "name": "Frode Grodås",
@@ -60,43 +61,43 @@
     },
     {
       "name": "Ronny Johnsen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Henning Berg",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Dan Eggen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Vidar Riseth",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Kjetil Rekdal",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Øyvind Leonhardsen",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Håvard Flo",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "Tore André Flo",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "CM"
     }
   ],
   "goals": [

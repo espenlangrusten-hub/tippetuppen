@@ -2,6 +2,40 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-26 – Utledede posisjoner der kildene mangler dem
+
+Etter avtale: der ingen kilde dokumenterer posisjonene, utledes de i stedet for å vises
+som to nøytrale rader à fem. Det gjøres av `scripts/infer-positions.ts`, som kjøres
+lokalt uten nett.
+
+1. **Spillerens posisjon:** hver utespiller får posisjonen fra sin nærmeste kamp i tid
+   der posisjonen hans er dokumentert. Identitetene er lasterens sammenslåtte, så
+   «Lars Roar Bohinen» finner «Lars Bohinen». Én spiller uten dokumentert posisjon
+   plasseres der det er plass, i rekkefølgen midtbane, forsvar, angrep. Mangler to
+   eller flere, utledes ikke kampen.
+2. **Formasjonen:** hentes fra de nærmeste dokumenterte formasjonene til samme
+   landslagssjef. Egil Olsens to perioder regnes som forskjellige. Spillerne må passe:
+   - bakre linje har bare forsvarere,
+   - ingen forsvarer står lenger fram,
+   - fremste linje har bare angripere.
+
+   Av formasjonene som passer, velges den som gir færrest spillere i feil linje. Ved
+   likt antall velges den nærmeste i tid.
+
+**Merking:** kampen får taggen `position:inferred` og en note om hvor formasjonen og
+posisjonene kommer fra. Utledede posisjoner brukes aldri til å utlede andre.
+Mangler XI-byggeren og `build-player-facts.ts` ignorerer dem, så en antatt rolle
+blir aldri til et faktum som «startet alltid som midtstopper».
+
+**Resultat:**
+- 127 kamper har fått posisjoner: 72 i 4-5-1, 38 i 4-4-2, 11 i 4-3-3, 5 i 4-1-4-1
+  og 1 i 4-2-3-1.
+- Av de 351 spillbare kampene har nå 147 både posisjoner og draktnumre (86
+  dokumenterte og 61 utledede). 76 har bare posisjoner, 39 bare numre og 89 ingen
+  av delene.
+- De 128 som ikke kunne utledes, har for det meste to eller flere spillere som aldri
+  har en dokumentert posisjon (1990–2005).
+
 ## 2026-09-26 – 327 verifiserte ellever og 48 nye komplette runder
 
 `scripts/import/lineup-verify.ts` (workflow «Kontroller lagoppstillinger») spør UEFA og

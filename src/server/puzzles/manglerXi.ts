@@ -56,11 +56,14 @@ export async function buildManglerXiPuzzles(db: Db) {
       },
     ]),
   );
+  // A position inferred from nearby matches (scripts/infer-positions.ts) draws the pitch
+  // but is not evidence: it must never become "always started as a centre-back".
+  const inferred = new Set(matches.filter((m) => (m.tags ?? []).includes("position:inferred")).map((m) => m.id));
   const factApps = apps.map((a) => ({
     matchId: a.matchId,
     playerId: a.playerId,
     starter: a.starter,
-    position: a.position,
+    position: inferred.has(a.matchId) ? null : a.position,
     shirtNumber: a.shirtNumber,
     captain: a.captain,
   }));

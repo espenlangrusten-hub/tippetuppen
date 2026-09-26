@@ -9,10 +9,11 @@
     0,
     0
   ],
+  "formation": "4-4-2",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -31,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2005-11-12), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon.",
   "goalsPartial": true,
   "lineup": [
     {
@@ -40,43 +41,43 @@
     },
     {
       "name": "Jon Inge Høiland",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Anders Rambekk",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Martin Andresen",
-      "pos": "OUT"
+      "pos": "DM"
     },
     {
       "name": "Tommy Svindal Larsen",
-      "pos": "OUT"
+      "pos": "DM"
     },
     {
       "name": "Fredrik Strømstad",
-      "pos": "OUT"
+      "pos": "RW"
     },
     {
       "name": "Frode Johnsen",
-      "pos": "OUT"
+      "pos": "AM"
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "LW"
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "CF"
     }
   ]
 }
