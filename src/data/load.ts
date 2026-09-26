@@ -105,9 +105,27 @@ export function loadDataset(): Dataset {
         .map((f) => readJson(S.matchFile, path.join("matches", f)))
     : [];
 
+  // A lineup names a player the way its source did: "Henning Stille Berg" in one match,
+  // "Henning Berg" in the next. Taken literally that is two people, each with half the
+  // appearances, so the game told players Berg had started 23 matches. An alias resolves
+  // to the registry's player only when it is a longer form of the registered name - every
+  // name in "Henning Berg" is in "Henning Stille Berg". A shorter alias is fine as an
+  // answer but not as an identity: "Marcus Pedersen" is also another player. A name that
+  // fits more than one player is left alone rather than guessed.
+  const registryIds = new Map<string, string | null>();
+  for (const m of playerMeta) {
+    const own = normalizeName(m.fullName).split(" ");
+    for (const n of [m.fullName, ...m.aliases]) {
+      const key = normalizeName(n);
+      if (key.split(" ").length < 2 || !own.every((t) => key.split(" ").includes(t))) continue;
+      registryIds.set(key, registryIds.has(key) && registryIds.get(key) !== m.id ? null : m.id);
+    }
+  }
+  const idFor = (name: string) => registryIds.get(normalizeName(name)) ?? playerIdFor(name);
+
   const players = new Map<string, PlayerRecord>();
   const ensurePlayer = (name: string, status: DataStatus = "recall"): PlayerRecord => {
-    const id = playerIdFor(name);
+    const id = idFor(name);
     let p = players.get(id);
     if (!p) {
       const tokens = name.trim().split(/\s+/);
@@ -260,7 +278,7 @@ export function loadDataset(): Dataset {
           problems.push(`${m.id}: Norway goal without scorer name`);
           continue;
         }
-        playerId = playerIdFor(g.name);
+        playerId = idFor(g.name);
         if (!ids.has(playerId)) problems.push(`${m.id}: scorer ${g.name} not in lineup or subs`);
         ensurePlayer(g.name);
       }

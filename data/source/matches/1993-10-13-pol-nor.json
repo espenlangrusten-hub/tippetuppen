@@ -33,7 +33,7 @@
     { "name": "Gunnar Halle", "pos": "LM", "off": 81, "no": 9 },
     { "name": "Jan Åge Fjørtoft", "pos": "CF", "off": 73, "no": 11 }
   ],
-  "subs": [{ "name": "Ronny Johnsen", "pos": "CF", "on": 73, "for": "Jan Åge Fjørtoft" }, { "name": "Jan Ove Jakobsen", "pos": "LM", "on": 81, "for": "Gunnar Halle" }],
+  "subs": [{ "name": "Ronny Johnsen", "pos": "CF", "on": 73, "for": "Jan Åge Fjørtoft" }, { "name": "Jahn Ivar Jakobsen", "pos": "LM", "on": 81, "for": "Gunnar Halle" }],
   "goals": [
     { "team": "norway", "name": "Jostein Flo", "minute": 61 },
     { "team": "norway", "name": "Jan Åge Fjørtoft", "minute": 63 },

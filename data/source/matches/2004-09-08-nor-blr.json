@@ -13,12 +13,12 @@
   "formation": "4-2-3-1",
   "importance": 2,
   "tags": ["kvalik"],
-  "status": "single_source",
+  "status": "uncertain",
   "sources": [
     { "url": "https://www.rsssf.org/tablesn/noo-intres2004.html", "title": "Norway International Matches – Details 2004 – RSSSF", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers, clubs, formation, captain, substitutions and scorers (Riseth 39, Kutuzov 78) confirmed in search excerpt. The search summary mislabelled the opponent; the date and the Belarusian scorer identify the match as Norway–Belarus." },
     { "url": "https://match.uefa.com/v5/matches/75297/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
   ],
-  "notes": "Riseth ga ledelsen, men Kutuzov utlignet for Hviterussland.",
+  "notes": "Konflikt funnet 2026-09-26: UEFAs lagoppstilling har Thomas Myhre, Jon Inge Høiland, Morten Gamst Pedersen, Sigurd Rushfeldt der vår kilde har Espen Johnsen, Christer Basma, Jan Derek Sørensen, John Carew. ESPN (Opta) har samme elleve som UEFA. Ute av rotasjon til konflikten er løst. Riseth ga ledelsen, men Kutuzov utlignet for Hviterussland.",
   "lineup": [
     { "name": "Espen Johnsen", "no": 1, "pos": "GK" },
     { "name": "Christer Basma", "no": 2, "pos": "RB" },

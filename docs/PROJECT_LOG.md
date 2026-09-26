@@ -2,6 +2,52 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-26 – Startellevene kontrollert mot UEFA og ESPN
+
+En sonde (`scripts/import/lineup-probe.ts`, workflow «Sonde lagoppstillinger», skriver
+ingenting) sammenlignet alle 362 startellever med UEFAs og ESPNs lagoppstilling.
+
+| | Kamper |
+|---|---|
+| UEFA har kampen | 355 |
+| UEFA har nøyaktig vår ellever | 268 |
+| UEFA avviker | 87 |
+| ESPN har kampen med nøyaktig vår ellever | 136 |
+| … av dem med kampspesifikke roller (CD-L, LB, DM, LM …) | 40 |
+
+**Avvikene** var av tre slag:
+- **Skrivemåte, samme person** (Haavard/Håvard Flo, Tronderik/Trond Erik Bertelsen,
+  Abdissalam/Abdisalam Ibrahim o.l.). Ingen endring.
+- **Feil navn hos oss.**
+  - «Jan Ove Jakobsen» i 34 kamper er Jahn Ivar «Mini» Jakobsen. UEFA og seks av
+    våre egne kampfiler har Jahn Ivar.
+  - «Magne Hoset» i 16 kamper er Magne Hoseth, som registeret allerede hadde. Fasiten
+    i spillet var «HOSET».
+  - Begge er rettet i kampfilene, og registerets `jan-ove-jakobsen` er nå
+    `jahn-ivar-jakobsen`.
+- **Ulike spillere i elleveren: 13 kamper** er satt til `uncertain` og er ute av
+  rotasjon. Konflikten står i `notes` i hver fil.
+  - I fem av dem har UEFA og ESPN samme ellever, og vår avviker: Brasil–Norge 1998
+    (Roar Strand, ikke Erik Mykland), Norge–Spania 2003, Norge–Hviterussland 2004,
+    Norge–Italia 2005 og Norge–Estland 2025. De kan rettes til UEFA/ESPN-elleveren.
+  - De åtte andre har bare UEFA mot vår kilde: Skottland 1992, Nederland 1993,
+    Hviterussland 2001, Wales 2001, Tunisia 2002, De forente arabiske emirater 2003,
+    Tyskland 2009 og Brasil 2006. Brasil 2006 lå i kalenderen 29.9.
+  - Norge–Hviterussland 2016 (Veton/Valon Berisha) beholdes: ESPN støtter vår Veton.
+
+**Én spiller, én identitet.** Spiller-id lages av navnet slik kilden skrev det, så
+«Henning Stille Berg» og «Henning Berg» ble to personer med hver sin halvdel av
+kampene. Spillet viste derfor fakta som «Startet 23 kamper» for Berg (riktig tall:
+97). 20 slike par ble funnet (Berg, Nyland, Haaland, Riise ×2, Rekdal, Myhre, Bohinen,
+Basma, Rudi, Hagen, Braaten, Hæstad, Tettey, Huseklepp, Selnæs, Winsnes, Skammelsrud,
+Jakobsen, Hoseth).
+- `loadDataset` slår nå opp lagoppstillingsnavn i registerets aliaser. Et alias
+  brukes bare når det er en lengre form av registernavnet.
+- «Marcus Pedersen» er alias for Marcus Holmgren Pedersen som svar, men er også en
+  annen spiller (2013–2014). Derfor slås de ikke sammen.
+- Brødrene Abdellaoue og Berisha holdes også adskilt.
+- `tests/player-identity.test.ts` låser dette.
+
 ## 2026-09-26 – Mangler XI: komplette runder først
 
 **Problem.** Kalenderen fylles 400 dager fram, og planleggeren tok ikke hensyn til om en

@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:undocumented"
   ],
-  "status": "single_source",
+  "status": "uncertain",
   "sources": [
     {
       "url": "https://www.11v11.com/matches/netherlands-v-norway-09-june-1993-244398/",
@@ -24,7 +24,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Konflikt funnet 2026-09-26: UEFAs lagoppstilling har Geirmund Brendesaeter der vår kilde har Jan Åge Fjørtoft. Ute av rotasjon til konflikten er løst. Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
   "goalsPartial": true,
   "lineup": [
     {
