@@ -2,6 +2,55 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-26 – 327 verifiserte ellever og 48 nye komplette runder
+
+`scripts/import/lineup-verify.ts` (workflow «Kontroller lagoppstillinger») spør UEFA og
+ESPN om hver startellever og skriver resultatet.
+
+**Verified.** En kamp blir `verified` når elleveren er bekreftet av to utgivere: vår
+kuraterte kilde (RSSSF, fotball.no, 11v11 …) pluss UEFA eller ESPN, eller UEFA og ESPN
+sammen. En kilde teller bare når alle elleve navn går én-til-én opp mot våre.
+- `verified`: 11 → 327 av 362.
+- 129 av dem er bekreftet av både UEFA og ESPN i tillegg til vår kilde.
+- Kildene har fått en note om at startelleveren er identisk med vår.
+
+**Posisjoner.** Der alle utespillerne sto som `OUT`, er ESPNs kampspesifikke roller
+(Opta: CD-L, LB, DM, CM-R, LM, CF-L …) oversatt og skrevet, sammen med formasjonen. Det
+skjer bare når banen da tegner nøyaktig ESPNs linjer.
+- ESPNs grove G/D/M/F er spillernes vanlige posisjon, ikke rollen i kampen. Bare 1 av
+  10 stemte med våre dokumenterte formasjoner, så de brukes ikke.
+- En ensom «F» blant detaljerte roller er Optas midtspiss.
+- Mangler formasjonsstrengen, er formasjonen linjene rollene står i. En streng som
+  motsier rollene brukes ikke. Det gjaldt seks kamper, for eksempel 4-5-1 mot rollenes
+  4-4-1-1.
+- Kalibrering mot kampene der vi allerede har posisjoner: ESPN og vi har samme
+  formasjon i 18 av 29. Avvikene er typisk 4-3-3 mot 4-4-2 eller 4-2-3-1. Våre
+  eksisterende posisjoner overskrives derfor aldri.
+- 47 kamper har fått posisjoner (inkludert Estland 2025). Komplette runder, med alle posisjoner og draktnumre:
+  38 → 86.
+
+**Rettet ellever.** I fem av de 13 konfliktkampene har UEFA og ESPN samme ellever mot
+vår kilde. De har fått den elleveren, med UEFAs numre og ESPNs roller der de finnes.
+Hvert navn må være en spiller vi kjenner, så UEFAs «Haavard Flo» blir vår «Håvard Flo».
+
+| Kamp | Ut | Inn |
+|---|---|---|
+| Brasil–Norge 1998 | Erik Mykland | Roar Strand |
+| Norge–Spania 2003 | 7 spillere | Espen Johnsen, Stensaas, R. Johnsen, Basma, T. Andersen, Andresen, T.A. Flo |
+| Norge–Hviterussland 2004 | E. Johnsen, Basma, Sørensen, Carew | Myhre, Høiland, Gamst Pedersen, Rushfeldt |
+| Norge–Italia 2005 | 9 spillere | Myhre, Hagen, Lundekvam, Riise, Andresen, Hæstad, Gamst Pedersen, Iversen, Carew |
+| Norge–Estland 2025 | Ødegaard, Thorsby | Patrick Berg, Oscar Bobb |
+
+De åtte andre konfliktkampene har bare UEFA mot vår kilde og står fortsatt som
+`uncertain`.
+
+**Status nå:** 327 verified, 24 single_source, 10 uncertain, 1 recall. Blant de
+spillbare er 86 komplette, 100 har bare numre, 10 bare posisjoner og 155 ingen av
+delene. De siste er for det meste fra 1990–2005, der ESPN ikke har roller.
+
+`serialize` endrer nå også status-, notes-, formation- og tags-linjen i de
+håndformaterte kampfilene, så de ikke skrives om til ren JSON.
+
 ## 2026-09-26 – Startellevene kontrollert mot UEFA og ESPN
 
 En sonde (`scripts/import/lineup-probe.ts`, workflow «Sonde lagoppstillinger», skriver
