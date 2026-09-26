@@ -18,7 +18,7 @@
     { "url": "https://www.national-football-teams.com/matches/report/564/Slovenia_Norway.html", "title": "Slovenia vs. Norway – National Football Teams", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
     { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698413", "title": "Slovenia – Norge 21.06.2000 – Norges Fotballforbund", "kind": "web", "accessed": "2026-09-01" },
     { "url": "https://www.uefa.com/uefaeuro/match/64862--slovenia-vs-norway/lineups/", "title": "Slovenia 0-0 Norway | Line-ups | UEFA EURO 2000", "kind": "web", "accessed": "2026-09-05" },
-    { "url": "https://match.uefa.com/v5/matches/64862/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
+    { "url": "https://match.uefa.com/v5/matches/64862/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "0–0 i Arnhem var ikke nok: Spania snudde mot Jugoslavia på overtid, og Norge røk ut på målforskjell.",
   "lineup": [

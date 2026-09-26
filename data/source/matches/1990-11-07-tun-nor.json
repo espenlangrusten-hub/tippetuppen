@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:interpretive"
   ],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     {
       "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1698027",
@@ -28,6 +28,13 @@
       "title": "11v11 – Tunisia mot Norge, 1990-11-07",
       "kind": "web",
       "note": "Brede posisjonsgrupper; klassifiserer Roger Nilsen som forsvarer. Eksakt formasjon er ikke oppgitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/57353/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-26",
+      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
   "notes": "Draktnumrene er fra NFF. Visningen grupperer laget som 4–4–2, med Bjørnebye på venstreback og Roger Nilsen på midtbanen. Eksakt kampformasjon er ikke dokumentert; plasseringen av Nilsen er en tolkning (han ble erstattet av Erik Mykland).",

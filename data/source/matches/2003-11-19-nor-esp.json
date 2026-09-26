@@ -6,32 +6,108 @@
   "opponent": "Spania",
   "opponentCode": "ESP",
   "norwayHome": true,
-  "score": [0, 3],
+  "score": [
+    0,
+    3
+  ],
   "venue": "Ullevaal Stadion",
   "city": "Oslo",
   "manager": "Åge Hareide",
-  "formation": "4-4-2",
   "importance": 2,
-  "tags": ["playoff"],
-  "status": "uncertain",
+  "tags": [
+    "playoff",
+    "lineup:uefa-espn",
+    "position:undocumented"
+  ],
+  "status": "verified",
   "goalsPartial": true,
   "sources": [
-    { "url": "https://www.skysports.com/football/norway-vs-spain/teams/40795", "title": "Starting Lineups – Norway vs Spain | 19.11.2003 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI with shirt numbers and captain confirmed in search excerpt" },
-    { "url": "https://www.11v11.com/matches/norway-v-spain-19-november-2003-252317/", "title": "Norway v Spain, 19 November 2003 – 11v11", "kind": "web", "accessed": "2026-09-01" }
+    {
+      "url": "https://www.skysports.com/football/norway-vs-spain/teams/40795",
+      "title": "Starting Lineups – Norway vs Spain | 19.11.2003 – Sky Sports",
+      "kind": "web",
+      "accessed": "2026-09-01",
+      "note": "Full Norway XI with shirt numbers and captain confirmed in search excerpt Oppga en annen elleve enn UEFA og ESPN (se notes)."
+    },
+    {
+      "url": "https://www.11v11.com/matches/norway-v-spain-19-november-2003-252317/",
+      "title": "Norway v Spain, 19 November 2003 – 11v11",
+      "kind": "web",
+      "accessed": "2026-09-01",
+      "note": "Oppga en annen elleve enn UEFA og ESPN (se notes)."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/73616/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-26",
+      "note": "Startelleveren og draktnumrene er hentet herfra."
+    },
+    {
+      "url": "https://www.espn.com/soccer/match/_/gameId/131248",
+      "title": "ESPN – lagoppstilling (Opta)",
+      "kind": "web",
+      "accessed": "2026-09-26",
+      "note": "Samme elleve som UEFA."
+    }
   ],
-  "notes": "Konflikt funnet 2026-09-26: UEFAs lagoppstilling har Espen Johnsen, Ståle Stensaas, Ronny Johnsen, Christer Basma, Trond Andersen, Martin Andresen, Tore André Flo der vår kilde har Thomas Myhre, André Bergdølmo, Erik Hagen, Tommy Svindal Larsen, Magne Hoseth, Jan Derek Sørensen, John Carew. ESPN (Opta) har samme elleve som UEFA. Ute av rotasjon til konflikten er løst. Spania vant 5–1 sammenlagt. Hareides første store skuffelse som landslagssjef.",
+  "notes": "Rettet 2026-09-26: UEFA og ESPN (Opta) har samme elleve, med Espen Johnsen, Ståle Stensaas, Ronny Johnsen, Christer Basma, Trond Andersen, Martin Andresen, Tore André Flo der vår tidligere kilde hadde Thomas Myhre, André Bergdølmo, Erik Hagen, Tommy Svindal Larsen, Magne Hoseth, Jan Derek Sørensen, John Carew. Elleveren, draktnumrene (UEFA) og eventuelle roller (ESPN) er hentet derfra.",
   "lineup": [
-    { "name": "Thomas Myhre", "no": 1, "pos": "GK" },
-    { "name": "André Bergdølmo", "no": 2, "pos": "RB" },
-    { "name": "Erik Hagen", "no": 3, "pos": "CB" },
-    { "name": "Claus Lundekvam", "no": 4, "pos": "CB", "captain": true },
-    { "name": "John Arne Riise", "no": 5, "pos": "LB" },
-    { "name": "Jan Gunnar Solli", "no": 7, "pos": "RM" },
-    { "name": "Tommy Svindal Larsen", "no": 9, "pos": "CM" },
-    { "name": "Magne Hoseth", "no": 8, "pos": "CM" },
-    { "name": "Jan Derek Sørensen", "no": 6, "pos": "LM" },
-    { "name": "Steffen Iversen", "no": 11, "pos": "CF" },
-    { "name": "John Carew", "no": 10, "pos": "CF" }
+    {
+      "name": "Espen Johnsen",
+      "pos": "GK",
+      "no": 1
+    },
+    {
+      "name": "Ståle Stensaas",
+      "pos": "OUT",
+      "no": 2
+    },
+    {
+      "name": "Ronny Johnsen",
+      "pos": "OUT",
+      "no": 3
+    },
+    {
+      "name": "Claus Lundekvam",
+      "pos": "OUT",
+      "no": 4
+    },
+    {
+      "name": "Christer Basma",
+      "pos": "OUT",
+      "no": 5
+    },
+    {
+      "name": "Trond Andersen",
+      "pos": "OUT",
+      "no": 6
+    },
+    {
+      "name": "Jan Gunnar Solli",
+      "pos": "OUT",
+      "no": 7
+    },
+    {
+      "name": "Martin Andresen",
+      "pos": "OUT",
+      "no": 8
+    },
+    {
+      "name": "Tore André Flo",
+      "pos": "OUT",
+      "no": 9
+    },
+    {
+      "name": "John Arne Riise",
+      "pos": "OUT",
+      "no": 10
+    },
+    {
+      "name": "Steffen Iversen",
+      "pos": "OUT",
+      "no": 11
+    }
   ],
   "goals": []
 }

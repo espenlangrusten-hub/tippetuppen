@@ -12,10 +12,11 @@
   "manager": "Egil Olsen",
   "importance": 4,
   "tags": ["kvalik", "ikonisk", "italia"],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     { "url": "https://www.11v11.com/matches/norway-v-italy-05-june-1991-242951/", "title": "Norway v Italy, 05 June 1991 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt (Fjørtoft substitute)" },
-    { "url": "http://soccernostalgia.blogspot.com/2012/08/june-5-1991-norway-2-italy-1.html", "title": "Soccer Nostalgia: June 5, 1991 – Norway 2 Italy 1", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "http://soccernostalgia.blogspot.com/2012/08/june-5-1991-norway-2-italy-1.html", "title": "Soccer Nostalgia: June 5, 1991 – Norway 2 Italy 1", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/2954/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-26", "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "Italias første tap i en EM-kvalik på fire år. Dahlum etter fire minutter og Bohinen etter 25.",
   "lineup": [
