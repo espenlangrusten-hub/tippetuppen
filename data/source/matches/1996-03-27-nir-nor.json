@@ -9,10 +9,11 @@
     2,
     0
   ],
+  "formation": "4-5-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -31,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (1994-06-23), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Normann Rudi har ingen og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -40,43 +41,43 @@
     },
     {
       "name": "Alf-Inge Håland",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Henning Berg",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Ronny Johnsen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Stig Inge Bjørnebye",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Petter Normann Rudi",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Kjetil André Rekdal",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Ståle Solbakken",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Øyvind Leonhardsen",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Ole Gunnar Solskjær",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Jan Åge Fjørtoft",
-      "pos": "OUT"
+      "pos": "CF"
     }
   ]
 }

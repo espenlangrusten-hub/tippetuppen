@@ -33,11 +33,13 @@ const factMatches = new Map<string, FactMatch>(
     { id: m.id, date: m.date, opponent: m.opponent, competitionLabel: competitionLabel(m.competition, m.date), norwayHome: m.norwayHome, score: m.score },
   ]),
 );
+// Inferred positions draw the pitch but are not evidence (see the Mangler XI builder).
+const inferred = new Set(ds.matches.filter((m) => m.tags.includes("position:inferred")).map((m) => m.id));
 const factApps = ds.appearances.map((a) => ({
   matchId: a.matchId,
   playerId: a.playerId,
   starter: a.starter,
-  position: (a.position ?? null) as Position | null,
+  position: (inferred.has(a.matchId) ? null : (a.position ?? null)) as Position | null,
   shirtNumber: a.shirtNumber,
   captain: a.captain,
 }));

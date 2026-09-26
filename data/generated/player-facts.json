@@ -6,7 +6,7 @@
     {
       "playerId": "john-arne-riise",
       "displayName": "John Arne Riise",
-      "starts": 107,
+      "starts": 108,
       "startsInPeriod": 0,
       "goals": 2,
       "firstMatch": "2000-01-31",
@@ -21,7 +21,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 107 kamper i arkivet, fordelt over 13 år fra 2000 til 2013.",
+          "text": "Startet 108 kamper i arkivet, fordelt over 13 år fra 2000 til 2013.",
           "matchIds": [
             "2000-01-31-nor-isl",
             "2000-02-02-den-nor",
@@ -63,6 +63,7 @@
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-07-nor-sco",
@@ -184,6 +185,7 @@
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-07-nor-sco",
@@ -255,7 +257,7 @@
         },
         {
           "kind": "draktnummer",
-          "text": "Har båret 5 ulike draktnumre: 2, 5, 6, 9, 11.",
+          "text": "Har båret 6 ulike draktnumre: 2, 5, 6, 9, 10, 11.",
           "matchIds": [
             "2000-01-31-nor-isl",
             "2000-02-02-den-nor",
@@ -297,6 +299,7 @@
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-07-nor-sco",
@@ -719,7 +722,7 @@
     {
       "playerId": "brede-hangeland",
       "displayName": "Brede Hangeland",
-      "starts": 88,
+      "starts": 87,
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "2002-11-20",
@@ -734,7 +737,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 88 kamper i arkivet, fordelt over 12 år fra 2002 til 2014.",
+          "text": "Startet 87 kamper i arkivet, fordelt over 12 år fra 2002 til 2014.",
           "matchIds": [
             "2002-11-20-aut-nor",
             "2003-01-26-uae-nor",
@@ -748,7 +751,6 @@
             "2004-02-18-nir-nor",
             "2005-04-20-est-nor",
             "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-10-08-nor-mda",
             "2005-10-12-blr-nor",
@@ -839,7 +841,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: defensiv midtbane, midtstopper.",
+          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
           "matchIds": [
             "2002-11-20-aut-nor",
             "2003-01-26-uae-nor",
@@ -853,7 +855,6 @@
             "2004-02-18-nir-nor",
             "2005-04-20-est-nor",
             "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-10-08-nor-mda",
             "2005-10-12-blr-nor",
@@ -933,7 +934,7 @@
         },
         {
           "kind": "draktnummer",
-          "text": "Har båret 4 ulike draktnumre: 4, 5, 7, 9.",
+          "text": "Har båret 3 ulike draktnumre: 4, 5, 9.",
           "matchIds": [
             "2002-11-20-aut-nor",
             "2003-01-26-uae-nor",
@@ -947,7 +948,6 @@
             "2004-02-18-nir-nor",
             "2005-04-20-est-nor",
             "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-10-08-nor-mda",
             "2005-10-12-blr-nor",
@@ -1321,7 +1321,7 @@
     {
       "playerId": "john-carew",
       "displayName": "John Carew",
-      "starts": 77,
+      "starts": 76,
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "1999-01-20",
@@ -1336,7 +1336,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 77 kamper i arkivet, fordelt over 12 år fra 1999 til 2011.",
+          "text": "Startet 76 kamper i arkivet, fordelt over 12 år fra 1999 til 2011.",
           "matchIds": [
             "1999-01-20-isr-nor",
             "1999-01-22-nor-est",
@@ -1365,14 +1365,13 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor",
             "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
@@ -1448,14 +1447,13 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor",
             "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
@@ -1531,14 +1529,13 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor",
             "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
+            "2005-06-04-nor-ita",
             "2005-06-08-swe-nor",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
@@ -1595,7 +1592,7 @@
     {
       "playerId": "erik-mykland",
       "displayName": "Erik Mykland",
-      "starts": 74,
+      "starts": 73,
       "startsInPeriod": 33,
       "goals": 0,
       "firstMatch": "1992-02-04",
@@ -1610,7 +1607,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 74 kamper i arkivet, fordelt over 8 år fra 1992 til 2000.",
+          "text": "Startet 73 kamper i arkivet, fordelt over 8 år fra 1992 til 2000.",
           "matchIds": [
             "1992-02-04-ber-nor",
             "1992-08-26-nor-swe",
@@ -1663,7 +1660,6 @@
             "1998-05-20-nor-mex",
             "1998-05-27-nor-ksa",
             "1998-06-10-mar-nor",
-            "1998-06-23-bra-nor",
             "1998-06-27-ita-nor",
             "1999-02-10-ita-nor",
             "1999-03-27-gre-nor",
@@ -1743,7 +1739,6 @@
             "1998-05-20-nor-mex",
             "1998-05-27-nor-ksa",
             "1998-06-10-mar-nor",
-            "1998-06-23-bra-nor",
             "1998-06-27-ita-nor",
             "1999-02-10-ita-nor",
             "1999-03-27-gre-nor",
@@ -1823,7 +1818,6 @@
             "1998-05-20-nor-mex",
             "1998-05-27-nor-ksa",
             "1998-06-10-mar-nor",
-            "1998-06-23-bra-nor",
             "1998-06-27-ita-nor",
             "1999-02-10-ita-nor",
             "1999-03-27-gre-nor",
@@ -1853,6 +1847,271 @@
           "text": "Var på banen da Norge vant 10–0 hjemme mot San Marino 1992-09-09.",
           "matchIds": [
             "1992-09-09-nor-smr"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "morten-gamst-pedersen",
+      "displayName": "Morten Gamst Pedersen",
+      "starts": 71,
+      "startsInPeriod": 0,
+      "goals": 3,
+      "firstMatch": "2004-02-18",
+      "lastMatch": "2014-01-18",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Nord-Irland 2004-02-18, Privatlandskamp. Det endte Nord-Irland 1–4 Norge.",
+          "matchIds": [
+            "2004-02-18-nir-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 71 kamper i arkivet, fordelt over 10 år fra 2004 til 2014.",
+          "matchIds": [
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2007-11-17-nor-tur",
+            "2007-11-21-mlt-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-10-15-nor-ned",
+            "2008-11-19-ukr-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor",
+            "2009-09-09-nor-mkd",
+            "2009-10-10-nor-rsa",
+            "2009-11-14-sui-nor",
+            "2010-03-03-svk-nor",
+            "2010-05-29-nor-mne",
+            "2010-06-02-nor-ukr",
+            "2010-08-11-nor-fra",
+            "2010-09-03-isl-nor",
+            "2010-09-07-nor-por",
+            "2010-10-08-cyp-nor",
+            "2010-10-12-cro-nor",
+            "2010-11-17-irl-nor",
+            "2011-02-09-pol-nor",
+            "2011-03-26-nor-den",
+            "2011-06-04-por-nor",
+            "2011-06-07-nor-ltu",
+            "2011-08-10-nor-cze",
+            "2011-10-11-nor-cyp",
+            "2011-11-12-wal-nor",
+            "2012-02-29-nir-nor",
+            "2012-05-26-nor-eng",
+            "2012-08-15-nor-gre",
+            "2013-11-19-nor-sco",
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor"
+          ]
+        },
+        {
+          "kind": "mål",
+          "text": "Scoret mot Brasil 2006-08-16, og mot Skottland 2009-08-12.",
+          "matchIds": [
+            "2006-08-16-nor-bra",
+            "2009-08-12-nor-sco",
+            "2009-08-12-nor-sco"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: venstre midtbane, venstre ving, spiss, midtbane.",
+          "matchIds": [
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2007-11-17-nor-tur",
+            "2007-11-21-mlt-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-10-15-nor-ned",
+            "2008-11-19-ukr-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor",
+            "2009-09-09-nor-mkd",
+            "2009-10-10-nor-rsa",
+            "2009-11-14-sui-nor",
+            "2010-03-03-svk-nor",
+            "2010-05-29-nor-mne",
+            "2010-06-02-nor-ukr",
+            "2010-08-11-nor-fra",
+            "2010-09-03-isl-nor",
+            "2010-09-07-nor-por",
+            "2010-10-08-cyp-nor",
+            "2010-10-12-cro-nor",
+            "2010-11-17-irl-nor",
+            "2011-02-09-pol-nor",
+            "2011-03-26-nor-den",
+            "2011-06-04-por-nor",
+            "2011-06-07-nor-ltu",
+            "2011-08-10-nor-cze",
+            "2011-10-11-nor-cyp",
+            "2011-11-12-wal-nor",
+            "2012-02-29-nir-nor",
+            "2012-05-26-nor-eng",
+            "2012-08-15-nor-gre",
+            "2013-11-19-nor-sco",
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 4 ulike draktnumre: 6, 8, 9, 11.",
+          "matchIds": [
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2007-11-17-nor-tur",
+            "2007-11-21-mlt-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-10-15-nor-ned",
+            "2008-11-19-ukr-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor",
+            "2009-09-09-nor-mkd",
+            "2009-10-10-nor-rsa",
+            "2009-11-14-sui-nor",
+            "2010-03-03-svk-nor",
+            "2010-05-29-nor-mne",
+            "2010-06-02-nor-ukr",
+            "2010-08-11-nor-fra",
+            "2010-09-03-isl-nor",
+            "2010-09-07-nor-por",
+            "2010-10-08-cyp-nor",
+            "2010-10-12-cro-nor",
+            "2010-11-17-irl-nor",
+            "2011-02-09-pol-nor",
+            "2011-03-26-nor-den",
+            "2011-06-04-por-nor",
+            "2011-06-07-nor-ltu",
+            "2011-08-10-nor-cze",
+            "2011-10-11-nor-cyp",
+            "2011-11-12-wal-nor",
+            "2012-02-29-nir-nor",
+            "2012-05-26-nor-eng",
+            "2012-08-15-nor-gre",
+            "2013-11-19-nor-sco",
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
+          "matchIds": [
+            "2007-06-02-nor-mlt"
           ]
         }
       ]
@@ -1961,11 +2220,10 @@
         },
         {
           "kind": "kaptein",
-          "text": "Bar kapteinsbindet i 4 kamper, første gang mot Marokko 1998-06-10.",
+          "text": "Bar kapteinsbindet i 3 kamper, første gang mot Marokko 1998-06-10.",
           "matchIds": [
             "1998-06-10-mar-nor",
             "1998-06-16-sco-nor",
-            "1998-06-23-bra-nor",
             "1998-06-27-ita-nor"
           ]
         },
@@ -2126,265 +2384,6 @@
           "text": "Var på banen da Norge vant 10–0 hjemme mot San Marino 1992-09-09.",
           "matchIds": [
             "1992-09-09-nor-smr"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "morten-gamst-pedersen",
-      "displayName": "Morten Gamst Pedersen",
-      "starts": 69,
-      "startsInPeriod": 0,
-      "goals": 3,
-      "firstMatch": "2004-02-18",
-      "lastMatch": "2014-01-18",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Nord-Irland 2004-02-18, Privatlandskamp. Det endte Nord-Irland 1–4 Norge.",
-          "matchIds": [
-            "2004-02-18-nir-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 69 kamper i arkivet, fordelt over 10 år fra 2004 til 2014.",
-          "matchIds": [
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2007-11-17-nor-tur",
-            "2007-11-21-mlt-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-10-15-nor-ned",
-            "2008-11-19-ukr-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor",
-            "2009-09-09-nor-mkd",
-            "2009-10-10-nor-rsa",
-            "2009-11-14-sui-nor",
-            "2010-03-03-svk-nor",
-            "2010-05-29-nor-mne",
-            "2010-06-02-nor-ukr",
-            "2010-08-11-nor-fra",
-            "2010-09-03-isl-nor",
-            "2010-09-07-nor-por",
-            "2010-10-08-cyp-nor",
-            "2010-10-12-cro-nor",
-            "2010-11-17-irl-nor",
-            "2011-02-09-pol-nor",
-            "2011-03-26-nor-den",
-            "2011-06-04-por-nor",
-            "2011-06-07-nor-ltu",
-            "2011-08-10-nor-cze",
-            "2011-10-11-nor-cyp",
-            "2011-11-12-wal-nor",
-            "2012-02-29-nir-nor",
-            "2012-05-26-nor-eng",
-            "2012-08-15-nor-gre",
-            "2013-11-19-nor-sco",
-            "2014-01-15-mda-nor",
-            "2014-01-18-pol-nor"
-          ]
-        },
-        {
-          "kind": "mål",
-          "text": "Scoret mot Brasil 2006-08-16, og mot Skottland 2009-08-12.",
-          "matchIds": [
-            "2006-08-16-nor-bra",
-            "2009-08-12-nor-sco",
-            "2009-08-12-nor-sco"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: venstre midtbane, venstre ving, spiss, midtbane.",
-          "matchIds": [
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2007-11-17-nor-tur",
-            "2007-11-21-mlt-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-10-15-nor-ned",
-            "2008-11-19-ukr-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor",
-            "2009-09-09-nor-mkd",
-            "2009-10-10-nor-rsa",
-            "2009-11-14-sui-nor",
-            "2010-03-03-svk-nor",
-            "2010-05-29-nor-mne",
-            "2010-06-02-nor-ukr",
-            "2010-08-11-nor-fra",
-            "2010-09-03-isl-nor",
-            "2010-09-07-nor-por",
-            "2010-10-08-cyp-nor",
-            "2010-10-12-cro-nor",
-            "2010-11-17-irl-nor",
-            "2011-02-09-pol-nor",
-            "2011-03-26-nor-den",
-            "2011-06-04-por-nor",
-            "2011-06-07-nor-ltu",
-            "2011-08-10-nor-cze",
-            "2011-10-11-nor-cyp",
-            "2011-11-12-wal-nor",
-            "2012-02-29-nir-nor",
-            "2012-05-26-nor-eng",
-            "2012-08-15-nor-gre",
-            "2013-11-19-nor-sco",
-            "2014-01-15-mda-nor",
-            "2014-01-18-pol-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 3 ulike draktnumre: 8, 9, 11.",
-          "matchIds": [
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2007-11-17-nor-tur",
-            "2007-11-21-mlt-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-10-15-nor-ned",
-            "2008-11-19-ukr-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor",
-            "2009-09-09-nor-mkd",
-            "2009-10-10-nor-rsa",
-            "2009-11-14-sui-nor",
-            "2010-03-03-svk-nor",
-            "2010-05-29-nor-mne",
-            "2010-06-02-nor-ukr",
-            "2010-08-11-nor-fra",
-            "2010-09-03-isl-nor",
-            "2010-09-07-nor-por",
-            "2010-10-08-cyp-nor",
-            "2010-10-12-cro-nor",
-            "2010-11-17-irl-nor",
-            "2011-02-09-pol-nor",
-            "2011-03-26-nor-den",
-            "2011-06-04-por-nor",
-            "2011-06-07-nor-ltu",
-            "2011-08-10-nor-cze",
-            "2011-10-11-nor-cyp",
-            "2011-11-12-wal-nor",
-            "2012-02-29-nir-nor",
-            "2012-05-26-nor-eng",
-            "2012-08-15-nor-gre",
-            "2013-11-19-nor-sco",
-            "2014-01-15-mda-nor",
-            "2014-01-18-pol-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
-          "matchIds": [
-            "2007-06-02-nor-mlt"
           ]
         }
       ]
@@ -2862,7 +2861,7 @@
     {
       "playerId": "steffen-iversen",
       "displayName": "Steffen Iversen",
-      "starts": 62,
+      "starts": 63,
       "startsInPeriod": 0,
       "goals": 1,
       "firstMatch": "1998-11-18",
@@ -2877,7 +2876,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 62 kamper i arkivet, fordelt over 10 år fra 1998 til 2008.",
+          "text": "Startet 63 kamper i arkivet, fordelt over 10 år fra 1998 til 2008.",
           "matchIds": [
             "1998-11-18-egy-nor",
             "1999-03-27-gre-nor",
@@ -2924,6 +2923,7 @@
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
             "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -2999,6 +2999,7 @@
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
             "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -3067,6 +3068,7 @@
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
             "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -3098,7 +3100,7 @@
     {
       "playerId": "andre-bergdolmo",
       "displayName": "André Bergdølmo",
-      "starts": 61,
+      "starts": 60,
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "1997-01-22",
@@ -3113,7 +3115,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 61 kamper i arkivet, fordelt over 8 år fra 1997 til 2005.",
+          "text": "Startet 60 kamper i arkivet, fordelt over 8 år fra 1997 til 2005.",
           "matchIds": [
             "1997-01-22-nor-nzl",
             "1997-01-25-aus-nor",
@@ -3163,7 +3165,6 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-02-09-mlt-nor",
@@ -3176,13 +3177,6 @@
             "2005-09-07-nor-sco",
             "2005-10-08-nor-mda",
             "2005-11-12-nor-cze"
-          ]
-        },
-        {
-          "kind": "kaptein",
-          "text": "Bar kapteinsbindet i én kamp, første gang mot Italia 2005-06-04.",
-          "matchIds": [
-            "2005-06-04-nor-ita"
           ]
         },
         {
@@ -3237,7 +3231,6 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-02-09-mlt-nor",
@@ -3304,7 +3297,6 @@
             "2003-06-11-nor-rou",
             "2003-08-20-nor-sco",
             "2003-09-06-bih-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-02-09-mlt-nor",
@@ -3545,7 +3537,7 @@
     {
       "playerId": "ronny-johnsen",
       "displayName": "Ronny Johnsen",
-      "starts": 56,
+      "starts": 57,
       "startsInPeriod": 17,
       "goals": 1,
       "firstMatch": "1991-09-25",
@@ -3560,7 +3552,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 56 kamper i arkivet, fordelt over 16 år fra 1991 til 2007.",
+          "text": "Startet 57 kamper i arkivet, fordelt over 16 år fra 1991 til 2007.",
           "matchIds": [
             "1991-09-25-nor-csk",
             "1991-11-13-ita-nor",
@@ -3615,6 +3607,7 @@
             "2003-06-07-den-nor",
             "2003-06-11-nor-rou",
             "2003-09-06-bih-nor",
+            "2003-11-19-nor-esp",
             "2004-02-18-nir-nor",
             "2004-05-27-nor-wal",
             "2007-08-22-nor-arg"
@@ -3684,6 +3677,7 @@
             "2003-06-07-den-nor",
             "2003-06-11-nor-rou",
             "2003-09-06-bih-nor",
+            "2003-11-19-nor-esp",
             "2004-02-18-nir-nor",
             "2004-05-27-nor-wal",
             "2007-08-22-nor-arg"
@@ -3746,6 +3740,7 @@
             "2003-06-07-den-nor",
             "2003-06-11-nor-rou",
             "2003-09-06-bih-nor",
+            "2003-11-19-nor-esp",
             "2004-02-18-nir-nor",
             "2004-05-27-nor-wal",
             "2007-08-22-nor-arg"
@@ -3763,7 +3758,7 @@
     {
       "playerId": "tore-andre-flo",
       "displayName": "Tore André Flo",
-      "starts": 55,
+      "starts": 56,
       "startsInPeriod": 4,
       "goals": 2,
       "firstMatch": "1995-10-11",
@@ -3778,7 +3773,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 55 kamper i arkivet, fordelt over 9 år fra 1995 til 2004.",
+          "text": "Startet 56 kamper i arkivet, fordelt over 9 år fra 1995 til 2004.",
           "matchIds": [
             "1995-10-11-nor-eng",
             "1995-11-15-ned-nor",
@@ -3834,6 +3829,7 @@
             "2003-09-10-nor-por",
             "2003-10-11-nor-lux",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor"
           ]
         },
@@ -3903,6 +3899,7 @@
             "2003-09-10-nor-por",
             "2003-10-11-nor-lux",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor"
           ]
         },
@@ -3964,6 +3961,7 @@
             "2003-09-10-nor-por",
             "2003-10-11-nor-lux",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor"
           ]
         },
@@ -3972,6 +3970,211 @@
           "text": "Var på banen da Norge vant 6–0 hjemme mot Saudi-Arabia 1998-05-27.",
           "matchIds": [
             "1998-05-27-nor-ksa"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "thomas-myhre",
+      "displayName": "Thomas Myhre",
+      "starts": 54,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "1999-02-10",
+      "lastMatch": "2007-03-28",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Italia 1999-02-10, Privatlandskamp. Det endte Italia 0–0 Norge.",
+          "matchIds": [
+            "1999-02-10-ita-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 54 kamper i arkivet, fordelt over 8 år fra 1999 til 2007.",
+          "matchIds": [
+            "1999-02-10-ita-nor",
+            "1999-03-27-gre-nor",
+            "1999-04-28-geo-nor",
+            "1999-05-20-nor-jam",
+            "2000-03-29-sui-nor",
+            "2000-04-26-nor-bel",
+            "2000-05-27-nor-svk",
+            "2000-06-03-nor-ita",
+            "2000-06-13-esp-nor",
+            "2000-06-18-nor-yug",
+            "2000-06-21-svn-nor",
+            "2001-02-28-nir-nor",
+            "2001-03-24-nor-pol",
+            "2001-03-28-blr-nor",
+            "2001-04-25-nor-bul",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-08-15-nor-tur",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-02-13-bel-nor",
+            "2002-03-27-tun-nor",
+            "2002-04-17-nor-swe",
+            "2002-05-14-nor-jpn",
+            "2002-05-22-nor-isl",
+            "2002-10-12-rou-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-09-07-nor-sco",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "1999-02-10-ita-nor",
+            "1999-03-27-gre-nor",
+            "1999-04-28-geo-nor",
+            "1999-05-20-nor-jam",
+            "2000-03-29-sui-nor",
+            "2000-04-26-nor-bel",
+            "2000-05-27-nor-svk",
+            "2000-06-03-nor-ita",
+            "2000-06-13-esp-nor",
+            "2000-06-18-nor-yug",
+            "2000-06-21-svn-nor",
+            "2001-02-28-nir-nor",
+            "2001-03-24-nor-pol",
+            "2001-03-28-blr-nor",
+            "2001-04-25-nor-bul",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-08-15-nor-tur",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-02-13-bel-nor",
+            "2002-03-27-tun-nor",
+            "2002-04-17-nor-swe",
+            "2002-05-14-nor-jpn",
+            "2002-05-22-nor-isl",
+            "2002-10-12-rou-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-09-07-nor-sco",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Spilte alltid med draktnummer 1.",
+          "matchIds": [
+            "1999-02-10-ita-nor",
+            "1999-03-27-gre-nor",
+            "1999-04-28-geo-nor",
+            "1999-05-20-nor-jam",
+            "2000-03-29-sui-nor",
+            "2000-04-26-nor-bel",
+            "2000-05-27-nor-svk",
+            "2000-06-03-nor-ita",
+            "2000-06-13-esp-nor",
+            "2000-06-18-nor-yug",
+            "2000-06-21-svn-nor",
+            "2001-02-28-nir-nor",
+            "2001-03-24-nor-pol",
+            "2001-03-28-blr-nor",
+            "2001-04-25-nor-bul",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-08-15-nor-tur",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-02-13-bel-nor",
+            "2002-03-27-tun-nor",
+            "2002-04-17-nor-swe",
+            "2002-05-14-nor-jpn",
+            "2002-05-22-nor-isl",
+            "2002-10-12-rou-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-09-07-nor-sco",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 6–0 hjemme mot Jamaica 1999-05-20.",
+          "matchIds": [
+            "1999-05-20-nor-jam"
           ]
         }
       ]
@@ -4054,7 +4257,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, midtbane.",
+          "text": "Brukt i flere roller: sentral midtbane, høyre midtbane, spiss, offensiv midtbane, midtbane, venstre midtbane.",
           "matchIds": [
             "2010-10-12-cro-nor",
             "2012-01-15-den-nor",
@@ -4182,208 +4385,6 @@
       ]
     },
     {
-      "playerId": "thomas-myhre",
-      "displayName": "Thomas Myhre",
-      "starts": 53,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "1999-02-10",
-      "lastMatch": "2007-03-28",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Italia 1999-02-10, Privatlandskamp. Det endte Italia 0–0 Norge.",
-          "matchIds": [
-            "1999-02-10-ita-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 53 kamper i arkivet, fordelt over 8 år fra 1999 til 2007.",
-          "matchIds": [
-            "1999-02-10-ita-nor",
-            "1999-03-27-gre-nor",
-            "1999-04-28-geo-nor",
-            "1999-05-20-nor-jam",
-            "2000-03-29-sui-nor",
-            "2000-04-26-nor-bel",
-            "2000-05-27-nor-svk",
-            "2000-06-03-nor-ita",
-            "2000-06-13-esp-nor",
-            "2000-06-18-nor-yug",
-            "2000-06-21-svn-nor",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2001-03-28-blr-nor",
-            "2001-04-25-nor-bul",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-02-13-bel-nor",
-            "2002-03-27-tun-nor",
-            "2002-04-17-nor-swe",
-            "2002-05-14-nor-jpn",
-            "2002-05-22-nor-isl",
-            "2002-10-12-rou-nor",
-            "2003-11-19-nor-esp",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1999-02-10-ita-nor",
-            "1999-03-27-gre-nor",
-            "1999-04-28-geo-nor",
-            "1999-05-20-nor-jam",
-            "2000-03-29-sui-nor",
-            "2000-04-26-nor-bel",
-            "2000-05-27-nor-svk",
-            "2000-06-03-nor-ita",
-            "2000-06-13-esp-nor",
-            "2000-06-18-nor-yug",
-            "2000-06-21-svn-nor",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2001-03-28-blr-nor",
-            "2001-04-25-nor-bul",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-02-13-bel-nor",
-            "2002-03-27-tun-nor",
-            "2002-04-17-nor-swe",
-            "2002-05-14-nor-jpn",
-            "2002-05-22-nor-isl",
-            "2002-10-12-rou-nor",
-            "2003-11-19-nor-esp",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Spilte alltid med draktnummer 1.",
-          "matchIds": [
-            "1999-02-10-ita-nor",
-            "1999-03-27-gre-nor",
-            "1999-04-28-geo-nor",
-            "1999-05-20-nor-jam",
-            "2000-03-29-sui-nor",
-            "2000-04-26-nor-bel",
-            "2000-05-27-nor-svk",
-            "2000-06-03-nor-ita",
-            "2000-06-13-esp-nor",
-            "2000-06-18-nor-yug",
-            "2000-06-21-svn-nor",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2001-03-28-blr-nor",
-            "2001-04-25-nor-bul",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-02-13-bel-nor",
-            "2002-03-27-tun-nor",
-            "2002-04-17-nor-swe",
-            "2002-05-14-nor-jpn",
-            "2002-05-22-nor-isl",
-            "2002-10-12-rou-nor",
-            "2003-11-19-nor-esp",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 6–0 hjemme mot Jamaica 1999-05-20.",
-          "matchIds": [
-            "1999-05-20-nor-jam"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "stefan-johansen",
       "displayName": "Stefan Johansen",
       "starts": 51,
@@ -4468,7 +4469,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: offensiv midtbane, venstre midtbane, midtbane.",
+          "text": "Brukt i flere roller: defensiv midtbane, sentral midtbane, offensiv midtbane, venstre midtbane, høyre midtbane, midtbane.",
           "matchIds": [
             "2013-08-14-swe-nor",
             "2013-09-06-nor-cyp",
@@ -5221,7 +5222,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: defensiv midtbane, midtstopper, sentral midtbane, høyre midtbane.",
           "matchIds": [
             "2011-09-06-den-nor",
             "2012-02-29-nir-nor",
@@ -5750,7 +5751,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som høyre midtbane i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: venstre midtbane, spiss, høyre midtbane, offensiv midtbane, høyre ving.",
           "matchIds": [
             "2012-01-15-den-nor",
             "2012-01-18-tha-nor",
@@ -6195,6 +6196,180 @@
           "text": "Var på banen da Norge vant 4–0 hjemme mot Ungarn 2007-06-06.",
           "matchIds": [
             "2007-06-06-nor-hun"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "martin-andresen",
+      "displayName": "Martin Andresen",
+      "starts": 41,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2001-08-15",
+      "lastMatch": "2009-02-11",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Tyrkia 2001-08-15, Privatlandskamp. Det endte Norge 1–1 Tyrkia.",
+          "matchIds": [
+            "2001-08-15-nor-tur"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 41 kamper i arkivet, fordelt over 8 år fra 2001 til 2009.",
+          "matchIds": [
+            "2001-08-15-nor-tur",
+            "2002-03-27-tun-nor",
+            "2002-05-22-nor-isl",
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-09-07-nor-sco",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-08-20-nor-irl",
+            "2008-09-06-nor-isl",
+            "2009-02-11-ger-nor"
+          ]
+        },
+        {
+          "kind": "kaptein",
+          "text": "Bar kapteinsbindet i 2 kamper, første gang mot Brasil 2006-08-16.",
+          "matchIds": [
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: defensiv midtbane, sentral midtbane.",
+          "matchIds": [
+            "2001-08-15-nor-tur",
+            "2002-03-27-tun-nor",
+            "2002-05-22-nor-isl",
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-09-07-nor-sco",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-08-20-nor-irl",
+            "2008-09-06-nor-isl",
+            "2009-02-11-ger-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 7, 8.",
+          "matchIds": [
+            "2001-08-15-nor-tur",
+            "2002-03-27-tun-nor",
+            "2002-05-22-nor-isl",
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-13-nor-svn",
+            "2005-05-26-nor-crc",
+            "2005-06-04-nor-ita",
+            "2005-09-07-nor-sco",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-06-06-nor-hun",
+            "2007-08-22-nor-arg",
+            "2007-09-08-mda-nor",
+            "2007-09-12-nor-gre",
+            "2007-10-17-bih-nor",
+            "2008-02-06-wal-nor",
+            "2008-03-26-mne-nor",
+            "2008-05-28-nor-uru",
+            "2008-08-20-nor-irl",
+            "2008-09-06-nor-isl",
+            "2009-02-11-ger-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
+          "matchIds": [
+            "2007-06-02-nor-mlt"
           ]
         }
       ]
@@ -6694,175 +6869,6 @@
       ]
     },
     {
-      "playerId": "martin-andresen",
-      "displayName": "Martin Andresen",
-      "starts": 39,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2001-08-15",
-      "lastMatch": "2009-02-11",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Tyrkia 2001-08-15, Privatlandskamp. Det endte Norge 1–1 Tyrkia.",
-          "matchIds": [
-            "2001-08-15-nor-tur"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 39 kamper i arkivet, fordelt over 8 år fra 2001 til 2009.",
-          "matchIds": [
-            "2001-08-15-nor-tur",
-            "2002-03-27-tun-nor",
-            "2002-05-22-nor-isl",
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-13-nor-svn",
-            "2005-05-26-nor-crc",
-            "2005-09-07-nor-sco",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-08-20-nor-irl",
-            "2008-09-06-nor-isl",
-            "2009-02-11-ger-nor"
-          ]
-        },
-        {
-          "kind": "kaptein",
-          "text": "Bar kapteinsbindet i 3 kamper, første gang mot Hviterussland 2004-09-08.",
-          "matchIds": [
-            "2004-09-08-nor-blr",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: defensiv midtbane, sentral midtbane.",
-          "matchIds": [
-            "2001-08-15-nor-tur",
-            "2002-03-27-tun-nor",
-            "2002-05-22-nor-isl",
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-13-nor-svn",
-            "2005-05-26-nor-crc",
-            "2005-09-07-nor-sco",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-08-20-nor-irl",
-            "2008-09-06-nor-isl",
-            "2009-02-11-ger-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 7, 8.",
-          "matchIds": [
-            "2001-08-15-nor-tur",
-            "2002-03-27-tun-nor",
-            "2002-05-22-nor-isl",
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-13-nor-svn",
-            "2005-05-26-nor-crc",
-            "2005-09-07-nor-sco",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-06-06-nor-hun",
-            "2007-08-22-nor-arg",
-            "2007-09-08-mda-nor",
-            "2007-09-12-nor-gre",
-            "2007-10-17-bih-nor",
-            "2008-02-06-wal-nor",
-            "2008-03-26-mne-nor",
-            "2008-05-28-nor-uru",
-            "2008-08-20-nor-irl",
-            "2008-09-06-nor-isl",
-            "2009-02-11-ger-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
-          "matchIds": [
-            "2007-06-02-nor-mlt"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "sander-berge",
       "displayName": "Sander Berge",
       "starts": 38,
@@ -6924,7 +6930,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: midtbane, sentral midtbane, defensiv midtbane.",
+          "text": "Brukt i flere roller: sentral midtbane, midtbane, defensiv midtbane.",
           "matchIds": [
             "2017-06-10-nor-cze",
             "2017-06-13-nor-swe",
@@ -7231,53 +7237,10 @@
             "2003-09-10-nor-por",
             "2003-10-11-nor-lux",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor",
             "2004-05-27-nor-wal",
             "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som høyreback i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1995-11-29-tri-nor",
-            "1999-01-20-isr-nor",
-            "2000-10-07-wal-nor",
-            "2000-10-11-nor-ukr",
-            "2001-04-25-nor-bul",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-02-13-bel-nor",
-            "2002-04-17-nor-swe",
-            "2002-08-21-nor-ned",
-            "2002-09-07-nor-den",
-            "2002-10-12-rou-nor",
-            "2002-10-16-nor-bih",
-            "2002-11-20-aut-nor",
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-02-lux-nor",
-            "2003-04-30-irl-nor",
-            "2003-05-22-nor-fin",
-            "2003-06-07-den-nor",
-            "2003-06-11-nor-rou",
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-03-31-srb-nor",
-            "2004-05-27-nor-wal",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
             "2005-01-22-kuw-nor",
             "2005-01-25-bah-nor"
           ]
@@ -7317,10 +7280,10 @@
             "2003-09-10-nor-por",
             "2003-10-11-nor-lux",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2004-03-31-srb-nor",
             "2004-05-27-nor-wal",
             "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
             "2005-01-22-kuw-nor",
             "2005-01-25-bah-nor"
           ]
@@ -7353,49 +7316,6 @@
         {
           "kind": "omfang",
           "text": "Startet 37 kamper i arkivet, fordelt over 11 år fra 1995 til 2006.",
-          "matchIds": [
-            "1995-11-26-jam-nor",
-            "1995-11-29-tri-nor",
-            "1996-02-07-esp-nor",
-            "1996-03-27-nir-nor",
-            "1996-04-24-nor-esp",
-            "1996-06-02-nor-aze",
-            "1996-09-01-nor-geo",
-            "1997-03-29-uae-nor",
-            "1997-05-30-nor-bra",
-            "1997-06-08-hun-nor",
-            "1997-07-20-isl-nor",
-            "1997-08-20-fin-nor",
-            "1997-09-06-aze-nor",
-            "1997-09-10-nor-sui",
-            "1997-10-08-nor-col",
-            "1998-02-25-fra-nor",
-            "1998-09-06-nor-lva",
-            "1999-02-10-ita-nor",
-            "1999-03-27-gre-nor",
-            "1999-04-28-geo-nor",
-            "1999-05-20-nor-jam",
-            "1999-06-05-alb-nor",
-            "2001-06-02-ukr-nor",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-02-lux-nor",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-02-09-mlt-nor",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som venstre ving i de kampene rollene er dokumentert.",
           "matchIds": [
             "1995-11-26-jam-nor",
             "1995-11-29-tri-nor",
@@ -7491,7 +7411,7 @@
     {
       "playerId": "martin-odegaard",
       "displayName": "Martin Ødegaard",
-      "starts": 36,
+      "starts": 35,
       "startsInPeriod": 0,
       "goals": 1,
       "firstMatch": "2014-08-27",
@@ -7506,7 +7426,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 36 kamper i arkivet, fordelt over 12 år fra 2014 til 2026.",
+          "text": "Startet 35 kamper i arkivet, fordelt over 12 år fra 2014 til 2026.",
           "matchIds": [
             "2014-08-27-nor-uae",
             "2015-03-28-cro-nor",
@@ -7538,7 +7458,6 @@
             "2024-09-09-nor-aut",
             "2025-06-06-nor-ita",
             "2025-09-09-nor-mda",
-            "2025-11-13-nor-est",
             "2026-06-16-irq-nor",
             "2026-06-22-nor-sen",
             "2026-06-30-civ-nor",
@@ -7555,7 +7474,7 @@
         },
         {
           "kind": "kaptein",
-          "text": "Bar kapteinsbindet i 19 kamper, første gang mot Nederland 2021-09-01.",
+          "text": "Bar kapteinsbindet i 18 kamper, første gang mot Nederland 2021-09-01.",
           "matchIds": [
             "2021-09-01-nor-ned",
             "2021-09-07-nor-gib",
@@ -7570,7 +7489,6 @@
             "2024-09-09-nor-aut",
             "2025-06-06-nor-ita",
             "2025-09-09-nor-mda",
-            "2025-11-13-nor-est",
             "2026-06-16-irq-nor",
             "2026-06-22-nor-sen",
             "2026-06-30-civ-nor",
@@ -7580,7 +7498,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: høyre midtbane, offensiv midtbane, venstre midtbane, sentral midtbane, midtbane, høyre ving.",
+          "text": "Brukt i flere roller: sentral midtbane, høyre midtbane, spiss, offensiv midtbane, venstre midtbane, midtbane, høyre ving.",
           "matchIds": [
             "2014-08-27-nor-uae",
             "2015-03-28-cro-nor",
@@ -7612,7 +7530,6 @@
             "2024-09-09-nor-aut",
             "2025-06-06-nor-ita",
             "2025-09-09-nor-mda",
-            "2025-11-13-nor-est",
             "2026-06-16-irq-nor",
             "2026-06-22-nor-sen",
             "2026-06-30-civ-nor",
@@ -7654,7 +7571,6 @@
             "2024-09-09-nor-aut",
             "2025-06-06-nor-ita",
             "2025-09-09-nor-mda",
-            "2025-11-13-nor-est",
             "2026-06-16-irq-nor",
             "2026-06-22-nor-sen",
             "2026-06-30-civ-nor",
@@ -7886,7 +7802,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: spiss, angrep.",
+          "text": "Brukt i flere roller: spiss, offensiv midtbane, angrep.",
           "matchIds": [
             "2013-06-07-alb-nor",
             "2014-05-27-fra-nor",
@@ -8348,7 +8264,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: sentral midtbane, høyre midtbane, venstre midtbane, offensiv midtbane.",
           "matchIds": [
             "2007-11-21-mlt-nor",
             "2008-03-26-mne-nor",
@@ -8627,7 +8543,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: forsvar, midtstopper.",
+          "text": "Brukt i flere roller: midtstopper, forsvar.",
           "matchIds": [
             "2018-03-23-nor-aus",
             "2018-03-26-alb-nor",
@@ -8704,6 +8620,105 @@
           "text": "Var på banen da Norge vant 11–1 hjemme mot Moldova 2025-09-09.",
           "matchIds": [
             "2025-09-09-nor-mda"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "claus-lundekvam",
+      "displayName": "Claus Lundekvam",
+      "starts": 31,
+      "startsInPeriod": 1,
+      "goals": 0,
+      "firstMatch": "1995-11-26",
+      "lastMatch": "2005-09-07",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Jamaica 1995-11-26, Privatlandskamp. Det endte Jamaica 1–1 Norge.",
+          "matchIds": [
+            "1995-11-26-jam-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 31 kamper i arkivet, fordelt over 10 år fra 1995 til 2005.",
+          "matchIds": [
+            "1995-11-26-jam-nor",
+            "1998-02-25-fra-nor",
+            "1999-01-22-nor-est",
+            "2000-01-31-nor-isl",
+            "2001-02-28-nir-nor",
+            "2001-03-24-nor-pol",
+            "2002-10-12-rou-nor",
+            "2002-10-16-nor-bih",
+            "2002-11-20-aut-nor",
+            "2003-02-12-gre-nor",
+            "2003-05-22-nor-fin",
+            "2003-06-07-den-nor",
+            "2003-08-20-nor-sco",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-09-07-nor-sco"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 3, 4.",
+          "matchIds": [
+            "1995-11-26-jam-nor",
+            "1998-02-25-fra-nor",
+            "1999-01-22-nor-est",
+            "2000-01-31-nor-isl",
+            "2001-02-28-nir-nor",
+            "2001-03-24-nor-pol",
+            "2002-10-12-rou-nor",
+            "2002-10-16-nor-bih",
+            "2002-11-20-aut-nor",
+            "2003-02-12-gre-nor",
+            "2003-05-22-nor-fin",
+            "2003-06-07-den-nor",
+            "2003-08-20-nor-sco",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-10-13-nor-svn",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-09-07-nor-sco"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–0 borte mot Nord-Irland 2001-02-28.",
+          "matchIds": [
+            "2001-02-28-nir-nor"
           ]
         }
       ]
@@ -8842,153 +8857,13 @@
       ]
     },
     {
-      "playerId": "claus-lundekvam",
-      "displayName": "Claus Lundekvam",
-      "starts": 30,
-      "startsInPeriod": 1,
-      "goals": 0,
-      "firstMatch": "1995-11-26",
-      "lastMatch": "2005-09-07",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Jamaica 1995-11-26, Privatlandskamp. Det endte Jamaica 1–1 Norge.",
-          "matchIds": [
-            "1995-11-26-jam-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 30 kamper i arkivet, fordelt over 10 år fra 1995 til 2005.",
-          "matchIds": [
-            "1995-11-26-jam-nor",
-            "1998-02-25-fra-nor",
-            "1999-01-22-nor-est",
-            "2000-01-31-nor-isl",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2002-10-12-rou-nor",
-            "2002-10-16-nor-bih",
-            "2002-11-20-aut-nor",
-            "2003-02-12-gre-nor",
-            "2003-05-22-nor-fin",
-            "2003-06-07-den-nor",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2003-11-19-nor-esp",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco"
-          ]
-        },
-        {
-          "kind": "kaptein",
-          "text": "Bar kapteinsbindet i én kamp, første gang mot Spania 2003-11-19.",
-          "matchIds": [
-            "2003-11-19-nor-esp"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1995-11-26-jam-nor",
-            "1998-02-25-fra-nor",
-            "1999-01-22-nor-est",
-            "2000-01-31-nor-isl",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2002-10-12-rou-nor",
-            "2002-10-16-nor-bih",
-            "2002-11-20-aut-nor",
-            "2003-02-12-gre-nor",
-            "2003-05-22-nor-fin",
-            "2003-06-07-den-nor",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2003-11-19-nor-esp",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 3, 4.",
-          "matchIds": [
-            "1995-11-26-jam-nor",
-            "1998-02-25-fra-nor",
-            "1999-01-22-nor-est",
-            "2000-01-31-nor-isl",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2002-10-12-rou-nor",
-            "2002-10-16-nor-bih",
-            "2002-11-20-aut-nor",
-            "2003-02-12-gre-nor",
-            "2003-05-22-nor-fin",
-            "2003-06-07-den-nor",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2003-11-19-nor-esp",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-10-13-nor-svn",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-09-07-nor-sco"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–0 borte mot Nord-Irland 2001-02-28.",
-          "matchIds": [
-            "2001-02-28-nir-nor"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "trond-andersen",
       "displayName": "Trond Andersen",
       "starts": 30,
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "1999-11-14",
-      "lastMatch": "2005-06-04",
+      "lastMatch": "2005-04-20",
       "facts": [
         {
           "kind": "debut",
@@ -9027,51 +8902,15 @@
             "2003-06-11-nor-rou",
             "2003-09-10-nor-por",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2005-01-25-bah-nor",
             "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1999-11-14-nor-ger",
-            "2000-01-31-nor-isl",
-            "2000-02-02-den-nor",
-            "2000-03-29-sui-nor",
-            "2000-04-26-nor-bel",
-            "2000-08-16-fin-nor",
-            "2001-04-25-nor-bul",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2002-02-13-bel-nor",
-            "2002-04-17-nor-swe",
-            "2002-05-14-nor-jpn",
-            "2002-05-22-nor-isl",
-            "2002-08-21-nor-ned",
-            "2002-09-07-nor-den",
-            "2002-10-12-rou-nor",
-            "2002-10-16-nor-bih",
-            "2002-11-20-aut-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-02-lux-nor",
-            "2003-04-30-irl-nor",
-            "2003-05-22-nor-fin",
-            "2003-06-07-den-nor",
-            "2003-06-11-nor-rou",
-            "2003-09-10-nor-por",
-            "2003-11-15-esp-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
+            "2005-04-20-est-nor"
           ]
         },
         {
           "kind": "draktnummer",
-          "text": "Har båret 7 ulike draktnumre: 2, 4, 5, 7, 8, 9, 10.",
+          "text": "Har båret 7 ulike draktnumre: 2, 5, 6, 7, 8, 9, 10.",
           "matchIds": [
             "1999-11-14-nor-ger",
             "2000-01-31-nor-isl",
@@ -9099,10 +8938,10 @@
             "2003-06-11-nor-rou",
             "2003-09-10-nor-por",
             "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
             "2005-01-25-bah-nor",
             "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
+            "2005-04-20-est-nor"
           ]
         },
         {
@@ -9395,26 +9234,26 @@
       "starts": 28,
       "startsInPeriod": 0,
       "goals": 0,
-      "firstMatch": "2003-11-19",
+      "firstMatch": "2004-10-09",
       "lastMatch": "2007-11-21",
       "facts": [
         {
           "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Spania 2003-11-19, Playoff 2003. Det endte Norge 0–3 Spania.",
+          "text": "Startet sin første kamp i arkivet mot Skottland 2004-10-09, Privatlandskamp. Det endte Skottland 0–1 Norge.",
           "matchIds": [
-            "2003-11-19-nor-esp"
+            "2004-10-09-sco-nor"
           ]
         },
         {
           "kind": "omfang",
-          "text": "Startet 28 kamper i arkivet, fordelt over 4 år fra 2003 til 2007.",
+          "text": "Startet 28 kamper i arkivet, fordelt over 3 år fra 2004 til 2007.",
           "matchIds": [
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -9443,12 +9282,12 @@
           "kind": "posisjon",
           "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
           "matchIds": [
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -9477,12 +9316,12 @@
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 3.",
           "matchIds": [
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2004-11-16-aus-nor",
             "2005-02-09-mlt-nor",
             "2005-03-30-mda-nor",
+            "2005-06-04-nor-ita",
             "2005-08-17-nor-sui",
             "2005-09-03-svn-nor",
             "2005-10-08-nor-mda",
@@ -9698,7 +9537,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: forsvar, midtstopper.",
+          "text": "Brukt i flere roller: midtstopper, forsvar.",
           "matchIds": [
             "2008-03-26-mne-nor",
             "2008-05-28-nor-uru",
@@ -9829,7 +9668,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: høyre midtbane, høyre ving, midtbane, angrep.",
+          "text": "Brukt i flere roller: venstre midtbane, offensiv midtbane, høyre midtbane, venstre ving, høyre ving, midtbane, angrep.",
           "matchIds": [
             "2014-08-27-nor-uae",
             "2015-11-15-hun-nor",
@@ -10283,248 +10122,6 @@
       ]
     },
     {
-      "playerId": "vidar-riseth",
-      "displayName": "Vidar Riseth",
-      "starts": 26,
-      "startsInPeriod": 0,
-      "goals": 1,
-      "firstMatch": "1998-03-25",
-      "lastMatch": "2007-11-21",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Belgia 1998-03-25, Privatlandskamp. Det endte Belgia 2–2 Norge.",
-          "matchIds": [
-            "1998-03-25-bel-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 26 kamper i arkivet, fordelt over 9 år fra 1998 til 2007.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-27-nor-ksa",
-            "1998-06-16-sco-nor",
-            "1998-06-23-bra-nor",
-            "1998-06-27-ita-nor",
-            "1999-05-20-nor-jam",
-            "1999-05-30-nor-geo",
-            "2000-01-31-nor-isl",
-            "2000-08-16-fin-nor",
-            "2000-09-02-nor-arm",
-            "2001-03-28-blr-nor",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2002-03-27-tun-nor",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-09-07-nor-sco",
-            "2007-11-21-mlt-nor"
-          ]
-        },
-        {
-          "kind": "mål",
-          "text": "Scoret mot Hviterussland 2004-09-08.",
-          "matchIds": [
-            "2004-09-08-nor-blr"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: venstre midtbane, midtstopper.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-27-nor-ksa",
-            "1998-06-16-sco-nor",
-            "1998-06-23-bra-nor",
-            "1998-06-27-ita-nor",
-            "1999-05-20-nor-jam",
-            "1999-05-30-nor-geo",
-            "2000-01-31-nor-isl",
-            "2000-08-16-fin-nor",
-            "2000-09-02-nor-arm",
-            "2001-03-28-blr-nor",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2002-03-27-tun-nor",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-09-07-nor-sco",
-            "2007-11-21-mlt-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 5 ulike draktnumre: 3, 5, 11, 21, 43.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-27-nor-ksa",
-            "1998-06-16-sco-nor",
-            "1998-06-23-bra-nor",
-            "1998-06-27-ita-nor",
-            "1999-05-20-nor-jam",
-            "1999-05-30-nor-geo",
-            "2000-01-31-nor-isl",
-            "2000-08-16-fin-nor",
-            "2000-09-02-nor-arm",
-            "2001-03-28-blr-nor",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2002-03-27-tun-nor",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-09-07-nor-sco",
-            "2007-11-21-mlt-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 6–0 hjemme mot Saudi-Arabia 1998-05-27.",
-          "matchIds": [
-            "1998-05-27-nor-ksa"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "daniel-braaten",
-      "displayName": "Daniel Braaten",
-      "starts": 26,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2005-04-20",
-      "lastMatch": "2013-10-15",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Estland 2005-04-20, Privatlandskamp. Det endte Estland 1–2 Norge.",
-          "matchIds": [
-            "2005-04-20-est-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 26 kamper i arkivet, fordelt over 8 år fra 2005 til 2013.",
-          "matchIds": [
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-03-01-sen-nor",
-            "2007-08-22-nor-arg",
-            "2008-02-06-wal-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2010-03-03-svk-nor",
-            "2010-10-12-cro-nor",
-            "2012-05-26-nor-eng",
-            "2012-06-02-nor-cro",
-            "2012-09-07-isl-nor",
-            "2012-09-11-nor-svn",
-            "2012-10-12-sui-nor",
-            "2012-10-16-cyp-nor",
-            "2012-11-14-hun-nor",
-            "2013-02-06-ukr-nor",
-            "2013-06-07-alb-nor",
-            "2013-06-11-nor-mkd",
-            "2013-08-14-swe-nor",
-            "2013-09-06-nor-cyp",
-            "2013-09-10-nor-sui",
-            "2013-10-11-svn-nor",
-            "2013-10-15-nor-isl"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: høyre ving, høyre midtbane.",
-          "matchIds": [
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-03-01-sen-nor",
-            "2007-08-22-nor-arg",
-            "2008-02-06-wal-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2010-03-03-svk-nor",
-            "2010-10-12-cro-nor",
-            "2012-05-26-nor-eng",
-            "2012-06-02-nor-cro",
-            "2012-09-07-isl-nor",
-            "2012-09-11-nor-svn",
-            "2012-10-12-sui-nor",
-            "2012-10-16-cyp-nor",
-            "2012-11-14-hun-nor",
-            "2013-02-06-ukr-nor",
-            "2013-06-07-alb-nor",
-            "2013-06-11-nor-mkd",
-            "2013-08-14-swe-nor",
-            "2013-09-06-nor-cyp",
-            "2013-09-10-nor-sui",
-            "2013-10-11-svn-nor",
-            "2013-10-15-nor-isl"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 5 ulike draktnumre: 6, 9, 14, 21, 26.",
-          "matchIds": [
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-03-01-sen-nor",
-            "2007-08-22-nor-arg",
-            "2008-02-06-wal-nor",
-            "2009-02-11-ger-nor",
-            "2009-03-28-rsa-nor",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2010-03-03-svk-nor",
-            "2010-10-12-cro-nor",
-            "2012-05-26-nor-eng",
-            "2012-06-02-nor-cro",
-            "2012-09-07-isl-nor",
-            "2012-09-11-nor-svn",
-            "2012-10-12-sui-nor",
-            "2012-10-16-cyp-nor",
-            "2012-11-14-hun-nor",
-            "2013-02-06-ukr-nor",
-            "2013-06-07-alb-nor",
-            "2013-06-11-nor-mkd",
-            "2013-08-14-swe-nor",
-            "2013-09-06-nor-cyp",
-            "2013-09-10-nor-sui",
-            "2013-10-11-svn-nor",
-            "2013-10-15-nor-isl"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "bent-andre-skammelsrud",
       "displayName": "Bent André Skammelsrud",
       "starts": 26,
@@ -10648,6 +10245,249 @@
           "text": "Var på banen da Norge vant 4–0 hjemme mot Slovenia 1999-09-08.",
           "matchIds": [
             "1999-09-08-nor-svn"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "roar-strand",
+      "displayName": "Roar Strand",
+      "starts": 25,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "1998-03-25",
+      "lastMatch": "2003-11-15",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Belgia 1998-03-25, Privatlandskamp. Det endte Belgia 2–2 Norge.",
+          "matchIds": [
+            "1998-03-25-bel-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 25 kamper i arkivet, fordelt over 5 år fra 1998 til 2003.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-20-nor-mex",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-08-19-nor-rou",
+            "1998-10-10-svn-nor",
+            "1998-10-14-nor-alb",
+            "1998-11-18-egy-nor",
+            "1999-01-20-isr-nor",
+            "1999-01-22-nor-est",
+            "1999-03-27-gre-nor",
+            "2000-02-02-den-nor",
+            "2000-02-04-nor-swe",
+            "2000-02-23-tur-nor",
+            "2000-10-07-wal-nor",
+            "2000-10-11-nor-ukr",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-08-21-nor-ned",
+            "2003-09-06-bih-nor",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: sentral midtbane, midtbane.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-20-nor-mex",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-08-19-nor-rou",
+            "1998-10-10-svn-nor",
+            "1998-10-14-nor-alb",
+            "1998-11-18-egy-nor",
+            "1999-01-20-isr-nor",
+            "1999-01-22-nor-est",
+            "1999-03-27-gre-nor",
+            "2000-02-02-den-nor",
+            "2000-02-04-nor-swe",
+            "2000-02-23-tur-nor",
+            "2000-10-07-wal-nor",
+            "2000-10-11-nor-ukr",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-08-21-nor-ned",
+            "2003-09-06-bih-nor",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 4 ulike draktnumre: 6, 7, 11, 22.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-20-nor-mex",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-08-19-nor-rou",
+            "1998-10-10-svn-nor",
+            "1998-10-14-nor-alb",
+            "1998-11-18-egy-nor",
+            "1999-01-20-isr-nor",
+            "1999-01-22-nor-est",
+            "1999-03-27-gre-nor",
+            "2000-02-02-den-nor",
+            "2000-02-04-nor-swe",
+            "2000-02-23-tur-nor",
+            "2000-10-07-wal-nor",
+            "2000-10-11-nor-ukr",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-08-21-nor-ned",
+            "2003-09-06-bih-nor",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 5–2 hjemme mot Mexico 1998-05-20.",
+          "matchIds": [
+            "1998-05-20-nor-mex"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "vidar-riseth",
+      "displayName": "Vidar Riseth",
+      "starts": 25,
+      "startsInPeriod": 0,
+      "goals": 1,
+      "firstMatch": "1998-03-25",
+      "lastMatch": "2007-11-21",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Belgia 1998-03-25, Privatlandskamp. Det endte Belgia 2–2 Norge.",
+          "matchIds": [
+            "1998-03-25-bel-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 25 kamper i arkivet, fordelt over 9 år fra 1998 til 2007.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-27-nor-ksa",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-06-27-ita-nor",
+            "1999-05-20-nor-jam",
+            "1999-05-30-nor-geo",
+            "2000-01-31-nor-isl",
+            "2000-08-16-fin-nor",
+            "2000-09-02-nor-arm",
+            "2001-03-28-blr-nor",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2002-03-27-tun-nor",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-09-07-nor-sco",
+            "2007-11-21-mlt-nor"
+          ]
+        },
+        {
+          "kind": "mål",
+          "text": "Scoret mot Hviterussland 2004-09-08.",
+          "matchIds": [
+            "2004-09-08-nor-blr"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som venstre midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-27-nor-ksa",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-06-27-ita-nor",
+            "1999-05-20-nor-jam",
+            "1999-05-30-nor-geo",
+            "2000-01-31-nor-isl",
+            "2000-08-16-fin-nor",
+            "2000-09-02-nor-arm",
+            "2001-03-28-blr-nor",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2002-03-27-tun-nor",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-09-07-nor-sco",
+            "2007-11-21-mlt-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 5 ulike draktnumre: 3, 5, 11, 21, 43.",
+          "matchIds": [
+            "1998-03-25-bel-nor",
+            "1998-05-27-nor-ksa",
+            "1998-06-16-sco-nor",
+            "1998-06-23-bra-nor",
+            "1998-06-27-ita-nor",
+            "1999-05-20-nor-jam",
+            "1999-05-30-nor-geo",
+            "2000-01-31-nor-isl",
+            "2000-08-16-fin-nor",
+            "2000-09-02-nor-arm",
+            "2001-03-28-blr-nor",
+            "2001-06-02-ukr-nor",
+            "2001-06-06-nor-blr",
+            "2002-03-27-tun-nor",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-09-07-nor-sco",
+            "2007-11-21-mlt-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 6–0 hjemme mot Saudi-Arabia 1998-05-27.",
+          "matchIds": [
+            "1998-05-27-nor-ksa"
           ]
         }
       ]
@@ -10819,7 +10659,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: midtbane, sentral midtbane.",
+          "text": "Brukt i flere roller: midtbane, sentral midtbane, defensiv midtbane, høyre midtbane.",
           "matchIds": [
             "2007-11-17-nor-tur",
             "2011-02-09-pol-nor",
@@ -10884,6 +10724,117 @@
           "text": "Var på banen da Norge vant 3–0 hjemme mot Tsjekkia 2011-08-10.",
           "matchIds": [
             "2011-08-10-nor-cze"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "daniel-braaten",
+      "displayName": "Daniel Braaten",
+      "starts": 25,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2005-04-20",
+      "lastMatch": "2013-10-15",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Estland 2005-04-20, Privatlandskamp. Det endte Estland 1–2 Norge.",
+          "matchIds": [
+            "2005-04-20-est-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 25 kamper i arkivet, fordelt over 8 år fra 2005 til 2013.",
+          "matchIds": [
+            "2005-04-20-est-nor",
+            "2006-03-01-sen-nor",
+            "2007-08-22-nor-arg",
+            "2008-02-06-wal-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2010-03-03-svk-nor",
+            "2010-10-12-cro-nor",
+            "2012-05-26-nor-eng",
+            "2012-06-02-nor-cro",
+            "2012-09-07-isl-nor",
+            "2012-09-11-nor-svn",
+            "2012-10-12-sui-nor",
+            "2012-10-16-cyp-nor",
+            "2012-11-14-hun-nor",
+            "2013-02-06-ukr-nor",
+            "2013-06-07-alb-nor",
+            "2013-06-11-nor-mkd",
+            "2013-08-14-swe-nor",
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2013-10-11-svn-nor",
+            "2013-10-15-nor-isl"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: høyre midtbane, spiss.",
+          "matchIds": [
+            "2005-04-20-est-nor",
+            "2006-03-01-sen-nor",
+            "2007-08-22-nor-arg",
+            "2008-02-06-wal-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2010-03-03-svk-nor",
+            "2010-10-12-cro-nor",
+            "2012-05-26-nor-eng",
+            "2012-06-02-nor-cro",
+            "2012-09-07-isl-nor",
+            "2012-09-11-nor-svn",
+            "2012-10-12-sui-nor",
+            "2012-10-16-cyp-nor",
+            "2012-11-14-hun-nor",
+            "2013-02-06-ukr-nor",
+            "2013-06-07-alb-nor",
+            "2013-06-11-nor-mkd",
+            "2013-08-14-swe-nor",
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2013-10-11-svn-nor",
+            "2013-10-15-nor-isl"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 4 ulike draktnumre: 9, 14, 21, 26.",
+          "matchIds": [
+            "2005-04-20-est-nor",
+            "2006-03-01-sen-nor",
+            "2007-08-22-nor-arg",
+            "2008-02-06-wal-nor",
+            "2009-02-11-ger-nor",
+            "2009-03-28-rsa-nor",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2010-03-03-svk-nor",
+            "2010-10-12-cro-nor",
+            "2012-05-26-nor-eng",
+            "2012-06-02-nor-cro",
+            "2012-09-07-isl-nor",
+            "2012-09-11-nor-svn",
+            "2012-10-12-sui-nor",
+            "2012-10-16-cyp-nor",
+            "2012-11-14-hun-nor",
+            "2013-02-06-ukr-nor",
+            "2013-06-07-alb-nor",
+            "2013-06-11-nor-mkd",
+            "2013-08-14-swe-nor",
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2013-10-11-svn-nor",
+            "2013-10-15-nor-isl"
           ]
         }
       ]
@@ -11169,121 +11120,6 @@
       ]
     },
     {
-      "playerId": "roar-strand",
-      "displayName": "Roar Strand",
-      "starts": 24,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "1998-03-25",
-      "lastMatch": "2003-11-15",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Belgia 1998-03-25, Privatlandskamp. Det endte Belgia 2–2 Norge.",
-          "matchIds": [
-            "1998-03-25-bel-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 24 kamper i arkivet, fordelt over 5 år fra 1998 til 2003.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-20-nor-mex",
-            "1998-06-16-sco-nor",
-            "1998-08-19-nor-rou",
-            "1998-10-10-svn-nor",
-            "1998-10-14-nor-alb",
-            "1998-11-18-egy-nor",
-            "1999-01-20-isr-nor",
-            "1999-01-22-nor-est",
-            "1999-03-27-gre-nor",
-            "2000-02-02-den-nor",
-            "2000-02-04-nor-swe",
-            "2000-02-23-tur-nor",
-            "2000-10-07-wal-nor",
-            "2000-10-11-nor-ukr",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-08-21-nor-ned",
-            "2003-09-06-bih-nor",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, midtbane.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-20-nor-mex",
-            "1998-06-16-sco-nor",
-            "1998-08-19-nor-rou",
-            "1998-10-10-svn-nor",
-            "1998-10-14-nor-alb",
-            "1998-11-18-egy-nor",
-            "1999-01-20-isr-nor",
-            "1999-01-22-nor-est",
-            "1999-03-27-gre-nor",
-            "2000-02-02-den-nor",
-            "2000-02-04-nor-swe",
-            "2000-02-23-tur-nor",
-            "2000-10-07-wal-nor",
-            "2000-10-11-nor-ukr",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-08-21-nor-ned",
-            "2003-09-06-bih-nor",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 4 ulike draktnumre: 6, 7, 11, 22.",
-          "matchIds": [
-            "1998-03-25-bel-nor",
-            "1998-05-20-nor-mex",
-            "1998-06-16-sco-nor",
-            "1998-08-19-nor-rou",
-            "1998-10-10-svn-nor",
-            "1998-10-14-nor-alb",
-            "1998-11-18-egy-nor",
-            "1999-01-20-isr-nor",
-            "1999-01-22-nor-est",
-            "1999-03-27-gre-nor",
-            "2000-02-02-den-nor",
-            "2000-02-04-nor-swe",
-            "2000-02-23-tur-nor",
-            "2000-10-07-wal-nor",
-            "2000-10-11-nor-ukr",
-            "2001-06-02-ukr-nor",
-            "2001-06-06-nor-blr",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-08-21-nor-ned",
-            "2003-09-06-bih-nor",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 5–2 hjemme mot Mexico 1998-05-20.",
-          "matchIds": [
-            "1998-05-20-nor-mex"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "roger-nilsen",
       "displayName": "Roger Nilsen",
       "starts": 24,
@@ -11550,7 +11386,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som angrep i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: angrep, spiss.",
           "matchIds": [
             "2008-08-20-nor-irl",
             "2008-11-19-ukr-nor",
@@ -11634,6 +11470,35 @@
         {
           "kind": "omfang",
           "text": "Startet 23 kamper i arkivet, fordelt over 4 år fra 2010 til 2014.",
+          "matchIds": [
+            "2010-09-07-nor-por",
+            "2010-10-12-cro-nor",
+            "2011-02-09-pol-nor",
+            "2011-03-26-nor-den",
+            "2011-06-07-nor-ltu",
+            "2011-09-02-nor-isl",
+            "2011-09-06-den-nor",
+            "2011-10-11-nor-cyp",
+            "2011-11-12-wal-nor",
+            "2012-01-15-den-nor",
+            "2012-01-21-kor-nor",
+            "2012-06-02-nor-cro",
+            "2012-09-07-isl-nor",
+            "2012-09-11-nor-svn",
+            "2012-10-12-sui-nor",
+            "2012-10-16-cyp-nor",
+            "2013-01-08-rsa-nor",
+            "2013-01-12-zam-nor",
+            "2013-06-07-alb-nor",
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som høyreback i de kampene rollene er dokumentert.",
           "matchIds": [
             "2010-09-07-nor-por",
             "2010-10-12-cro-nor",
@@ -11803,6 +11668,218 @@
           "text": "Var på banen da Norge vant 7–0 borte mot Færøyene 1993-08-11.",
           "matchIds": [
             "1993-08-11-fro-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "sigurd-rushfeldt",
+      "displayName": "Sigurd Rushfeldt",
+      "starts": 21,
+      "startsInPeriod": 7,
+      "goals": 0,
+      "firstMatch": "1994-06-05",
+      "lastMatch": "2005-10-12",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Sverige 1994-06-05, Privatlandskamp. Det endte Sverige 2–0 Norge.",
+          "matchIds": [
+            "1994-06-05-swe-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 21 kamper i arkivet, fordelt over 11 år fra 1994 til 2005.",
+          "matchIds": [
+            "1994-06-05-swe-nor",
+            "1994-06-23-ita-nor",
+            "1994-10-12-nor-ned",
+            "1994-11-16-blr-nor",
+            "1994-12-14-mlt-nor",
+            "1995-02-06-est-nor",
+            "1995-02-08-cyp-nor",
+            "1997-01-25-aus-nor",
+            "2002-03-27-tun-nor",
+            "2002-08-21-nor-ned",
+            "2003-01-26-uae-nor",
+            "2003-01-28-oma-nor",
+            "2003-02-12-gre-nor",
+            "2003-04-30-irl-nor",
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2005-03-30-mda-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som venstre midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "1994-06-05-swe-nor",
+            "1994-06-23-ita-nor",
+            "1994-10-12-nor-ned",
+            "1994-11-16-blr-nor",
+            "1994-12-14-mlt-nor",
+            "1995-02-06-est-nor",
+            "1995-02-08-cyp-nor",
+            "1997-01-25-aus-nor",
+            "2002-03-27-tun-nor",
+            "2002-08-21-nor-ned",
+            "2003-01-26-uae-nor",
+            "2003-01-28-oma-nor",
+            "2003-02-12-gre-nor",
+            "2003-04-30-irl-nor",
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2005-03-30-mda-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 3 ulike draktnumre: 6, 8, 10.",
+          "matchIds": [
+            "1994-06-05-swe-nor",
+            "1994-06-23-ita-nor",
+            "1994-10-12-nor-ned",
+            "1994-11-16-blr-nor",
+            "1994-12-14-mlt-nor",
+            "1995-02-06-est-nor",
+            "1995-02-08-cyp-nor",
+            "1997-01-25-aus-nor",
+            "2002-03-27-tun-nor",
+            "2002-08-21-nor-ned",
+            "2003-01-26-uae-nor",
+            "2003-01-28-oma-nor",
+            "2003-02-12-gre-nor",
+            "2003-04-30-irl-nor",
+            "2004-02-18-nir-nor",
+            "2004-04-28-nor-rus",
+            "2004-08-18-nor-bel",
+            "2004-09-08-nor-blr",
+            "2005-03-30-mda-nor",
+            "2005-10-08-nor-mda",
+            "2005-10-12-blr-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 7–0 borte mot Estland 1995-02-06.",
+          "matchIds": [
+            "1995-02-06-est-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "jon-inge-hoiland",
+      "displayName": "Jon Inge Høiland",
+      "starts": 21,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2004-01-22",
+      "lastMatch": "2009-11-14",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Sverige 2004-01-22, Privatlandskamp. Det endte Sverige 0–3 Norge.",
+          "matchIds": [
+            "2004-01-22-swe-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 21 kamper i arkivet, fordelt over 5 år fra 2004 til 2009.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-09-08-nor-blr",
+            "2005-01-22-kuw-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2005-09-03-svn-nor",
+            "2005-10-12-blr-nor",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2008-05-28-nor-uru",
+            "2008-10-11-sco-nor",
+            "2008-10-15-nor-ned",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-09-09-nor-mkd",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som høyreback i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-09-08-nor-blr",
+            "2005-01-22-kuw-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2005-09-03-svn-nor",
+            "2005-10-12-blr-nor",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2008-05-28-nor-uru",
+            "2008-10-11-sco-nor",
+            "2008-10-15-nor-ned",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-09-09-nor-mkd",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 2, 4.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-09-08-nor-blr",
+            "2005-01-22-kuw-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2005-09-03-svn-nor",
+            "2005-10-12-blr-nor",
+            "2005-11-16-cze-nor",
+            "2006-03-01-sen-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2008-05-28-nor-uru",
+            "2008-10-11-sco-nor",
+            "2008-10-15-nor-ned",
+            "2009-04-01-nor-fin",
+            "2009-06-06-mkd-nor",
+            "2009-06-10-ned-nor",
+            "2009-09-09-nor-mkd",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 3–0 borte mot Sverige 2004-01-22.",
+          "matchIds": [
+            "2004-01-22-swe-nor"
           ]
         }
       ]
@@ -12057,7 +12134,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: høyre midtbane, defensiv midtbane.",
+          "text": "Startet alltid som høyre midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "2003-11-15-esp-nor",
             "2003-11-19-nor-esp",
@@ -12083,7 +12160,7 @@
         },
         {
           "kind": "draktnummer",
-          "text": "Har båret 4 ulike draktnumre: 6, 7, 8, 28.",
+          "text": "Har båret 3 ulike draktnumre: 6, 7, 28.",
           "matchIds": [
             "2003-11-15-esp-nor",
             "2003-11-19-nor-esp",
@@ -12160,7 +12237,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: sentral midtbane, venstre midtbane.",
           "matchIds": [
             "2016-06-01-nor-isl",
             "2016-06-05-bel-nor",
@@ -12215,109 +12292,6 @@
           "text": "Var på banen da Norge vant 4–0 hjemme mot Færøyene 2019-11-15.",
           "matchIds": [
             "2019-11-15-nor-fro"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "sigurd-rushfeldt",
-      "displayName": "Sigurd Rushfeldt",
-      "starts": 20,
-      "startsInPeriod": 7,
-      "goals": 0,
-      "firstMatch": "1994-06-05",
-      "lastMatch": "2005-10-12",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Sverige 1994-06-05, Privatlandskamp. Det endte Sverige 2–0 Norge.",
-          "matchIds": [
-            "1994-06-05-swe-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 20 kamper i arkivet, fordelt over 11 år fra 1994 til 2005.",
-          "matchIds": [
-            "1994-06-05-swe-nor",
-            "1994-06-23-ita-nor",
-            "1994-10-12-nor-ned",
-            "1994-11-16-blr-nor",
-            "1994-12-14-mlt-nor",
-            "1995-02-06-est-nor",
-            "1995-02-08-cyp-nor",
-            "1997-01-25-aus-nor",
-            "2002-03-27-tun-nor",
-            "2002-08-21-nor-ned",
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-30-irl-nor",
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2005-03-30-mda-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som venstre midtbane i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "1994-06-05-swe-nor",
-            "1994-06-23-ita-nor",
-            "1994-10-12-nor-ned",
-            "1994-11-16-blr-nor",
-            "1994-12-14-mlt-nor",
-            "1995-02-06-est-nor",
-            "1995-02-08-cyp-nor",
-            "1997-01-25-aus-nor",
-            "2002-03-27-tun-nor",
-            "2002-08-21-nor-ned",
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-30-irl-nor",
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2005-03-30-mda-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 6, 8.",
-          "matchIds": [
-            "1994-06-05-swe-nor",
-            "1994-06-23-ita-nor",
-            "1994-10-12-nor-ned",
-            "1994-11-16-blr-nor",
-            "1994-12-14-mlt-nor",
-            "1995-02-06-est-nor",
-            "1995-02-08-cyp-nor",
-            "1997-01-25-aus-nor",
-            "2002-03-27-tun-nor",
-            "2002-08-21-nor-ned",
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2003-02-12-gre-nor",
-            "2003-04-30-irl-nor",
-            "2004-02-18-nir-nor",
-            "2004-04-28-nor-rus",
-            "2004-08-18-nor-bel",
-            "2005-03-30-mda-nor",
-            "2005-10-08-nor-mda",
-            "2005-10-12-blr-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 7–0 borte mot Estland 1995-02-06.",
-          "matchIds": [
-            "1995-02-06-est-nor"
           ]
         }
       ]
@@ -12428,109 +12402,6 @@
           "text": "Var på banen da Norge vant 4–0 borte mot Nord-Irland 2001-02-28.",
           "matchIds": [
             "2001-02-28-nir-nor"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "jon-inge-hoiland",
-      "displayName": "Jon Inge Høiland",
-      "starts": 20,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2004-01-22",
-      "lastMatch": "2009-11-14",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Sverige 2004-01-22, Privatlandskamp. Det endte Sverige 0–3 Norge.",
-          "matchIds": [
-            "2004-01-22-swe-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 20 kamper i arkivet, fordelt over 5 år fra 2004 til 2009.",
-          "matchIds": [
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2005-01-22-kuw-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-09-03-svn-nor",
-            "2005-10-12-blr-nor",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2008-05-28-nor-uru",
-            "2008-10-11-sco-nor",
-            "2008-10-15-nor-ned",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-09-09-nor-mkd",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som høyreback i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2005-01-22-kuw-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-09-03-svn-nor",
-            "2005-10-12-blr-nor",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2008-05-28-nor-uru",
-            "2008-10-11-sco-nor",
-            "2008-10-15-nor-ned",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-09-09-nor-mkd",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 2, 4.",
-          "matchIds": [
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2005-01-22-kuw-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-08-swe-nor",
-            "2005-09-03-svn-nor",
-            "2005-10-12-blr-nor",
-            "2005-11-16-cze-nor",
-            "2006-03-01-sen-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2008-05-28-nor-uru",
-            "2008-10-11-sco-nor",
-            "2008-10-15-nor-ned",
-            "2009-04-01-nor-fin",
-            "2009-06-06-mkd-nor",
-            "2009-06-10-ned-nor",
-            "2009-09-09-nor-mkd",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 3–0 borte mot Sverige 2004-01-22.",
-          "matchIds": [
-            "2004-01-22-swe-nor"
           ]
         }
       ]
@@ -12819,206 +12690,6 @@
       ]
     },
     {
-      "playerId": "magne-hoseth",
-      "displayName": "Magne Hoseth",
-      "starts": 19,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2003-11-19",
-      "lastMatch": "2009-09-05",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Spania 2003-11-19, Playoff 2003. Det endte Norge 0–3 Spania.",
-          "matchIds": [
-            "2003-11-19-nor-esp"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 19 kamper i arkivet, fordelt over 6 år fra 2003 til 2009.",
-          "matchIds": [
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane.",
-          "matchIds": [
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Spilte alltid med draktnummer 8.",
-          "matchIds": [
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-01-28-sin-nor",
-            "2004-02-18-nir-nor",
-            "2004-03-31-srb-nor",
-            "2004-04-28-nor-rus",
-            "2004-05-27-nor-wal",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor",
-            "2004-11-16-aus-nor",
-            "2005-02-09-mlt-nor",
-            "2005-03-30-mda-nor",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2009-08-12-nor-sco",
-            "2009-09-05-isl-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–0 hjemme mot Skottland 2009-08-12.",
-          "matchIds": [
-            "2009-08-12-nor-sco"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "frode-johnsen",
-      "displayName": "Frode Johnsen",
-      "starts": 19,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2001-01-24",
-      "lastMatch": "2007-03-24",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Sør-Korea 2001-01-24, Privatlandskamp. Det endte Sør-Korea 2–3 Norge.",
-          "matchIds": [
-            "2001-01-24-kor-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 19 kamper i arkivet, fordelt over 6 år fra 2001 til 2007.",
-          "matchIds": [
-            "2001-01-24-kor-nor",
-            "2001-06-06-nor-blr",
-            "2001-10-06-arm-nor",
-            "2003-06-11-nor-rou",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-06-nor-mda",
-            "2007-03-24-nor-bih"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som offensiv midtbane i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2001-01-24-kor-nor",
-            "2001-06-06-nor-blr",
-            "2001-10-06-arm-nor",
-            "2003-06-11-nor-rou",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-06-nor-mda",
-            "2007-03-24-nor-bih"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 5 ulike draktnumre: 6, 9, 10, 11, 24.",
-          "matchIds": [
-            "2001-01-24-kor-nor",
-            "2001-06-06-nor-blr",
-            "2001-10-06-arm-nor",
-            "2003-06-11-nor-rou",
-            "2003-08-20-nor-sco",
-            "2003-09-10-nor-por",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-05-24-nor-par",
-            "2006-06-01-nor-kor",
-            "2006-08-16-nor-bra",
-            "2006-09-06-nor-mda",
-            "2007-03-24-nor-bih"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–1 borte mot Armenia 2001-10-06.",
-          "matchIds": [
-            "2001-10-06-arm-nor"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "karl-petter-loken",
       "displayName": "Karl Petter Løken",
       "starts": 19,
@@ -13114,6 +12785,297 @@
           "text": "Var på banen da Norge vant 3–0 borte mot Kypros 1990-11-14.",
           "matchIds": [
             "1990-11-14-cyp-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "magne-hoseth",
+      "displayName": "Magne Hoseth",
+      "starts": 18,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2004-01-22",
+      "lastMatch": "2009-09-05",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Sverige 2004-01-22, Privatlandskamp. Det endte Sverige 0–3 Norge.",
+          "matchIds": [
+            "2004-01-22-swe-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 18 kamper i arkivet, fordelt over 5 år fra 2004 til 2009.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Spilte alltid med draktnummer 8.",
+          "matchIds": [
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-01-28-sin-nor",
+            "2004-02-18-nir-nor",
+            "2004-03-31-srb-nor",
+            "2004-04-28-nor-rus",
+            "2004-05-27-nor-wal",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2004-10-09-sco-nor",
+            "2004-11-16-aus-nor",
+            "2005-02-09-mlt-nor",
+            "2005-03-30-mda-nor",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2009-08-12-nor-sco",
+            "2009-09-05-isl-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–0 hjemme mot Skottland 2009-08-12.",
+          "matchIds": [
+            "2009-08-12-nor-sco"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "kristofer-haestad",
+      "displayName": "Kristofer Hæstad",
+      "starts": 18,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2005-06-04",
+      "lastMatch": "2009-11-14",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Italia 2005-06-04, VM-kvalifisering 2005. Det endte Norge 0–0 Italia.",
+          "matchIds": [
+            "2005-06-04-nor-ita"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 18 kamper i arkivet, fordelt over 4 år fra 2005 til 2009.",
+          "matchIds": [
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2006-11-15-srb-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-08-22-nor-arg",
+            "2007-11-17-nor-tur",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane.",
+          "matchIds": [
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2006-11-15-srb-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-08-22-nor-arg",
+            "2007-11-17-nor-tur",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 7, 22.",
+          "matchIds": [
+            "2005-06-04-nor-ita",
+            "2005-06-08-swe-nor",
+            "2005-08-17-nor-sui",
+            "2005-09-03-svn-nor",
+            "2005-10-08-nor-mda",
+            "2005-11-12-nor-cze",
+            "2005-11-16-cze-nor",
+            "2006-09-02-hun-nor",
+            "2006-09-06-nor-mda",
+            "2006-10-07-gre-nor",
+            "2006-11-15-srb-nor",
+            "2007-02-07-cro-nor",
+            "2007-03-24-nor-bih",
+            "2007-03-28-tur-nor",
+            "2007-06-02-nor-mlt",
+            "2007-08-22-nor-arg",
+            "2007-11-17-nor-tur",
+            "2009-11-14-sui-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
+          "matchIds": [
+            "2007-06-02-nor-mlt"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "frode-johnsen",
+      "displayName": "Frode Johnsen",
+      "starts": 18,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2001-01-24",
+      "lastMatch": "2007-03-24",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Sør-Korea 2001-01-24, Privatlandskamp. Det endte Sør-Korea 2–3 Norge.",
+          "matchIds": [
+            "2001-01-24-kor-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 18 kamper i arkivet, fordelt over 6 år fra 2001 til 2007.",
+          "matchIds": [
+            "2001-01-24-kor-nor",
+            "2001-06-06-nor-blr",
+            "2001-10-06-arm-nor",
+            "2003-06-11-nor-rou",
+            "2003-08-20-nor-sco",
+            "2003-09-10-nor-por",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-06-08-swe-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-06-nor-mda",
+            "2007-03-24-nor-bih"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som offensiv midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2001-01-24-kor-nor",
+            "2001-06-06-nor-blr",
+            "2001-10-06-arm-nor",
+            "2003-06-11-nor-rou",
+            "2003-08-20-nor-sco",
+            "2003-09-10-nor-por",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-06-08-swe-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-06-nor-mda",
+            "2007-03-24-nor-bih"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 4 ulike draktnumre: 6, 9, 11, 24.",
+          "matchIds": [
+            "2001-01-24-kor-nor",
+            "2001-06-06-nor-blr",
+            "2001-10-06-arm-nor",
+            "2003-06-11-nor-rou",
+            "2003-08-20-nor-sco",
+            "2003-09-10-nor-por",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-09-08-nor-blr",
+            "2005-04-20-est-nor",
+            "2005-06-08-swe-nor",
+            "2006-05-24-nor-par",
+            "2006-06-01-nor-kor",
+            "2006-08-16-nor-bra",
+            "2006-09-06-nor-mda",
+            "2007-03-24-nor-bih"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–1 borte mot Armenia 2001-10-06.",
+          "matchIds": [
+            "2001-10-06-arm-nor"
           ]
         }
       ]
@@ -13541,7 +13503,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: forsvar, venstreback.",
+          "text": "Brukt i flere roller: venstreback, forsvar.",
           "matchIds": [
             "2017-10-05-smr-nor",
             "2017-10-08-nor-nir",
@@ -13595,100 +13557,6 @@
       ]
     },
     {
-      "playerId": "kristofer-haestad",
-      "displayName": "Kristofer Hæstad",
-      "starts": 17,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2005-06-08",
-      "lastMatch": "2009-11-14",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Sverige 2005-06-08, Privatlandskamp. Det endte Sverige 2–3 Norge.",
-          "matchIds": [
-            "2005-06-08-swe-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 17 kamper i arkivet, fordelt over 4 år fra 2005 til 2009.",
-          "matchIds": [
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2006-11-15-srb-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-08-22-nor-arg",
-            "2007-11-17-nor-tur",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane.",
-          "matchIds": [
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2006-11-15-srb-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-08-22-nor-arg",
-            "2007-11-17-nor-tur",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 7, 22.",
-          "matchIds": [
-            "2005-06-08-swe-nor",
-            "2005-08-17-nor-sui",
-            "2005-09-03-svn-nor",
-            "2005-10-08-nor-mda",
-            "2005-11-12-nor-cze",
-            "2005-11-16-cze-nor",
-            "2006-09-02-hun-nor",
-            "2006-09-06-nor-mda",
-            "2006-10-07-gre-nor",
-            "2006-11-15-srb-nor",
-            "2007-02-07-cro-nor",
-            "2007-03-24-nor-bih",
-            "2007-03-28-tur-nor",
-            "2007-06-02-nor-mlt",
-            "2007-08-22-nor-arg",
-            "2007-11-17-nor-tur",
-            "2009-11-14-sui-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–0 hjemme mot Malta 2007-06-02.",
-          "matchIds": [
-            "2007-06-02-nor-mlt"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "alexander-soderlund",
       "displayName": "Alexander Søderlund",
       "starts": 17,
@@ -13729,7 +13597,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: høyre midtbane, spiss.",
           "matchIds": [
             "2012-01-15-den-nor",
             "2012-10-12-sui-nor",
@@ -13776,100 +13644,6 @@
       ]
     },
     {
-      "playerId": "espen-johnsen",
-      "displayName": "Espen Johnsen",
-      "starts": 17,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2003-08-20",
-      "lastMatch": "2006-01-29",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Skottland 2003-08-20, Privatlandskamp. Det endte Norge 0–0 Skottland.",
-          "matchIds": [
-            "2003-08-20-nor-sco"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 17 kamper i arkivet, fordelt over 3 år fra 2003 til 2006.",
-          "matchIds": [
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-02-09-mlt-nor",
-            "2005-04-20-est-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-02-09-mlt-nor",
-            "2005-04-20-est-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Spilte alltid med draktnummer 1.",
-          "matchIds": [
-            "2003-08-20-nor-sco",
-            "2003-09-06-bih-nor",
-            "2003-09-10-nor-por",
-            "2003-10-11-nor-lux",
-            "2003-11-15-esp-nor",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-02-09-mlt-nor",
-            "2005-04-20-est-nor",
-            "2005-05-26-nor-crc",
-            "2005-06-04-nor-ita",
-            "2005-06-08-swe-nor",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 3–0 borte mot Malta 2005-02-09.",
-          "matchIds": [
-            "2005-02-09-mlt-nor"
-          ]
-        }
-      ]
-    },
-    {
       "playerId": "mats-moller-daehli",
       "displayName": "Mats Møller Dæhli",
       "starts": 16,
@@ -13909,7 +13683,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: venstre midtbane, angrep.",
+          "text": "Brukt i flere roller: venstre midtbane, høyre midtbane, angrep.",
           "matchIds": [
             "2014-03-05-cze-nor",
             "2014-05-27-fra-nor",
@@ -13961,9 +13735,100 @@
       ]
     },
     {
+      "playerId": "espen-johnsen",
+      "displayName": "Espen Johnsen",
+      "starts": 16,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2003-08-20",
+      "lastMatch": "2006-01-29",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Skottland 2003-08-20, Privatlandskamp. Det endte Norge 0–0 Skottland.",
+          "matchIds": [
+            "2003-08-20-nor-sco"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 16 kamper i arkivet, fordelt over 3 år fra 2003 til 2006.",
+          "matchIds": [
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-09-04-ita-nor",
+            "2005-01-22-kuw-nor",
+            "2005-01-25-bah-nor",
+            "2005-01-28-jor-nor",
+            "2005-02-09-mlt-nor",
+            "2005-04-20-est-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2006-01-29-usa-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som keeper i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-09-04-ita-nor",
+            "2005-01-22-kuw-nor",
+            "2005-01-25-bah-nor",
+            "2005-01-28-jor-nor",
+            "2005-02-09-mlt-nor",
+            "2005-04-20-est-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2006-01-29-usa-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Spilte alltid med draktnummer 1.",
+          "matchIds": [
+            "2003-08-20-nor-sco",
+            "2003-09-06-bih-nor",
+            "2003-09-10-nor-por",
+            "2003-10-11-nor-lux",
+            "2003-11-15-esp-nor",
+            "2003-11-19-nor-esp",
+            "2004-09-04-ita-nor",
+            "2005-01-22-kuw-nor",
+            "2005-01-25-bah-nor",
+            "2005-01-28-jor-nor",
+            "2005-02-09-mlt-nor",
+            "2005-04-20-est-nor",
+            "2005-05-26-nor-crc",
+            "2005-06-08-swe-nor",
+            "2006-01-26-mex-nor",
+            "2006-01-29-usa-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 3–0 borte mot Malta 2005-02-09.",
+          "matchIds": [
+            "2005-02-09-mlt-nor"
+          ]
+        }
+      ]
+    },
+    {
       "playerId": "tommy-svindal-larsen",
       "displayName": "Tommy Svindal Larsen",
-      "starts": 16,
+      "starts": 15,
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "1999-01-20",
@@ -13978,7 +13843,7 @@
         },
         {
           "kind": "omfang",
-          "text": "Startet 16 kamper i arkivet, fordelt over 7 år fra 1999 til 2006.",
+          "text": "Startet 15 kamper i arkivet, fordelt over 7 år fra 1999 til 2006.",
           "matchIds": [
             "1999-01-20-isr-nor",
             "1999-01-22-nor-est",
@@ -13988,7 +13853,6 @@
             "2001-03-28-blr-nor",
             "2003-02-12-gre-nor",
             "2003-04-30-irl-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-03-30-mda-nor",
@@ -14000,7 +13864,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane.",
+          "text": "Startet alltid som defensiv midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "1999-01-20-isr-nor",
             "1999-01-22-nor-est",
@@ -14010,7 +13874,6 @@
             "2001-03-28-blr-nor",
             "2003-02-12-gre-nor",
             "2003-04-30-irl-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-03-30-mda-nor",
@@ -14032,7 +13895,6 @@
             "2001-03-28-blr-nor",
             "2003-02-12-gre-nor",
             "2003-04-30-irl-nor",
-            "2003-11-19-nor-esp",
             "2004-10-09-sco-nor",
             "2004-10-13-nor-svn",
             "2005-03-30-mda-nor",
@@ -14047,97 +13909,6 @@
           "text": "Var på banen da Norge vant 4–0 borte mot Nord-Irland 2001-02-28.",
           "matchIds": [
             "2001-02-28-nir-nor"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "jan-derek-sorensen",
-      "displayName": "Jan Derek Sørensen",
-      "starts": 16,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "1999-11-14",
-      "lastMatch": "2004-10-09",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Tyskland 1999-11-14, Privatlandskamp. Det endte Norge 0–1 Tyskland.",
-          "matchIds": [
-            "1999-11-14-nor-ger"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 16 kamper i arkivet, fordelt over 5 år fra 1999 til 2004.",
-          "matchIds": [
-            "1999-11-14-nor-ger",
-            "2000-01-31-nor-isl",
-            "2000-02-02-den-nor",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-03-27-tun-nor",
-            "2002-05-14-nor-jpn",
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: venstre midtbane, høyre ving.",
-          "matchIds": [
-            "1999-11-14-nor-ger",
-            "2000-01-31-nor-isl",
-            "2000-02-02-den-nor",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-03-27-tun-nor",
-            "2002-05-14-nor-jpn",
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 3 ulike draktnumre: 6, 7, 8.",
-          "matchIds": [
-            "1999-11-14-nor-ger",
-            "2000-01-31-nor-isl",
-            "2000-02-02-den-nor",
-            "2001-08-15-nor-tur",
-            "2001-09-01-pol-nor",
-            "2001-09-05-nor-wal",
-            "2001-10-06-arm-nor",
-            "2002-03-27-tun-nor",
-            "2002-05-14-nor-jpn",
-            "2003-11-19-nor-esp",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-08-18-nor-bel",
-            "2004-09-04-ita-nor",
-            "2004-09-08-nor-blr",
-            "2004-10-09-sco-nor"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 4–1 borte mot Armenia 2001-10-06.",
-          "matchIds": [
-            "2001-10-06-arm-nor"
           ]
         }
       ]
@@ -14188,7 +13959,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som høyre midtbane i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: spiss, høyre midtbane, venstre ving, venstre midtbane, offensiv midtbane.",
           "matchIds": [
             "2012-01-18-tha-nor",
             "2013-01-12-zam-nor",
@@ -14430,6 +14201,27 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Startet alltid som høyreback i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2016-06-01-nor-isl",
+            "2016-06-05-bel-nor",
+            "2016-08-31-nor-blr",
+            "2016-09-04-nor-ger",
+            "2016-10-08-aze-nor",
+            "2016-10-11-nor-smr",
+            "2017-06-10-nor-cze",
+            "2017-06-13-nor-swe",
+            "2017-09-01-nor-aze",
+            "2017-10-05-smr-nor",
+            "2017-10-08-nor-nir",
+            "2017-11-11-mkd-nor",
+            "2018-03-26-alb-nor",
+            "2018-06-02-isl-nor",
+            "2019-11-18-mlt-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 2 ulike draktnumre: 5, 16.",
           "matchIds": [
@@ -14455,6 +14247,98 @@
           "text": "Var på banen da Norge vant 8–0 borte mot San Marino 2017-10-05.",
           "matchIds": [
             "2017-10-05-smr-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "patrick-berg",
+      "displayName": "Patrick Berg",
+      "starts": 14,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2021-09-07",
+      "lastMatch": "2026-07-11",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Gibraltar 2021-09-07, VM-kvalifisering 2021. Det endte Norge 5–1 Gibraltar.",
+          "matchIds": [
+            "2021-09-07-nor-gib"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 14 kamper i arkivet, fordelt over 5 år fra 2021 til 2026.",
+          "matchIds": [
+            "2021-09-07-nor-gib",
+            "2022-11-17-irl-nor",
+            "2022-11-20-nor-fin",
+            "2023-06-17-nor-sco",
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-09-09-nor-aut",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2025-11-16-ita-nor",
+            "2026-06-26-nor-fra",
+            "2026-06-30-civ-nor",
+            "2026-07-05-bra-nor",
+            "2026-07-11-nor-eng"
+          ]
+        },
+        {
+          "kind": "kaptein",
+          "text": "Bar kapteinsbindet i én kamp, første gang mot Frankrike 2026-06-26.",
+          "matchIds": [
+            "2026-06-26-nor-fra"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane, midtbane.",
+          "matchIds": [
+            "2021-09-07-nor-gib",
+            "2022-11-17-irl-nor",
+            "2022-11-20-nor-fin",
+            "2023-06-17-nor-sco",
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-09-09-nor-aut",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2025-11-16-ita-nor",
+            "2026-06-26-nor-fra",
+            "2026-06-30-civ-nor",
+            "2026-07-05-bra-nor",
+            "2026-07-11-nor-eng"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 6, 8.",
+          "matchIds": [
+            "2021-09-07-nor-gib",
+            "2022-11-17-irl-nor",
+            "2022-11-20-nor-fin",
+            "2023-06-17-nor-sco",
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-09-09-nor-aut",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2025-11-16-ita-nor",
+            "2026-06-26-nor-fra",
+            "2026-06-30-civ-nor",
+            "2026-07-05-bra-nor",
+            "2026-07-11-nor-eng"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 5–0 hjemme mot Israel 2025-10-11.",
+          "matchIds": [
+            "2025-10-11-nor-isr"
           ]
         }
       ]
@@ -14545,6 +14429,71 @@
       ]
     },
     {
+      "playerId": "jan-derek-sorensen",
+      "displayName": "Jan Derek Sørensen",
+      "starts": 14,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "1999-11-14",
+      "lastMatch": "2004-10-09",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Tyskland 1999-11-14, Privatlandskamp. Det endte Norge 0–1 Tyskland.",
+          "matchIds": [
+            "1999-11-14-nor-ger"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 14 kamper i arkivet, fordelt over 5 år fra 1999 til 2004.",
+          "matchIds": [
+            "1999-11-14-nor-ger",
+            "2000-01-31-nor-isl",
+            "2000-02-02-den-nor",
+            "2001-08-15-nor-tur",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-03-27-tun-nor",
+            "2002-05-14-nor-jpn",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-10-09-sco-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 7, 8.",
+          "matchIds": [
+            "1999-11-14-nor-ger",
+            "2000-01-31-nor-isl",
+            "2000-02-02-den-nor",
+            "2001-08-15-nor-tur",
+            "2001-09-01-pol-nor",
+            "2001-09-05-nor-wal",
+            "2001-10-06-arm-nor",
+            "2002-03-27-tun-nor",
+            "2002-05-14-nor-jpn",
+            "2004-01-22-swe-nor",
+            "2004-01-25-hon-nor",
+            "2004-08-18-nor-bel",
+            "2004-09-04-ita-nor",
+            "2004-10-09-sco-nor"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 4–1 borte mot Armenia 2001-10-06.",
+          "matchIds": [
+            "2001-10-06-arm-nor"
+          ]
+        }
+      ]
+    },
+    {
       "playerId": "fredrik-winsnes",
       "displayName": "Fredrik Winsnes",
       "starts": 14,
@@ -14618,95 +14567,6 @@
             "2008-10-15-nor-ned",
             "2009-06-06-mkd-nor",
             "2009-06-10-ned-nor"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "patrick-berg",
-      "displayName": "Patrick Berg",
-      "starts": 13,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2021-09-07",
-      "lastMatch": "2026-07-11",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Gibraltar 2021-09-07, VM-kvalifisering 2021. Det endte Norge 5–1 Gibraltar.",
-          "matchIds": [
-            "2021-09-07-nor-gib"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 13 kamper i arkivet, fordelt over 5 år fra 2021 til 2026.",
-          "matchIds": [
-            "2021-09-07-nor-gib",
-            "2022-11-17-irl-nor",
-            "2022-11-20-nor-fin",
-            "2023-06-17-nor-sco",
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-09-09-nor-aut",
-            "2025-10-11-nor-isr",
-            "2025-11-16-ita-nor",
-            "2026-06-26-nor-fra",
-            "2026-06-30-civ-nor",
-            "2026-07-05-bra-nor",
-            "2026-07-11-nor-eng"
-          ]
-        },
-        {
-          "kind": "kaptein",
-          "text": "Bar kapteinsbindet i én kamp, første gang mot Frankrike 2026-06-26.",
-          "matchIds": [
-            "2026-06-26-nor-fra"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: sentral midtbane, defensiv midtbane, midtbane.",
-          "matchIds": [
-            "2021-09-07-nor-gib",
-            "2022-11-17-irl-nor",
-            "2022-11-20-nor-fin",
-            "2023-06-17-nor-sco",
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-09-09-nor-aut",
-            "2025-10-11-nor-isr",
-            "2025-11-16-ita-nor",
-            "2026-06-26-nor-fra",
-            "2026-06-30-civ-nor",
-            "2026-07-05-bra-nor",
-            "2026-07-11-nor-eng"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 6, 8.",
-          "matchIds": [
-            "2021-09-07-nor-gib",
-            "2022-11-17-irl-nor",
-            "2022-11-20-nor-fin",
-            "2023-06-17-nor-sco",
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-09-09-nor-aut",
-            "2025-10-11-nor-isr",
-            "2025-11-16-ita-nor",
-            "2026-06-26-nor-fra",
-            "2026-06-30-civ-nor",
-            "2026-07-05-bra-nor",
-            "2026-07-11-nor-eng"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 5–0 hjemme mot Israel 2025-10-11.",
-          "matchIds": [
-            "2025-10-11-nor-isr"
           ]
         }
       ]
@@ -14830,7 +14690,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Brukt i flere roller: venstreback, forsvar.",
+          "text": "Brukt i flere roller: høyreback, venstreback, venstre midtbane, forsvar.",
           "matchIds": [
             "2014-05-27-fra-nor",
             "2014-08-27-nor-uae",
@@ -15528,6 +15388,22 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: sentral midtbane, høyre midtbane.",
+          "matchIds": [
+            "2012-01-18-tha-nor",
+            "2012-09-07-isl-nor",
+            "2012-10-16-cyp-nor",
+            "2013-02-06-ukr-nor",
+            "2013-08-14-swe-nor",
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2013-10-11-svn-nor",
+            "2013-11-19-nor-sco",
+            "2016-08-31-nor-blr"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 2 ulike draktnumre: 11, 15.",
           "matchIds": [
@@ -15541,76 +15417,6 @@
             "2013-10-11-svn-nor",
             "2013-11-19-nor-sco",
             "2016-08-31-nor-blr"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "morten-thorsby",
-      "displayName": "Morten Thorsby",
-      "starts": 9,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2020-09-04",
-      "lastMatch": "2025-11-13",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Østerrike 2020-09-04, Nations League 2020. Det endte Norge 1–2 Østerrike.",
-          "matchIds": [
-            "2020-09-04-nor-aut"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 9 kamper i arkivet, fordelt over 5 år fra 2020 til 2025.",
-          "matchIds": [
-            "2020-09-04-nor-aut",
-            "2021-09-01-nor-ned",
-            "2021-11-16-ned-nor",
-            "2022-06-12-nor-swe",
-            "2022-11-17-irl-nor",
-            "2024-10-10-nor-svn",
-            "2024-11-17-nor-kaz",
-            "2025-06-06-nor-ita",
-            "2025-11-13-nor-est"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: høyre midtbane, sentral midtbane, midtbane, offensiv midtbane.",
-          "matchIds": [
-            "2020-09-04-nor-aut",
-            "2021-09-01-nor-ned",
-            "2021-11-16-ned-nor",
-            "2022-06-12-nor-swe",
-            "2022-11-17-irl-nor",
-            "2024-10-10-nor-svn",
-            "2024-11-17-nor-kaz",
-            "2025-06-06-nor-ita",
-            "2025-11-13-nor-est"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 2, 20.",
-          "matchIds": [
-            "2020-09-04-nor-aut",
-            "2021-09-01-nor-ned",
-            "2021-11-16-ned-nor",
-            "2022-06-12-nor-swe",
-            "2022-11-17-irl-nor",
-            "2024-10-10-nor-svn",
-            "2024-11-17-nor-kaz",
-            "2025-06-06-nor-ita",
-            "2025-11-13-nor-est"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 5–0 hjemme mot Kasakhstan 2024-11-17.",
-          "matchIds": [
-            "2024-11-17-nor-kaz"
           ]
         }
       ]
@@ -15648,7 +15454,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som angrep i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: spiss, angrep.",
           "matchIds": [
             "2017-06-13-nor-swe",
             "2018-03-23-nor-aus",
@@ -15704,6 +15510,21 @@
         {
           "kind": "omfang",
           "text": "Startet 9 kamper i arkivet, fordelt over 5 år fra 2013 til 2018.",
+          "matchIds": [
+            "2013-10-15-nor-isl",
+            "2013-11-15-den-nor",
+            "2013-11-19-nor-sco",
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor",
+            "2017-11-11-mkd-nor",
+            "2018-03-23-nor-aus",
+            "2018-11-16-svn-nor",
+            "2018-11-19-cyp-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
           "matchIds": [
             "2013-10-15-nor-isl",
             "2013-11-15-den-nor",
@@ -15815,61 +15636,68 @@
       ]
     },
     {
-      "playerId": "ole-martin-arst",
-      "displayName": "Ole Martin Årst",
+      "playerId": "morten-thorsby",
+      "displayName": "Morten Thorsby",
       "starts": 8,
       "startsInPeriod": 0,
       "goals": 0,
-      "firstMatch": "2000-01-31",
-      "lastMatch": "2006-03-01",
+      "firstMatch": "2020-09-04",
+      "lastMatch": "2025-06-06",
       "facts": [
         {
           "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Island 2000-01-31, Privatlandskamp. Det endte Norge 0–0 Island.",
+          "text": "Startet sin første kamp i arkivet mot Østerrike 2020-09-04, Nations League 2020. Det endte Norge 1–2 Østerrike.",
           "matchIds": [
-            "2000-01-31-nor-isl"
+            "2020-09-04-nor-aut"
           ]
         },
         {
           "kind": "omfang",
-          "text": "Startet 8 kamper i arkivet, fordelt over 6 år fra 2000 til 2006.",
+          "text": "Startet 8 kamper i arkivet, fordelt over 5 år fra 2020 til 2025.",
           "matchIds": [
-            "2000-01-31-nor-isl",
-            "2000-02-04-nor-swe",
-            "2005-01-22-kuw-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor",
-            "2006-03-01-sen-nor"
+            "2020-09-04-nor-aut",
+            "2021-09-01-nor-ned",
+            "2021-11-16-ned-nor",
+            "2022-06-12-nor-swe",
+            "2022-11-17-irl-nor",
+            "2024-10-10-nor-svn",
+            "2024-11-17-nor-kaz",
+            "2025-06-06-nor-ita"
           ]
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: høyre midtbane, sentral midtbane, midtbane, offensiv midtbane.",
           "matchIds": [
-            "2000-01-31-nor-isl",
-            "2000-02-04-nor-swe",
-            "2005-01-22-kuw-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor",
-            "2006-03-01-sen-nor"
+            "2020-09-04-nor-aut",
+            "2021-09-01-nor-ned",
+            "2021-11-16-ned-nor",
+            "2022-06-12-nor-swe",
+            "2022-11-17-irl-nor",
+            "2024-10-10-nor-svn",
+            "2024-11-17-nor-kaz",
+            "2025-06-06-nor-ita"
           ]
         },
         {
           "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 10, 11.",
+          "text": "Har båret 2 ulike draktnumre: 2, 20.",
           "matchIds": [
-            "2000-01-31-nor-isl",
-            "2000-02-04-nor-swe",
-            "2005-01-22-kuw-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor",
-            "2006-01-29-usa-nor",
-            "2006-03-01-sen-nor"
+            "2020-09-04-nor-aut",
+            "2021-09-01-nor-ned",
+            "2021-11-16-ned-nor",
+            "2022-06-12-nor-swe",
+            "2022-11-17-irl-nor",
+            "2024-10-10-nor-svn",
+            "2024-11-17-nor-kaz",
+            "2025-06-06-nor-ita"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 5–0 hjemme mot Kasakhstan 2024-11-17.",
+          "matchIds": [
+            "2024-11-17-nor-kaz"
           ]
         }
       ]
@@ -15881,7 +15709,7 @@
       "startsInPeriod": 0,
       "goals": 0,
       "firstMatch": "2001-01-24",
-      "lastMatch": "2005-06-04",
+      "lastMatch": "2005-04-20",
       "facts": [
         {
           "kind": "debut",
@@ -15897,39 +15725,25 @@
             "2001-01-24-kor-nor",
             "2001-02-28-nir-nor",
             "2001-03-24-nor-pol",
+            "2003-11-19-nor-esp",
             "2004-01-22-swe-nor",
             "2004-01-25-hon-nor",
             "2004-03-31-srb-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som venstreback i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2001-01-24-kor-nor",
-            "2001-02-28-nir-nor",
-            "2001-03-24-nor-pol",
-            "2004-01-22-swe-nor",
-            "2004-01-25-hon-nor",
-            "2004-03-31-srb-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
+            "2005-04-20-est-nor"
           ]
         },
         {
           "kind": "draktnummer",
-          "text": "Spilte alltid med draktnummer 5.",
+          "text": "Har båret 2 ulike draktnumre: 2, 5.",
           "matchIds": [
             "2001-01-24-kor-nor",
             "2001-02-28-nir-nor",
             "2001-03-24-nor-pol",
+            "2003-11-19-nor-esp",
             "2004-01-22-swe-nor",
             "2004-01-25-hon-nor",
             "2004-03-31-srb-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita"
+            "2005-04-20-est-nor"
           ]
         },
         {
@@ -15937,66 +15751,6 @@
           "text": "Var på banen da Norge vant 4–0 borte mot Nord-Irland 2001-02-28.",
           "matchIds": [
             "2001-02-28-nir-nor"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "raymond-kvisvik",
-      "displayName": "Raymond Kvisvik",
-      "starts": 8,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2003-01-26",
-      "lastMatch": "2006-01-26",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot De forente arabiske emirater 2003-01-26, Privatlandskamp. Det endte De forente arabiske emirater 1–1 Norge.",
-          "matchIds": [
-            "2003-01-26-uae-nor"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 8 kamper i arkivet, fordelt over 3 år fra 2003 til 2006.",
-          "matchIds": [
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Startet alltid som venstre ving i de kampene rollene er dokumentert.",
-          "matchIds": [
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Spilte alltid med draktnummer 9.",
-          "matchIds": [
-            "2003-01-26-uae-nor",
-            "2003-01-28-oma-nor",
-            "2005-01-22-kuw-nor",
-            "2005-01-25-bah-nor",
-            "2005-01-28-jor-nor",
-            "2005-04-20-est-nor",
-            "2005-06-04-nor-ita",
-            "2006-01-26-mex-nor"
           ]
         }
       ]
@@ -16020,6 +15774,20 @@
         {
           "kind": "omfang",
           "text": "Startet 8 kamper i arkivet, fordelt over 9 år fra 2004 til 2013.",
+          "matchIds": [
+            "2004-01-28-sin-nor",
+            "2005-01-22-kuw-nor",
+            "2005-01-25-bah-nor",
+            "2005-01-28-jor-nor",
+            "2013-01-08-rsa-nor",
+            "2013-01-12-zam-nor",
+            "2013-06-11-nor-mkd",
+            "2013-09-06-nor-cyp"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som defensiv midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "2004-01-28-sin-nor",
             "2005-01-22-kuw-nor",
@@ -16231,6 +15999,81 @@
       ]
     },
     {
+      "playerId": "ole-martin-arst",
+      "displayName": "Ole Martin Årst",
+      "starts": 7,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2000-01-31",
+      "lastMatch": "2006-03-01",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Island 2000-01-31, Privatlandskamp. Det endte Norge 0–0 Island.",
+          "matchIds": [
+            "2000-01-31-nor-isl"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 7 kamper i arkivet, fordelt over 6 år fra 2000 til 2006.",
+          "matchIds": [
+            "2000-01-31-nor-isl",
+            "2000-02-04-nor-swe",
+            "2005-01-22-kuw-nor",
+            "2005-04-20-est-nor",
+            "2006-01-26-mex-nor",
+            "2006-01-29-usa-nor",
+            "2006-03-01-sen-nor"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 10, 11.",
+          "matchIds": [
+            "2000-01-31-nor-isl",
+            "2000-02-04-nor-swe",
+            "2005-01-22-kuw-nor",
+            "2005-04-20-est-nor",
+            "2006-01-26-mex-nor",
+            "2006-01-29-usa-nor",
+            "2006-03-01-sen-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "raymond-kvisvik",
+      "displayName": "Raymond Kvisvik",
+      "starts": 7,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2003-01-26",
+      "lastMatch": "2006-01-26",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot De forente arabiske emirater 2003-01-26, Privatlandskamp. Det endte De forente arabiske emirater 1–1 Norge.",
+          "matchIds": [
+            "2003-01-26-uae-nor"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 7 kamper i arkivet, fordelt over 3 år fra 2003 til 2006.",
+          "matchIds": [
+            "2003-01-26-uae-nor",
+            "2003-01-28-oma-nor",
+            "2005-01-22-kuw-nor",
+            "2005-01-25-bah-nor",
+            "2005-01-28-jor-nor",
+            "2005-04-20-est-nor",
+            "2006-01-26-mex-nor"
+          ]
+        }
+      ]
+    },
+    {
       "playerId": "jan-ove-pedersen",
       "displayName": "Jan Ove Pedersen",
       "starts": 7,
@@ -16287,6 +16130,19 @@
         {
           "kind": "omfang",
           "text": "Startet 7 kamper i arkivet, fordelt over 3 år fra 2012 til 2015.",
+          "matchIds": [
+            "2012-11-14-hun-nor",
+            "2013-02-06-ukr-nor",
+            "2014-05-31-nor-rus",
+            "2014-09-09-nor-ita",
+            "2014-11-12-nor-est",
+            "2014-11-16-aze-nor",
+            "2015-06-08-nor-swe"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
           "matchIds": [
             "2012-11-14-hun-nor",
             "2013-02-06-ukr-nor",
@@ -16430,6 +16286,67 @@
           "text": "Var på banen da Norge vant 4–1 borte mot Irak 2026-06-16.",
           "matchIds": [
             "2026-06-16-irq-nor"
+          ]
+        }
+      ]
+    },
+    {
+      "playerId": "oscar-bobb",
+      "displayName": "Oscar Bobb",
+      "starts": 6,
+      "startsInPeriod": 0,
+      "goals": 0,
+      "firstMatch": "2023-10-15",
+      "lastMatch": "2026-06-26",
+      "facts": [
+        {
+          "kind": "debut",
+          "text": "Startet sin første kamp i arkivet mot Spania 2023-10-15, EM-kvalifisering 2023. Det endte Norge 0–1 Spania.",
+          "matchIds": [
+            "2023-10-15-nor-esp"
+          ]
+        },
+        {
+          "kind": "omfang",
+          "text": "Startet 6 kamper i arkivet, fordelt over 3 år fra 2023 til 2026.",
+          "matchIds": [
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-03-26-nor-svk",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2026-06-26-nor-fra"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: venstre ving, høyre ving, midtbane, høyre midtbane.",
+          "matchIds": [
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-03-26-nor-svk",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2026-06-26-nor-fra"
+          ]
+        },
+        {
+          "kind": "draktnummer",
+          "text": "Har båret 2 ulike draktnumre: 17, 22.",
+          "matchIds": [
+            "2023-10-15-nor-esp",
+            "2023-11-19-sco-nor",
+            "2024-03-26-nor-svk",
+            "2025-10-11-nor-isr",
+            "2025-11-13-nor-est",
+            "2026-06-26-nor-fra"
+          ]
+        },
+        {
+          "kind": "største seier",
+          "text": "Var på banen da Norge vant 5–0 hjemme mot Israel 2025-10-11.",
+          "matchIds": [
+            "2025-10-11-nor-isr"
           ]
         }
       ]
@@ -16765,6 +16682,18 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: spiss, venstre ving, venstre midtbane.",
+          "matchIds": [
+            "2016-03-24-est-nor",
+            "2016-03-29-nor-fin",
+            "2016-06-01-nor-isl",
+            "2016-06-05-bel-nor",
+            "2016-09-04-nor-ger",
+            "2016-10-08-aze-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 2 ulike draktnumre: 16, 20.",
           "matchIds": [
@@ -16774,64 +16703,6 @@
             "2016-06-05-bel-nor",
             "2016-09-04-nor-ger",
             "2016-10-08-aze-nor"
-          ]
-        }
-      ]
-    },
-    {
-      "playerId": "oscar-bobb",
-      "displayName": "Oscar Bobb",
-      "starts": 5,
-      "startsInPeriod": 0,
-      "goals": 0,
-      "firstMatch": "2023-10-15",
-      "lastMatch": "2026-06-26",
-      "facts": [
-        {
-          "kind": "debut",
-          "text": "Startet sin første kamp i arkivet mot Spania 2023-10-15, EM-kvalifisering 2023. Det endte Norge 0–1 Spania.",
-          "matchIds": [
-            "2023-10-15-nor-esp"
-          ]
-        },
-        {
-          "kind": "omfang",
-          "text": "Startet 5 kamper i arkivet, fordelt over 3 år fra 2023 til 2026.",
-          "matchIds": [
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-03-26-nor-svk",
-            "2025-10-11-nor-isr",
-            "2026-06-26-nor-fra"
-          ]
-        },
-        {
-          "kind": "posisjon",
-          "text": "Brukt i flere roller: venstre ving, høyre ving, midtbane, høyre midtbane.",
-          "matchIds": [
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-03-26-nor-svk",
-            "2025-10-11-nor-isr",
-            "2026-06-26-nor-fra"
-          ]
-        },
-        {
-          "kind": "draktnummer",
-          "text": "Har båret 2 ulike draktnumre: 17, 22.",
-          "matchIds": [
-            "2023-10-15-nor-esp",
-            "2023-11-19-sco-nor",
-            "2024-03-26-nor-svk",
-            "2025-10-11-nor-isr",
-            "2026-06-26-nor-fra"
-          ]
-        },
-        {
-          "kind": "største seier",
-          "text": "Var på banen da Norge vant 5–0 hjemme mot Israel 2025-10-11.",
-          "matchIds": [
-            "2025-10-11-nor-isr"
           ]
         }
       ]
@@ -16930,7 +16801,7 @@
         },
         {
           "kind": "posisjon",
-          "text": "Startet alltid som midtbane i de kampene rollene er dokumentert.",
+          "text": "Brukt i flere roller: venstre midtbane, midtbane, høyre midtbane.",
           "matchIds": [
             "2018-06-02-isl-nor",
             "2018-06-06-nor-pan",
@@ -17251,6 +17122,17 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Startet alltid som venstre midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2012-01-18-tha-nor",
+            "2012-01-21-kor-nor",
+            "2016-03-24-est-nor",
+            "2016-03-29-nor-fin",
+            "2016-05-29-por-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 20.",
           "matchIds": [
@@ -17282,6 +17164,17 @@
         {
           "kind": "omfang",
           "text": "Startet 5 kamper i arkivet, fordelt over 1 år fra 2013 til 2014.",
+          "matchIds": [
+            "2013-01-12-zam-nor",
+            "2013-09-10-nor-sui",
+            "2013-11-15-den-nor",
+            "2013-11-19-nor-sco",
+            "2014-08-27-nor-uae"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
           "matchIds": [
             "2013-01-12-zam-nor",
             "2013-09-10-nor-sui",
@@ -17773,6 +17666,16 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: venstreback, midtstopper.",
+          "matchIds": [
+            "2014-01-15-mda-nor",
+            "2017-03-26-nir-nor",
+            "2017-09-01-nor-aze",
+            "2017-09-04-ger-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 3 ulike draktnumre: 2, 3, 5.",
           "matchIds": [
@@ -17811,6 +17714,16 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: høyre midtbane, høyre ving.",
+          "matchIds": [
+            "2016-05-29-por-nor",
+            "2016-06-05-bel-nor",
+            "2016-08-31-nor-blr",
+            "2016-09-04-nor-ger"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 2 ulike draktnumre: 14, 19.",
           "matchIds": [
@@ -17841,6 +17754,16 @@
         {
           "kind": "omfang",
           "text": "Startet 4 kamper i arkivet, alle i 2018.",
+          "matchIds": [
+            "2018-10-13-nor-svn",
+            "2018-10-16-nor-bul",
+            "2018-11-16-svn-nor",
+            "2018-11-19-cyp-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
           "matchIds": [
             "2018-10-13-nor-svn",
             "2018-10-16-nor-bul",
@@ -18545,6 +18468,15 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2013-09-06-nor-cyp",
+            "2013-09-10-nor-sui",
+            "2013-10-11-svn-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 3.",
           "matchIds": [
@@ -18574,6 +18506,15 @@
         {
           "kind": "omfang",
           "text": "Startet 3 kamper i arkivet, alle i 2014.",
+          "matchIds": [
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor",
+            "2014-08-27-nor-uae"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som høyre midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "2014-01-15-mda-nor",
             "2014-01-18-pol-nor",
@@ -18617,6 +18558,15 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2014-05-31-nor-rus",
+            "2014-08-27-nor-uae",
+            "2015-09-03-bul-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 13.",
           "matchIds": [
@@ -18646,6 +18596,15 @@
         {
           "kind": "omfang",
           "text": "Startet 3 kamper i arkivet, fordelt over 3 år fra 2014 til 2017.",
+          "matchIds": [
+            "2014-08-27-nor-uae",
+            "2014-09-09-nor-ita",
+            "2017-06-13-nor-swe"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som venstreback i de kampene rollene er dokumentert.",
           "matchIds": [
             "2014-08-27-nor-uae",
             "2014-09-09-nor-ita",
@@ -18689,6 +18648,15 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Brukt i flere roller: venstreback, sentral midtbane.",
+          "matchIds": [
+            "2016-05-29-por-nor",
+            "2017-06-13-nor-swe",
+            "2017-11-14-svk-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Har båret 3 ulike draktnumre: 8, 13, 21.",
           "matchIds": [
@@ -18718,6 +18686,15 @@
         {
           "kind": "omfang",
           "text": "Startet 3 kamper i arkivet, alle i 2017.",
+          "matchIds": [
+            "2017-03-26-nir-nor",
+            "2017-10-05-smr-nor",
+            "2017-11-11-mkd-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
           "matchIds": [
             "2017-03-26-nir-nor",
             "2017-10-05-smr-nor",
@@ -19416,6 +19393,14 @@
             "2012-01-18-tha-nor",
             "2014-08-27-nor-uae"
           ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som midtstopper i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2012-01-18-tha-nor",
+            "2014-08-27-nor-uae"
+          ]
         }
       ]
     },
@@ -19438,6 +19423,14 @@
         {
           "kind": "omfang",
           "text": "Startet 2 kamper i arkivet, fordelt over 2 år fra 2012 til 2014.",
+          "matchIds": [
+            "2012-01-18-tha-nor",
+            "2014-01-15-mda-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "2012-01-18-tha-nor",
             "2014-01-15-mda-nor"
@@ -19556,6 +19549,14 @@
           ]
         },
         {
+          "kind": "posisjon",
+          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2014-01-15-mda-nor",
+            "2014-01-18-pol-nor"
+          ]
+        },
+        {
           "kind": "draktnummer",
           "text": "Spilte alltid med draktnummer 6.",
           "matchIds": [
@@ -19622,6 +19623,14 @@
             "2014-08-27-nor-uae",
             "2016-03-29-nor-fin"
           ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som spiss i de kampene rollene er dokumentert.",
+          "matchIds": [
+            "2014-08-27-nor-uae",
+            "2016-03-29-nor-fin"
+          ]
         }
       ]
     },
@@ -19644,6 +19653,14 @@
         {
           "kind": "omfang",
           "text": "Startet 2 kamper i arkivet, alle i 2016.",
+          "matchIds": [
+            "2016-06-01-nor-isl",
+            "2016-10-08-aze-nor"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som høyre ving i de kampene rollene er dokumentert.",
           "matchIds": [
             "2016-06-01-nor-isl",
             "2016-10-08-aze-nor"
@@ -20705,6 +20722,13 @@
         {
           "kind": "debut",
           "text": "Startet sin første kamp i arkivet mot Australia 2018-03-23, Privatlandskamp. Det endte Norge 4–1 Australia.",
+          "matchIds": [
+            "2018-03-23-nor-aus"
+          ]
+        },
+        {
+          "kind": "posisjon",
+          "text": "Startet alltid som sentral midtbane i de kampene rollene er dokumentert.",
           "matchIds": [
             "2018-03-23-nor-aus"
           ]
