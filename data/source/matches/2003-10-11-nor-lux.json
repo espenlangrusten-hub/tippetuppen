@@ -9,10 +9,11 @@
     1,
     0
   ],
+  "formation": "4-4-2",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "single_source",
   "sources": [
@@ -24,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-4-2 fra nærmeste kamp med dokumentert formasjon (2000-06-21), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Claus Lundekvam, Ole Christer Basma, Harald Brattbakk står etter UEFAs registrerte rolle).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +34,43 @@
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Claus Lundekvam",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Henning Stille Berg",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Ole Christer Basma",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Martin Andresen",
-      "pos": "OUT"
+      "pos": "DM"
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Fredrik Lærum Winsnes",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Tore Andre Flo",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Håvard Flo",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "Harald Brattbakk",
-      "pos": "OUT"
+      "pos": "FW"
     }
   ]
 }

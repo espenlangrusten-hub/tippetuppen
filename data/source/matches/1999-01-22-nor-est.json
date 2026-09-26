@@ -9,10 +9,11 @@
     3,
     3
   ],
+  "formation": "4-3-3",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "verified",
   "sources": [
@@ -31,7 +32,7 @@
       "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-3-3 fra nærmeste kamp med dokumentert formasjon (2000-06-13), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Claus Lundekvam, Egil Johan Østenstad, Frank Strandli står etter UEFAs registrerte rolle).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -40,43 +41,43 @@
     },
     {
       "name": "André Bergdølmo",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Bjørn Otto Bragstad",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Erik Hoftun",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Claus Lundekvam",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Tommy Svindal Larsen",
-      "pos": "OUT"
+      "pos": "DM"
     },
     {
       "name": "Ståle Solbakken",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Roar Strand",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "John Carew",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Egil Johan Østenstad",
-      "pos": "OUT"
+      "pos": "FW"
     },
     {
       "name": "Frank Strandli",
-      "pos": "OUT"
+      "pos": "FW"
     }
   ]
 }

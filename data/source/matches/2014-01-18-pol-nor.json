@@ -9,10 +9,11 @@
     0,
     3
   ],
+  "formation": "4-5-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "single_source",
   "sources": [
@@ -24,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-5-1 fra nærmeste kamp med dokumentert formasjon (2014-09-03), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Ruben Kristiansen står etter UEFAs registrerte rolle; Abdisalam Ibrahim har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +34,43 @@
     },
     {
       "name": "Espen Ruud",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Tore Reginiussen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Stefan Strandberg",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Ruben Kristiansen",
-      "pos": "OUT"
+      "pos": "DF"
     },
     {
       "name": "Yann-Erik de Lanlay",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "Abdisalam Ibrahim",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Thomas Kind Bendiksen",
-      "pos": "OUT"
+      "pos": "CM"
     },
     {
       "name": "Morten Gamst Pedersen",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Ola Kamara",
-      "pos": "OUT"
+      "pos": "CF"
     },
     {
       "name": "Erik Andre Huseklepp",
-      "pos": "OUT"
+      "pos": "MF"
     }
   ]
 }

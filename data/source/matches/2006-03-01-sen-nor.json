@@ -9,10 +9,11 @@
     1,
     2
   ],
+  "formation": "4-2-3-1",
   "importance": 2,
   "tags": [
     "import:verified-xi-workbook",
-    "position:undocumented"
+    "position:inferred"
   ],
   "status": "single_source",
   "sources": [
@@ -24,7 +25,7 @@
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
     }
   ],
-  "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",
+  "notes": "Startelleveren er dokumentert. Posisjonene er utledet, ikke dokumentert: formasjonen 4-2-3-1 fra nærmeste kamp med dokumentert formasjon (2006-08-16), hver spillers posisjon fra hans nærmeste kamp med dokumentert posisjon (Petter Vaagan Moen, Ole Martin Årst står etter UEFAs registrerte rolle; Hassan el Fakiri har ingen av delene og står der det var plass).",
   "goalsPartial": true,
   "lineup": [
     {
@@ -33,43 +34,43 @@
     },
     {
       "name": "Jon Inge Høiland",
-      "pos": "OUT"
+      "pos": "RB"
     },
     {
       "name": "Erik Bjørnstad Hagen",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Brede Hangeland",
-      "pos": "OUT"
+      "pos": "CB"
     },
     {
       "name": "Trond Erik Bertelsen",
-      "pos": "OUT"
+      "pos": "LB"
     },
     {
       "name": "Jan Gunnar Solli",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "Petter Vaagan Moen",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Hassan el Fakiri",
-      "pos": "OUT"
+      "pos": "MF"
     },
     {
       "name": "Daniel Omoya Braaten",
-      "pos": "OUT"
+      "pos": "RM"
     },
     {
       "name": "John Arne Semundseth Riise",
-      "pos": "OUT"
+      "pos": "LM"
     },
     {
       "name": "Ole Martin Årst",
-      "pos": "OUT"
+      "pos": "FW"
     }
   ]
 }
