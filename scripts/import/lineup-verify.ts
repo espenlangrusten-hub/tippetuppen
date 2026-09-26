@@ -14,8 +14,11 @@
  *    G/D/M/F are the players' usual positions, not their role in the match (1 of 10
  *    agreed with our documented ones), and are never used - except a lone "F" among
  *    specific roles, which is how Opta lists the centre-forward.
- * Matches that are uncertain, recall or rejected are left alone: a conflict is for a
- * person to settle.
+ * Matches that are recall or rejected are left alone. An uncertain match is touched in
+ * one case only: its conflict was found against UEFA, and UEFA and ESPN name the same
+ * eleven. Two publishers then agree against our one, so the eleven is replaced with
+ * theirs - provided every name is a player we already know, so a transliteration like
+ * "Haavard Flo" becomes our "Håvard Flo" rather than a new person.
  *
  * The build sandbox reaches neither source; run it through the "Kontroller
  * lagoppstillinger" workflow.
@@ -23,6 +26,7 @@
 import { appendFileSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { matchStarters, type SourcePlayer } from "../../src/data/shirts";
+import { normalizeName } from "../../src/lib/names";
 import { layoutPitch, parseFormation } from "../../src/lib/pitch";
 import type { Position } from "../../src/lib/positions";
 import { serialize, type Match } from "./shirt-format";
@@ -117,6 +121,58 @@ export function positionsFromEspn(ours: string[], e: { formation: string | null;
   return { pos, formation: e.formation };
 }
 
+type Starter = Match["lineup"][number] & { pos?: string; no?: number | null; captain?: boolean };
+
+/** UEFA writes Norwegian letters out in full: Haavard, Bjoern, Tronderik. */
+const fold = (n: string) => normalizeName(n).replace(/aa/g, "a").replace(/oe/g, "o").replace(/ae/g, "a");
+
+/**
+ * Our spelling of each source name, or null when a name fits no player we know or two
+ * different ones. Several spellings of one player (the registry's short name and a
+ * lineup's full name) resolve to the registry's.
+ */
+export function canonicalNames(theirs: string[], known: string[], registry: Set<string> = new Set()): string[] | null {
+  const out: string[] = [];
+  for (const name of theirs) {
+    let fits = [...new Set(known.filter((k) => matchStarters([fold(k)], [{ name: fold(name), no: null }]).size === 1))];
+    if (fits.length > 1) {
+      const onePerson = fits.every((a) => fits.every((b) => matchStarters([fold(a)], [{ name: fold(b), no: null }]).size === 1));
+      if (!onePerson) return null;
+      const listed = fits.filter((f) => registry.has(f));
+      fits = listed.length === 1 ? listed : fits.slice().sort((a, b) => b.length - a.length).slice(0, 1);
+    }
+    if (fits.length !== 1) return null;
+    out.push(fits[0]);
+  }
+  return new Set(out).size === out.length ? out : null;
+}
+
+/**
+ * The eleven UEFA and ESPN agree on, in our names, with UEFA's numbers and ESPN's roles
+ * where they can be used. A reason string when the correction cannot be made safely.
+ */
+let registryNames = new Set<string>();
+function corrected(m: Match & { goals?: { team: string; name?: string; kind?: string }[]; subs?: { name: string }[] }, u: { id: string; starters: SourcePlayer[] }, e: { id: string; formation: string | null; starters: EspnStarter[] }, known: string[]) {
+  if (u.starters.length !== 11 || e.starters.length !== 11) return "UEFA eller ESPN har ikke elleve startere";
+  if (matchStarters(u.starters.map((s) => s.name), e.starters).size !== 11) return "UEFA og ESPN er ikke enige";
+  const names = canonicalNames(u.starters.map((s) => s.name), known, registryNames);
+  if (!names) return "et navn passer ingen eller flere kjente spillere";
+  const keeper = e.starters.find((s) => s.role === "G");
+  const numbers = u.starters.map((s) => (s.no && s.no > 0 && s.no < 100 ? s.no : null));
+  const allNumbers = numbers.every((n) => n != null) && new Set(numbers).size === 11;
+  const roles = positionsFromEspn(names, e);
+  const lineup: Starter[] = names.map((name, i) => ({
+    name,
+    pos: typeof roles !== "string" ? roles.pos[i] : keeper && matchStarters([name], [keeper]).size === 1 ? "GK" : "OUT",
+    ...(allNumbers ? { no: numbers[i] } : {}),
+  }));
+  if (lineup.filter((p) => p.pos === "GK").length !== 1) return "fant ikke keeperen";
+  const everyone = [...names, ...(m.subs ?? []).map((s) => s.name)];
+  const lost = (m.goals ?? []).filter((g) => g.team === "norway" && g.kind !== "og" && g.name && !everyone.includes(g.name)).map((g) => g.name);
+  if (lost.length) return `målscorer ${lost.join(", ")} er ikke i den nye elleveren`;
+  return { lineup, formation: typeof roles !== "string" ? roles.formation : null, subs: (m.subs ?? []).filter((s) => !names.includes(s.name)) };
+}
+
 const hostOf = (url?: string) => (url ? new URL(url).hostname.replace(/^www\./, "") : "");
 const isUefa = (h: string) => /uefa\.com$/.test(h);
 const isEspn = (h: string) => /espn\./.test(h);
@@ -127,10 +183,48 @@ async function main() {
   const positioned: string[] = [];
   const skipped: string[] = [];
   const files = readdirSync(DIR).filter((f) => f.endsWith(".json")).sort();
+  const registry = JSON.parse(readFileSync(path.join(DIR, "..", "players.json"), "utf8")) as { fullName: string }[];
+  const known = [...new Set([...registry.map((p) => p.fullName), ...files.flatMap((f) => {
+    const x = JSON.parse(readFileSync(path.join(DIR, f), "utf8")) as { lineup: { name: string }[]; subs?: { name: string }[] };
+    return [...x.lineup, ...(x.subs ?? [])].map((p) => p.name);
+  })])];
+  registryNames = new Set(registry.map((p) => p.fullName));
+  const fixed: string[] = [];
   for (const f of files) {
     const file = path.join(DIR, f);
     const original = readFileSync(file, "utf8");
     const m = JSON.parse(original) as Match & { status: string; formation?: string | null; tags?: string[]; notes?: string };
+    if (m.status === "uncertain" && m.notes?.startsWith("Konflikt funnet") && / ESPN \(Opta\) har samme elleve som UEFA\./.test(m.notes)) {
+      const u = await uefa(m);
+      const e = await espn(m);
+      const c = u && e ? corrected(m, u, e, known) : "UEFA eller ESPN svarte ikke";
+      if (typeof c === "string") { skipped.push(`${m.id} (retting): ${c}`); continue; }
+      const before = m.lineup.slice(0, 11).map((p) => p.name).filter((n) => !c.lineup.some((p) => p.name === n));
+      const after = c.lineup.map((p) => p.name).filter((n) => !m.lineup.slice(0, 11).some((p) => p.name === n));
+      const r: Record<string, unknown> = {};
+      for (const [k, v] of Object.entries(m)) {
+        if (k === "formation") continue;
+        if (k === "lineup") { r.lineup = c.lineup; continue; }
+        if (k === "subs") { r.subs = c.subs; continue; }
+        if (k === "status") { r.status = "verified"; continue; }
+        if (k === "notes") { r.notes = `Rettet ${today}: UEFA og ESPN (Opta) har samme elleve, med ${after.join(", ")} der vår tidligere kilde hadde ${before.join(", ")}. Elleveren, draktnumrene (UEFA) og eventuelle roller (ESPN) er hentet derfra.`; continue; }
+        if (k === "tags") { r.tags = [...((v as string[]) ?? []).filter((t) => !t.startsWith("position:")), "lineup:uefa-espn", c.formation ? "position:espn-opta" : "position:undocumented"]; continue; }
+        if (k === "sources") {
+          const old = (v as Match["sources"]).map((src) => (/uefa\.com|espn\./.test(src.url ?? "") ? src : { ...src, note: `${src.note ? `${src.note} ` : ""}Oppga en annen elleve enn UEFA og ESPN (se notes).` }));
+          r.sources = [
+            ...old.filter((src) => !/uefa\.com\/v5|espn\./.test(src.url ?? "")),
+            { url: `https://match.uefa.com/v5/matches/${u!.id}/lineups`, title: "UEFA – kampdata med lagoppstilling", kind: "api", accessed: today, note: "Startelleveren og draktnumrene er hentet herfra." },
+            { url: `https://www.espn.com/soccer/match/_/gameId/${e!.id}`, title: "ESPN – lagoppstilling (Opta)", kind: "web", accessed: today, note: `Samme elleve som UEFA.${c.formation ? ` Formasjon ${c.formation} og roller herfra.` : ""}` },
+          ];
+          continue;
+        }
+        r[k] = v;
+        if (k === (Object.keys(m).includes("venue") ? "venue" : "score") && c.formation) r.formation = c.formation;
+      }
+      writeFileSync(file, JSON.stringify(r, null, 2) + "\n");
+      fixed.push(`${m.id}: ${before.join(", ")} → ${after.join(", ")}${c.formation ? ` (${c.formation})` : ""}`);
+      continue;
+    }
     if (m.status !== "single_source" && m.status !== "verified") continue;
     report.checked++;
     const starters = m.lineup.slice(0, 11);
@@ -199,6 +293,7 @@ async function main() {
     "```", JSON.stringify(report, null, 2), "```",
     `### Oppgradert til verified (${promoted.length})`, ...promoted.map((p) => `- ${p}`),
     `### Posisjoner fra ESPN (${positioned.length})`, ...positioned.map((p) => `- ${p}`),
+    `### Rettet til UEFA/ESPN-elleveren (${fixed.length})`, ...fixed.map((p) => `- ${p}`),
     `### ESPN-roller som ikke ble brukt (${skipped.length})`, ...skipped.map((p) => `- ${p}`),
   ].join("\n");
   console.log(text);
