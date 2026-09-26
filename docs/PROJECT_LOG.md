@@ -2,6 +2,40 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-09-26 – Mangler XI: komplette runder først
+
+**Problem.** Kalenderen fylles 400 dager fram, og planleggeren tok ikke hensyn til om en
+runde var komplett. Av de neste 30 dagene (27.9.–26.10.) hadde 10 alle posisjoner og
+draktnumre, mens 12 hadde ingen av delene. Samtidig lå 20 komplette runder lenger ut i
+kalenderen eller var ubrukt.
+
+| Pulje (26.9.) | Komplett | Bare numre | Bare posisjoner | Ingen av delene |
+|---|---|---|---|---|
+| Neste 30 dager | 10 | 5 | 3 | 12 |
+| Senere i kalenderen | 18 | 136 | 2 | 148 |
+| Ubrukt | 2 | 0 | 1 | 0 |
+
+**Endring** (`src/server/puzzles/scheduler.ts`):
+- `lineupCompleteness` gir en runde 3 poeng når alle har dokumentert posisjon og 2 når
+  alle har draktnummer. `pickNext` legger poengene til. De veier mindre enn straffen for
+  en nesten lik ellever de siste dagene (inntil 6), så en komplett runde går ikke foran
+  hvis den nesten gjentar en nylig runde.
+- `ORDER_RULE`: når rekkefølgeregelen endres, bygges den ulåste framtiden opp igjen én
+  gang. Gjeldende regel lagres i `tippetuppen.settings` under `scheduleOrder:mangler-xi`.
+- Kalenderen bygges også opp igjen når en ubrukt runde er mer komplett enn den minst
+  komplette av de neste 30 dagene. Nye numre og posisjoner havner da framme i stedet for
+  bakerst.
+
+**Simulert mot produksjonsdataene:** de neste 30 dagene får 21 komplette runder, 2 med
+bare posisjoner, 7 med bare numre og ingen tomme. Sterkere vekter ga 22–23 komplette,
+men lot en komplett runde slå avstandsregelen.
+
+**Databaseendring (skjer automatisk ved første datajobb etter merge):** ulåste
+`tippetuppen.schedule`-rader for Mangler XI fra og med i morgen slettes og skrives på
+nytt. Publiserte dager (til og med i dag) og låste dager røres ikke. Endringen kan
+reverseres ved å endre `ORDER_RULE` igjen, men det gir en ny ombygging, ikke den
+gamle kalenderen. Den gamle rekkefølgen for 27.9.–26.10. er dokumentert i PR-en.
+
 ## 2026-09-25 – Posisjoner i Mangler XI, og en manuell retting av dagens oppgave
 
 304 av 362 kamper har startelleveren dokumentert, men ikke posisjonene (`pos: "OUT"`).

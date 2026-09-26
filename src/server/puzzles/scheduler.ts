@@ -7,6 +7,32 @@ import { lineupSimilarity } from "./manglerXi";
 /** How far back the scheduler looks when it spaces repeats apart. */
 export const RECENT_DAYS = 14;
 
+/** The days a visitor is most likely to see, and where the best content should go. */
+export const CONTENT_WINDOW = 30;
+
+/**
+ * Bumped when pickNext orders a game differently. A calendar is filled 400 days ahead,
+ * so without this a new ordering only reaches players a year later: the stored rule is
+ * compared on every run, and a calendar written under an older one is rebuilt once.
+ */
+export const ORDER_RULE: Partial<Record<GameId, string>> = { "mangler-xi": "complete-first-2026-09-26" };
+
+type Starter = { no?: number | null; pos?: string };
+
+/**
+ * How much of a Mangler XI round is actually drawn. A starter without a documented
+ * position is "OUT" and the pitch falls back to two neutral rows of five; a starter
+ * without a number wears a blank shirt. Positions weigh more because they decide the
+ * whole picture, a number only one shirt.
+ */
+export function lineupCompleteness(payload: Record<string, unknown>): number {
+  const players = (payload as { players?: Starter[] }).players ?? [];
+  if (players.length !== 11) return 0;
+  const positions = players.every((p) => p.pos && p.pos !== "OUT");
+  const numbers = players.every((p) => p.no != null);
+  return (positions ? 3 : 0) + (numbers ? 2 : 0);
+}
+
 export type RotationPolicy = { statuses: string[] };
 export const DEFAULT_ROTATION: RotationPolicy = { statuses: ["verified", "single_source"] };
 
@@ -33,12 +59,15 @@ type Recent = { fingerprint: string; era: number | null; tags: string[]; difficu
  *  - penalise same era/opponent/category as the last few days
  *  - alternate difficulty so consecutive days differ
  *  - prefer higher quality (importance) slightly, with deterministic tie-breaks
+ *  - Mangler XI: prefer rounds with every position and shirt number documented
  */
 export function pickNext(game: GameId, candidates: Candidate[], recent: Recent[], seed: number): Candidate | null {
   if (candidates.length === 0) return null;
   const last = recent[recent.length - 1];
   const scored = candidates.map((c) => {
     let score = c.quality * 0.6;
+    // A complete lineup outranks variety unless it nearly repeats a recent one.
+    if (game === "mangler-xi") score += lineupCompleteness(c.payload);
     if (game === "mangler-xi" || game === "finn-spilleren") {
       recent.slice(-14).forEach((r, i, arr) => {
         const sim = lineupSimilarity(c.fingerprint, r.fingerprint);
@@ -124,6 +153,25 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
       seen.set(fp, i);
     }
   }
+  // The ordering rule itself changed (see ORDER_RULE).
+  const ruleKey = `scheduleOrder:${game}`;
+  const rule = ORDER_RULE[game];
+  if (rule) {
+    const stored = await db.select().from(s.settings).where(eq(s.settings.key, ruleKey));
+    if (stored[0]?.value !== rule) rebuild = true;
+  }
+
+  // Better content waiting behind worse. New positions or shirt numbers make a round
+  // complete after the calendar was written; it then sits unscheduled, or a year out,
+  // while the coming weeks show blank shirts. Rebuild so it moves forward.
+  if (!rebuild && game === "mangler-xi") {
+    const scheduledIds = new Set((await db.select({ id: s.schedule.puzzleId }).from(s.schedule).where(eq(s.schedule.game, game))).map((r) => r.id));
+    const soon = future.slice(0, CONTENT_WINDOW).map((e) => eligible.find((p) => p.id === e.puzzleId)).filter((p) => p != null);
+    const waiting = eligible.filter((p) => !scheduledIds.has(p.id));
+    const worstSoon = Math.min(...soon.map((p) => lineupCompleteness(p.payload)));
+    const bestWaiting = Math.max(...waiting.map((p) => lineupCompleteness(p.payload)));
+    if (bestWaiting > worstSoon) rebuild = true;
+  }
   if (rebuild) await clearFutureSchedule(db, game, startDate);
 
   const existing = await db.select().from(s.schedule).where(eq(s.schedule.game, game)).orderBy(asc(s.schedule.date));
@@ -169,6 +217,7 @@ export async function extendSchedule(db: Db, game: GameId, fromDate: string, day
     if (recent.length > RECENT_DAYS) recent.shift();
   }
   for (let i = 0; i < pending.length; i += 500) await db.insert(s.schedule).values(pending.slice(i, i + 500));
+  if (rule) await db.insert(s.settings).values({ key: ruleKey, value: rule }).onConflictDoUpdate({ target: s.settings.key, set: { value: rule } });
   return { added, exhaustedAt };
 }
 
