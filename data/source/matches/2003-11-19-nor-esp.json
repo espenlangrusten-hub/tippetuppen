@@ -41,14 +41,14 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-26",
-      "note": "Startelleveren og draktnumrene er hentet herfra."
+      "note": "Startelleveren og draktnumrene er hentet herfra. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     },
     {
       "url": "https://www.espn.com/soccer/match/_/gameId/131248",
       "title": "ESPN – lagoppstilling (Opta)",
       "kind": "web",
       "accessed": "2026-09-26",
-      "note": "Samme elleve som UEFA."
+      "note": "Samme elleve som UEFA. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
   "notes": "Rettet 2026-09-26: UEFA og ESPN (Opta) har samme elleve, med Espen Johnsen, Ståle Stensaas, Ronny Johnsen, Christer Basma, Trond Andersen, Martin Andresen, Tore André Flo der vår tidligere kilde hadde Thomas Myhre, André Bergdølmo, Erik Hagen, Tommy Svindal Larsen, Magne Hoseth, Jan Derek Sørensen, John Carew. Elleveren, draktnumrene (UEFA) og eventuelle roller (ESPN) er hentet derfra.",
