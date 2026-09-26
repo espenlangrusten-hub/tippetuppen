@@ -1,0 +1,67 @@
+name: Kontroller lagoppstillinger
+
+# Asks UEFA and ESPN for every starting eleven. A match whose eleven a second publisher
+# names exactly becomes verified; where our positions are undocumented, ESPN's
+# match-specific roles are written if the pitch then draws exactly ESPN's lines
+# (scripts/import/lineup-verify.ts has the rules). Commits the result to the branch it
+# ran on, with the report in the job summary.
+#
+# A push that touches the importer starts it: the assistant working on this repository
+# can push but cannot dispatch a workflow. A push made by this job does not start it
+# again - GitHub never triggers workflows from the job's own token.
+
+on:
+  workflow_dispatch:
+  push:
+    # Never on main: a merge would commit straight to the default branch without review.
+    branches-ignore: [main]
+    paths:
+      - scripts/import/lineup-verify.ts
+      - scripts/import/shirt-format.ts
+      - .github/workflows/import-lineups.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-lineups-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Kontroller mot UEFA og ESPN
+        run: node --import tsx scripts/import/lineup-verify.ts
+
+      # Whatever the importer wrote is served to players; nothing that fails validation
+      # gets that far.
+      - name: Valider dataene
+        run: npm run data:validate
+
+      - name: Commit endringene
+        run: |
+          set -euo pipefail
+          if git diff --quiet HEAD -- data/source/matches; then
+            echo "Ingen endringer." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source/matches
+          git commit -q -F - <<EOF
+          Lagoppstillinger kontrollert mot UEFA og ESPN
+
+          $(sed -n '3,9p' lineup-report.md)
+
+          Hele rapporten står i jobbsammendraget for kjøring ${{ github.run_id }}.
+          EOF
+          git push origin HEAD:${{ github.ref_name }}

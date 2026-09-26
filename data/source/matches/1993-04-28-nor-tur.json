@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:undocumented"
   ],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     {
       "url": "https://www.11v11.com/matches/norway-v-turkey-28-april-1993-244299/",
@@ -22,6 +22,13 @@
       "kind": "web",
       "accessed": "2026-09-11",
       "note": "Komplett faktisk startellever importert fra kontrollert arbeidsbok. Kilden dokumenterer ikke posisjonene; bare keeper er angitt."
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/5376/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-26",
+      "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",

@@ -14,7 +14,7 @@
     "import:verified-xi-workbook",
     "position:undocumented"
   ],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     {
       "url": "https://www.11v11.com/matches/norway-v-poland-22-september-1993-244671/",
@@ -28,7 +28,7 @@
       "title": "UEFA – kampdata med lagoppstilling",
       "kind": "api",
       "accessed": "2026-09-24",
-      "note": "Draktnumre for startelleveren, kontrollert mot våre navn."
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
     }
   ],
   "notes": "Startelleveren er dokumentert. Utespillernes roller og draktnumre er bevisst ikke antatt.",

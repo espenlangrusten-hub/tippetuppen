@@ -13,11 +13,11 @@
   "formation": "4-4-2",
   "importance": 4,
   "tags": ["playoff", "skuffelse"],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     { "url": "https://www.sportsmole.co.uk/football/european-championship-qualifying/norway-vs-serbia_game_119519.html", "title": "Norway 1-2 Serbia – Euro Champ Qualifying Playoff – Sports Mole", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://www.espn.com/soccer/match/_/gameId/560000/serbia-norway", "title": "Norway 1-2 Serbia (Oct 8, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01" },
-    { "url": "https://match.uefa.com/v5/matches/2028569/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
+    { "url": "https://www.espn.com/soccer/match/_/gameId/560000/serbia-norway", "title": "Norway 1-2 Serbia (Oct 8, 2020) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)." },
+    { "url": "https://match.uefa.com/v5/matches/2028569/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "Tom Ullevaal under pandemien. Normann utlignet, men Milinković-Savić avgjorde i ekstraomgangene.",
   "lineup": [

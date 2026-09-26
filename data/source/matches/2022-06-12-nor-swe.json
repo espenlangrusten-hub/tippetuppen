@@ -13,11 +13,11 @@
   "formation": "4-4-2",
   "importance": 4,
   "tags": ["nations-league", "sverige", "derby"],
-  "status": "single_source",
+  "status": "verified",
   "sources": [
     { "url": "https://www.skysports.com/football/norway-vs-sweden/teams/461689", "title": "Starting Lineups – Norway vs Sweden | 12.06.2022 – Sky Sports", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://www.espn.com/soccer/match/_/gameId/624082/sweden-norway", "title": "Norway 3-2 Sweden (Jun 12, 2022) – ESPN", "kind": "web", "accessed": "2026-09-01" },
-    { "url": "https://match.uefa.com/v5/matches/2034495/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
+    { "url": "https://www.espn.com/soccer/match/_/gameId/624082/sweden-norway", "title": "Norway 3-2 Sweden (Jun 12, 2022) – ESPN", "kind": "web", "accessed": "2026-09-01", "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)." },
+    { "url": "https://match.uefa.com/v5/matches/2034495/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "Andre seier over Sverige på en uke. Haaland scoret to, Sørloth avgjorde.",
   "lineup": [

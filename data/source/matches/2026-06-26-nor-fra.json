@@ -17,7 +17,8 @@
   "sources": [
     { "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=9154187", "title": "Frankrike - Norge - 26.06.2026 21:00 - Norges Fotballforbund", "kind": "web", "accessed": "2026-09-15", "note": "NFFs offisielle kampside dokumenterer resultat, arena, norsk startoppstilling, draktnumre, kaptein og målscorere." },
     { "url": "https://www.eurosport.no/fotball/vm/2026/live-norge-frankrike_mtc1579465/live-lineup.shtml", "title": "Norge - Frankrike lagoppstilling - VM 2026 - Eurosport", "kind": "web", "accessed": "2026-09-15", "note": "Uavhengig kontroll av startellever, formasjon, resultat og målscorere." },
-    { "url": "https://match.uefa.com/v5/matches/2048373/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn." }
+    { "url": "https://match.uefa.com/v5/matches/2048373/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." },
+    { "url": "https://www.espn.com/soccer/match/_/gameId/760475", "title": "ESPN – lagoppstilling (Opta)", "kind": "web", "accessed": "2026-09-26", "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "Frankrike vant gruppefinalen 4–1. Norge hvilte ti av spillerne som startet den foregående kampen mot Senegal.",
   "lineup": [

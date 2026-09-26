@@ -28,7 +28,7 @@ describe("brothers in the same XI", () => {
 
   it("does the same for the Flos and the Johnsens", () => {
     expect(answersFor("1998-06-27-ita-nor").filter((x) => x.name.endsWith("Flo")).map((x) => x.answer)).toEqual(["FLO", "FLO"]);
-    expect(answersFor("2004-09-08-nor-blr").filter((x) => x.name.endsWith("Johnsen")).map((x) => x.answer)).toEqual(["JOHNSEN", "JOHNSEN"]);
+    expect(answersFor("2003-11-19-nor-esp").filter((x) => x.name.endsWith("Johnsen")).map((x) => x.answer)).toEqual(["JOHNSEN", "JOHNSEN"]);
   });
 
   it("never prefixes initials anywhere in the dataset", () => {

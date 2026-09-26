@@ -12,11 +12,12 @@
   "manager": "Egil Olsen",
   "importance": 4,
   "tags": ["kvalik", "ikonisk", "drillo"],
-  "status": "single_source",
+  "status": "verified",
   "goalsPartial": true,
   "sources": [
     { "url": "https://www.11v11.com/matches/norway-v-netherlands-23-september-1992-243772/", "title": "Norway v Netherlands, 23 September 1992 – 11v11 match report", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI confirmed in search excerpt" },
-    { "url": "https://athlet.org/football/world-cup/1994/qualifiers/uefa/group-2/1992-09-23-norway-netherlands.html", "title": "Norway 2-1 Netherlands (23 Sep. 1992) – Athlet.org", "kind": "web", "accessed": "2026-09-01" }
+    { "url": "https://athlet.org/football/world-cup/1994/qualifiers/uefa/group-2/1992-09-23-norway-netherlands.html", "title": "Norway 2-1 Netherlands (23 Sep. 1992) – Athlet.org", "kind": "web", "accessed": "2026-09-01" },
+    { "url": "https://match.uefa.com/v5/matches/5362/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-26", "note": "Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
   ],
   "notes": "Sensasjonen som startet Drillo-eventyret: Europamesteren Nederland slått på Ullevaal.",
   "lineup": [
