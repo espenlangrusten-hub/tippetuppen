@@ -1,0 +1,133 @@
+.page {
+  --mystery-purple: #8b55ff;
+  width: min(calc(100vw - 32px), 1080px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  isolation: isolate;
+  padding: 24px;
+  border: 1px solid #4f6289;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, #06142a22, #041224b5 52%, #061020f7),
+    var(--stadium) center top / 100% auto no-repeat,
+    #061020;
+  box-shadow: 0 24px 70px #0005;
+  color: #f7fafc;
+}
+.heading { text-align: center; margin-bottom: 18px; text-shadow: 0 2px 10px #000; }
+.title {
+  font: italic 800 clamp(36px, 4.2vw, 58px)/1 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -.025em;
+}
+.heading > span { display: block; margin-top: 6px; color: #b8c4dc; font-size: 11px; }
+.game { width: min(100%, 820px); margin: 0 auto; }
+.game :global(.card) {
+  border-color: #5a608b;
+  background: linear-gradient(145deg, #09152af5, #0a1022fa);
+  box-shadow: 0 14px 35px #0005;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  padding: 25px !important;
+  border-color: #7954d9 !important;
+  background:
+    linear-gradient(90deg, #0b1530fa 0%, #17113cee 49%, #12083a66 76%, transparent),
+    var(--game-art) right center / cover no-repeat !important;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9a66ff, #5b2fd5 55%, transparent 86%);
+}
+.hero h2 {
+  margin-top: 8px;
+  max-width: 470px;
+  font: italic 800 clamp(34px, 4.5vw, 52px)/1 var(--font-display);
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 12px #0009;
+}
+.hero p { max-width: 515px; }
+.cluesCard { padding: 20px !important; }
+.clueList { display: flex; flex-direction: column; gap: 10px; }
+.clue {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 58px;
+  padding: 10px 14px;
+  border: 1px solid #625b94;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #21194ae8, #101932ed 72%);
+  box-shadow: 0 6px 16px #0003;
+}
+.clue:nth-child(2n) { margin-left: 8px; margin-right: -3px; transform: rotate(.25deg); }
+.clue:nth-child(3n) { margin-left: -4px; margin-right: 7px; transform: rotate(-.2deg); }
+.clueNumber {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a875ff, #6634d7);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 0 15px #8b55ff35;
+}
+.attempt {
+  border: 1px solid #82566b;
+  background: #4a183044 !important;
+  color: #ffc7d6;
+}
+.form { margin-top: 20px; padding-top: 18px; border-top: 1px solid #373d68; }
+.form :global(.input) {
+  min-height: 50px;
+  border-color: #655c90;
+  background: #080f22e8;
+}
+.form :global(.input):focus { border-color: #9a66ff; box-shadow: 0 0 0 2px #9a66ff25; }
+.game :global(.btn-primary) {
+  background: linear-gradient(105deg, #bdff4b, #9bea3a);
+  color: #071605;
+  border: 0;
+}
+.game :global(.btn-secondary) {
+  border-color: #6b6292;
+  background: linear-gradient(#1e1a3d, #11182d);
+}
+.result {
+  border: 1px solid #6f68a0;
+  background: linear-gradient(120deg, #211b47, #10192d) !important;
+}
+.resultCorrect { border-color: #8fd66d; background: linear-gradient(120deg, #183c2a, #0d2324) !important; }
+@media (max-width: 760px) {
+  .page { width: calc(100vw - 18px); padding: 14px 10px; border-radius: 15px; }
+  .heading { margin-bottom: 12px; }
+  .title { font-size: 34px; }
+  .hero {
+    min-height: 210px;
+    padding: 18px 15px !important;
+    background:
+      linear-gradient(180deg, #0b1530e8 0%, #17113cd8 58%, #09071de0),
+      var(--game-art) 68% center / cover no-repeat !important;
+  }
+  .hero h2 { max-width: 72%; font-size: 37px; }
+  .hero p { max-width: 78%; font-size: 12px; }
+  .clue { min-height: 54px; padding: 9px 10px; font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .page { width: calc(100vw - 10px); padding: 11px 7px; }
+  .title { font-size: 29px; }
+  .heading > span { font-size: 9px; }
+  .hero h2 { max-width: 82%; font-size: 32px; }
+  .cluesCard { padding: 12px !important; }
+  .clue:nth-child(n) { margin-inline: 0; transform: none; }
+}

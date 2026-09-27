@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { formatDateNo, msUntilNextOsloMidnight, osloDateKey } from "@/lib/dates";
 import { BASE_PATH } from "@/lib/site";
 import { track } from "@/components/analytics/Beacon";
@@ -11,6 +11,7 @@ import {
   MIN_STRAFFESPARK_REPEAT_DAYS,
   type BetaQuestion,
 } from "@/lib/straffespark-beta";
+import design from "./Straffespark.module.css";
 
 export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
   // Keep the server-rendered shell date-neutral. The browser resolves Oslo's calendar
@@ -55,6 +56,10 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
   const complete = questions.length > 0 && index === questions.length;
   const score = results.filter(Boolean).length;
   const q = questions[index];
+  const shellStyle = {
+    "--stadium": `url("${BASE_PATH}/design/stadium.webp")`,
+    "--game-art": `url("${BASE_PATH}/design/penalty.webp")`,
+  } as CSSProperties;
 
   // Measured like the other daily games, so the statistics show whether it is played.
   const round = dateKey ? `straffespark-${dateKey}` : undefined;
@@ -69,8 +74,8 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
   }
 
   const intro = (
-    <header>
-      <span className="rounded-full bg-gold/20 px-3 py-1 text-xs font-bold uppercase text-gold">Dagens runde</span>
+    <header className={design.hero}>
+      <span className={design.badge}>Dagens runde</span>
       <h1 className="mt-3 font-display text-4xl font-bold uppercase">Straffespark, 5 kjappe</h1>
       <p className="mt-2 text-sm text-mist">
         Fem nye spørsmål hver dag. Samme spørsmål kommer ikke tilbake før det har gått minst {MIN_STRAFFESPARK_REPEAT_DAYS} dager.
@@ -81,9 +86,9 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
 
   if (!dateKey) {
     return (
-      <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
+      <div className={`${design.game} flex flex-col gap-5`} style={shellStyle}>
         {intro}
-        <section className="card p-6 text-center">
+        <section className={`card p-6 text-center ${design.card}`}>
           <p className="text-mist">Laster dagens fem straffespark …</p>
         </section>
       </div>
@@ -92,12 +97,12 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
 
   if (complete) {
     return (
-      <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
+      <div className={`${design.game} flex flex-col gap-5`} style={shellStyle}>
         {intro}
-        <ol aria-label="Dine fem straffespark" className="flex justify-center gap-4 text-2xl">
-          {questions.map((item, i) => <li key={item.id} aria-label={`Spørsmål ${i + 1}: ${results[i] ? "mål" : "bom"}`}>{results[i] ? "⚽" : "✕"}</li>)}
+        <ol aria-label="Dine fem straffespark" className={design.progress}>
+          {questions.map((item, i) => <li key={item.id} className={`${design.shot} ${results[i] ? design.goal : design.miss}`} aria-label={`Spørsmål ${i + 1}: ${results[i] ? "mål" : "bom"}`}>{results[i] ? "⚽" : "✕"}</li>)}
         </ol>
-        <section className="card p-6 text-center">
+        <section className={`card p-6 text-center ${design.card} ${design.completeCard}`}>
           <h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Du scoret {score} av 5!</h2>
           <p className="mt-2 text-mist">{score === 5 ? "Full pott — fem strake i nettet!" : "Ny femmer kommer i morgen."}</p>
           <button className="btn btn-primary mt-5" onClick={() => { setIndex(0); setResults([]); setGuess(""); setMediaError(false); }}>Spill dagens runde igjen</button>
@@ -109,9 +114,9 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
 
   if (!q) {
     return (
-      <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
+      <div className={`${design.game} flex flex-col gap-5`} style={shellStyle}>
         {intro}
-        <section className="card p-6 text-center">
+        <section className={`card p-6 text-center ${design.card}`}>
           <p className="text-mist">Dagens runde kunne ikke lastes.</p>
         </section>
       </div>
@@ -119,16 +124,16 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-xl flex-col gap-5">
+    <div className={`${design.game} flex flex-col gap-5`} style={shellStyle}>
       {intro}
-      <ol aria-label="Dine fem straffespark" className="flex justify-center gap-4 text-2xl">
-        {questions.map((item, i) => <li key={item.id} aria-label={`Spørsmål ${i + 1}: ${i < results.length ? results[i] ? "mål" : "bom" : "ikke besvart"}`}>{i < results.length ? results[i] ? "⚽" : "✕" : "○"}</li>)}
+      <ol aria-label="Dine fem straffespark" className={design.progress}>
+        {questions.map((item, i) => <li key={item.id} className={`${design.shot} ${i < results.length ? (results[i] ? design.goal : design.miss) : i === index ? design.current : ""}`} aria-label={`Spørsmål ${i + 1}: ${i < results.length ? results[i] ? "mål" : "bom" : "ikke besvart"}`}>{i < results.length ? results[i] ? "⚽" : "✕" : "○"}</li>)}
       </ol>
-      <section className="card p-5" key={q.id}>
-        <p className="text-sm text-mist">Spørsmål {index + 1} av 5 · {q.kind === "photo" ? "Bildet" : q.kind === "chant" ? "Heiesangen" : "Fotballkunnskap"}</p>
-        <h2 ref={heading} tabIndex={-1} className="mt-2 font-display text-2xl font-bold">{q.prompt}</h2>
+      <section className={`card p-5 ${design.card}`} key={q.id}>
+        <p className={design.questionMeta}>Spørsmål {index + 1} av 5 · {q.kind === "photo" ? "Bildet" : q.kind === "chant" ? "Heiesangen" : "Fotballkunnskap"}</p>
+        <h2 ref={heading} tabIndex={-1} className={design.prompt}>{q.prompt}</h2>
         {q.media && <div className="mt-4">
-          {q.kind === "photo" ? <div className="overflow-hidden rounded-xl bg-ink-3">
+          {q.kind === "photo" ? <div className={design.media}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`${BASE_PATH}/media/straffespark/${q.media.file}`} alt={answered ? q.answer : "Uskarpt bilde av en fotballspiller"} className="mx-auto h-64 w-full object-contain" style={{ filter: answered ? "none" : "blur(9px)" }} onError={() => setMediaError(true)} />
           </div> : <audio controls preload="none" className="w-full" src={`${BASE_PATH}/media/straffespark/${q.media.file}`} onError={() => setMediaError(true)}>Nettleseren støtter ikke lydavspilling.</audio>}
@@ -137,12 +142,12 @@ export function BetaGame({ pool }: { pool: BetaQuestion[] }) {
           {q.media.licence === "CC BY 4.0" && <a className="ml-3 text-xs underline" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">Lisens</a>}
           {mediaError && <p role="alert" className="mt-2 text-sm">Mediet kunne ikke lastes. Prøv å laste siden på nytt, eller hopp over spørsmålet.</p>}
         </div>}
-        {!answered ? <form className="mt-5 flex flex-col gap-3" onSubmit={(event) => { event.preventDefault(); submit(); }}>
+        {!answered ? <form className={`${design.form} mt-5 flex flex-col gap-3`} onSubmit={(event) => { event.preventDefault(); submit(); }}>
           <label htmlFor="beta-answer" className="text-sm font-semibold">Ditt svar</label>
           <input id="beta-answer" value={guess} onChange={(e) => setGuess(e.target.value)} maxLength={120} autoComplete="off" className="w-full rounded-lg border border-white/20 bg-ink-3 p-3 text-base" placeholder={q.kind === "photo" ? "Spillerens navn" : "Skriv svaret ditt"} />
           <button className="btn btn-primary" disabled={!guess.trim()} type="submit">Skyt!</button>
           <button className="btn" type="button" onClick={() => submit(true)}>Hopp over</button>
-        </form> : <div className="mt-5" role="status">
+        </form> : <div className={design.answerState} role="status">
           <p className="text-xl font-bold">{results[index] ? "⚽ Mål!" : "Bom!"}</p>
           <p className="mt-2">Riktig svar: <strong>{q.answer}</strong></p>
           {q.fact && <p className="mt-1 text-sm text-mist">{q.fact}</p>}

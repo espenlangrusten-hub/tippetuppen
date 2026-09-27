@@ -7,6 +7,7 @@ import { track } from "@/components/analytics/Beacon";
 import { apiGet, apiPost } from "@/lib/api";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
+import design from "./Maalloes.module.css";
 
 import type { MaalloesPublic } from "@/lib/gameTypes";
 export type { MaalloesPublic };
@@ -160,8 +161,8 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="card p-5">
+    <div className={`flex flex-col gap-4 ${design.game}`}>
+      <div className={`card p-5 ${design.hero}`}>
         <div className="flex items-center justify-between text-xs uppercase tracking-widest text-mist">
           <span>
             Målløs #{puzzle.number}
@@ -175,7 +176,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
       </div>
 
       {f && (
-        <div className="card p-5">
+        <div className={`card p-5 ${design.resultCard}`}>
           <div className="flex items-start justify-between">
             <div>
               <div className="text-xs uppercase tracking-widest text-mist">Resultat</div>
@@ -206,13 +207,13 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
       )}
 
       {/* Answers */}
-      <div className="card p-4">
+      <div className={`card p-4 ${design.answersCard}`}>
         <ol className="flex flex-col gap-2">
           {Array.from({ length: ANSWERS }).map((_, i) => {
             const e = state.entries[i];
             const isDropped = f?.dropped === i;
             return (
-              <li key={i} className={`flex items-center gap-3 rounded-xl border px-3 py-2 ${e ? "border-line bg-ink-3" : "border-dashed border-line"} ${isDropped ? "opacity-50 line-through" : ""}`}>
+              <li key={i} className={`${design.answerRow} flex items-center gap-3 rounded-xl border px-3 py-2 ${e ? "border-line bg-ink-3" : "border-dashed border-line"} ${isDropped ? "opacity-50 line-through" : ""}`}>
                 <span className="w-5 text-center font-display text-lg text-fog">{i + 1}</span>
                 {e ? (
                   <>
@@ -237,7 +238,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
         </ol>
         {!f && state.entries.length < ANSWERS && (
           <form
-            className="relative mt-3 flex gap-2"
+            className={`${design.answerForm} relative mt-3 flex gap-2`}
             onSubmit={(e) => {
               e.preventDefault();
               void submitAnswer();
@@ -287,7 +288,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
           </form>
         )}
         {!f && state.entries.length === ANSWERS && (
-          <div className="mt-3 rounded-xl border border-line bg-ink-3 p-3">
+          <div className={`${design.finalize} mt-3 rounded-xl border border-line bg-ink-3 p-3`}>
             <p className="text-sm text-mist">Se over svarene. Du kan fortsatt endre dem før poengene beregnes.</p>
             <button type="button" className="btn btn-primary mt-3 w-full" onClick={() => void finalize()} disabled={busy}>
               {busy ? "Sender inn …" : "Send inn fem svar"}
@@ -304,7 +305,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
       {f && (
         <>
           <AdSlot placement="result" />
-          <div className="card p-4">
+          <div className={`card p-4 ${design.board}`}>
             <h3 className="font-display text-xl font-bold uppercase">Alle svar, fra sjeldnest til vanligst</h3>
             {f.explanation && <p className="mt-1 text-sm text-mist">{f.explanation}</p>}
             <ol className="mt-3 grid gap-1 sm:grid-cols-2">
@@ -338,7 +339,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
 
       {showIntro && (
         <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-3 sm:items-center" onClick={dismissIntro} role="dialog" aria-modal="true">
-          <div className="card w-full max-w-md p-5" onClick={(e) => e.stopPropagation()}>
+          <div className={`card w-full max-w-md p-5 ${design.modal}`} onClick={(e) => e.stopPropagation()}>
             <h2 className="font-display text-2xl font-bold uppercase">Slik spiller du Målløs</h2>
             <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-mist">
               <li>Les spørsmålet og legg til fem svar. Du kan endre dem før innsending.</li>
