@@ -4,6 +4,8 @@ import { useGamePuzzle, GameSkeleton, GameUnavailable } from "@/components/GameL
 import { ManglerXiGame } from "@/components/mangler-xi/ManglerXiGame";
 import type { MaskedPuzzle } from "@/lib/gameTypes";
 import { formatDateNo } from "@/lib/dates";
+import { BASE_PATH } from "@/lib/site";
+import design from "@/components/mangler-xi/ManglerXi.module.css";
 
 export function ManglerXiScreen() {
   const params = useSearchParams();
@@ -12,10 +14,10 @@ export function ManglerXiScreen() {
   const state = useGamePuzzle<MaskedPuzzle>("mangler-xi", nr);
 
   return (
-    <div className="mxi-page">
-      <div className="mb-5 flex flex-wrap items-end justify-between gap-2">
-        <h1 className="font-display text-4xl font-bold uppercase sm:text-5xl">
-          🇳🇴 Mangler XI{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
+    <div className={design.page} style={{ "--xi-stadium": `url("${BASE_PATH}/design/stadium.webp")` } as React.CSSProperties}>
+      <div className={design.pageHeading}>
+        <h1 className={design.title}>
+          Mangler XI{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
         </h1>
         {state.status === "ready" && (
           <span className="text-sm text-mist">{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
