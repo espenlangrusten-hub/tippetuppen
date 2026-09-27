@@ -4,6 +4,9 @@ import { useGamePuzzle, GameSkeleton, GameUnavailable } from "@/components/GameL
 import { MaalloesGame } from "@/components/maalloes/MaalloesGame";
 import type { MaalloesPublic } from "@/lib/gameTypes";
 import { formatDateNo } from "@/lib/dates";
+import { BASE_PATH } from "@/lib/site";
+import type { CSSProperties } from "react";
+import design from "@/components/maalloes/Maalloes.module.css";
 
 export function MaalloesScreen() {
   const params = useSearchParams();
@@ -12,13 +15,19 @@ export function MaalloesScreen() {
   const state = useGamePuzzle<MaalloesPublic>("maalloes", nr);
 
   return (
-    <div>
-      <div className="mb-3 flex items-baseline justify-between">
-        <h1 className="font-display text-3xl font-bold uppercase">
-          🥅 Målløs{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
+    <div
+      className={design.page}
+      style={{
+        "--stadium": `url("${BASE_PATH}/design/stadium.webp")`,
+        "--game-art": `url("${BASE_PATH}/design/goal.webp")`,
+      } as CSSProperties}
+    >
+      <div className={design.heading}>
+        <h1 className={design.title}>
+          Målløs{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
         </h1>
         {state.status === "ready" && (
-          <span className="text-xs text-mist">{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
+          <span>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
         )}
       </div>
       {state.status === "loading" && <GameSkeleton />}
