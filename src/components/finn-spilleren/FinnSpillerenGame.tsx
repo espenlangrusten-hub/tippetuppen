@@ -5,6 +5,7 @@ import type { FinnSpillerenPublic } from "@/lib/gameTypes";
 import { addRecord, loadProgress, saveProgress } from "@/lib/storage";
 import { storedUser } from "@/lib/auth";
 import { track } from "@/components/analytics/Beacon";
+import design from "./FinnSpilleren.module.css";
 
 type Result = { correct: boolean; score: number; answer: string; explanation: string };
 type Reply = { ok: boolean; attemptId?: string; hints?: string[]; hintNumber?: number; potential?: number; guesses?: string[]; correct?: boolean; finished?: boolean; result?: Result | null; error?: string };
@@ -92,23 +93,23 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
     finally { setBusy(false); pending.current = false; }
   };
 
-  return <div className="flex flex-col gap-4">
-    <section className="card p-5">
+  return <div className={`flex flex-col gap-4 ${design.game}`}>
+    <section className={`card p-5 ${design.hero}`}>
       <div className="text-xs uppercase tracking-widest text-mist">#{puzzle.number} · {puzzle.role}</div>
       <h2 className="mt-1 font-display text-3xl font-bold uppercase">Hvem er jeg?</h2>
       <p className="mt-2 text-sm text-mist">Riktig på første hint gir 100 poeng. Deretter 80, 60, 40 og 20. Gjetter du feil, får du neste hint – og potten synker. Runden er over når du treffer, eller når siste hint er brukt opp.</p>
     </section>
-    <section className="card p-5">
-      <ol className="space-y-3">
-        {hints.map((hint, i) => <li key={i} className="flex gap-3"><span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky font-bold">{i + 1}</span><span>{hint}</span></li>)}
+    <section className={`card p-5 ${design.cluesCard}`}>
+      <ol className={design.clueList}>
+        {hints.map((hint, i) => <li key={i} className={design.clue}><span className={design.clueNumber}>{i + 1}</span><span>{hint}</span></li>)}
       </ol>
       {wrong.length > 0 && <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
         <span className="text-mist">Prøvd:</span>
-        {wrong.map((g, i) => <span key={i} className="rounded-full bg-flag/20 px-3 py-1 line-through">{g}</span>)}
+        {wrong.map((g, i) => <span key={i} className={`${design.attempt} rounded-full px-3 py-1 line-through`}>{g}</span>)}
       </div>}
       {error && <p className="mt-4 rounded-xl bg-ink-3 p-3 text-mist">{error}</p>}
       {finished && !result && <p className="mt-3">Denne runden er allerede avsluttet.</p>}
-      {!finished && attemptId && <form className="mt-5 space-y-3" onSubmit={submit}>
+      {!finished && attemptId && <form className={`${design.form} mt-5 space-y-3`} onSubmit={submit}>
         <p className="text-sm text-mist">Riktig nå gir <b className="text-snow">{potential} poeng</b>.</p>
         <input aria-label="Spillerens navn" className="input" value={guess} onChange={(e) => setGuess(e.target.value)} placeholder="Skriv spillerens navn" autoComplete="off" maxLength={80} />
         <div className="grid grid-cols-2 gap-2">
@@ -116,7 +117,7 @@ export function FinnSpillerenGame({ puzzle, isArchive }: { puzzle: FinnSpilleren
           <button type="button" className="btn btn-secondary" disabled={busy || hintNumber >= 5} onClick={next}>{hintNumber >= 5 ? "Siste hint" : "Neste hint"}</button>
         </div>
       </form>}
-      {result && <div className={`mt-5 rounded-xl p-4 ${result.correct ? "bg-correct/20" : "bg-flag/20"}`}>
+      {result && <div className={`${design.result} ${result.correct ? design.resultCorrect : ""} mt-5 rounded-xl p-4`}>
         <div className="font-display text-2xl font-bold uppercase">{result.correct ? `Riktig! ${result.score} poeng` : "Alle hintene er brukt opp"}</div>
         <p className="mt-1">Svaret var <b>{result.answer}</b>.</p><p className="mt-1 text-sm text-mist">{result.explanation}</p>
       </div>}
