@@ -1,14 +1,16 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FootballIcon } from "./FootballIcon";
+import { BASE_PATH } from "@/lib/site";
 
 export function Header() {
   const path = usePathname();
   const links = [{href:"/",name:"Hjem",icon:"⌂"},{href:"/#spill",name:"Spill",icon:"⚽"},{href:"/liga/",name:"Liga",icon:"♜"},{href:"/arkiv/",name:"Arkiv",icon:"▤"},{href:"/kontakt/",name:"Kontakt",icon:"✉"}];
   return <>
     <header className="stadium-header"><div className="stadium-header-inner">
-      <Link href="/" className="stadium-brand" aria-label="Tippetuppen – forsiden"><span aria-hidden="true"><FootballIcon /></span>TIPPE<b>TUPPEN</b></Link>
+      <Link href="/" className="stadium-brand" aria-label="Tippetuppen – forsiden"><Image src={BASE_PATH + "/branding/tippetuppen-logo.webp"} alt="Tippetuppen" width={600} height={96} className="stadium-brand-logo" priority /></Link>
       <nav aria-label="Hovedmeny">{links.map((l) => <Link key={l.href} href={l.href} aria-current={path === l.href ? "page" : undefined}>{l.name}</Link>)}</nav>
       <Link href="/liga/" className="stadium-profile"><span aria-hidden="true">♙</span><span>Min profil</span></Link>
     </div></header>
