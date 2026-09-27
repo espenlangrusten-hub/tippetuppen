@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { MaskedPuzzle, MaskedPlayer } from "@/lib/gameTypes";
 import { keyboardStates, MAX_TRIES, type TileState } from "@/lib/tiles";
@@ -10,6 +10,7 @@ import { manglerXiShareText, shareOrCopy, type ShareRow } from "@/lib/share";
 import { track } from "@/components/analytics/Beacon";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { Keyboard } from "./Keyboard";
+import design from "./ManglerXi.module.css";
 import { formatShortDateNo } from "@/lib/dates";
 import { useMidnightCountdown } from "@/hooks/useCountdown";
 
@@ -64,24 +65,6 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const [confirmGiveUp, setConfirmGiveUp] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
-  const [panelHeight, setPanelHeight] = useState(0);
-
-  // The guess panel is fixed to the bottom and grows with the history, so the page has
-  // to reserve exactly as much room as it takes - a fixed guess used to leave "Gi opp"
-  // buried under the keyboard once more than a couple of attempts were on screen.
-  useEffect(() => {
-    const el = panelRef.current;
-    if (!el) {
-      setPanelHeight(0);
-      return;
-    }
-    const measure = () => setPanelHeight(el.offsetHeight);
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [state?.finished, state?.active]);
-
   // When the history is tall enough to scroll, the newest guess is the one to look at.
   useEffect(() => {
     const el = historyRef.current;
@@ -303,7 +286,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
     return Array.from(byRow.keys())
       .sort((a, b) => b - a)
       .map((r) => byRow.get(r)!.sort((a, b) => a.col - b.col));
-  }, [puzzle.players]);
+  }, [puzzle.players, puzzle.matchDate, puzzle.opponent]);
 
   if (!state) return <div className="h-96 animate-pulse rounded-2xl bg-ink-2" />;
 
@@ -314,53 +297,41 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   const interpretiveTunisia = puzzle.matchDate === "1990-11-07" && puzzle.opponent === "Tunisia";
 
   return (
-    <div className="mxi-shell flex flex-col gap-5 pb-64 sm:pb-72" style={panelHeight ? { paddingBottom: panelHeight + 24 } : undefined}>
+    <div className={`${design.shell} ${active ? design.hasActive : ""}`}>
       {/* Match header */}
-      <div className="mxi-match p-5 sm:p-7">
-        <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-bold uppercase tracking-widest text-[#9af5ac]">
-          <span>
-            Mangler XI #{puzzle.number}
-            {isArchive && " · arkiv"}
-          </span>
-          <span>{formatShortDateNo(puzzle.matchDate)}</span>
-        </div>
-        <div className="mt-4 font-display text-4xl font-bold uppercase leading-none sm:text-6xl">{scoreline}</div>
-        <div className="mt-3 text-base text-mist">
+      <div className={design.match}>
+        <div className={design.scoreline}>{scoreline}</div>
+        <div className={design.matchMeta}>
           {broadPositionsOnly ? "EM-kvalifisering 1998" : puzzle.stage ?? puzzle.competition}
-          {puzzle.venue ? ` · ${puzzle.venue}` : ""}
-          {puzzle.city ? `, ${puzzle.city}` : ""}
-        </div>
-        <div className="mt-2 text-sm text-mist">
-          {puzzle.manager ? `Landslagssjef: ${puzzle.manager}` : ""}
           {!broadPositionsOnly && puzzle.formation ? ` · ${puzzle.formation}` : ""}
           {interpretiveTunisia ? " · Vist som 4–4–2 (tolket plassering)" : ""}
-          {puzzle.opponentScorers.length ? ` · Mål ${puzzle.opponent}: ${formatScorers(puzzle.opponentScorers)}` : ""}
         </div>
+        <details className={design.matchDetails}>
+          <summary>Kampinfo · {formatShortDateNo(puzzle.matchDate)}</summary>
+          <div className={design.edition}>Mangler XI #{puzzle.number}{isArchive && " · arkiv"}</div>
+          {puzzle.venue && <p>{puzzle.venue}{puzzle.city ? `, ${puzzle.city}` : ""}</p>}
+          {!puzzle.venue && puzzle.city && <p>{puzzle.city}</p>}
+          {puzzle.manager && <p>Landslagssjef: {puzzle.manager}</p>}
+          {puzzle.opponentScorers.length > 0 && <p>Mål {puzzle.opponent}: {formatScorers(puzzle.opponentScorers)}</p>}
+        </details>
       </div>
 
-      {state.finished && <ResultCard puzzle={puzzle} state={state} rows={rows} found={found} tries={triesTotal} isArchive={isArchive} today={today} />}
+      {state.finished && <div className={design.result}><ResultCard puzzle={puzzle} state={state} rows={rows} found={found} tries={triesTotal} isArchive={isArchive} today={today} /></div>}
 
-      {/* Score and give-up sit above the pitch, not on it: overlaid at the bottom they
-          ended up behind the guess panel, and overlaid at the top they covered a shirt. */}
-      <div className="mxi-progress flex items-center justify-between px-4 py-3">
-        <span className="font-display text-2xl font-bold text-snow"><span className="text-[#9af5ac]">{found}</span>/11 funnet</span>
-        {!state.finished && (
-          <button type="button" onClick={() => setConfirmGiveUp(true)} className="rounded-lg bg-ink-3 px-3 py-2 text-sm font-semibold text-mist hover:bg-line-2 hover:text-snow">
-            Gi opp
-          </button>
-        )}
+      <div className={design.progress}>
+        <span><b>{found}</b> av 11 funnet</span>
+        <div className={design.progressDots} role="progressbar" aria-label="Spillere funnet" aria-valuenow={found} aria-valuemin={0} aria-valuemax={11}>
+          {state.players.map((_, i) => <span key={i} className={i < found ? design.dotFound : ""} />)}
+        </div>
       </div>
 
       {/* Pitch */}
-      {broadPositionsOnly && <p className="px-1 text-sm text-mist">Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
-      <div className="pitch mxi-pitch relative overflow-hidden rounded-2xl border border-pitch-line/30 px-2 py-5 sm:px-5 sm:py-8">
-        <div className="pointer-events-none absolute inset-3 rounded-lg border-2 border-pitch-line/50" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-pitch-line/50" />
-        <div className="pointer-events-none absolute left-1/2 top-3 h-14 w-40 -translate-x-1/2 border-2 border-t-0 border-pitch-line/50" />
-        <div className="pointer-events-none absolute bottom-3 left-1/2 h-14 w-40 -translate-x-1/2 border-2 border-b-0 border-pitch-line/50" />
-        <div className="relative flex flex-col gap-5 sm:gap-9">
+      {broadPositionsOnly && <p className={design.notice}>Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
+      <div className={`mxi-pitch ${design.pitch}`}>
+        <div className={design.pitchLines} aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className={design.pitchRows}>
           {rows.map((row, ri) => (
-            <div key={ri} className="flex justify-around">
+            <div key={ri} className={design.pitchRow}>
               {row.map((p) => {
                 const ps = state.players[p.index];
                 const isActive = state.active === p.index;
@@ -372,7 +343,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       </div>
 
       {state.finished && state.revealed && (
-        <div className="card p-4">
+        <div className={`card p-4 ${design.lineup}`}>
           <h3 className="font-display text-xl font-bold uppercase">Startelleveren</h3>
           <ol className="mt-2 grid grid-cols-1 gap-1 text-sm sm:grid-cols-2">
             {puzzle.players.map((p) => (
@@ -416,11 +387,13 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
 
       {/* Guess panel */}
       {!state.finished && (
-        <div ref={panelRef} className="mxi-guess-panel fixed inset-x-0 bottom-0 z-30 border-t border-line bg-ink/95 pb-[env(safe-area-inset-bottom)] backdrop-blur">
-          <div className="mx-auto max-w-3xl px-2 pt-2 pb-2">
+        <div ref={panelRef} className={`mxi-guess-panel ${design.panel}`}>
+          <div className={design.panelBody}>
             {active && activeState ? (
               <>
-                <div className="flex items-center justify-between px-1 text-xs text-mist">
+                <h2 className={design.playerTitle}>{active.no != null ? `Spiller ${active.no}` : "Hvem er spilleren?"}</h2>
+                <p className={design.answerPrompt}>Skriv etternavnet</p>
+                <div className={design.playerMeta}>
                   <span>
                     {active.no != null && <b className="font-display text-base text-snow">#{active.no} </b>}
                     {broadPositionsOnly ? albaniaPosition(active.index) : POS_LABEL[active.pos]}
@@ -431,11 +404,11 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                     Forsøk {triesUsed(activeState) + 1}/{MAX_TRIES}
                     {!activeState.hint && (
                       <button type="button" onClick={hint} className="ml-3 rounded-md bg-ink-3 px-2 py-0.5 font-semibold text-snow hover:bg-line-2">
-                        💡 Første bokstav
+                        Første bokstav
                       </button>
                     )}
                     <button type="button" onClick={factHint} className="ml-2 rounded-md bg-ink-3 px-2 py-0.5 font-semibold text-snow hover:bg-line-2">
-                      📋 Fakta
+                      Fakta
                     </button>
                   </span>
                 </div>
@@ -452,13 +425,13 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                     ))}
                   </ul>
                 )}
-                <div className="mt-1.5 flex flex-col items-center gap-1">
+                <div className={design.guesses}>
                   {/* Every guess so far, not just the last two: with six tries you cannot
                       reason about which letters are still open if the earlier rows are gone.
                       Capped in viewport height so a long answer can never push the keyboard
                       off a small screen. */}
                   {activeState.guesses.length > 0 && (
-                    <div ref={historyRef} className="flex max-h-[34vh] w-full flex-col items-center gap-1 overflow-y-auto">
+                    <div ref={historyRef} className={design.history}>
                       {activeState.guesses.map((g, gi) => (
                         <TileRow key={gi} letters={g} states={activeState.tiles[gi]} small />
                       ))}
@@ -468,13 +441,20 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
                     <TileRow letters={composeDisplay(typed, active.wordLengths)} states={null} activeIndex={typed.length} hint={activeState.hint} />
                   </div>
                 </div>
-                <div className="mt-2">
+                <div className={design.keyboard}>
                   <Keyboard states={keyboardStates(activeState.guesses, activeState.guesses.length ? activeState.guesses[0].replace(/[^ ]/g, "?") : "")} onKey={onKey} disabled={busy} />
                 </div>
+                <button type="button" className={design.submit} onClick={() => void submit()} disabled={busy}>{busy ? "Sjekker …" : "Sjekk svar"}</button>
+                <button type="button" className={design.changePlayer} onClick={() => { setState({ ...state, active: null }); setTyped(""); }}>Velg en annen spiller</button>
               </>
             ) : (
-              <div className="py-3 text-center text-sm text-mist">Trykk på en drakt for å gjette spilleren.</div>
+              <div className={design.emptyPanel}><span aria-hidden="true">?</span><h2>Hvem startet kampen?</h2><p>Trykk på en drakt for å gjette spilleren.</p><small>Seks forsøk per spiller</small></div>
             )}
+            <div className={design.legend}><span><i />Riktig plass</span><span><i />Feil plass</span><span><i />Ikke i navnet</span></div>
+            <div className={design.panelActions}>
+              <button type="button" onClick={() => setShowIntro(true)}>Slik spiller du</button>
+              <button type="button" onClick={() => setConfirmGiveUp(true)}>⚑ Gi opp</button>
+            </div>
           </div>
         </div>
       )}
@@ -559,7 +539,8 @@ function TileRow({ letters, states, small, activeIndex, hint }: { letters: strin
 }
 
 function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedPlayer; ps: PlayerState; active: boolean; onClick: () => void; finished: boolean; positionLabel?: string }) {
-  const cls = ps.solved ? "shirt-solved" : ps.failed ? "shirt-failed" : p.pos === "GK" ? "shirt-gk" : "";
+  const jerseyId = useId().replace(/:/g, "");
+  const keeper = p.pos === "GK";
   const label = ps.name ? ps.name.split(" ").slice(-1)[0].toUpperCase() : p.wordLengths.map((n) => "·".repeat(n)).join(" ");
   const used = triesUsed(ps);
   return (
@@ -567,15 +548,27 @@ function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedP
       type="button"
       onClick={onClick}
       disabled={finished || ps.solved || ps.failed}
-      className="flex w-16 flex-col items-center gap-0.5 sm:w-24"
+      className={`${design.shirtButton} ${active ? design.selected : ""} ${ps.solved ? design.solved : ""} ${ps.failed ? design.failed : ""}`}
+      aria-pressed={active}
       aria-label={`Drakt ${p.no != null ? p.no : "med ukjent nummer"}, ${positionLabel ?? POS_LABEL[p.pos]}, spiller ${p.index + 1}${ps.name ? `: ${ps.name}` : ""}`}
     >
-      <div className={`shirt ${cls} ${active ? "shirt-active" : ""}`}>
-        {p.no != null && <span className="text-lg">{p.no}</span>}
-        {p.goals > 0 && <span className="absolute -left-1 -top-1 text-xs">{p.goals > 1 ? `⚽×${p.goals}` : "⚽"}</span>}
+      <div className={design.jersey}>
+        <svg viewBox="0 0 100 108" aria-hidden="true">
+          <defs>
+            <linearGradient id={`${jerseyId}-body`} x1="0" x2="1" y1="0" y2="0.7"><stop stopColor={keeper ? "#178257" : "#e32246"} /><stop offset=".45" stopColor={keeper ? "#116944" : "#c7082a"} /><stop offset="1" stopColor={keeper ? "#06452e" : "#800e24"} /></linearGradient>
+            <linearGradient id={`${jerseyId}-light`} x1="0" x2="1"><stop stopColor="#fff" stopOpacity=".2" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".25" /></linearGradient>
+          </defs>
+          <path d="M31 8 39 4 Q50 12 61 4 L69 8 85 15 97 39 80 47 73 32 75 101 Q50 107 25 101 L27 32 20 47 3 39 15 15Z" fill={`url(#${jerseyId}-body)`} stroke={active ? "#c2ff52" : "#ffffff88"} strokeWidth={active ? 2.8 : 1} />
+          <path d="M31 8 39 4 Q50 12 61 4 L69 8 85 15 97 39 80 47 73 32 75 101 Q50 107 25 101 L27 32 20 47 3 39 15 15Z" fill={`url(#${jerseyId}-light)`} />
+          <path d="M39 5 Q50 22 61 5 Q50 9 39 5" fill="#051520" stroke="#eee" strokeWidth="1.5" />
+          <path d="m28 30 3 66 M72 30 69 95" fill="none" stroke="#fff" strokeOpacity=".12" />
+          <path d="m5 37 15 7 M80 44 95 37" fill="none" stroke="#fff" strokeOpacity=".65" strokeWidth="2" />
+        </svg>
+        {p.no != null && <span className={design.jerseyNumber}>{p.no}</span>}
+        {p.goals > 0 && <span className={design.goals}>{p.goals > 1 ? `⚽×${p.goals}` : "⚽"}</span>}
       </div>
-      <div className={`max-w-full truncate rounded px-1 font-display text-[11px] font-bold tracking-wider sm:text-xs ${ps.solved ? "bg-correct text-ink" : ps.failed ? "bg-flag/80 text-white" : "bg-white/90 text-ink"}`}>
-        {label}
+      <div className={design.nameplate}>
+        {ps.solved && <span className={design.check}>✓</span>}{label}
         {!ps.solved && !ps.failed && used > 0 && <span className="ml-1 text-fog">{used}</span>}
       </div>
       {p.captain && <span className="text-[10px] text-mist">Kaptein</span>}
