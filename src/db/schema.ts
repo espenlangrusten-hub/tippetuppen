@@ -435,9 +435,43 @@ export const users = tt.table(
     usernameNormalized: text("username_normalized").notNull(),
     passwordHash: text("password_hash").notNull(),
     passwordSalt: text("password_salt").notNull(),
+    fullName: text("full_name"),
+    email: text("email"),
+    avatarId: integer("avatar_id"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
-  (t) => [uniqueIndex("users_username_normalized").on(t.usernameNormalized)],
+  (t) => [
+    uniqueIndex("users_username_normalized").on(t.usernameNormalized),
+    uniqueIndex("users_email_unique").on(t.email),
+  ],
+);
+
+export const friendLeagues = tt.table(
+  "friend_leagues",
+  {
+    id: text("id").primaryKey(),
+    name: text("name").notNull(),
+    code: text("code").notNull(),
+    ownerUserId: text("owner_user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("friend_leagues_code_unique").on(t.code),
+    index("friend_leagues_owner").on(t.ownerUserId),
+  ],
+);
+
+export const friendLeagueMembers = tt.table(
+  "friend_league_members",
+  {
+    leagueId: text("league_id").notNull().references(() => friendLeagues.id, { onDelete: "cascade" }),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    joinedAt: timestamp("joined_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    primaryKey({ columns: [t.leagueId, t.userId] }),
+    index("friend_league_members_user").on(t.userId),
+  ],
 );
 
 export const sessions = tt.table(
