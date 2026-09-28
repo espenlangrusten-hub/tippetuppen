@@ -5,6 +5,14 @@ const enc = new TextEncoder();
 const ITERATIONS = 210_000;
 const SESSION_DAYS = 30;
 
+export type AuthUser = {
+  id: string;
+  username: string;
+  name: string | null;
+  email: string | null;
+  avatarId: number | null;
+};
+
 function hex(bytes: ArrayBuffer | Uint8Array) {
   return Array.from(bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes), (b) => b.toString(16).padStart(2, "0")).join("");
 }
@@ -31,6 +39,15 @@ function safeEqual(a: string, b: string) {
   return diff === 0;
 }
 
+async function userById(userId: string): Promise<AuthUser | null> {
+  const rows = await sql()<{ id: string; username: string; name: string | null; email: string | null; avatar_id: number | null }[]>`
+    select id, username, full_name as name, email, avatar_id
+    from tippetuppen.users
+    where id = ${userId}`;
+  const row = rows[0];
+  return row ? { id: row.id, username: row.username, name: row.name, email: row.email, avatarId: row.avatar_id } : null;
+}
+
 export function validUsername(raw: string) {
   const username = raw.trim();
   const normalized = normalizeName(username).replace(/\s+/g, "-");
@@ -50,37 +67,69 @@ export async function createUser(rawUsername: string, password: string) {
     if (String(error).includes("users_username_normalized")) return { ok: false as const, error: "taken" };
     throw error;
   }
-  return issueSession(id, parsed.username);
+  return issueSession(id);
 }
 
 export async function loginUser(rawUsername: string, password: string) {
   const parsed = validUsername(rawUsername);
   if (!parsed || password.length > 128) return { ok: false as const, error: "credentials" };
-  const rows = await sql()<{ id: string; username: string; password_hash: string; password_salt: string }[]>`
-    select id, username, password_hash, password_salt from tippetuppen.users where username_normalized = ${parsed.normalized}`;
+  const rows = await sql()<{ id: string; password_hash: string; password_salt: string }[]>`
+    select id, password_hash, password_salt
+    from tippetuppen.users
+    where username_normalized = ${parsed.normalized}`;
   const user = rows[0];
-  if (!user || !safeEqual(await passwordHash(password, user.password_salt), user.password_hash)) return { ok: false as const, error: "credentials" };
-  return issueSession(user.id, user.username);
+  if (!user || !safeEqual(await passwordHash(password, user.password_salt), user.password_hash)) {
+    return { ok: false as const, error: "credentials" };
+  }
+  return issueSession(user.id);
 }
 
-async function issueSession(userId: string, username: string) {
+async function issueSession(userId: string) {
   const token = randomHex(32);
   const expiresAt = new Date(Date.now() + SESSION_DAYS * 86_400_000);
-  await sql()`insert into tippetuppen.sessions (token_hash, user_id, expires_at) values (${await sha256(token)}, ${userId}, ${expiresAt})`;
-  return { ok: true as const, token, user: { id: userId, username }, expiresAt: expiresAt.toISOString() };
+  await sql()`insert into tippetuppen.sessions (token_hash, user_id, expires_at)
+    values (${await sha256(token)}, ${userId}, ${expiresAt})`;
+  const user = await userById(userId);
+  if (!user) throw new Error("session user missing");
+  return { ok: true as const, token, user, expiresAt: expiresAt.toISOString() };
 }
 
-export async function currentUser(req: Request) {
+export async function currentUser(req: Request): Promise<AuthUser | null> {
   const token = req.headers.get("x-session-token");
   if (!token || !/^[a-f0-9]{64}$/.test(token)) return null;
-  const rows = await sql()<{ id: string; username: string }[]>`
-    select u.id, u.username from tippetuppen.sessions s join tippetuppen.users u on u.id = s.user_id
+  const rows = await sql()<{ id: string; username: string; name: string | null; email: string | null; avatar_id: number | null }[]>`
+    select u.id, u.username, u.full_name as name, u.email, u.avatar_id
+    from tippetuppen.sessions s
+    join tippetuppen.users u on u.id = s.user_id
     where s.token_hash = ${await sha256(token)} and s.expires_at > now()`;
-  return rows[0] ?? null;
+  const row = rows[0];
+  return row ? { id: row.id, username: row.username, name: row.name, email: row.email, avatarId: row.avatar_id } : null;
+}
+
+export async function changePassword(req: Request, currentPassword: string, newPassword: string) {
+  if (newPassword.length < 8 || newPassword.length > 128) return { ok: false as const, error: "invalid-new" };
+  const user = await currentUser(req);
+  if (!user) return { ok: false as const, error: "unauthorised" };
+
+  const rows = await sql()<{ password_hash: string; password_salt: string }[]>`
+    select password_hash, password_salt from tippetuppen.users where id = ${user.id}`;
+  const credentials = rows[0];
+  if (!credentials || !safeEqual(await passwordHash(currentPassword, credentials.password_salt), credentials.password_hash)) {
+    return { ok: false as const, error: "current-password" };
+  }
+
+  const salt = randomHex(16);
+  const hash = await passwordHash(newPassword, salt);
+  await sql().begin(async (tx) => {
+    await tx`update tippetuppen.users set password_hash = ${hash}, password_salt = ${salt} where id = ${user.id}`;
+    await tx`delete from tippetuppen.sessions where user_id = ${user.id}`;
+  });
+  return issueSession(user.id);
 }
 
 export async function logoutUser(req: Request) {
   const token = req.headers.get("x-session-token");
-  if (token && /^[a-f0-9]{64}$/.test(token)) await sql()`delete from tippetuppen.sessions where token_hash = ${await sha256(token)}`;
+  if (token && /^[a-f0-9]{64}$/.test(token)) {
+    await sql()`delete from tippetuppen.sessions where token_hash = ${await sha256(token)}`;
+  }
 }
-
