@@ -125,7 +125,7 @@ type LeagueRow = { rank: number; username: string; avatar_id: number | null; poi
 async function leagueTable(from: string, to: string, username: string | null, limit: number) {
   const [board] = await sql()<{ rows: LeagueRow[]; me: LeagueRow | null; registered: number }[]>`
     with totals as (
-      select u.username,
+      select u.username, u.avatar_id,
              sum(r.league_points)::int as points,
              count(r.id)::int as played,
              coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
