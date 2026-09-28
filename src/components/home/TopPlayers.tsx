@@ -47,7 +47,7 @@ export function TopPlayers() {
       </table> : <p className="home-leaderboard-status">Ingen poeng i {copy?.month ?? "denne måneden"} ennå. Registrer deg og ta ledelsen!</p>}
     <div className="home-leaderboard-links">
       <Link href="/liga/">Se hele tabellen <span aria-hidden>→</span></Link>
-      <div><Link href="/liga/#login">Logg inn</Link><Link href="/liga/#register">Registrer deg</Link></div>
+      <div><Link href="/profil/#login">Logg inn</Link><Link href="/profil/#register">Registrer deg</Link></div>
     </div>
   </section>;
 }
