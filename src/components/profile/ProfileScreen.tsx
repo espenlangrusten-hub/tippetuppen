@@ -14,6 +14,7 @@ import {
   AVATAR_UNLOCK_POINTS,
   PROFILE_AVATARS,
 } from "@/lib/profileAvatars";
+import { BASE_PATH } from "@/lib/site";
 import { ProfileAvatar } from "./ProfileAvatar";
 
 type Profile = {
@@ -143,6 +144,11 @@ export function ProfileScreen() {
       setUser(response.user);
       setAuthPassword("");
       await loadProfile();
+      const join = new URLSearchParams(window.location.search).get("join");
+      if (join) {
+        window.location.assign(BASE_PATH + "/liga/?join=" + encodeURIComponent(join));
+        return;
+      }
       setMessage(mode === "register" ? "Spiller opprettet." : "Du er logget inn.");
     } catch {
       setMessage("Fikk ikke kontakt med Tippetuppen. Prøv igjen.");
