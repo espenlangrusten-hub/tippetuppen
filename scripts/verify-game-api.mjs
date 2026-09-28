@@ -113,9 +113,54 @@ try {
   assert.equal(outside.registered,ownBoard.registered+105);
   assert.equal((await req('/leaderboard')).me,null);
   assert.equal((await req('/leaderboard',undefined,'invalid-session')).me,null);
-  await req('/auth/logout',{},token);
+
+  // Profile fields are private account data; avatars remain locked until 2,000 lifetime points.
+  const profileBefore=await req('/profile',undefined,token);
+  assert.equal(profileBefore.ok,true);
+  assert.equal(profileBefore.profile.avatarUnlocked,false);
+  assert.equal((await req('/profile/update',{name:'QA Spiller',email:name+'@example.test',avatarId:7},token)).error,'avatar-locked');
+  const savedProfile=await req('/profile/update',{name:'QA Spiller',email:name+'@example.test',avatarId:null},token);
+  assert.equal(savedProfile.profile.name,'QA Spiller');
+  assert.equal(savedProfile.profile.email,name+'@example.test');
+
+  await db`update tippetuppen.league_results set league_points=2100 where user_id=${user.user.id} and game='mangler-xi'`;
+  const unlocked=await req('/profile',undefined,token);
+  assert.equal(unlocked.profile.avatarUnlocked,true);
+  assert.equal(unlocked.profile.avatarAvailable,true);
+  const withAvatar=await req('/profile/update',{name:'QA Spiller',email:name+'@example.test',avatarId:7},token);
+  assert.equal(withAvatar.profile.avatarId,7);
+  assert.equal(withAvatar.profile.avatarAvailable,false);
+
+  // A second authenticated profile can join a private league by code.
+  const friendName=name+'-venn';
+  const friend=await req('/auth/register',{username:friendName,password});
+  assert.equal(friend.ok,true,JSON.stringify(friend)); created.push(friend.user.id);
+  const made=await req('/friend-league/create',{name:'QA-venneliga'},token);
+  assert.equal(made.ok,true,JSON.stringify(made));
+  assert.match(made.league.code,/^[A-Z2-9]{6}$/);
+  assert.equal(made.league.isOwner,true);
+  const joined=await req('/friend-league/join',{code:made.league.code},friend.token);
+  assert.equal(joined.ok,true);
+  assert.equal(joined.league.rows.length,2);
+  assert.equal(joined.league.rows.some(r=>r.username===name && r.avatarId===7),true);
+  const friendList=await req('/friend-leagues',undefined,friend.token);
+  assert.equal(friendList.leagues.length,1);
+  assert.equal(friendList.leagues[0].code,made.league.code);
+  const renamed=await req('/friend-league/rename',{code:made.league.code,name:'QA-gjengen'},token);
+  assert.equal(renamed.league.name,'QA-gjengen');
+  assert.equal((await req('/friend-league/rename',{code:made.league.code,name:'Nope'},friend.token)).error,'forbidden');
+  assert.equal((await req('/friend-league/leave',{code:made.league.code},friend.token)).ok,true);
+
+  // Password changes rotate the current session and invalidate every older one.
+  const changed=await req('/profile/password',{currentPassword:password,newPassword:password+'-ny'},token);
+  assert.equal(changed.ok,true,JSON.stringify(changed));
+  assert.notEqual(changed.token,token);
   assert.equal((await req('/auth/me',undefined,token)).ok,false);
-  console.log('API integration passed: login, uniqueness, ownership, concurrent start, resume, locked answer, future protection, give-up scoring, fixed Målløs result, logout.');
+  assert.equal((await req('/auth/me',undefined,changed.token)).ok,true);
+  await req('/auth/logout',{},changed.token);
+  await req('/auth/logout',{},friend.token);
+  assert.equal((await req('/auth/me',undefined,changed.token)).ok,false);
+  console.log('API integration passed: login, profile, 2,000-point avatar unlock, friend leagues, password rotation, ranked games and logout.');
 } finally {
   await db`delete from tippetuppen.events where visitor=${eventVisitor}`;
   for(const id of created) await db`delete from tippetuppen.users where id=${id}`;

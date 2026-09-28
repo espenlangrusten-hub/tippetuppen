@@ -1,11 +1,23 @@
 "use client";
 
-export type SessionUser = { id: string; username: string };
+export type SessionUser = {
+  id: string;
+  username: string;
+  name?: string | null;
+  email?: string | null;
+  avatarId?: number | null;
+};
+
 const TOKEN = "tt-session";
 const USER = "tt-user";
 
 export function saveSession(token: string, user: SessionUser) {
   localStorage.setItem(TOKEN, token);
+  localStorage.setItem(USER, JSON.stringify(user));
+  window.dispatchEvent(new Event("tt-auth"));
+}
+
+export function updateStoredUser(user: SessionUser) {
   localStorage.setItem(USER, JSON.stringify(user));
   window.dispatchEvent(new Event("tt-auth"));
 }

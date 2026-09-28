@@ -31,6 +31,8 @@ import { osloDateKey, addDays, isValidDateKey, monthStart, monthEnd, previousMon
 import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
+import { profileRoute } from "../_shared/profile-routes.ts";
+import { friendLeagueRoute } from "../_shared/friend-league-routes.ts";
 import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
 import { geniusRoute } from "../_shared/trener-genius-routes.ts";
 import { finnRoute } from "../_shared/finn.ts";
@@ -117,13 +119,13 @@ async function updateMxiProgress(userId: string, puzzleId: string, index: number
   });
 }
 
-type LeagueRow = { rank: number; username: string; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
+type LeagueRow = { rank: number; username: string; avatar_id: number | null; points: number; played: number; maalloes_total: number; xi_solved: number; finn_points: number };
 
 /** One league table over a date range, ranked the one way the site ranks everywhere. */
 async function leagueTable(from: string, to: string, username: string | null, limit: number) {
   const [board] = await sql()<{ rows: LeagueRow[]; me: LeagueRow | null; registered: number }[]>`
     with totals as (
-      select u.username,
+      select u.username, u.avatar_id,
              sum(r.league_points)::int as points,
              count(r.id)::int as played,
              coalesce(sum(r.raw_score) filter (where r.game = 'maalloes'), 0)::int as maalloes_total,
@@ -131,7 +133,7 @@ async function leagueTable(from: string, to: string, username: string | null, li
              coalesce(sum(r.raw_score) filter (where r.game = 'finn-spilleren'), 0)::int as finn_points
       from tippetuppen.users u join tippetuppen.league_results r on r.user_id = u.id
       where r.date between ${from} and ${to}
-      group by u.id, u.username
+      group by u.id, u.username, u.avatar_id
     ), ranked as (
       select (row_number() over (order by points desc, played desc, maalloes_total asc, username asc))::int as rank, totals.*
       from totals
@@ -184,6 +186,12 @@ Deno.serve(async (req) => {
   const q = url.searchParams;
 
   try {
+    const profileResponse = await profileRoute(req, route);
+    if (profileResponse) return profileResponse;
+
+    const friendLeagueResponse = await friendLeagueRoute(req, route, q);
+    if (friendLeagueResponse) return friendLeagueResponse;
+
     if (req.method === "POST" && route === "/auth/register") {
       const body = (await req.json().catch(() => ({}))) as { username?: string; password?: string };
       if (typeof body.username !== "string" || typeof body.password !== "string") return bad("bad request");
