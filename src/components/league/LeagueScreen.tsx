@@ -596,7 +596,7 @@ function FriendLeagues(props: {
                       </td>
                       <td className="p-3 text-right font-display text-xl text-gold">{row.points}</td>
                       <td className="p-3 text-right text-mist">{row.played}</td>
-                      {props.selected.isOwner && (
+                      {props.selected?.isOwner && (
                         <td className="p-3 text-right">
                           {row.userId !== props.user?.id && (
                             <button className="text-xs text-mist underline" type="button" onClick={() => props.onKick(row)}>
