@@ -6,37 +6,139 @@
   "opponent": "Polen",
   "opponentCode": "POL",
   "norwayHome": false,
-  "score": [3, 0],
+  "score": [
+    3,
+    0
+  ],
   "venue": "Stadion Miejski",
   "city": "Poznań",
   "manager": "Egil Olsen",
   "formation": "4-5-1",
   "importance": 4,
-  "tags": ["kvalik", "vm-billett"],
+  "tags": [
+    "kvalik",
+    "vm-billett"
+  ],
   "status": "verified",
   "sources": [
-    { "url": "https://eu-football.info/_match.php?id=9865", "title": "Poland vs Norway, 13 October 1993 – eu-football.info", "kind": "web", "accessed": "2026-09-01", "note": "Full Norway XI, subs and scorers confirmed in search excerpt" },
-    { "url": "http://www.rsssf.no/1993/National.html", "title": "Norwegian national team 1993 – RSSSF Norway", "kind": "web", "accessed": "2026-09-01" },
-    { "url": "https://match.uefa.com/v5/matches/5386/lineups", "title": "UEFA – kampdata med lagoppstilling", "kind": "api", "accessed": "2026-09-24", "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)." }
+    {
+      "url": "https://www.fotball.no/fotballdata/kamp/?fiksId=1697095",
+      "title": "Polen - Norge - 13.10.1993 – Norges Fotballforbund",
+      "kind": "web",
+      "accessed": "2026-09-28",
+      "note": "Primærkilde. NFF bekrefter alle 11 startere, draktnumre og Rune Bratseth som kaptein."
+    },
+    {
+      "url": "https://eu-football.info/_match.php?id=9865",
+      "title": "Poland vs Norway, 13 October 1993 – eu-football.info",
+      "kind": "web",
+      "accessed": "2026-09-01",
+      "note": "Full Norway XI, subs and scorers confirmed in search excerpt"
+    },
+    {
+      "url": "http://www.rsssf.no/1993/National.html",
+      "title": "Norwegian national team 1993 – RSSSF Norway",
+      "kind": "web",
+      "accessed": "2026-09-01"
+    },
+    {
+      "url": "https://match.uefa.com/v5/matches/5386/lineups",
+      "title": "UEFA – kampdata med lagoppstilling",
+      "kind": "api",
+      "accessed": "2026-09-24",
+      "note": "Draktnumre for startelleveren, kontrollert mot våre navn. Startelleveren er identisk med vår (kontrollert 2026-09-26)."
+    }
   ],
-  "notes": "Seieren i Poznań sikret Norges første VM-plass siden 1938. Innbytter Ronny Johnsen scoret sitt første landslagsmål.",
+  "notes": "Seieren i Poznań sikret Norges første VM-plass siden 1938. Startellever og draktnumre kontrollert mot NFF kamp 1697095.",
   "lineup": [
-    { "name": "Frode Grodås", "pos": "GK", "no": 1 },
-    { "name": "Henning Berg", "pos": "RB", "no": 2 },
-    { "name": "Tore Pedersen", "pos": "CB", "no": 3 },
-    { "name": "Rune Bratseth", "pos": "CB", "captain": true, "no": 4 },
-    { "name": "Stig Inge Bjørnebye", "pos": "LB", "no": 5 },
-    { "name": "Jostein Flo", "pos": "RM", "no": 6 },
-    { "name": "Erik Mykland", "pos": "CM", "no": 7 },
-    { "name": "Lars Bohinen", "pos": "CM", "no": 10 },
-    { "name": "Kjetil Rekdal", "pos": "CM", "no": 8 },
-    { "name": "Gunnar Halle", "pos": "LM", "off": 81, "no": 9 },
-    { "name": "Jan Åge Fjørtoft", "pos": "CF", "off": 73, "no": 11 }
+    {
+      "name": "Frode Grodås",
+      "pos": "GK",
+      "no": 1
+    },
+    {
+      "name": "Gunnar Halle",
+      "pos": "RB",
+      "no": 2,
+      "off": 81
+    },
+    {
+      "name": "Tore Pedersen",
+      "pos": "CB",
+      "no": 3
+    },
+    {
+      "name": "Rune Bratseth",
+      "pos": "CB",
+      "captain": true,
+      "no": 4
+    },
+    {
+      "name": "Stig Inge Bjørnebye",
+      "pos": "LB",
+      "no": 5
+    },
+    {
+      "name": "Jostein Flo",
+      "pos": "RM",
+      "no": 6
+    },
+    {
+      "name": "Henning Berg",
+      "pos": "CM",
+      "no": 8
+    },
+    {
+      "name": "Erik Mykland",
+      "pos": "CM",
+      "no": 7
+    },
+    {
+      "name": "Kjetil Rekdal",
+      "pos": "CM",
+      "no": 10
+    },
+    {
+      "name": "Lars Bohinen",
+      "pos": "LM",
+      "no": 11
+    },
+    {
+      "name": "Jan Åge Fjørtoft",
+      "pos": "CF",
+      "no": 9,
+      "off": 73
+    }
   ],
-  "subs": [{ "name": "Ronny Johnsen", "pos": "CF", "on": 73, "for": "Jan Åge Fjørtoft" }, { "name": "Jahn Ivar Jakobsen", "pos": "LM", "on": 81, "for": "Gunnar Halle" }],
+  "subs": [
+    {
+      "name": "Ronny Johnsen",
+      "pos": "CF",
+      "on": 73,
+      "for": "Jan Åge Fjørtoft"
+    },
+    {
+      "name": "Jahn Ivar Jakobsen",
+      "pos": "LM",
+      "on": 81,
+      "for": "Gunnar Halle"
+    }
+  ],
   "goals": [
-    { "team": "norway", "name": "Jostein Flo", "minute": 61 },
-    { "team": "norway", "name": "Jan Åge Fjørtoft", "minute": 63 },
-    { "team": "norway", "name": "Ronny Johnsen", "minute": 89 }
+    {
+      "team": "norway",
+      "name": "Jostein Flo",
+      "minute": 61
+    },
+    {
+      "team": "norway",
+      "name": "Jan Åge Fjørtoft",
+      "minute": 63
+    },
+    {
+      "team": "norway",
+      "name": "Ronny Johnsen",
+      "minute": 89
+    }
   ]
 }
