@@ -481,8 +481,8 @@ function FriendLeagues(props: {
         <h2 className="font-display text-2xl font-bold uppercase">Venneligaer</h2>
         <p className="mt-2 text-mist">Du må ha Tippetuppen-profil og være logget inn for å opprette eller bli med i en venneliga.</p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Link href="/profil/#login" className="btn btn-primary">Logg inn</Link>
-          <Link href="/profil/#register" className="btn btn-secondary">Opprett profil</Link>
+          <Link href={props.joinCode ? "/profil/?join=" + encodeURIComponent(props.joinCode) + "#login" : "/profil/#login"} className="btn btn-primary">Logg inn</Link>
+          <Link href={props.joinCode ? "/profil/?join=" + encodeURIComponent(props.joinCode) + "#register" : "/profil/#register"} className="btn btn-secondary">Opprett profil</Link>
         </div>
       </section>
     );
