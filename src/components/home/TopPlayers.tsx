@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 import { apiGet } from "@/lib/api";
 import { monthCopy, type Champion, type LeagueMonth } from "@/lib/monthlyLeague";
 import { MonthChampion, MonthPulse } from "@/components/league/MonthChampion";
+import { ProfileAvatar } from "@/components/profile/ProfileAvatar";
 
-type Row = { username: string; points: number };
+type Row = { username: string; points: number; avatar_id?: number | null };
 type Board = { ok: boolean; rows?: Row[]; month?: LeagueMonth; champion?: Champion };
 
 export function TopPlayers() {
@@ -42,7 +43,7 @@ export function TopPlayers() {
       : rows.length ? <table className="home-leaderboard-table">
         <thead><tr><th scope="col">#</th><th scope="col">Spiller</th><th scope="col">Poeng</th></tr></thead>
         <tbody>{rows.map((row, i) => <tr key={row.username}>
-          <td><span className={i < 3 ? `home-rank home-rank-${i + 1}` : "home-rank"}>{i + 1}</span></td><th scope="row">{row.username}</th><td>{row.points}</td>
+          <td><span className={i < 3 ? `home-rank home-rank-${i + 1}` : "home-rank"}>{i + 1}</span></td><th scope="row"><span className="inline-flex items-center gap-2"><ProfileAvatar avatarId={row.avatar_id} size={28} /><span>{row.username}</span></span></th><td>{row.points}</td>
         </tr>)}</tbody>
       </table> : <p className="home-leaderboard-status">Ingen poeng i {copy?.month ?? "denne måneden"} ennå. Registrer deg og ta ledelsen!</p>}
     <div className="home-leaderboard-links">
