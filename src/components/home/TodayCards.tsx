@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
+
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { apiGet } from "@/lib/api";
 import { BASE_PATH, type GameSlug } from "@/lib/site";
@@ -9,57 +10,130 @@ import { computeStreak } from "@/lib/streaks";
 import { TopPlayers } from "./TopPlayers";
 import s from "./StadiumHome.module.css";
 
+type DailySlug = GameSlug | "trener-genius";
+type HomeGame = {
+  slug: string;
+  recordSlug?: DailySlug;
+  name: string;
+  description: string;
+  art: "xi" | "goal" | "mystery" | "penalty" | "kjappen" | "trainer";
+  image?: string;
+};
 
-const games = [
-  { slug: "mangler-xi", name: "Mangler XI", description: "Fyll ut Norges startellever", art: "xi", action: "Spill dagens XI" },
-  { slug: "maalloes", name: "Målløs", description: "Finn svarene færrest velger", art: "goal", action: "Spill Målløs" },
-  { slug: "finn-spilleren", name: "Finn spilleren", description: "Fem hint. Én spiller.", art: "mystery", action: "Spill Finn spilleren" },
-] as const;
+const games: HomeGame[] = [
+  { slug: "mangler-xi", recordSlug: "mangler-xi", name: "Manglende 11", description: "Hvilke spillere mangler i lagoppstillingen?", art: "xi", image: "/design/xi.webp" },
+  { slug: "maalloes", recordSlug: "maalloes", name: "Målløs", description: "Gjett kamper uten at noen scorer.", art: "goal", image: "/design/goal.webp" },
+  { slug: "finn-spilleren", recordSlug: "finn-spilleren", name: "Finn spilleren", description: "Hvem er spilleren vi er på jakt etter?", art: "mystery", image: "/design/mystery.webp" },
+  { slug: "straffespark", name: "Straffespark", description: "Gjør de riktige valgene og sett straffen!", art: "penalty", image: "/design/penalty.webp" },
+  { slug: "kjappen", name: "Kjappen", description: "Ti kjappe spørsmål om alt mulig fotball.", art: "kjappen" },
+  { slug: "trener-genius", recordSlug: "trener-genius", name: "Trener Genius", description: "Fire spørsmål. Ett taktisk valg.", art: "trainer", image: "/trener-genius/dugout.webp" },
+];
 
 export function TodayCards() {
-  const [done, setDone] = useState<Partial<Record<GameSlug | "trener-genius", boolean>>>({});
+  const [done, setDone] = useState<Partial<Record<DailySlug, boolean>>>({});
   const [streak, setStreak] = useState<number | null>(null);
+
   useEffect(() => {
     let active = true;
-    apiGet<{ ok: boolean; today?: string }>("/today?game=mangler-xi").then((r) => {
-      if (!active || !r.today) return;
-      setStreak(computeStreak([...games.map(g=>g.slug), "trener-genius"].flatMap(slug=>loadRecords(slug)), r.today).current);
-      setDone(Object.fromEntries([...games.map(g=>g.slug), "trener-genius"].map(slug=>[slug, loadRecords(slug).some(record=>record.date === r.today && !record.archive)])));
-    }).catch(() => {});
+    apiGet<{ ok: boolean; today?: string }>("/today?game=mangler-xi")
+      .then((response) => {
+        if (!active || !response.today) return;
+        const tracked = games.flatMap((game) => game.recordSlug ? [game.recordSlug] : []);
+        setStreak(computeStreak(tracked.flatMap((slug) => loadRecords(slug)), response.today).current);
+        setDone(Object.fromEntries(tracked.map((slug) => [slug, loadRecords(slug).some((record) => record.date === response.today && !record.archive)])));
+      })
+      .catch(() => {});
     return () => { active = false; };
   }, []);
-  return <div className={s.shell}>
-    <div className={s.backdrop} aria-hidden="true"><Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="100vw" /></div>
-    <section className={s.hero}>
-      <div><p className={s.eyebrow}>Dagens fotballutfordring</p><h1>Hvor godt kjenner du norsk fotball?</h1></div>
-      <div className={s.intro}><p>Daglige utfordringer og quiz med venner.</p><Link href="/statistikk/" className={s.streak}>{streak ? streak + (streak === 1 ? " dag på rad" : " dager på rad") : "Klar for dagens utfordring?"}</Link></div>
 
-    </section>
-    <div className={s.dashboard}>
-      <section id="spill" className={s.games} aria-label="Dagens spill">
-        {games.map((game, i) => <Link key={game.slug} href={"/" + game.slug + "/"} className={s.game + " " + s[game.art]} aria-label={done[game.slug] ? "Se resultat for " + game.name : game.action}>
-          <Image src={BASE_PATH + "/design/" + game.art + ".webp"} alt="" fill priority={i === 0} sizes={i === 0 ? "(max-width: 760px) 100vw, 780px" : "(max-width: 760px) 50vw, 390px"} />
-          <div className={s.gameTitle}><h2>{game.name}</h2><p>{game.description}</p></div>
-          {done[game.slug] && <span className={s.completed}>✓ Fullført</span>}
-          <span className={s.playButton}>{done[game.slug] ? "Se resultat" : game.action} <span aria-hidden="true">→</span></span>
-        </Link>)}
-        <Link href="/straffespark/" className={s.game + " " + s.penalty} aria-label="Spill Straffespark, dagens 5">
-          <Image src={BASE_PATH + "/design/penalty.webp"} alt="" fill sizes="(max-width: 760px) 50vw, 390px" />
-          <div className={s.gameTitle}><h2>Straffespark, 5 kjappe</h2><p>Fem nye spørsmål hver dag.</p></div>
-          <span className={s.playButton}>Spill Straffespark <span aria-hidden="true">→</span></span>
-        </Link>
-        <Link href="/kjappen/" className={s.game + " " + s.kjappen} aria-label="Spill Kjappen quizshow med venner">
-          <div className={s.kjappenLogo}><Image src={BASE_PATH + "/kjappen/logo.webp"} alt="Kjappen quizshow" fill sizes="(max-width: 760px) 50vw, 390px" /></div>
-          <div className={s.kjappenCaption}><p>2–4 spillere · 5 spørsmål</p></div>
-          <span className={s.playButton}>Spill Kjappen <span aria-hidden="true">→</span></span>
-        </Link>
+  return (
+    <div className={s.page}>
+      <section className={s.hero}>
+        <div className={s.heroCopy}>
+          <p className={s.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> For alle</p>
+          <h1>Dagens fotballspill —<br />nye oppgaver hver dag<span className="sr-only"> Hvor godt kjenner du norsk fotball?</span></h1>
+          <p className={s.lead}>Tippetuppen er stedet for deg som elsker fotball og gode hodebry. Seks spill, daglige utfordringer og en liga med venner og andre fotballnerder.</p>
+          <div className={s.heroActions}>
+            <Link href="#spill" className={s.primary}>Start dagens spill <span aria-hidden="true">→</span></Link>
+            {streak ? <span className={s.streak}>{streak} {streak === 1 ? "dag" : "dager"} på rad</span> : null}
+          </div>
+        </div>
+        <div className={s.heroArt} aria-hidden="true">
+          <Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="(max-width: 760px) 100vw, 58vw" />
+          <div className={s.heroHalftone} />
+          <div className={s.heroPlayer}><span>10</span></div>
+          <div className={s.heroBoard}>KUNNSKAP<br />GIR FLERE<br />GODE KAMPER</div>
+          <div className={s.heroFlag}>FOTBALL<br />ER BEST<br />SAMMEN</div>
+        </div>
       </section>
-      <aside className={s.sidebar}><TopPlayers /><div className={s.daily}><span aria-hidden="true">▦</span><div><h2>Nye utfordringer hver dag</h2><p>Kl. 00:00 norsk tid</p><small>Straffespark får fem nye spørsmål hver dag.</small></div></div></aside>
-      <Link href="/trener-genius/" className={s.genius} aria-label={done["trener-genius"] ? "Se resultat for Trener Genius" : "Spill Trener Genius"}>
-        <Image src={BASE_PATH + "/trener-genius/dugout.webp"} alt="" fill sizes="(max-width: 760px) 100vw, 1200px" />
-        <div className={s.geniusCopy}><span className={s.newBadge}>NYHET</span><h2>TRENER <span>GENIUS</span></h2><p>Fire spørsmål. Ett taktisk valg.</p><span className={s.playButton}>{done["trener-genius"] ? "Se resultat" : "Ta plass på benken"} <span aria-hidden="true">→</span></span></div>
-        {done["trener-genius"] && <span className={s.completed}>✓ Fullført</span>}
-      </Link>
+
+      <section id="spill" className={s.gamesSection} aria-label="Dagens spill">
+        <div className={s.sectionHeading}>
+          <h3>Våre spill</h3>
+          <p>Seks ulike måter å teste fotballkunnskapene dine på. Nye oppgaver hver dag!</p>
+          <Link href="/arkiv/">Se alle spill <span aria-hidden="true">→</span></Link>
+        </div>
+        <div className={s.gameGrid}>
+          {games.map((game) => {
+            const completed = game.recordSlug ? done[game.recordSlug] : false;
+            return (
+              <Link
+                key={game.slug}
+                href={`/${game.slug}/`}
+                className={`${s.gameCard} ${s[game.art]}`}
+                aria-label={
+                  game.slug === "mangler-xi" ? (completed ? "Se resultat for Mangler XI" : "Spill dagens XI") :
+                  game.slug === "maalloes" ? (completed ? "Se resultat for Målløs" : "Spill Målløs") :
+                  game.slug === "finn-spilleren" ? (completed ? "Se resultat for Finn spilleren" : "Spill Finn spilleren") :
+                  game.slug === "straffespark" ? "Spill Straffespark, dagens 5" :
+                  game.slug === "kjappen" ? "Spill Kjappen quizshow med venner" :
+                  completed ? "Se resultat for Trener Genius" : "Spill Trener Genius"
+                }
+              >
+                <div className={s.gameArt}>
+                  {game.image && <Image src={BASE_PATH + game.image} alt="" fill sizes="(max-width: 760px) 50vw, 220px" />}
+                  {game.art === "kjappen" && <div className={s.stopwatch}><span>00:10</span></div>}
+                  <div className={s.printTexture} />
+                </div>
+                <div className={s.gameCopy}>
+                  <div>
+                    {["mangler-xi", "maalloes", "finn-spilleren", "straffespark"].includes(game.slug)
+                      ? <h2>{game.slug === "mangler-xi" ? "Manglende 11" : game.slug === "straffespark" ? "Straffespark, 5 kjappe" : game.name}</h2>
+                      : <h3>{game.name}</h3>}
+                    {game.slug === "straffespark"
+                      ? <p>Fem nye spørsmål hver dag.</p>
+                      : game.slug === "kjappen"
+                        ? <p>2–4 spillere · 5 spørsmål</p>
+                        : <p>{game.description}</p>}
+                  </div>
+                  <span className={s.gameArrow} aria-hidden="true">→</span>
+                  <small>{completed ? "✓ Fullført" : game.slug === "kjappen" ? "Spill Kjappen →" : game.slug === "trener-genius" ? "Spill Trener Genius →" : "NYE OPPGAVER HVER DAG"}</small>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className={s.communityGrid}>
+        <TopPlayers />
+        <Link href="/liga/" className={s.friendCard}>
+          <div className={s.friendCopy}>
+            <h2>Lag din egen venneliga</h2>
+            <p>Spill mot venner, kollegaer eller hele fotballgjengen. Hvem kan mest?</p>
+            <span>Opprett liga <b aria-hidden="true">→</b></span>
+          </div>
+          <div className={s.friendArt} aria-hidden="true"><i /><i /><i /></div>
+          <em>BEDRE<br />MED VENNER<br />PÅ LAG</em>
+        </Link>
+        <aside className={s.factCard}>
+          <div>
+            <p className={s.factKicker}>★ &nbsp; Dagens fakta</p>
+            <p>Rosenborg er den norske klubben med flest europacupkamper, med over 200 kamper i UEFA-turneringene.</p>
+          </div>
+          <div className={s.factFigure} aria-hidden="true">♛</div>
+        </aside>
+      </section>
     </div>
-  </div>;
+  );
 }

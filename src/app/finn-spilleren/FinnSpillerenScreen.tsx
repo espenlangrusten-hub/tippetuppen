@@ -21,11 +21,15 @@ export function FinnSpillerenScreen() {
     } as CSSProperties}
   >
     <div className={design.heading}>
+      <p className={design.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Finn spilleren</p>
       <h1 className={design.title}>Finn spilleren</h1>
-      {state.status === "ready" && <span>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.puzzle.date)}</span>}
+      <p className={design.subtitle}>Fem hint fra vanskelig til enkelt. Hvor tidlig klarer du å finne riktig spiller?</p>
+      {state.status === "ready" && <p className={design.date}>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.puzzle.date)}</p>}
     </div>
-    {state.status === "loading" && <GameSkeleton />}
-    {(state.status === "empty" || state.status === "error") && <GameUnavailable game="finn-spilleren" kind={state.status} archive={nr !== null} />}
-    {state.status === "ready" && <FinnSpillerenGame puzzle={state.puzzle} isArchive={state.isArchive} />}
+    <div className={design.gameArea}>
+      {state.status === "loading" && <GameSkeleton />}
+      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="finn-spilleren" kind={state.status} archive={nr !== null} />}
+      {state.status === "ready" && <FinnSpillerenGame puzzle={state.puzzle} isArchive={state.isArchive} />}
+    </div>
   </div>;
 }
