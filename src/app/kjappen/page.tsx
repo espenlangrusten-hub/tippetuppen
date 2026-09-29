@@ -6,6 +6,7 @@ import "./kjappen-game.css";
 import "./kjappen-lobby.css";
 import "./kjappen-responsive.css";
 import "./kjappen-host.css";
+import "./kjappen-light.css";
 import { KjappenGame } from "./KjappenGame";
 
 // Out in the open as a beta, but kept out of the index while it is still being polished.
