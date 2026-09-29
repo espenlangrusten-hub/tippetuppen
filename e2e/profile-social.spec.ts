@@ -21,14 +21,14 @@ test("profile and friend-league flow works end-to-end", async ({ page }, testInf
   await expect(page.getByText("Spiller opprettet.")).toBeVisible({ timeout: 10000 });
   await expect(page.getByText(/Profilavatar låses opp ved 2 000 totalpoeng/)).toBeVisible();
 
-  await page.getByLabel("Navn").fill("Test Spiller");
-  await page.getByLabel("E-postadresse").fill(owner + "@example.test");
+  await page.getByLabel("Navn", { exact: true }).fill("Test Spiller");
+  await page.getByLabel("E-postadresse", { exact: true }).fill(owner + "@example.test");
   await page.getByRole("button", { name: "Lagre profil" }).click();
   await expect(page.getByText("Profilen er lagret.")).toBeVisible({ timeout: 10000 });
 
   await page.reload();
-  await expect(page.getByLabel("Navn")).toHaveValue("Test Spiller");
-  await expect(page.getByLabel("E-postadresse")).toHaveValue(owner + "@example.test");
+  await expect(page.getByLabel("Navn", { exact: true })).toHaveValue("Test Spiller");
+  await expect(page.getByLabel("E-postadresse", { exact: true })).toHaveValue(owner + "@example.test");
 
   await page.goto("/liga/");
   await page.getByRole("button", { name: "Venneligaer" }).click();
