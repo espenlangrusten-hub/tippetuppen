@@ -23,16 +23,20 @@ export function MaalloesScreen() {
       } as CSSProperties}
     >
       <div className={design.heading}>
+        <p className={design.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Målløs</p>
         <h1 className={design.title}>
-          Målløs{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
+          Målløs{state.status === "ready" && state.isArchive && <span> #{state.puzzle.number}</span>}
         </h1>
+        <p className={design.subtitle}>Finn kampene som endte uten scoring. Jo færre som velger samme svar, desto bedre.</p>
         {state.status === "ready" && (
-          <span>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
+          <p className={design.date}>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</p>
         )}
       </div>
-      {state.status === "loading" && <GameSkeleton />}
-      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="maalloes" kind={state.status} archive={nr !== null} />}
-      {state.status === "ready" && <MaalloesGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
+      <div className={design.gameArea}>
+        {state.status === "loading" && <GameSkeleton />}
+        {(state.status === "empty" || state.status === "error") && <GameUnavailable game="maalloes" kind={state.status} archive={nr !== null} />}
+        {state.status === "ready" && <MaalloesGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
+      </div>
     </div>
   );
 }
