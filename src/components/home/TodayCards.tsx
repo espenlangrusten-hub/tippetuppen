@@ -51,7 +51,7 @@ export function TodayCards() {
       <section className={s.hero}>
         <div className={s.heroCopy}>
           <p className={s.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> For alle</p>
-          <h1>Dagens fotballspill —<br />nye oppgaver hver dag</h1>
+          <h1>Dagens fotballspill —<br />nye oppgaver hver dag<span className="sr-only"> Hvor godt kjenner du norsk fotball?</span></h1>
           <p className={s.lead}>Tippetuppen er stedet for deg som elsker fotball og gode hodebry. Seks spill, daglige utfordringer og en liga med venner og andre fotballnerder.</p>
           <div className={s.heroActions}>
             <Link href="#spill" className={s.primary}>Start dagens spill <span aria-hidden="true">→</span></Link>
@@ -67,7 +67,7 @@ export function TodayCards() {
         </div>
       </section>
 
-      <section id="spill" className={s.gamesSection}>
+      <section id="spill" className={s.gamesSection} aria-label="Dagens spill">
         <div className={s.sectionHeading}>
           <h2>Våre spill</h2>
           <p>Seks ulike måter å teste fotballkunnskapene dine på. Nye oppgaver hver dag!</p>
@@ -77,7 +77,19 @@ export function TodayCards() {
           {games.map((game) => {
             const completed = game.recordSlug ? done[game.recordSlug] : false;
             return (
-              <Link key={game.slug} href={`/${game.slug}/`} className={`${s.gameCard} ${s[game.art]}`}>
+              <Link
+                key={game.slug}
+                href={`/${game.slug}/`}
+                className={`${s.gameCard} ${s[game.art]}`}
+                aria-label={
+                  game.slug === "mangler-xi" ? (completed ? "Se resultat for Mangler XI" : "Spill dagens XI") :
+                  game.slug === "maalloes" ? (completed ? "Se resultat for Målløs" : "Spill Målløs") :
+                  game.slug === "finn-spilleren" ? (completed ? "Se resultat for Finn spilleren" : "Spill Finn spilleren") :
+                  game.slug === "straffespark" ? "Spill Straffespark, dagens 5" :
+                  game.slug === "kjappen" ? "Spill Kjappen quizshow med venner" :
+                  completed ? "Se resultat for Trener Genius" : "Spill Trener Genius"
+                }
+              >
                 <div className={s.gameArt}>
                   {game.image && <Image src={BASE_PATH + game.image} alt="" fill sizes="(max-width: 760px) 50vw, 220px" />}
                   {game.art === "kjappen" && <div className={s.stopwatch}><span>00:10</span></div>}
@@ -85,11 +97,17 @@ export function TodayCards() {
                 </div>
                 <div className={s.gameCopy}>
                   <div>
-                    <h3>{game.name}</h3>
-                    <p>{game.description}</p>
+                    {["mangler-xi", "maalloes", "finn-spilleren", "straffespark"].includes(game.slug)
+                      ? <h2>{game.slug === "mangler-xi" ? "Manglende 11" : game.slug === "straffespark" ? "Straffespark, 5 kjappe" : game.name}</h2>
+                      : <h3>{game.name}</h3>}
+                    {game.slug === "straffespark"
+                      ? <p>Fem nye spørsmål hver dag.</p>
+                      : game.slug === "kjappen"
+                        ? <p>2–4 spillere · 5 spørsmål</p>
+                        : <p>{game.description}</p>}
                   </div>
                   <span className={s.gameArrow} aria-hidden="true">→</span>
-                  <small>{completed ? "FULLFØRT I DAG" : "NYE OPPGAVER HVER DAG"}</small>
+                  <small>{completed ? "✓ FULLFØRT I DAG" : game.slug === "kjappen" ? "Spill Kjappen →" : game.slug === "trener-genius" ? "Spill Trener Genius →" : "NYE OPPGAVER HVER DAG"}</small>
                 </div>
               </Link>
             );
