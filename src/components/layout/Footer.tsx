@@ -1,29 +1,24 @@
 import Link from "next/link";
+import { FootballIcon } from "./FootballIcon";
 
 export function Footer() {
   return (
-    <footer className="mt-12 border-t border-line py-8 text-sm text-fog">
-      <div className="mx-auto flex max-w-[74rem] flex-col gap-3 px-4">
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/om" className="hover:text-snow">
-            Om Tippetuppen
-          </Link>
-          <Link href="/personvern" className="hover:text-snow">
-            Personvern
-          </Link>
-          <Link href="/arkiv" className="hover:text-snow">
-            Arkiv
-          </Link>
-          <Link href="/statistikk" className="hover:text-snow">
-            Statistikk
-          </Link>
-          <Link href="/kontakt" className="hover:text-snow">
-            Kontakt
-          </Link>
-        </div>
-        <p>
-          Nye spill hver dag kl. 00:00 norsk tid. Laget for norske fotballfans. Kampdata er hentet fra offentlige kamparkiver og merket med kildestatus.
-        </p>
+    <footer className="tt-footer">
+      <div className="tt-footer-inner">
+        <Link href="/" className="stadium-brand tt-wordmark tt-footer-brand" aria-label="Tippetuppen – forsiden">
+          <span className="tt-brand-mark" aria-hidden="true">
+            <span className="tt-brand-slashes"><i /><i /><i /></span>
+            <span className="tt-brand-ball"><FootballIcon /></span>
+          </span>
+          <span>Tippetuppen</span>
+        </Link>
+        <nav className="tt-footer-links" aria-label="Bunnmeny">
+          <Link href="/om/">Om Tippetuppen</Link>
+          <Link href="/kontakt/">Ofte stilte spørsmål</Link>
+          <Link href="/personvern/">Personvern</Link>
+          <Link href="/kontakt/">Kontakt</Link>
+        </nav>
+        <p className="tt-footer-tagline">Fotballkunnskap gjør alt litt bedre <b>♥</b></p>
       </div>
     </footer>
   );
