@@ -97,7 +97,7 @@
   backdrop-filter: none !important;
 }
 .kj-v2 .kj-host-frame {
-  border: 1px solid #d4cec4 !important;
+  border: 0 !important;
   border-radius: 8px !important;
   background: #eee9df !important;
   box-shadow: none !important;
