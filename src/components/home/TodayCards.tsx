@@ -106,7 +106,7 @@ export function TodayCards() {
                     <p>{game.description}</p>
                   </div>
                   <span className={s.gameArrow} aria-hidden="true">→</span>
-                  <small>{completed ? "✓ Fullført" : "NYE OPPGAVER HVER DAG"}</small>
+                  <small>{completed ? "✓ Fullført" : game.slug === "kjappen" ? "Spill Kjappen →" : "NYE OPPGAVER HVER DAG"}</small>
                 </div>
               </Link>
             );
