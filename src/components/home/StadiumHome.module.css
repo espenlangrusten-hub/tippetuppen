@@ -122,7 +122,7 @@
 .heroFlag::before { content: ""; display: inline-block; width: 18px; height: 13px; margin-right: 6px; background: linear-gradient(90deg,#d8473b 0 40%,#fff 40% 50%,#24558e 50% 60%,#fff 60% 70%,#d8473b 70%); vertical-align: -2px; }
 .gamesSection { padding: 17px 39px 20px; }
 .sectionHeading { display: grid; grid-template-columns: auto 1fr auto; align-items: end; gap: 28px; margin-bottom: 14px; }
-.sectionHeading h2 { font: 700 31px/.95 Georgia, "Times New Roman", serif; letter-spacing: -.035em; }
+.sectionHeading h3 { font: 700 31px/.95 Georgia, "Times New Roman", serif; letter-spacing: -.035em; }
 .sectionHeading p { color: #637079; font-size: 12px; }
 .sectionHeading > a { color: #236285; font-size: 11px; font-weight: 750; }
 .gameGrid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
@@ -244,7 +244,7 @@
   .heroFlag { right: 10px; bottom: 11px; font-size: 9px; }
   .gamesSection { padding: 18px 14px; }
   .sectionHeading { grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; }
-  .sectionHeading h2 { font-size: 28px; }
+  .sectionHeading h3 { font-size: 28px; }
   .sectionHeading p { grid-column: 1 / -1; grid-row: 2; font-size: 11px; }
   .sectionHeading > a { grid-column: 2; grid-row: 1; }
   .gameGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
