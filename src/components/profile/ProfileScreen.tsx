@@ -236,8 +236,8 @@ export function ProfileScreen() {
 
   if (!user || !profile) {
     return (
-      <div className="flex flex-col gap-5">
-        <section>
+      <div className="profile-reference-page flex flex-col gap-5">
+        <section className="profile-reference-hero">
           <h1 className="font-display text-4xl font-bold uppercase">Min profil</h1>
           <p className="mt-2 text-mist">Logg inn for å lagre poeng, delta i ligaer og bygge Tippetuppen-profilen din.</p>
         </section>
@@ -292,8 +292,8 @@ export function ProfileScreen() {
   const pointsLeft = Math.max(0, AVATAR_UNLOCK_POINTS - profile.totalPoints);
 
   return (
-    <div className="flex flex-col gap-5">
-      <section>
+    <div className="profile-reference-page flex flex-col gap-5">
+      <section className="profile-reference-hero">
         <h1 className="font-display text-4xl font-bold uppercase">Min profil</h1>
         <p className="mt-2 text-mist">Din spilleridentitet, progresjon og innstillinger.</p>
       </section>
