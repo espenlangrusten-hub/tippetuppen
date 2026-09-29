@@ -127,14 +127,14 @@
 .heroPlayer::after {
   content: "";
   position: absolute;
-  left: -123px;
-  top: -23px;
-  width: 438px;
-  height: 37px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #c64133, #d64b3b 45%, #c43c31);
-  transform: rotate(-6deg);
-  clip-path: polygon(0 18%, 100% 0, 98% 72%, 2% 100%);
+  left: 73px;
+  top: -67px;
+  width: 48px;
+  height: 28px;
+  border-radius: 55% 55% 45% 45%;
+  background: #25383d;
+  transform: rotate(-5deg);
+  box-shadow: -12px 5px 0 -8px #25383d, 12px 5px 0 -8px #25383d;
 }
 .heroPlayer span {
   position: absolute;
@@ -146,6 +146,30 @@
   text-align: center;
   font: 800 77px/1 Arial, sans-serif;
   transform: scaleX(.78);
+}
+.heroPlayer span::before,
+.heroPlayer span::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -89px;
+  width: 145px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c64033, #d94d3c);
+  box-shadow: inset 0 -7px 0 rgb(128 37 30 / .08);
+}
+.heroPlayer span::before {
+  right: 72%;
+  transform: rotate(-58deg);
+  transform-origin: right center;
+  clip-path: polygon(0 12%, 100% 0, 100% 100%, 5% 82%);
+}
+.heroPlayer span::after {
+  left: 72%;
+  transform: rotate(58deg);
+  transform-origin: left center;
+  clip-path: polygon(0 0, 100% 12%, 95% 82%, 0 100%);
 }
 .heroBoard {
   position: absolute;
