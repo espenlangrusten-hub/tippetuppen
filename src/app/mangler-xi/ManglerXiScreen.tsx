@@ -1,10 +1,10 @@
 "use client";
+
 import { useSearchParams } from "next/navigation";
 import { useGamePuzzle, GameSkeleton, GameUnavailable } from "@/components/GameLoader";
 import { ManglerXiGame } from "@/components/mangler-xi/ManglerXiGame";
 import type { MaskedPuzzle } from "@/lib/gameTypes";
 import { formatDateNo } from "@/lib/dates";
-import { BASE_PATH } from "@/lib/site";
 import design from "@/components/mangler-xi/ManglerXi.module.css";
 
 export function ManglerXiScreen() {
@@ -14,18 +14,22 @@ export function ManglerXiScreen() {
   const state = useGamePuzzle<MaskedPuzzle>("mangler-xi", nr);
 
   return (
-    <div className={design.page} style={{ "--xi-stadium": `url("${BASE_PATH}/design/stadium.webp")` } as React.CSSProperties}>
+    <div className={design.page}>
       <div className={design.pageHeading}>
+        <p className={design.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Manglende 11</p>
         <h1 className={design.title}>
-          Mangler XI{state.status === "ready" && state.isArchive && <span className="text-mist"> #{state.puzzle.number}</span>}
+          Manglende 11{state.status === "ready" && state.isArchive && <span> #{state.puzzle.number}</span>}
         </h1>
+        <p className={design.subtitle}>Hvilke spillere mangler i lagoppstillingen? Finn de 11 riktige spillerne og vis at du kan fotball.</p>
         {state.status === "ready" && (
-          <span className="text-sm text-mist">{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</span>
+          <p className={design.date}>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</p>
         )}
       </div>
-      {state.status === "loading" && <GameSkeleton />}
-      {(state.status === "empty" || state.status === "error") && <GameUnavailable game="mangler-xi" kind={state.status} archive={nr !== null} />}
-      {state.status === "ready" && <ManglerXiGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
+      <div className={design.gameArea}>
+        {state.status === "loading" && <GameSkeleton />}
+        {(state.status === "empty" || state.status === "error") && <GameUnavailable game="mangler-xi" kind={state.status} archive={nr !== null} />}
+        {state.status === "ready" && <ManglerXiGame puzzle={state.puzzle} isArchive={state.isArchive} today={state.today} />}
+      </div>
     </div>
   );
 }
