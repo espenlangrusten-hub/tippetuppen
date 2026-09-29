@@ -161,7 +161,7 @@
 .stopwatch::before { content: ""; position: absolute; top: -18px; width: 33px; height: 14px; border: 6px solid #193846; border-bottom: 0; border-radius: 5px 5px 0 0; }
 .stopwatch span { color: #17313c; font: 700 22px/1 "Courier New", monospace; letter-spacing: .03em; }
 .gameCopy { position: relative; min-height: 117px; padding: 11px 35px 29px 13px; }
-.gameCopy h3 { font: 700 20px/1 Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
+.gameCopy h2, .gameCopy h3 { font: 700 20px/1 Georgia, "Times New Roman", serif; letter-spacing: -.025em; }
 .gameCopy p { margin-top: 5px; color: #394851; font-size: 11px; line-height: 1.35; }
 .gameArrow { position: absolute; right: 13px; top: 11px; color: #20343f; font-size: 24px; line-height: 1; }
 .gameCopy small {
@@ -250,7 +250,7 @@
   .gameGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
   .gameArt { height: 108px; }
   .gameCopy { min-height: 114px; padding: 10px 27px 28px 11px; }
-  .gameCopy h3 { font-size: 17px; }
+  .gameCopy h2, .gameCopy h3 { font-size: 17px; }
   .gameCopy p { font-size: 10px; }
   .gameArrow { right: 9px; top: 9px; font-size: 20px; }
   .gameCopy small { left: 11px; font-size: 6px; }
