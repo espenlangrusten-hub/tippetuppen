@@ -305,72 +305,24 @@ export function LeagueScreen() {
       </div>
 
       {tab === "global" ? (
-        <>
-          <section className="card overflow-hidden">
-            {copy && <MonthChampion copy={copy} />}
-            <div className="border-b border-line p-4">
-              <h2 className="font-display text-2xl font-bold uppercase">Topp 100 – {copy ? copy.month : "denne måneden"}</h2>
-              <p className="text-xs text-mist">
-                Tabellen nullstilles den første i hver måned. Mangler XI, Målløs, Finn spilleren og Trener Genius gir hver opptil 100 ligapoeng per dag.
-              </p>
-            </div>
-            {copy && <MonthPulse copy={copy} />}
-            {boardStatus === "loading" ? (
-              <p className="p-5 text-mist" role="status">Henter ligaen …</p>
-            ) : boardStatus === "error" ? (
-              <div className="p-5" role="status">
-                <p className="text-mist">Kunne ikke hente ligaen.</p>
-                <button className="mt-2 underline" onClick={() => void load()}>Prøv igjen</button>
-              </div>
-            ) : (
-              <>
-                {rows.length ? (
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead className="text-left text-xs uppercase text-mist">
-                        <tr>
-                          <th scope="col" className="p-3">#</th>
-                          <th scope="col" className="p-3">Spiller</th>
-                          <th scope="col" className="p-3 text-right">Poeng</th>
-                          <th scope="col" className="p-3 text-right">Spill</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {rows.map((row) => (
-                          <LeagueRow key={row.username} row={row} own={user?.username === row.username} />
-                        ))}
-                      </tbody>
-                      {user && me && me.username === user.username && me.rank > 100 && (
-                        <tfoot className="border-t-2 border-line">
-                          <LeagueRow row={me} own />
-                        </tfoot>
-                      )}
-                    </table>
-                  </div>
-                ) : (
-                  <p className="p-5 text-mist">Ingen poeng i {copy ? copy.month : "denne måneden"} ennå. Bli den første på tabellen.</p>
-                )}
-                {user && !me && (
-                  <p className="border-t border-line p-4 text-sm font-bold">
-                    {user.username} – ikke rangert ennå. Fullfør dagens spill for å få en plassering.
-                  </p>
-                )}
-              </>
-            )}
-          </section>
-          {!user && (
-            <section className="card p-4 text-sm">
-              <span className="text-mist">Vil du lagre poeng og delta med egen profil? </span>
-              <Link href="/profil/#register" className="font-bold text-gold underline">Opprett spiller</Link>
-            </section>
-          )}
-          {boardStatus === "ready" && registered !== null && registered >= SHOW_REGISTERED_FROM && (
-            <div className="text-center text-mist">
-              <div className="text-xs uppercase tracking-widest">Registrerte spillere</div>
-              <div className="mt-1 font-display text-3xl text-snow">{registered.toLocaleString("nb-NO")}</div>
-            </div>
-          )}
-        </>
+        <LeagueDashboard
+          user={user}
+          rows={rows}
+          me={me}
+          registered={registered}
+          boardStatus={boardStatus}
+          monthLabel={copy?.month ?? "denne måneden"}
+          selected={selected}
+          createName={createName}
+          joinCode={joinCode}
+          message={message}
+          busy={busy}
+          onCreateName={setCreateName}
+          onJoinCode={(value) => setJoinCode(value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 12))}
+          onCreate={createLeague}
+          onJoin={joinLeague}
+          onRetry={() => void load()}
+        />
       ) : (
         <FriendLeagues
           user={user}
@@ -431,6 +383,204 @@ export function LeagueScreen() {
           }}
         />
       )}
+    </div>
+  );
+}
+
+
+function LeagueDashboard(props: {
+  user: SessionUser | null;
+  rows: Row[];
+  me: Row | null;
+  registered: number | null;
+  boardStatus: "loading" | "ready" | "error";
+  monthLabel: string;
+  selected: FriendLeagueDetail | null;
+  createName: string;
+  joinCode: string;
+  message: string;
+  busy: boolean;
+  onCreateName: (value: string) => void;
+  onJoinCode: (value: string) => void;
+  onCreate: (event: FormEvent) => void;
+  onJoin: (event: FormEvent) => void;
+  onRetry: () => void;
+}) {
+  const friendRows = props.selected?.rows ?? [];
+  const compactRows = friendRows.length
+    ? friendRows.slice(0, 10).map((row) => ({
+        rank: row.rank,
+        username: row.username,
+        avatarId: row.avatarId,
+        points: row.points,
+        played: row.played,
+      }))
+    : props.rows.slice(0, 10).map((row) => ({
+        rank: row.rank,
+        username: row.username,
+        avatarId: row.avatar_id,
+        points: row.points,
+        played: row.played,
+      }));
+
+  return (
+    <div className="league-dashboard">
+      <section className="league-profile-summary">
+        <div className="league-card-heading">
+          <h2>Min profil</h2>
+          <Link href="/profil/">Rediger profil <span aria-hidden="true">→</span></Link>
+        </div>
+        {props.user ? (
+          <>
+            <div className="league-profile-identity">
+              <ProfileAvatar avatarId={props.me?.avatar_id ?? null} size={76} />
+              <div>
+                <strong>{props.user.username}</strong>
+                <span>Din Tippetuppen-profil</span>
+              </div>
+            </div>
+            <div className="league-profile-stats">
+              <div><b>{(props.me?.points ?? 0).toLocaleString("nb-NO")}</b><span>poeng denne måneden</span></div>
+              <div><b>{props.me?.played ?? 0}</b><span>spill registrert</span></div>
+            </div>
+            <div className="league-profile-progress">
+              <span>Månedens form</span>
+              <div><i style={{ width: `${Math.min(100, Math.max(8, (props.me?.points ?? 0) / 30))}%` }} /></div>
+            </div>
+            <Link href="/profil/" className="league-profile-cta">Se og rediger profil</Link>
+          </>
+        ) : (
+          <div className="league-profile-empty">
+            <strong>Spill med egen profil</strong>
+            <p>Logg inn for å lagre poeng, bli med i venneligaer og få avatar.</p>
+            <Link href="/profil/#login" className="btn btn-primary">Logg inn</Link>
+          </div>
+        )}
+        <div className="league-profile-illustration" aria-hidden="true"><i /><i /><i /></div>
+      </section>
+
+      <section className="league-main-board">
+        <div className="league-main-title">
+          <div className="league-group-icon" aria-hidden="true">●●●</div>
+          <div>
+            <h2>{props.selected?.name ?? "Venneligaen"}</h2>
+            <p>{props.selected ? `Kamp om heder og fotballkunnskap. ${props.selected.rows.length} spillere.` : "Kamp om heder, ære og fotballkunnskap."}</p>
+          </div>
+        </div>
+
+        {props.boardStatus === "loading" && !compactRows.length ? (
+          <p className="league-board-status" role="status">Henter ligaen …</p>
+        ) : props.boardStatus === "error" && !compactRows.length ? (
+          <div className="league-board-status" role="status">
+            <p>Kunne ikke hente ligaen.</p>
+            <button className="underline" onClick={props.onRetry}>Prøv igjen</button>
+          </div>
+        ) : compactRows.length ? (
+          <table className="league-compact-table">
+            <thead><tr><th>Plass</th><th>Spiller</th><th>Runde</th><th>Totalt</th></tr></thead>
+            <tbody>
+              {compactRows.map((row) => (
+                <tr key={row.username} aria-current={props.user?.username === row.username ? "true" : undefined}>
+                  <td>{row.rank === 1 ? "♛" : row.rank}</td>
+                  <th><ProfileAvatar avatarId={row.avatarId} size={28} /><span>{row.username}</span></th>
+                  <td>{row.played}</td>
+                  <td>{row.points.toLocaleString("nb-NO")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="league-board-status">Ingen poeng ennå. Bli den første på tabellen.</p>
+        )}
+
+        <div className="league-main-footer">
+          <span>{props.selected ? "Venneliga" : "Åpen månedsliga"} · {props.monthLabel}</span>
+          <button type="button" onClick={() => document.getElementById("full-league-board")?.scrollIntoView({ behavior: "smooth" })}>
+            Se hele ligaen <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <aside className="league-side-actions">
+        <section className="league-action-card league-create-card">
+          <h2>Lag din egen venneliga</h2>
+          <p>Spill mot venner, kollegaer eller hele fotballgjengen. Hvem kan mest?</p>
+          {props.user ? (
+            <form onSubmit={props.onCreate}>
+              <input className="input" value={props.createName} onChange={(e) => props.onCreateName(e.target.value)} placeholder="Navn på liga" maxLength={40} aria-label="Navn på venneliga" />
+              <button className="btn btn-primary" disabled={props.busy || !props.createName.trim()}>Opprett liga <span aria-hidden="true">→</span></button>
+            </form>
+          ) : (
+            <Link href="/profil/#login" className="btn btn-primary">Logg inn for å opprette <span aria-hidden="true">→</span></Link>
+          )}
+          <div className="league-friends-art" aria-hidden="true"><i /><i /><i /></div>
+        </section>
+
+        <section className="league-action-card league-join-card">
+          <h2>Bli med i en venneliga</h2>
+          <p>Har du en ligakode fra en venn?</p>
+          {props.user ? (
+            <form onSubmit={props.onJoin}>
+              <input className="input" value={props.joinCode} onChange={(e) => props.onJoinCode(e.target.value)} placeholder="Skriv inn ligakode (f.eks. AB12CD)" autoCapitalize="characters" aria-label="Ligakode" />
+              <button className="btn btn-primary" disabled={props.busy || !props.joinCode.trim()}>Bli med i liga <span aria-hidden="true">→</span></button>
+            </form>
+          ) : (
+            <Link href="/profil/#login" className="btn btn-secondary">Logg inn først</Link>
+          )}
+        </section>
+
+        <section className="league-action-card league-activity-card">
+          <h2>Månedens toppspillere</h2>
+          {props.rows.slice(0, 4).map((row, index) => (
+            <div className="league-activity-row" key={row.username}>
+              <span>{index === 0 ? "★" : "↗"}</span>
+              <ProfileAvatar avatarId={row.avatar_id} size={25} />
+              <p><b>{row.username}</b> har {row.points.toLocaleString("nb-NO")} poeng</p>
+            </div>
+          ))}
+        </section>
+      </aside>
+
+      {props.message && <p className="league-dashboard-message">{props.message}</p>}
+
+      <section className="league-top-strip">
+        <div className="league-top-strip-heading">
+          <h2>🏆 Topp 5 denne måneden</h2>
+          <button type="button" onClick={() => document.getElementById("full-league-board")?.scrollIntoView({ behavior: "smooth" })}>Se hele topp 100 <span aria-hidden="true">→</span></button>
+        </div>
+        <div className="league-top-five">
+          {props.rows.slice(0, 5).map((row, index) => (
+            <div key={row.username} aria-current={props.user?.username === row.username ? "true" : undefined}>
+              <span>{index + 1}</span>
+              <ProfileAvatar avatarId={row.avatar_id} size={34} />
+              <p><b>{row.username}</b><small>{row.points.toLocaleString("nb-NO")} poeng</small></p>
+            </div>
+          ))}
+          {!props.rows.length && <p className="text-mist">Ingen poeng registrert ennå.</p>}
+        </div>
+      </section>
+
+      <details className="league-full-board" id="full-league-board">
+        <summary>Hele topp 100 – {props.monthLabel}</summary>
+        {props.boardStatus === "ready" && props.rows.length ? (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead className="text-left text-xs uppercase text-mist">
+                <tr><th className="p-3">#</th><th className="p-3">Spiller</th><th className="p-3 text-right">Poeng</th><th className="p-3 text-right">Spill</th></tr>
+              </thead>
+              <tbody>{props.rows.map((row) => <LeagueRow key={row.username} row={row} own={props.user?.username === row.username} />)}</tbody>
+              {props.user && props.me && props.me.username === props.user.username && props.me.rank > 100 && (
+                <tfoot className="border-t-2 border-line"><LeagueRow row={props.me} own /></tfoot>
+              )}
+            </table>
+          </div>
+        ) : (
+          <p className="p-4 text-mist">Ingen rangering tilgjengelig.</p>
+        )}
+        {props.registered !== null && props.registered >= SHOW_REGISTERED_FROM && (
+          <p className="league-registered">{props.registered.toLocaleString("nb-NO")} registrerte spillere</p>
+        )}
+      </details>
     </div>
   );
 }
