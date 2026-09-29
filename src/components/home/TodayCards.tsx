@@ -69,7 +69,7 @@ export function TodayCards() {
 
       <section id="spill" className={s.gamesSection} aria-label="Dagens spill">
         <div className={s.sectionHeading}>
-          <h2>Våre spill</h2>
+          <h3>Våre spill</h3>
           <p>Seks ulike måter å teste fotballkunnskapene dine på. Nye oppgaver hver dag!</p>
           <Link href="/arkiv/">Se alle spill <span aria-hidden="true">→</span></Link>
         </div>
@@ -107,7 +107,7 @@ export function TodayCards() {
                         : <p>{game.description}</p>}
                   </div>
                   <span className={s.gameArrow} aria-hidden="true">→</span>
-                  <small>{completed ? "✓ FULLFØRT I DAG" : game.slug === "kjappen" ? "Spill Kjappen →" : game.slug === "trener-genius" ? "Spill Trener Genius →" : "NYE OPPGAVER HVER DAG"}</small>
+                  <small>{completed ? "✓ Fullført" : game.slug === "kjappen" ? "Spill Kjappen →" : game.slug === "trener-genius" ? "Spill Trener Genius →" : "NYE OPPGAVER HVER DAG"}</small>
                 </div>
               </Link>
             );
