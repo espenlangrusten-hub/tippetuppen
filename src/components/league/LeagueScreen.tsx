@@ -287,15 +287,15 @@ export function LeagueScreen() {
   const copy = month ? monthCopy(month.month, month.champion) : null;
 
   return (
-    <div className="flex flex-col gap-4">
-      <section>
-        <h1 className="font-display text-4xl font-bold uppercase">🏆 Tippetuppen-ligaen</h1>
+    <div className="league-reference-page flex flex-col gap-4">
+      <section className="league-reference-hero">
+        <h1 className="font-display text-4xl font-bold uppercase">Liga og Profil</h1>
         <p className="mt-2 text-mist">
-          Konkurrer i den åpne månedsligaen, eller lag en privat venneliga med de samme Tippetuppen-poengene.
+          Følg med på venneligaen, sjekk plasseringen din og administrer profilen din. Fotball er best sammen!
         </p>
       </section>
 
-      <div className="flex gap-2">
+      <div className="league-reference-tabs flex gap-2">
         <button className={`btn ${tab === "global" ? "btn-primary" : "btn-secondary"}`} onClick={() => setTab("global")}>
           Topplisten
         </button>
