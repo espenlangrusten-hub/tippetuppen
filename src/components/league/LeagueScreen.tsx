@@ -463,8 +463,8 @@ function LeagueDashboard(props: {
         <div className="league-main-title">
           <div className="league-group-icon" aria-hidden="true">●●●</div>
           <div>
-            <h2>{props.selected?.name ?? "Venneligaen"}</h2>
-            <p>{props.selected ? `Kamp om heder og fotballkunnskap. ${props.selected.rows.length} spillere.` : "Kamp om heder, ære og fotballkunnskap."}</p>
+            <h2>{props.selected?.name ?? "Månedsligaen"}</h2>
+            <p>{props.selected ? `Kamp om heder og fotballkunnskap. ${props.selected.rows.length} spillere.` : "Åpen månedsliga for alle registrerte spillere."}</p>
           </div>
         </div>
 
