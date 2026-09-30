@@ -1,5 +1,7 @@
 "use client";
 
+import { ReferenceArt } from "@/components/layout/ReferenceArt";
+
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api";
@@ -237,7 +239,7 @@ export function ProfileScreen() {
   if (!user || !profile) {
     return (
       <div className="profile-reference-page flex flex-col gap-5">
-        <section className="profile-reference-hero">
+        <section className="profile-reference-hero"><div className="reference-hero-art"><ReferenceArt name="leagueHero" /></div>
           <h1 className="font-display text-4xl font-bold uppercase">Min profil</h1>
           <p className="mt-2 text-mist">Logg inn for å lagre poeng, delta i ligaer og bygge Tippetuppen-profilen din.</p>
         </section>
@@ -293,7 +295,7 @@ export function ProfileScreen() {
 
   return (
     <div className="profile-reference-page flex flex-col gap-5">
-      <section className="profile-reference-hero">
+      <section className="profile-reference-hero"><div className="reference-hero-art"><ReferenceArt name="leagueHero" /></div>
         <h1 className="font-display text-4xl font-bold uppercase">Min profil</h1>
         <p className="mt-2 text-mist">Din spilleridentitet, progresjon og innstillinger.</p>
       </section>

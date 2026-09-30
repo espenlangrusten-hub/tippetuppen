@@ -1,5 +1,7 @@
 "use client";
 
+import { ReferenceArt } from "@/components/layout/ReferenceArt";
+
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api";
@@ -7,7 +9,6 @@ import { clearSession, storedUser, updateStoredUser, type SessionUser } from "@/
 import { monthCopy, type Champion, type LeagueMonth } from "@/lib/monthlyLeague";
 import { BASE_PATH } from "@/lib/site";
 import { ProfileAvatar } from "@/components/profile/ProfileAvatar";
-import { MonthChampion, MonthPulse } from "./MonthChampion";
 
 const SHOW_REGISTERED_FROM = 100;
 
@@ -288,7 +289,7 @@ export function LeagueScreen() {
 
   return (
     <div className="league-reference-page flex flex-col gap-4">
-      <section className="league-reference-hero">
+      <section className="league-reference-hero"><div className="reference-hero-art"><ReferenceArt name="leagueHero" /></div>
         <h1 className="font-display text-4xl font-bold uppercase">Liga og Profil</h1>
         <p className="mt-2 text-mist">
           Følg med på venneligaen, sjekk plasseringen din og administrer profilen din. Fotball er best sammen!
@@ -456,7 +457,7 @@ function LeagueDashboard(props: {
             <Link href="/profil/#login" className="btn btn-primary">Logg inn</Link>
           </div>
         )}
-        <div className="league-profile-illustration" aria-hidden="true"><i /><i /><i /></div>
+        <div className="league-profile-illustration"><ReferenceArt name="profile" /></div>
       </section>
 
       <section className="league-main-board">
@@ -513,7 +514,7 @@ function LeagueDashboard(props: {
           ) : (
             <Link href="/profil/#login" className="btn btn-primary">Logg inn for å opprette <span aria-hidden="true">→</span></Link>
           )}
-          <div className="league-friends-art" aria-hidden="true"><i /><i /><i /></div>
+          <div className="league-friends-art"><ReferenceArt name="friends" /></div>
         </section>
 
         <section className="league-action-card league-join-card">

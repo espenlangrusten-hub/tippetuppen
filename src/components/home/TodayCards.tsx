@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ReferenceArt } from "@/components/layout/ReferenceArt";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { apiGet } from "@/lib/api";
@@ -59,12 +60,7 @@ export function TodayCards() {
         </div>
 
         <div className={s.heroArt} aria-hidden="true">
-          <Image src={BASE_PATH + "/design/stadium.webp"} alt="" fill priority sizes="(max-width: 760px) 100vw, 58vw" />
-          <div className={s.heroSky} />
-          <div className={s.heroHalftone} />
-          <div className={s.heroPlayer}><span>10</span></div>
-          <div className={s.heroBoard}>KUNNSKAP<br />GIR FLERE<br />GODE KAMPER</div>
-          <div className={s.heroFlag}><i />FOTBALL<br />ER BEST<br />SAMMEN</div>
+          <ReferenceArt name="homeHero" />
         </div>
       </section>
 
@@ -94,9 +90,7 @@ export function TodayCards() {
                 }
               >
                 <div className={s.gameArt}>
-                  {game.image && <Image src={BASE_PATH + game.image} alt="" fill sizes="(max-width: 760px) 50vw, 260px" />}
-                  {game.art === "kjappen" && <div className={s.stopwatch}><span>00:10</span></div>}
-                  <div className={s.printTexture} />
+                  <ReferenceArt name={game.art} />
                 </div>
                 <div className={s.gameCopy}>
                   <div>
@@ -124,15 +118,15 @@ export function TodayCards() {
             <p>Spill mot venner, kollegaer eller hele fotballgjengen. Hvem kan mest?</p>
             <span>Opprett liga <b aria-hidden="true">→</b></span>
           </div>
-          <div className={s.friendArt} aria-hidden="true"><i /><i /><i /></div>
-          <em>BEDRE<br />MED VENNER<br />PÅ LAG</em>
+          <div className={s.friendArt}><ReferenceArt name="friends" /></div>
+          
         </Link>
 
         <div className={s.sideStack}>
           <aside className={s.factCard}>
             <p className={s.factKicker}>★ Dagens fakta</p>
             <p>Rosenborg er den norske klubben med flest europacupkamper, med over 200 kamper i UEFA-turneringene.</p>
-            <span aria-hidden="true">♛</span>
+            <div className={s.factArt}><ReferenceArt name="trophy" /></div>
           </aside>
 
           <Link
