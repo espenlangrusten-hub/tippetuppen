@@ -1444,3 +1444,12 @@ padding:22px 18px
 font-size:25px
 }
 }
+@media (min-width: 761px) and (max-width: 940px) {
+  .stadium-search, .stadium-join { display: none; }
+}
+@media (max-width: 370px) {
+  .stadium-header .tt-wordmark { font-size: 21px; }
+  .stadium-header nav { gap: 12px; font-size: 12px; }
+  .stadium-header .tt-brand-ball, .stadium-header .tt-brand-ball svg { width: 22px; height: 22px; }
+  .stadium-header .tt-brand-slashes i { width: 4px; }
+}

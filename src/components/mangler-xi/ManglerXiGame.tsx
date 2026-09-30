@@ -333,7 +333,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
           <div className={design.statNumbers}><div><span>Riktige spillere</span><b>{found} / 11</b></div><div><span>Forsøk brukt</span><b>{triesTotal}</b></div></div>
         </section>
         <section className={design.cheerCard}><h2>Heia Norge!</h2><p>Én lagoppstilling.<br />Elleve navn.<br />Hvor mange husker du?</p><div><ReferenceArt name="cheer" /></div></section>
-        <section className={design.aboutCard}><h2>Om Manglende 11</h2><p>Hver dag får du en ny lagoppstilling fra en kjent kamp. Trykk på en drakt og gjett etternavnet. Du får seks forsøk per spiller og ledetråder underveis.</p><a href="/arkiv/">Se tidligere kamper →</a><div><ReferenceArt name="ball" /></div></section>
+        <section className={design.aboutCard}><h2>Om Manglende 11</h2><p>Hver dag får du en ny lagoppstilling fra en kjent kamp. Trykk på en drakt og gjett etternavnet. Du får seks forsøk per spiller og ledetråder underveis.</p><Link href="/arkiv/">Se tidligere kamper →</Link><div><ReferenceArt name="ball" /></div></section>
       </aside>
 
       {/* Pitch */}
@@ -551,7 +551,7 @@ function TileRow({ letters, states, small, activeIndex, hint }: { letters: strin
 
 function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedPlayer; ps: PlayerState; active: boolean; onClick: () => void; finished: boolean; positionLabel?: string }) {
   const jerseyId = useId().replace(/:/g, "");
-  
+
   const label = ps.name ? ps.name.split(" ").slice(-1)[0].toUpperCase() : p.wordLengths.map((n) => "·".repeat(n)).join(" ");
   const used = triesUsed(ps);
   return (
