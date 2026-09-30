@@ -22,7 +22,7 @@ const windows = {
 
 export function ReferenceArt({ name, className = "" }: { name: keyof typeof windows; className?: string }) {
   const [sheet, x, y, width, height] = windows[name];
-  return <span className={`reference-art ${className}`} aria-hidden="true" style={{ display: "block", position: "relative", overflow: "hidden", width: "100%", height: "100%", ...(name === "trophy" ? { clipPath: "polygon(62% 0,100% 0,100% 100%,0 100%,0 40%,36% 40%,36% 20%,62% 20%)" } : {}) }}>
+  return <span className={`reference-art ${className}`} aria-hidden="true" style={{ display: "block", position: "relative", overflow: "hidden", width: "100%", height: "100%", ...(name === "trophy" ? { clipPath: "polygon(62% 0,100% 0,100% 100%,0 100%,0 62%,50% 62%,50% 42%,62% 42%)" } : {}) }}>
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src={`${BASE_PATH}/design/reference/${sheet}.jpg`} alt="" draggable={false} style={{ position: "absolute", maxWidth: "none", width: `${1448 / width * 100}%`, height: `${1086 / height * 100}%`, left: `${-x / width * 100}%`, top: `${-y / height * 100}%` }} />
   </span>;
