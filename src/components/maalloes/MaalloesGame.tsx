@@ -280,14 +280,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
                         inputRef.current?.focus();
                       }}
                     >
-                      {suggestion.surname ? (
-                        <span className="flex items-baseline gap-2">
-                          <span className="font-semibold">{suggestion.surname}</span>
-                          <span className="truncate text-xs text-mist">{suggestion.label}</span>
-                        </span>
-                      ) : (
-                        suggestion.label
-                      )}
+                      {suggestion.label}
                     </button>
                   </li>
                 ))}
