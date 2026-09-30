@@ -569,3 +569,10 @@ transition:none
   .factArt { width: 118px; height: 145px; }
   .factCard p:nth-child(2) { max-width: 67%; }
 }
+@media (max-width: 370px) {
+  .gameCopy { padding-right: 12px; }
+  .gameCopy h2, .gameCopy h3 { padding-right: 14px; font-size: 16px; }
+  .gameCopy p { overflow-wrap: anywhere; }
+  .gameArrow { font-size: 20px; }
+  .friendCopy > span { padding-inline: 15px; gap: 12px; white-space: nowrap; }
+}
