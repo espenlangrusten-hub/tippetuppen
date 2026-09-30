@@ -57,8 +57,8 @@ test("pitch, keyboard, all attempts and saved progress survive the redesign", as
   const pitch = (await page.locator(".mxi-pitch").boundingBox())!;
   const panel = (await page.locator(".mxi-guess-panel").boundingBox())!;
   if (info.project.name === "desktop") {
-    expect(panel.x).toBeGreaterThan(pitch.x + pitch.width);
-    expect(Math.abs(panel.y - pitch.y)).toBeLessThan(3);
+    expect(Math.abs(panel.x - pitch.x)).toBeLessThan(3);
+    expect(panel.y).toBeGreaterThanOrEqual(pitch.y + pitch.height);
   } else expect(panel.y).toBeGreaterThanOrEqual(pitch.y + pitch.height);
   await page.screenshot({ path: `e2e/screenshots/mangler-xi-design-${info.project.name}.png`, fullPage: true });
 });

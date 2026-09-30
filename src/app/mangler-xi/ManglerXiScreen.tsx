@@ -1,5 +1,6 @@
 "use client";
 
+import { ReferenceArt } from "@/components/layout/ReferenceArt";
 import { useSearchParams } from "next/navigation";
 import { useGamePuzzle, GameSkeleton, GameUnavailable } from "@/components/GameLoader";
 import { ManglerXiGame } from "@/components/mangler-xi/ManglerXiGame";
@@ -15,7 +16,7 @@ export function ManglerXiScreen() {
 
   return (
     <div className={design.page}>
-      <div className={design.pageHeading}>
+      <div className={design.pageHeading}><div className={design.headingArt}><ReferenceArt name="xiHero" /></div>
         <p className={design.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Manglende 11</p>
         <h1 className={design.title}>
           Manglende 11{state.status === "ready" && state.isArchive && <span> #{state.puzzle.number}</span>}

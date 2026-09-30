@@ -1,4 +1,6 @@
 "use client";
+
+import { ReferenceArt } from "@/components/layout/ReferenceArt";
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { MaskedPuzzle, MaskedPlayer } from "@/lib/gameTypes";
@@ -299,7 +301,7 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
   return (
     <div className={`${design.shell} ${active ? design.hasActive : ""}`}>
       {/* Match header */}
-      <div className={design.match}>
+      <div className={design.match}><div className={design.matchArt}><ReferenceArt name="ground" /></div><p className={design.matchKicker}>Dagens kamp · {formatShortDateNo(puzzle.matchDate)}</p>
         <div className={design.scoreline}>{scoreline}</div>
         <div className={design.matchMeta}>
           {broadPositionsOnly ? "EM-kvalifisering 1998" : puzzle.stage ?? puzzle.competition}
@@ -325,10 +327,26 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
         </div>
       </div>
 
+      <aside className={design.sidebar}>
+        <section className={design.statCard}>
+          <h2>Dagens statistikk</h2>
+          <div className={design.statNumbers}><div><span>Riktige spillere</span><b>{found} / 11</b></div><div><span>Forsøk brukt</span><b>{triesTotal}</b></div></div>
+        </section>
+        <section className={design.cheerCard}><h2>Heia Norge!</h2><p>Én lagoppstilling.<br />Elleve navn.<br />Hvor mange husker du?</p><div><ReferenceArt name="cheer" /></div></section>
+        <section className={design.aboutCard}><h2>Om Manglende 11</h2><p>Hver dag får du en ny lagoppstilling fra en kjent kamp. Trykk på en drakt og gjett etternavnet. Du får seks forsøk per spiller og ledetråder underveis.</p><Link href="/arkiv/">Se tidligere kamper →</Link><div><ReferenceArt name="ball" /></div></section>
+      </aside>
+
       {/* Pitch */}
       {broadPositionsOnly && <p className={design.notice}>Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
       <div className={`mxi-pitch ${design.pitch}`}>
-        <div className={design.pitchLines} aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className={design.pitchLines} aria-hidden="true">
+          <svg viewBox="0 0 1000 470" preserveAspectRatio="none" fill="none" stroke="#edeed6" strokeWidth="2" opacity=".78">
+            <path d="M120 18H880L982 452H18Z M75 211H925" />
+            <ellipse cx="500" cy="235" rx="105" ry="67" />
+            <path d="M370 18L356 76H644L630 18 M428 18L422 43H578L572 18 M270 452L297 345H703L730 452 M379 452L388 413H612L621 452" />
+            <path d="M18 432Q45 432 44 452 M956 452Q955 432 978 432 M120 36Q139 36 141 18 M859 18Q861 36 880 36" />
+          </svg>
+        </div>
         <div className={design.pitchRows}>
           {rows.map((row, ri) => (
             <div key={ri} className={design.pitchRow}>
@@ -540,7 +558,7 @@ function TileRow({ letters, states, small, activeIndex, hint }: { letters: strin
 
 function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedPlayer; ps: PlayerState; active: boolean; onClick: () => void; finished: boolean; positionLabel?: string }) {
   const jerseyId = useId().replace(/:/g, "");
-  const keeper = p.pos === "GK";
+
   const label = ps.name ? ps.name.split(" ").slice(-1)[0].toUpperCase() : p.wordLengths.map((n) => "·".repeat(n)).join(" ");
   const used = triesUsed(ps);
   return (
@@ -555,7 +573,7 @@ function Shirt({ p, ps, active, onClick, finished, positionLabel }: { p: MaskedP
       <div className={design.jersey}>
         <svg viewBox="0 0 100 108" aria-hidden="true">
           <defs>
-            <linearGradient id={`${jerseyId}-body`} x1="0" x2="1" y1="0" y2="0.7"><stop stopColor={keeper ? "#178257" : "#e32246"} /><stop offset=".45" stopColor={keeper ? "#116944" : "#c7082a"} /><stop offset="1" stopColor={keeper ? "#06452e" : "#800e24"} /></linearGradient>
+            <linearGradient id={`${jerseyId}-body`} x1="0" x2="1" y1="0" y2="0.7"><stop stopColor={"#fffdf3"} /><stop offset=".45" stopColor={"#f7f5eb"} /><stop offset="1" stopColor={"#deddd1"} /></linearGradient>
             <linearGradient id={`${jerseyId}-light`} x1="0" x2="1"><stop stopColor="#fff" stopOpacity=".2" /><stop offset=".45" stopColor="#fff" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".25" /></linearGradient>
           </defs>
           <path d="M31 8 39 4 Q50 12 61 4 L69 8 85 15 97 39 80 47 73 32 75 101 Q50 107 25 101 L27 32 20 47 3 39 15 15Z" fill={`url(#${jerseyId}-body)`} stroke={active ? "#c2ff52" : "#ffffff88"} strokeWidth={active ? 2.8 : 1} />
