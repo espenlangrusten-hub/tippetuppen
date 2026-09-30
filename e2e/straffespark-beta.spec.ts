@@ -29,7 +29,13 @@ test("daily Straffespark plays exactly five questions and restarts the same dail
 test("home presents Straffespark as a daily game after Finn spilleren", async ({ page }) => {
   await page.goto("/");
   const cards = await page.getByRole("region", { name: "Dagens spill" }).getByRole("heading", { level: 2 }).allTextContents();
-  expect(cards).toHaveLength(4);
+  expect(cards).toHaveLength(5);
+  const trainer = page.getByRole("link", { name: "Spill Trener Genius", exact: true });
+  const kjappen = page.getByRole("link", { name: "Spill Kjappen quizshow med venner", exact: true });
+  await expect(trainer).toBeVisible();
+  const trainerBox = (await trainer.boundingBox())!;
+  const kjappenBox = (await kjappen.boundingBox())!;
+  expect(kjappenBox.y).toBeGreaterThanOrEqual(trainerBox.y + trainerBox.height);
   expect(cards.findIndex((s) => s.includes("Finn spilleren"))).toBeGreaterThanOrEqual(0);
   expect(cards.findIndex((s) => s.includes("Straffespark"))).toBeGreaterThan(cards.findIndex((s) => s.includes("Finn spilleren")));
   await expect(page.getByRole("link", { name: "Spill Straffespark, dagens 5", exact: true })).toHaveAttribute("href", /\/straffespark\//);
