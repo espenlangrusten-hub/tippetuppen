@@ -28,7 +28,7 @@ type Final = {
   explanation: string | null;
 };
 type GameState = { v: 1; puzzleId: string; entries: Entry[]; final: Final | null; startedAt: string | null; finishedAt: string | null };
-type Suggestion = { id: string; label: string };
+type Suggestion = { id: string; label: string; surname?: string };
 
 const ANSWERS = 5;
 
@@ -62,7 +62,8 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
   useEffect(() => {
     // Both kinds get suggestions. Club questions are the majority of the bank, and a
     // wrong spelling costs the same 100 points as a wrong answer.
-    if ((puzzle.answerKind !== "player" && puzzle.answerKind !== "club") || text.trim().length < 2 || state?.final) {
+    const minChars = puzzle.answerKind === "player" ? 1 : 2;
+    if ((puzzle.answerKind !== "player" && puzzle.answerKind !== "club") || text.trim().length < minChars || state?.final) {
       setSuggestions([]);
       return;
     }
@@ -249,13 +250,13 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
               className="input"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder={puzzle.answerKind === "club" ? "Skriv et lag …" : puzzle.answerKind === "player" ? "Skriv en spiller …" : "Skriv et navn …"}
+              placeholder={puzzle.answerKind === "club" ? "Skriv et lag …" : puzzle.answerKind === "player" ? "Skriv etternavn …" : "Skriv et navn …"}
               autoComplete="off"
               autoCapitalize="words"
               enterKeyHint="send"
               aria-label="Ditt svar"
               role="combobox"
-              aria-autocomplete={puzzle.answerKind === "player" ? "list" : "none"}
+              aria-autocomplete={puzzle.answerKind === "player" || puzzle.answerKind === "club" ? "list" : "none"}
               aria-expanded={suggestions.length > 0}
               aria-controls="player-suggestions"
               maxLength={80}
@@ -264,7 +265,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
               Svar
             </button>
             {suggestions.length > 0 && (
-              <ul id="player-suggestions" role="listbox" aria-label="Forslag" className="absolute left-0 right-20 top-full z-20 mt-1 overflow-hidden rounded-xl border border-line bg-ink-2 shadow-xl">
+              <ul id="player-suggestions" role="listbox" aria-label="Forslag" className="absolute left-0 right-20 top-full z-20 mt-1 max-h-72 overflow-y-auto rounded-xl border border-line bg-ink-2 shadow-xl">
                 {suggestions.map((suggestion) => (
                   <li key={suggestion.id} role="none">
                     <button
@@ -297,7 +298,7 @@ export function MaalloesGame({ puzzle, isArchive, today }: { puzzle: MaalloesPub
         )}
         {!f && (
           <p className="mt-2 text-xs text-fog">
-            Etternavn holder for spillere. Spillerforslagene kommer fra hele registeret og avslører ikke fasiten. Alle svar kan endres før du sender inn.
+            Skriv etternavn og velg spiller fra listen. Et unikt etternavn holder også alene. Forslagene kommer fra hele spillerregisteret og avslører ikke fasiten. Alle svar kan endres før du sender inn.
           </p>
         )}
       </div>
