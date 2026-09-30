@@ -26,7 +26,7 @@ const games: HomeGame[] = [
   { slug: "maalloes", recordSlug: "maalloes", name: "Målløs", description: "Gjett kamper uten at noen scorer.", art: "goal", image: "/design/goal.webp" },
   { slug: "finn-spilleren", recordSlug: "finn-spilleren", name: "Finn spilleren", description: "Hvem er spilleren vi er på jakt etter?", art: "mystery", image: "/design/mystery.webp" },
   { slug: "straffespark", name: "Straffespark", description: "Fem nye spørsmål hver dag.", art: "penalty", image: "/design/penalty.webp" },
-  { slug: "trener-genius", recordSlug: "trener-genius", name: "Trener Genius", description: "Fire spørsmål. Ett taktisk valg.", art: "trainer", image: "/trener-genius/dugout.webp" },
+  { slug: "trener-genius", recordSlug: "trener-genius", name: "Trener Genius", description: "Fire spørsmål. Ett taktisk valg.", art: "trainer", image: "/trener-genius/card-retro.webp" },
   { slug: "kjappen", name: "Kjappen", description: "2–4 spillere · 5 spørsmål", art: "kjappen" },
 ];
 
