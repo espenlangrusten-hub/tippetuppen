@@ -132,6 +132,7 @@ transition:transform .15s
 transform:translateY(-3px)
 }
 .gameArt {
+position:relative;
 height:auto;
 aspect-ratio:1.9;
 overflow:hidden
@@ -254,42 +255,6 @@ right:0;
 bottom:0;
 width:53%;
 height:47%
-}
-.trainerCard {
-position:relative;
-grid-column:1/-1;
-min-height:75px;
-overflow:hidden;
-border:1px solid #e0dbd2;
-border-radius:9px;
-background:#eee9df
-}
-.trainerCard>img {
-object-fit:cover;
-object-position:right 40%;
-opacity:.12
-}
-.trainerCard>div {
-position:relative;
-display:flex;
-align-items:center;
-gap:22px;
-padding:20px
-}
-.trainerCard small {
-font-size:9px;
-letter-spacing:.13em
-}
-.trainerCard h3 {
-font:700 22px Georgia,serif
-}
-.trainerCard p {
-font-size:13px
-}
-.trainerCard b {
-margin-left:auto;
-font-size:14px;
-color:#145743
 }
 .communityGrid :global(.home-leaderboard) {
 min-height:225px;
@@ -507,6 +472,7 @@ display:grid;
 grid-template-columns:42% 58%
 }
 .gameCard:last-child .gameArt {
+position:relative;
 height:100%;
 aspect-ratio:auto
 }
@@ -537,19 +503,7 @@ max-width:72%
 width:150px;
 height:95px
 }
-.trainerCard>div {
-flex-wrap:wrap;
-gap:8px 16px
-}
-.trainerCard p {
-width:100%
-}
-.trainerCard b {
-margin-left:0
-}
-.trainerCard small {
-width:100%
-}
+
 }
 @media(prefers-reduced-motion:reduce) {
 .gameCard {
@@ -575,4 +529,13 @@ transition:none
   .gameCopy p { overflow-wrap: anywhere; }
   .gameArrow { font-size: 20px; }
   .friendCopy > span { padding-inline: 15px; gap: 12px; white-space: nowrap; }
+}
+
+.trainer .gameArt > img { object-fit: cover; }
+.gameCard:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 22% 1fr; }
+.gameCard:last-child .gameArt { height: 100%; aspect-ratio: auto; }
+@media (max-width: 760px) {
+  .gameCard:nth-last-child(2) { grid-column: 1 / -1; display: grid; grid-template-columns: 42% 58%; }
+  .gameCard:nth-last-child(2) .gameArt { height: 100%; aspect-ratio: auto; }
+  .gameCard:last-child { grid-template-columns: 42% 58%; }
 }
