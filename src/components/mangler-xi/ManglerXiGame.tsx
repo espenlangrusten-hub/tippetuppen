@@ -339,7 +339,14 @@ export function ManglerXiGame({ puzzle, isArchive, today }: { puzzle: MaskedPuzz
       {/* Pitch */}
       {broadPositionsOnly && <p className={design.notice}>Vist som 4–4–2 med Håland på midtbanen. Eksakt kampformasjon og draktnumre er ikke dokumentert.</p>}
       <div className={`mxi-pitch ${design.pitch}`}>
-        <div className={design.pitchLines} aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className={design.pitchLines} aria-hidden="true">
+          <svg viewBox="0 0 1000 470" preserveAspectRatio="none" fill="none" stroke="#edeed6" strokeWidth="2" opacity=".78">
+            <path d="M120 18H880L982 452H18Z M75 211H925" />
+            <ellipse cx="500" cy="235" rx="105" ry="67" />
+            <path d="M370 18L356 76H644L630 18 M428 18L422 43H578L572 18 M270 452L297 345H703L730 452 M379 452L388 413H612L621 452" />
+            <path d="M18 432Q45 432 44 452 M956 452Q955 432 978 432 M120 36Q139 36 141 18 M859 18Q861 36 880 36" />
+          </svg>
+        </div>
         <div className={design.pitchRows}>
           {rows.map((row, ri) => (
             <div key={ri} className={design.pitchRow}>

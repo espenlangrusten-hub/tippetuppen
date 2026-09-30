@@ -1453,3 +1453,10 @@ font-size:25px
   .stadium-header .tt-brand-ball, .stadium-header .tt-brand-ball svg { width: 22px; height: 22px; }
   .stadium-header .tt-brand-slashes i { width: 4px; }
 }
+.tt-reference-logo { display: block; width: 270px; height: 40px; }
+.tt-footer .tt-reference-logo { width: 189px; height: 28px; }
+@media (max-width: 1100px) { .stadium-header .tt-reference-logo { width: 236px; height: 35px; } }
+@media (max-width: 760px) { .stadium-header .tt-reference-logo { width: 182px; height: 27px; } }
+@media (max-width: 370px) { .stadium-header .tt-reference-logo { width: 162px; height: 24px; } }
+.league-create-card > p { position: relative; z-index: 2; }
+.league-friends-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#f0eadd,transparent 20%); }

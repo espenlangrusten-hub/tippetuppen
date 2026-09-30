@@ -1188,3 +1188,7 @@ height:auto
 }
 }
 .pitch.pitch { display: block; }
+.pitchLines { inset: 0; transform: none; border: 0; }
+.pitchLines::before, .pitchLines::after { display: none; }
+.pitchLines svg { width: 100%; height: 100%; }
+.pitch.pitch { background-image: radial-gradient(circle, #f7f1d80d .6px, transparent .9px), repeating-linear-gradient(90deg,#246844 0 12.5%,#236440 12.5% 25%); background-size: 3px 3px, auto; }

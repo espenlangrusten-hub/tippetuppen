@@ -1,16 +1,12 @@
 import Link from "next/link";
-import { FootballIcon } from "./FootballIcon";
+import { ReferenceArt } from "./ReferenceArt";
 
 export function Footer() {
   return (
     <footer className="tt-footer">
       <div className="tt-footer-inner">
         <Link href="/" className="stadium-brand tt-wordmark tt-footer-brand" aria-label="Tippetuppen – forsiden">
-          <span className="tt-brand-mark" aria-hidden="true">
-            <span className="tt-brand-slashes"><i /><i /><i /></span>
-            <span className="tt-brand-ball"><FootballIcon /></span>
-          </span>
-          <span>Tippetuppen</span>
+          <span className="tt-reference-logo"><ReferenceArt name="logo" /></span>
         </Link>
         <nav className="tt-footer-links" aria-label="Bunnmeny">
           <Link href="/om/">Om Tippetuppen</Link>

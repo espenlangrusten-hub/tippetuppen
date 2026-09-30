@@ -3,7 +3,8 @@ import { BASE_PATH } from "@/lib/site";
 // Art-only windows into the supplied design sheets. Keeping the originals intact
 // avoids recompression; text, controls and user data are always rendered as HTML.
 const windows = {
-  homeHero: ["home", 550, 74, 868, 339],
+  logo: ["home", 70, 22, 270, 40],
+  homeHero: ["home", 615, 74, 803, 339],
   leagueHero: ["league", 550, 74, 868, 205],
   xiHero: ["xi", 630, 74, 788, 213],
   xi: ["home", 74, 483, 251, 132],
@@ -12,7 +13,7 @@ const windows = {
   penalty: ["home", 861, 484, 246, 131],
   kjappen: ["home", 1123, 484, 253, 131],
   friends: ["home", 778, 765, 267, 221],
-  trophy: ["home", 1210, 882, 167, 103],
+  trophy: ["home", 1244, 822, 133, 163],
   profile: ["league", 32, 796, 461, 84],
   cheer: ["xi", 1202, 684, 190, 152],
   ball: ["xi", 1270, 875, 120, 120],
@@ -21,7 +22,7 @@ const windows = {
 
 export function ReferenceArt({ name, className = "" }: { name: keyof typeof windows; className?: string }) {
   const [sheet, x, y, width, height] = windows[name];
-  return <span className={`reference-art ${className}`} aria-hidden="true" style={{ display: "block", position: "relative", overflow: "hidden", width: "100%", height: "100%" }}>
+  return <span className={`reference-art ${className}`} aria-hidden="true" style={{ display: "block", position: "relative", overflow: "hidden", width: "100%", height: "100%", ...(name === "trophy" ? { clipPath: "polygon(62% 0,100% 0,100% 100%,0 100%,0 40%,36% 40%,36% 20%,62% 20%)" } : {}) }}>
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img src={`${BASE_PATH}/design/reference/${sheet}.jpg`} alt="" draggable={false} style={{ position: "absolute", maxWidth: "none", width: `${1448 / width * 100}%`, height: `${1086 / height * 100}%`, left: `${-x / width * 100}%`, top: `${-y / height * 100}%` }} />
   </span>;

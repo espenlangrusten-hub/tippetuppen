@@ -556,3 +556,16 @@ width:100%
 transition:none
 }
 }
+/* Final visual review: no text from the reference sheet enters art windows. */
+.heroArt { width: 57.8%; }
+.communityGrid :global(.home-leaderboard-heading) { min-height: 44px; gap: 8px; }
+.communityGrid :global(.home-leaderboard-table td),
+.communityGrid :global(.home-leaderboard-table th) { padding-block: 3px; }
+.communityGrid :global(.home-leaderboard-links > a) { color: #256080; }
+.factArt { width: 44%; height: 74%; }
+@media (max-width: 760px) {
+  .heroArt { width: 100%; aspect-ratio: 803 / 339; }
+  .friendCopy p { max-width: 175px; }
+  .factArt { width: 118px; height: 145px; }
+  .factCard p:nth-child(2) { max-width: 67%; }
+}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FootballIcon } from "./FootballIcon";
+import { ReferenceArt } from "./ReferenceArt";
 import { apiGet } from "@/lib/api";
 import { storedUser, type SessionUser } from "@/lib/auth";
 import { ProfileAvatar } from "@/components/profile/ProfileAvatar";
@@ -50,11 +50,7 @@ export function Header() {
     <header className="stadium-header">
       <div className="stadium-header-inner">
         <Link href="/" className="stadium-brand tt-wordmark" aria-label="Tippetuppen – forsiden">
-          <span className="tt-brand-mark" aria-hidden="true">
-            <span className="tt-brand-slashes"><i /><i /><i /></span>
-            <span className="tt-brand-ball"><FootballIcon /></span>
-          </span>
-          <span>Tippetuppen</span>
+          <span className="tt-reference-logo"><ReferenceArt name="logo" /></span>
         </Link>
 
         <nav aria-label="Hovedmeny">
