@@ -3328,14 +3328,6 @@
     "enabled": true
   },
   {
-    "word": "BJARG",
-    "label": "IL Bjarg",
-    "category": "klubb",
-    "difficulty": 4,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
     "word": "SENJA",
     "label": "FK Senja",
     "category": "klubb",
