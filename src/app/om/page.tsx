@@ -25,7 +25,7 @@ export default function Page() {
         <b className="text-snow">Trener Genius</b> handler om trenerne i norsk toppfotball: fire spørsmål med fire svaralternativer, og du velger selv når du vil gå offensivt.
       </p>
       <p className="text-mist">
-        <b className="text-snow">Gullordet</b> er Tippetuppens fem-bokstavers ordspill. Du har seks forsøk på et norsk ord, navn eller uttrykk med tilknytning til fotball. Grønt betyr riktig bokstav på riktig plass, gult betyr riktig bokstav på feil plass.
+        <b className="text-snow">Gullordet</b> er Tippetuppens fem-bokstavers ordspill. Dagens fasit er fotballrelatert, men vanlige norske ord kan brukes som gjetninger. Du har seks forsøk. Grønt betyr riktig bokstav på riktig plass, gult betyr riktig bokstav på feil plass.
       </p>
       <p className="text-mist">
         <b className="text-snow">Kjappen</b> er et quizshow for to til fire spillere i samme rom eller på hver sin telefon. Først på knappen får svare. Kjappen er fortsatt i beta.
@@ -35,7 +35,7 @@ export default function Page() {
       </p>
       <h2 className="font-display text-2xl font-bold uppercase">Data og kilder</h2>
       <p className="text-mist">
-        Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/kontakt" className="underline">kontaktskjemaet</Link>.
+        Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Gullordets ordliste for vanlige norske gjetninger bygger på Norsk ordbank – bokmål 2005 fra Språkrådet og Universitetet i Bergen, tilgjengelig fra Språkbanken under CC BY 4.0. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/kontakt" className="underline">kontaktskjemaet</Link>.
       </p>
       <h2 className="font-display text-2xl font-bold uppercase">Uavhengig</h2>
       <p className="text-mist">Tippetuppen er et uavhengig hobbyprosjekt og har ingen tilknytning til Norges Fotballforbund, Norsk Toppfotball eller noen klubb. Spillene er inspirert av klassiske daglige ordspill, med egne regler, egen design og egen norsk database.</p>
