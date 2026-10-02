@@ -6,14 +6,23 @@ import { loadRecords } from "@/lib/storage";
 export function StatsView({ today }: { today: string }) {
   const [mxi, setMxi] = useState<GameRecord[]>([]);
   const [mal, setMal] = useState<GameRecord[]>([]);
+  const [finn, setFinn] = useState<GameRecord[]>([]);
+  const [genius, setGenius] = useState<GameRecord[]>([]);
+  const [gull, setGull] = useState<GameRecord[]>([]);
   useEffect(() => {
     setMxi(loadRecords("mangler-xi"));
     setMal(loadRecords("maalloes"));
+    setFinn(loadRecords("finn-spilleren"));
+    setGenius(loadRecords("trener-genius"));
+    setGull(loadRecords("gullordet"));
   }, []);
-  const all = [...mxi, ...mal];
+  const all = [...mxi, ...mal, ...finn, ...genius, ...gull];
   const streak = computeStreak(all, today);
   const sMxi = computeStreak(mxi, today);
   const sMal = computeStreak(mal, today);
+  const sFinn = computeStreak(finn, today);
+  const sGenius = computeStreak(genius, today);
+  const sGull = computeStreak(gull, today);
   const officialMxi = mxi.filter((r) => !r.archive);
   const officialMal = mal.filter((r) => !r.archive);
   const avg = (xs: number[]) => (xs.length ? Math.round((xs.reduce((a, b) => a + b, 0) / xs.length) * 10) / 10 : null);
@@ -62,6 +71,33 @@ export function StatsView({ today }: { today: string }) {
           <Stat label="Snitt poeng" value={avg(mal.map((r) => r.score))?.toString() ?? "–"} small />
         </div>
         <p className="mt-2 text-xs text-mist">Rekke: {sMal.current} · beste {sMal.best}</p>
+      </section>
+      <section className="card p-4">
+        <h2 className="font-display text-2xl font-bold uppercase">🕵️ Finn spilleren</h2>
+        <div className="mt-2 grid grid-cols-3 gap-3">
+          <Stat label="Spilt" value={String(finn.length)} small />
+          <Stat label="Løst" value={String(finn.filter((r) => r.won).length)} small />
+          <Stat label="Snitt poeng" value={avg(finn.map((r) => r.score))?.toString() ?? "–"} small />
+        </div>
+        <p className="mt-2 text-xs text-mist">Rekke: {sFinn.current} · beste {sFinn.best}</p>
+      </section>
+      <section className="card p-4">
+        <h2 className="font-display text-2xl font-bold uppercase">🧠 Trener Genius</h2>
+        <div className="mt-2 grid grid-cols-3 gap-3">
+          <Stat label="Spilt" value={String(genius.length)} small />
+          <Stat label="4 av 4" value={String(genius.filter((r) => r.won).length)} small />
+          <Stat label="Snitt poeng" value={avg(genius.map((r) => r.score))?.toString() ?? "–"} small />
+        </div>
+        <p className="mt-2 text-xs text-mist">Rekke: {sGenius.current} · beste {sGenius.best}</p>
+      </section>
+      <section className="card p-4">
+        <h2 className="font-display text-2xl font-bold uppercase">🟩 Gullordet</h2>
+        <div className="mt-2 grid grid-cols-3 gap-3">
+          <Stat label="Spilt" value={String(gull.length)} small />
+          <Stat label="Løst" value={String(gull.filter((r) => r.won).length)} small />
+          <Stat label="Snitt poeng" value={avg(gull.map((r) => r.score))?.toString() ?? "–"} small />
+        </div>
+        <p className="mt-2 text-xs text-mist">Rekke: {sGull.current} · beste {sGull.best}</p>
       </section>
       <section className="card p-4 text-sm text-mist">
         <p>

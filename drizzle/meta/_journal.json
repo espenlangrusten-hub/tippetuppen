@@ -92,6 +92,13 @@
       "when": 1790636580000,
       "tag": "0012_social_profiles",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1790929200000,
+      "tag": "0013_gullordet",
+      "breakpoints": true
     }
   ]
 }

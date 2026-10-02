@@ -8,6 +8,7 @@ import { getDbHandle, schema as s } from "../src/server/db";
 import { buildManglerXiPuzzles } from "../src/server/puzzles/manglerXi";
 import { buildMaalloesPuzzles } from "../src/server/puzzles/maalloes";
 import { buildFinnSpillerenPuzzles } from "../src/server/puzzles/finnSpilleren";
+import { buildGullordetPuzzles } from "../src/server/puzzles/gullordet";
 import { extendSchedule, runwayFor } from "../src/server/puzzles/scheduler";
 import { osloDateKey } from "../src/lib/dates";
 
@@ -30,11 +31,12 @@ step(`Built ${mxi.length} Mangler XI puzzles. Reading club and honours data…`)
 const mal = await buildMaalloesPuzzles(db);
 const finn = await buildFinnSpillerenPuzzles(db);
 const genius = buildGeniusPuzzles();
-step(`Built ${genius.length} reviewed Trener Genius rounds.`);
+const gull = await buildGullordetPuzzles(db);
+step(`Built ${genius.length} reviewed Trener Genius rounds and ${gull.length} Gullordet rounds.`);
 step(`Built ${mal.length} Målløs and ${finn.length} Finn spilleren puzzles. Writing…`);
 // Written 200 at a time: one statement per puzzle took over ten minutes once Trener
 // Genius joined the pool, and pushed the data job past its timeout.
-const rows = [...mxi, ...mal, ...finn, ...genius]
+const rows = [...mxi, ...mal, ...finn, ...genius, ...gull]
   .filter((p) => !published.has(p.id))
   .map((p) => ({ id: p.id, game: p.game, kind: p.kind, title: p.title, payload: p.payload as unknown as Record<string, unknown>, difficulty: p.difficulty, quality: p.quality, era: p.era, tags: p.tags, fingerprint: p.fingerprint, sourceRef: p.sourceRef }));
 let upserts = 0;
@@ -60,14 +62,27 @@ for (let i = 0; i < rows.length; i += 200) {
   upserts += batch.length;
   step(`  …${upserts} puzzles written`);
 }
+
+// Keep the private word → puzzle link outside puzzles.payload so the answer cannot
+// leak through /today, /archive or the static client bundle.
+const gullLinks = gull.map((p) => ({ puzzleId: p.id, wordId: Number(p.sourceRef) }));
+for (let i = 0; i < gullLinks.length; i += 500) {
+  await db
+    .insert(s.gullordetPuzzleWords)
+    .values(gullLinks.slice(i, i + 500))
+    .onConflictDoUpdate({
+      target: s.gullordetPuzzleWords.puzzleId,
+      set: { wordId: sql`excluded.word_id` },
+    });
+}
 // Puzzles whose source disappeared are disabled (never deleted: schedule history references them).
-const known = new Set([...mxi, ...mal, ...finn, ...genius].map((p) => p.id).concat([...published]));
+const known = new Set([...mxi, ...mal, ...finn, ...genius, ...gull].map((p) => p.id).concat([...published]));
 const existing = await db.select({ id: s.puzzles.id }).from(s.puzzles);
 for (const e of existing) if (!known.has(e.id)) await db.update(s.puzzles).set({ eligible: false }).where(eq(s.puzzles.id, e.id));
 
-console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs, ${finn.length} Finn spilleren (${upserts} upserted).`);
+console.log(`Puzzles: ${mxi.length} Mangler XI, ${mal.length} Målløs, ${finn.length} Finn spilleren, ${genius.length} Trener Genius, ${gull.length} Gullordet (${upserts} upserted).`);
 step("Scheduling days…");
-for (const game of ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const) {
+for (const game of ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const) {
   const r = await extendSchedule(db, game, from, days);
   const runway = await runwayFor(db, game, osloDateKey());
   console.log(`${game}: +${r.added} scheduled from ${from}${r.exhaustedAt ? ` (exhausted at ${r.exhaustedAt})` : ""}; runway ${runway.remainingDays} days (${runway.eligiblePuzzles} eligible, ${runway.belowPolicy} below policy).`);

@@ -539,3 +539,34 @@ transition:none
   .gameCard:nth-last-child(2) .gameArt { height: 100%; aspect-ratio: auto; }
   .gameCard:last-child { grid-template-columns: 42% 58%; }
 }
+
+/* Gullordet adds a sixth daily tile; keep the daily set balanced before the wide Kjappen card. */
+.gameGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.word .gameArt {
+  display: grid;
+  place-items: center;
+  background: #eef1e8;
+}
+.wordLogo {
+  object-fit: contain;
+  padding: 10px;
+}
+@media (max-width: 1100px) {
+  .gameGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .gameGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gameCard:nth-last-child(2) {
+    grid-column: auto;
+    display: block;
+  }
+  .gameCard:nth-last-child(2) .gameArt {
+    height: auto;
+    aspect-ratio: 1.9;
+  }
+  .gameCard:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 42% 58%;
+  }
+}

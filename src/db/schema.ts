@@ -308,7 +308,10 @@ export const playerClubSpells = tt.table(
 // Puzzles and schedule
 // ---------------------------------------------------------------------------
 
-export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const;
+export const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const;
+
+export const GULLORDET_CATEGORIES = ["spiller", "trener", "klubb", "landslag", "begrep"] as const;
+export type GullordetCategory = (typeof GULLORDET_CATEGORIES)[number];
 export type GameId = (typeof GAMES)[number];
 
 export const puzzles = tt.table(
@@ -357,6 +360,47 @@ export const schedule = tt.table(
     uniqueIndex("schedule_game_number").on(t.game, t.number),
     index("schedule_puzzle").on(t.puzzleId),
   ],
+);
+
+/**
+ * Gullordet word bank.
+ *
+ * The answer lives in a server-only table instead of puzzles.payload. That keeps the
+ * Wordle-style answer out of the static client bundle and lets the same dictionary hold
+ * both daily answers and accepted-but-never-scheduled guesses.
+ */
+export const gullordetWords = tt.table(
+  "gullordet_words",
+  {
+    id: serial("id").primaryKey(),
+    word: text("word").notNull(), // canonical uppercase A-Z/ÆØÅ, exactly five letters
+    label: text("label").notNull(), // reveal label, e.g. "Lionel Messi" or "SK Brann"
+    category: text("category").$type<GullordetCategory>().notNull(),
+    answerEligible: boolean("answer_eligible").notNull().default(true),
+    difficulty: integer("difficulty").notNull().default(3), // 1..5 editorial difficulty
+    note: text("note"),
+    enabled: boolean("enabled").notNull().default(true),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("gullordet_words_word_unique").on(t.word),
+    index("gullordet_words_rotation").on(t.enabled, t.answerEligible),
+  ],
+);
+
+/** One private answer row per generic daily puzzle. */
+export const gullordetPuzzleWords = tt.table(
+  "gullordet_puzzle_words",
+  {
+    puzzleId: text("puzzle_id")
+      .primaryKey()
+      .references(() => puzzles.id, { onDelete: "cascade" }),
+    wordId: integer("word_id")
+      .notNull()
+      .references(() => gullordetWords.id),
+  },
+  (t) => [index("gullordet_puzzle_words_word").on(t.wordId)],
 );
 
 // ---------------------------------------------------------------------------
@@ -620,3 +664,23 @@ export const geniusAttempts = tt.table("genius_attempts", {
   state: jsonb("state").$type<Record<string, unknown>>().notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 }, t => [uniqueIndex("genius_attempts_user_puzzle").on(t.userId, t.puzzleId), index("genius_attempts_puzzle").on(t.puzzleId)]);
+
+/** Server-owned guesses. The answer itself is only returned after the attempt is finished. */
+export const gullordetAttempts = tt.table(
+  "gullordet_attempts",
+  {
+    id: text("id").primaryKey(),
+    puzzleId: text("puzzle_id").notNull().references(() => puzzles.id, { onDelete: "cascade" }),
+    userId: text("user_id").references(() => users.id, { onDelete: "cascade" }),
+    guesses: jsonb("guesses").$type<string[]>().notNull().default([]),
+    finished: boolean("finished").notNull().default(false),
+    won: boolean("won").notNull().default(false),
+    score: integer("score"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [
+    uniqueIndex("gullordet_attempts_user_puzzle").on(t.userId, t.puzzleId),
+    index("gullordet_attempts_puzzle").on(t.puzzleId),
+  ],
+);

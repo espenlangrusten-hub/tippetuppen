@@ -114,6 +114,32 @@ try {
   assert.equal((await req('/leaderboard')).me,null);
   assert.equal((await req('/leaderboard',undefined,'invalid-session')).me,null);
 
+  // Gullordet never exposes the answer through /today. The server owns the dictionary,
+  // validates guesses, resumes one ranked attempt and only reveals the word when done.
+  const gull=(await req('/today?game=gullordet')).puzzle;
+  assert.equal(gull.wordLength,5);
+  assert.equal(gull.puzzleId,undefined);
+  const gullStarts=await Promise.all([
+    req('/gullordet/start',{number:gull.number},token),
+    req('/gullordet/start',{number:gull.number},token),
+  ]);
+  assert.equal(gullStarts[0].attemptId,gullStarts[1].attemptId);
+  assert.equal(gullStarts[0].answer,undefined);
+  assert.equal((await req('/gullordet/guess',{attemptId:gullStarts[0].attemptId,guess:'ZZZZZ'},token)).error,'not-in-list');
+  const [gullAnswer]=await db`
+    select w.word
+    from tippetuppen.schedule s
+    join tippetuppen.gullordet_puzzle_words gp on gp.puzzle_id=s.puzzle_id
+    join tippetuppen.gullordet_words w on w.id=gp.word_id
+    where s.game='gullordet' and s.number=${gull.number}`;
+  const gullSolved=await req('/gullordet/guess',{attemptId:gullStarts[0].attemptId,guess:gullAnswer.word},token);
+  assert.equal(gullSolved.finished,true);
+  assert.equal(gullSolved.won,true);
+  assert.equal(gullSolved.score,100);
+  assert.equal(gullSolved.answer,gullAnswer.word);
+  const [gullLeague]=await db`select raw_score,league_points from tippetuppen.league_results where user_id=${user.user.id} and game='gullordet'`;
+  assert.equal(gullLeague.raw_score,100); assert.equal(gullLeague.league_points,100);
+
   // Profile fields are private account data; avatars remain locked until 2,000 lifetime points.
   const profileBefore=await req('/profile',undefined,token);
   assert.equal(profileBefore.ok,true);
