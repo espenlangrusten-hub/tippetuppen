@@ -1,0 +1,1218 @@
+[
+  {
+    "word": "CAREW",
+    "label": "John Carew",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MYHRE",
+    "label": "Myhre",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HALLE",
+    "label": "Gunnar Halle",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RIISE",
+    "label": "Riise",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HØGLI",
+    "label": "Tom Høgli",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BERGE",
+    "label": "Sander Berge",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BAKKE",
+    "label": "Eirik Bakke",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DÆHLI",
+    "label": "Mats Møller Dæhli",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HAUGE",
+    "label": "Jens Petter Hauge",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HAGEN",
+    "label": "Erik Hagen",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SOLLI",
+    "label": "Jan Gunnar Solli",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LØKEN",
+    "label": "Karl-Petter Løken",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KAASA",
+    "label": "Kjell Roar Kaasa",
+    "category": "spiller",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "LANGE",
+    "label": "Rune Lange",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PRICA",
+    "label": "Rade Prica",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BASMA",
+    "label": "Christer Basma",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "WOLFE",
+    "label": "David Møller Wolfe",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GAMST",
+    "label": "Morten Gamst Pedersen",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MESSI",
+    "label": "Lionel Messi",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SALAH",
+    "label": "Mohamed Salah",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HENRY",
+    "label": "Thierry Henry",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PIQUE",
+    "label": "Gerard Piqué",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RAMOS",
+    "label": "Sergio Ramos",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KROOS",
+    "label": "Toni Kroos",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FODEN",
+    "label": "Phil Foden",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "JESUS",
+    "label": "Gabriel Jesus",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PEDRI",
+    "label": "Pedri",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "XHAKA",
+    "label": "Granit Xhaka",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KANTE",
+    "label": "N'Golo Kanté",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TERRY",
+    "label": "John Terry",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GIGGS",
+    "label": "Ryan Giggs",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VIDIC",
+    "label": "Nemanja Vidić",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VARDY",
+    "label": "Jamie Vardy",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MOUNT",
+    "label": "Mason Mount",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "JAMES",
+    "label": "Reece James",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LEWIS",
+    "label": "Rico Lewis",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SAVIO",
+    "label": "Sávio",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NUNES",
+    "label": "Matheus Nunes",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PUYOL",
+    "label": "Carles Puyol",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PEDRO",
+    "label": "Pedro",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ALVES",
+    "label": "Dani Alves",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REINA",
+    "label": "Pepe Reina",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VILLA",
+    "label": "David Villa",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GODIN",
+    "label": "Diego Godín",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TOTTI",
+    "label": "Francesco Totti",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PIRLO",
+    "label": "Andrea Pirlo",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NESTA",
+    "label": "Alessandro Nesta",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ROSSI",
+    "label": "Rossi",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VIERI",
+    "label": "Christian Vieri",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VIDAL",
+    "label": "Arturo Vidal",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "POGBA",
+    "label": "Paul Pogba",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TEVEZ",
+    "label": "Carlos Tévez",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KLOSE",
+    "label": "Miroslav Klose",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NEUER",
+    "label": "Manuel Neuer",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GOTZE",
+    "label": "Mario Götze",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "WIRTZ",
+    "label": "Florian Wirtz",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DEPAY",
+    "label": "Memphis Depay",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GAKPO",
+    "label": "Cody Gakpo",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BLIND",
+    "label": "Daley Blind",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FELIX",
+    "label": "João Félix",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SILVA",
+    "label": "Silva",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "COSTA",
+    "label": "Costa",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DZEKO",
+    "label": "Edin Džeko",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SAVIC",
+    "label": "Savić",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NUNEZ",
+    "label": "Darwin Núñez",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MIKEL",
+    "label": "John Obi Mikel",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TOURE",
+    "label": "Touré",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KALOU",
+    "label": "Salomon Kalou",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KEITA",
+    "label": "Keita",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "IWOBI",
+    "label": "Alex Iwobi",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ONANA",
+    "label": "André Onana",
+    "category": "spiller",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KUDUS",
+    "label": "Mohammed Kudus",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HONDA",
+    "label": "Keisuke Honda",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REYNA",
+    "label": "Gio Reyna",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DANTE",
+    "label": "Dante",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "OSCAR",
+    "label": "Oscar",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PAYET",
+    "label": "Dimitri Payet",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PIRES",
+    "label": "Robert Pirès",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SHEVA",
+    "label": "Shevchenko (Sheva)",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "ZIZOU",
+    "label": "Zidane (Zizou)",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "BECKS",
+    "label": "Beckham (Becks)",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "EGGEN",
+    "label": "Nils Arne Eggen",
+    "category": "trener",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HØGMO",
+    "label": "Per-Mathias Høgmo",
+    "category": "trener",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MOYES",
+    "label": "David Moyes",
+    "category": "trener",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KLOPP",
+    "label": "Jürgen Klopp",
+    "category": "trener",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FLICK",
+    "label": "Hansi Flick",
+    "category": "trener",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CONTE",
+    "label": "Antonio Conte",
+    "category": "trener",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KOVAC",
+    "label": "Niko Kovač",
+    "category": "trener",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "EMERY",
+    "label": "Unai Emery",
+    "category": "trener",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MOLDE",
+    "label": "Molde FK",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRANN",
+    "label": "SK Brann",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "START",
+    "label": "IK Start",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKEID",
+    "label": "Skeid",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRYNE",
+    "label": "Bryne FK",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MILAN",
+    "label": "AC Milan",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "INTER",
+    "label": "Inter",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LAZIO",
+    "label": "Lazio",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PARMA",
+    "label": "Parma",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CELTA",
+    "label": "Celta Vigo",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PORTO",
+    "label": "FC Porto",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LEEDS",
+    "label": "Leeds United",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SPURS",
+    "label": "Tottenham Hotspur (Spurs)",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BREST",
+    "label": "Stade Brestois",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LILLE",
+    "label": "LOSC Lille",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REIMS",
+    "label": "Stade de Reims",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MONZA",
+    "label": "Monza",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GENOA",
+    "label": "Genoa",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LECCE",
+    "label": "Lecce",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ELCHE",
+    "label": "Elche",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BETIS",
+    "label": "Real Betis",
+    "category": "klubb",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "EIBAR",
+    "label": "Eibar",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CADIZ",
+    "label": "Cádiz",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MAINZ",
+    "label": "Mainz 05",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRAGA",
+    "label": "SC Braga",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RIVER",
+    "label": "River Plate",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TIGRE",
+    "label": "Tigre",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "SIENA",
+    "label": "Siena",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "UNION",
+    "label": "Union Berlin",
+    "category": "klubb",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NORGE",
+    "label": "Norge",
+    "category": "landslag",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "WALES",
+    "label": "Wales",
+    "category": "landslag",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CHILE",
+    "label": "Chile",
+    "category": "landslag",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "JAPAN",
+    "label": "Japan",
+    "category": "landslag",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "QATAR",
+    "label": "Qatar",
+    "category": "landslag",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GHANA",
+    "label": "Ghana",
+    "category": "landslag",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KENYA",
+    "label": "Kenya",
+    "category": "landslag",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "MALTA",
+    "label": "Malta",
+    "category": "landslag",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "HAITI",
+    "label": "Haiti",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "CHINA",
+    "label": "Kina",
+    "category": "landslag",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "INDIA",
+    "label": "India",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "NEPAL",
+    "label": "Nepal",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "SYRIA",
+    "label": "Syria",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "CONGO",
+    "label": "Kongo",
+    "category": "landslag",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "BENIN",
+    "label": "Benin",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "GABON",
+    "label": "Gabon",
+    "category": "landslag",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "SUDAN",
+    "label": "Sudan",
+    "category": "landslag",
+    "difficulty": 4,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "SKUDD",
+    "label": "Skudd",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PRESS",
+    "label": "Press",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FINTE",
+    "label": "Finte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "NIKKE",
+    "label": "Nikke",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PASSE",
+    "label": "Passe",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SERIE",
+    "label": "Serie",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DERBY",
+    "label": "Derby",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SEIER",
+    "label": "Seier",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TROFE",
+    "label": "Trofé",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CUPEN",
+    "label": "Cupen",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SPISS",
+    "label": "Spiss",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VINGE",
+    "label": "Vinge",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MÅLET",
+    "label": "Målet",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MATCH",
+    "label": "Match",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "PITCH",
+    "label": "Pitch",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "CROSS",
+    "label": "Cross",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "GOALS",
+    "label": "Goals",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  }
+]
