@@ -71,6 +71,7 @@ export type Dataset = {
   spells: z.infer<typeof S.spellFile>;
   straffespark: z.infer<typeof S.straffesparkFile>;
   kjappen: z.infer<typeof S.kjappenFile>;
+  gullordet: z.infer<typeof S.gullordetFile>;
   coaches: z.infer<typeof S.coachFile>;
   coachQuiz: z.infer<typeof S.coachQuizFile>;
   matchFacts: z.infer<typeof S.matchFactsFile>;
@@ -93,6 +94,7 @@ export function loadDataset(): Dataset {
   const spells = readJson(S.spellFile, "spells.json", []);
   let straffespark = readJson(S.straffesparkFile, "straffespark.json", []);
   const kjappen = readJson(S.kjappenFile, "kjappen.json", []);
+  const gullordet = readJson(S.gullordetFile, "gullordet.json", []);
   const coaches = readJson(S.coachFile, "trenere.json", []);
   const coachQuiz = readJson(S.coachQuizFile, "trenerquiz.json", []);
   const matchFacts = readJson(S.matchFactsFile, "match-facts.json", []);
@@ -408,6 +410,17 @@ export function loadDataset(): Dataset {
     if (dupes.length) problems.push(`kjappen ${q.id}: alias ${dupes[0]} repeats the answer`);
   }
 
+  // Gullordet. The schema guarantees five canonical letters; here we protect the
+  // dictionary semantics that matter to the game: one meaning row per typed word and
+  // enough enabled answers that a bad edit cannot silently collapse the runway.
+  const gullordetWords = new Set<string>();
+  for (const w of gullordet) {
+    if (gullordetWords.has(w.word)) problems.push(`gullordet: duplicate word ${w.word}`);
+    gullordetWords.add(w.word);
+  }
+  const gullordetAnswers = gullordet.filter((w) => w.enabled && w.answerEligible).length;
+  if (gullordetAnswers < 100) problems.push(`gullordet: only ${gullordetAnswers} enabled daily answers; expected at least 100`);
+
   // The coach bank: the same promises again, plus one of its own - every question names
   // a coach in trenere.json, because that is where a reviewer finds the leads behind it.
   const coachIds = new Set<string>();
@@ -433,5 +446,5 @@ export function loadDataset(): Dataset {
     if (leaked) problems.push(`trenerquiz ${q.id}: the prompt gives away the answer (${leaked})`);
   }
 
-  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, coaches, coachQuiz, matchFacts, problems };
+  return { competitions, clubs, players, matches, appearances, goals, seasons, honours, squads, spells, straffespark, kjappen, gullordet, coaches, coachQuiz, matchFacts, problems };
 }
