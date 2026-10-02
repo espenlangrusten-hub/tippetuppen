@@ -36,11 +36,12 @@ import { friendLeagueRoute } from "../_shared/friend-league-routes.ts";
 import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
 import { geniusRoute } from "../_shared/trener-genius-routes.ts";
 import { finnRoute } from "../_shared/finn.ts";
+import { gullordetRoute } from "../_shared/gullordet-routes.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
-const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius"] as const;
+const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const;
 type Game = (typeof GAMES)[number];
 const isGame = (g: string | null): g is Game => !!g && (GAMES as readonly string[]).includes(g);
 
@@ -79,6 +80,7 @@ function present(game: Game, r: ScheduledRow) {
     };
   }
   if (game === "trener-genius") return { game, isArchive, today, puzzle: { number: r.number, date: r.date, title: "Trener Genius", questionCount: 4 } };
+  if (game === "gullordet") return { game, isArchive, today, puzzle: { number: r.number, date: r.date, title: "Gullordet", wordLength: 5 } };
   const pl = r.payload as MaalloesPayload;
   return {
     game,
@@ -435,6 +437,7 @@ Deno.serve(async (req) => {
 
     if (req.method === "POST" && route.startsWith("/trener-genius/")) return geniusRoute(req, route.split("/").at(-1)!);
     if (req.method === "POST" && route.startsWith("/finn-spilleren/")) return finnRoute(req, route.split("/").at(-1)!);
+    if (req.method === "POST" && route.startsWith("/gullordet/")) return gullordetRoute(req, route.split("/").at(-1)!);
 
     // Kjappen: the multiplayer quiz show. Separate from the daily games - its own
     // tables, its own codes, and no schedule.
