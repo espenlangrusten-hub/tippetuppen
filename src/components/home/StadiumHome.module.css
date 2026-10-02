@@ -571,8 +571,13 @@ transition:none
   .gameCard:last-child { grid-template-columns: 42% 58%; }
 }
 
-/* Gullordet adds a sixth daily tile; keep the daily set balanced before the wide Kjappen card. */
-.gameGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+/* Gullordet adds a sixth daily tile. Six in one row left about 180px a card at 1280px:
+   titles broke over two lines and ran into the arrow. Two rows of three keep the daily
+   set balanced before the wide Kjappen card. */
+.gameGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* Cards in a row share a height; the copy fills it so every "Nye oppgaver" tag sits on one line. */
+.gameGrid > .gameCard:not(:last-child) { display: flex; flex-direction: column; }
+.gameGrid > .gameCard:not(:last-child) .gameCopy { flex: 1; }
 .word .gameArt {
   display: grid;
   place-items: center;
