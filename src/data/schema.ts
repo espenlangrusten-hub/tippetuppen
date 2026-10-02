@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { DATA_STATUSES, POSITIONS } from "@/db/schema";
+import { DATA_STATUSES, GULLORDET_CATEGORIES, POSITIONS } from "@/db/schema";
 
 export const sourceRef = z.object({
   url: z.string().optional(),
@@ -234,6 +234,25 @@ export const kjappenFile = z.array(
     prompt: z.string().min(8),
     answer: straffesparkAnswer,
     fact: z.string().optional(),
+  }),
+);
+
+/**
+ * Gullordet: curated five-letter football words.
+ *
+ * answerEligible=false keeps a word valid as a guess without putting it into the
+ * daily rotation. Canonical words deliberately use A-Z plus ÆØÅ only so the on-screen
+ * keyboard and duplicate-letter scoring stay deterministic.
+ */
+export const gullordetFile = z.array(
+  z.object({
+    word: z.string().regex(/^[A-ZÆØÅ]{5}$/),
+    label: z.string().min(1),
+    category: z.enum(GULLORDET_CATEGORIES),
+    answerEligible: z.boolean().default(true),
+    difficulty: z.number().int().min(1).max(5).default(3),
+    note: z.string().optional(),
+    enabled: z.boolean().default(true),
   }),
 );
 
