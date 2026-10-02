@@ -3294,5 +3294,133 @@
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
+  },
+  {
+    "word": "SOTRA",
+    "label": "Sotra SK",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "EIGER",
+    "label": "Eiger FK",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VIGØR",
+    "label": "FK Vigør",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FJØRA",
+    "label": "Fjøra FK",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BJARG",
+    "label": "IL Bjarg",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SENJA",
+    "label": "FK Senja",
+    "category": "klubb",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KJØLØ",
+    "label": "Mike Kjølø",
+    "category": "spiller",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GASHI",
+    "label": "Ardian Gashi",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SINGH",
+    "label": "Harmeet Singh",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CEIDE",
+    "label": "Emil Ceïde",
+    "category": "spiller",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SAGGI",
+    "label": "Rohit Saggi",
+    "category": "begrep",
+    "difficulty": 4,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KROPP",
+    "label": "Kropp",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FLOTT",
+    "label": "Flott",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BEDRE",
+    "label": "Bedre",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VERRE",
+    "label": "Verre",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MØTET",
+    "label": "Møtet",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
   }
 ]
