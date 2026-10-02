@@ -20,7 +20,7 @@ export function GullordetScreen() {
       <div className={s.heading}>
         <p className={s.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Gullordet</p>
         <h1 className={s.title}><Image src={BASE_PATH + "/gullordet/logo.webp"} alt="Gullordet" width={1000} height={500} className={s.logo} preload /></h1>
-        <p className={s.subtitle}>Fem bokstaver. Seks forsøk. Norske ord og navn fra fotballens verden.</p>
+        <p className={s.subtitle}>Fem bokstaver. Seks forsøk. Dagens fasit er fotballrelatert – vanlige norske ord er også gyldige gjetninger.</p>
         {state.status === "ready" && (
           <p className={s.date}>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</p>
         )}

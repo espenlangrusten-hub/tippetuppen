@@ -67,7 +67,7 @@ export function GullordetGame({ puzzle, isArchive }: { puzzle: GullordetPublic; 
       setError(true);
       setMessage(
         reply.error === "not-in-list"
-          ? "Det ordet er ikke i Gullordet-listen."
+          ? "Det ordet finnes ikke i den norske ordlisten eller blant Gullordet-navnene."
           : reply.error === "five-letters"
             ? "Ordet må ha fem bokstaver."
             : reply.error === "unauthorised"
@@ -304,7 +304,7 @@ export function GullordetGame({ puzzle, isArchive }: { puzzle: GullordetPublic; 
               <button type="button" className={s.close} onClick={() => setHelp(false)} aria-label="Lukk">×</button>
             </div>
             <div className={s.rules}>
-              <p>Gjett Gullordet på seks forsøk. Hvert gjett må være et gyldig ord eller navn på fem bokstaver fra Gullordet-listen.</p>
+              <p>Gjett Gullordet på seks forsøk. Dagens fasit er fotballrelatert, men du kan bruke vanlige norske ord på fem bokstaver som gjetninger.</p>
               <p className="mt-2">Fargene viser hvor nær du er:</p>
             </div>
             <div className={s.examples}>

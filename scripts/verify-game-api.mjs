@@ -126,6 +126,11 @@ try {
   assert.equal(gullStarts[0].attemptId,gullStarts[1].attemptId);
   assert.equal(gullStarts[0].answer,undefined);
   assert.equal((await req('/gullordet/guess',{attemptId:gullStarts[0].attemptId,guess:'ZZZZZ'},token)).error,'not-in-list');
+  const gullGuest=await req('/gullordet/start',{number:gull.number});
+  const ordinary=await req('/gullordet/guess',{attemptId:gullGuest.attemptId,guess:'SUPER'});
+  assert.equal(ordinary.ok,true);
+  assert.equal(ordinary.finished,false);
+  assert.equal(ordinary.guesses.at(-1).word,'SUPER');
   const [gullAnswer]=await db`
     select w.word
     from tippetuppen.schedule s

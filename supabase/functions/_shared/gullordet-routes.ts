@@ -9,6 +9,7 @@ import {
   isGullordetWord,
   normalizeGullordetWord,
 } from "./gullordet.ts";
+import { isNorwegianGullordetGuess } from "./gullordet-dictionary.ts";
 
 type Attempt = {
   id: string;
@@ -138,11 +139,16 @@ export async function gullordetRoute(req: Request, action: string) {
     if (!round) return bad("not-found", 404);
     if (attempt.finished) return json(publicState(attempt, round));
 
-    const valid = await tx<{ id: number }[]>`
-      select id from tippetuppen.gullordet_words
-      where word=${guess} and enabled
-      limit 1`;
-    if (!valid[0]) return json({ ok: false, error: "not-in-list" }, 400);
+    // Ordinary Bokmål words are valid guesses even when they can never be the
+    // daily answer. Football names/terms outside Norsk ordbank remain valid through
+    // the curated Gullordet word bank.
+    if (!isNorwegianGullordetGuess(guess)) {
+      const validFootballWord = await tx<{ id: number }[]>`
+        select id from tippetuppen.gullordet_words
+        where word=${guess} and enabled
+        limit 1`;
+      if (!validFootballWord[0]) return json({ ok: false, error: "not-in-list" }, 400);
+    }
 
     const guesses = [...(attempt.guesses ?? []), guess].slice(0, GULLORDET_MAX_GUESSES);
     const won = guess === round.word;
