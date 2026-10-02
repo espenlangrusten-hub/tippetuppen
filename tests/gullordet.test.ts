@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { evaluateGullordet, gullordetScore, isGullordetWord, normalizeGullordetWord } from "@/lib/gullordet";
 import { isNorwegianGullordetGuess } from "@/lib/gullordet-dictionary";
-import { isNorwegianGullordetGuess } from "@/lib/gullordet-dictionary";
 
 describe("Gullordet", () => {
   it("normalizes Norwegian letters without anglicising them", () => {
@@ -17,11 +16,6 @@ describe("Gullordet", () => {
     expect(isNorwegianGullordetGuess("ZZZZZ")).toBe(false);
   });
 
-  it("accepts ordinary Bokmål words as guesses", () => {
-    expect(isNorwegianGullordetGuess("SUPER")).toBe(true);
-    expect(isNorwegianGullordetGuess("alene")).toBe(true);
-    expect(isNorwegianGullordetGuess("ZZZZZ")).toBe(false);
-  });
 
   it("marks exact, present and absent letters", () => {
     expect(evaluateGullordet("BRANN", "BANEN")).toEqual(["correct", "present", "present", "absent", "correct"]);
