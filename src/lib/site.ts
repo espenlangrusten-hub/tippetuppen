@@ -33,6 +33,13 @@ export const GAME_META = {
     description: "Finn spilleren eller treneren. Tidlig riktig svar gir flest poeng; feil svar avslutter runden.",
     emoji: "🕵️",
   },
+  gullordet: {
+    slug: "gullordet",
+    name: "Gullordet",
+    short: "Fem bokstaver. Seks forsøk.",
+    description: "Gjett dagens norske fotballord eller fotballnavn på seks forsøk.",
+    emoji: "🟩",
+  },
 } as const;
 
 export type GameSlug = keyof typeof GAME_META;
