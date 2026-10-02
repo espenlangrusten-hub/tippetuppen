@@ -56,5 +56,12 @@ export type FinnSpillerenPublic = {
   status: string;
 };
 
+export type GullordetPublic = {
+  number: number;
+  date: string;
+  title: "Gullordet";
+  wordLength: 5;
+};
+
 export type TodayResponse<T> = { ok: true; game: string; isArchive: boolean; today: string; puzzle: T | null } | { ok: false; error: string };
 export type ArchiveRow = { date: string; number: number; title: string; difficulty: number };
