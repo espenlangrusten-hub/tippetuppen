@@ -572,9 +572,9 @@ transition:none
 }
 
 /* Gullordet adds a sixth daily tile. Six in one row left about 180px a card at 1280px, so
-   titles broke and ran into the arrow. On desktop the seven cards fill two rows of four:
-   the six daily games, with Kjappen across the last two columns, and lower pictures so
-   the section keeps the compact height it had with five. */
+   titles broke and ran into the arrow. The six daily games stand in two rows of three,
+   with Kjappen below them as before (it stays under Trener Genius), and the pictures are
+   lower above 760px so the section keeps about the height it had with five. */
 .gameGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 /* Cards in a row share a height; the copy fills it so every "Nye oppgaver" tag sits on one line. */
 .gameGrid > .gameCard:not(:last-child) { display: flex; flex-direction: column; }
@@ -608,9 +608,7 @@ transition:none
   }
 }
 
-/* Desktop: two rows of four (see the Gullordet note above). Last, so it wins over the 1100px tablet rule. */
-@media (min-width: 1000px) {
-  .gameGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .gameGrid > .gameCard:not(:last-child) .gameArt { aspect-ratio: 2.4; }
-  .gameCard:last-child { grid-column: span 2; grid-template-columns: 40% 1fr; }
+/* Above 760px: lower pictures on the daily cards (see the Gullordet note above). */
+@media (min-width: 761px) {
+  .gameGrid > .gameCard:not(:last-child) .gameArt { aspect-ratio: 3; }
 }
