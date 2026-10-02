@@ -212,10 +212,11 @@ export function GullordetGame({ puzzle, isArchive }: { puzzle: GullordetPublic; 
     const result = won ? `${guesses.length}/6` : "X/6";
     const text = `Gullordet #${puzzle.number} · ${result}\n${boxes}\nTippetuppen.no/gullordet`;
     try {
-      if (navigator.share) await navigator.share({ text });
+      const canShare = typeof navigator.share === "function";
+      if (canShare) await navigator.share({ text });
       else await navigator.clipboard.writeText(text);
       setError(false);
-      setMessage(navigator.share ? "" : "Resultatet er kopiert.");
+      setMessage(canShare ? "" : "Resultatet er kopiert.");
       track({ name: "share", game: "gullordet", puzzleId: analyticsId, archive: isArchive });
     } catch {
       // User cancelling the native share sheet is not an error.
