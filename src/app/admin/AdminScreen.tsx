@@ -23,12 +23,12 @@ type Stats = {
   totals: { page_views: Count; starts: Count; completes: Count; shares: Count; first_day: string | null; last_day: string | null };
 };
 
-const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloes: "Målløs", "finn-spilleren": "Finn spilleren" };
+const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloes: "Målløs", "finn-spilleren": "Finn spilleren", "trener-genius": "Trener Genius", gullordet: "Gullordet" };
 const pct = (part: Count, whole: Count) => (Number(whole) > 0 ? `${Math.round((100 * Number(part)) / Number(whole))} %` : "–");
 
 const KEY = "tt1:adminKey";
 type Message = { id: number; created_at: string; title: string; message: string; sender: string; emailed_at: string | null; email_error: string | null };
-type Game = "mangler-xi" | "maalloes" | "finn-spilleren";
+type Game = "mangler-xi" | "maalloes" | "finn-spilleren" | "trener-genius" | "gullordet";
 
 export function AdminScreen() {
   const [key, setKey] = useState("");
@@ -90,7 +90,7 @@ export function AdminScreen() {
   }, [game]);
 
   const peakViews = Math.max(1, ...(stats?.daily ?? []).map((d) => Number(d.page_views)));
-  const gameStats = (["mangler-xi", "maalloes", "finn-spilleren"] as const).map(
+  const gameStats = (["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const).map(
     (gameId) => stats?.games.find((row) => row.game === gameId) ?? { game: gameId, starts: 0, completes: 0, give_ups: 0, archive: 0, player_days: 0, today_players: 0 },
   );
 
@@ -122,6 +122,8 @@ export function AdminScreen() {
           <option value="mangler-xi">Mangler XI</option>
           <option value="maalloes">Målløs</option>
           <option value="finn-spilleren">Finn spilleren</option>
+          <option value="trener-genius">Trener Genius</option>
+          <option value="gullordet">Gullordet</option>
         </select>
         <button className="btn btn-primary" disabled={busy || !key}>
           Hent
