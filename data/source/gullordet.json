@@ -1288,11 +1288,11 @@
     "enabled": true
   },
   {
-    "word": "TØRRT",
-    "label": "Tørt underlag",
+    "word": "TØRKE",
+    "label": "Tørke",
     "category": "begrep",
-    "difficulty": 3,
-    "answerEligible": false,
+    "difficulty": 2,
+    "answerEligible": true,
     "enabled": true
   },
   {
