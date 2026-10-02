@@ -9,7 +9,7 @@
   },
   {
     "word": "MYHRE",
-    "label": "Myhre",
+    "label": "Thomas/Felix Myhre",
     "category": "spiller",
     "difficulty": 2,
     "answerEligible": true,
@@ -25,7 +25,7 @@
   },
   {
     "word": "RIISE",
-    "label": "Riise",
+    "label": "John Arne Riise",
     "category": "spiller",
     "difficulty": 1,
     "answerEligible": true,
@@ -52,6 +52,14 @@
     "label": "Eirik Bakke",
     "category": "spiller",
     "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "EGGEN",
+    "label": "Nils Arne Eggen",
+    "category": "trener",
+    "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
@@ -112,14 +120,6 @@
     "enabled": true
   },
   {
-    "word": "PRICA",
-    "label": "Rade Prica",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
     "word": "BASMA",
     "label": "Christer Basma",
     "category": "spiller",
@@ -136,576 +136,64 @@
     "enabled": true
   },
   {
-    "word": "GAMST",
-    "label": "Morten Gamst Pedersen",
+    "word": "NYPAN",
+    "label": "Sverre Nypan",
     "category": "spiller",
     "difficulty": 2,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "MESSI",
-    "label": "Lionel Messi",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SALAH",
-    "label": "Mohamed Salah",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "HENRY",
-    "label": "Thierry Henry",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PIQUE",
-    "label": "Gerard Piqué",
+    "word": "FINNE",
+    "label": "Bård Finne",
     "category": "spiller",
     "difficulty": 2,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "RAMOS",
-    "label": "Sergio Ramos",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KROOS",
-    "label": "Toni Kroos",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "FODEN",
-    "label": "Phil Foden",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "JESUS",
-    "label": "Gabriel Jesus",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PEDRI",
-    "label": "Pedri",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "XHAKA",
-    "label": "Granit Xhaka",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KANTE",
-    "label": "N'Golo Kanté",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TERRY",
-    "label": "John Terry",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GIGGS",
-    "label": "Ryan Giggs",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "VIDIC",
-    "label": "Nemanja Vidić",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "VARDY",
-    "label": "Jamie Vardy",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "MOUNT",
-    "label": "Mason Mount",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "JAMES",
-    "label": "Reece James",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "LEWIS",
-    "label": "Rico Lewis",
+    "word": "KIPPE",
+    "label": "Frode Kippe",
     "category": "spiller",
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "SAVIO",
-    "label": "Sávio",
+    "word": "OPDAL",
+    "label": "Håkon Opdal",
     "category": "spiller",
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "NUNES",
-    "label": "Matheus Nunes",
+    "word": "ENGEN",
+    "label": "Ingrid Syrstad Engen",
+    "category": "spiller",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SÆVIK",
+    "label": "Karina Sævik",
     "category": "spiller",
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "PUYOL",
-    "label": "Carles Puyol",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PEDRO",
-    "label": "Pedro",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "ALVES",
-    "label": "Dani Alves",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "REINA",
-    "label": "Pepe Reina",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "VILLA",
-    "label": "David Villa",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GODIN",
-    "label": "Diego Godín",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TOTTI",
-    "label": "Francesco Totti",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PIRLO",
-    "label": "Andrea Pirlo",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "NESTA",
-    "label": "Alessandro Nesta",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "ROSSI",
-    "label": "Rossi",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "VIERI",
-    "label": "Christian Vieri",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "VIDAL",
-    "label": "Arturo Vidal",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "POGBA",
-    "label": "Paul Pogba",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TEVEZ",
-    "label": "Carlos Tévez",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KLOSE",
-    "label": "Miroslav Klose",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "NEUER",
-    "label": "Manuel Neuer",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GOTZE",
-    "label": "Mario Götze",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "WIRTZ",
-    "label": "Florian Wirtz",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "DEPAY",
-    "label": "Memphis Depay",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GAKPO",
-    "label": "Cody Gakpo",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "BLIND",
-    "label": "Daley Blind",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "FELIX",
-    "label": "João Félix",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SILVA",
-    "label": "Silva",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "COSTA",
-    "label": "Costa",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "DZEKO",
-    "label": "Edin Džeko",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SAVIC",
-    "label": "Savić",
+    "word": "MINDE",
+    "label": "Kristine Minde",
     "category": "spiller",
     "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "NUNEZ",
-    "label": "Darwin Núñez",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "MIKEL",
-    "label": "John Obi Mikel",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TOURE",
-    "label": "Touré",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KALOU",
-    "label": "Salomon Kalou",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KEITA",
-    "label": "Keita",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "IWOBI",
-    "label": "Alex Iwobi",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "ONANA",
-    "label": "André Onana",
-    "category": "spiller",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KUDUS",
-    "label": "Mohammed Kudus",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "HONDA",
-    "label": "Keisuke Honda",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "REYNA",
-    "label": "Gio Reyna",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "DANTE",
-    "label": "Dante",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "OSCAR",
-    "label": "Oscar",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PAYET",
-    "label": "Dimitri Payet",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PIRES",
-    "label": "Robert Pirès",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SHEVA",
-    "label": "Shevchenko (Sheva)",
-    "category": "spiller",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "ZIZOU",
-    "label": "Zidane (Zizou)",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "BECKS",
-    "label": "Beckham (Becks)",
-    "category": "spiller",
-    "difficulty": 2,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "EGGEN",
-    "label": "Nils Arne Eggen",
-    "category": "trener",
-    "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
     "word": "HØGMO",
     "label": "Per-Mathias Høgmo",
-    "category": "trener",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "MOYES",
-    "label": "David Moyes",
-    "category": "trener",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KLOPP",
-    "label": "Jürgen Klopp",
-    "category": "trener",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "FLICK",
-    "label": "Hansi Flick",
-    "category": "trener",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "CONTE",
-    "label": "Antonio Conte",
-    "category": "trener",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KOVAC",
-    "label": "Niko Kovač",
-    "category": "trener",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "EMERY",
-    "label": "Unai Emery",
     "category": "trener",
     "difficulty": 2,
     "answerEligible": true,
@@ -752,195 +240,59 @@
     "enabled": true
   },
   {
-    "word": "MILAN",
-    "label": "AC Milan",
+    "word": "GLIMT",
+    "label": "Bodø/Glimt",
     "category": "klubb",
     "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "INTER",
-    "label": "Inter",
-    "category": "klubb",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "LAZIO",
-    "label": "Lazio",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PARMA",
-    "label": "Parma",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "CELTA",
-    "label": "Celta Vigo",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PORTO",
-    "label": "FC Porto",
-    "category": "klubb",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "LEEDS",
-    "label": "Leeds United",
-    "category": "klubb",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SPURS",
-    "label": "Tottenham Hotspur (Spurs)",
-    "category": "klubb",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "BREST",
-    "label": "Stade Brestois",
+    "word": "ÅSANE",
+    "label": "Åsane Fotball",
     "category": "klubb",
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "LILLE",
-    "label": "LOSC Lille",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "REIMS",
-    "label": "Stade de Reims",
+    "word": "FRIGG",
+    "label": "Frigg Oslo FK",
     "category": "klubb",
     "difficulty": 3,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "MONZA",
-    "label": "Monza",
-    "category": "klubb",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GENOA",
-    "label": "Genoa",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "LECCE",
-    "label": "Lecce",
-    "category": "klubb",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "ELCHE",
-    "label": "Elche",
-    "category": "klubb",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "BETIS",
-    "label": "Real Betis",
-    "category": "klubb",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "EIBAR",
-    "label": "Eibar",
-    "category": "klubb",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "CADIZ",
-    "label": "Cádiz",
-    "category": "klubb",
-    "difficulty": 3,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "MAINZ",
-    "label": "Mainz 05",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "BRAGA",
-    "label": "SC Braga",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "RIVER",
-    "label": "River Plate",
-    "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TIGRE",
-    "label": "Tigre",
+    "word": "VIDAR",
+    "label": "FK Vidar",
     "category": "klubb",
     "difficulty": 4,
     "answerEligible": false,
     "enabled": true
   },
   {
-    "word": "SIENA",
-    "label": "Siena",
+    "word": "FOLLO",
+    "label": "Follo FK",
+    "category": "klubb",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FLØYA",
+    "label": "IF Fløya",
     "category": "klubb",
     "difficulty": 4,
     "answerEligible": false,
     "enabled": true
   },
   {
-    "word": "UNION",
-    "label": "Union Berlin",
+    "word": "FLINT",
+    "label": "Flint Fotball",
     "category": "klubb",
-    "difficulty": 2,
-    "answerEligible": true,
+    "difficulty": 4,
+    "answerEligible": false,
     "enabled": true
   },
   {
@@ -952,131 +304,35 @@
     "enabled": true
   },
   {
-    "word": "WALES",
-    "label": "Wales",
-    "category": "landslag",
+    "word": "BANEN",
+    "label": "Banen",
+    "category": "begrep",
     "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "CHILE",
-    "label": "Chile",
-    "category": "landslag",
+    "word": "BANER",
+    "label": "Baner",
+    "category": "begrep",
     "difficulty": 2,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "JAPAN",
-    "label": "Japan",
-    "category": "landslag",
-    "difficulty": 2,
+    "word": "LAGET",
+    "label": "Laget",
+    "category": "begrep",
+    "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "QATAR",
-    "label": "Qatar",
-    "category": "landslag",
-    "difficulty": 2,
+    "word": "MÅLET",
+    "label": "Målet",
+    "category": "begrep",
+    "difficulty": 1,
     "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "GHANA",
-    "label": "Ghana",
-    "category": "landslag",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "KENYA",
-    "label": "Kenya",
-    "category": "landslag",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "MALTA",
-    "label": "Malta",
-    "category": "landslag",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "HAITI",
-    "label": "Haiti",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "CHINA",
-    "label": "Kina",
-    "category": "landslag",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "INDIA",
-    "label": "India",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "NEPAL",
-    "label": "Nepal",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "SYRIA",
-    "label": "Syria",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "CONGO",
-    "label": "Kongo",
-    "category": "landslag",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "BENIN",
-    "label": "Benin",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "GABON",
-    "label": "Gabon",
-    "category": "landslag",
-    "difficulty": 3,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "SUDAN",
-    "label": "Sudan",
-    "category": "landslag",
-    "difficulty": 4,
-    "answerEligible": false,
     "enabled": true
   },
   {
@@ -1084,78 +340,6 @@
     "label": "Skudd",
     "category": "begrep",
     "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PRESS",
-    "label": "Press",
-    "category": "begrep",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "FINTE",
-    "label": "Finte",
-    "category": "begrep",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "NIKKE",
-    "label": "Nikke",
-    "category": "begrep",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "PASSE",
-    "label": "Passe",
-    "category": "begrep",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SERIE",
-    "label": "Serie",
-    "category": "begrep",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "DERBY",
-    "label": "Derby",
-    "category": "begrep",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "SEIER",
-    "label": "Seier",
-    "category": "begrep",
-    "difficulty": 1,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "TROFE",
-    "label": "Trofé",
-    "category": "begrep",
-    "difficulty": 2,
-    "answerEligible": true,
-    "enabled": true
-  },
-  {
-    "word": "CUPEN",
-    "label": "Cupen",
-    "category": "begrep",
-    "difficulty": 2,
     "answerEligible": true,
     "enabled": true
   },
@@ -1171,48 +355,1016 @@
     "word": "VINGE",
     "label": "Vinge",
     "category": "begrep",
-    "difficulty": 2,
+    "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "MÅLET",
-    "label": "Målet",
+    "word": "DRAKT",
+    "label": "Drakt",
     "category": "begrep",
     "difficulty": 1,
     "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "MATCH",
-    "label": "Match",
+    "word": "TRØYE",
+    "label": "Trøye",
     "category": "begrep",
     "difficulty": 2,
-    "answerEligible": false,
+    "answerEligible": true,
     "enabled": true
   },
   {
-    "word": "PITCH",
-    "label": "Pitch",
-    "category": "begrep",
-    "difficulty": 2,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "CROSS",
-    "label": "Cross",
-    "category": "begrep",
-    "difficulty": 2,
-    "answerEligible": false,
-    "enabled": true
-  },
-  {
-    "word": "GOALS",
-    "label": "Goals",
+    "word": "TRØYA",
+    "label": "Trøya",
     "category": "begrep",
     "difficulty": 3,
     "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "FINTE",
+    "label": "Finte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FINTA",
+    "label": "Finta",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "TAKLE",
+    "label": "Takle",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TAKLA",
+    "label": "Takla",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "NIKKE",
+    "label": "Nikke",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HÆLEN",
+    "label": "Hælen",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRYST",
+    "label": "Bryst",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FOTEN",
+    "label": "Foten",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PASSE",
+    "label": "Passe",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKYTE",
+    "label": "Skyte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKJØT",
+    "label": "Skjøt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKÅRE",
+    "label": "Skåre",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REDDE",
+    "label": "Redde",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GRIPE",
+    "label": "Gripe",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BOKSE",
+    "label": "Bokse",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KASTE",
+    "label": "Kaste",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FELLE",
+    "label": "Felle",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LOBBE",
+    "label": "Lobbe",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "STUSS",
+    "label": "Stuss",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SPARK",
+    "label": "Spark",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "STANG",
+    "label": "Stang",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TVERR",
+    "label": "Tverr",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LINJE",
+    "label": "Linje",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DØMME",
+    "label": "Dømme",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REGEL",
+    "label": "Regel",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SONER",
+    "label": "Soner",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DYBDE",
+    "label": "Dybde",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HØYDE",
+    "label": "Høyde",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BREDT",
+    "label": "Bredt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "INDRE",
+    "label": "Indre",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ANKER",
+    "label": "Anker",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TREKK",
+    "label": "Trekk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BLIKK",
+    "label": "Blikk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KRAFT",
+    "label": "Kraft",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PRESS",
+    "label": "Press",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BLOKK",
+    "label": "Blokk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VENDE",
+    "label": "Vende",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HØYRE",
+    "label": "Høyre",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MIDTE",
+    "label": "Midte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BAKRE",
+    "label": "Bakre",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FALLE",
+    "label": "Falle",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "STØTE",
+    "label": "Støte",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "JAGER",
+    "label": "Jager",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SENKE",
+    "label": "Senke",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FIRER",
+    "label": "Firer",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FØLGE",
+    "label": "Følge",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DEKKE",
+    "label": "Dekke",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRUDD",
+    "label": "Brudd",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BRYTE",
+    "label": "Bryte",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "DUELL",
+    "label": "Duell",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RETUR",
+    "label": "Retur",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RAMME",
+    "label": "Ramme",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TREFF",
+    "label": "Treff",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BOMME",
+    "label": "Bomme",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SPILL",
+    "label": "Spill",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SPILT",
+    "label": "Spilt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HOLDE",
+    "label": "Holde",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HOLDT",
+    "label": "Holdt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ÅPENT",
+    "label": "Åpent",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "JEVNT",
+    "label": "Jevnt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TETTE",
+    "label": "Tette",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "STERK",
+    "label": "Sterk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RASKT",
+    "label": "Raskt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ROLIG",
+    "label": "Rolig",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SVAKT",
+    "label": "Svakt",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TEMPO",
+    "label": "Tempo",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RUNDE",
+    "label": "Runde",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SERIE",
+    "label": "Serie",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "CUPEN",
+    "label": "Cupen",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "POENG",
+    "label": "Poeng",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SEIER",
+    "label": "Seier",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SEIRE",
+    "label": "Seire",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VINNE",
+    "label": "Vinne",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TAPTE",
+    "label": "Tapte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TAPER",
+    "label": "Taper",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LEDET",
+    "label": "Ledet",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "LEDER",
+    "label": "Leder",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SLUTT",
+    "label": "Slutt",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PAUSE",
+    "label": "Pause",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TIDEN",
+    "label": "Tiden",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ÅPNET",
+    "label": "Åpnet",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "PLASS",
+    "label": "Plass",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FØRST",
+    "label": "Først",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ANDRE",
+    "label": "Andre",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "RYKKE",
+    "label": "Rykke",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TROPP",
+    "label": "Tropp",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "UTTAK",
+    "label": "Uttak",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BENKE",
+    "label": "Benke",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HVILE",
+    "label": "Hvile",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKADE",
+    "label": "Skade",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKADD",
+    "label": "Skadd",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FRISK",
+    "label": "Frisk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BYTTE",
+    "label": "Bytte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "YNGRE",
+    "label": "Yngre",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KJØPE",
+    "label": "Kjøpe",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SELGE",
+    "label": "Selge",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KJØPT",
+    "label": "Kjøpt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SOLGT",
+    "label": "Solgt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BUDET",
+    "label": "Budet",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "UTLÅN",
+    "label": "Utlån",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "STYRE",
+    "label": "Styre",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HEIER",
+    "label": "Heier",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "ROPTE",
+    "label": "Ropte",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SYNGE",
+    "label": "Synge",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "FLAGG",
+    "label": "Flagg",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BLUSS",
+    "label": "Bluss",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GJEST",
+    "label": "Gjest",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BORTE",
+    "label": "Borte",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "REISE",
+    "label": "Reise",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SKOEN",
+    "label": "Skoen",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KNOTT",
+    "label": "Knott",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GRESS",
+    "label": "Gress",
+    "category": "begrep",
+    "difficulty": 1,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "KUNST",
+    "label": "Kunst",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TØRRT",
+    "label": "Tørt underlag",
+    "category": "begrep",
+    "difficulty": 3,
+    "answerEligible": false,
+    "enabled": true
+  },
+  {
+    "word": "FARGE",
+    "label": "Farge",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "HVITT",
+    "label": "Hvitt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "SVART",
+    "label": "Svart",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "GRØNT",
+    "label": "Grønt",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "BLÅTT",
+    "label": "Blått",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "TRØKK",
+    "label": "Trøkk",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "VILJE",
+    "label": "Vilje",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MØTER",
+    "label": "Møter",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
+    "enabled": true
+  },
+  {
+    "word": "MØTTE",
+    "label": "Møtte",
+    "category": "begrep",
+    "difficulty": 2,
+    "answerEligible": true,
     "enabled": true
   }
 ]
