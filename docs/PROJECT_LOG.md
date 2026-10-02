@@ -2,6 +2,24 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-02 – Gullordet nr. 1 byttet samme dag (databaseendring)
+
+Admin ba om nytt Gullord for 2. oktober, selv om ordet allerede var spilt. Endringen er
+gjort direkte i databasen kl. ca. 17:20, i én SQL-setning:
+- **Kalender:** dagens rad (`schedule`, game `gullordet`, nr. 1) peker nå på
+  `gullordet-366` (KASSE) i stedet for `gullordet-45` (VINGE). Raden er `locked`, så
+  planleggeren ikke bytter den tilbake.
+- **Gammelt ord:** `gullordet-45` er satt til `enabled = false`, så VINGE ikke dukker
+  opp igjen senere. Det kan skrus på igjen.
+- **Liga:** én `league_results`-rad for VINGE (20 poeng, én bruker) er slettet, slik at
+  dagen bare teller én gang når ordet spilles på nytt. Den slettede raden ligger i sin
+  helhet i `admin_audit` (action `replace_scheduled_today`) og kan legges tilbake derfra.
+- **Spillforsøk:** de tre forsøkene på VINGE står urørt i `gullordet_attempts`. Alle,
+  også de som har løst VINGE, får et nytt forsøk på KASSE fordi forsøk er knyttet til
+  oppgaven, ikke til dagen.
+
+Admin-ruten `/admin/replace` dekker bare framtidige dager. Derfor ble dette gjort med SQL.
+
 ## 2026-10-02 – Kontoinvitasjon på forsiden og daglig statistikk-e-post
 
 **Forsiden.** Under knappen «Start dagens spill» står det nå:
