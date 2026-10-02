@@ -31,6 +31,13 @@
   font-size: 15px;
   line-height: 1.45;
 }
+.logo {
+  display: block;
+  width: min(100%, 340px);
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto;
+}
 .date {
   margin-top: 8px;
   color: #77828a;

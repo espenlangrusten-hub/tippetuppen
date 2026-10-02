@@ -97,7 +97,7 @@ export function TodayCards() {
                   {game.art === "trainer"
                     ? <Image src={BASE_PATH + game.image!} alt="" fill sizes="(max-width: 760px) 50vw, 20vw" />
                     : game.art === "word"
-                      ? <div className={s.wordArt} aria-hidden="true"><span>G</span><span>U</span><span>L</span><span>L</span><span>!</span></div>
+                      ? <Image src={BASE_PATH + "/gullordet/logo.webp"} alt="" fill sizes="(max-width: 760px) 50vw, (max-width: 1100px) 33vw, 17vw" className={s.wordLogo} />
                       : <ReferenceArt name={game.art} />}
                 </div>
                 <div className={s.gameCopy}>

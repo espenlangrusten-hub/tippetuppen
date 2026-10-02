@@ -70,6 +70,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
           npm run db:migrate
+          npm run db:seed
           node --import tsx scripts/schedule.ts --days 400
 
       # Deploy the complete desired state on every run. HEAD^ is not the last

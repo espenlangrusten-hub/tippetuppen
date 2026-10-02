@@ -547,30 +547,9 @@ transition:none
   place-items: center;
   background: #eef1e8;
 }
-.wordArt {
-  width: 86%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 4px;
-}
-.wordArt span {
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  border: 2px solid #7b8581;
-  background: #fffdf9;
-  color: #17231f;
-  font: 800 clamp(13px, 1.35vw, 21px)/1 var(--font-sans);
-}
-.wordArt span:first-child {
-  color: #fff;
-  border-color: #477b55;
-  background: #477b55;
-}
-.wordArt span:nth-child(2) {
-  color: #fff;
-  border-color: #b39a3b;
-  background: #b39a3b;
+.wordLogo {
+  object-fit: contain;
+  padding: 10px;
 }
 @media (max-width: 1100px) {
   .gameGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }

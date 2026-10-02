@@ -1,6 +1,8 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
+import { BASE_PATH } from "@/lib/site";
 import { useGamePuzzle, GameSkeleton, GameUnavailable } from "@/components/GameLoader";
 import { GullordetGame } from "@/components/gullordet/GullordetGame";
 import type { GullordetPublic } from "@/lib/gameTypes";
@@ -17,7 +19,7 @@ export function GullordetScreen() {
     <div className={s.page}>
       <div className={s.heading}>
         <p className={s.eyebrow}>Fotballkunnskap <span>•</span> Hver dag <span>•</span> Gullordet</p>
-        <h1 className={s.title}>Gullordet</h1>
+        <h1 className={s.title}><Image src={BASE_PATH + "/gullordet/logo.webp"} alt="Gullordet" width={1000} height={500} className={s.logo} preload /></h1>
         <p className={s.subtitle}>Fem bokstaver. Seks forsøk. Norske ord og navn fra fotballens verden.</p>
         {state.status === "ready" && (
           <p className={s.date}>{state.isArchive ? `Arkiv · ${formatDateNo(state.puzzle.date)}` : formatDateNo(state.today)}</p>
