@@ -10,7 +10,7 @@ import { isPlayable } from "@/data/straffespark";
 import { schema as s, type Db } from "@/server/db";
 import { normalizeName } from "@/lib/names";
 
-export type SeedResult = { matches: number; players: number; clubs: number; seasons: number; honours: number; kjappen: number; problems: string[] };
+export type SeedResult = { matches: number; players: number; clubs: number; seasons: number; honours: number; kjappen: number; gullordet: number; problems: string[] };
 
 /** Load `data/source/*.json` and upsert into the database. Throws if the data fails validation. */
 export async function seedFromSource(db: Db): Promise<SeedResult> {
@@ -147,6 +147,26 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
     await tx.delete(s.kjappenQuestions);
     for (let i = 0; i < kjappen.length; i += 500) await tx.insert(s.kjappenQuestions).values(kjappen.slice(i, i + 500));
 
+    // Gullordet is source-managed but intentionally upserted rather than wholesale
+    // replaced: puzzle history may already reference an older word row. Editorial
+    // removals therefore happen by setting enabled=false in gullordet.json.
+    for (const w of ds.gullordet) {
+      const row = {
+        word: w.word,
+        label: w.label,
+        category: w.category,
+        answerEligible: w.answerEligible,
+        difficulty: w.difficulty,
+        note: w.note ?? null,
+        enabled: w.enabled,
+        updatedAt: new Date(),
+      };
+      await tx
+        .insert(s.gullordetWords)
+        .values(row)
+        .onConflictDoUpdate({ target: s.gullordetWords.word, set: row });
+    }
+
     // Remove matches no longer present in source files (keeps DB in sync with the repo).
     const ids = ds.matches.map((m) => m.id);
     if (ids.length) await tx.delete(s.matches).where(sql`${s.matches.id} not in ${ids}`);
@@ -154,5 +174,5 @@ export async function seedFromSource(db: Db): Promise<SeedResult> {
   
 
   const kjappenCount = ds.straffespark.filter((q) => q.kind === "trivia" && isPlayable(q)).length + ds.kjappen.filter((q) => isPlayable(q)).length;
-  return { matches: ds.matches.length, players: ds.players.size, clubs: ds.clubs.length, seasons: ds.seasons.length, honours: ds.honours.length, kjappen: kjappenCount, problems: ds.problems };
+  return { matches: ds.matches.length, players: ds.players.size, clubs: ds.clubs.length, seasons: ds.seasons.length, honours: ds.honours.length, kjappen: kjappenCount, gullordet: ds.gullordet.length, problems: ds.problems };
 }
