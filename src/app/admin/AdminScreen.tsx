@@ -1,11 +1,11 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { API_URL } from "@/lib/api";
 
 /**
  * Operations console. The site is static, so this talks to the Edge Function's
- * admin routes with a key the operator pastes in; the key lives in sessionStorage
- * only, never in the build. Data corrections are made in the repo's JSON files and
+ * admin routes with a key the operator pastes in; the key lives in sessionStorage,
+ * or in localStorage when "husk nøkkelen" is ticked, never in the build. Data corrections are made in the repo's JSON files and
  * applied by the "Oppdater data" GitHub Action, which keeps them version-controlled.
  */
 type Row = { date: string; number: number; puzzle_id: string; title: string; locked: boolean; enabled: boolean; difficulty: number };
@@ -27,6 +27,8 @@ const GAME_LABEL: Record<string, string> = { "mangler-xi": "Mangler XI", maalloe
 const pct = (part: Count, whole: Count) => (Number(whole) > 0 ? `${Math.round((100 * Number(part)) / Number(whole))} %` : "–");
 
 const KEY = "tt1:adminKey";
+const REMEMBER = "tt1:adminKeyRemembered";
+type Report = { subject: string; text: string; last: { day?: string | null; sentAt?: string; failedDay?: string; error?: string } | null };
 type Message = { id: number; created_at: string; title: string; message: string; sender: string; emailed_at: string | null; email_error: string | null };
 type Game = "mangler-xi" | "maalloes" | "finn-spilleren" | "trener-genius" | "gullordet";
 
@@ -38,14 +40,10 @@ export function AdminScreen() {
   const [messages, setMessages] = useState<Message[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-
-  useEffect(() => {
-    try {
-      setKey(sessionStorage.getItem(KEY) ?? "");
-    } catch {
-      /* ignore */
-    }
-  }, []);
+  const [remember, setRemember] = useState(false);
+  const [report, setReport] = useState<Report | null>(null);
+  const [reportNote, setReportNote] = useState<string | null>(null);
+  const rememberRef = useRef(false);
 
   const load = useCallback(
     async (k: string, g: Game) => {
@@ -72,6 +70,8 @@ export function AdminScreen() {
         setMessages(inbox.ok ? ((await inbox.json()) as { messages: Message[] }).messages : null);
         try {
           sessionStorage.setItem(KEY, k);
+          if (rememberRef.current) localStorage.setItem(REMEMBER, k);
+          else localStorage.removeItem(REMEMBER);
         } catch {
           /* ignore */
         }
@@ -88,6 +88,44 @@ export function AdminScreen() {
     if (key) void load(key, game);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [game]);
+
+  // A remembered key opens straight onto the figures; no form to fill in each time.
+  useEffect(() => {
+    let stored = "";
+    let remembered = false;
+    try {
+      const kept = localStorage.getItem(REMEMBER);
+      if (kept) [stored, remembered] = [kept, true];
+      else stored = sessionStorage.getItem(KEY) ?? "";
+    } catch {
+      /* ignore */
+    }
+    rememberRef.current = remembered;
+    setRemember(remembered);
+    setKey(stored);
+    if (stored) void load(stored, "mangler-xi");
+  }, [load]);
+
+  const reportCall = async (send: boolean) => {
+    setReportNote(null);
+    try {
+      const res = await fetch(`${API_URL}/admin/report${send ? "/send" : ""}`, { method: send ? "POST" : "GET", headers: { "x-admin-key": key } });
+      const body = (await res.json()) as Report & { ok: boolean; error?: string };
+      if (send) setReportNote(body.ok ? "Testrapporten er sendt. Den vanlige kommer fortsatt kl. 18." : `Ble ikke sendt: ${body.error ?? res.status}`);
+      else if (body.ok) setReport(body);
+    } catch {
+      setReportNote("Fikk ikke kontakt med API-et.");
+    }
+  };
+
+  const daily = stats?.daily ?? [];
+  const visitorsOn = (i: number) => Number(daily[i]?.visitors ?? 0);
+  const average = (from: number, to: number) => {
+    const ds = daily.slice(from, to);
+    return ds.length ? ds.reduce((n, d) => n + Number(d.visitors), 0) / ds.length : 0;
+  };
+  const last14 = daily.slice(0, 14).slice().reverse();
+  const peakVisitors = Math.max(1, ...last14.map((d) => Number(d.visitors)));
 
   const peakViews = Math.max(1, ...(stats?.daily ?? []).map((d) => Number(d.page_views)));
   const gameStats = (["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const).map(
@@ -128,9 +166,74 @@ export function AdminScreen() {
         <button className="btn btn-primary" disabled={busy || !key}>
           Hent
         </button>
+        <label className="flex w-full items-center gap-2 text-xs">
+          <input
+            type="checkbox"
+            checked={remember}
+            onChange={(e) => {
+              setRemember(e.target.checked);
+              rememberRef.current = e.target.checked;
+              try {
+                if (!e.target.checked) localStorage.removeItem(REMEMBER);
+                else if (key && stats) localStorage.setItem(REMEMBER, key);
+              } catch {
+                /* ignore */
+              }
+            }}
+          />
+          Husk nøkkelen på denne enheten, så åpner siden rett på tallene
+        </label>
       </form>
 
       {error && <p className="text-flag-2">{error}</p>}
+
+      {stats && (
+        <section className="card p-4">
+          <h2 className="font-display text-xl font-bold uppercase">Dagens tall</h2>
+          <dl className="mt-3 grid grid-cols-3 gap-3">
+            {[
+              ["I dag så langt", String(visitorsOn(0))],
+              ["I går", String(visitorsOn(1))],
+              ["Snitt siste 7 dager", average(0, 7).toLocaleString("nb-NO", { maximumFractionDigits: 1 })],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-lg bg-ink-2 p-3">
+                <dt className="text-xs uppercase tracking-wide text-mist">{label}</dt>
+                <dd className="font-display text-3xl font-bold text-snow">{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-2 text-xs text-fog">
+            Forrige 7 dager: {average(7, 14).toLocaleString("nb-NO", { maximumFractionDigits: 1 })} per dag. Besøkende telles per dag; samme person to dager telles to ganger.
+          </p>
+          <div className="mt-3 flex h-28 items-end gap-1" aria-label="Besøkende per dag, siste 14 dager">
+            {last14.map((d) => (
+              <div key={d.day} className="flex flex-1 flex-col items-center gap-1" title={`${d.day}: ${Number(d.visitors)} besøkende`}>
+                <span className="text-[10px] text-mist">{Number(d.visitors)}</span>
+                <div className="w-full rounded-t bg-gold" style={{ height: `${Math.max(2, (Number(d.visitors) / peakVisitors) * 72)}px` }} />
+                <span className="text-[10px] text-fog">{d.day.slice(8)}.{Number(d.day.slice(5, 7))}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 border-t border-line pt-3">
+            <p className="text-sm">
+              Dagsrapport på e-post hver dag kl. 18:00.{" "}
+              {report?.last?.sentAt ? <span className="text-fog">Sist sendt {new Date(report.last.sentAt).toLocaleString("nb-NO")}.</span> : null}
+              {report?.last?.error ? <span className="text-flag-2"> Siste forsøk feilet: {report.last.error}</span> : null}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              <button type="button" className="btn btn-secondary" onClick={() => void reportCall(false)}>Forhåndsvis dagsrapporten</button>
+              <button type="button" className="btn btn-ghost" onClick={() => void reportCall(true)}>Send en testrapport nå</button>
+            </div>
+            {reportNote && <p className="mt-2 text-sm">{reportNote}</p>}
+            {report && (
+              <div className="mt-3">
+                <p className="text-xs text-mist">Emne: {report.subject}</p>
+                <pre className="mt-1 overflow-x-auto whitespace-pre rounded-lg bg-ink-2 p-3 text-xs leading-relaxed">{report.text}</pre>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {messages && (
         <section className="card p-4">

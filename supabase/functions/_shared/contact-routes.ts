@@ -17,17 +17,17 @@ import { sql } from "./db.ts";
 import { bad, json } from "./http.ts";
 import { checkContact, CONTACT_PER_DAY } from "./contact.ts";
 
-type Mailer = (m: { to: string; from: string; replyTo: string; subject: string; text: string }) => Promise<string | null>;
+export type Mailer = (m: { to: string; from: string; replyTo?: string; subject: string; text: string; html?: string }) => Promise<string | null>;
 
 /** Returns null on success, or a short reason for the admin page. */
-const resend: Mailer = async (m) => {
+export const resend: Mailer = async (m) => {
   const key = Deno.env.get("RESEND_API_KEY");
   if (!key) return "RESEND_API_KEY er ikke satt";
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
-      body: JSON.stringify({ from: m.from, to: [m.to], reply_to: m.replyTo, subject: m.subject, text: m.text }),
+      body: JSON.stringify({ from: m.from, to: [m.to], ...(m.replyTo ? { reply_to: m.replyTo } : {}), subject: m.subject, text: m.text, ...(m.html ? { html: m.html } : {}) }),
       signal: AbortSignal.timeout(8000),
     });
     if (res.ok) return null;

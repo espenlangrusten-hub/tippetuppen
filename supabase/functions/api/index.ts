@@ -22,6 +22,9 @@
  *   POST /admin/replace        swap the puzzle on a date (requires x-admin-key)
  *   POST /admin/enable         enable/disable a puzzle (requires x-admin-key)
  *   GET  /admin/messages       contact form inbox (requires x-admin-key)
+ *   POST /report/daily         the 18:00 statistics email, once a day (see daily-report-routes.ts)
+ *   GET  /admin/report         that email as it reads now (requires x-admin-key)
+ *   POST /admin/report/send    send it now, for testing (requires x-admin-key)
  */
 import { sql } from "../_shared/db.ts";
 import { cors, json, bad } from "../_shared/http.ts";
@@ -39,6 +42,7 @@ import { finnRoute } from "../_shared/finn.ts";
 import { gullordetRoute } from "../_shared/gullordet-routes.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
+import { adminReportPreview, adminReportSend, dailyReportRoute } from "../_shared/daily-report-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
 const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const;
@@ -464,9 +468,13 @@ Deno.serve(async (req) => {
       return await contactRoute(req, await visitorHash(req, osloDateKey()));
     }
 
+    if (req.method === "POST" && route === "/report/daily") return await dailyReportRoute();
+
     if (route.startsWith("/admin")) {
       if (!adminOk(req)) return json({ ok: false, error: "unauthorised" }, 401);
       if (req.method === "GET" && route === "/admin/messages") return await contactInbox();
+      if (req.method === "GET" && route === "/admin/report") return await adminReportPreview();
+      if (req.method === "POST" && route === "/admin/report/send") return await adminReportSend();
       const db = sql();
       const today = osloDateKey();
 

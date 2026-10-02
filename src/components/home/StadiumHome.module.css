@@ -71,6 +71,37 @@ font:26px Arial,sans-serif
 font-size:12px;
 color:#315c4b
 }
+.nudge {
+max-width:470px;
+margin-top:14px;
+color:#39414a;
+font-size:15px;
+line-height:1.35
+}
+.nudge a {
+color:#315c4b;
+font-weight:700;
+text-decoration:underline;
+text-underline-offset:2px
+}
+.nudge b {
+color:#315c4b
+}
+.nudgeBar {
+width:220px;
+max-width:100%;
+height:6px;
+margin-top:7px;
+border-radius:999px;
+background:rgba(49,92,75,.15);
+overflow:hidden
+}
+.nudgeBar span {
+display:block;
+height:100%;
+border-radius:inherit;
+background:#315c4b
+}
 .heroArt {
 position:absolute;
 right:0;

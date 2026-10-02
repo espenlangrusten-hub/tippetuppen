@@ -2,6 +2,39 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-02 – Kontoinvitasjon på forsiden og daglig statistikk-e-post
+
+**Forsiden.** Under knappen «Start dagens spill» står det nå:
+- **Utlogget:** «Logg inn eller registrer deg for å samle poeng og vinne avatarer.»
+  Begge ordene lenker til profilsiden.
+- **Innlogget:** «1 240 poeng igjen til Avatar nivå 1», med en tynn fremdriftslinje.
+  Tallet er 2 000 minus totalpoengene. Når nivået er nådd, står det «Du har låst opp
+  Avatar nivå 1», med lenke til å velge avatar hvis den ikke er valgt.
+- Ingenting vises før nettleseren vet om du er innlogget, så siden blinker ikke feil
+  tekst. En utløpt økt regnes som utlogget.
+
+**Dagsrapport på e-post kl. 18:00.**
+- `.github/workflows/daily-report.yml` kaller `POST /report/daily`. Edge Function
+  bygger rapporten (`src/lib/daily-report.ts`, `_shared/daily-report-routes.ts`) og
+  sender den med Resend til `CONTACT_TO`, med de samme hemmelighetene som
+  kontaktskjemaet.
+- Innhold: besøkende i dag, i går og snitt for 7 dager mot forrige 7, et søylediagram
+  for 14 dager, spill i dag, brukere og liga, og nye henvendelser.
+- Bare én e-post per Oslo-dag og aldri før kl. 18. Dagen reserveres i
+  `tippetuppen.settings` under nøkkelen `dailyReport` før sending. Feiler sendingen,
+  frigis reservasjonen og workflowen feiler, så GitHub varsler.
+- To cron-tider dekker sommer- og vintertid. En kjøring som starter litt før kl. 18
+  venter til 18:00.
+- Ruten trenger ingen nøkkel. Den kan bare sende dagens rapport til admin én gang, og
+  svarer bare om den gjorde det. Derfor trengs ingen kopi av `ADMIN_KEY` eller
+  Resend-nøkkelen i GitHub.
+- `SITE_URL` (valgfri hemmelighet i funksjonen) legger til en lenke til admin-siden.
+
+**Admin-siden.**
+- Nøkkelen kan huskes på enheten, og siden åpner da rett på tallene.
+- Ny seksjon «Dagens tall»: besøkende i dag, i går og snitt for 7 dager, et søylediagram
+  for 14 dager, og knapper for å forhåndsvise rapporten og sende en testrapport.
+
 ## 2026-09-26 – Utledningen utvidet: UEFA-roller og flytting til nærmeste linje
 
 To utvidelser av `scripts/infer-positions.ts`, etter avtale:
