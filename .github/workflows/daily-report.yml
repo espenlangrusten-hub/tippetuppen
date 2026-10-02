@@ -1,0 +1,76 @@
+name: Dagsrapport kl. 18
+
+# Sends the admin the day's statistics by email at 18:00 Oslo time. The Edge Function
+# builds and sends the email (supabase/functions/_shared/daily-report-routes.ts); this
+# job only says "now". The function sends at most one report per Oslo day and never
+# before 18:00, so running twice or late is harmless.
+#
+# GitHub's schedule is UTC and often runs some minutes late. Two runs cover both offsets:
+# 15:50 UTC is 17:50 in summer and 16:50 in winter, 16:50 UTC is 18:50 and 17:50. A run
+# that lands in the ten minutes before 18:00 waits for it; one more than twenty minutes
+# early is the other season's run and stops; a late one sends at once.
+#
+# Needs only the public vars the site build already uses (NEXT_PUBLIC_API_URL and the
+# anon key) - no copy of ADMIN_KEY or the Resend key.
+
+on:
+  schedule:
+    - cron: "50 15 * * *"
+    - cron: "50 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-report
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Vent til kl. 18:00 i Oslo
+        id: wait
+        run: |
+          set -euo pipefail
+          now=$(( 10#$(TZ=Europe/Oslo date +%H) * 60 + 10#$(TZ=Europe/Oslo date +%M) ))
+          due=$(( 18 * 60 ))
+          echo "Klokka i Oslo: $(TZ=Europe/Oslo date +%H:%M)"
+          if [ "$now" -lt $(( due - 20 )) ]; then
+            echo "Mer enn 20 minutter for tidlig – dette er kjøringen for den andre årstiden."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$now" -lt "$due" ]; then
+            wait=$(( (due - now) * 60 - 10#$(date +%S) + 5 ))
+            echo "Venter $wait sekunder."
+            sleep "$wait"
+          fi
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Send dagsrapporten
+        if: steps.wait.outputs.skip != 'true'
+        env:
+          API: ${{ vars.NEXT_PUBLIC_API_URL }}
+          ANON: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+          [ -n "$API" ] || { echo "vars.NEXT_PUBLIC_API_URL mangler"; exit 1; }
+          for attempt in 1 2 3; do
+            body=$(curl -sS -X POST "${API%/}/report/daily" -H "apikey: $ANON" -H "authorization: Bearer $ANON" || true)
+            echo "Svar: $body"
+            reason=$(echo "$body" | jq -r '.reason // empty' 2>/dev/null || true)
+            if [ "$(echo "$body" | jq -r '.sent' 2>/dev/null)" = "true" ]; then
+              echo "Dagsrapporten er sendt." >> "$GITHUB_STEP_SUMMARY"; exit 0
+            fi
+            if [ "$reason" = "already-sent" ]; then
+              echo "Dagens rapport var allerede sendt." >> "$GITHUB_STEP_SUMMARY"; exit 0
+            fi
+            # "too-early" means the clocks disagree by a few seconds; anything else is a
+            # failed send, which released today's claim and can be retried.
+            sleep 60
+          done
+          echo "Dagsrapporten ble ikke sendt: $body" >> "$GITHUB_STEP_SUMMARY"
+          exit 1

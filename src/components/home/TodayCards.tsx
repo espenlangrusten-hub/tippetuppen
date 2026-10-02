@@ -9,6 +9,7 @@ import { BASE_PATH, type GameSlug } from "@/lib/site";
 import { loadRecords } from "@/lib/storage";
 import { computeStreak } from "@/lib/streaks";
 import { TopPlayers } from "./TopPlayers";
+import { AccountNudge } from "./AccountNudge";
 import s from "./StadiumHome.module.css";
 
 type DailySlug = GameSlug | "trener-genius";
@@ -59,6 +60,7 @@ export function TodayCards() {
             <Link href="#spill" className={s.primary}>Start dagens spill <span aria-hidden="true">→</span></Link>
             {streak ? <span className={s.streak}><b>{streak}</b> {streak === 1 ? "dag" : "dager"} på rad</span> : null}
           </div>
+          <AccountNudge />
         </div>
 
         <div className={s.heroArt} aria-hidden="true">
