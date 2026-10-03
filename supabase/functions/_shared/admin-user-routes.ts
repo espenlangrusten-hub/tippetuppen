@@ -12,6 +12,7 @@ import { sql } from "./db.ts";
 import { bad, json } from "./http.ts";
 import { validUsername } from "./auth.ts";
 import { cleanEmail, cleanProfileName } from "./profile-routes.ts";
+import { isOffensiveUsername } from "./username-filter.ts";
 
 const LIST_LIMIT = 200;
 
@@ -53,6 +54,7 @@ export async function adminUserUpdate(req: Request) {
   if (!body || typeof body.userId !== "string" || typeof body.username !== "string") return bad("bad request");
   const parsed = validUsername(body.username);
   if (!parsed) return json({ ok: false, error: "invalid-username" }, 400);
+  if (isOffensiveUsername(parsed.username)) return json({ ok: false, error: "inappropriate-username" }, 400);
   const name = cleanProfileName(body.name);
   if (name === undefined) return json({ ok: false, error: "invalid-name" }, 400);
   const email = cleanEmail(body.email);

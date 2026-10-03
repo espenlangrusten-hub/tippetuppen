@@ -134,6 +134,8 @@ export function ProfileScreen() {
         setMessage(
           response.error === "taken"
             ? "Brukernavnet er allerede tatt."
+            : response.error === "inappropriate"
+              ? "Det brukernavnet er ikke tillatt. Velg et annet."
             : response.error === "rate-limit"
               ? "For mange forsøk. Vent litt og prøv igjen."
               : mode === "register"

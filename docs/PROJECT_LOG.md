@@ -2,6 +2,21 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-03 – Stygge brukernavn stoppes
+
+Nye brukernavn med banneord, skjellsord eller seksuelle ord avvises ved registrering
+(«Det brukernavnet er ikke tillatt. Velg et annet.»). Admin kan heller ikke gi en bruker
+et slikt navn. Filteret ligger i `src/lib/username-filter.ts` (delt med Edge Function).
+- **Triks fanges:** camelCase deles opp (BigFitte), æøå og aksenter foldes, tall og tegn
+  som ligner bokstaver leses som bokstaver (f4en, sh1t, $hit), bokstaver kan gjentas
+  (fuuuck), og skilletegn ignoreres (f.u.c.k, k.u.k.hue).
+- **Vanlige navn skal gå:** ord som finnes inne i vanlige navn stoppes bare som eget ord
+  eller i starten av et ord. Thoresen, Kassen, Nazir, Sluttspill, Nigeria og Sexton
+  slipper gjennom. Testene i `tests/username-filter.test.ts` sjekker begge retninger.
+- **Eksisterende brukere berøres ikke:** filteret gjelder nye navn, og innlogging med et
+  eksisterende navn virker som før. Ingen av dagens 15 brukere ble stoppet av filteret.
+  Et navn som slipper gjennom, kan slettes eller endres på admin-siden.
+
 ## 2026-10-03 – Publiseringsnøkkelen til Supabase gikk ut
 
 Publiseringen av #86 stoppet på «Deploy api function» med `401 Unauthorized`. Nøkkelen
