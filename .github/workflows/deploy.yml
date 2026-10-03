@@ -3,6 +3,10 @@ name: Deploy
 # Publishes the static site to GitHub Pages and the game API to Supabase.
 # Requires (Settings → Secrets and variables → Actions):
 #   secrets.SUPABASE_ACCESS_TOKEN   personal access token from supabase.com/dashboard/account/tokens
+#                                   A scoped token is enough: project "dommer" only, Edge Functions
+#                                   read-write and Project Settings read. Tokens expire; the one made
+#                                   2026-10-03 lasts 90 days, so renew it before 2027-01-01. An expired
+#                                   token fails "Deploy api function" with 401 Unauthorized.
 #   secrets.SUPABASE_PROJECT_REF    the project ref, e.g. abcdefghijklmnop
 #   vars.NEXT_PUBLIC_SITE_URL       public URL of the finished site
 #   vars.NEXT_PUBLIC_BASE_PATH      "/<repo>" on a github.io URL, empty on a custom domain

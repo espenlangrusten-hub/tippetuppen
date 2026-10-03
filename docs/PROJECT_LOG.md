@@ -2,6 +2,17 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-03 – Publiseringsnøkkelen til Supabase gikk ut
+
+Publiseringen av #86 stoppet på «Deploy api function» med `401 Unauthorized`. Nøkkelen
+`SUPABASE_ACCESS_TOKEN` virket 2. oktober kl. 16:57 og ikke 3. oktober kl. 09:57. Det
+stemmer med en 30-dagersnøkkel fra første publisering 2. september.
+
+Ny nøkkel laget 3. oktober. Den er begrenset til prosjektet «dommer», med **Edge Functions:
+Read-write** og **Project Settings: Read**, og har ingen tilgang til database,
+hemmeligheter eller andre prosjekter. Den varer i 90 dager og **må fornyes før
+1. januar 2027**. Framgangsmåten står øverst i `.github/workflows/deploy.yml`.
+
 ## 2026-10-03 – Admin kan endre og slette brukere
 
 Ny seksjon «Brukere» på admin-siden, bak admin-nøkkelen:
