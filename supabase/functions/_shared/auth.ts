@@ -1,5 +1,6 @@
 import { sql } from "./db.ts";
 import { normalizeName } from "./names.ts";
+import { isOffensiveUsername } from "./username-filter.ts";
 
 const enc = new TextEncoder();
 const ITERATIONS = 210_000;
@@ -58,6 +59,8 @@ export function validUsername(raw: string) {
 export async function createUser(rawUsername: string, password: string) {
   const parsed = validUsername(rawUsername);
   if (!parsed || password.length < 8 || password.length > 128) return { ok: false as const, error: "invalid" };
+  // Checked here and not in validUsername: login must keep working for an existing name.
+  if (isOffensiveUsername(parsed.username)) return { ok: false as const, error: "inappropriate" };
   const salt = randomHex(16);
   const id = crypto.randomUUID();
   try {

@@ -73,3 +73,12 @@ test("profile and friend-league flow works end-to-end", async ({ page }, testInf
     fullPage: true,
   });
 });
+
+test("an offensive username is refused at registration", async ({ page }) => {
+  await page.goto("/profil/#register");
+  await page.getByLabel("Brukernavn").fill("Fuuuck_" + Date.now().toString(36).slice(-4));
+  await page.getByLabel("Passord").fill("Tippetuppen-123!");
+  await page.getByRole("button", { name: "Opprett spiller" }).click();
+  await expect(page.getByText("Det brukernavnet er ikke tillatt. Velg et annet.")).toBeVisible({ timeout: 10000 });
+  await expect(page.getByText("Spiller opprettet.")).toHaveCount(0);
+});

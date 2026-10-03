@@ -22,6 +22,7 @@ type User = {
 const ERRORS: Record<string, string> = {
   "invalid-username": "Brukernavnet må ha 3–24 tegn: bokstaver, tall, punktum, bindestrek eller understrek.",
   "username-taken": "Brukernavnet er allerede i bruk.",
+  "inappropriate-username": "Brukernavnet er ikke tillatt (banneord eller stygt ord).",
   "invalid-name": "Navnet kan ha høyst 60 tegn.",
   "invalid-email": "E-postadressen ser ikke gyldig ut.",
   "email-taken": "E-postadressen er allerede i bruk.",
