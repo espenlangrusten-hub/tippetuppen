@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { API_URL } from "@/lib/api";
+import { AdminUsers } from "./AdminUsers";
 
 /**
  * Operations console. The site is static, so this talks to the Edge Function's
@@ -43,6 +44,8 @@ export function AdminScreen() {
   const [remember, setRemember] = useState(false);
   const [report, setReport] = useState<Report | null>(null);
   const [reportNote, setReportNote] = useState<string | null>(null);
+  // The key the figures were fetched with: the field itself may be mid-edit.
+  const [activeKey, setActiveKey] = useState("");
   const rememberRef = useRef(false);
 
   const load = useCallback(
@@ -64,6 +67,7 @@ export function AdminScreen() {
         const statsRes = await fetch(`${API_URL}/admin/stats?days=30`, { headers: { "x-admin-key": k } });
         if (!statsRes.ok) { setStats(null); throw new Error("Stats unavailable"); }
         setStats((await statsRes.json()) as Stats);
+        setActiveKey(k);
         // The inbox is read here rather than trusted to email: a message is stored even
         // when the mail provider is down or not configured yet.
         const inbox = await fetch(`${API_URL}/admin/messages`, { headers: { "x-admin-key": k } });
@@ -234,6 +238,8 @@ export function AdminScreen() {
           </div>
         </section>
       )}
+
+      {stats && activeKey && <AdminUsers adminKey={activeKey} />}
 
       {messages && (
         <section className="card p-4">

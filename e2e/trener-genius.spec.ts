@@ -42,7 +42,11 @@ test("Trener Genius persists a round, guards answers and awards league points on
     expect(replay.answers).toHaveLength(index+1);
     await page.reload();
     await expect(page.getByRole("button",{name:index===3?/Se resultatet/:/Neste spørsmål/})).toBeVisible();
+    // The click only sends /next; wait for the server to record it before the next
+    // iteration asks /start for the index, or the two race and /start can still say the old one.
+    const advanced = page.waitForResponse((r) => r.url().endsWith("/trener-genius/next") && r.request().method() === "POST");
     await page.getByRole("button",{name:index===3?/Se resultatet/:/Neste spørsmål/}).click();
+    expect((await advanced).ok()).toBe(true);
   }
   await expect(page.getByRole("button",{name:"Del resultatet ↗"})).toBeVisible();
   await expect(page.getByText("Poengene er registrert i månedsligaen.")).toBeVisible();
