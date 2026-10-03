@@ -25,6 +25,9 @@
  *   POST /report/daily         the 18:00 statistics email, once a day (see daily-report-routes.ts)
  *   GET  /admin/report         that email as it reads now (requires x-admin-key)
  *   POST /admin/report/send    send it now, for testing (requires x-admin-key)
+ *   GET  /admin/users?q=       registered users, newest first (requires x-admin-key)
+ *   POST /admin/users/update   change a user's username, name or email (requires x-admin-key)
+ *   POST /admin/users/delete   delete a user; the username must be typed back (requires x-admin-key)
  */
 import { sql } from "../_shared/db.ts";
 import { cors, json, bad } from "../_shared/http.ts";
@@ -43,6 +46,7 @@ import { gullordetRoute } from "../_shared/gullordet-routes.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import { adminReportPreview, adminReportSend, dailyReportRoute } from "../_shared/daily-report-routes.ts";
+import { adminUserDelete, adminUsers, adminUserUpdate } from "../_shared/admin-user-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
 const GAMES = ["mangler-xi", "maalloes", "finn-spilleren", "trener-genius", "gullordet"] as const;
@@ -475,6 +479,9 @@ Deno.serve(async (req) => {
       if (req.method === "GET" && route === "/admin/messages") return await contactInbox();
       if (req.method === "GET" && route === "/admin/report") return await adminReportPreview();
       if (req.method === "POST" && route === "/admin/report/send") return await adminReportSend();
+      if (req.method === "GET" && route === "/admin/users") return await adminUsers(url);
+      if (req.method === "POST" && route === "/admin/users/update") return await adminUserUpdate(req);
+      if (req.method === "POST" && route === "/admin/users/delete") return await adminUserDelete(req);
       const db = sql();
       const today = osloDateKey();
 

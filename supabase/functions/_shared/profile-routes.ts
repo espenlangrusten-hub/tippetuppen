@@ -4,14 +4,14 @@ import { changePassword, currentUser } from "./auth.ts";
 
 export const AVATAR_UNLOCK_POINTS = 2000;
 
-function cleanProfileName(raw: unknown) {
+export function cleanProfileName(raw: unknown) {
   if (raw === null || raw === undefined || raw === "") return null;
   if (typeof raw !== "string") return undefined;
   const name = raw.trim().replace(/\s+/g, " ");
   return name.length <= 60 ? name || null : undefined;
 }
 
-function cleanEmail(raw: unknown) {
+export function cleanEmail(raw: unknown) {
   if (raw === null || raw === undefined || raw === "") return null;
   if (typeof raw !== "string") return undefined;
   const email = raw.trim().toLowerCase();

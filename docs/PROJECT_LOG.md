@@ -2,6 +2,28 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-03 – Admin kan endre og slette brukere
+
+Ny seksjon «Brukere» på admin-siden, bak admin-nøkkelen:
+- **Liste og søk:** de 200 nyeste brukerne. Søk treffer brukernavn, navn eller e-post.
+  Hver rad viser registreringsdato, poeng, antall spilte dager, sist spilt og sist
+  innlogget.
+- **Endre:** brukernavn, navn og e-post. Reglene er de samme som ved registrering og på
+  profilsiden. Opptatt brukernavn eller e-post avvises. Spilleren ser det nye navnet neste
+  gang profilen eller ligaen lastes, og blir ikke logget ut.
+- **Slette:** admin må skrive brukernavnet for å bekrefte, og serveren sjekker det igjen.
+  Sletting kan ikke angres. Brukerens økter, ligaresultater, spillforsøk, progresjon og
+  medlemskap i vennegrupper slettes automatisk sammen med brukeren (cascade), og
+  spilleren blir logget ut ved neste besøk. En vennegruppe brukeren eier, går til
+  medlemmet som har vært der lengst. Er det ingen andre medlemmer, slettes gruppa.
+- **Logg:** hver endring og sletting lagres i `admin_audit` (`user_updated` med før og
+  etter, `user_deleted` med brukerens data, poeng og hva som skjedde med vennegruppene).
+
+API: `GET /admin/users?q=`, `POST /admin/users/update` og `POST /admin/users/delete`
+(`supabase/functions/_shared/admin-user-routes.ts`). Nettlesertesten
+`e2e/admin-users.spec.ts` oppretter en spiller, gir den nytt navn, sletter den og
+sjekker at spilleren er logget ut.
+
 ## 2026-10-02 – Gullordet nr. 1 byttet samme dag (databaseendring)
 
 Admin ba om nytt Gullord for 2. oktober, selv om ordet allerede var spilt. Endringen er
