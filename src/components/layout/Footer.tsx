@@ -16,6 +16,8 @@ export function Footer() {
         </nav>
         <p className="tt-footer-tagline">Fotballkunnskap gjør alt litt bedre <b>♥</b></p>
       </div>
+      {/* Said on every page: "tippe" also means to bet, and web filters judge by the name. */}
+      <p className="tt-footer-note">Gratis fotballquiz. Ingen pengespill, ingen innsats og ingen pengepremier.</p>
     </footer>
   );
 }
