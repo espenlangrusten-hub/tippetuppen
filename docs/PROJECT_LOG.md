@@ -2,6 +2,26 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-05 – Tydelig at Tippetuppen ikke er pengespill
+
+tippetuppen.no blokkeres av Microsoft Defender på minst én arbeidsplass («blocked by your
+organisation» / HTTP 403). Samme side på github.io virket, så det er domenet som er
+vurdert, ikke innholdet. Sannsynlige årsaker er at domenet er nytt, eller at «tippe»
+tolkes som pengespill. Den nøyaktige kategorien kan bare IT-avdelingen se.
+
+For at filtre og søkemotorer skal klassifisere riktig:
+- Beskrivelsen og delingsteksten sier «gratis norsk fotballquiz, uten pengespill».
+- Strukturerte data (JSON-LD, `WebApplication`, `GameApplication`, gratis, pris 0) på
+  alle sider.
+- Bunnteksten sier på alle sider: «Gratis fotballquiz. Ingen pengespill, ingen innsats
+  og ingen pengepremier.»
+- Om-siden har et eget avsnitt «Ingen pengespill», som også forklarer navnet og at
+  Tippetuppen ikke har noe med Norsk Tipping å gjøre.
+
+HTTPS: sertifikatet for tippetuppen.no ble utstedt 5. oktober og «Enforce HTTPS» er slått
+på. DNS er kontrollert mot begge navneservere (ns/ns2.datacenter.no): fire A-poster til
+GitHub, www som CNAME, ingen CAA som stenger Let's Encrypt.
+
 ## 2026-10-03 – Stygge brukernavn stoppes
 
 Nye brukernavn med banneord, skjellsord eller seksuelle ord avvises ved registrering

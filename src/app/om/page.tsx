@@ -37,6 +37,8 @@ export default function Page() {
       <p className="text-mist">
         Alle kamper, oppstillinger og tabeller i databasen er merket med kildestatus. Bare oppstillinger som er kontrollert mot offentlige kamparkiv (som eu-football.info, 11v11, RSSSF, UEFA/FIFA og kamprapporter) brukes i de daglige spillene. Gullordets ordliste for vanlige norske gjetninger bygger på Norsk ordbank – bokmål 2005 fra Språkrådet og Universitetet i Bergen, tilgjengelig fra Språkbanken under CC BY 4.0. Finner du en feil? Vi vil gjerne høre om det – send en melding via <Link href="/kontakt" className="underline">kontaktskjemaet</Link>.
       </p>
+      <h2 className="font-display text-2xl font-bold uppercase">Ingen pengespill</h2>
+      <p className="text-mist">Tippetuppen er en gratis fotballquiz og har ingenting med pengespill å gjøre. Ingen satser penger, det finnes ingen odds, og det deles ikke ut pengepremier – poengene i ligaen er bare for æren. Navnet kommer av å tippe i betydningen å gjette. Tippetuppen har ingen tilknytning til Norsk Tipping eller andre spillselskaper.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Uavhengig</h2>
       <p className="text-mist">Tippetuppen er et uavhengig hobbyprosjekt og har ingen tilknytning til Norges Fotballforbund, Norsk Toppfotball eller noen klubb. Spillene er inspirert av klassiske daglige ordspill, med egne regler, egen design og egen norsk database.</p>
     </article>

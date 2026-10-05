@@ -310,6 +310,12 @@ a  {
 .tt-footer-tagline b  {
  color: var(--tt-red);
 }
+.tt-footer-note  {
+ margin: 0;
+ padding: 0 38px 14px;
+ font-size: 11px;
+ text-align: center;
+}
 .league-reference-page,
 .profile-reference-page  {
   width: 100%;
@@ -567,6 +573,10 @@ a  {
   .tt-footer-links  {
  gap: 15px;
  flex-wrap: wrap;
+}
+  .tt-footer-note  {
+ padding: 0 15px 18px;
+ text-align: left;
 }
 }
 /* Liga og profil — dashboard composition from the approved reference. */
