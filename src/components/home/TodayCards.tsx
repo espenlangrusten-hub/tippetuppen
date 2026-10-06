@@ -23,8 +23,8 @@ type HomeGame = {
 };
 
 const games: HomeGame[] = [
-  { slug: "mangler-xi", recordSlug: "mangler-xi", name: "Manglende 11", description: "Hvilke spillere mangler i lagoppstillingen?", art: "xi", image: "/design/xi.webp" },
-  { slug: "maalloes", recordSlug: "maalloes", name: "Målløs", description: "Gjett kamper uten at noen scorer.", art: "goal", image: "/design/goal.webp" },
+  { slug: "mangler-xi", recordSlug: "mangler-xi", name: "Mangler XI", description: "Hvilke spillere mangler i lagoppstillingen?", art: "xi", image: "/design/xi.webp" },
+  { slug: "maalloes", recordSlug: "maalloes", name: "Målløs", description: "Fem svar på et spørsmål om norsk fotball. Jo færre som svarer det samme, jo bedre.", art: "goal", image: "/design/goal.webp" },
   { slug: "finn-spilleren", recordSlug: "finn-spilleren", name: "Finn spilleren", description: "Hvem er spilleren vi er på jakt etter?", art: "mystery", image: "/design/mystery.webp" },
   { slug: "straffespark", name: "Straffespark", description: "Fem nye spørsmål hver dag.", art: "penalty", image: "/design/penalty.webp" },
   { slug: "gullordet", recordSlug: "gullordet", name: "Gullordet", description: "Fem bokstaver. Seks forsøk.", art: "word" },
