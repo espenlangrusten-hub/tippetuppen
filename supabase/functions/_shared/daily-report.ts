@@ -26,6 +26,25 @@ export type ReportInput = {
   leaguePlayersToday: number;
   messagesToday: number;
   adminUrl: string | null;
+  /** Tippkaiser, the German test site in the same database. Null when its schema is not there. */
+  kaiser?: KaiserStats | null;
+};
+
+/** Tippkaiser's day in brief: same counting rules as Tippetuppen's, read from its own schema. */
+export type KaiserStats = {
+  today: ReportDay;
+  yesterday: ReportDay | null;
+  games: ReportGame[];
+  users: { total: number; newToday: number };
+};
+
+const KAISER_GAME_LABEL: Record<string, string> = {
+  "mangler-xi": "Fehlende Elf",
+  maalloes: "Torlos",
+  "finn-spilleren": "Finde den Spieler",
+  straffespark: "Elfmeter",
+  gullordet: "Goldwort",
+  "trener-genius": "Trainer-Genie",
 };
 
 export const REPORT_GAME_LABEL: Record<string, string> = {
@@ -115,10 +134,23 @@ export function buildDailyReport(r: ReportInput): { subject: string; text: strin
   lines.push(r.messagesToday ? `${num(r.messagesToday)} ${r.messagesToday === 1 ? "ny melding" : "nye meldinger"} i dag – les dem på admin-siden.` : "Ingen nye meldinger i dag.");
   lines.push("");
 
+  if (r.kaiser) {
+    const k = r.kaiser;
+    lines.push("TIPPKAISER (tysk testside)");
+    lines.push(`${pad(`I dag (til kl. ${r.clock}):`, 22)}${padLeft(num(k.today.visitors), 4)}  (${num(k.today.newVisitors)} nye, ${num(k.today.pageViews)} sidevisninger)`);
+    lines.push(`${pad("I går:", 22)}${padLeft(num(k.yesterday?.visitors ?? 0), 4)}`);
+    const kPlayed = k.games.filter((g) => g.players > 0).sort((a, b) => b.players - a.players);
+    if (!kPlayed.length) lines.push("Ingen har startet et spill i dag ennå.");
+    for (const g of kPlayed) lines.push(`${pad(KAISER_GAME_LABEL[g.game] ?? g.game, 18)}${padLeft(num(g.players), 4)} ${g.players === 1 ? "spiller" : "spillere"}, ${num(g.completes)} fullført`);
+    lines.push(`Registrerte brukere: ${num(k.users.total)}${k.users.newToday ? ` (+${num(k.users.newToday)} i dag)` : " (ingen nye i dag)"}`);
+    lines.push("");
+  }
+
   lines.push("Besøkende telles per dag med en anonym nøkkel som byttes hvert døgn, så samme person to dager telles to ganger. Admin-besøk er holdt utenfor.");
   if (r.adminUrl) lines.push(`Admin: ${r.adminUrl}`);
 
-  const subject = `Tippetuppen ${p.d}.${p.m}.: ${num(today?.visitors ?? 0)} besøkende i dag (i går ${num(yesterday?.visitors ?? 0)})`;
+  const kaiser = r.kaiser ? ` · Tippkaiser ${num(r.kaiser.today.visitors)}` : "";
+  const subject = `Tippetuppen ${p.d}.${p.m}.: ${num(today?.visitors ?? 0)} besøkende i dag (i går ${num(yesterday?.visitors ?? 0)})${kaiser}`;
   return { subject, text: lines.join("\n") };
 }
 

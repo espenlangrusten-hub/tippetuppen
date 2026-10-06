@@ -68,3 +68,37 @@ describe("utsendelsen", () => {
     expect(routes).not.toMatch(/@(?!resend\.dev)[a-z0-9-]+\.[a-z]{2,}/i);
   });
 });
+
+describe("Tippkaiser i dagsrapporten", () => {
+  const kaiser = {
+    today: day("2026-10-14", 3),
+    yesterday: day("2026-10-13", 1),
+    games: [{ game: "gullordet", players: 2, completes: 1 }, { game: "maalloes", players: 0, completes: 0 }],
+    users: { total: 5, newToday: 1 },
+  };
+
+  it("legger til en egen seksjon og tallet i emnefeltet", () => {
+    const { subject, text } = buildDailyReport({ ...input, kaiser });
+    expect(subject).toBe("Tippetuppen 14.10.: 10 besøkende i dag (i går 10) · Tippkaiser 3");
+    expect(text).toContain("TIPPKAISER (tysk testside)");
+    expect(text).toMatch(/Goldwort +2 spillere, 1 fullført/);
+    expect(text).not.toContain("Torlos");
+    expect(text).toContain("Registrerte brukere: 5 (+1 i dag)");
+  });
+
+  it("er borte når Tippkaiser ikke finnes", () => {
+    for (const r of [input, { ...input, kaiser: null }]) {
+      const { subject, text } = buildDailyReport(r);
+      expect(subject).not.toContain("Tippkaiser");
+      expect(text).not.toContain("TIPPKAISER");
+    }
+  });
+
+  it("leser Tippkaiser bare, og stopper aldri Tippetuppens egen rapport", () => {
+    const routes = read("supabase", "functions", "_shared", "daily-report-routes.ts");
+    const kaiserSql = routes.slice(routes.indexOf("async function kaiserStats"), routes.indexOf("export async function reportInput"));
+    expect(kaiserSql).not.toMatch(/\b(insert|update|delete|drop|alter|create)\b/i);
+    expect(kaiserSql).toMatch(/to_regclass\('tippkaiser\.events'\)/);
+    expect(routes).toMatch(/kaiserStats\(today\)\.catch\(\(\) => null\)/);
+  });
+});

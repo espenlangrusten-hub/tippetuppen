@@ -19,10 +19,48 @@
 import { sql } from "./db.ts";
 import { json } from "./http.ts";
 import { addDays } from "./dates.ts";
-import { buildDailyReport, osloNow, REPORT_HOUR, reportHtml, type ReportDay, type ReportInput } from "./daily-report.ts";
+import { buildDailyReport, osloNow, REPORT_HOUR, reportHtml, type KaiserStats, type ReportDay, type ReportInput } from "./daily-report.ts";
 import { resend, type Mailer } from "./contact-routes.ts";
 
 const CLAIM = "dailyReport";
+
+/**
+ * Tippkaiser, the German copy, lives in the same database in its own schema. Its numbers
+ * ride along in this email rather than in a second one. Read-only, and skipped when the
+ * schema is absent, so Tippetuppen's report never depends on Tippkaiser being there.
+ */
+async function kaiserStats(today: string): Promise<KaiserStats | null> {
+  const db = sql();
+  const [exists] = await db<{ ok: boolean }[]>`select to_regclass('tippkaiser.events') is not null and to_regclass('tippkaiser.users') is not null as ok`;
+  if (!exists?.ok) return null;
+  const yesterday = addDays(today, -1);
+  const days = await db<{ day: string; visitors: number; new_visitors: number; page_views: number; starts: number; completes: number }[]>`
+    select day,
+           count(distinct visitor)::int                         as visitors,
+           count(distinct visitor) filter (where is_new)::int   as new_visitors,
+           count(*) filter (where name = 'page_view')::int      as page_views,
+           count(*) filter (where name = 'game_start')::int     as starts,
+           count(*) filter (where name = 'game_complete')::int  as completes
+    from tippkaiser.events
+    where day in (${today}, ${yesterday}) and coalesce(props->>'path','') not like '%/admin%'
+    group by day`;
+  const games = await db<{ game: string; players: number; completes: number }[]>`
+    select game,
+           count(distinct visitor) filter (where name = 'game_start')::int as players,
+           count(*) filter (where name = 'game_complete')::int             as completes
+    from tippkaiser.events
+    where day = ${today} and game is not null and coalesce(props->>'path','') not like '%/admin%'
+    group by game`;
+  const [users] = await db<{ total: number; new_today: number }[]>`
+    select count(*)::int as total,
+           count(*) filter (where (created_at at time zone 'Europe/Oslo')::date = ${today}::date)::int as new_today
+    from tippkaiser.users`;
+  const asDay = (day: string): ReportDay => {
+    const d = days.find((x) => x.day === day);
+    return { day, visitors: d?.visitors ?? 0, newVisitors: d?.new_visitors ?? 0, pageViews: d?.page_views ?? 0, starts: d?.starts ?? 0, completes: d?.completes ?? 0 };
+  };
+  return { today: asDay(today), yesterday: asDay(yesterday), games, users: { total: users.total, newToday: users.new_today } };
+}
 
 export async function reportInput(now = new Date()): Promise<ReportInput> {
   const { day: today, clock } = osloNow(now);
@@ -66,6 +104,8 @@ export async function reportInput(now = new Date()): Promise<ReportInput> {
     leaguePlayersToday: league.players,
     messagesToday: messages.count,
     adminUrl: site ? `${site}/admin/` : null,
+    // A failure here must not cost Tippetuppen its own report.
+    kaiser: await kaiserStats(today).catch(() => null),
   };
 }
 
