@@ -99,6 +99,13 @@
       "when": 1790929200000,
       "tag": "0013_gullordet",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1791540000000,
+      "tag": "0014_password_resets",
+      "breakpoints": true
     }
   ]
 }

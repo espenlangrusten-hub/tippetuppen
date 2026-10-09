@@ -136,3 +136,61 @@ export async function logoutUser(req: Request) {
     await sql()`delete from tippetuppen.sessions where token_hash = ${await sha256(token)}`;
   }
 }
+
+/**
+ * Password resets. A one-time link carries a random token; only its SHA-256 is stored,
+ * so the table does not hold working links. A link works once and before it expires,
+ * and a newer link for the same user cancels the older ones. Setting a new password
+ * signs the user out everywhere and in again, like changing it on the profile page.
+ */
+export const RESET_HOURS = { email: 1, admin: 24 } as const;
+export type ResetSource = keyof typeof RESET_HOURS;
+
+export async function createPasswordReset(userId: string, source: ResetSource) {
+  const token = randomHex(32);
+  const expiresAt = new Date(Date.now() + RESET_HOURS[source] * 3_600_000);
+  await sql().begin(async (tx) => {
+    await tx`delete from tippetuppen.password_resets where user_id = ${userId} and used_at is null`;
+    await tx`insert into tippetuppen.password_resets (token_hash, user_id, source, expires_at)
+      values (${await sha256(token)}, ${userId}, ${source}, ${expiresAt})`;
+  });
+  return { token, expiresAt: expiresAt.toISOString() };
+}
+
+/** The account a forgotten-password request names: by username, or by email when it looks like one. */
+export async function findAccount(identifier: string): Promise<{ id: string; username: string; email: string | null } | null> {
+  const raw = identifier.trim();
+  if (!raw || raw.length > 160) return null;
+  if (raw.includes("@")) {
+    const rows = await sql()<{ id: string; username: string; email: string | null }[]>`
+      select id, username, email from tippetuppen.users where email = ${raw.toLowerCase()}`;
+    return rows[0] ?? null;
+  }
+  const parsed = validUsername(raw);
+  if (!parsed) return null;
+  const rows = await sql()<{ id: string; username: string; email: string | null }[]>`
+    select id, username, email from tippetuppen.users where username_normalized = ${parsed.normalized}`;
+  return rows[0] ?? null;
+}
+
+export async function resetPassword(token: string, newPassword: string) {
+  if (!/^[a-f0-9]{64}$/.test(token)) return { ok: false as const, error: "invalid-link" };
+  if (newPassword.length < 8 || newPassword.length > 128) return { ok: false as const, error: "invalid-new" };
+  const salt = randomHex(16);
+  const hash = await passwordHash(newPassword, salt);
+  // Claim the link and change the password in one transaction: two tabs submitting the
+  // same link cannot both succeed, and a failure leaves the link unused.
+  const userId = await sql().begin(async (tx) => {
+    const [claimed] = await tx<{ user_id: string }[]>`
+      update tippetuppen.password_resets set used_at = now()
+      where token_hash = ${await sha256(token)} and used_at is null and expires_at > now()
+      returning user_id`;
+    if (!claimed) return null;
+    await tx`update tippetuppen.users set password_hash = ${hash}, password_salt = ${salt} where id = ${claimed.user_id}`;
+    await tx`delete from tippetuppen.sessions where user_id = ${claimed.user_id}`;
+    await tx`delete from tippetuppen.password_resets where user_id = ${claimed.user_id} and used_at is null`;
+    return claimed.user_id;
+  });
+  if (!userId) return { ok: false as const, error: "invalid-link" };
+  return issueSession(userId);
+}

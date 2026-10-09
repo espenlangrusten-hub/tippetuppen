@@ -286,6 +286,11 @@ export function ProfileScreen() {
               {busy ? "Venter …" : mode === "login" ? "Logg inn" : "Opprett spiller"}
             </button>
           </form>
+          {mode === "login" && (
+            <p className="mt-3 text-sm">
+              <Link className="underline" href="/nytt-passord/">Glemt passordet?</Link>
+            </p>
+          )}
           {message && <p className="mt-3 text-sm text-mist">{message}</p>}
         </section>
       </div>
@@ -394,8 +399,10 @@ export function ProfileScreen() {
               autoComplete="email"
               placeholder="Valgfritt"
               maxLength={160}
+              aria-describedby="email-hint"
             />
           </label>
+          <p id="email-hint" className="-mt-2 text-xs text-fog">Med e-post kan du få en lenke hvis du glemmer passordet.</p>
           <button className="btn btn-primary" disabled={busy}>Lagre profil</button>
         </form>
         {message && <p className="mt-3 text-sm text-mist">{message}</p>}

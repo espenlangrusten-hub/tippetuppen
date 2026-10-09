@@ -529,6 +529,25 @@ export const sessions = tt.table(
   (t) => [index("sessions_user").on(t.userId), index("sessions_expiry").on(t.expiresAt)],
 );
 
+/**
+ * One-time links for setting a new password. Only the SHA-256 of the token is stored,
+ * like sessions, so a database read does not hand out working links. A link works once,
+ * before it expires; a newer link for the same user replaces the older ones.
+ * `source` is "email" (the user asked) or "admin" (made on the admin page).
+ */
+export const passwordResets = tt.table(
+  "password_resets",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade" }),
+    source: text("source").notNull(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+    usedAt: timestamp("used_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("password_resets_user").on(t.userId)],
+);
+
 export const gameProgress = tt.table(
   "game_progress",
   {

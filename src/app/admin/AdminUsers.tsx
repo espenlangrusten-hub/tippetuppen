@@ -38,6 +38,7 @@ export function AdminUsers({ adminKey }: { adminKey: string }) {
   const [total, setTotal] = useState(0);
   const [editing, setEditing] = useState<{ id: string; username: string; name: string; email: string } | null>(null);
   const [deleting, setDeleting] = useState<{ id: string; confirm: string } | null>(null);
+  const [resetLink, setResetLink] = useState<{ id: string; link: string; expiresAt: string } | null>(null);
   const [note, setNote] = useState<{ text: string; error?: boolean } | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -69,7 +70,7 @@ export function AdminUsers({ adminKey }: { adminKey: string }) {
         headers: { "x-admin-key": adminKey, "content-type": "application/json" },
         body: JSON.stringify(payload),
       });
-      return (await res.json()) as { ok: boolean; error?: string; deleted?: string; leaguesHandedOver?: number; leaguesDeleted?: number };
+      return (await res.json()) as { ok: boolean; error?: string; deleted?: string; leaguesHandedOver?: number; leaguesDeleted?: number; link?: string; expiresAt?: string };
     } catch {
       return { ok: false, error: "network" };
     } finally {
@@ -97,6 +98,14 @@ export function AdminUsers({ adminKey }: { adminKey: string }) {
     setNote({ text: `Slettet ${result.deleted}.${leagues.length ? ` ${leagues.join(", ")}.` : ""}` });
     setDeleting(null);
     await load(query);
+  };
+
+  const makeResetLink = async (id: string) => {
+    setNote(null);
+    setResetLink(null);
+    const result = await post("/admin/users/reset-link", { userId: id });
+    if (!result.ok || !result.link || !result.expiresAt) return setNote({ text: ERRORS[result.error ?? ""] ?? "Fikk ikke laget lenken.", error: true });
+    setResetLink({ id, link: result.link, expiresAt: result.expiresAt });
   };
 
   return (
@@ -173,6 +182,14 @@ export function AdminUsers({ adminKey }: { adminKey: string }) {
                     </button>
                     <button
                       type="button"
+                      className="rounded bg-line-2 px-2 py-0.5 text-xs"
+                      disabled={busy}
+                      onClick={() => void makeResetLink(u.id)}
+                    >
+                      Nytt passord
+                    </button>
+                    <button
+                      type="button"
                       className="rounded bg-line-2 px-2 py-0.5 text-xs text-flag-2"
                       disabled={busy}
                       onClick={() => {
@@ -183,6 +200,19 @@ export function AdminUsers({ adminKey }: { adminKey: string }) {
                     >
                       Slett
                     </button>
+                  </div>
+                </div>
+              )}
+              {resetLink?.id === u.id && (
+                <div className="mt-2 rounded-lg bg-ink-2 p-3 text-xs">
+                  <p>
+                    Send denne lenken til {u.username}, f.eks. på SMS. Den virker én gang, til{" "}
+                    {new Date(resetLink.expiresAt).toLocaleString("nb-NO", { timeZone: "Europe/Oslo" })}. En ny lenke gjør den gamle ugyldig.
+                  </p>
+                  <input className="input mt-2 font-mono text-xs" readOnly value={resetLink.link} onFocus={(e) => e.currentTarget.select()} aria-label="Lenke for nytt passord" />
+                  <div className="mt-2 flex gap-2">
+                    <button type="button" className="btn btn-secondary" onClick={() => void navigator.clipboard?.writeText(resetLink.link)}>Kopier</button>
+                    <button type="button" className="btn btn-ghost" onClick={() => setResetLink(null)}>Lukk</button>
                   </div>
                 </div>
               )}

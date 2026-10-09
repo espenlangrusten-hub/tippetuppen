@@ -102,3 +102,36 @@ describe("Tippkaiser i dagsrapporten", () => {
     expect(routes).toMatch(/kaiserStats\(today\)\.catch\(\(\) => null\)/);
   });
 });
+
+describe("glemt passord i dagsrapporten", () => {
+  it("navngir den som ba om ny lenke uten å få e-post", () => {
+    const { text } = buildDailyReport({ ...input, resetRequests: [{ username: "ola", hasEmail: false }, { username: "kari", hasEmail: true }] });
+    expect(text).toContain("Glemt passord: ola ba om ny lenke, men har ingen e-postadresse.");
+    expect(text).toContain("Glemt passord: kari ba om ny lenke, men e-posten kunne ikke sendes.");
+  });
+
+  it("sier ingenting når ingen trenger hjelp", () => {
+    expect(buildDailyReport(input).text).not.toContain("Glemt passord");
+  });
+});
+
+describe("lenken for nytt passord", () => {
+  const routes = read("supabase", "functions", "_shared", "password-reset-routes.ts");
+  const auth = read("supabase", "functions", "_shared", "auth.ts");
+
+  it("svarer likt uansett om kontoen finnes, så skjemaet ikke avslører brukernavn", () => {
+    const forgot = routes.slice(routes.indexOf("export async function forgotPasswordRoute"), routes.indexOf("export async function resetPasswordRoute"));
+    expect(forgot.match(/return json\(/g)).toHaveLength(1);
+    expect(forgot).toMatch(/return json\(\{ ok: true \}\);/);
+  });
+
+  it("lagrer bare en hash av lenken, og bruker den én gang", () => {
+    expect(auth).toMatch(/insert into tippetuppen\.password_resets \(token_hash[^]*sha256\(token\)/);
+    expect(auth).toMatch(/set used_at = now\(\)[^]*used_at is null and expires_at > now\(\)/);
+    expect(auth).toMatch(/delete from tippetuppen\.sessions where user_id = \$\{claimed\.user_id\}/);
+  });
+
+  it("legger lenken i fragmentet, som aldri sendes til en server", () => {
+    expect(routes).toMatch(/\/nytt-passord\/#\$\{token\}/);
+  });
+});
