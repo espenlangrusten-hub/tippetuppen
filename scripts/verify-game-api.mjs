@@ -40,13 +40,14 @@ try {
   assert.equal((await stats('?days=invalid')).daily.length,30);
   const name = 'qa-' + Date.now();
   const password = crypto.randomUUID();
-  const user = await req('/auth/register',{username:name,password});
+  const user = await req('/auth/register',{username:name,password,email:name+'@example.test'});
   assert.equal(user.ok,true,JSON.stringify(user)); created.push(user.user.id);
   const token=user.token;
   const unranked=await req('/leaderboard',undefined,token);
   assert.equal(unranked.me,null);
   assert.equal(typeof unranked.registered,'number');
-  assert.equal((await req('/auth/register',{username:name.toUpperCase(),password})).error,'taken');
+  assert.equal((await req('/auth/register',{username:name.toUpperCase(),password,email:name+'-2@example.test'})).error,'taken');
+  assert.equal((await req('/auth/register',{username:name+'-x',password})).error,'invalid-email');
   assert.equal((await req('/auth/login',{username:name,password})).ok,true);
   assert.equal((await req('/auth/login',{username:name,password:'wrong'})).ok,false);
   const puzzle=(await req('/today?game=finn-spilleren')).puzzle;
@@ -164,7 +165,7 @@ try {
 
   // A second authenticated profile can join a private league by code.
   const friendName=name+'-venn';
-  const friend=await req('/auth/register',{username:friendName,password});
+  const friend=await req('/auth/register',{username:friendName,password,email:friendName+'@example.test'});
   assert.equal(friend.ok,true,JSON.stringify(friend)); created.push(friend.user.id);
   const made=await req('/friend-league/create',{name:'QA-venneliga'},token);
   assert.equal(made.ok,true,JSON.stringify(made));
