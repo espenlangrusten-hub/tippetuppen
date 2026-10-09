@@ -2677,5 +2677,2732 @@
         "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
       }
     ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-5",
+    "expectedAnswer": "Cardiff City",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Swansea City",
+      "Fulham",
+      "Norwich City"
+    ],
+    "fact": "Han ble sparket etter en dårlig sesongstart i september 2014.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-4",
+    "expectedAnswer": "Europaligaen",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Conference League",
+      "Mesterligaen",
+      "Cupvinnercupen"
+    ],
+    "fact": "Glimt hadde vunnet Eliteserien i 2024.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      },
+      {
+        "title": "Viking er seriemester – fotball.no",
+        "url": "https://www.fotball.no/turneringer/eliteserien/2025/viking-er-seriemester/"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-2",
+    "expectedAnswer": "44",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "38",
+      "41",
+      "47"
+    ],
+    "fact": "Mjelde fikk Kniksenprisen som årets trener for gullet.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-14",
+    "expectedAnswer": "Hans Backe",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Roy Hodgson",
+      "Michael Laudrup",
+      "Morten Olsen"
+    ],
+    "fact": "Laget lå på toppen av tabellen ved trenerskiftet.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-4",
+    "expectedAnswer": "Liverpool",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Chelsea",
+      "Tottenham",
+      "Manchester City"
+    ],
+    "fact": "Han fikk sparken allerede i januar 2011.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-martin-andresen-5",
+    "expectedAnswer": "Bridge",
+    "difficulty": 2,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Poker",
+      "Whist",
+      "Kasino"
+    ],
+    "fact": "Han har også vunnet NM i squash.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Martin Andresen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-14",
+    "expectedAnswer": "Bryne",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Sogndal",
+      "Hødd",
+      "Haugesund"
+    ],
+    "fact": "Debuten ble 2–0 mot rivalen Stavanger.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-27",
+    "expectedAnswer": "Hertha Berlin",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Werder Bremen",
+      "Hamburger SV",
+      "VfB Stuttgart"
+    ],
+    "fact": "Kåringen kom ved klubbens 111-årsjubileum.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-11",
+    "expectedAnswer": "Start",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Vålerenga",
+      "Brann",
+      "Rosenborg"
+    ],
+    "fact": "Kampen endte 1–1.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-3",
+    "expectedAnswer": "5",
+    "difficulty": 3,
+    "category": "Opprykket",
+    "distractors": [
+      "3",
+      "7",
+      "9"
+    ],
+    "fact": "Det var HamKams første sesong tilbake i Eliteserien.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-lars-lagerback-2",
+    "expectedAnswer": "Island",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Danmark",
+      "Finland",
+      "Færøyene"
+    ],
+    "fact": "Han har også vært trener for Nigeria.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Lars Lagerbäck – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-32",
+    "expectedAnswer": "Hunden",
+    "difficulty": 1,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Katten",
+      "Hesten",
+      "Papegøyen"
+    ],
+    "fact": "Den personlige stilen gjorde ham svært populær som landslagssjef.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-9",
+    "expectedAnswer": "Odd",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Rosenborg",
+      "Brann",
+      "Lillestrøm"
+    ],
+    "fact": "Han spilte for klubben fra 1993 til 2004.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-15",
+    "expectedAnswer": "Molde",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Viking",
+      "Brann",
+      "Odd"
+    ],
+    "fact": "Det sto 2–2 etter ekstraomgangene.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-29",
+    "expectedAnswer": "Tyskland",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Nederland",
+      "Sverige",
+      "Danmark"
+    ],
+    "fact": "Christian Grindheim scoret kampens eneste mål i Düsseldorf.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-12",
+    "expectedAnswer": "Danmark",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Sverige",
+      "Finland",
+      "Nederland"
+    ],
+    "fact": "Han ble kåret til årets trener i Danmark både for 2018 og 2019.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-2",
+    "expectedAnswer": "Roma",
+    "difficulty": 1,
+    "category": "Europacupen",
+    "distractors": [
+      "Lazio",
+      "Napoli",
+      "Milan"
+    ],
+    "fact": "Roma-treneren José Mourinho hadde aldri før sluppet inn seks mål i én kamp.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-16",
+    "expectedAnswer": "Knut Tørum",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Tom Nordlie",
+      "Stig Inge Bjørnebye",
+      "Kjetil Rekdal"
+    ],
+    "fact": "Start rykket ned samme år, men kom rett opp igjen i 2012.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-41",
+    "expectedAnswer": "1971",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "1969",
+      "1973",
+      "1976"
+    ],
+    "fact": "Tor Røste Fossen var assistent.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-teitur-thordarson-2",
+    "expectedAnswer": "Estland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Latvia",
+      "Litauen",
+      "Færøyene"
+    ],
+    "fact": "Han trente samtidig klubben Flora Tallinn.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Teitur Thordarson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Teitur_Thordarson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-3",
+    "expectedAnswer": "Sveits",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Østerrike",
+      "Belgia",
+      "Danmark"
+    ],
+    "fact": "Han var sveitsisk landslagssjef fra 1992.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-54",
+    "expectedAnswer": "Follo",
+    "difficulty": 3,
+    "category": "Cupgullet",
+    "distractors": [
+      "Ranheim",
+      "Sogndal",
+      "Hønefoss"
+    ],
+    "fact": "NRK kalte det tidenes cupbombe.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-46",
+    "expectedAnswer": "Lektor",
+    "difficulty": 1,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Revisor",
+      "Lege",
+      "Politimann"
+    ],
+    "fact": "Han underviste i norsk, samfunnsfag og gymnastikk.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-13",
+    "expectedAnswer": "Molde",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Brann",
+      "Viking",
+      "Vålerenga"
+    ],
+    "fact": "Laget lå på 11. plass da han gikk av.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      },
+      {
+        "title": "Høgmo ferdig som Molde-trener – NRK",
+        "url": "https://www.nrk.no/sport/hogmo-ferdig-som-molde-trener_-_-skulle-gjerne-fortsatt-1.17570606"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-47",
+    "expectedAnswer": "0",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "1",
+      "2",
+      "3"
+    ],
+    "fact": "Gullet var Rosenborgs 22. seriemesterskap.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-7",
+    "expectedAnswer": "Celtic",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Rangers",
+      "Aberdeen",
+      "Hearts"
+    ],
+    "fact": "Han ble skotsk mester med klubben i sin første sesong.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-9",
+    "expectedAnswer": "Omonia",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "APOEL",
+      "Anorthosis",
+      "Apollon Limassol"
+    ],
+    "fact": "Han ledet klubben fra 2019 til 2022, og igjen fra 2025.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-31",
+    "expectedAnswer": "San Marino",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Liechtenstein",
+      "Færøyene",
+      "Luxembourg"
+    ],
+    "fact": "Deretter fulgte en overraskende seier over Nederland.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-2",
+    "expectedAnswer": "Spania",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Jugoslavia",
+      "Slovenia",
+      "Portugal"
+    ],
+    "fact": "Norge røk likevel ut etter gruppespillet.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-21",
+    "expectedAnswer": "Mexico",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Italia",
+      "Irland",
+      "Nederland"
+    ],
+    "fact": "Han er den eneste norske herrespilleren som har scoret i to VM-sluttspill.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-5",
+    "expectedAnswer": "2018",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "2016",
+      "2017",
+      "2019"
+    ],
+    "fact": "Han hadde vært assistent i klubben året før.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-24",
+    "expectedAnswer": "Stig Inge Bjørnebye",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Knut Tørum",
+      "Mons Ivar Mjelde",
+      "Kjetil Rekdal"
+    ],
+    "fact": "Start lå på 13.-plass da Nordlie gikk.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-33",
+    "expectedAnswer": "Irak",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Iran",
+      "Saudi-Arabia",
+      "Kuwait"
+    ],
+    "fact": "Laget var nybakt asiamester da han kom.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-10",
+    "expectedAnswer": "2",
+    "difficulty": 3,
+    "category": "Sølvlaget",
+    "distractors": [
+      "3",
+      "4",
+      "5"
+    ],
+    "fact": "Deila vant cupen med klubben i 2010.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-21",
+    "expectedAnswer": "Skeid",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Lyn",
+      "KFUM Oslo",
+      "Frigg"
+    ],
+    "fact": "Han rykket opp til OBOS-ligaen med klubben i 2018.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-10",
+    "expectedAnswer": "Clausenengen",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Kristiansund BK",
+      "Sunndal",
+      "Træff"
+    ],
+    "fact": "Han scoret 115 mål på 109 kamper for klubben.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-22",
+    "expectedAnswer": "Sogndal",
+    "difficulty": 3,
+    "category": "Opprykket",
+    "distractors": [
+      "Bodø/Glimt",
+      "Strømsgodset",
+      "Hødd"
+    ],
+    "fact": "Nordlie jobbet som TV-ekspert året etter.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-53",
+    "expectedAnswer": "Olympiakos",
+    "difficulty": 3,
+    "category": "Europacupen",
+    "distractors": [
+      "Porto",
+      "Galatasaray",
+      "Panathinaikos"
+    ],
+    "fact": "Rosenborg røk ut med 11 poeng.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-3",
+    "expectedAnswer": "Bronse",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Gull",
+      "Sølv",
+      "Fjerdeplass"
+    ],
+    "fact": "Etter VM samme år tok han over A-landslaget.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-55",
+    "expectedAnswer": "FC København",
+    "difficulty": 3,
+    "category": "Europacupen",
+    "distractors": [
+      "Brøndby",
+      "AaB",
+      "Midtjylland"
+    ],
+    "fact": "Treneren på andre siden var Ståle Solbakken.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-33",
+    "expectedAnswer": "Nils Arne Eggen",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Trond Sollied",
+      "Åge Hareide",
+      "Ola By Rise"
+    ],
+    "fact": "Han var tilbake etter sabbatsåret i 1998.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-8",
+    "expectedAnswer": "Legia Warszawa",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Lech Poznań",
+      "Wisła Kraków",
+      "Górnik Zabrze"
+    ],
+    "fact": "Året etter vant laget også den polske cupen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-19",
+    "expectedAnswer": "Kontrollert sinnssyk",
+    "difficulty": 1,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Godfoten",
+      "Effektiv fotball",
+      "Drømmefotball"
+    ],
+    "fact": "Samme Nordlie ledet Start til seriesølv i 2005.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie"
+      },
+      {
+        "title": "Tom Nordlie – Wikipedia (versjon 20. februar 2009)",
+        "url": "https://no.wikipedia.org/w/index.php?title=Tom_Nordlie&oldid=5146978"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-1",
+    "expectedAnswer": "Gunder Bengtsson",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Olle Nordin",
+      "Sven-Göran Eriksson",
+      "Tommy Svensson"
+    ],
+    "fact": "Vålerenga tapte bare tre av 22 seriekamper i 1983.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      },
+      {
+        "title": "1983 Norwegian First Division – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1983_Norwegian_First_Division"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-24",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Molde",
+      "Brann",
+      "Viking"
+    ],
+    "fact": "Samarbeidet ble avsluttet i juni 2023.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-11",
+    "expectedAnswer": "Per-Mathias Høgmo",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Ståle Solbakken",
+      "Lars Lagerbäck",
+      "Åge Hareide"
+    ],
+    "fact": "Han debuterte med 0–3 borte mot Slovenia i oktober 2013.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      },
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-10",
+    "expectedAnswer": "122",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "98",
+      "110",
+      "136"
+    ],
+    "fact": "Hans siste kamp var 3–3 mot Tromsø i august 2008.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-7",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Brann",
+      "Strømsgodset",
+      "Vålerenga"
+    ],
+    "fact": "Finalen ble spilt på Ullevaal 24. november 2013.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-2",
+    "expectedAnswer": "José Mourinho",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Louis van Gaal",
+      "David Moyes",
+      "Ralf Rangnick"
+    ],
+    "fact": "Han ble fast ansatt i mars 2019.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-14",
+    "expectedAnswer": "Bjørn Rune Gjelsten",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Kjell Inge Røkke",
+      "Sam Hammam",
+      "Joe Kinnear"
+    ],
+    "fact": "Klubben ble helnorsk eid samme vinter.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-13",
+    "expectedAnswer": "Moss",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Rosenborg",
+      "Lillestrøm",
+      "Viking"
+    ],
+    "fact": "Vålerenga vant serien samme år.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-13",
+    "expectedAnswer": "Ajax",
+    "difficulty": 3,
+    "category": "Europacupen",
+    "distractors": [
+      "PSV",
+      "Feyenoord",
+      "AZ"
+    ],
+    "fact": "FC København var dansk mester i Solbakkens første sesong.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-9",
+    "expectedAnswer": "Ståle Solbakken",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Kjetil Knutsen",
+      "Per-Mathias Høgmo",
+      "Kåre Ingebrigtsen"
+    ],
+    "fact": "Norge lå da på 44.-plass på FIFA-rankingen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-37",
+    "expectedAnswer": "88",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "76",
+      "82",
+      "94"
+    ],
+    "fact": "Fasiten ble 46 seire, 26 uavgjorte og 16 tap.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-50",
+    "expectedAnswer": "Skihopping",
+    "difficulty": 2,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Langrenn",
+      "Skøyter",
+      "Alpint"
+    ],
+    "fact": "Bekkelagsrennet ble kalt «guttenes holmenkollrenn».",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-13",
+    "expectedAnswer": "Brann",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Vålerenga",
+      "Molde",
+      "Tromsø"
+    ],
+    "fact": "Samarbeidet ble avsluttet i juli 2021.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-39",
+    "expectedAnswer": "Terry Burton",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Joe Kinnear",
+      "Lars Tjærnås",
+      "Dave Bassett"
+    ],
+    "fact": "Wimbledon rykket ned etter 0–2 mot Southampton.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-49",
+    "expectedAnswer": "Borussia Dortmund",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Bayern München",
+      "Bayer Leverkusen",
+      "Hertha Berlin"
+    ],
+    "fact": "Rosenborg vant gruppa si for første gang det året.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-5",
+    "expectedAnswer": "France Football",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "L'Équipe",
+      "Onze Mondial",
+      "So Foot"
+    ],
+    "fact": "Norge vant ni kamper på rad det året.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-10",
+    "expectedAnswer": "1. FC Köln",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Hertha Berlin",
+      "Werder Bremen",
+      "Hamburger SV"
+    ],
+    "fact": "Han fikk sparken med tre kamper igjen av vårsesongen 2012.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-14",
+    "expectedAnswer": "Revisor",
+    "difficulty": 2,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Lektor",
+      "Advokat",
+      "Ingeniør"
+    ],
+    "fact": "Han jobbet i bank og var styreleder i et rederi.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-hamren-9",
+    "expectedAnswer": "Tyskland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Nederland",
+      "England",
+      "Frankrike"
+    ],
+    "fact": "Kampen var en VM-kvalifiseringskamp.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-23",
+    "expectedAnswer": "HamKam",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "Jerv",
+      "Ranheim",
+      "Raufoss"
+    ],
+    "fact": "Han ble kåret til årets trener i OBOS-ligaen 2021.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-1",
+    "expectedAnswer": "Nils Johan Semb",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Egil Olsen",
+      "Åge Hareide",
+      "Tor Røste Fossen"
+    ],
+    "fact": "Norge slo Spania i EM, men røk ut etter gruppespillet.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-13",
+    "expectedAnswer": "Malmö FF",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "IFK Göteborg",
+      "AIK",
+      "Djurgården"
+    ],
+    "fact": "Han ble kåret til årets trener i Allsvenskan samme høst.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-25",
+    "expectedAnswer": "Brann",
+    "difficulty": 3,
+    "category": "Redningsmannen",
+    "distractors": [
+      "Odd",
+      "Start",
+      "Molde"
+    ],
+    "fact": "Nordlie hadde tatt over Viking på sisteplass i september.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie"
+      },
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-1",
+    "expectedAnswer": "Trond Sollied",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Åge Hareide",
+      "Ola By Rise",
+      "Bjørn Hansen"
+    ],
+    "fact": "Rosenborg vant serien også det året.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      },
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-6",
+    "expectedAnswer": "Olympiakos",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Panathinaikos",
+      "AEK Athen",
+      "PAOK"
+    ],
+    "fact": "Han vant både serien og cupen i sin første sesong der.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      },
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-9",
+    "expectedAnswer": "Erling Moe",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Mark Dempsey",
+      "Kjell Jonevret",
+      "Uwe Rösler"
+    ],
+    "fact": "Moe ble senere med Solskjær som assistent i Beşiktaş.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-7",
+    "expectedAnswer": "Finland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Sverige",
+      "Danmark",
+      "Island"
+    ],
+    "fact": "I romjula 2007 ble han manager for Fulham.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-14",
+    "expectedAnswer": "Apollon Limassol",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "APOEL",
+      "Omonia",
+      "Anorthosis"
+    ],
+    "fact": "Året før hadde han trent greske PAOK.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-7",
+    "expectedAnswer": "Manchester United",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Arsenal",
+      "Liverpool",
+      "Chelsea"
+    ],
+    "fact": "Han var skadet og spilte ikke finalene i FA-cupen og Champions League.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-6",
+    "expectedAnswer": "Beşiktaş",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Galatasaray",
+      "Fenerbahçe",
+      "Trabzonspor"
+    ],
+    "fact": "Han fikk sparken i august samme år.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-lars-lagerback-1",
+    "expectedAnswer": "Lars Lagerbäck",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Erik Hamrén",
+      "Sven-Göran Eriksson",
+      "Jan Jönsson"
+    ],
+    "fact": "Han ble presentert av Norges Fotballforbund 1. februar 2017.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Lars Lagerbäck – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-7",
+    "expectedAnswer": "Aasmund Bjørkan",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Jan Halvor Halvorsen",
+      "Cato André Hansen",
+      "Kåre Ingebrigtsen"
+    ],
+    "fact": "Glimt rykket suverent opp fra OBOS-ligaen det året.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-10",
+    "expectedAnswer": "Manchester City",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Leeds United",
+      "Everton",
+      "Aston Villa"
+    ],
+    "fact": "Han scoret de tre målene på én omgang.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-1",
+    "expectedAnswer": "2020",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "2018",
+      "2019",
+      "2021"
+    ],
+    "fact": "Glimt ble tidenes første nordnorske seriemester.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-3",
+    "expectedAnswer": "20",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "9",
+      "11",
+      "18"
+    ],
+    "fact": "United-fansen kaller ham «20LEGEND».",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-hamren-4",
+    "expectedAnswer": "1. juni",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "1. januar",
+      "1. juli",
+      "15. august"
+    ],
+    "fact": "Han vant serien året etter.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henning-berg-6",
+    "expectedAnswer": "100",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "88",
+      "94",
+      "110"
+    ],
+    "fact": "Bare Thorbjørn Svenssen og John Arne Riise har flere for herrelandslaget.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Henning Berg – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-8",
+    "expectedAnswer": "Halmstad",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Öster",
+      "IFK Göteborg",
+      "Hammarby"
+    ],
+    "fact": "Han vant Allsvenskan med klubben i 1976 og 1979.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-6",
+    "expectedAnswer": "FC København",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Brøndby",
+      "AaB",
+      "OB"
+    ],
+    "fact": "Han hadde vært en av kandidatene til å bli Englands landslagssjef i 2000.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-6",
+    "expectedAnswer": "2008",
+    "difficulty": 2,
+    "category": "Årstallet",
+    "distractors": [
+      "2006",
+      "2007",
+      "2009"
+    ],
+    "fact": "Han hadde vært assistent under Dag-Eilev Fagermo siden 2006.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-hamren-2",
+    "expectedAnswer": "AaB",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Brøndby",
+      "FC København",
+      "OB"
+    ],
+    "fact": "Han kom til Rosenborg sommeren 2008.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      },
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-52",
+    "expectedAnswer": "George Curtis",
+    "difficulty": 3,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Bobby Houghton",
+      "Roy Hodgson",
+      "Bill Shankly"
+    ],
+    "fact": "Curtis måtte gå på grunn av misnøye med kjedelig fotball.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-34",
+    "expectedAnswer": "Fredrikstad",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Lyn",
+      "Odd",
+      "Start"
+    ],
+    "fact": "Han sluttet etter én sesong på grunn av lang reisevei fra Oslo.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-35",
+    "expectedAnswer": "Beşiktaş",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Galatasaray",
+      "Fenerbahçe",
+      "Trabzonspor"
+    ],
+    "fact": "Vålerenga lå under 0–3 ved pause i Istanbul, men gikk videre.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-7",
+    "expectedAnswer": "1995",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "1991",
+      "1997",
+      "1999"
+    ],
+    "fact": "Klubben hadde også økonomiske problemer da han tok over.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-4",
+    "expectedAnswer": "Hjertestans",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Korsbåndskade",
+      "Leggbrudd",
+      "Ryggskade"
+    ],
+    "fact": "Hjertestansen kom på en trening i FC København og varte i sju minutter.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-3",
+    "expectedAnswer": "Brodd",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Pors",
+      "Eik-Tønsberg",
+      "Ørn-Horten"
+    ],
+    "fact": "Han spilte selv for Odd fra 1993 til 2004.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-uwe-rosler-9",
+    "expectedAnswer": "Øst-Tyskland",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Vest-Tyskland",
+      "Østerrike",
+      "Sveits"
+    ],
+    "fact": "Han er født i Altenburg i det tidligere DDR.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Uwe Rösler – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-lars-lagerback-3",
+    "expectedAnswer": "Nigeria",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Ghana",
+      "Kamerun",
+      "Elfenbenskysten"
+    ],
+    "fact": "Året før hadde han gitt seg som Sveriges landslagssjef.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Lars Lagerbäck – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-lars-lagerback-4",
+    "expectedAnswer": "Tommy Söderberg",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "Tommy Svensson",
+      "Sven-Göran Eriksson",
+      "Erik Hamrén"
+    ],
+    "fact": "Etter EM 2004 fikk Lagerbäck eneansvaret.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Lars Lagerbäck – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-10",
+    "expectedAnswer": "4. september",
+    "difficulty": 3,
+    "category": "Årstallet",
+    "distractors": [
+      "31. august",
+      "15. september",
+      "1. oktober"
+    ],
+    "fact": "Året etter ledet han Aalesund til cupgull.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-15",
+    "expectedAnswer": "Manchester City",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Leeds United",
+      "Aston Villa",
+      "Nottingham Forest"
+    ],
+    "fact": "Senere spilte han for Norwich City.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-30",
+    "expectedAnswer": "Italia",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Danmark",
+      "Frankrike",
+      "Nederland"
+    ],
+    "fact": "Christian Vieri ga italienerne en tidlig ledelse i Marseille.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-3",
+    "expectedAnswer": "10",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "6",
+      "8",
+      "12"
+    ],
+    "fact": "Laget tapte bare én seriekamp hele sesongen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-teitur-thordarson-5",
+    "expectedAnswer": "Vancouver Whitecaps",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Toronto FC",
+      "Montreal Impact",
+      "Seattle Sounders"
+    ],
+    "fact": "Han hadde tidligere trent Brann og Lyn.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Teitur Thordarson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Teitur_Thordarson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-38",
+    "expectedAnswer": "Ingvar Stadheim",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "Tor Røste Fossen",
+      "Nils Johan Semb",
+      "Andreas Morisbak"
+    ],
+    "fact": "Drillo kom fra jobben som trener for OL-landslaget.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-10",
+    "expectedAnswer": "USA",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Kina",
+      "Tyskland",
+      "Brasil"
+    ],
+    "fact": "Året før hadde laget tatt 4.-plass i VM.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-8",
+    "expectedAnswer": "PSG",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Juventus",
+      "Real Madrid",
+      "Bayern München"
+    ],
+    "fact": "Marcus Rashford avgjorde på straffe i det 94. minutt i Paris.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-12",
+    "expectedAnswer": "BK Häcken",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Malmö FF",
+      "AIK",
+      "Hammarby"
+    ],
+    "fact": "Laget vant også Svenska cupen 2022–2023.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-26",
+    "expectedAnswer": "Sølv",
+    "difficulty": 2,
+    "category": "Sølvlaget",
+    "distractors": [
+      "Gull",
+      "Bronse",
+      "Ingen medalje"
+    ],
+    "fact": "Året før hadde laget berget plassen i nedrykkskvalifisering.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-martin-andresen-6",
+    "expectedAnswer": "Skeidar",
+    "difficulty": 3,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Bohus",
+      "Fagmøbler",
+      "Møbelringen"
+    ],
+    "fact": "Han er også en av konsernets største eiere.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Martin Andresen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-28",
+    "expectedAnswer": "4",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "3",
+      "5",
+      "6"
+    ],
+    "fact": "Plasseringen ble omtalt som historisk for klubben.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-22",
+    "expectedAnswer": "Gule",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Hvite",
+      "Røde",
+      "Sorte"
+    ],
+    "fact": "Skoene og drakten fra kampen ble stilt ut på Fotballmuseet på Ullevaal.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      },
+      {
+        "title": "Fotballmuseet – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Fotballmuseet"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-erik-hamren-8",
+    "expectedAnswer": "Island",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Finland",
+      "Danmark",
+      "Norge"
+    ],
+    "fact": "Han etterfulgte Heimir Hallgrímsson.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Erik Hamrén – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-5",
+    "expectedAnswer": "Inter",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Juventus",
+      "Milan",
+      "Roma"
+    ],
+    "fact": "Etterpå gikk han tilbake til England og Blackburn.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-16",
+    "expectedAnswer": "Hødd",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Aalesund",
+      "Kristiansund",
+      "Herd"
+    ],
+    "fact": "Klubben holdt til i Ulsteinvik.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-8",
+    "expectedAnswer": "New York City",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "New York Red Bulls",
+      "New York Cosmos",
+      "New England Revolution"
+    ],
+    "fact": "Han har også trent Atlanta United i MLS.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-6",
+    "expectedAnswer": "Åsane",
+    "difficulty": 3,
+    "category": "Opprykket",
+    "distractors": [
+      "Nest-Sotra",
+      "Arna-Bjørnar",
+      "Lysekloster"
+    ],
+    "fact": "Styret byttet ham likevel ut etter 2016-sesongen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-15",
+    "expectedAnswer": "Gratangen",
+    "difficulty": 3,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Lavangen",
+      "Salangen",
+      "Bardu"
+    ],
+    "fact": "Han avsluttet spillerkarrieren i moderklubben Gratangen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-per-mathias-hogmo-14",
+    "expectedAnswer": "Urawa Red Diamonds",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Kashima Antlers",
+      "Yokohama F. Marinos",
+      "Vissel Kobe"
+    ],
+    "fact": "Før det hadde han vunnet Allsvenskan med Häcken.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-36",
+    "expectedAnswer": "1938",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "1954",
+      "1958",
+      "1982"
+    ],
+    "fact": "VM-billetten ble sikret med 3–0 over Polen i Poznań.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-uwe-rosler-10",
+    "expectedAnswer": "Kaiserslautern",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Hamburger SV",
+      "Werder Bremen",
+      "Schalke 04"
+    ],
+    "fact": "Der spilte han i Champions League.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Uwe Rösler – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      },
+      {
+        "title": "Names of the nineties: Uwe Rösler – These Football Times",
+        "url": "https://thesefootballtimes.co/2019/09/10/names-of-the-nineties-uwe-rosler/"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-56",
+    "expectedAnswer": "Vegard Heggem",
+    "difficulty": 3,
+    "category": "Europacupen",
+    "distractors": [
+      "Roar Strand",
+      "Mini Jakobsen",
+      "Bent Skammelsrud"
+    ],
+    "fact": "Harald Martin Brattbakk hadde fått beskjed om å snappe pasningen ut mot høyre.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-11",
+    "expectedAnswer": "KV Oostende",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Gent",
+      "Genk",
+      "Mechelen"
+    ],
+    "fact": "Han hadde fått sparken i Rosenborg sommeren før.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-11",
+    "expectedAnswer": "Wolverhampton",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Bolton",
+      "Reading",
+      "Blackburn"
+    ],
+    "fact": "Luton spilte da på femte nivå i engelsk fotball.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-15",
+    "expectedAnswer": "Lillestrøm",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Viking",
+      "Rosenborg",
+      "Molde"
+    ],
+    "fact": "Året før scoret han to mål i en tapt cupfinale.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-48",
+    "expectedAnswer": "Juventus",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Ajax",
+      "Manchester United",
+      "Borussia Dortmund"
+    ],
+    "fact": "Det endte 1–1 på Lerkendal og 0–2 i Torino.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-mons-ivar-mjelde-13",
+    "expectedAnswer": "Austria Wien",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Rapid Wien",
+      "Sturm Graz",
+      "Red Bull Salzburg"
+    ],
+    "fact": "Samme år ble han kåret til årets angriper med 19 mål på 15 seriekamper.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-20",
+    "expectedAnswer": "Vannpolo",
+    "difficulty": 2,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Håndball",
+      "Basketball",
+      "Ishockey"
+    ],
+    "fact": "Han deltok i EM med landslaget.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-4",
+    "expectedAnswer": "Assistenttrener",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Sportssjef",
+      "Keepertrener",
+      "Juniortrener"
+    ],
+    "fact": "Rosenborg vant serien også det året.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-4",
+    "expectedAnswer": "Bayern München",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Juventus",
+      "Barcelona",
+      "Borussia Dortmund"
+    ],
+    "fact": "Målet kom etter to minutter av tilleggstiden.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-6",
+    "expectedAnswer": "Eik Tønsberg",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Sandefjord",
+      "Larvik Turn",
+      "Odd"
+    ],
+    "fact": "Laget tapte semifinalen mot Molde.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-51",
+    "expectedAnswer": "Orkla",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Ranheim",
+      "Byåsen",
+      "Strindheim"
+    ],
+    "fact": "Han kom fra Orkdal og ble gravlagt fra Orkdal kirke.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-10",
+    "expectedAnswer": "6",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "4",
+      "8",
+      "9"
+    ],
+    "fact": "Han gikk av 29. mai.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie"
+      },
+      {
+        "title": "Nordlie ferdig – uenighetene med Fjørtoft grunnen – Adresseavisen",
+        "url": "https://www.adressa.no/sport/fotball/i/PRyEVp/nordlie-ferdig-uenighetene-med-fjoertoft-grunnen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kare-ingebrigtsen-12",
+    "expectedAnswer": "Ishockey",
+    "difficulty": 2,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Håndball",
+      "Bandy",
+      "Basketball"
+    ],
+    "fact": "Han begynte med organisert fotball etter at familien flyttet til Utleira.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-12",
+    "expectedAnswer": "Løvehjertet",
+    "difficulty": 3,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Hjertet først",
+      "Andre omgang",
+      "Grue-gutten"
+    ],
+    "fact": "Boka ble skrevet av Ekstra Bladet-journalisten Peter Sloth.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-johan-semb-4",
+    "expectedAnswer": "Lise Klaveness",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Terje Svendsen",
+      "Stig Inge Bjørnebye",
+      "Kjetil Siem"
+    ],
+    "fact": "Semb hadde vært toppfotballsjef siden høsten 2009.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Johan Semb – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-8",
+    "expectedAnswer": "Hovding",
+    "difficulty": 3,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "Djerv 1919",
+      "Varegg",
+      "Sandviken"
+    ],
+    "fact": "Han ledet laget fra 4. divisjon til 2. divisjon.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-17",
+    "expectedAnswer": "2002",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "2001",
+      "2003",
+      "2004"
+    ],
+    "fact": "Året før hadde han ført klubben opp til Tippeligaen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-rekdal-25",
+    "expectedAnswer": "16",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "15",
+      "17",
+      "18"
+    ],
+    "fact": "Han var 16 år og 222 dager gammel.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Kjetil Rekdal – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tom-nordlie-23",
+    "expectedAnswer": "Fredrikstad",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Lyn",
+      "Aalesund",
+      "Hønefoss"
+    ],
+    "fact": "Klubben rykket ned etter tap for Sarpsborg 08 i kvalifiseringen.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Tom Nordlie – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-nils-arne-eggen-45",
+    "expectedAnswer": "4-3-3",
+    "difficulty": 1,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "4-4-2",
+      "3-5-2",
+      "4-5-1"
+    ],
+    "fact": "Eggen la om Rosenborg til en offensiv 4-3-3 allerede i 1971.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Nils Arne Eggen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-martin-andresen-4",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Lyn",
+      "Lillestrøm",
+      "Odd"
+    ],
+    "fact": "Han la opp som spiller i august 2009 og fortsatte som trener.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Martin Andresen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-egil-olsen-28",
+    "expectedAnswer": "Geografi",
+    "difficulty": 1,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Historie",
+      "Astronomi",
+      "Matematikk"
+    ],
+    "fact": "Som skolegutt pugget han alle verdens hovedsteder.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Egil Olsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-trond-sollied-12",
+    "expectedAnswer": "Al-Ahli",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Al-Hilal",
+      "Al-Nassr",
+      "Al-Ittihad"
+    ],
+    "fact": "Det ble én seier og to tap.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Trond Sollied – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-8",
+    "expectedAnswer": "Torsby",
+    "difficulty": 3,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Karlstad",
+      "Arvika",
+      "Sunne"
+    ],
+    "fact": "Han ble født i 1946.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-1",
+    "expectedAnswer": "Molde",
+    "difficulty": 1,
+    "category": "Gullåret",
+    "distractors": [
+      "Rosenborg",
+      "Tromsø",
+      "Vålerenga"
+    ],
+    "fact": "Laget vant serien igjen året etter, i 2012.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-gunder-bengtsson-12",
+    "expectedAnswer": "Odd Berg",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Reidar Vågnes",
+      "Åge Hareide",
+      "Erik Brakstad"
+    ],
+    "fact": "Sparkingen kom etter et tap mot Bryne.",
+    "reviewedAt": "2026-10-09",
+    "sources": [
+      {
+        "title": "Gunder Bengtsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      }
+    ]
   }
 ]
