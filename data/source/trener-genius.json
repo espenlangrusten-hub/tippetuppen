@@ -2707,12 +2707,16 @@
       "Mesterligaen",
       "Cupvinnercupen"
     ],
-    "fact": "Samme år vant Glimt også Eliteserien.",
+    "fact": "Glimt hadde vunnet Eliteserien i 2024.",
     "reviewedAt": "2026-10-09",
     "sources": [
       {
         "title": "Kjetil Knutsen – Wikipedia",
         "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+      },
+      {
+        "title": "Viking er seriemester – fotball.no",
+        "url": "https://www.fotball.no/turneringer/eliteserien/2025/viking-er-seriemester/"
       }
     ]
   },
@@ -3125,12 +3129,16 @@
       "Viking",
       "Vålerenga"
     ],
-    "fact": "Laget lå på 11. plass da han måtte gå.",
+    "fact": "Laget lå på 11. plass da han gikk av.",
     "reviewedAt": "2026-10-09",
     "sources": [
       {
         "title": "Per-Mathias Høgmo – Wikipedia",
         "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo"
+      },
+      {
+        "title": "Høgmo ferdig som Molde-trener – NRK",
+        "url": "https://www.nrk.no/sport/hogmo-ferdig-som-molde-trener_-_-skulle-gjerne-fortsatt-1.17570606"
       }
     ]
   },
@@ -3478,7 +3486,7 @@
   },
   {
     "sourceId": "tq-tom-nordlie-19",
-    "expectedAnswer": "Kontrollert sinnsyk",
+    "expectedAnswer": "Kontrollert sinnssyk",
     "difficulty": 1,
     "category": "Trenerhistorie",
     "distractors": [
@@ -3492,6 +3500,10 @@
       {
         "title": "Tom Nordlie – Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Tom_Nordlie"
+      },
+      {
+        "title": "Tom Nordlie – Wikipedia (versjon 20. februar 2009)",
+        "url": "https://no.wikipedia.org/w/index.php?title=Tom_Nordlie&oldid=5146978"
       }
     ]
   },
@@ -3505,12 +3517,16 @@
       "Sven-Göran Eriksson",
       "Tommy Svensson"
     ],
-    "fact": "I 1983 tapte laget bare én kamp før gullet var sikret.",
+    "fact": "Vålerenga tapte bare tre av 22 seriekamper i 1983.",
     "reviewedAt": "2026-10-09",
     "sources": [
       {
         "title": "Gunder Bengtsson – Wikipedia",
         "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
+      },
+      {
+        "title": "1983 Norwegian First Division – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1983_Norwegian_First_Division"
       }
     ]
   },
@@ -4703,12 +4719,16 @@
       "Røde",
       "Sorte"
     ],
-    "fact": "Skoene og drakten fra kampen står på fotballmuseet på Ullevaal.",
+    "fact": "Skoene og drakten fra kampen ble stilt ut på Fotballmuseet på Ullevaal.",
     "reviewedAt": "2026-10-09",
     "sources": [
       {
         "title": "Kjetil Rekdal – Wikipedia",
         "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal"
+      },
+      {
+        "title": "Fotballmuseet – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Fotballmuseet"
       }
     ]
   },
@@ -4880,6 +4900,10 @@
       {
         "title": "Uwe Rösler – Wikipedia",
         "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler"
+      },
+      {
+        "title": "Names of the nineties: Uwe Rösler – These Football Times",
+        "url": "https://thesefootballtimes.co/2019/09/10/names-of-the-nineties-uwe-rosler/"
       }
     ]
   },
@@ -5102,12 +5126,16 @@
       "8",
       "9"
     ],
-    "fact": "Han ble sparket 29. mai.",
+    "fact": "Han gikk av 29. mai.",
     "reviewedAt": "2026-10-09",
     "sources": [
       {
         "title": "Tom Nordlie – Wikipedia",
         "url": "https://en.wikipedia.org/wiki/Tom_Nordlie"
+      },
+      {
+        "title": "Nordlie ferdig – uenighetene med Fjørtoft grunnen – Adresseavisen",
+        "url": "https://www.adressa.no/sport/fotball/i/PRyEVp/nordlie-ferdig-uenighetene-med-fjoertoft-grunnen"
       }
     ]
   },
@@ -5174,7 +5202,7 @@
     "difficulty": 3,
     "category": "Trenerhistorie",
     "distractors": [
-      "Løv-Ham",
+      "Djerv 1919",
       "Varegg",
       "Sandviken"
     ],

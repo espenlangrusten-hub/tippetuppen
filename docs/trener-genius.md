@@ -72,6 +72,17 @@ coach's numbering), and 23 reuse existing `recall` entries. Four coaches were ad
 - Entries from 2025–26 (Berg in Omonia, Høgmo in Molde and Ludogorets, Solskjær in
   Beşiktaş) describe recent events. Check them again before those days if anything changes.
 
+- A second, independent check (Boss, 9 October) found no wrong answer keys, but 14
+  wording problems that were fixed before merge: Rösler left City on a free transfer
+  (not «solgte»), the Ullevaal football museum closed in 2013, «Kontrollert sinnssyk»
+  is spelled with double s, Glimt's title was 2024 (Viking won 2025), Lagerbäck also
+  coached Norway, Høgmo and Nordlie left by mutual agreement, four club questions said
+  «slo», which reads both ways, the PSG prompt now says who won 2–0, Løv-Ham is no longer a
+  wrong answer for Knutsen (Fyllingsdalen came partly from Løv-Ham), and Bengtsson's
+  unsourced «one loss» fact became «three of 22» from the 1983 table. Aliases such as
+  «Besiktas» and «Eik-Tønsberg» are not needed: answers are compared after
+  `normalizeName`, and the validator rejects an alias that equals the answer.
+
 The next extension again needs easy questions: all 31 new easy entries are used. 2 medium
 and 24 hard reviewed entries are left over.
 

@@ -2540,14 +2540,14 @@
     "id": "tq-tom-nordlie-10",
     "coachId": "tom-nordlie",
     "category": "trener",
-    "prompt": "Hvor mange poeng hadde Lillestrøm etter åtte kamper da Tom Nordlie fikk sparken i mai 2008?",
+    "prompt": "Hvor mange poeng hadde Lillestrøm etter åtte kamper da Tom Nordlie gikk av i mai 2008?",
     "answer": {
       "label": "6",
       "aliases": [
         "seks"
       ]
     },
-    "fact": "Han ble sparket 29. mai.",
+    "fact": "Han gikk av 29. mai.",
     "era": 2008,
     "difficulty": 3,
     "status": "single_source",
@@ -2558,6 +2558,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «after 8 matches, and only 6 points, Nordlie was sacked on 29 May»"
+      },
+      {
+        "url": "https://www.adressa.no/sport/fotball/i/PRyEVp/nordlie-ferdig-uenighetene-med-fjoertoft-grunnen",
+        "title": "Nordlie ferdig – uenighetene med Fjørtoft grunnen – Adresseavisen",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: LSK og Nordlie ble 29. mai 2008 «enige om å avslutte arbeidsforholdet», så teksten sier «gikk av», ikke «fikk sparken»."
       }
     ],
     "verify": {
@@ -4505,6 +4512,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «ble han trener for Vålerenga Fotball, som han ledet til to strake seriegull i 1983 og 1984» … «I 1983 tapte klubben kun én kamp før seriegullet var sikret i fjerde siste serierunde»"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1983_Norwegian_First_Division",
+        "title": "1983 Norwegian First Division – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: sluttabellen viser Vålerengen 12–7–3 (38–17). Påstanden «tapte kun én kamp før seriegullet var sikret» i norsk Wikipedia har ingen kilde og brukes ikke."
       }
     ],
     "verify": {
@@ -8254,7 +8268,7 @@
     "id": "tq-kjetil-rekdal-15",
     "coachId": "kjetil-rekdal",
     "category": "trener",
-    "prompt": "Hvilket lag slo Aalesund på straffespark i cupfinalen 2009, med Kjetil Rekdal som trener?",
+    "prompt": "Hvilket lag tapte cupfinalen 2009 på straffespark mot Kjetil Rekdals Aalesund?",
     "answer": {
       "label": "Molde",
       "aliases": [
@@ -12714,7 +12728,7 @@
     "id": "tq-lars-lagerback-2",
     "coachId": "lars-lagerback",
     "category": "trener",
-    "prompt": "Hvilket nordisk landslag har Lars Lagerbäck vært trener for, i tillegg til Sverige?",
+    "prompt": "Hvilket nordisk landslag har Lars Lagerbäck vært trener for, i tillegg til Sverige og Norge?",
     "answer": {
       "label": "Island",
       "aliases": [
@@ -12838,9 +12852,9 @@
     "category": "trener",
     "prompt": "Hvilket begrep er Tom Nordlie kjent for å ha introdusert i norsk fotball?",
     "answer": {
-      "label": "Kontrollert sinnsyk",
+      "label": "Kontrollert sinnssyk",
       "aliases": [
-        "Kontrollert sinnssyk"
+        "Kontrollert sinnsyk"
       ]
     },
     "fact": "Samme Nordlie ledet Start til seriesølv i 2005.",
@@ -12854,12 +12868,19 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «He is known for introducing the concept kontrollert sinnsyk» … «Start had a great spring season, and won the silver medals»"
+      },
+      {
+        "url": "https://no.wikipedia.org/w/index.php?title=Tom_Nordlie&oldid=5146978",
+        "title": "Tom Nordlie – Wikipedia (versjon 20. februar 2009)",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: «Hans trenerfilosofi er at man skal være «kontrollert sinnssyk»» (kilde der: Dagbladet 25. oktober 2005). Riktig bokmål er «sinnssyk»; engelsk Wikipedias «sinnsyk» står som alias."
       }
     ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
-        "Kontrollert sinnsyk"
+        "Kontrollert sinnssyk"
       ]
     }
   },
@@ -13115,7 +13136,7 @@
     "id": "tq-nils-arne-eggen-48",
     "coachId": "nils-arne-eggen",
     "category": "trener",
-    "prompt": "Hvilken klubb slo Rosenborg ut i kvartfinalen i Champions League 1996/97?",
+    "prompt": "Hvilken klubb sendte Rosenborg ut i kvartfinalen i Champions League 1996/97?",
     "answer": {
       "label": "Juventus",
       "aliases": [
@@ -13243,7 +13264,7 @@
     "id": "tq-per-mathias-hogmo-13",
     "coachId": "per-mathias-hogmo",
     "category": "trener",
-    "prompt": "Hvilken klubb sa opp Per-Mathias Høgmo i september 2025, etter 21 serierunder?",
+    "prompt": "Hvilken klubb skilte lag med Per-Mathias Høgmo i september 2025, etter 21 serierunder?",
     "answer": {
       "label": "Molde",
       "aliases": [
@@ -13251,7 +13272,7 @@
         "MFK"
       ]
     },
-    "fact": "Laget lå på 11. plass da han måtte gå.",
+    "fact": "Laget lå på 11. plass da han gikk av.",
     "era": 2025,
     "difficulty": 2,
     "status": "single_source",
@@ -13262,6 +13283,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «14. september, etter 21 serierunder og Molde på 11. plass i eliteserien, ble kontrakten med Høgmo sagt opp»"
+      },
+      {
+        "url": "https://www.nrk.no/sport/hogmo-ferdig-som-molde-trener_-_-skulle-gjerne-fortsatt-1.17570606",
+        "title": "Høgmo ferdig som Molde-trener – NRK",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: Molde og Høgmo ble enige om å avslutte («beslutningen er tatt i fellesskap»), så spørsmålet sier «skilte lag med», ikke «sa opp»."
       }
     ],
     "verify": {
@@ -13476,7 +13504,7 @@
         "Gul"
       ]
     },
-    "fact": "Skoene og drakten fra kampen står på fotballmuseet på Ullevaal.",
+    "fact": "Skoene og drakten fra kampen ble stilt ut på Fotballmuseet på Ullevaal.",
     "era": 1998,
     "difficulty": 2,
     "status": "single_source",
@@ -13487,6 +13515,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Rekdals gule sko og drakten han benyttet i denne kampen er i dag utstilt på fotballmuseet på Ullevaal Stadion»"
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Fotballmuseet",
+        "title": "Fotballmuseet – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: museet på Ullevaal stengte i 2013, så faktaen sier «ble stilt ut på», ikke «står på»."
       }
     ],
     "verify": {
@@ -13693,7 +13728,7 @@
     "id": "tq-ole-gunnar-solskjaer-8",
     "coachId": "ole-gunnar-solskjaer",
     "category": "trener",
-    "prompt": "Hvilken klubb ble slått ut av Ole Gunnar Solskjærs Manchester United i Champions League i 2019, til tross for 2–0-seier på Old Trafford?",
+    "prompt": "Hvilken klubb ble slått ut av Ole Gunnar Solskjærs Manchester United i Champions League i 2019, til tross for at de vant 2–0 på Old Trafford i første kamp?",
     "answer": {
       "label": "PSG",
       "aliases": [
@@ -13763,7 +13798,7 @@
         "Europa League"
       ]
     },
-    "fact": "Samme år vant Glimt også Eliteserien.",
+    "fact": "Glimt hadde vunnet Eliteserien i 2024.",
     "era": 2025,
     "difficulty": 2,
     "status": "single_source",
@@ -13774,6 +13809,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Bodø/Glimt vant serien i 2024, kom til semifinalen i Europaligaen 2024/25»"
+      },
+      {
+        "url": "https://www.fotball.no/turneringer/eliteserien/2025/viking-er-seriemester/",
+        "title": "Viking er seriemester – fotball.no",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: Viking vant Eliteserien 2025, så faktaen viser til Glimts gull i 2024, ikke «samme år»."
       }
     ],
     "verify": {
@@ -14750,7 +14792,7 @@
     "id": "tq-nils-arne-eggen-54",
     "coachId": "nils-arne-eggen",
     "category": "trener",
-    "prompt": "Hvilket 1. divisjonslag slo Nils Arne Eggens Rosenborg 3–2 i cupsemifinalen i 2010?",
+    "prompt": "Mot hvilket 1. divisjonslag tapte Nils Arne Eggens Rosenborg 2–3 i cupsemifinalen i 2010?",
     "answer": {
       "label": "Follo",
       "aliases": [
@@ -14781,7 +14823,7 @@
     "id": "tq-nils-arne-eggen-55",
     "coachId": "nils-arne-eggen",
     "category": "trener",
-    "prompt": "Hvilken klubb slo Rosenborg ut i siste kvalifiseringsrunde til Champions League i 2010, med Nils Arne Eggen som trener?",
+    "prompt": "Hvilken klubb sendte Rosenborg ut i siste kvalifiseringsrunde til Champions League i 2010, med Nils Arne Eggen som trener?",
     "answer": {
       "label": "FC København",
       "aliases": [
@@ -15720,7 +15762,7 @@
     "id": "tq-uwe-rosler-10",
     "coachId": "uwe-rosler",
     "category": "trener",
-    "prompt": "Hvilken tysk klubb solgte Manchester City Uwe Rösler til i 1998?",
+    "prompt": "Hvilken tysk klubb gikk Uwe Rösler til fra Manchester City i 1998?",
     "answer": {
       "label": "Kaiserslautern",
       "aliases": [
@@ -15738,6 +15780,13 @@
         "kind": "web",
         "accessed": "2026-10-09",
         "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1998 ble han solgt til tyske 1. FC Kaiserslautern, hvor han spilte i UEFA Champions League»"
+      },
+      {
+        "url": "https://thesefootballtimes.co/2019/09/10/names-of-the-nineties-uwe-rosler/",
+        "title": "Names of the nineties: Uwe Rösler – These Football Times",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Kvalitetssjekk 9. oktober 2026: «left on a free transfer to Kaiserslautern». Han ble ikke solgt, slik norsk Wikipedia skriver, så spørsmålet sier «gikk til»."
       }
     ],
     "verify": {
