@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { API_URL } from "@/lib/api";
 import { AdminUsers } from "./AdminUsers";
+import { AdminPrizes } from "./AdminPrizes";
 
 /**
  * Operations console. The site is static, so this talks to the Edge Function's
@@ -239,6 +240,7 @@ export function AdminScreen() {
         </section>
       )}
 
+      {stats && activeKey && <AdminPrizes adminKey={activeKey} />}
       {stats && activeKey && <AdminUsers adminKey={activeKey} />}
 
       {messages && (

@@ -1,0 +1,46 @@
+# FLYTT DENNE TIL .github/workflows/prize.yml (agenten kunne ikke pushe workflow-filer: tokenet mangler workflow-scope).
+name: Månedens premie
+
+# Awards last month's prize just after midnight Oslo time on the 1st, and every night
+# after that sends the 7-day reminder, passes an unanswered prize on to the next player
+# after 14 days, and deletes addresses 30 days after a prize is sent. The Edge Function
+# does the work (supabase/functions/_shared/prize-routes.ts, rules in src/lib/prize.ts);
+# this job only says "now". The month is the table's primary key, so a second or late
+# run cannot award a month twice. Nothing happens until the secret PRIZE_ENABLED=true.
+#
+# GitHub's schedule is UTC and often late: 22:20 UTC is 00:20 in summer and 23:20 the
+# evening before in winter, so a second run at 23:20 UTC covers winter (00:20). A run
+# that lands before Oslo midnight finds the month not yet ended and does nothing new.
+#
+# Needs only the public vars the site build already uses, like the daily report.
+
+on:
+  schedule:
+    - cron: "20 22 * * *"
+    - cron: "20 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: prize
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Kjør premiejobben
+        env:
+          API: ${{ vars.NEXT_PUBLIC_API_URL }}
+          ANON: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+          [ -n "$API" ] || { echo "vars.NEXT_PUBLIC_API_URL mangler"; exit 1; }
+          echo "Klokka i Oslo: $(TZ=Europe/Oslo date '+%F %H:%M')"
+          body=$(curl -sS -X POST "${API%/}/prize/run" -H "apikey: $ANON" -H "authorization: Bearer $ANON")
+          echo "Svar: $body"
+          [ "$(echo "$body" | jq -r '.ok')" = "true" ] || { echo "Premiejobben feilet: $body" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+          echo "$body" | jq -r '"Aktivert: \(.enabled)", (.log[]? // empty)' >> "$GITHUB_STEP_SUMMARY"

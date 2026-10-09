@@ -548,6 +548,35 @@ export const passwordResets = tt.table(
   (t) => [index("password_resets_user").on(t.userId)],
 );
 
+/**
+ * Månedens premie (see src/lib/prize.ts and supabase/functions/_shared/prize-routes.ts).
+ * Exactly one row per month: the month is the key, so a second run of the job cannot
+ * award a month twice. When a winner lets the deadline pass, the same row is offered to
+ * the next in line and the earlier user id goes into `passed`. Only the SHA-256 of the
+ * claim link is stored. The shipping address is cleared 30 days after `sent_at`.
+ */
+export const prizes = tt.table("prizes", {
+  month: text("month").primaryKey(),
+  userId: text("user_id").references(() => users.id, { onDelete: "set null" }),
+  username: text("username").notNull(),
+  rank: integer("rank").notNull(),
+  points: integer("points").notNull(),
+  status: text("status").notNull(),
+  tokenHash: text("token_hash"),
+  offeredAt: timestamp("offered_at", { withTimezone: true }).notNull(),
+  remindedAt: timestamp("reminded_at", { withTimezone: true }),
+  claimedAt: timestamp("claimed_at", { withTimezone: true }),
+  orderedAt: timestamp("ordered_at", { withTimezone: true }),
+  sentAt: timestamp("sent_at", { withTimezone: true }),
+  shipName: text("ship_name"),
+  shipStreet: text("ship_street"),
+  shipPostcode: text("ship_postcode"),
+  shipCity: text("ship_city"),
+  addressDeletedAt: timestamp("address_deleted_at", { withTimezone: true }),
+  passed: jsonb("passed").$type<string[]>().notNull().default([]),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
 export const gameProgress = tt.table(
   "game_progress",
   {

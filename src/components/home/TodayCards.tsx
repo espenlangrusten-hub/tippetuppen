@@ -1,5 +1,6 @@
 "use client";
 
+import { PrizeBanner } from "@/components/prize/PrizeBanner";
 import Image from "next/image";
 import { ReferenceArt } from "@/components/layout/ReferenceArt";
 import Link from "next/link";
@@ -61,6 +62,7 @@ export function TodayCards() {
             {streak ? <span className={s.streak}><b>{streak}</b> {streak === 1 ? "dag" : "dager"} på rad</span> : null}
           </div>
           <AccountNudge />
+          <PrizeBanner />
         </div>
 
         <div className={s.heroArt} aria-hidden="true">
