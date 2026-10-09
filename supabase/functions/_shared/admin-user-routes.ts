@@ -10,8 +10,8 @@
  */
 import { sql } from "./db.ts";
 import { bad, json } from "./http.ts";
-import { validUsername } from "./auth.ts";
-import { cleanEmail, cleanProfileName } from "./profile-routes.ts";
+import { cleanEmail, validUsername } from "./auth.ts";
+import { cleanProfileName } from "./profile-routes.ts";
 import { isOffensiveUsername } from "./username-filter.ts";
 
 const LIST_LIMIT = 200;

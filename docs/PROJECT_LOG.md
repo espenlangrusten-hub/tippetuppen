@@ -2,6 +2,24 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-09 – E-post påkrevd for nye spillere, og varsel til admin
+
+Etter ønske fra admin, samme dag som «Glemt passord»:
+- **E-post er påkrevd ved registrering.** Skjemaet har feltet «E-postadresse» (påkrevd i
+  nettleseren), og `/auth/register` avviser registrering uten gyldig adresse
+  (`invalid-email`) og adresser som allerede er i bruk (`email-taken`, 409).
+- **Adressen kan endres, men ikke fjernes** på profilsiden (`email-required`). Eldre kontoer
+  uten adresse (13 av 14 da dette ble innført) kan fortsatt lagre profilen uten.
+  Admin kan fortsatt endre eller fjerne adressen.
+- **Varsel for hver nye spiller** går til admin (`CONTACT_TO`) via Resend, med brukernavn,
+  tidspunkt og antall spillere, men ikke spillerens e-postadresse. Feiler utsendingen,
+  blir registreringen likevel fullført. Hver utsending loggføres i `admin_audit` som
+  `user_registered` med `emailed` og eventuell feilmelding.
+- Personvernsiden er oppdatert.
+
+Ingen databaseendring: kolonnen `users.email` er fortsatt valgfri i databasen, fordi
+eldre kontoer ikke har adresse. Kravet håndheves i API-et.
+
 ## 2026-10-09 – Glemt passord
 
 Brukere kunne ikke få nytt passord. Ved innføringen hadde bare 1 av 14 brukere e-post på
