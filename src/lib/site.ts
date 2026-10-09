@@ -33,6 +33,20 @@ export const GAME_META = {
     description: "Finn spilleren eller treneren. Tidlig riktig svar gir flest poeng; feil svar avslutter runden.",
     emoji: "🕵️",
   },
+  straffespark: {
+    slug: "straffespark",
+    name: "Straffespark",
+    short: "Fem nye spørsmål hver dag",
+    description: "Fem nye spørsmål om norsk fotball hver dag – målscorere, kapteiner, stadioner og seriemestere. Ett spørsmål om gangen.",
+    emoji: "⚽",
+  },
+  "trener-genius": {
+    slug: "trener-genius",
+    name: "Trener Genius",
+    short: "Fire spørsmål. Ett taktisk valg.",
+    description: "Fire spørsmål om trenerne i norsk fotball. Ta plass på benken og velg når du vil gå offensivt.",
+    emoji: "📋",
+  },
   gullordet: {
     slug: "gullordet",
     name: "Gullordet",

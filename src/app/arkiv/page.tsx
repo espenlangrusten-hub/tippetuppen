@@ -4,7 +4,7 @@ import { ArchiveScreen } from "./ArchiveScreen";
 
 export const metadata: Metadata = {
   title: "Arkiv – tidligere spill",
-  description: "Spill tidligere utgaver av Mangler XI og Målløs.",
+  description: "Spill tidligere utgaver av Mangler XI, Målløs, Finn spilleren og Gullordet.",
   alternates: { canonical: "/arkiv" },
 };
 

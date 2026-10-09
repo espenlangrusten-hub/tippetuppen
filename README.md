@@ -1,10 +1,15 @@
 # Tippetuppen – dagens norske fotballspill
 
-Tre daglige spill for norske fotballfans:
+Seks daglige spill for norske fotballfans:
 
 - **Mangler XI** – fyll ut Norges startellever fra en ekte landskamp (1990–2026), bokstav for bokstav.
 - **Målløs** – ett spørsmål om norsk fotball, fem svar; jo færre andre som svarer det samme, jo bedre.
 - **Finn spilleren** – fem kildebaserte hint; tidlig riktig svar gir flest poeng.
+- **Straffespark** – fem nye spørsmål om norsk fotball (målscorere, kapteiner, stadioner, seriemestere), ett om gangen.
+- **Trener Genius** – fire spørsmål om trenerne i norsk fotball, med ett taktisk valg om når du går offensivt.
+- **Gullordet** – gjett dagens fotballord på fem bokstaver; seks forsøk.
+
+Mangler XI, Målløs, Finn spilleren, Trener Genius og Gullordet gir poeng i månedens liga. I tillegg finnes **Kjappen**, et quizshow for 2–4 spillere (beta).
 
 Nytt spill hver dag kl. 00:00 norsk tid (Europe/Oslo).
 

@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Tippetuppen – dagens norske fotballspill",
     short_name: "Tippetuppen",
-    description: "Norsk fotballquiz hver dag: Mangler XI, Målløs, Finn spilleren, Straffespark og Trener Genius.",
+    description: "Norsk fotballquiz hver dag: Mangler XI, Målløs, Finn spilleren, Straffespark, Trener Genius og Gullordet.",
     lang: "nb",
     start_url: `${BASE_PATH}/`,
     scope: `${BASE_PATH}/`,

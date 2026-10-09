@@ -49,7 +49,7 @@ const KAISER_GAME_LABEL: Record<string, string> = {
 };
 
 export const REPORT_GAME_LABEL: Record<string, string> = {
-  "mangler-xi": "Manglende 11",
+  "mangler-xi": "Mangler XI",
   maalloes: "Målløs",
   "finn-spilleren": "Finn spilleren",
   straffespark: "Straffespark",

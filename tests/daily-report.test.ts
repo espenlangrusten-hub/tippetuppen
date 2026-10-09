@@ -23,7 +23,7 @@ describe("dagsrapporten", () => {
     const { text } = buildDailyReport(input);
     expect(text).toContain("forrige 7 dager: 5,0, +100 %");
     expect(text.split("\n").filter((l) => /^(ma|ti|on|to|fr|lø|sø) \d/.test(l))).toHaveLength(14);
-    expect(text).toMatch(/Manglende 11 +3 spillere, 2 fullført/);
+    expect(text).toMatch(/Mangler XI +3 spillere, 2 fullført/);
     expect(text).not.toContain("Gullordet");
     expect(text).toContain("Registrerte brukere: 40 (+2 i dag)");
     expect(text).toContain("1 ny melding i dag");
