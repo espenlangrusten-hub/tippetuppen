@@ -71,11 +71,11 @@ export function PrizeClaimScreen() {
       <section className="card p-5">
         <h1 className="font-display text-3xl font-bold uppercase">Hent premien</h1>
         {done ? (
-          <p className="mt-4 text-mist" role="status">Takk! Vi bestiller flasken nå, og du får en e-post når den er sendt. Det tar vanligvis 1–2 uker.</p>
+          <p className="mt-4 text-mist" role="status">Takk! Vi bestiller koppen nå, og du får en e-post med sporing når den er sendt. Det tar vanligvis 1–3 uker.</p>
         ) : open ? (
           <form className="mt-4 space-y-3" onSubmit={submit}>
             <p className="text-mist">
-              Gratulerer, <b className="text-snow">{info.username}</b>! Du vinner en Tippetuppen-flaske for {monthLabel(info.month!)}. Fyll inn hvor vi skal sende den innen {deadline}.
+              Gratulerer, <b className="text-snow">{info.username}</b>! Du vinner en Tippetuppen-kopp for {monthLabel(info.month!)}. Fyll inn hvor vi skal sende den innen {deadline}.
             </p>
             {([
               ["name", "Fullt navn", "name"],

@@ -5,6 +5,7 @@ import {
   boolean,
   timestamp,
   jsonb,
+  numeric,
   serial,
   bigserial,
   real,
@@ -554,6 +555,7 @@ export const passwordResets = tt.table(
  * award a month twice. When a winner lets the deadline pass, the same row is offered to
  * the next in line and the earlier user id goes into `passed`. Only the SHA-256 of the
  * claim link is stored. The shipping address is cleared 30 days after `sent_at`.
+ * The prize mug is ordered from Printful when the address arrives (see printful.ts).
  */
 export const prizes = tt.table("prizes", {
   month: text("month").primaryKey(),
@@ -573,6 +575,12 @@ export const prizes = tt.table("prizes", {
   shipPostcode: text("ship_postcode"),
   shipCity: text("ship_city"),
   addressDeletedAt: timestamp("address_deleted_at", { withTimezone: true }),
+  /** The Printful order, once one is made; a draft until confirmed. */
+  printfulOrderId: text("printful_order_id"),
+  printfulTotalNok: numeric("printful_total_nok", { precision: 10, scale: 2 }),
+  /** Why the order was left as a draft or not made, for the admin page. */
+  orderNote: text("order_note"),
+  trackingUrl: text("tracking_url"),
   passed: jsonb("passed").$type<string[]>().notNull().default([]),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });

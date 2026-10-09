@@ -19,11 +19,52 @@ export const PRIZE_REMINDER_DAYS = 7;
 export const ADDRESS_RETENTION_DAYS = 30;
 
 export const PRIZE_PRODUCT = {
-  name: "Tippetuppen-flaske (Tshirt.no «Tyholt», hvit aluminium, 400 ml)",
-  url: "https://tshirt.no/produkt/tyholt-flaske/",
-  printArea: "160 × 80 mm",
-  printFile: "/branding/premie/tyholt-trykkfil-PLASSHOLDER.png",
+  name: "Tippetuppen-kopp (Printful, svart blank kopp 11 oz)",
+  url: "https://www.printful.com/custom/mugs/personalized/black-glossy-mug",
+  /** Printful catalog: product 300 «Black Glossy Mug», variant 9323 = 11 oz. */
+  variantId: 9323,
+  printArea: "2700 × 1050 px (9 × 3,5 tommer ved 300 DPI)",
+  printFile: "/branding/premie/kopp-trykkfil-PLASSHOLDER.png",
+  /**
+   * True while the print file is upscaled from the 600 px logo. Orders are then never
+   * confirmed automatically, only left as drafts for the admin to look at, so a blurry
+   * mug cannot be printed by accident. Set to false with the high-resolution file.
+   */
+  printFileIsPlaceholder: true,
 } as const;
+
+/** An order is confirmed automatically only up to this total, in NOK incl. shipping and VAT. */
+export const PRIZE_MAX_NOK = 250;
+/** Norges Bank 9.10.2026, for orders Printful prices in another currency. Override with PRINTFUL_FX. */
+export const DEFAULT_FX: Record<string, number> = { NOK: 1, USD: 9.5623, EUR: 10.7155 };
+
+/** "USD=9.6,EUR=10.8" on top of the defaults. */
+export function parseFx(raw: string | null | undefined): Record<string, number> {
+  const fx = { ...DEFAULT_FX };
+  for (const part of (raw ?? "").split(/[,;\s]+/)) {
+    const [k, v] = part.split("=");
+    const n = Number(v);
+    if (k && Number.isFinite(n) && n > 0) fx[k.trim().toUpperCase()] = n;
+  }
+  return fx;
+}
+
+/** A Printful total in NOK, or null when the currency is unknown (then nothing is confirmed). */
+export function toNok(total: number, currency: string, fx: Record<string, number>): number | null {
+  const rate = fx[currency.toUpperCase()];
+  return rate && Number.isFinite(total) ? Math.round(total * rate * 100) / 100 : null;
+}
+
+export type OrderDecision = { confirm: true } | { confirm: false; reason: string };
+
+/** Whether a draft order may be confirmed without the admin. */
+export function orderDecision(o: { totalNok: number | null; manual: boolean; placeholder: boolean }): OrderDecision {
+  if (o.manual) return { confirm: false, reason: "manuell godkjenning er slått på (PRINTFUL_MANUAL_APPROVAL)" };
+  if (o.placeholder) return { confirm: false, reason: "trykkfilen er fortsatt en plassholder" };
+  if (o.totalNok === null) return { confirm: false, reason: "ukjent valuta på ordren" };
+  if (o.totalNok > PRIZE_MAX_NOK) return { confirm: false, reason: `totalen ${o.totalNok.toFixed(2)} kr er over ${PRIZE_MAX_NOK} kr` };
+  return { confirm: true };
+}
 
 export type PrizeStatus = "offered" | "claimed" | "ordered" | "sent" | "unclaimed";
 
@@ -105,11 +146,11 @@ const dateNo = (d: Date) => d.toLocaleDateString("nb-NO", { timeZone: "Europe/Os
 
 export function winnerMail(username: string, month: string, link: string, deadline: Date, rank: number) {
   const intro = rank === 1
-    ? `Gratulerer! Du fikk flest poeng i Tippetuppen-ligaen i ${monthLabel(month)}, og vinner en Tippetuppen-flaske.`
-    : `Gratulerer! Vinneren av ${monthLabel(month)} hentet ikke premien, så den går videre til deg som nummer ${rank} på tabellen: en Tippetuppen-flaske.`;
+    ? `Gratulerer! Du fikk flest poeng i Tippetuppen-ligaen i ${monthLabel(month)}, og vinner en Tippetuppen-kopp.`
+    : `Gratulerer! Vinneren av ${monthLabel(month)} hentet ikke premien, så den går videre til deg som nummer ${rank} på tabellen: en Tippetuppen-kopp.`;
   const text = [
     `Hei ${username},`, "", intro, "",
-    "Fyll inn navn og leveringsadresse her, så sender vi flasken hjem til deg:", "", link, "",
+    "Fyll inn navn og leveringsadresse her, så sender vi koppen hjem til deg:", "", link, "",
     `Fristen er ${dateNo(deadline)}. Svarer du ikke innen da, går premien videre til nestemann på tabellen.`,
     "Adressen brukes bare til å sende premien og slettes 30 dager etter at den er sendt.", "",
     "Hilsen Tippetuppen",
@@ -126,16 +167,33 @@ export function reminderMail(username: string, month: string, link: string, dead
   return { subject: "Påminnelse: hent premien din fra Tippetuppen", text };
 }
 
-export function adminClaimMail(p: { username: string; month: string; rank: number; address: Address; siteUrl: string }) {
+/**
+ * To the admin when the winner has given an address. `order` says what happened with
+ * Printful: confirmed, left as a draft (and why), or not tried (no API key or an error),
+ * in which case the admin orders by hand from the address and print file.
+ */
+export type ClaimOrder =
+  | { kind: "confirmed"; orderId: string; totalNok: number | null }
+  | { kind: "draft"; orderId: string; totalNok: number | null; reason: string }
+  | { kind: "manual"; reason: string };
+
+export function adminClaimMail(p: { username: string; month: string; rank: number; address: Address; siteUrl: string; order: ClaimOrder }) {
+  const kr = (n: number | null) => (n === null ? "ukjent beløp" : `${n.toFixed(2).replace(".", ",")} kr`);
+  const status =
+    p.order.kind === "confirmed"
+      ? [`Bestilt automatisk hos Printful (ordre ${p.order.orderId}, ${kr(p.order.totalNok)}). Du trenger ikke gjøre noe; vinneren får sporing når den sendes.`]
+      : p.order.kind === "draft"
+        ? [`Printful-ordre ${p.order.orderId} (${kr(p.order.totalNok)}) ligger som UTKAST og er ikke bekreftet: ${p.order.reason}.`, "Bekreft den på /admin (Premier) eller i Printful-dashbordet."]
+        : [`Ikke bestilt automatisk: ${p.order.reason}. Bestill for hånd:`, `${PRIZE_PRODUCT.name}`, PRIZE_PRODUCT.url, `Trykkfil (${PRIZE_PRODUCT.printArea}): ${p.siteUrl}${PRIZE_PRODUCT.printFile}`];
   const text = [
     `${p.username} (nr. ${p.rank} i ${monthLabel(p.month)}) har lagt inn adresse for premien.`, "",
     "Send til:", p.address.name, p.address.street, `${p.address.postcode} ${p.address.city}`, "",
-    `Bestill: ${PRIZE_PRODUCT.name}`, PRIZE_PRODUCT.url,
-    `Trykkfil (${PRIZE_PRODUCT.printArea}): ${p.siteUrl}${PRIZE_PRODUCT.printFile}`,
-    "OBS: trykkfilen er en plassholder laget av en logo på 600 px. Bruk høyoppløst logo når den finnes.", "",
-    `Marker som bestilt og sendt på ${p.siteUrl}/admin/ (Premier). Vinneren får e-post når du markerer den som sendt.`,
+    ...status, "",
+    ...(PRIZE_PRODUCT.printFileIsPlaceholder ? ["OBS: trykkfilen er en plassholder laget av en logo på 600 px. Bytt til høyoppløst logo.", ""] : []),
+    `Oversikt: ${p.siteUrl}/admin/ (Premier).`,
   ].join("\n");
-  return { subject: `Premie ${monthLabel(p.month)}: bestill flaske til ${p.username}`, text };
+  const what = p.order.kind === "confirmed" ? "kopp bestilt til" : "bestill kopp til";
+  return { subject: `Premie ${monthLabel(p.month)}: ${what} ${p.username}`, text };
 }
 
 export function adminUnclaimedMail(month: string) {
@@ -145,10 +203,11 @@ export function adminUnclaimedMail(month: string) {
   };
 }
 
-export function sentMail(username: string, month: string) {
+export function sentMail(username: string, month: string, trackingUrl: string | null = null) {
   const text = [
     `Hei ${username},`, "",
-    `Tippetuppen-flasken for ${monthLabel(month)} er sendt med Posten og kommer i postkassen din i løpet av noen dager.`, "",
+    `Tippetuppen-koppen for ${monthLabel(month)} er sendt og kommer hjem til deg i løpet av 1–3 uker.`,
+    ...(trackingUrl ? ["", "Spor pakken her:", trackingUrl] : []), "",
     "Takk for at du spiller, og lykke til i ligaen videre!", "", "Hilsen Tippetuppen",
   ].join("\n");
   return { subject: "Premien din fra Tippetuppen er sendt", text };
@@ -160,7 +219,7 @@ export function sentMail(username: string, month: string) {
 // pieces.
 // ---------------------------------------------------------------------------
 
-export type PrizeRow = PrizeState & { month: string; userId: string | null; username: string; rank: number; points: number; passed: string[] };
+export type PrizeRow = PrizeState & { month: string; userId: string | null; username: string; rank: number; points: number; passed: string[]; printfulOrderId?: string | null };
 export type Offer = { userId: string; username: string; email: string; rank: number; points: number; token: string; offeredAt: Date };
 
 export interface PrizeStore {
@@ -174,13 +233,23 @@ export interface PrizeStore {
   /** Records the reminder and replaces the claim link with `token`. */
   markReminded(month: string, at: Date, token: string): Promise<void>;
   deleteAddress(month: string, at: Date): Promise<void>;
-  /** Rows the run may still have to act on: offered, or sent with the address kept. */
+  /** Marks an ordered prize as sent because the printer shipped it. False if it already was. */
+  markShipped(month: string, at: Date, trackingUrl: string | null): Promise<boolean>;
+  /** Rows the run may still have to act on: offered, ordered at Printful, or sent with the address kept. */
   open(): Promise<PrizeRow[]>;
   email(userId: string): Promise<string | null>;
 }
 
 export type PrizeMail = (to: "admin" | string, mail: { subject: string; text: string }) => Promise<string | null>;
-export type RunOptions = { excluded: Set<string>; newToken: () => string; claimLink: (token: string) => string };
+/** Printful's view of an order: shipped or not, and where to follow the parcel. */
+export type Shipment = { shipped: boolean; trackingUrl: string | null };
+export type RunOptions = {
+  excluded: Set<string>;
+  newToken: () => string;
+  claimLink: (token: string) => string;
+  /** The daily poll of a Printful order. Absent without an API key. */
+  shipment?: (orderId: string) => Promise<Shipment | null>;
+};
 export type RunLog = string[];
 
 /** Award last month if nobody has, then remind, pass on and delete addresses as due. */
@@ -223,6 +292,13 @@ export async function runPrizes(store: PrizeStore, mail: PrizeMail, now: Date, t
       if (to) {
         const err = await mail(to, reminderMail(row.username, row.month, opts.claimLink(token), deadlineFor(row.offeredAt)));
         log.push(err ? `${row.month}: påminnelse feilet: ${err}` : `${row.month}: påminnelse sendt til ${row.username}`);
+      }
+    } else if (row.status === "ordered" && row.printfulOrderId && opts.shipment) {
+      const sh = await opts.shipment(row.printfulOrderId).catch(() => null);
+      if (sh?.shipped && (await store.markShipped(row.month, now, sh.trackingUrl))) {
+        const to = row.userId ? await store.email(row.userId) : null;
+        const err = to ? await mail(to, sentMail(row.username, row.month, sh.trackingUrl)) : "vinneren har ikke e-post";
+        log.push(err ? `${row.month}: sendt, men e-post feilet: ${err}` : `${row.month}: sendt, sporing til ${row.username}`);
       }
     } else if (step === "delete-address") {
       await store.deleteAddress(row.month, now);

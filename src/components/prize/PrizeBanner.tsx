@@ -8,7 +8,7 @@ import { osloDateKey } from "@/lib/dates";
 export const PRIZE_BANNER_UNTIL = "2026-10-31";
 
 /**
- * «Flest poeng i oktober vinner en Tippetuppen-flaske», on the front page and /liga.
+ * «Flest poeng i oktober vinner en Tippetuppen-kopp», on the front page and /liga.
  * Decided in the browser after load, so the static page never shows a stale banner.
  */
 export function PrizeBanner() {
@@ -17,7 +17,7 @@ export function PrizeBanner() {
   if (!show) return null;
   return (
     <p className="prize-banner">
-      <span aria-hidden="true">🏆</span> <b>Flest poeng i oktober vinner en Tippetuppen-flaske.</b>{" "}
+      <span aria-hidden="true">🏆</span> <b>Flest poeng i oktober vinner en Tippetuppen-kopp.</b>{" "}
       <Link href="/konkurranse/" className="underline">Se reglene</Link>
     </p>
   );

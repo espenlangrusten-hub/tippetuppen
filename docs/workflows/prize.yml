@@ -3,7 +3,8 @@ name: Månedens premie
 
 # Awards last month's prize just after midnight Oslo time on the 1st, and every night
 # after that sends the 7-day reminder, passes an unanswered prize on to the next player
-# after 14 days, and deletes addresses 30 days after a prize is sent. The Edge Function
+# after 14 days, checks whether Printful has shipped ordered mugs (and emails the
+# winner the tracking link), and deletes addresses 30 days after a prize is sent. The Edge Function
 # does the work (supabase/functions/_shared/prize-routes.ts, rules in src/lib/prize.ts);
 # this job only says "now". The month is the table's primary key, so a second or late
 # run cannot award a month twice. Nothing happens until the secret PRIZE_ENABLED=true.

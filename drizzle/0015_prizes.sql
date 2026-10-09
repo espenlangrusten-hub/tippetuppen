@@ -18,6 +18,10 @@ CREATE TABLE "tippetuppen"."prizes" (
   "ship_postcode" text,
   "ship_city" text,
   "address_deleted_at" timestamp with time zone,
+  "printful_order_id" text,
+  "printful_total_nok" numeric(10, 2),
+  "order_note" text,
+  "tracking_url" text,
   "passed" jsonb DEFAULT '[]'::jsonb NOT NULL,
   "created_at" timestamp with time zone DEFAULT now() NOT NULL
 );

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
-  checkAddress, parseExclusions, pickWinner, prizeMonthFor, prizeStep, runPrizes,
-  type Offer, type PrizeRow, type PrizeStore, type Standing,
+  adminClaimMail, checkAddress, orderDecision, parseExclusions, parseFx, pickWinner, prizeMonthFor, prizeStep, runPrizes, toNok,
+  PRIZE_MAX_NOK, type Offer, type Shipment, type PrizeRow, type PrizeStore, type Standing,
 } from "@/lib/prize";
 import { checkShared } from "../scripts/sync-shared";
 import { osloDateKey } from "@/lib/dates";
@@ -11,7 +11,7 @@ const DAY = 86_400_000;
 
 /** A prize table in memory, keyed on month like the real one. */
 function memoryStore(table: Standing[]) {
-  const rows = new Map<string, PrizeRow & { token: string | null }>();
+  const rows = new Map<string, PrizeRow & { token: string | null; trackingUrl?: string | null }>();
   const store: PrizeStore = {
     standings: async () => table,
     get: async (m) => rows.get(m) ?? null,
@@ -27,19 +27,25 @@ function memoryStore(table: Standing[]) {
       else Object.assign(r, { status: "unclaimed", token: null });
     },
     markReminded: async (month, at, token) => { Object.assign(rows.get(month)!, { remindedAt: at, token }); },
+    markShipped: async (month, at, trackingUrl) => {
+      const r = rows.get(month)!;
+      if (r.status !== "ordered") return false;
+      Object.assign(r, { status: "sent", sentAt: at, trackingUrl });
+      return true;
+    },
     deleteAddress: async (month) => { rows.get(month)!.addressDeleted = true; },
-    open: async () => [...rows.values()].filter((r) => r.status === "offered" || (r.status === "sent" && !r.addressDeleted)),
+    open: async () => [...rows.values()].filter((r) => r.status === "offered" || (r.status === "ordered" && r.printfulOrderId) || (r.status === "sent" && !r.addressDeleted)),
     email: async (id) => table.find((x) => x.userId === id)?.email ?? null,
   };
   return { store, rows };
 }
 
-function harness(table: Standing[], exclude = "") {
+function harness(table: Standing[], exclude = "", shipment?: (id: string) => Promise<Shipment | null>) {
   const { store, rows } = memoryStore(table);
   const sent: { to: string; subject: string; text: string }[] = [];
   let n = 0;
   const run = (now: Date) => runPrizes(store, async (to, m) => { sent.push({ to, ...m }); return null; }, now, osloDateKey(now), {
-    excluded: parseExclusions(exclude), newToken: () => `t${++n}`, claimLink: (t) => `https://tippetuppen.no/premie/#${t}`,
+    excluded: parseExclusions(exclude), newToken: () => `t${++n}`, claimLink: (t) => `https://tippetuppen.no/premie/#${t}`, shipment,
   });
   return { run, rows, sent };
 }
@@ -155,6 +161,50 @@ describe("den daglige premiejobben", () => {
     expect(prizeStep({ ...base, status: "sent", sentAt }, new Date(sentAt.getTime() + 29 * DAY))).toBeNull();
     expect(prizeStep({ ...base, status: "sent", sentAt }, new Date(sentAt.getTime() + 30 * DAY))).toBe("delete-address");
     expect(prizeStep({ ...base, status: "sent", sentAt, addressDeleted: true }, new Date(sentAt.getTime() + 40 * DAY))).toBeNull();
+  });
+});
+
+describe("bestilling hos Printful", () => {
+  const ok = { manual: false, placeholder: false };
+  it("bekrefter bare ordre på høyst 250 kr", () => {
+    expect(orderDecision({ ...ok, totalNok: 226 })).toEqual({ confirm: true });
+    expect(orderDecision({ ...ok, totalNok: PRIZE_MAX_NOK })).toEqual({ confirm: true });
+    expect(orderDecision({ ...ok, totalNok: 250.01 })).toMatchObject({ confirm: false, reason: expect.stringContaining("over 250 kr") });
+  });
+  it("lar ordren ligge som utkast ved manuell godkjenning, plassholder-trykkfil eller ukjent valuta", () => {
+    expect(orderDecision({ ...ok, totalNok: 200, manual: true }).confirm).toBe(false);
+    expect(orderDecision({ ...ok, totalNok: 200, placeholder: true }).confirm).toBe(false);
+    expect(orderDecision({ ...ok, totalNok: null }).confirm).toBe(false);
+  });
+  it("regner om til kroner, med kurser som kan overstyres", () => {
+    expect(toNok(23.62, "USD", parseFx(""))).toBeCloseTo(225.86, 2);
+    expect(toNok(226, "nok", parseFx(""))).toBe(226);
+    expect(toNok(20, "USD", parseFx("USD=10"))).toBe(200);
+    expect(toNok(20, "GBP", parseFx(""))).toBeNull();
+  });
+  it("sier i admin-e-posten om koppen ble bestilt, ligger som utkast eller må bestilles for hånd", () => {
+    const base = { username: "kari", month: "2026-10", rank: 1, address: { name: "Kari", street: "Gata 1", postcode: "0150", city: "Oslo" }, siteUrl: "https://tippetuppen.no" };
+    expect(adminClaimMail({ ...base, order: { kind: "confirmed", orderId: "42", totalNok: 226 } }).text).toContain("Bestilt automatisk");
+    expect(adminClaimMail({ ...base, order: { kind: "draft", orderId: "42", totalNok: 260, reason: "for dyr" } }).text).toContain("UTKAST");
+    const manual = adminClaimMail({ ...base, order: { kind: "manual", reason: "PRINTFUL_API_KEY er ikke satt" } }).text;
+    expect(manual).toContain("https://tippetuppen.no/branding/premie/kopp-trykkfil-PLASSHOLDER.png");
+    expect(manual).toContain("0150 Oslo");
+  });
+  it("sender sporing til vinneren én gang når Printful har sendt koppen", async () => {
+    let shipped = false;
+    const h = harness([s("a", 90)], "", async () => ({ shipped, trackingUrl: "https://track/1" }));
+    await h.run(NOV1);
+    Object.assign(h.rows.get("2026-10")!, { status: "ordered", printfulOrderId: "42" });
+    await h.run(new Date(NOV1.getTime() + 3 * DAY));
+    expect(h.rows.get("2026-10")!.status).toBe("ordered");
+    shipped = true;
+    await h.run(new Date(NOV1.getTime() + 5 * DAY));
+    await h.run(new Date(NOV1.getTime() + 6 * DAY));
+    const mails = h.sent.filter((m) => m.subject.includes("er sendt"));
+    expect(mails).toHaveLength(1);
+    expect(mails[0]).toMatchObject({ to: "a@x.no" });
+    expect(mails[0].text).toContain("https://track/1");
+    expect(h.rows.get("2026-10")).toMatchObject({ status: "sent", trackingUrl: "https://track/1" });
   });
 });
 
