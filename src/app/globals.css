@@ -1184,3 +1184,10 @@ main:has(.kj-shell) { max-width: none; padding: 0; }
   @keyframes kj-delta-hold { 0%, 80% { opacity: 1; transform: translate(-50%, -1.6rem); } 100% { opacity: 0; transform: translate(-50%, -1.6rem); } }
   .kj-sweep-fill { animation-name: kj-sweep-out; }
 }
+
+/* Månedens premie: the announcement on the front page and /liga. */
+.prize-banner {
+  padding: 0.7rem 1rem; border-radius: 0.75rem; text-align: center; font-size: 0.95rem;
+  color: #f6e3ad; border: 1px solid rgb(241 196 86 / 0.35);
+  background: linear-gradient(90deg, rgb(241 196 86 / 0.14), rgb(241 196 86 / 0.06));
+}
