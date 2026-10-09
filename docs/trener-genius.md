@@ -16,7 +16,7 @@ questions or source facts are sent before answering. Day rollover locks old roun
 
 ## Question bank
 
-`data/source/trenerquiz.json` is the existing coach bank and remains untouched.
+`data/source/trenerquiz.json` is the coach bank (until 9 October it was left untouched).
 `data/source/trener-genius.json` adds reviewed distractors, difficulty, facts and
 sources. The first 24 entries (six rounds, 24 September) were written by hand. On
 25 September 117 more were added, giving 33 daily rounds (to about 27 October).
@@ -52,6 +52,29 @@ Wikipedia) and read against the question, the answer and the fact shown after it
 `trenere.json` itself is still at `recall`, so the wrong-coach rule is only as good as
 the coaching spells it lists. The next extension needs more easy (level 1) questions:
 every sourced easy question in the bank is now used, and each round takes one.
+
+**Extension, 9 October.** 141 more reviewed entries (31 easy, 62 medium, 48 hard)
+give 64 rounds, to about 27 November. Rounds 1–33 are unchanged; new entries are
+appended in hash order. 118 are new bank entries (`tq-<coach>-<n>` continues each
+coach's numbering), and 23 reuse existing `recall` entries. Four coaches were added to
+`trenere.json`: Ole Gunnar Solskjær, Kjetil Knutsen, Nils Johan Semb and Lars Lagerbäck.
+- Every answer, wrong answer and fact was checked against a sentence in one
+  Norwegian or English Wikipedia article (fetched 9 October). The sentence is quoted
+  in the bank entry's source `note`. The check was done by Grok Bot, not by a person,
+  so the status is `single_source` and not anything stronger.
+- Three bank claims were wrong and are not used: Østsiden is a Fredrikstad club, not
+  an Oslo club. Bengtsson's Madeira club in the article is Nacional, not Marítimo.
+  Eggen coached 7 of Rosenborg's eight Champions League seasons, not all eight.
+- Three reused entries got narrower prompts: Sollied in 1997, Deila before
+  Strømsgodset, and Bengtsson's birthplace.
+- Questions about one match say who lost («tapte 0–10 for Norge»), because «Hvilket
+  land slo Norge» can be read both ways in Norwegian.
+- Entries from 2025–26 (Berg in Omonia, Høgmo in Molde and Ludogorets, Solskjær in
+  Beşiktaş) describe recent events. Check them again before those days if anything changes.
+
+The next extension again needs easy questions: all 31 new easy entries are used. 2 medium
+and 24 hard reviewed entries are left over.
+
 Unreviewed bank entries are deliberately excluded. If no daily round exists, the
 screen says the round is not ready; it does not silently repeat questions.
 

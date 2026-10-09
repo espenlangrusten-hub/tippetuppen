@@ -2297,5 +2297,109 @@
     "verify": {
       "subject": "Dag Vestlund"
     }
+  },
+  {
+    "id": "ole-gunnar-solskjaer",
+    "name": "Ole Gunnar Solskjær",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Molde",
+        "from": 2011,
+        "to": 2013
+      },
+      {
+        "club": "Molde",
+        "from": 2015,
+        "to": 2018
+      }
+    ],
+    "honours": [
+      "Seriegull med Molde 2011 og 2012",
+      "Cupgull med Molde 2013",
+      "Kniksen årets trener 2011 og 2012"
+    ],
+    "episodes": [
+      "Manager i Cardiff City 2014",
+      "Manager i Manchester United 2018–2021",
+      "Manager i Beşiktaş 2025"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær"
+    }
+  },
+  {
+    "id": "kjetil-knutsen",
+    "name": "Kjetil Knutsen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Bodø/Glimt",
+        "from": 2018,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Seriegull med Bodø/Glimt 2020, 2021, 2023 og 2024",
+      "Årets trener i Eliteserien 2019, 2020 og 2021"
+    ],
+    "episodes": [
+      "Assistent for Aasmund Bjørkan i Bodø/Glimt 2017",
+      "6–1 over Roma på Aspmyra i 2021"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Kjetil_Knutsen"
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen"
+    }
+  },
+  {
+    "id": "nils-johan-semb",
+    "name": "Nils Johan Semb",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [],
+    "honours": [
+      "Norges første EM-sluttspill, 2000",
+      "Bronse med U21-landslaget i EM 1998"
+    ],
+    "episodes": [
+      "Landslagssjef 1998–2003",
+      "Toppfotballsjef i NFF 2009–2018"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Nils_Johan_Semb"
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb"
+    }
+  },
+  {
+    "id": "lars-lagerback",
+    "name": "Lars Lagerbäck",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [],
+    "honours": [],
+    "episodes": [
+      "Norges landslagssjef 2017–2020",
+      "Delte Sverige-jobben med Tommy Söderberg 2000–2004"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck"
+    ],
+    "verify": {
+      "subject": "Lars Lagerbäck"
+    }
   }
 ]

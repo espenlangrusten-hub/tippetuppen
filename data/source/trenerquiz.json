@@ -749,16 +749,30 @@
     "fact": "Rosenborg vant serien også det året.",
     "era": 1998,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Nils Arne Eggen var trener i sju av dem, Trond Sollied i 1998»"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «During the 1998 season Eggen took a year off, placing Sollied in the manager seat. With him in charge, Rosenborg  – once again – won the league»"
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
         "Rosenborg",
         "1998"
       ]
-    },
-    "notes": "Artikkelen «Trond Sollied» nevner ikke «1998». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-trond-sollied-2",
@@ -830,7 +844,7 @@
     "id": "tq-trond-sollied-4",
     "coachId": "trond-sollied",
     "category": "trener",
-    "prompt": "Hvilken rolle hadde Trond Sollied i Rosenborg i 1997, året før han ble hovedtrener?",
+    "prompt": "Hvilken rolle hadde Trond Sollied i Rosenborg i 1997?",
     "answer": {
       "label": "Assistenttrener",
       "aliases": [
@@ -841,16 +855,23 @@
     "fact": "Han ble hovedtrener i 1998.",
     "era": 1997,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «He went on to Rosenborg where he served as the assistant manager under legendary coach Nils Arne Eggen in the 1997 season. That year Rosenborg won the championship»"
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
         "1997",
         "Assistenttrener"
       ]
-    },
-    "notes": "Artikkelen «Trond Sollied» nevner ikke «1997» og «Assistenttrener». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-trond-sollied-5",
@@ -898,16 +919,30 @@
     "fact": "Han kom dit fra Club Brugge.",
     "era": 2005,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Siden har han hatt stor suksess som trener med Rosenborg, Gent, Club Brugge, Olympiakos og Heerenveen»"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «In his debut season, he won the league title and the Greek Cup»"
+      }
+    ],
     "verify": {
       "subject": "Trond Sollied",
       "mustMention": [
         "Olymp",
         "Olympiakos"
       ]
-    },
-    "notes": "Artikkelen «Trond Sollied» nevner ikke «Olymp». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-trond-sollied-7",
@@ -1666,15 +1701,29 @@
     "fact": "Han kom til Rosenborg sommeren 2008.",
     "era": 2008,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han var trener for Aalborg BK ut 2007/08-sesongen, og overtok som Rosenborg Ballklubs hovedtrener 1. juni 2008. Hamrén ledet Aalborg til seriegull i sin siste sesong i klubben»"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: "
+      }
+    ],
     "verify": {
       "subject": "Erik Hamrén",
       "mustMention": [
         "AaB"
       ]
-    },
-    "notes": "Artikkelen «Erik Hamrén» nevner ikke «AaB». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-erik-hamren-3",
@@ -1724,6 +1773,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «2008» og «1. juni». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «overtok som Rosenborg Ballklubs hovedtrener 1. juni 2008» … «Han tok seriegull med Rosenborg Ballklub i 2009-sesongen»"
       }
     ],
     "verify": {
@@ -2494,16 +2550,23 @@
     "fact": "Han ble sparket 29. mai.",
     "era": 2008,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «after 8 matches, and only 6 points, Nordlie was sacked on 29 May»"
+      }
+    ],
     "verify": {
       "subject": "Tom Nordlie",
       "mustMention": [
         "2008",
         "6"
       ]
-    },
-    "notes": "Tallet «6» kan ikke bekreftes med et tekstsøk i «Tom Nordlie». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-tom-nordlie-11",
@@ -3262,15 +3325,22 @@
     "fact": "Han trente også klubben Flora Tallinn.",
     "era": 1998,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Teitur_Thordarson",
+        "title": "Teitur Thordarson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «In 1996, Teitur moved to Estonia to become head coach of their national team and Estonian club Flora Tallinn»"
+      }
+    ],
     "verify": {
       "subject": "Teitur Thordarson",
       "mustMention": [
         "Estland"
       ]
-    },
-    "notes": "Artikkelen «Teitur Þórðarson» nevner ikke «Estland». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-teitur-thordarson-3",
@@ -3750,15 +3820,22 @@
     "fact": "Forrige gull var i 1963.",
     "era": 2007,
     "difficulty": 1,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I sesongen 2007 førte Mjelde Brann til seriegull for første gang på 44 år. For prestasjonen ble Mjelde tildelt Kniksenprisen som årets trener»"
+      }
+    ],
     "verify": {
       "subject": "Mons Ivar Mjelde",
       "mustMention": [
         "44"
       ]
-    },
-    "notes": "Tallet «44» kan ikke bekreftes med et tekstsøk i «Mons Ivar Mjelde». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-mons-ivar-mjelde-3",
@@ -4382,6 +4459,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Gjelsten» og «Bjørn Rune Gjelsten». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Styreformann Gjelsten måtte handle, og valgte å sparke Olsen» … «klubben ble helnorsk»"
       }
     ],
     "verify": {
@@ -4414,6 +4498,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Vålerenga» og «1983» og «svensk». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «ble han trener for Vålerenga Fotball, som han ledet til to strake seriegull i 1983 og 1984» … «I 1983 tapte klubben kun én kamp før seriegullet var sikret i fjerde siste serierunde»"
       }
     ],
     "verify": {
@@ -5110,6 +5201,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Aalesund» og «2008» og «4. september». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 4. september 2008 ble han ansatt som hovedtrener i Aalesunds Fotballklubb. Den 8. november 2009 vant han cupen med AaFK»"
       }
     ],
     "verify": {
@@ -6330,16 +6428,23 @@
     "fact": "HamKam var nyopprykket.",
     "era": 2004,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I sin første sesong endte Ham-Kam på femteplass, mens det året etter ble 10.-plass»"
+      }
+    ],
     "verify": {
       "subject": "Ståle Solbakken",
       "mustMention": [
         "2004",
         "5"
       ]
-    },
-    "notes": "Tallet «5» kan ikke bekreftes med et tekstsøk i «Ståle Solbakken». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-stale-solbakken-4",
@@ -6365,6 +6470,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «2001» og «Hjertestans». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «tok karrieren brått slutt i mars 2001 da han på en trening fikk hjertestans som varte i syv minutter»"
       }
     ],
     "verify": {
@@ -6452,6 +6564,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «1995». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Klubben befant seg da i 1. divisjon, og hadde ikke vært i Eliteserien siden 1995. Klubben hadde også enkelte økonomiske vanskeligheter»"
       }
     ],
     "verify": {
@@ -6529,7 +6648,7 @@
     "id": "tq-ronny-deila-3",
     "coachId": "ronny-deila",
     "category": "trener",
-    "prompt": "Hvilken lokal klubb startet Ronny Deila trenerkarrieren i, i 2005?",
+    "prompt": "Hvilken klubb startet Ronny Deila trenerkarrieren i, før Strømsgodset?",
     "answer": {
       "label": "Brodd",
       "aliases": [
@@ -6547,6 +6666,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Brodd». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han startet sin trenerkarriere i Brodd FK» … «Odd Grenland (1993–2004)»"
       }
     ],
     "verify": {
@@ -8147,6 +8273,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «2009» og «Molde». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 8. november 2009 vant han cupen med AaFK, etter at de slo Molde FK på straffer, da ekstraomgangene endte 2–2»"
       }
     ],
     "verify": {
@@ -8203,15 +8336,22 @@
     "fact": "Vålerenga slo Odd 1–0 i finalen.",
     "era": 2002,
     "difficulty": 2,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «under hans ledelse rykket klubben opp til Tippeligaen samme år. Året etter ledet han også laget til seier i cupen» … «Rekdal overtok som spillende hovedtrener i Vålerenga Fotball etter Tom Nordlie i 2001»"
+      }
+    ],
     "verify": {
       "subject": "Kjetil Rekdal",
       "mustMention": [
         "2002"
       ]
-    },
-    "notes": "Artikkelen «Kjetil Rekdal» nevner ikke «2002». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-kjetil-rekdal-18",
@@ -8790,6 +8930,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Rosenborg» og «1999». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Norgesmesterskapet: (6) 1971, 1988, 1990, 1992, 1995, 1999» … «var Eggen tilbake ved roret i 1999 etter at Trond Sollied hadde vært vikar»"
       }
     ],
     "verify": {
@@ -9463,6 +9610,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «1971». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Med Tor Røste Fossen som assistent» … «Sesongen 1971 endte med en sensasjonell double»"
       }
     ],
     "verify": {
@@ -9933,7 +10087,7 @@
     "id": "tq-gunder-bengtsson-8",
     "coachId": "gunder-bengtsson",
     "category": "trener",
-    "prompt": "I hvilken svensk by ble Vålerengas gulltrener Gunder Bengtsson født?",
+    "prompt": "I hvilken svensk by ble Gunder Bengtsson født?",
     "answer": {
       "label": "Torsby",
       "aliases": []
@@ -9949,6 +10103,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Torsby». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «født 2. februar 1946 i Torsby i Sverige»"
       }
     ],
     "verify": {
@@ -10361,16 +10522,23 @@
     "fact": "Han hadde tidligere trent Brann og Lyn.",
     "era": 2011,
     "difficulty": 3,
-    "status": "recall",
-    "sources": [],
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Teitur_Thordarson",
+        "title": "Teitur Thordarson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Teitur was named as the coach for the Vancouver Whitecaps' first season in Major League Soccer» … «In 1988, he landed his first head-coaching role in Norway's top-flight Tippeligaen when he joined Brann» … «moving to Lyn for two seasons»"
+      }
+    ],
     "verify": {
       "subject": "Teitur Thordarson",
       "mustMention": [
         "Vancouver",
         "Vancouver Whitecaps"
       ]
-    },
-    "notes": "Artikkelen «Teitur Þórðarson» nevner ikke «Vancouver» og «Vancouver Whitecaps». Sjekk svaret for hånd."
+    }
   },
   {
     "id": "tq-tor-roste-fossen-8",
@@ -11127,6 +11295,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «Molde» og «Odd Berg». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Etter tapet mot Bryne fikk Bengtsson sparken og ble erstattet av Odd Berg»"
       }
     ],
     "verify": {
@@ -11210,6 +11385,13 @@
         "kind": "web",
         "accessed": "2026-09-24",
         "note": "Artikkelteksten nevner «2008». Automatisk kontroll, ikke lest av et menneske."
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «tok Deila over som hovedtrener fra 14. januar 2008» … «var i tillegg assistent under trener Fagermo i perioden 2006»"
       }
     ],
     "verify": {
@@ -11862,6 +12044,3706 @@
       "mustMention": [
         "1994",
         "1998"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-28",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket fag er Egil «Drillo» Olsen kjent for å kunne ut og inn, med egne quizbøker og verdensatlas?",
+    "answer": {
+      "label": "Geografi",
+      "aliases": []
+    },
+    "fact": "Som skolegutt pugget han alle verdens hovedsteder.",
+    "era": 1998,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Drillo geografiinteressert, og han pugget alle verdens hovedsteder» … «Drillos verdensatlas»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Geografi"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-29",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket land tapte 0–1 hjemme mot Norge i februar 2009, i Egil «Drillo» Olsens første kamp i comebacket som landslagssjef?",
+    "answer": {
+      "label": "Tyskland",
+      "aliases": []
+    },
+    "fact": "Christian Grindheim scoret kampens eneste mål i Düsseldorf.",
+    "era": 2009,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Norge endte opp med å slå storlaget Tyskland 1-0 borte i Düsseldorf den 11. februar 2009, etter en skåring av Christian Grindheim»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Tyskland",
+        "2009"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-30",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket land sendte Norge ut av VM 1998 i åttendedelsfinalen, med Egil «Drillo» Olsen som landslagssjef?",
+    "answer": {
+      "label": "Italia",
+      "aliases": []
+    },
+    "fact": "Christian Vieri ga italienerne en tidlig ledelse i Marseille.",
+    "era": 1998,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Norge møtte Italia i denne kampen. Italia tok en tidlig ledelse da Christian Vieri scoret et mål»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Italia",
+        "1998"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-31",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket land tapte 0–10 for Norge i åpningskampen av kvalifiseringen til VM 1994, med Egil «Drillo» Olsen som landslagssjef?",
+    "answer": {
+      "label": "San Marino",
+      "aliases": []
+    },
+    "fact": "Deretter fulgte en overraskende seier over Nederland.",
+    "era": 1992,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Norge åpnet kvaliken med å slå miniputtstaten San Marino hele 10-0. Denne kampen ble fulgt av en overraskende seier over Nederland»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "San Marino"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-32",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket dyr tok Egil «Drillo» Olsen av og til med seg på landslagets treninger?",
+    "answer": {
+      "label": "Hunden",
+      "aliases": [
+        "Hund",
+        "Hunden sin"
+      ]
+    },
+    "fact": "Den personlige stilen gjorde ham svært populær som landslagssjef.",
+    "era": 1994,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Blant annet tok han av og til hunden sin med på landslagstreninger»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "hunden"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-45",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken formasjon er Nils Arne Eggen og Rosenborg kjent for?",
+    "answer": {
+      "label": "4-3-3",
+      "aliases": [
+        "433"
+      ]
+    },
+    "fact": "Eggen la om Rosenborg til en offensiv 4-3-3 allerede i 1971.",
+    "era": 1995,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Hans idéer om 4-3-3» … «omformerte laget til en 4-3-3-formasjon med et mer offensivt fokus»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "4-3-3"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-46",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilket yrke hadde Nils Arne Eggen ved siden av fotballen, blant annet ved Ringve gymnas?",
+    "answer": {
+      "label": "Lektor",
+      "aliases": [
+        "Lærer"
+      ]
+    },
+    "fact": "Han underviste i norsk, samfunnsfag og gymnastikk.",
+    "era": 1970,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Fra 1966 til 1973 var Nils Arne Eggen lektor ved «reformgymnaset» Ringve gymnas i Trondheim» … «underviste han i norsk, samfunnsfag og gymnastikk»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Lektor"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-10",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvilket land tapte OL-finalen i Sydney i 2000 mot Norges kvinnelandslag, med Per-Mathias Høgmo som trener?",
+    "answer": {
+      "label": "USA",
+      "aliases": [
+        "De forente stater"
+      ]
+    },
+    "fact": "Året før hadde laget tatt 4.-plass i VM.",
+    "era": 2000,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «ledet Norge til OL-gull, etter at USA ble slått i finalen» … «Ledet kvinnelandslaget til 4.-plass i VM i 1999, og OL-gull i 2000»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "USA",
+        "2000"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-11",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvem tok over som norsk landslagssjef etter Egil «Drillo» Olsen i 2013?",
+    "answer": {
+      "label": "Per-Mathias Høgmo",
+      "aliases": [
+        "Høgmo"
+      ]
+    },
+    "fact": "Han debuterte med 0–3 borte mot Slovenia i oktober 2013.",
+    "era": 2013,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 27. september 2013 ble Høgmo ansatt som ny landslagssjef for Norge» … «debuterte Høgmo som landslagssjef i 3-0-tapet borte mot Slovenia»"
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 27. september 2013 ble Olsen erstattet av Per-Mathias Høgmo som trener for herrelandslaget»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "landslagssjef",
+        "2013"
+      ]
+    }
+  },
+  {
+    "id": "tq-ronny-deila-7",
+    "coachId": "ronny-deila",
+    "category": "trener",
+    "prompt": "Hvilken skotsk klubb ble Ronny Deila manager for i juni 2014, etter Neil Lennon?",
+    "answer": {
+      "label": "Celtic",
+      "aliases": [
+        "Celtic FC"
+      ]
+    },
+    "fact": "Han ble skotsk mester med klubben i sin første sesong.",
+    "era": 2014,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Deila hadde blitt tilbudt trenerjobben etter Neil Lennon for de skotske mesterne Celtic» … «han ble skotsk mester med Celtic da laget ble seriemester 2014-2015»"
+      }
+    ],
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "Celtic"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-6",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvor mange A-landskamper spilte Henning Berg for Norge?",
+    "answer": {
+      "label": "100",
+      "aliases": [
+        "hundre"
+      ]
+    },
+    "fact": "Bare Thorbjørn Svenssen og John Arne Riise har flere for herrelandslaget.",
+    "era": 2004,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Berg fikk til sammen 100 A-landskamper» … «Bare Thorbjørn Svenssen (104) og John Arne Riise (110) har flere A-landskamper»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "100"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-7",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvilken klubb vant Henning Berg «The Treble» med som spiller i 1999?",
+    "answer": {
+      "label": "Manchester United",
+      "aliases": [
+        "Man United",
+        "United"
+      ]
+    },
+    "fact": "Han var skadet og spilte ikke finalene i FA-cupen og Champions League.",
+    "era": 1999,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «var med på å vinne The Treble med klubben, Premier League, FA-cupen og UEFA Champions League, i 1999» … «Han var skadet og spilte derfor ikke FA-cup- og UEFA Champions League-finalene»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "Manchester United",
+        "1999"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-9",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hvem ble Norges landslagssjef i desember 2020?",
+    "answer": {
+      "label": "Ståle Solbakken",
+      "aliases": [
+        "Solbakken"
+      ]
+    },
+    "fact": "Norge lå da på 44.-plass på FIFA-rankingen.",
+    "era": 2020,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Mandag 7. desember 2020 tok Solbakken over som trener for det norske herrelandslaget i fotball. Norge lå da på 44.-plass på FIFA-rankingen»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "herrelandslaget",
+        "2020"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-1",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken klubb ledet Ole Gunnar Solskjær til klubbens første seriegull i 2011?",
+    "answer": {
+      "label": "Molde",
+      "aliases": [
+        "Molde FK",
+        "MFK"
+      ]
+    },
+    "fact": "Laget vant serien igjen året etter, i 2012.",
+    "era": 2011,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Allerede i det første året som trener for Molde sikret han klubbens første seriegull» … «Med Solskjær som trener vant Molde Tippeligaen i 2011 og i 2012»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Molde",
+        "2011"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-2",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken manager hadde Manchester United sparket dagen før Ole Gunnar Solskjær tok over i desember 2018?",
+    "answer": {
+      "label": "José Mourinho",
+      "aliases": [
+        "Mourinho"
+      ]
+    },
+    "fact": "Han ble fast ansatt i mars 2019.",
+    "era": 2018,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han ble ansatt dagen etter at styret i United hadde sparket José Mourinho» … «Den 28. mars 2019, på grunn av hans 14 seiere på 19 kamper, ble han annonsert som permanent manager»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "José Mourinho"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-3",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilket draktnummer hadde Ole Gunnar Solskjær i Manchester United?",
+    "answer": {
+      "label": "20",
+      "aliases": [
+        "nummer 20",
+        "tjue"
+      ]
+    },
+    "fact": "United-fansen kaller ham «20LEGEND».",
+    "era": 1999,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Kallenavnet er en sammensetning av draktnummeret hans (20)»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "20"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-4",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Mot hvilken klubb scoret Ole Gunnar Solskjær vinnermålet i Champions League-finalen i 1999?",
+    "answer": {
+      "label": "Bayern München",
+      "aliases": [
+        "Bayern",
+        "FC Bayern"
+      ]
+    },
+    "fact": "Målet kom etter to minutter av tilleggstiden.",
+    "era": 1999,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1999 avgjorde Solskjær Mesterligafinalen mot Bayern München da han satte inn vinnermålet etter to minutter av tilleggstiden»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Bayern München"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-5",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken klubb rykket ned fra Premier League med Ole Gunnar Solskjær som manager i 2014?",
+    "answer": {
+      "label": "Cardiff City",
+      "aliases": [
+        "Cardiff"
+      ]
+    },
+    "fact": "Han ble sparket etter en dårlig sesongstart i september 2014.",
+    "era": 2014,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «2. januar 2014 ble han manager for Premier League-laget Cardiff City FC» … «Under Solskjærs ledelse rykket klubben ned fra Premier League til Championship, og etter en dårlig sesongstart ble han sparket 18. september 2014»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Cardiff City"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-1",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilket år ledet Kjetil Knutsen Bodø/Glimt til klubbens første seriegull?",
+    "answer": {
+      "label": "2020",
+      "aliases": []
+    },
+    "fact": "Glimt ble tidenes første nordnorske seriemester.",
+    "era": 2020,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «var det klart at Bodø/Glimt var tidenes første nordnorske seriemester»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Bodø/Glimt",
+        "2020"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-2",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilken italiensk klubb tapte 1–6 for Kjetil Knutsens Bodø/Glimt på Aspmyra i 2021?",
+    "answer": {
+      "label": "Roma",
+      "aliases": [
+        "AS Roma"
+      ]
+    },
+    "fact": "Roma-treneren José Mourinho hadde aldri før sluppet inn seks mål i én kamp.",
+    "era": 2021,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «den eneste treneren som har påført Jose Mourinho seks innslupne mål i én kamp i hans karriere i 6-1 seieren over Roma på Aspmyra»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Roma"
+      ]
+    }
+  },
+  {
+    "id": "tq-lars-lagerback-1",
+    "coachId": "lars-lagerback",
+    "category": "trener",
+    "prompt": "Hvilken svensk trener var Norges landslagssjef fra 2017 til 2020?",
+    "answer": {
+      "label": "Lars Lagerbäck",
+      "aliases": [
+        "Lagerbäck",
+        "Lagerback"
+      ]
+    },
+    "fact": "Han ble presentert av Norges Fotballforbund 1. februar 2017.",
+    "era": 2017,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck",
+        "title": "Lars Lagerbäck – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «den 1. februar 2017 ble Lars Lagerbäck presentert som ny landslagstrener for Norge. Han ble sagt opp i desember 2020»"
+      }
+    ],
+    "verify": {
+      "subject": "Lars Lagerbäck",
+      "mustMention": [
+        "Norge",
+        "2017"
+      ]
+    }
+  },
+  {
+    "id": "tq-lars-lagerback-2",
+    "coachId": "lars-lagerback",
+    "category": "trener",
+    "prompt": "Hvilket nordisk landslag har Lars Lagerbäck vært trener for, i tillegg til Sverige?",
+    "answer": {
+      "label": "Island",
+      "aliases": [
+        "Islands landslag"
+      ]
+    },
+    "fact": "Han har også vært trener for Nigeria.",
+    "era": 2016,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck",
+        "title": "Lars Lagerbäck – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han har blant annet vært trener for Norge, Island, Nigeria og Sverige»"
+      }
+    ],
+    "verify": {
+      "subject": "Lars Lagerbäck",
+      "mustMention": [
+        "Island"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-1",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvem var Norges landslagssjef da herrelandslaget spilte sitt første EM-sluttspill, i 2000?",
+    "answer": {
+      "label": "Nils Johan Semb",
+      "aliases": [
+        "Semb"
+      ]
+    },
+    "fact": "Norge slo Spania i EM, men røk ut etter gruppespillet.",
+    "era": 2000,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han ble den første treneren  som tok Norges fotballandslag til et sluttspill i Europamesterskapet i fotball, til EM i fotball 2000»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "EM",
+        "2000"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-2",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvilket land tapte for Norge under EM-sluttspillet i 2000?",
+    "answer": {
+      "label": "Spania",
+      "aliases": []
+    },
+    "fact": "Norge røk likevel ut etter gruppespillet.",
+    "era": 2000,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I EM ble det seier mot Spania, men Norge ble slått ut etter gruppespillet»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "Spania"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-21",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Mot hvilket land scoret Kjetil Rekdal i VM 1994?",
+    "answer": {
+      "label": "Mexico",
+      "aliases": []
+    },
+    "fact": "Han er den eneste norske herrespilleren som har scoret i to VM-sluttspill.",
+    "era": 1994,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Rekdal scoret også i VM-kampen mot Mexico i 1994, og er således den eneste norske fotballspilleren (på herresiden) som har scoret i to VM-sluttspill»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "Mexico",
+        "1994"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-19",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilket begrep er Tom Nordlie kjent for å ha introdusert i norsk fotball?",
+    "answer": {
+      "label": "Kontrollert sinnsyk",
+      "aliases": [
+        "Kontrollert sinnssyk"
+      ]
+    },
+    "fact": "Samme Nordlie ledet Start til seriesølv i 2005.",
+    "era": 2005,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «He is known for introducing the concept kontrollert sinnsyk» … «Start had a great spring season, and won the silver medals»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Kontrollert sinnsyk"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-3",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilket landslag førte Roy Hodgson fram til VM 1994 og EM 1996?",
+    "answer": {
+      "label": "Sveits",
+      "aliases": [
+        "Sveits' landslag"
+      ]
+    },
+    "fact": "Han var sveitsisk landslagssjef fra 1992.",
+    "era": 1994,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1992 ble Hodgson sjef for det sveitsiske landslaget, som han førte frem til VM 1994 og EM 1996»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "Sveits",
+        "sveitsiske"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-4",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilken engelsk storklubb overtok Roy Hodgson etter Rafael Benítez sommeren 2010?",
+    "answer": {
+      "label": "Liverpool",
+      "aliases": [
+        "Liverpool FC"
+      ]
+    },
+    "fact": "Han fikk sparken allerede i januar 2011.",
+    "era": 2010,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «30. juni 2010 tok Hodgson over managerjobben for Rafael Benítez i Liverpool FC. 8. januar 2011 fikk han sparken»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "Liverpool"
+      ]
+    }
+  },
+  {
+    "id": "tq-age-hareide-12",
+    "coachId": "age-hareide",
+    "category": "trener",
+    "prompt": "Hvilket land ble Åge Hareide landslagssjef for i desember 2015?",
+    "answer": {
+      "label": "Danmark",
+      "aliases": [
+        "Danmarks landslag"
+      ]
+    },
+    "fact": "Han ble kåret til årets trener i Danmark både for 2018 og 2019.",
+    "era": 2015,
+    "difficulty": 1,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Hareide ble presentert som ny landslagssjef 10. desember 2015» … «i 2019 ble han ble kåret til årets danske fotballtrener for 2018 og 2019»"
+      }
+    ],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Danmark"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-33",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket landslag ble Egil «Drillo» Olsen ansatt som sjef for i september 2007?",
+    "answer": {
+      "label": "Irak",
+      "aliases": [
+        "Iraq"
+      ]
+    },
+    "fact": "Laget var nybakt asiamester da han kom.",
+    "era": 2007,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I september 2007 ble Olsen ansatt som landslagssjef for Irak på en treårskontrakt. Irakerne var nybakte asiamestre»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Irak"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-34",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilken klubb trente Egil «Drillo» Olsen i 2005, med Knut Torbjørn Eggen som assistent?",
+    "answer": {
+      "label": "Fredrikstad",
+      "aliases": [
+        "FFK",
+        "Fredrikstad FK"
+      ]
+    },
+    "fact": "Han sluttet etter én sesong på grunn av lang reisevei fra Oslo.",
+    "era": 2005,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Egil Olsen ble hentet inn som erstatter. Eggen fortsatte imidlertid som assistenttrener» … «Olsen bestemte seg for å forlate Fredrikstad etter én sesong. Dette begrunnet han med lang reisevei mellom Oslo og Fredrikstad»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Fredrikstad"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-35",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilken tyrkisk klubb ble slått ut av Egil «Drillo» Olsens Vålerenga i cupvinnercupen høsten 1998?",
+    "answer": {
+      "label": "Beşiktaş",
+      "aliases": []
+    },
+    "fact": "Vålerenga lå under 0–3 ved pause i Istanbul, men gikk videre.",
+    "era": 1998,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «før tyrkiske Beşiktaş ventet i neste runde» … «Allerede ved pause i Istanbul ledet Beşiktaş 3-0» … «gikk Vålerenga videre til kvartfinalen»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Beşiktaş"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-36",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilket år hadde Norge sist spilt VM-sluttspill da Egil «Drillo» Olsens landslag kvalifiserte seg til VM 1994?",
+    "answer": {
+      "label": "1938",
+      "aliases": []
+    },
+    "fact": "VM-billetten ble sikret med 3–0 over Polen i Poznań.",
+    "era": 1993,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «var klare for VM-sluttspill for første gang siden 1938» … «Norge vant deretter mot Polen med 3-0 i Poznań»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "1938"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-47",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvor mange seriekamper tapte Rosenborg i gullsesongen 2010, med Nils Arne Eggen som trener?",
+    "answer": {
+      "label": "0",
+      "aliases": [
+        "null",
+        "ingen"
+      ]
+    },
+    "fact": "Gullet var Rosenborgs 22. seriemesterskap.",
+    "era": 2010,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Sesongen endte med Eggens 14. og siste seriegull og Rosenborgs 22» … «gikk Rosenborg gjennom en hel sesong uten å tape en eneste kamp»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "0",
+        "2010"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-48",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken klubb slo Rosenborg ut i kvartfinalen i Champions League 1996/97?",
+    "answer": {
+      "label": "Juventus",
+      "aliases": [
+        "Juve"
+      ]
+    },
+    "fact": "Det endte 1–1 på Lerkendal og 0–2 i Torino.",
+    "era": 1997,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Kvartfinalen mot Juventus endte med 1–3 sammenlagt etter 1–1 på Lerkendal og 0–2-tap i Torino»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Juventus"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-49",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken daværende Bundesliga-leder tapte 0–3 hjemme mot Rosenborg i Champions League i 1999?",
+    "answer": {
+      "label": "Borussia Dortmund",
+      "aliases": [
+        "Dortmund",
+        "BVB"
+      ]
+    },
+    "fact": "Rosenborg vant gruppa si for første gang det året.",
+    "era": 1999,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «3–0-seieren på bortebane mot daværende Bundesliga-leder Borussia Dortmund» … «Rosenborg endte opp som gruppevinner for første gang»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Borussia Dortmund"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-50",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken idrett var Nils Arne Eggen også habil i som ungdom, med seier i Bekkelagsrennet?",
+    "answer": {
+      "label": "Skihopping",
+      "aliases": [
+        "Hopp",
+        "Skihopp"
+      ]
+    },
+    "fact": "Bekkelagsrennet ble kalt «guttenes holmenkollrenn».",
+    "era": 1960,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Eggen var også en habil skihopper i sin ungdom. Han vant 16-årsklassen i Bekkelagsrennet – «guttenes holmenkollrenn»»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Skihopping",
+        "skihopper"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-12",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvilken svensk klubb ledet Per-Mathias Høgmo til klubbens første seriegull i 2022?",
+    "answer": {
+      "label": "BK Häcken",
+      "aliases": [
+        "Häcken",
+        "Hacken"
+      ]
+    },
+    "fact": "Laget vant også Svenska cupen 2022–2023.",
+    "era": 2022,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 2022 vant Häcken og Høgmo Allsvenskan 2022. Dette var også Häcken første seriegull» … «Svensk cupmester i Svenska cupen 2022–2023 med BK Häcken»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "BK Häcken"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-13",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvilken klubb sa opp Per-Mathias Høgmo i september 2025, etter 21 serierunder?",
+    "answer": {
+      "label": "Molde",
+      "aliases": [
+        "Molde FK",
+        "MFK"
+      ]
+    },
+    "fact": "Laget lå på 11. plass da han måtte gå.",
+    "era": 2025,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «14. september, etter 21 serierunder og Molde på 11. plass i eliteserien, ble kontrakten med Høgmo sagt opp»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "Molde",
+        "2025"
+      ]
+    }
+  },
+  {
+    "id": "tq-ronny-deila-8",
+    "coachId": "ronny-deila",
+    "category": "trener",
+    "prompt": "Hvilken MLS-klubb fra New York har Ronny Deila trent?",
+    "answer": {
+      "label": "New York City",
+      "aliases": [
+        "New York City FC",
+        "NYCFC"
+      ]
+    },
+    "fact": "Han har også trent Atlanta United i MLS.",
+    "era": 2018,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han har tidligere trent Brodd, Strømsgodset, Celtic, Vålerenga, New York City, Standard Liège, Club Brugge, Al Wahda og Atlanta United»"
+      }
+    ],
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "New York City"
+      ]
+    }
+  },
+  {
+    "id": "tq-ronny-deila-9",
+    "coachId": "ronny-deila",
+    "category": "trener",
+    "prompt": "Hvilken klubb ble Ronny Deila cupmester med som spiller i 2000?",
+    "answer": {
+      "label": "Odd",
+      "aliases": [
+        "Odd Grenland"
+      ]
+    },
+    "fact": "Han spilte for klubben fra 1993 til 2004.",
+    "era": 2000,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Odd Grenland (1993–2004)» … «Han ble cupmester for Odd i 2000»"
+      }
+    ],
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "Odd",
+        "2000"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-8",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvilken polsk klubb ledet Henning Berg til seriegull i 2013/14?",
+    "answer": {
+      "label": "Legia Warszawa",
+      "aliases": [
+        "Legia",
+        "Legia Warsawa"
+      ]
+    },
+    "fact": "Året etter vant laget også den polske cupen.",
+    "era": 2014,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Legia Warszawa\nEkstraklasa: 2013/14\nPolsk cup: 2014/15»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "Legia Warszawa"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-9",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvilken kypriotisk klubb ledet Henning Berg til seriegull både i 2020/21 og 2025/26?",
+    "answer": {
+      "label": "Omonia",
+      "aliases": [
+        "Omonia Nicosia",
+        "Omonia Nikosia"
+      ]
+    },
+    "fact": "Han ledet klubben fra 2019 til 2022, og igjen fra 2025.",
+    "era": 2021,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Berg ledet kypriotiske Omonia fra 2019 til 2022. I denne perioden ledet han laget til det kypriotiske seriemesterskapet i 2020/21-sesongen. I 2025 tok han igjen jobben som klubbens trener, og ledet laget til seriemesterskapet i 2025/26-sesongen»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "Omonia"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-10",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hvilken tysk klubb var Ståle Solbakken hovedtrener for fra sommeren 2011?",
+    "answer": {
+      "label": "1. FC Köln",
+      "aliases": [
+        "Köln",
+        "FC Köln",
+        "Koln"
+      ]
+    },
+    "fact": "Han fikk sparken med tre kamper igjen av vårsesongen 2012.",
+    "era": 2011,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Fra sommeren 2011 var Solbakken hovedtrener for den tyske Bundesliga-klubben 1. FC Köln, der han fikk sparken da det gjensto tre kamper av vårsesongen 2012»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "1. FC Köln"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-11",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hvilken engelsk klubb var Ståle Solbakken manager for høsten 2012, før et FA-cuptap mot Luton?",
+    "answer": {
+      "label": "Wolverhampton",
+      "aliases": [
+        "Wolves",
+        "Wolverhampton Wanderers"
+      ]
+    },
+    "fact": "Luton spilte da på femte nivå i engelsk fotball.",
+    "era": 2012,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I mai 2012 ble det kjent at han skulle trene Wolverhampton» … «De gikk dermed ut av FA-cupen etter møtet med en klubb fra Englands femte liganivå»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "Wolverhampton"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-22",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken farge hadde skoene Kjetil Rekdal brukte da han scoret på straffe mot Brasil i VM 1998?",
+    "answer": {
+      "label": "Gule",
+      "aliases": [
+        "Gul"
+      ]
+    },
+    "fact": "Skoene og drakten fra kampen står på fotballmuseet på Ullevaal.",
+    "era": 1998,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Rekdals gule sko og drakten han benyttet i denne kampen er i dag utstilt på fotballmuseet på Ullevaal Stadion»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "gule"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-23",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken klubb førte Kjetil Rekdal opp til Eliteserien i 2021, etter å ha overtatt laget på sisteplass i 1. divisjon året før?",
+    "answer": {
+      "label": "HamKam",
+      "aliases": [
+        "Hamarkameratene",
+        "Ham-Kam"
+      ]
+    },
+    "fact": "Han ble kåret til årets trener i OBOS-ligaen 2021.",
+    "era": 2021,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 15. august 2020 ble Kjetil Rekdal ansatt som ny trener for Hamarkameratene» … «Da Rekdal tok over lå HamKam på sisteplass i OBOS-ligaen» … «Den 6. november 2021 vant Ham-Kam OBOS-ligaen 2021 og sikret opprykk til Eliteserien 2022»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "HamKam"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-24",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken klubb ansatte Kjetil Rekdal som hovedtrener i desember 2021, på en treårskontrakt?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "fact": "Samarbeidet ble avsluttet i juni 2023.",
+    "era": 2021,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 20. desember 2021 ble han ansatt som hovedtrener for Rosenborg. Han skrev under en treårskontrakt. Den 16. juni 2023 ble Rekdal og Rosenborg enige om å avslutte samarbeidet»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "Rosenborg",
+        "2021"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-25",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvor gammel var Kjetil Rekdal da han debuterte i eliteserien for Molde i 1985?",
+    "answer": {
+      "label": "16",
+      "aliases": [
+        "16 år",
+        "seksten"
+      ]
+    },
+    "fact": "Han var 16 år og 222 dager gammel.",
+    "era": 1985,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Rekdal debuterte som klubbfotballspiller i eliteserien for Molde i 1985 da han bare var 16 år og 222 dager»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "16"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-26",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken medalje tok Vålerenga i 2004, året før seriegullet med Kjetil Rekdal?",
+    "answer": {
+      "label": "Sølv",
+      "aliases": [
+        "Sølvmedalje"
+      ]
+    },
+    "fact": "Året før hadde laget berget plassen i nedrykkskvalifisering.",
+    "era": 2004,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 2004 tok han Vålerenga til sølv i Eliteserien» … «I 2003 havnet Vålerenga på plassen som ga nedrykkskvalifisering»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "sølv",
+        "2004"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-6",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken tyrkisk klubb ble Ole Gunnar Solskjær manager for i januar 2025?",
+    "answer": {
+      "label": "Beşiktaş",
+      "aliases": [
+        "Beşiktaş JK"
+      ]
+    },
+    "fact": "Han fikk sparken i august samme år.",
+    "era": 2025,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «19. januar 2025 ble Solskjær presentert som den nye manageren til Süper Lig klubben Beşiktaş JK» … «28. august 2025 fikk Solskjær sparken i Besiktas»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Beşiktaş"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-7",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilket lag tapte cupfinalen 2013 med 2–4 mot Ole Gunnar Solskjærs lag?",
+    "answer": {
+      "label": "Rosenborg",
+      "aliases": [
+        "RBK",
+        "Rosenborg BK"
+      ]
+    },
+    "fact": "Finalen ble spilt på Ullevaal 24. november 2013.",
+    "era": 2013,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «24. november 2013 ble han Norgesmester med Molde, etter å ha slått Rosenborg i finalen på Ullevål med 4–2»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Rosenborg",
+        "2013"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-8",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken klubb ble slått ut av Ole Gunnar Solskjærs Manchester United i Champions League i 2019, til tross for 2–0-seier på Old Trafford?",
+    "answer": {
+      "label": "PSG",
+      "aliases": [
+        "Paris Saint-Germain",
+        "Paris SG"
+      ]
+    },
+    "fact": "Marcus Rashford avgjorde på straffe i det 94. minutt i Paris.",
+    "era": 2019,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «United fikk sitt første tap med Solskjær ved roret 12. februar, da de tapte 0–2 på Old Trafford for PSG» … «I returoppgjøret på Parc des Princes vant United 3–1, etter at Marcus Rashford scoret på straffe i det 94. minutt»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "PSG"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-3",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvor mange strake seire åpnet Kjetil Knutsens Bodø/Glimt sesongen med, det året klubben ble tidenes første nordnorske seriemester?",
+    "answer": {
+      "label": "10",
+      "aliases": [
+        "ti"
+      ]
+    },
+    "fact": "Laget tapte bare én seriekamp hele sesongen.",
+    "era": 2020,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Glimt startet imidlertid sesongen forrykende, med 10 strake seire fra sesongstart» … «Glimt tapte kun én kamp»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "10"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-4",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilken europeisk turnering nådde Kjetil Knutsens Bodø/Glimt semifinalen i, sesongen 2024/25?",
+    "answer": {
+      "label": "Europaligaen",
+      "aliases": [
+        "Europa League"
+      ]
+    },
+    "fact": "Samme år vant Glimt også Eliteserien.",
+    "era": 2025,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Bodø/Glimt vant serien i 2024, kom til semifinalen i Europaligaen 2024/25»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Europaligaen"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-5",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilket år tok Kjetil Knutsen over som hovedtrener i Bodø/Glimt?",
+    "answer": {
+      "label": "2018",
+      "aliases": [
+        "18"
+      ]
+    },
+    "fact": "Han hadde vært assistent i klubben året før.",
+    "era": 2018,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Knutsen overtok hovedtrenerrollen i Glimt foran 2018-sesongen etter å ha vært assistenttrener for Aasmund Bjørkan i 2017-sesongen»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "2018"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-3",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvilken valør tok Norges U21-landslag i EM 1998, med Nils Johan Semb som trener?",
+    "answer": {
+      "label": "Bronse",
+      "aliases": [
+        "Bronsemedalje",
+        "Tredjeplass"
+      ]
+    },
+    "fact": "Etter VM samme år tok han over A-landslaget.",
+    "era": 1998,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Der ledet han Norge til bronse i EM 1998» … «Semb overtok som trener etter at de deltok i VM i fotball 1998»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "bronse"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-4",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvem etterfulgte Nils Johan Semb som toppfotballsjef i Norges Fotballforbund i 2018?",
+    "answer": {
+      "label": "Lise Klaveness",
+      "aliases": [
+        "Klaveness"
+      ]
+    },
+    "fact": "Semb hadde vært toppfotballsjef siden høsten 2009.",
+    "era": 2018,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Semb ble i 2018 etterfulgt av Lise Klaveness som elitefotballens øverste sjef» … «høsten 2009 ansatt som toppfotballsjef»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "Lise Klaveness"
+      ]
+    }
+  },
+  {
+    "id": "tq-lars-lagerback-3",
+    "coachId": "lars-lagerback",
+    "category": "trener",
+    "prompt": "Hvilket afrikansk landslag ble Lars Lagerbäck trener for i 2010?",
+    "answer": {
+      "label": "Nigeria",
+      "aliases": []
+    },
+    "fact": "Året før hadde han gitt seg som Sveriges landslagssjef.",
+    "era": 2010,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck",
+        "title": "Lars Lagerbäck – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 2009 valgte han å gi seg som landslagssjef for Sverige, og året etter ble han utnevnt til trener for Nigeria»"
+      }
+    ],
+    "verify": {
+      "subject": "Lars Lagerbäck",
+      "mustMention": [
+        "Nigeria"
+      ]
+    }
+  },
+  {
+    "id": "tq-mons-ivar-mjelde-13",
+    "coachId": "mons-ivar-mjelde",
+    "category": "trener",
+    "prompt": "Hvilken østerriksk klubb spilte Mons Ivar Mjelde for, før han kom tilbake til Brann i 1996?",
+    "answer": {
+      "label": "Austria Wien",
+      "aliases": [
+        "Austria"
+      ]
+    },
+    "fact": "Samme år ble han kåret til årets angriper med 19 mål på 15 seriekamper.",
+    "era": 1995,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Lillestrøm og Austria Wien i Østerrike, før han dro tilbake til Norge og Brann i 1996» … «I 1996 fikk han Kniksenprisen som Årets angriper, etter å ha scoret 19 mål på 15 seriekamper for Brann»"
+      }
+    ],
+    "verify": {
+      "subject": "Mons Ivar Mjelde",
+      "mustMention": [
+        "Austria Wien"
+      ]
+    }
+  },
+  {
+    "id": "tq-mons-ivar-mjelde-14",
+    "coachId": "mons-ivar-mjelde",
+    "category": "trener",
+    "prompt": "Hvilken 1. divisjonsklubb ble Mons Ivar Mjelde trener for i juni 2009, etter Brann-tiden?",
+    "answer": {
+      "label": "Bryne",
+      "aliases": [
+        "Bryne FK"
+      ]
+    },
+    "fact": "Debuten ble 2–0 mot rivalen Stavanger.",
+    "era": 2009,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I begynnelsen av juni 2009 ble det kjent at Mjelde hadde inngått kontrakt som trener for Bryne» … «I sin debutkamp mot rivalene Stavanger vant Bryne 2–0»"
+      }
+    ],
+    "verify": {
+      "subject": "Mons Ivar Mjelde",
+      "mustMention": [
+        "Bryne",
+        "2009"
+      ]
+    }
+  },
+  {
+    "id": "tq-mons-ivar-mjelde-15",
+    "coachId": "mons-ivar-mjelde",
+    "category": "trener",
+    "prompt": "Hvilken klubb spilte Mons Ivar Mjelde for da han ble toppscorer i eliteserien med 19 mål i 1993?",
+    "answer": {
+      "label": "Lillestrøm",
+      "aliases": [
+        "LSK",
+        "Lillestrøm SK"
+      ]
+    },
+    "fact": "Året før scoret han to mål i en tapt cupfinale.",
+    "era": 1993,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1993 ble Mjelde toppscorer i eliteserien med 19 mål for Lillestrøm» … «I 1992 scoret han to mål i cupfinalen, men Lillestrøm tapte 2–3 mot Rosenborg»"
+      }
+    ],
+    "verify": {
+      "subject": "Mons Ivar Mjelde",
+      "mustMention": [
+        "Lillestrøm",
+        "1993"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-20",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilken idrett spilte Tom Nordlie på landslaget i på 1980-tallet?",
+    "answer": {
+      "label": "Vannpolo",
+      "aliases": []
+    },
+    "fact": "Han deltok i EM med landslaget.",
+    "era": 1985,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Nordlie var en aktiv vannpolo-spiller i 1980-årene og han deltok med landslaget i EM»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "vannpolo"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-21",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilken Oslo-klubb trente Tom Nordlie fra 2016 til 2019?",
+    "answer": {
+      "label": "Skeid",
+      "aliases": []
+    },
+    "fact": "Han rykket opp til OBOS-ligaen med klubben i 2018.",
+    "era": 2018,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «2016-2019: Nordlie trente Skeid i disse 4 sesongene med opprykk til Obos i 2018»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Skeid"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-5",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilken italiensk klubb var Roy Hodgson manager for fra 1995 til 1997?",
+    "answer": {
+      "label": "Inter",
+      "aliases": [
+        "Inter Milan",
+        "Internazionale"
+      ]
+    },
+    "fact": "Etterpå gikk han tilbake til England og Blackburn.",
+    "era": 1996,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Før europamesterskapet begynte, gikk han til Inter Milan, der han var manager fra 1995 til 1997» … «I 1997/98 dro han tilbake til England og Blackburn Rovers»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "Inter"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-6",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilken dansk klubb vant ligaen med Roy Hodgson som manager i 2000/01?",
+    "answer": {
+      "label": "FC København",
+      "aliases": [
+        "København",
+        "FCK"
+      ]
+    },
+    "fact": "Han hadde vært en av kandidatene til å bli Englands landslagssjef i 2000.",
+    "era": 2001,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «dro han til Danmark, der han vant ligamesterskapet med FC København i 2000/01» … «I 2000 var Hodgson en av tre kandidater til å overta det engelske fotballandslaget»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "FC København"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-7",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilket landslag overtok Roy Hodgson sommeren 2006, etter Viking?",
+    "answer": {
+      "label": "Finland",
+      "aliases": [
+        "Finlands landslag"
+      ]
+    },
+    "fact": "I romjula 2007 ble han manager for Fulham.",
+    "era": 2006,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han overtok som manager for det finske landslaget sommeren 2006. I romjula 2007 fikk han ny jobb som manager for Fulham FC»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "Finland",
+        "finske"
+      ]
+    }
+  },
+  {
+    "id": "tq-age-hareide-13",
+    "coachId": "age-hareide",
+    "category": "trener",
+    "prompt": "Hvilken svensk klubb ledet Åge Hareide til seriegull i 2014?",
+    "answer": {
+      "label": "Malmö FF",
+      "aliases": [
+        "Malmö",
+        "Malmø"
+      ]
+    },
+    "fact": "Han ble kåret til årets trener i Allsvenskan samme høst.",
+    "era": 2014,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «9. januar 2014 ble det kjent at han ville overta som hovedtrener for Malmö FF. Han ledet laget fram til seriegull i Allsvenskan» … «i november ble han kåret til «Årets trener» i Allsvenskan»"
+      }
+    ],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Malmö FF"
+      ]
+    }
+  },
+  {
+    "id": "tq-age-hareide-14",
+    "coachId": "age-hareide",
+    "category": "trener",
+    "prompt": "Hvilken utdannelse hadde Åge Hareide ved siden av fotballen?",
+    "answer": {
+      "label": "Revisor",
+      "aliases": [
+        "Revisjon"
+      ]
+    },
+    "fact": "Han jobbet i bank og var styreleder i et rederi.",
+    "era": 1985,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Hareide var utdannet revisor og arbeidet i bank og som styreleder i et rederi»"
+      }
+    ],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "revisor"
+      ]
+    }
+  },
+  {
+    "id": "tq-age-hareide-15",
+    "coachId": "age-hareide",
+    "category": "trener",
+    "prompt": "Hvilken engelsk klubb ble Åge Hareide proff i først, i 1981?",
+    "answer": {
+      "label": "Manchester City",
+      "aliases": [
+        "Man City",
+        "City"
+      ]
+    },
+    "fact": "Senere spilte han for Norwich City.",
+    "era": 1981,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1981 ble han den andre nordmannen i moderne tid som ble profesjonell i England, først i Manchester City FC og senere i Norwich City FC»"
+      }
+    ],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Manchester City"
+      ]
+    }
+  },
+  {
+    "id": "tq-kare-ingebrigtsen-10",
+    "coachId": "kare-ingebrigtsen",
+    "category": "trener",
+    "prompt": "Hvilken engelsk klubb scoret Kåre Ingebrigtsen hat trick for i en FA-cupkamp mot Leicester?",
+    "answer": {
+      "label": "Manchester City",
+      "aliases": [
+        "Man City",
+        "City"
+      ]
+    },
+    "fact": "Han scoret de tre målene på én omgang.",
+    "era": 1994,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han scoret tre mål på en omgang da Manchester City beseiret Leicester 4-1 i FA-cupen»"
+      }
+    ],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen",
+      "mustMention": [
+        "Manchester City"
+      ]
+    }
+  },
+  {
+    "id": "tq-kare-ingebrigtsen-11",
+    "coachId": "kare-ingebrigtsen",
+    "category": "trener",
+    "prompt": "Hvilken belgisk klubb skrev Kåre Ingebrigtsen kontrakt med i mai 2019?",
+    "answer": {
+      "label": "KV Oostende",
+      "aliases": [
+        "Oostende"
+      ]
+    },
+    "fact": "Han hadde fått sparken i Rosenborg sommeren før.",
+    "era": 2019,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 6. mai 2019 skrev Ingebrigtsen under en toårskontrakt med den belgiske klubben KV Oostende» … «Den 18. juli 2018 fikk Ingebrigtsen sparken av styret i RBK»"
+      }
+    ],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen",
+      "mustMention": [
+        "KV Oostende"
+      ]
+    }
+  },
+  {
+    "id": "tq-kare-ingebrigtsen-12",
+    "coachId": "kare-ingebrigtsen",
+    "category": "trener",
+    "prompt": "Hvilken idrett drev Kåre Ingebrigtsen også med fram til han var 16 år?",
+    "answer": {
+      "label": "Ishockey",
+      "aliases": [
+        "Hockey"
+      ]
+    },
+    "fact": "Han begynte med organisert fotball etter at familien flyttet til Utleira.",
+    "era": 1981,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Samtidig spilte han også ishockey fram til 16 års alder» … «Kåre Ingebrigtsen begynte å spille organisert fotball etter at familien flyttet til Utleira»"
+      }
+    ],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen",
+      "mustMention": [
+        "ishockey"
+      ]
+    }
+  },
+  {
+    "id": "tq-kare-ingebrigtsen-13",
+    "coachId": "kare-ingebrigtsen",
+    "category": "trener",
+    "prompt": "Hvilken klubb ble Kåre Ingebrigtsen trener for i august 2020?",
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann"
+      ]
+    },
+    "fact": "Samarbeidet ble avsluttet i juli 2021.",
+    "era": 2020,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/K%C3%A5re_Ingebrigtsen",
+        "title": "Kåre Ingebrigtsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 8. august 2020 ble han trener for Brann. 19. juli 2021 avsluttet Brann samarbeidet med Ingebrigtsen»"
+      }
+    ],
+    "verify": {
+      "subject": "Kåre Ingebrigtsen",
+      "mustMention": [
+        "Brann",
+        "2020"
+      ]
+    }
+  },
+  {
+    "id": "tq-gunder-bengtsson-13",
+    "coachId": "gunder-bengtsson",
+    "category": "trener",
+    "prompt": "Hvilket lag tapte Vålerenga cupfinalen mot i 1983?",
+    "answer": {
+      "label": "Moss",
+      "aliases": [
+        "Moss FK"
+      ]
+    },
+    "fact": "Vålerenga vant serien samme år.",
+    "era": 1983,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han tok også klubben til cupfinalen i 1983, hvor den tapte mot Moss Fotballklubb»"
+      }
+    ],
+    "verify": {
+      "subject": "Gunder Bengtsson",
+      "mustMention": [
+        "Moss"
+      ]
+    }
+  },
+  {
+    "id": "tq-erik-hamren-8",
+    "coachId": "erik-hamren",
+    "category": "trener",
+    "prompt": "Hvilket landslag var Erik Hamrén sjef for fra 2018 til 2020?",
+    "answer": {
+      "label": "Island",
+      "aliases": [
+        "Islands landslag"
+      ]
+    },
+    "fact": "Han etterfulgte Heimir Hallgrímsson.",
+    "era": 2018,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Hamrén was named as manager of the Iceland national football team, where he succeeded Heimir Hallgrímsson»"
+      }
+    ],
+    "verify": {
+      "subject": "Erik Hamrén",
+      "mustMention": [
+        "Island"
+      ]
+    }
+  },
+  {
+    "id": "tq-erik-hamren-9",
+    "coachId": "erik-hamren",
+    "category": "trener",
+    "prompt": "Hvilket land spilte Erik Hamréns Sverige 4–4 mot på bortebane i 2012, etter å ha ligget under 0–4?",
+    "answer": {
+      "label": "Tyskland",
+      "aliases": []
+    },
+    "fact": "Kampen var en VM-kvalifiseringskamp.",
+    "era": 2012,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Erik_Hamr%C3%A9n",
+        "title": "Erik Hamrén – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «finished with a 4–4 draw from 4–0 down in Berlin against Germany in 2014 FIFA World Cup qualification»"
+      }
+    ],
+    "verify": {
+      "subject": "Erik Hamrén",
+      "mustMention": [
+        "Tyskland"
+      ]
+    }
+  },
+  {
+    "id": "tq-martin-andresen-4",
+    "coachId": "martin-andresen",
+    "category": "trener",
+    "prompt": "Hvilken klubb ble Martin Andresen spillende manager for i november 2007?",
+    "answer": {
+      "label": "Vålerenga",
+      "aliases": [
+        "VIF",
+        "Vålerenga Fotball"
+      ]
+    },
+    "fact": "Han la opp som spiller i august 2009 og fortsatte som trener.",
+    "era": 2007,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Andresen ble klar for Vålerenga fotball som spillende manager 6. november 2007» … «I august 2009 la Andresen opp som fotballspiller og gikk over til å bare være trener»"
+      }
+    ],
+    "verify": {
+      "subject": "Martin Andresen",
+      "mustMention": [
+        "Vålerenga"
+      ]
+    }
+  },
+  {
+    "id": "tq-martin-andresen-5",
+    "coachId": "martin-andresen",
+    "category": "trener",
+    "prompt": "Hvilket kortspill er tidligere landslagskaptein Martin Andresen blitt både seriemester og norgesmester i?",
+    "answer": {
+      "label": "Bridge",
+      "aliases": []
+    },
+    "fact": "Han har også vunnet NM i squash.",
+    "era": 2024,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «=== Bridge ===\nSeriemester 2020» … «Norgesmester for klubblag 2024» … «=== Squash ===\nNorgesmester double i 2012 og 2014»"
+      }
+    ],
+    "verify": {
+      "subject": "Martin Andresen",
+      "mustMention": [
+        "Bridge"
+      ]
+    }
+  },
+  {
+    "id": "tq-uwe-rosler-9",
+    "coachId": "uwe-rosler",
+    "category": "trener",
+    "prompt": "Hvilket land spilte Uwe Rösler fem landskamper for?",
+    "answer": {
+      "label": "Øst-Tyskland",
+      "aliases": [
+        "DDR",
+        "Østtyskland"
+      ]
+    },
+    "fact": "Han er født i Altenburg i det tidligere DDR.",
+    "era": 1990,
+    "difficulty": 2,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Rösler har fem landskamper for Øst-Tyskland» … «Uwe Rösler (født 15. november 1968 i Altenburg, tidligere DDR)»"
+      }
+    ],
+    "verify": {
+      "subject": "Uwe Rösler",
+      "mustMention": [
+        "Øst-Tyskland"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-37",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvor mange landskamper ledet Egil «Drillo» Olsen Norge i fra 1990 til 1998?",
+    "answer": {
+      "label": "88",
+      "aliases": []
+    },
+    "fact": "Fasiten ble 46 seire, 26 uavgjorte og 16 tap.",
+    "era": 1998,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Olsen hadde ledet fotballandslaget gjennom 88 kamper over åtte år. Resultatet var 46 seire, 26 uavgjorte og 16 tap»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "88"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-38",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvilken landslagssjef trakk seg høsten 1990 og ga plass for Egil «Drillo» Olsen?",
+    "answer": {
+      "label": "Ingvar Stadheim",
+      "aliases": [
+        "Stadheim"
+      ]
+    },
+    "fact": "Drillo kom fra jobben som trener for OL-landslaget.",
+    "era": 1990,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Drillo tok over A-landslaget da Ingvar Stadheim trakk seg høsten 1990»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Ingvar Stadheim"
+      ]
+    }
+  },
+  {
+    "id": "tq-egil-olsen-39",
+    "coachId": "egil-olsen",
+    "category": "trener",
+    "prompt": "Hvem ble ny Wimbledon-manager etter at Egil «Drillo» Olsen fikk sparken i 2000?",
+    "answer": {
+      "label": "Terry Burton",
+      "aliases": [
+        "Burton"
+      ]
+    },
+    "fact": "Wimbledon rykket ned etter 0–2 mot Southampton.",
+    "era": 2000,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Egil_Olsen",
+        "title": "Egil Olsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Tidligere assistent Terry Burton ble ny manager i Wimbledon etter Olsen» … «klubben rykket ned etter tap 2-0 mot Southampton»"
+      }
+    ],
+    "verify": {
+      "subject": "Egil Olsen (fotballtrener)",
+      "mustMention": [
+        "Terry Burton"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-51",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken klubb var Nils Arne Eggen hovedtrener for fra 2011 til 2016?",
+    "answer": {
+      "label": "Orkla",
+      "aliases": [
+        "Orkla FK"
+      ]
+    },
+    "fact": "Han kom fra Orkdal og ble gravlagt fra Orkdal kirke.",
+    "era": 2012,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Nils Arne Eggen var fra november 2011 til april 2016 hovedtrener for Orkla» … «Han ble gravlagt den 28. januar fra Orkdal kirke»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Orkla"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-52",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken engelsk trener var det Nils Arne Eggen tok over etter i Rosenborg før 1971-sesongen?",
+    "answer": {
+      "label": "George Curtis",
+      "aliases": [
+        "Curtis"
+      ]
+    },
+    "fact": "Curtis måtte gå på grunn av misnøye med kjedelig fotball.",
+    "era": 1971,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Curtis’ sorti åpnet muligheten for Nils Arne Eggen i Rosenborg» … «måtte Curtis gi seg som hovedtrener på grunn av misnøye med kjedelig fotball»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "George Curtis"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-53",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken klubb utlignet på frispark helt på tampen og sendte Rosenborg ut av Champions League i 1997?",
+    "answer": {
+      "label": "Olympiakos",
+      "aliases": [
+        "Olympiacos"
+      ]
+    },
+    "fact": "Rosenborg røk ut med 11 poeng.",
+    "era": 1997,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «røk ut etter at Olympiacos utlignet på frispark helt på tampen. Dermed røk RBK ut med sine 11 poeng»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Olympiakos",
+        "Olympiacos"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-54",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilket 1. divisjonslag slo Nils Arne Eggens Rosenborg 3–2 i cupsemifinalen i 2010?",
+    "answer": {
+      "label": "Follo",
+      "aliases": [
+        "Follo FK"
+      ]
+    },
+    "fact": "NRK kalte det tidenes cupbombe.",
+    "era": 2010,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I semifinalen gikk Rosenborg på et pinlig 2–3-tap mot 1. divisjons-laget Follo. NRK kalte det for tidenes cupbombe»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Follo"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-55",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken klubb slo Rosenborg ut i siste kvalifiseringsrunde til Champions League i 2010, med Nils Arne Eggen som trener?",
+    "answer": {
+      "label": "FC København",
+      "aliases": [
+        "København",
+        "FCK"
+      ]
+    },
+    "fact": "Treneren på andre siden var Ståle Solbakken.",
+    "era": 2010,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Laget gikk på et knepent 1–0-tap mot Ståle Solbakkens FC København i 4. og siste kvalik-runde i Champions League»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "FC København"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-arne-eggen-56",
+    "coachId": "nils-arne-eggen",
+    "category": "trener",
+    "prompt": "Hvilken Rosenborg-spiller scoret etter Nils Arne Eggens innøvde ballvinning mot Milan på San Siro i 1996?",
+    "answer": {
+      "label": "Vegard Heggem",
+      "aliases": [
+        "Heggem"
+      ]
+    },
+    "fact": "Harald Martin Brattbakk hadde fått beskjed om å snappe pasningen ut mot høyre.",
+    "era": 1996,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Arne_Eggen",
+        "title": "Nils Arne Eggen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Eggen hadde bedt Harald Martin Brattbakk om å snappe den ballen» … «Det var på nøyaktig denne måten at Rosenborg skapte angrepet som endte med Vegard Heggems scoring»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Arne Eggen",
+      "mustMention": [
+        "Vegard Heggem"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-14",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvilken japansk klubb ble Per-Mathias Høgmo trener for i desember 2023?",
+    "answer": {
+      "label": "Urawa Red Diamonds",
+      "aliases": [
+        "Urawa",
+        "Urawa Reds"
+      ]
+    },
+    "fact": "Før det hadde han vunnet Allsvenskan med Häcken.",
+    "era": 2023,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Den 8. desember 2023 ble han ansatt som ny hovedtrener for den japanske klubben Urawa Red Diamonds»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "Urawa Red Diamonds"
+      ]
+    }
+  },
+  {
+    "id": "tq-per-mathias-hogmo-15",
+    "coachId": "per-mathias-hogmo",
+    "category": "trener",
+    "prompt": "Hvilken kommune kommer Per-Mathias Høgmo fra?",
+    "answer": {
+      "label": "Gratangen",
+      "aliases": []
+    },
+    "fact": "Han avsluttet spillerkarrieren i moderklubben Gratangen.",
+    "era": 1989,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Per-Mathias_H%C3%B8gmo",
+        "title": "Per-Mathias Høgmo – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Per-Mathias Høgmo (født 1959) er en norsk fotballtrener og tidligere fotballspiller som kommer fra Gratangen kommune» … «spillende trener for moderklubben Gratangen»"
+      }
+    ],
+    "verify": {
+      "subject": "Per-Mathias Høgmo",
+      "mustMention": [
+        "Gratangen"
+      ]
+    }
+  },
+  {
+    "id": "tq-ronny-deila-10",
+    "coachId": "ronny-deila",
+    "category": "trener",
+    "prompt": "Hvilken plass tok Strømsgodset i 2012, året før seriegullet med Ronny Deila?",
+    "answer": {
+      "label": "2",
+      "aliases": [
+        "andreplass",
+        "2. plass",
+        "sølv"
+      ]
+    },
+    "fact": "Deila vant cupen med klubben i 2010.",
+    "era": 2012,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ronny_Deila",
+        "title": "Ronny Deila – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Strømsgodset vant et cupmesterskap (2010) og hadde gode plasseringer i Tippeligaen under Deila, med andreplass i 2012 og ligaseier i 2013»"
+      }
+    ],
+    "verify": {
+      "subject": "Ronny Deila",
+      "mustMention": [
+        "2",
+        "andreplass",
+        "2012"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-10",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvor mange kamper ledet Henning Berg Lyns førstelag i?",
+    "answer": {
+      "label": "122",
+      "aliases": []
+    },
+    "fact": "Hans siste kamp var 3–3 mot Tromsø i august 2008.",
+    "era": 2008,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Berg ledet Lyns førstelag gjennom totalt 122 kamper» … «Henning Bergs siste kamp som trener for Lyn var mot Tromsø IL den 31. august 2008, hvor sluttresultatet ble 3–3»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "122"
+      ]
+    }
+  },
+  {
+    "id": "tq-henning-berg-11",
+    "coachId": "henning-berg",
+    "category": "trener",
+    "prompt": "Hvilket lag møtte Henning Bergs Lyn i hans første kamp som trener, på Ullevaal i april 2005?",
+    "answer": {
+      "label": "Start",
+      "aliases": [
+        "IK Start"
+      ]
+    },
+    "fact": "Kampen endte 1–1.",
+    "era": 2005,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Henning_Berg",
+        "title": "Henning Berg – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Berg fikk sin debut som Lyn-trener mot Idrettsklubben Start på Ullevaal Stadion 24. april 2005; kampen endte 1–1»"
+      }
+    ],
+    "verify": {
+      "subject": "Henning Berg",
+      "mustMention": [
+        "Start"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-12",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hva heter Ståle Solbakkens selvbiografi fra 2017?",
+    "answer": {
+      "label": "Løvehjertet",
+      "aliases": []
+    },
+    "fact": "Boka ble skrevet av Ekstra Bladet-journalisten Peter Sloth.",
+    "era": 2017,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I november 2017 utga Ståle Solbakken selvbiografien Løvehjertet. Boka er skrevet av Ekstra Bladet-journalist Peter Sloth»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "Løvehjertet"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-13",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hvilken nederlandsk klubb ble slått ut av Ståle Solbakkens FC København i Champions League-kvalifiseringen i 2006?",
+    "answer": {
+      "label": "Ajax",
+      "aliases": [
+        "Ajax Amsterdam"
+      ]
+    },
+    "fact": "FC København var dansk mester i Solbakkens første sesong.",
+    "era": 2006,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I august 2006 førte han laget til UEFA Champions League, etter at laget slo ut Ajax Amsterdam i kvalifiseringen»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "Ajax"
+      ]
+    }
+  },
+  {
+    "id": "tq-stale-solbakken-14",
+    "coachId": "stale-solbakken",
+    "category": "trener",
+    "prompt": "Hvem tok Ståle Solbakken over etter som FC København-trener i januar 2006?",
+    "answer": {
+      "label": "Hans Backe",
+      "aliases": [
+        "Backe"
+      ]
+    },
+    "fact": "Laget lå på toppen av tabellen ved trenerskiftet.",
+    "era": 2006,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/St%C3%A5le_Solbakken",
+        "title": "Ståle Solbakken – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Han tok over etter Hans Backe» … «FCK lå ved trenerskiftet på toppen av tabellen»"
+      }
+    ],
+    "verify": {
+      "subject": "Ståle Solbakken",
+      "mustMention": [
+        "Hans Backe"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-27",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken tysk klubbs supportere valgte Kjetil Rekdal inn på klubbens beste lag gjennom tidene i 2003?",
+    "answer": {
+      "label": "Hertha Berlin",
+      "aliases": [
+        "Hertha",
+        "Hertha BSC"
+      ]
+    },
+    "fact": "Kåringen kom ved klubbens 111-årsjubileum.",
+    "era": 2003,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Ved Hertha Berlins 111-årsjubileum i 2003 kåret supporterne Herthas beste lag gjennom tidene, og valgte Rekdal inn på midtbanen»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "Hertha Berlin"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-rekdal-28",
+    "coachId": "kjetil-rekdal",
+    "category": "trener",
+    "prompt": "Hvilken plass tok Aalesund i 2010, sesongen etter cupgullet med Kjetil Rekdal?",
+    "answer": {
+      "label": "4",
+      "aliases": [
+        "fjerde",
+        "4. plass",
+        "fjerdeplass"
+      ]
+    },
+    "fact": "Plasseringen ble omtalt som historisk for klubben.",
+    "era": 2010,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Rekdal",
+        "title": "Kjetil Rekdal – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Sesongen etter ledet han klubben til en historisk fjerdeplass»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Rekdal",
+      "mustMention": [
+        "4",
+        "fjerdeplass"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-9",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken assistent tok over som midlertidig manager etter Ole Gunnar Solskjær da han dro til Manchester United i desember 2018?",
+    "answer": {
+      "label": "Erling Moe",
+      "aliases": [
+        "Moe"
+      ]
+    },
+    "fact": "Moe ble senere med Solskjær som assistent i Beşiktaş.",
+    "era": 2018,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Hans tidligere assistent i Molde, Erling Moe, tok over som midlertidig manager i Molde» … «hans tidligere assistent fra Molde, Erling Moe, også skulle være Solskjærs assistent i Istanbul»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Erling Moe"
+      ]
+    }
+  },
+  {
+    "id": "tq-ole-gunnar-solskjaer-10",
+    "coachId": "ole-gunnar-solskjaer",
+    "category": "trener",
+    "prompt": "Hvilken klubb debuterte Ole Gunnar Solskjær for som 17-åring?",
+    "answer": {
+      "label": "Clausenengen",
+      "aliases": [
+        "Clausenengen FK"
+      ]
+    },
+    "fact": "Han scoret 115 mål på 109 kamper for klubben.",
+    "era": 1990,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r",
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Solskjær debuterte for Clausenengen Fotballklubb som 17-åring» … «I løpet av sin karriere i Clausenengen scoret han 115 mål på 109 kamper»"
+      }
+    ],
+    "verify": {
+      "subject": "Ole Gunnar Solskjær",
+      "mustMention": [
+        "Clausenengen"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-6",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilken Bergen-klubb førte Kjetil Knutsen fra 2. divisjon til 1. divisjon i sin første sesong der, 2014?",
+    "answer": {
+      "label": "Åsane",
+      "aliases": [
+        "Åsane Fotball"
+      ]
+    },
+    "fact": "Styret byttet ham likevel ut etter 2016-sesongen.",
+    "era": 2014,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Før 2014-sesongen ble han ansatt som hovedtrener for Åsane i 2. divisjon. Knutsen ledet laget til opprykk til 1. divisjon i sin første sesong» … «bestemte styret i Åsane seg for å bytte ut Knutsen som hovedtrener etter 2016-sesongen»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Åsane"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-7",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvem var Kjetil Knutsen assistenttrener for i Bodø/Glimt i 2017?",
+    "answer": {
+      "label": "Aasmund Bjørkan",
+      "aliases": [
+        "Bjørkan"
+      ]
+    },
+    "fact": "Glimt rykket suverent opp fra OBOS-ligaen det året.",
+    "era": 2017,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I januar 2017 ble Kjetil Knutsen ansatt i Bodø/Glimt, som Aasmund Bjørkans assistenttrener. Etter et suverent opprykk fra OBOS-ligaen i 2017»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Aasmund Bjørkan"
+      ]
+    }
+  },
+  {
+    "id": "tq-kjetil-knutsen-8",
+    "coachId": "kjetil-knutsen",
+    "category": "trener",
+    "prompt": "Hvilken Bergen-klubb startet Kjetil Knutsen trenerkarrieren i, som juniortrener i 1995?",
+    "answer": {
+      "label": "Hovding",
+      "aliases": [
+        "Hovding IL"
+      ]
+    },
+    "fact": "Han ledet laget fra 4. divisjon til 2. divisjon.",
+    "era": 1995,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Kjetil_Knutsen",
+        "title": "Kjetil Knutsen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Knutsen startet sin trenerkarriere i Hovding i Bergen. Han ble i 1995 først ansatt som juniortrener i Hovding» … «Han ledet laget fra 4. divisjon, til opprykk til 2. divisjon i 2002»"
+      }
+    ],
+    "verify": {
+      "subject": "Kjetil Knutsen",
+      "mustMention": [
+        "Hovding"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-5",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvilket fransk fotballmagasin rangerte Nils Johan Sembs Norge som Europas beste lag i 1999?",
+    "answer": {
+      "label": "France Football",
+      "aliases": []
+    },
+    "fact": "Norge vant ni kamper på rad det året.",
+    "era": 1999,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «ni seiere på rad i 1999), det franske fotballmagasinet France Football rangerte laget som det beste i Europa det året»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "France Football"
+      ]
+    }
+  },
+  {
+    "id": "tq-nils-johan-semb-6",
+    "coachId": "nils-johan-semb",
+    "category": "trener",
+    "prompt": "Hvilken klubb trente Nils Johan Semb fra 1988 til 1991, og tok til cupsemifinalen i 1989?",
+    "answer": {
+      "label": "Eik Tønsberg",
+      "aliases": [
+        "Eik"
+      ]
+    },
+    "fact": "Laget tapte semifinalen mot Molde.",
+    "era": 1989,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Nils_Johan_Semb",
+        "title": "Nils Johan Semb – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Fra 1988 til 1991 trente han Eik Tønsberg i 1. divisjon. Under Semb rakk laget helt til semifinalen av Norgesmesterskapet i fotball for herrer 1989 der det måtte gi tapt for Molde FK»"
+      }
+    ],
+    "verify": {
+      "subject": "Nils Johan Semb",
+      "mustMention": [
+        "Eik Tønsberg"
+      ]
+    }
+  },
+  {
+    "id": "tq-lars-lagerback-4",
+    "coachId": "lars-lagerback",
+    "category": "trener",
+    "prompt": "Hvem delte Lars Lagerbäck jobben som Sveriges landslagssjef med fra 2000 til 2004?",
+    "answer": {
+      "label": "Tommy Söderberg",
+      "aliases": [
+        "Söderberg"
+      ]
+    },
+    "fact": "Etter EM 2004 fikk Lagerbäck eneansvaret.",
+    "era": 2002,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Lars_Lagerb%C3%A4ck",
+        "title": "Lars Lagerbäck – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «i årene 2000–2004 ble jobben som hovedtrener delt mellom Lagerbäck og Tommy Söderberg» … «Da Söderberg sluttet etter EM i 2004 fikk Lagerbäck eneansvaret»"
+      }
+    ],
+    "verify": {
+      "subject": "Lars Lagerbäck",
+      "mustMention": [
+        "Tommy Söderberg"
+      ]
+    }
+  },
+  {
+    "id": "tq-mons-ivar-mjelde-16",
+    "coachId": "mons-ivar-mjelde",
+    "category": "trener",
+    "prompt": "Hvem tok Mons Ivar Mjelde over etter som Start-trener i juli 2011?",
+    "answer": {
+      "label": "Knut Tørum",
+      "aliases": [
+        "Tørum"
+      ]
+    },
+    "fact": "Start rykket ned samme år, men kom rett opp igjen i 2012.",
+    "era": 2011,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Mons_Ivar_Mjelde",
+        "title": "Mons Ivar Mjelde – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «overtok Mjelde jobben som Starttrener 12. juli 2011 etter at Knut Tørum trakk seg fra jobben» … «rykket ned til 1. divisjon, men kom på andreplass i 2012-sesongen og rykket opp igjen»"
+      }
+    ],
+    "verify": {
+      "subject": "Mons Ivar Mjelde",
+      "mustMention": [
+        "Knut Tørum"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-22",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilket lag tapte Tom Nordlies Vålerenga kvalifiseringen mot i 2000, slik at Vålerenga rykket ned?",
+    "answer": {
+      "label": "Sogndal",
+      "aliases": [
+        "Sogndal IL"
+      ]
+    },
+    "fact": "Nordlie jobbet som TV-ekspert året etter.",
+    "era": 2000,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Nedrykk til 1. divisjon med Vålerenga i 2000 etter tap for Sogndal i kvalifiseringen. Etter et år som TV-ekspert»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Sogndal"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-23",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilken eliteserieklubb tok Tom Nordlie over i august 2009, da laget lå på 14.-plass?",
+    "answer": {
+      "label": "Fredrikstad",
+      "aliases": [
+        "FFK",
+        "Fredrikstad FK"
+      ]
+    },
+    "fact": "Klubben rykket ned etter tap for Sarpsborg 08 i kvalifiseringen.",
+    "era": 2009,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «overtok Fredrikstad som da lå på 14.-plass i eliteserien» … «Nedrykk fra Tippeligaen med Fredrikstad FK, etter et hjemmetap mot Sarpsborg 08»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Fredrikstad"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-24",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvem tok over Start etter Tom Nordlie sommeren 2006, og førte laget opp på 6.-plass?",
+    "answer": {
+      "label": "Stig Inge Bjørnebye",
+      "aliases": [
+        "Bjørnebye"
+      ]
+    },
+    "fact": "Start lå på 13.-plass da Nordlie gikk.",
+    "era": 2006,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Lå på 13.-plass i juli året etter da Stig Inge Bjørnebye tok over og førte klubben opp på 6.-plass»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Stig Inge Bjørnebye"
+      ]
+    }
+  },
+  {
+    "id": "tq-tom-nordlie-25",
+    "coachId": "tom-nordlie",
+    "category": "trener",
+    "prompt": "Hvilket lag tapte 0–5 for Tom Nordlies Viking i siste serierunde 2006, da Viking berget plassen?",
+    "answer": {
+      "label": "Brann",
+      "aliases": [
+        "SK Brann"
+      ]
+    },
+    "fact": "Nordlie hadde tatt over Viking på sisteplass i september.",
+    "era": 2006,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «saving Viking from being relegated to the 1. divisjon, when Viking beat Brann 5–0 in the last match of the 2006-season»"
+      },
+      {
+        "url": "https://no.wikipedia.org/wiki/Tom_Nordlie",
+        "title": "Tom Nordlie – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Tok i september 2006 selv over Viking som lå på sisteplass i eliteserien»"
+      }
+    ],
+    "verify": {
+      "subject": "Tom Nordlie",
+      "mustMention": [
+        "Brann"
+      ]
+    }
+  },
+  {
+    "id": "tq-roy-hodgson-8",
+    "coachId": "roy-hodgson",
+    "category": "trener",
+    "prompt": "Hvilken svensk klubb var Roy Hodgsons første managerjobb, fra 1976?",
+    "answer": {
+      "label": "Halmstad",
+      "aliases": [
+        "Halmstads BK",
+        "HBK"
+      ]
+    },
+    "fact": "Han vant Allsvenskan med klubben i 1976 og 1979.",
+    "era": 1976,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Roy_Hodgson",
+        "title": "Roy Hodgson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «startet karrieren som manager for Halmstads BK i Allsvenskan i 1976. I løpet av sine fem år i klubben vant han Allsvenskan i 1976 og 1979»"
+      }
+    ],
+    "verify": {
+      "subject": "Roy Hodgson",
+      "mustMention": [
+        "Halmstad"
+      ]
+    }
+  },
+  {
+    "id": "tq-age-hareide-16",
+    "coachId": "age-hareide",
+    "category": "trener",
+    "prompt": "Hvilken klubb debuterte Åge Hareide for på A-laget som 16-åring i 1970?",
+    "answer": {
+      "label": "Hødd",
+      "aliases": [
+        "IL Hødd"
+      ]
+    },
+    "fact": "Klubben holdt til i Ulsteinvik.",
+    "era": 1970,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/%C3%85ge_Hareide",
+        "title": "Åge Hareide – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Idrottslaget Hødd som da var et toppserielag og hadde tilhold i Ulsteinvik. I 1970 debuterte han seksten år gammel for Hødds A-lag»"
+      }
+    ],
+    "verify": {
+      "subject": "Åge Hareide",
+      "mustMention": [
+        "Hødd"
+      ]
+    }
+  },
+  {
+    "id": "tq-gunder-bengtsson-14",
+    "coachId": "gunder-bengtsson",
+    "category": "trener",
+    "prompt": "Hvilken kypriotisk klubb trente Gunder Bengtsson i 1997?",
+    "answer": {
+      "label": "Apollon Limassol",
+      "aliases": [
+        "Apollon"
+      ]
+    },
+    "fact": "Året før hadde han trent greske PAOK.",
+    "era": 1997,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson",
+        "title": "Gunder Bengtsson – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «Bengtssons neste klubber var greske PAOK Saloniki i 1996 og kypriotiske Apollon Limassol i 1997»"
+      }
+    ],
+    "verify": {
+      "subject": "Gunder Bengtsson",
+      "mustMention": [
+        "Apollon Limassol"
+      ]
+    }
+  },
+  {
+    "id": "tq-trond-sollied-12",
+    "coachId": "trond-sollied",
+    "category": "trener",
+    "prompt": "Hvilken saudiarabisk klubb trente Trond Sollied i bare tre kamper i 2010?",
+    "answer": {
+      "label": "Al-Ahli",
+      "aliases": [
+        "Al-Ahli Jeddah"
+      ]
+    },
+    "fact": "Det ble én seier og to tap.",
+    "era": 2010,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Trond_Sollied",
+        "title": "Trond Sollied – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I august 2010 var han trener for Al-Ahli Jeddah, en fotballklubb i Jidda i Saudi-Arabia, men avsluttet sitt arbeidsforhold etter kun tre kamper, hvorav en seier og to tap»"
+      }
+    ],
+    "verify": {
+      "subject": "Trond Sollied",
+      "mustMention": [
+        "Al-Ahli"
+      ]
+    }
+  },
+  {
+    "id": "tq-martin-andresen-6",
+    "coachId": "martin-andresen",
+    "category": "trener",
+    "prompt": "Hvilket møbelkonsern ble tidligere landslagskaptein Martin Andresen administrerende direktør i, i 2013?",
+    "answer": {
+      "label": "Skeidar",
+      "aliases": []
+    },
+    "fact": "Han er også en av konsernets største eiere.",
+    "era": 2013,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Martin_Andresen",
+        "title": "Martin Andresen – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 2013 ble han administrerende direktør i Skeidar» … «Martin Andresen er en av de største eierne av møbelkonsernet Skeidar»"
+      }
+    ],
+    "verify": {
+      "subject": "Martin Andresen",
+      "mustMention": [
+        "Skeidar"
+      ]
+    }
+  },
+  {
+    "id": "tq-uwe-rosler-10",
+    "coachId": "uwe-rosler",
+    "category": "trener",
+    "prompt": "Hvilken tysk klubb solgte Manchester City Uwe Rösler til i 1998?",
+    "answer": {
+      "label": "Kaiserslautern",
+      "aliases": [
+        "1. FC Kaiserslautern"
+      ]
+    },
+    "fact": "Der spilte han i Champions League.",
+    "era": 1998,
+    "difficulty": 3,
+    "status": "single_source",
+    "sources": [
+      {
+        "url": "https://no.wikipedia.org/wiki/Uwe_R%C3%B6sler",
+        "title": "Uwe Rösler – Wikipedia",
+        "kind": "web",
+        "accessed": "2026-10-09",
+        "note": "Lest mot artikkelteksten 9. oktober 2026 (Trener Genius-utvidelse), av Grok Bot og ikke av et menneske: «I 1998 ble han solgt til tyske 1. FC Kaiserslautern, hvor han spilte i UEFA Champions League»"
+      }
+    ],
+    "verify": {
+      "subject": "Uwe Rösler",
+      "mustMention": [
+        "Kaiserslautern"
       ]
     }
   }
