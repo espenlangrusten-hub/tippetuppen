@@ -39,6 +39,7 @@ import { normalizeName } from "../_shared/names.ts";
 import { ANSWERS_PER_GAME, resolveAnswer, scoreFor, zeroAnswerId, tierThresholds, tierFor, finalTotal } from "../_shared/maalloes.ts";
 import { createUser, currentUser, loginUser, logoutUser } from "../_shared/auth.ts";
 import { profileRoute } from "../_shared/profile-routes.ts";
+import { notifyNewUser } from "../_shared/new-user-notice.ts";
 import { friendLeagueRoute } from "../_shared/friend-league-routes.ts";
 import { advanceXi, xiScore, type XiHint, type XiState } from "../_shared/league.ts";
 import { geniusRoute } from "../_shared/trener-genius-routes.ts";
@@ -205,15 +206,16 @@ Deno.serve(async (req) => {
     if (friendLeagueResponse) return friendLeagueResponse;
 
     if (req.method === "POST" && route === "/auth/register") {
-      const body = (await req.json().catch(() => ({}))) as { username?: string; password?: string };
+      const body = (await req.json().catch(() => ({}))) as { username?: string; password?: string; email?: unknown };
       if (typeof body.username !== "string" || typeof body.password !== "string") return bad("bad request");
       const day = osloDateKey();
       const visitor = await visitorHash(req, day);
       const recent = await sql()<{ count: number }[]>`select count(*)::int as count from tippetuppen.events where visitor = ${visitor} and name = 'auth_attempt' and ts > now() - interval '15 minutes'`;
       if (Number(recent[0]?.count ?? 0) >= 12) return json({ ok: false, error: "rate-limit" }, 429);
       await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
-      const result = await createUser(body.username, body.password);
-      return json(result, result.ok ? 200 : result.error === "taken" ? 409 : 400);
+      const result = await createUser(body.username, body.password, body.email);
+      if (result.ok) await notifyNewUser(result.user);
+      return json(result, result.ok ? 200 : result.error === "taken" || result.error === "email-taken" ? 409 : 400);
     }
 
     if (req.method === "POST" && route === "/auth/login") {

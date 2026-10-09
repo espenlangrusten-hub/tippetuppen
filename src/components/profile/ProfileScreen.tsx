@@ -54,6 +54,7 @@ export function ProfileScreen() {
   const [mode, setMode] = useState<"login" | "register">("login");
   const [authUsername, setAuthUsername] = useState("");
   const [authPassword, setAuthPassword] = useState("");
+  const [authEmail, setAuthEmail] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [avatarId, setAvatarId] = useState<number | null>(null);
@@ -126,10 +127,12 @@ export function ProfileScreen() {
     setBusy(true);
     setMessage("");
     try {
-      const response = await apiPost<AuthResponse>(`/auth/${mode}`, {
-        username: authUsername,
-        password: authPassword,
-      });
+      const response = await apiPost<AuthResponse>(
+        `/auth/${mode}`,
+        mode === "register"
+          ? { username: authUsername, password: authPassword, email: authEmail }
+          : { username: authUsername, password: authPassword },
+      );
       if (!response.ok || !response.token || !response.user) {
         setMessage(
           response.error === "taken"
@@ -138,6 +141,10 @@ export function ProfileScreen() {
               ? "Det brukernavnet er ikke tillatt. Velg et annet."
             : response.error === "rate-limit"
               ? "For mange forsøk. Vent litt og prøv igjen."
+            : response.error === "invalid-email"
+              ? "Skriv inn en gyldig e-postadresse."
+            : response.error === "email-taken"
+              ? "Denne e-postadressen brukes allerede av en annen profil. Har du glemt passordet?"
               : mode === "register"
                 ? "Bruk 3–24 tegn i brukernavnet og minst 8 tegn i passordet."
                 : "Feil brukernavn eller passord.",
@@ -176,6 +183,8 @@ export function ProfileScreen() {
         setMessage(
           response.error === "email-taken"
             ? "Denne e-postadressen brukes allerede av en annen profil."
+            : response.error === "email-required"
+              ? "E-postadressen kan endres, men ikke fjernes."
             : response.error === "avatar-locked"
               ? "Avatarer låses opp når du passerer 2 000 totalpoeng."
               : "Kunne ikke lagre profilen. Sjekk feltene og prøv igjen.",
@@ -282,6 +291,26 @@ export function ProfileScreen() {
                 placeholder="Minst 8 tegn"
               />
             </label>
+            {mode === "register" && (
+              <>
+                <label className="block">
+                  <span className="mb-1 block text-sm text-mist">E-postadresse</span>
+                  <input
+                    className="input"
+                    type="email"
+                    required
+                    value={authEmail}
+                    onChange={(e) => setAuthEmail(e.target.value)}
+                    autoComplete="email"
+                    maxLength={160}
+                    aria-describedby="register-email-hint"
+                  />
+                </label>
+                <p id="register-email-hint" className="-mt-2 text-xs text-fog">
+                  Brukes bare til å sende deg en lenke hvis du glemmer passordet.
+                </p>
+              </>
+            )}
             <button className="btn btn-primary w-full" disabled={busy}>
               {busy ? "Venter …" : mode === "login" ? "Logg inn" : "Opprett spiller"}
             </button>

@@ -16,6 +16,7 @@ test("profile and friend-league flow works end-to-end", async ({ page }, testInf
 
   await page.getByLabel("Brukernavn").fill(owner);
   await page.getByLabel("Passord").fill(password);
+  await page.getByLabel("E-postadresse").fill(owner + "-start@example.test");
   await page.getByRole("button", { name: "Opprett spiller" }).click();
 
   await expect(page.getByText("Spiller opprettet.")).toBeVisible({ timeout: 10000 });
@@ -29,6 +30,11 @@ test("profile and friend-league flow works end-to-end", async ({ page }, testInf
   await page.reload();
   await expect(page.getByLabel("Navn", { exact: true })).toHaveValue("Test Spiller");
   await expect(page.getByLabel("E-postadresse", { exact: true })).toHaveValue(owner + "@example.test");
+
+  // The address can be changed, as above, but not removed.
+  await page.getByLabel("E-postadresse", { exact: true }).fill("");
+  await page.getByRole("button", { name: "Lagre profil" }).click();
+  await expect(page.getByText("E-postadressen kan endres, men ikke fjernes.")).toBeVisible({ timeout: 10000 });
 
   await page.goto("/liga/");
   await page.getByRole("button", { name: "Venneligaer" }).click();
@@ -55,6 +61,7 @@ test("profile and friend-league flow works end-to-end", async ({ page }, testInf
   await expect(page).toHaveURL(new RegExp("/profil/\\?join=" + code + "#register$"));
   await page.getByLabel("Brukernavn").fill(friend);
   await page.getByLabel("Passord").fill(password);
+  await page.getByLabel("E-postadresse").fill(friend + "@example.test");
   await page.getByRole("button", { name: "Opprett spiller" }).click();
 
   await expect(page).toHaveURL(new RegExp("/liga/\\?join=" + code + "$"), { timeout: 10000 });
@@ -78,7 +85,38 @@ test("an offensive username is refused at registration", async ({ page }) => {
   await page.goto("/profil/#register");
   await page.getByLabel("Brukernavn").fill("Fuuuck_" + Date.now().toString(36).slice(-4));
   await page.getByLabel("Passord").fill("Tippetuppen-123!");
+  await page.getByLabel("E-postadresse").fill("fu-" + Date.now().toString(36) + "@example.test");
   await page.getByRole("button", { name: "Opprett spiller" }).click();
   await expect(page.getByText("Det brukernavnet er ikke tillatt. Velg et annet.")).toBeVisible({ timeout: 10000 });
   await expect(page.getByText("Spiller opprettet.")).toHaveCount(0);
+});
+
+test("a new player must give an email address, and not one already in use", async ({ page, request }, info) => {
+  const api = process.env.E2E_API_URL ?? "http://localhost:8000/api";
+  const stem = uniqueStem(info.project.name) + "-e";
+  // The API's own checks run as a visitor of their own, so they do not use up the
+  // browser's twelve sign-in attempts per quarter hour that the other specs share.
+  const headers = { "user-agent": "tippetuppen-e2e-email-" + info.project.name };
+  const register = (data: Record<string, string>) => request.post(`${api}/auth/register`, { headers, data });
+
+  // The browser will not send the form without an address.
+  await page.goto("/profil/#register");
+  await page.getByLabel("Brukernavn").fill(stem);
+  await page.getByLabel("Passord").fill("Tippetuppen-123!");
+  await page.getByRole("button", { name: "Opprett spiller" }).click();
+  await expect(page.getByLabel("E-postadresse")).toHaveJSProperty("validity.valueMissing", true);
+  await expect(page.getByText("Spiller opprettet.")).toHaveCount(0);
+
+  // Nor will the API take one.
+  const without = await register({ username: stem, password: "Tippetuppen-123!" });
+  expect(without.status()).toBe(400);
+  expect(await without.json()).toMatchObject({ ok: false, error: "invalid-email" });
+
+  const first = await register({ username: stem, password: "Tippetuppen-123!", email: stem + "@example.test" });
+  expect((await first.json()).user.email).toBe(stem + "@example.test");
+
+  // Addresses are compared without case.
+  const again = await register({ username: stem + "2", password: "Tippetuppen-123!", email: stem.toUpperCase() + "@example.test" });
+  expect(again.status()).toBe(409);
+  expect(await again.json()).toMatchObject({ ok: false, error: "email-taken" });
 });

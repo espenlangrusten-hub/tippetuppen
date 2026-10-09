@@ -11,6 +11,7 @@ test("admin renames and then deletes a user", async ({ page, context }, info) =>
   await page.goto("/profil/#register");
   await page.getByLabel("Brukernavn").fill(stem);
   await page.getByLabel("Passord").fill("Tippetuppen-123!");
+  await page.getByLabel("E-postadresse").fill(stem + "@example.test");
   await page.getByRole("button", { name: "Opprett spiller" }).click();
   await expect(page.getByText("Spiller opprettet.")).toBeVisible({ timeout: 10000 });
 

@@ -12,6 +12,7 @@ test("a forgotten password is reset with a one-time link", async ({ page, reques
   await page.goto("/profil/#register");
   await page.getByLabel("Brukernavn").fill(stem);
   await page.getByLabel("Passord").fill("Gammelt-passord-1");
+  await page.getByLabel("E-postadresse").fill(stem + "@example.test");
   await page.getByRole("button", { name: "Opprett spiller" }).click();
   await expect(page.getByText("Spiller opprettet.")).toBeVisible({ timeout: 10000 });
   await page.evaluate(() => localStorage.clear());
@@ -22,7 +23,7 @@ test("a forgotten password is reset with a one-time link", async ({ page, reques
   await page.getByRole("button", { name: "Send lenke" }).click();
   await expect(page.getByText(/Har kontoen en e-postadresse, har vi sendt en lenke dit/)).toBeVisible({ timeout: 10000 });
 
-  // This account has no email address, so the admin makes the link.
+  // No mail leaves the test stack, so the admin's link stands in for the emailed one.
   const users = await (await request.get(`${API}/admin/users?q=${stem}`, { headers: { "x-admin-key": KEY } })).json();
   const userId = users.users.find((u: { username: string }) => u.username === stem).id as string;
   const made = await (await request.post(`${API}/admin/users/reset-link`, { headers: { "x-admin-key": KEY }, data: { userId } })).json();

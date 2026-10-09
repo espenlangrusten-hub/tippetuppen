@@ -56,18 +56,34 @@ export function validUsername(raw: string) {
   return { username, normalized };
 }
 
-export async function createUser(rawUsername: string, password: string) {
+/** A lower-cased address, null for none, or undefined when it is not an address. */
+export function cleanEmail(raw: unknown) {
+  if (raw === null || raw === undefined || raw === "") return null;
+  if (typeof raw !== "string") return undefined;
+  const email = raw.trim().toLowerCase();
+  if (email.length > 160 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return undefined;
+  return email;
+}
+
+/**
+ * A new account. An email address is required from 2026-10-09, so that a forgotten
+ * password can be reset without the admin; accounts made before then may have none.
+ */
+export async function createUser(rawUsername: string, password: string, rawEmail: unknown) {
   const parsed = validUsername(rawUsername);
   if (!parsed || password.length < 8 || password.length > 128) return { ok: false as const, error: "invalid" };
+  const email = cleanEmail(rawEmail);
+  if (!email) return { ok: false as const, error: "invalid-email" };
   // Checked here and not in validUsername: login must keep working for an existing name.
   if (isOffensiveUsername(parsed.username)) return { ok: false as const, error: "inappropriate" };
   const salt = randomHex(16);
   const id = crypto.randomUUID();
   try {
-    await sql()`insert into tippetuppen.users (id, username, username_normalized, password_hash, password_salt)
-      values (${id}, ${parsed.username}, ${parsed.normalized}, ${await passwordHash(password, salt)}, ${salt})`;
+    await sql()`insert into tippetuppen.users (id, username, username_normalized, password_hash, password_salt, email)
+      values (${id}, ${parsed.username}, ${parsed.normalized}, ${await passwordHash(password, salt)}, ${salt}, ${email})`;
   } catch (error) {
     if (String(error).includes("users_username_normalized")) return { ok: false as const, error: "taken" };
+    if (String(error).includes("users_email_unique")) return { ok: false as const, error: "email-taken" };
     throw error;
   }
   return issueSession(id);

@@ -1,6 +1,6 @@
 import { sql } from "./db.ts";
 import { json } from "./http.ts";
-import { changePassword, currentUser } from "./auth.ts";
+import { changePassword, cleanEmail, currentUser } from "./auth.ts";
 
 export const AVATAR_UNLOCK_POINTS = 2000;
 
@@ -9,14 +9,6 @@ export function cleanProfileName(raw: unknown) {
   if (typeof raw !== "string") return undefined;
   const name = raw.trim().replace(/\s+/g, " ");
   return name.length <= 60 ? name || null : undefined;
-}
-
-export function cleanEmail(raw: unknown) {
-  if (raw === null || raw === undefined || raw === "") return null;
-  if (typeof raw !== "string") return undefined;
-  const email = raw.trim().toLowerCase();
-  if (email.length > 160 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return undefined;
-  return email;
 }
 
 export async function profileFor(userId: string) {
@@ -80,6 +72,9 @@ export async function profileRoute(req: Request, route: string): Promise<Respons
     const name = cleanProfileName(body.name);
     const email = cleanEmail(body.email);
     if (name === undefined || email === undefined) return json({ ok: false, error: "invalid" }, 400);
+    // An address is required: once a profile has one, it can be changed but not removed.
+    // Older accounts without one can still save the rest of their profile.
+    if (email === null && user.email) return json({ ok: false, error: "email-required" }, 400);
 
     let avatarId: number | null = null;
     if (body.avatarId !== null && body.avatarId !== undefined && body.avatarId !== "") {

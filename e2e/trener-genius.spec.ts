@@ -6,7 +6,7 @@ const bank = JSON.parse(readFileSync("data/source/trenerquiz.json", "utf8")) as 
 const api = process.env.E2E_API_URL ?? "http://localhost:8000/api";
 
 test("Trener Genius persists a round, guards answers and awards league points once", async ({page, request}, info) => {
-  const registration = await request.post(`${api}/auth/register`, {data:{username:`genius-${Date.now()}`,password:"local-test-password"}});
+  const registration = await request.post(`${api}/auth/register`, {data:{username:`genius-${Date.now()}`,password:"local-test-password",email:`genius-${Date.now()}@example.test`}});
   const session = await registration.json();
   expect(session.ok).toBe(true);
   const headers = {"x-session-token":session.token};
