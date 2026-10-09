@@ -2,6 +2,27 @@
 
 Kort logg over viktige beslutninger, milepæler og blokkere. Nyeste øverst.
 
+## 2026-10-09 – Glemt passord
+
+Brukere kunne ikke få nytt passord. Ved innføringen hadde bare 1 av 14 brukere e-post på
+profilen, så løsningen har to veier:
+- **Med e-post:** «Glemt passordet?» under innloggingen fører til `/nytt-passord/`.
+  Brukeren skriver brukernavn eller e-post og får en engangslenke som virker i én time.
+  Svaret er likt uansett om kontoen finnes, så skjemaet avslører ikke hvem som har konto.
+- **Uten e-post:** Brukeren bes skrive via kontaktskjemaet. Admin lager en engangslenke
+  under Brukere → «Nytt passord» (gyldig i 24 timer) og sender den, f.eks. på SMS. Den
+  som ba om lenke uten å få e-post, står i dagsrapporten kl. 18.
+- **Sikkerhet:** Bare en hash av lenken lagres. Den virker én gang og går ut, en ny lenke
+  gjør den gamle ugyldig, og nytt passord logger brukeren ut alle andre steder. Lenken
+  ligger i URL-fragmentet (`#…`), som nettleseren aldri sender til en server. Samme
+  grense for antall forsøk som innlogging. Alle forespørsler logges i `admin_audit`.
+- **Databaseendring (additiv):** ny tabell `tippetuppen.password_resets`
+  (`drizzle/0014_password_resets.sql`), med radsikkerhet på. Ingen eksisterende tabeller
+  endres. Kan fjernes med `drop table tippetuppen.password_resets;`.
+- **Forutsetning for e-post:** Resend leverer bare til andre enn kontoeieren når
+  avsenderdomenet er verifisert (`CONTACT_FROM` på et eget domene). Med Resends
+  testavsender kommer e-posten ikke fram, og admin-lenken er eneste vei.
+
 ## 2026-10-05 – Tydelig at Tippetuppen ikke er pengespill
 
 tippetuppen.no blokkeres av Microsoft Defender på minst én arbeidsplass («blocked by your

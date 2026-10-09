@@ -25,6 +25,8 @@ export type ReportInput = {
   leaguePlayersToday: number;
   messagesToday: number;
   adminUrl: string | null;
+  /** Forgotten-password requests today that did not end in an email: the admin has to send a link. */
+  resetRequests?: { username: string; hasEmail: boolean }[];
   /** Tippkaiser, the German test site in the same database. Null when its schema is not there. */
   kaiser?: KaiserStats | null;
 };
@@ -131,6 +133,8 @@ export function buildDailyReport(r: ReportInput): { subject: string; text: strin
 
   lines.push("HENVENDELSER");
   lines.push(r.messagesToday ? `${num(r.messagesToday)} ${r.messagesToday === 1 ? "ny melding" : "nye meldinger"} i dag – les dem på admin-siden.` : "Ingen nye meldinger i dag.");
+  for (const q of r.resetRequests ?? [])
+    lines.push(`Glemt passord: ${q.username} ba om ny lenke, men ${q.hasEmail ? "e-posten kunne ikke sendes" : "har ingen e-postadresse"}. Lag en lenke under Brukere på admin-siden.`);
   lines.push("");
 
   if (r.kaiser) {

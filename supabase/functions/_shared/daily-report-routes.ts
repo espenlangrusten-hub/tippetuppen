@@ -94,6 +94,13 @@ export async function reportInput(now = new Date()): Promise<ReportInput> {
   const [messages] = await db<{ count: number }[]>`
     select count(*)::int as count from tippetuppen.contact_messages
     where (created_at at time zone 'Europe/Oslo')::date = ${today}::date`;
+  // Asked for a new password today but got no email: someone the admin has to help.
+  const resets = await db<{ username: string; has_email: boolean }[]>`
+    select distinct on (details->>'userId') details->>'username' as username, (details->>'hasEmail')::boolean as has_email
+    from tippetuppen.admin_audit
+    where action = 'password_reset_requested' and coalesce((details->>'emailed')::boolean, false) = false
+      and (ts at time zone 'Europe/Oslo')::date = ${today}::date
+    order by details->>'userId', ts desc`;
   const site = (Deno.env.get("SITE_URL") ?? "").replace(/\/$/, "");
   return {
     today,
@@ -103,6 +110,7 @@ export async function reportInput(now = new Date()): Promise<ReportInput> {
     users: { total: users.total, newToday: users.new_today },
     leaguePlayersToday: league.players,
     messagesToday: messages.count,
+    resetRequests: resets.map((r) => ({ username: r.username, hasEmail: r.has_email })),
     adminUrl: site ? `${site}/admin/` : null,
     // A failure here must not cost Tippetuppen its own report.
     kaiser: await kaiserStats(today).catch(() => null),

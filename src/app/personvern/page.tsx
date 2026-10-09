@@ -27,6 +27,8 @@ export default function Page() {
       </p>
       <h2 className="font-display text-2xl font-bold uppercase">Kontaktskjemaet</h2>
       <p className="text-mist">Når du sender en melding via kontaktskjemaet, lagrer vi tittel, melding og e-postadressen du oppgir, sammen med en anonym, daglig skiftende kode som bare brukes til å begrense hvor mange meldinger som kan sendes per dag. Meldingen videresendes på e-post til den som drifter Tippetuppen gjennom e-posttjenesten Resend. Vi bruker opplysningene bare til å svare deg, og meldinger slettes automatisk etter 12 måneder.</p>
+      <h2 className="font-display text-2xl font-bold uppercase">E-post på profilen</h2>
+      <p className="text-mist">E-postadressen på profilen er valgfri. Den brukes bare til å sende deg en lenke for nytt passord når du ber om det, gjennom e-posttjenesten Resend. Lenken virker én gang og i en begrenset tid, og vi lagrer bare en kryptografisk sjekksum av den, ikke selve lenken. Du kan endre eller fjerne adressen på profilsiden når som helst.</p>
       <h2 className="font-display text-2xl font-bold uppercase">Behandlingsansvarlig og kontakt</h2>
       <p className="text-mist">Tippetuppen drives som et uavhengig prosjekt. Spørsmål om personvern eller innsyn kan sendes via <Link href="/kontakt" className="underline">kontaktskjemaet</Link> eller til kontakt@tippetuppen.no. Klager kan rettes til Datatilsynet.</p>
     </article>

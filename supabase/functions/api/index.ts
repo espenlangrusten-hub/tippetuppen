@@ -28,6 +28,7 @@
  *   GET  /admin/users?q=       registered users, newest first (requires x-admin-key)
  *   POST /admin/users/update   change a user's username, name or email (requires x-admin-key)
  *   POST /admin/users/delete   delete a user; the username must be typed back (requires x-admin-key)
+ *   POST /admin/users/reset-link  one-time link for a new password (requires x-admin-key)
  */
 import { sql } from "../_shared/db.ts";
 import { cors, json, bad } from "../_shared/http.ts";
@@ -46,6 +47,7 @@ import { gullordetRoute } from "../_shared/gullordet-routes.ts";
 import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import { adminReportPreview, adminReportSend, dailyReportRoute } from "../_shared/daily-report-routes.ts";
+import { adminResetLinkRoute, forgotPasswordRoute, resetPasswordRoute } from "../_shared/password-reset-routes.ts";
 import { adminUserDelete, adminUsers, adminUserUpdate } from "../_shared/admin-user-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
@@ -224,6 +226,17 @@ Deno.serve(async (req) => {
       await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
       const result = await loginUser(body.username, body.password);
       return json(result, result.ok ? 200 : 401);
+    }
+
+    // Forgotten password: same rate limit as login, so the form cannot be used to mail
+    // someone over and over or to guess links.
+    if (req.method === "POST" && (route === "/auth/forgot" || route === "/auth/reset")) {
+      const day = osloDateKey();
+      const visitor = await visitorHash(req, day);
+      const recent = await sql()<{ count: number }[]>`select count(*)::int as count from tippetuppen.events where visitor = ${visitor} and name = 'auth_attempt' and ts > now() - interval '15 minutes'`;
+      if (Number(recent[0]?.count ?? 0) >= 12) return json({ ok: false, error: "rate-limit" }, 429);
+      await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
+      return route === "/auth/forgot" ? await forgotPasswordRoute(req) : await resetPasswordRoute(req);
     }
 
     if (req.method === "GET" && route === "/auth/me") {
@@ -482,6 +495,7 @@ Deno.serve(async (req) => {
       if (req.method === "GET" && route === "/admin/users") return await adminUsers(url);
       if (req.method === "POST" && route === "/admin/users/update") return await adminUserUpdate(req);
       if (req.method === "POST" && route === "/admin/users/delete") return await adminUserDelete(req);
+      if (req.method === "POST" && route === "/admin/users/reset-link") return await adminResetLinkRoute(req);
       const db = sql();
       const today = osloDateKey();
 
