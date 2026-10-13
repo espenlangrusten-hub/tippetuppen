@@ -9,6 +9,7 @@ import { clearSession, storedUser, updateStoredUser, type SessionUser } from "@/
 import { monthCopy, type Champion, type LeagueMonth } from "@/lib/monthlyLeague";
 import { BASE_PATH } from "@/lib/site";
 import { ProfileAvatar } from "@/components/profile/ProfileAvatar";
+import { PrizeBanner } from "@/components/prize/PrizeBanner";
 
 const SHOW_REGISTERED_FROM = 100;
 
@@ -295,6 +296,8 @@ export function LeagueScreen() {
           Følg med på venneligaen, sjekk plasseringen din og administrer profilen din. Fotball er best sammen!
         </p>
       </section>
+
+      <PrizeBanner />
 
       <div className="league-reference-tabs flex gap-2">
         <button className={`btn ${tab === "global" ? "btn-primary" : "btn-secondary"}`} onClick={() => setTab("global")}>

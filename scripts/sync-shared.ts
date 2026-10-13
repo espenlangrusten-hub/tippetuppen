@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import path from "node:path";
 
-export const SHARED_FILES = ["positions.ts", "names.ts", "tiles.ts", "dates.ts", "pitch.ts", "kjappen.ts", "contact.ts", "trener-genius.ts", "gullordet.ts", "gullordet-dictionary.ts", "daily-report.ts", "username-filter.ts"];
+export const SHARED_FILES = ["positions.ts", "names.ts", "tiles.ts", "dates.ts", "pitch.ts", "kjappen.ts", "contact.ts", "trener-genius.ts", "gullordet.ts", "gullordet-dictionary.ts", "daily-report.ts", "username-filter.ts", "prize.ts"];
 const SRC = path.join(process.cwd(), "src", "lib");
 const DEST = path.join(process.cwd(), "supabase", "functions", "_shared");
 

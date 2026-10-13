@@ -25,6 +25,10 @@
  *   POST /report/daily         the 18:00 statistics email, once a day (see daily-report-routes.ts)
  *   GET  /admin/report         that email as it reads now (requires x-admin-key)
  *   POST /admin/report/send    send it now, for testing (requires x-admin-key)
+ *   POST /prize/run            Månedens premie: award, remind, pass on (see prize-routes.ts)
+ *   POST /prize/claim[/info]   the winner's address from /premie
+ *   GET  /admin/prizes         prizes and addresses (requires x-admin-key)
+ *   POST /admin/prizes/status  mark a prize ordered or sent (requires x-admin-key)
  *   GET  /admin/users?q=       registered users, newest first (requires x-admin-key)
  *   POST /admin/users/update   change a user's username, name or email (requires x-admin-key)
  *   POST /admin/users/delete   delete a user; the username must be typed back (requires x-admin-key)
@@ -49,6 +53,7 @@ import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import { adminReportPreview, adminReportSend, dailyReportRoute } from "../_shared/daily-report-routes.ts";
 import { adminResetLinkRoute, forgotPasswordRoute, resetPasswordRoute } from "../_shared/password-reset-routes.ts";
+import { adminPrizes, adminPrizeStatus, prizeClaimInfoRoute, prizeClaimRoute, prizeRunRoute } from "../_shared/prize-routes.ts";
 import { adminUserDelete, adminUsers, adminUserUpdate } from "../_shared/admin-user-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
@@ -488,6 +493,17 @@ Deno.serve(async (req) => {
     }
 
     if (req.method === "POST" && route === "/report/daily") return await dailyReportRoute();
+    if (req.method === "POST" && route === "/prize/run") return await prizeRunRoute();
+
+    // The prize form: same rate limit as login, so links cannot be guessed.
+    if (req.method === "POST" && (route === "/prize/claim" || route === "/prize/claim/info")) {
+      const day = osloDateKey();
+      const visitor = await visitorHash(req, day);
+      const recent = await sql()<{ count: number }[]>`select count(*)::int as count from tippetuppen.events where visitor = ${visitor} and name = 'auth_attempt' and ts > now() - interval '15 minutes'`;
+      if (Number(recent[0]?.count ?? 0) >= 12) return json({ ok: false, error: "rate-limit" }, 429);
+      await sql()`insert into tippetuppen.events (day, name, visitor, props) values (${day}, 'auth_attempt', ${visitor}, '{}'::jsonb)`;
+      return route === "/prize/claim" ? await prizeClaimRoute(req) : await prizeClaimInfoRoute(req);
+    }
 
     if (route.startsWith("/admin")) {
       if (!adminOk(req)) return json({ ok: false, error: "unauthorised" }, 401);
@@ -498,6 +514,8 @@ Deno.serve(async (req) => {
       if (req.method === "POST" && route === "/admin/users/update") return await adminUserUpdate(req);
       if (req.method === "POST" && route === "/admin/users/delete") return await adminUserDelete(req);
       if (req.method === "POST" && route === "/admin/users/reset-link") return await adminResetLinkRoute(req);
+      if (req.method === "GET" && route === "/admin/prizes") return await adminPrizes();
+      if (req.method === "POST" && route === "/admin/prizes/status") return await adminPrizeStatus(req);
       const db = sql();
       const today = osloDateKey();
 

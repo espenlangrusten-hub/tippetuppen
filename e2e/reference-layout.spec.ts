@@ -18,7 +18,8 @@ test("reference illustrations and navigation fit desktop and small phones", asyn
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
       if (path === "/") {
         await expect(page.getByRole("link", { name: "Spill dagens XI", exact: true })).toBeVisible();
-        await expect(page.getByRole("link", { name: "Spill Kjappen quizshow med venner" })).toBeVisible();
+        // Kjappen er satt på vent (KJAPPEN_ENABLED) og vises ikke på forsiden.
+        await expect(page.getByRole("link", { name: "Spill Kjappen quizshow med venner" })).toHaveCount(0);
       }
       await page.screenshot({ path: `e2e/screenshots/reference-${width}-${path.replaceAll("/", "") || "home"}.png`, fullPage: true });
     }

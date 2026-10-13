@@ -1,5 +1,8 @@
 "use client";
 
+import { PrizeBanner } from "@/components/prize/PrizeBanner";
+import { PrizeSection } from "@/components/prize/PrizeSection";
+import { KJAPPEN_ENABLED } from "@/lib/features";
 import Image from "next/image";
 import { ReferenceArt } from "@/components/layout/ReferenceArt";
 import Link from "next/link";
@@ -22,7 +25,7 @@ type HomeGame = {
   image?: string;
 };
 
-const games: HomeGame[] = [
+const allGames: HomeGame[] = [
   { slug: "mangler-xi", recordSlug: "mangler-xi", name: "Mangler XI", description: "Hvilke spillere mangler i lagoppstillingen?", art: "xi", image: "/design/xi.webp" },
   { slug: "maalloes", recordSlug: "maalloes", name: "Målløs", description: "Fem svar på et spørsmål om norsk fotball. Jo færre som svarer det samme, jo bedre.", art: "goal", image: "/design/goal.webp" },
   { slug: "finn-spilleren", recordSlug: "finn-spilleren", name: "Finn spilleren", description: "Hvem er spilleren vi er på jakt etter?", art: "mystery", image: "/design/mystery.webp" },
@@ -31,6 +34,9 @@ const games: HomeGame[] = [
   { slug: "trener-genius", recordSlug: "trener-genius", name: "Trener Genius", description: "Fire spørsmål. Ett taktisk valg.", art: "trainer", image: "/trener-genius/card-retro.webp" },
   { slug: "kjappen", name: "Kjappen", description: "2–4 spillere · 5 spørsmål", art: "kjappen" },
 ];
+
+/** Kjappen er satt på vent: koden og /kjappen finnes fortsatt, men vises ikke på forsiden. */
+const games = KJAPPEN_ENABLED ? allGames : allGames.filter((g) => g.slug !== "kjappen");
 
 export function TodayCards() {
   const [done, setDone] = useState<Partial<Record<DailySlug, boolean>>>({});
@@ -61,12 +67,15 @@ export function TodayCards() {
             {streak ? <span className={s.streak}><b>{streak}</b> {streak === 1 ? "dag" : "dager"} på rad</span> : null}
           </div>
           <AccountNudge />
+          <PrizeBanner />
         </div>
 
         <div className={s.heroArt} aria-hidden="true">
           <ReferenceArt name="homeHero" />
         </div>
       </section>
+
+      <PrizeSection />
 
       <section id="spill" className={s.gamesSection} aria-label="Dagens spill">
         <div className={s.sectionHeading}>

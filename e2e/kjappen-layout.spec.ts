@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("homepage caption sits above the Kjappen play button without overlap", async ({ page }) => {
+  // Kjappen is on hold and hidden from the front page unless NEXT_PUBLIC_KJAPPEN_ENABLED=true.
+  test.skip(process.env.NEXT_PUBLIC_KJAPPEN_ENABLED !== "true", "Kjappen er satt på vent");
   await page.goto("/");
   const card = page.getByRole("link", { name: "Spill Kjappen quizshow med venner" });
   const caption = card.locator("div").filter({ has: page.getByText("2–4 spillere · 5 spørsmål", { exact: true }) }).last();

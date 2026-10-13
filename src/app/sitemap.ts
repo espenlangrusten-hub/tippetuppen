@@ -25,5 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/om/", 0.3, "monthly"),
     page("/kontakt/", 0.2, "monthly"),
     page("/personvern/", 0.2, "monthly"),
+    page("/konkurranse/", 0.3, "monthly"),
   ];
 }
