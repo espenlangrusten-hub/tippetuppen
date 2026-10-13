@@ -1,12 +1,33 @@
-.section { display:grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap:28px; align-items:center; margin:0 clamp(16px,4vw,48px) 32px; padding:24px clamp(16px,3vw,32px); border:1px solid #e3c873; border-radius:14px; background:linear-gradient(120deg,#fff8e1,#fdf3d3); color:#101b20 }
-.copy { display:flex; flex-direction:column; gap:10px }
-.copy h2 { font:700 30px Georgia,serif; letter-spacing:-.03em }
-.kicker { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#8a6a10 }
-.steps { list-style:decimal; padding-left:22px; display:flex; flex-direction:column; gap:2px }
-.deadline { font-size:14px }
-.figure { margin:0; text-align:center }
-.figure img { width:100%; height:auto; border-radius:12px }
-.figure figcaption { font-size:12px; color:#5b5b5b; margin-top:6px }
-@media (max-width: 760px) { .section { grid-template-columns: 1fr } }
-.cta { display:inline-block; padding:10px 18px; border-radius:9px; background:#145743; color:#fff; font-weight:700 }
+.section { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(260px,1fr); gap:24px; align-items:center; margin:20px 40px 0; padding:18px 20px; border:1px solid #ded4b7; border-radius:12px; background:#f5f0e3; color:#101b20 }
+.prize { display:flex; align-items:center; gap:16px; min-width:0 }
+.copy { min-width:0 }
+.copy h2 { margin:5px 0 7px; font:700 24px/1.1 Georgia,serif; letter-spacing:-.03em; text-wrap:balance }
+.copy p { font-size:13px; line-height:1.45 }
+.copy .kicker { font-size:10px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; color:#715813 }
+.copy .requirement { margin-top:5px; font-size:12px; font-weight:650; color:#46554a }
+.figure { flex:0 0 112px; margin:0; text-align:center }
+.figure img { width:112px; height:auto; border-radius:8px; mix-blend-mode:multiply }
+.figure figcaption { font-size:9px; color:#636258; margin-top:3px }
+.actions { display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; margin-top:11px }
+.actions a { font-size:11px; text-decoration:underline; text-underline-offset:3px }
+.actions .cta { display:inline-flex; align-items:center; min-height:36px; padding:7px 12px; border-radius:6px; background:#145743; color:#fff; font-weight:700; text-decoration:none; font-size:12px }
 .cta:hover { background:#0b694e }
+.section a:focus-visible { outline:2px solid #145743; outline-offset:4px }
+.standings { min-width:0; padding-left:24px; border-left:1px solid #ded4b7 }
+.boardHeading { display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:8px }
+.boardHeading h3 { font-size:12px; font-weight:750 }
+.boardHeading a { font-size:11px; color:#145743; white-space:nowrap; text-decoration:underline; text-underline-offset:3px }
+.podium { list-style:none; padding:0; margin:0; display:grid; gap:4px }
+.podium li { display:flex; align-items:center; gap:8px; padding:5px 10px; min-width:0 }
+.podium .leader { padding:9px 10px; border-radius:8px; color:#fff; background:#145743 }
+.rank { flex:0 0 18px; text-align:center; font-size:12px; font-weight:700 }
+.player { flex:1; min-width:0; line-height:1.2 }
+.player strong { display:block; overflow-wrap:anywhere; font-size:12px }
+.leader .player strong { font-size:16px }
+.player small { display:block; margin-bottom:2px; font-size:9px; text-transform:uppercase; letter-spacing:.08em; color:#f3dd93 }
+.points { flex-shrink:0; font-size:14px; font-weight:750; font-variant-numeric:tabular-nums; white-space:nowrap }
+.points small { font-size:10px; font-weight:400 }
+.status { min-height:96px; display:flex; flex-direction:column; justify-content:center; font-size:12px; line-height:1.5; color:#46554a }
+.status a { text-decoration:underline }
+@media (max-width:1000px) { .section { gap:16px; padding:16px; grid-template-columns:minmax(0,1.25fr) minmax(245px,1fr) } .figure { flex-basis:80px } .figure img { width:80px } .prize { gap:10px } .standings { padding-left:16px } .copy h2 { font-size:21px } }
+@media (max-width:760px) { .section { grid-template-columns:1fr; margin:14px 14px 0; gap:14px; padding:14px } .standings { border-left:0; padding:12px 0 0; border-top:1px solid #ded4b7 } .figure { flex-basis:76px } .figure img { width:76px } .copy h2 { font-size:21px } .copy p { font-size:12px } .boardHeading h3 { font-size:13px } .status { min-height:60px } }
