@@ -1188,6 +1188,9 @@ main:has(.kj-shell) { max-width: none; padding: 0; }
 /* Månedens premie: the announcement on the front page and /liga. */
 .prize-banner {
   padding: 0.7rem 1rem; border-radius: 0.75rem; text-align: center; font-size: 0.95rem;
-  color: #f6e3ad; border: 1px solid rgb(241 196 86 / 0.35);
-  background: linear-gradient(90deg, rgb(241 196 86 / 0.14), rgb(241 196 86 / 0.06));
+  /* Opaque surface with explicit text colours: the banner sits on the light hero on the
+     front page and on the dark /liga page, so it must not depend on what is behind it. */
+  color: #4a3a0c; border: 1px solid #e3c977;
+  background: #fbf1d4;
 }
+.prize-banner a { color: #145743; font-weight: 600; }
