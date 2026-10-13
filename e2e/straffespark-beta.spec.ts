@@ -31,11 +31,9 @@ test("home presents Straffespark as a daily game after Finn spilleren", async ({
   const cards = await page.getByRole("region", { name: "Dagens spill" }).getByRole("heading", { level: 2 }).allTextContents();
   expect(cards).toHaveLength(6);
   const trainer = page.getByRole("link", { name: "Spill Trener Genius", exact: true });
-  const kjappen = page.getByRole("link", { name: "Spill Kjappen quizshow med venner", exact: true });
   await expect(trainer).toBeVisible();
-  const trainerBox = (await trainer.boundingBox())!;
-  const kjappenBox = (await kjappen.boundingBox())!;
-  expect(kjappenBox.y).toBeGreaterThanOrEqual(trainerBox.y + trainerBox.height);
+  // Kjappen is on hold and must not be on the front page.
+  await expect(page.getByRole("link", { name: "Spill Kjappen quizshow med venner", exact: true })).toHaveCount(0);
   expect(cards.findIndex((s) => s.includes("Finn spilleren"))).toBeGreaterThanOrEqual(0);
   expect(cards.findIndex((s) => s.includes("Straffespark"))).toBeGreaterThan(cards.findIndex((s) => s.includes("Finn spilleren")));
   expect(cards.some((s) => s.includes("Gullordet"))).toBe(true);
