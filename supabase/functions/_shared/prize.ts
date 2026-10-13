@@ -25,7 +25,7 @@ export const PRIZE_PRODUCT = {
   /** Printful catalog: product 300 «Black Glossy Mug», variant 9323 = 11 oz. */
   variantId: 9323,
   printArea: "2700 × 1050 px (9 × 3,5 tommer ved 300 DPI)",
-  printFile: "/branding/premie/kopp-trykkfil-PLASSHOLDER.png",
+  printFile: "/branding/premie/kopp-trykkfil.png",
   /**
    * True while the print file is upscaled from the 600 px logo. Orders are then never
    * confirmed automatically, only left as drafts for the admin to look at, so a blurry

@@ -187,7 +187,7 @@ describe("bestilling hos Printful", () => {
     expect(adminClaimMail({ ...base, order: { kind: "confirmed", orderId: "42", totalNok: 226 } }).text).toContain("Bestilt automatisk");
     expect(adminClaimMail({ ...base, order: { kind: "draft", orderId: "42", totalNok: 260, reason: "for dyr" } }).text).toContain("UTKAST");
     const manual = adminClaimMail({ ...base, order: { kind: "manual", reason: "PRINTFUL_API_KEY er ikke satt" } }).text;
-    expect(manual).toContain("https://tippetuppen.no/branding/premie/kopp-trykkfil-PLASSHOLDER.png");
+    expect(manual).toContain("https://tippetuppen.no/branding/premie/kopp-trykkfil.png");
     expect(manual).toContain("0150 Oslo");
   });
   it("sender sporing til vinneren én gang når Printful har sendt koppen", async () => {
