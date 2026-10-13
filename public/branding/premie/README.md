@@ -10,3 +10,9 @@ og blir uskarp på trykk. Så lenge `PRIZE_PRODUCT.printFileIsPlaceholder` i
 `src/lib/prize.ts` er `true`, bekreftes ingen Printful-ordre automatisk – de blir liggende
 som utkast til admin. Med høyoppløst logo (PNG ≥ 3000 px bred eller SVG/PDF): lag filen på
 nytt med samme navn og mål, og sett flagget til `false`.
+
+## Bilde av premien på forsiden
+
+`kopp-illustrasjon.webp` er en **illustrasjon** tegnet i kode (svart kopp + logoen), ikke en
+mockup fra Printful, og er merket slik i selve bildet. Bytt den ut med en ekte mockup fra
+Printfuls mockup-generator når den høyoppløste trykkfilen er klar.

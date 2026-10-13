@@ -23,7 +23,11 @@
  * admin (CONTACT_TO) is told. The daily run polls confirmed orders and emails the
  * winner the tracking link when Printful has shipped.
  *
- * Secrets: PRIZE_ENABLED, PRIZE_EXCLUDE (usernames that cannot win, comma separated),
+ * Everyone who plays is in; only players with an email on their profile can win (the
+ * next on the table otherwise). Mail to players is off until PRIZE_NOTIFY_ENABLED is
+ * "true": the winner is still picked and recorded, the mail only logged as ready.
+ *
+ * Secrets: PRIZE_ENABLED, PRIZE_NOTIFY_ENABLED, PRIZE_EXCLUDE (usernames that cannot win, comma separated),
  * PRINTFUL_API_KEY, PRINTFUL_STORE_ID (optional), PRINTFUL_MANUAL_APPROVAL (optional),
  * PRINTFUL_FX (optional, e.g. "USD=9.6"), plus RESEND_API_KEY, CONTACT_TO, CONTACT_FROM,
  * SITE_URL as for the daily report.
@@ -135,6 +139,7 @@ export async function prizeRunRoute(mail: Mailer = resend, now = new Date()) {
     newToken,
     claimLink,
     shipment: printfulKey() ? orderShipment : undefined,
+    notify: Deno.env.get("PRIZE_NOTIFY_ENABLED") === "true",
   });
   if (log.length) {
     await sql()`insert into tippetuppen.admin_audit (action, details) values ('prize_run', ${sql().json({ log })}::jsonb)`;
@@ -251,4 +256,5 @@ export async function adminPrizeStatus(req: Request, mail: Mailer = resend) {
     values (${"prize_" + body.status}, ${db.json({ month: r.month, username: r.username, error })}::jsonb)`;
   return json({ ok: true, error });
 }
+
 

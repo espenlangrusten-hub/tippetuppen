@@ -250,6 +250,13 @@ export type RunOptions = {
   claimLink: (token: string) => string;
   /** The daily poll of a Printful order. Absent without an API key. */
   shipment?: (orderId: string) => Promise<Shipment | null>;
+  /**
+   * Whether mail to players (winner, reminder, shipped) may go out. The Edge Function sets
+   * it from PRIZE_NOTIFY_ENABLED, which is off until the organiser says yes. While off,
+   * the winner is still picked and recorded, the mail is only logged as ready, and the
+   * 7/14-day clock is not acted on (no reminder, no passing on), since nobody was told.
+   */
+  notify?: boolean;
 };
 export type RunLog = string[];
 
@@ -257,8 +264,10 @@ export type RunLog = string[];
 export async function runPrizes(store: PrizeStore, mail: PrizeMail, now: Date, today: string, opts: RunOptions): Promise<RunLog> {
   const log: RunLog = [];
   const offer = (s: Standing & { rank: number }): Offer => ({ userId: s.userId, username: s.username, email: s.email!, rank: s.rank, points: s.points, token: opts.newToken(), offeredAt: now });
+  const notify = opts.notify ?? true;
   const send = async (o: Offer, month: string) => {
     const { subject, text } = winnerMail(o.username, month, opts.claimLink(o.token), deadlineFor(o.offeredAt), o.rank);
+    if (!notify) { log.push(`${month}: vinnervarsel til ${o.username} er klart, men ikke sendt (PRIZE_NOTIFY_ENABLED er av)`); return; }
     const err = await mail(o.email, { subject, text });
     log.push(err ? `${month}: e-post til ${o.username} feilet: ${err}` : `${month}: e-post sendt til ${o.username}`);
   };
@@ -275,6 +284,7 @@ export async function runPrizes(store: PrizeStore, mail: PrizeMail, now: Date, t
   }
 
   for (const row of await store.open()) {
+    if (!notify && row.status === "offered") continue;
     const step = prizeStep(row, now);
     if (step === "pass-on") {
       const passed = new Set([...row.passed, ...(row.userId ? [row.userId] : [])]);
@@ -308,3 +318,14 @@ export async function runPrizes(store: PrizeStore, mail: PrizeMail, now: Date, t
   }
   return log;
 }
+
+
+/** The last day (Oslo date) of a "YYYY-MM" month: 31. oktober for the first prize. */
+export function lastDayOf(month: string): string {
+  const [y, m] = month.split("-").map(Number);
+  return `${month}-${String(new Date(Date.UTC(y, m, 0)).getUTCDate()).padStart(2, "0")}`;
+}
+
+/** Shown under the email field on /profil. Everyone who plays is in; only players with an email can be told they won. */
+export const PRIZE_EMAIL_CONSENT =
+  "Legger du inn e-post, kan du vinne Månedens Tippetupp: alle som spiller er med automatisk, men premien kan bare gå til spillere med e-postadresse på profilen. Vinner du, bruker vi adressen til å kontakte deg om premien. Du kan fjerne den når som helst.";

@@ -1,5 +1,6 @@
 "use client";
 
+import { PRIZE_EMAIL_CONSENT } from "@/lib/prize";
 import { ReferenceArt } from "@/components/layout/ReferenceArt";
 
 import Link from "next/link";
@@ -431,7 +432,7 @@ export function ProfileScreen() {
               aria-describedby="email-hint"
             />
           </label>
-          <p id="email-hint" className="-mt-2 text-xs text-fog">Med e-post kan du få en lenke hvis du glemmer passordet.</p>
+          <p id="email-hint" className="-mt-2 text-xs text-fog">Med e-post kan du få en lenke hvis du glemmer passordet. {PRIZE_EMAIL_CONSENT} <Link href="/konkurranse/" className="underline">Konkurranseregler</Link></p>
           <button className="btn btn-primary" disabled={busy}>Lagre profil</button>
         </form>
         {message && <p className="mt-3 text-sm text-mist">{message}</p>}
