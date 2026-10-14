@@ -1,4 +1,3 @@
-# FLYTT DENNE TIL .github/workflows/prize.yml (agenten kunne ikke pushe workflow-filer: tokenet mangler workflow-scope).
 name: Månedens premie
 
 # Awards last month's prize just after midnight Oslo time on the 1st, and every night
