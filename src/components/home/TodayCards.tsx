@@ -2,6 +2,7 @@
 
 import { PrizeBanner } from "@/components/prize/PrizeBanner";
 import { PrizeSection } from "@/components/prize/PrizeSection";
+import { WinnerBanner } from "@/components/prize/WinnerBanner";
 import { KJAPPEN_ENABLED } from "@/lib/features";
 import Image from "next/image";
 import { ReferenceArt } from "@/components/layout/ReferenceArt";
@@ -68,6 +69,7 @@ export function TodayCards() {
           </div>
           <AccountNudge />
           <PrizeBanner />
+          <WinnerBanner />
         </div>
 
         <div className={s.heroArt} aria-hidden="true">
