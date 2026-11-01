@@ -19,6 +19,7 @@ import {
 } from "@/lib/profileAvatars";
 import { BASE_PATH } from "@/lib/site";
 import { ProfileAvatar } from "./ProfileAvatar";
+import { OwnPrizeClaim } from "@/components/prize/OwnPrizeClaim";
 
 type Profile = {
   id: string;
@@ -336,6 +337,8 @@ export function ProfileScreen() {
         <h1 className="font-display text-4xl font-bold uppercase">Min profil</h1>
         <p className="mt-2 text-mist">Din spilleridentitet, progresjon og innstillinger.</p>
       </section>
+
+      <OwnPrizeClaim initialName={profile.name ?? ""} />
 
       {profile.avatarAvailable && (
         <section className="card border-gold p-5">

@@ -4,6 +4,8 @@
  *   POST /prize/run              the scheduled run (.github/workflows/prize.yml; until moved there: docs/workflows/prize.yml), daily
  *   POST /prize/claim/info       { token }  what the /premie page shows
  *   POST /prize/claim            { token, name, street, postcode, city }  the winner's address
+ *   GET  /prize/mine             logged in: whether you may claim a prize without a link (SELF_CLAIM_MONTHS)
+ *   POST /prize/mine             logged in: { name, street, postcode, city }  the same address, from /profil
  *   GET  /admin/prizes           all prize rows (requires x-admin-key)
  *   POST /admin/prizes/status    { month, status: "confirm" | "ordered" | "sent" } (requires x-admin-key)
  *
@@ -37,8 +39,9 @@ import { bad, json } from "./http.ts";
 import { osloDateKey, monthStart, monthEnd } from "./dates.ts";
 import { resend, type Mailer } from "./contact-routes.ts";
 import { confirmOrder, createDraft, orderShipment, printfulKey } from "./printful.ts";
+import { currentUser } from "./auth.ts";
 import {
-  adminClaimMail, checkAddress, deadlineFor, orderDecision, parseExclusions, parseFx, PRIZE_PRODUCT, runPrizes, sentMail, toNok,
+  adminClaimMail, checkAddress, deadlineFor, orderDecision, parseExclusions, parseFx, PRIZE_PRODUCT, runPrizes, runRetention, selfClaimMonth, selfClaimWinner, sentMail, toNok,
   type Address, type ClaimOrder, type PrizeMail, type PrizeRow, type PrizeStore, type Standing,
 } from "./prize.ts";
 
@@ -133,7 +136,13 @@ const prizeMail = (mail: Mailer): PrizeMail => async (to, m) => {
 
 /** The scheduled run. Does nothing until PRIZE_ENABLED=true. */
 export async function prizeRunRoute(mail: Mailer = resend, now = new Date()) {
-  if (Deno.env.get("PRIZE_ENABLED") !== "true") return json({ ok: true, enabled: false, log: [] });
+  if (Deno.env.get("PRIZE_ENABLED") !== "true") {
+    // Switched off: nothing is awarded or mailed, but addresses given on /profil are still
+    // deleted on time.
+    const log = await runRetention(pgStore, now);
+    if (log.length) await sql()`insert into tippetuppen.admin_audit (action, details) values ('prize_run', ${sql().json({ log })}::jsonb)`;
+    return json({ ok: true, enabled: false, log });
+  }
   const log = await runPrizes(pgStore, prizeMail(mail), now, osloDateKey(now), {
     excluded: parseExclusions(Deno.env.get("PRIZE_EXCLUDE")),
     newToken,
@@ -206,6 +215,64 @@ export async function prizeClaimRoute(req: Request, mail: Mailer = resend) {
   const err = await prizeMail(mail)("admin", adminClaimMail({ username: r.username, month: r.month, rank: r.rank, address: a, siteUrl: site(), order }));
   await sql()`insert into tippetuppen.admin_audit (action, details)
     values ('prize_claimed', ${sql().json({ month: r.month, username: r.username, order: order.kind, adminEmailed: !err, error: err })}::jsonb)`;
+  return json({ ok: true });
+}
+
+/**
+ * The logged-in winner's own prize, for months in SELF_CLAIM_MONTHS: the October 2026
+ * winner had no email, so the emailed link could never reach him. The same prize row and
+ * the same order and admin notice as /prize/claim are used; only who may claim differs
+ * (the session's user, if the table put them first). Null when there is nothing to claim,
+ * including when the run already offered the month to someone else.
+ */
+async function ownPrize(req: Request) {
+  const user = await currentUser(req);
+  if (!user) return { user: null, prize: null } as const;
+  const month = selfClaimMonth(osloDateKey());
+  if (!month) return { user, prize: null } as const;
+  const winner = selfClaimWinner(await pgStore.standings(month), parseExclusions(Deno.env.get("PRIZE_EXCLUDE")));
+  if (!winner || winner.userId !== user.id) return { user, prize: null } as const;
+  const row = await pgStore.get(month);
+  if (row && row.userId !== user.id) return { user, prize: null } as const;
+  return { user, prize: { month, winner, row } } as const;
+}
+
+/** GET /prize/mine: { prize: null } or { prize: { month, status: "open" | "claimed" } }. Never an address. */
+export async function myPrizeRoute(req: Request) {
+  const { user, prize } = await ownPrize(req);
+  if (!user) return json({ ok: false, error: "unauthorised" }, 401);
+  const status = !prize ? null
+    : !prize.row || prize.row.status === "offered" ? "open"
+    : prize.row.status === "unclaimed" ? null : "claimed";
+  return json({ ok: true, prize: status ? { month: prize!.month, status } : null }, 200, { "cache-control": "private, no-store" });
+}
+
+/** POST /prize/mine: the logged-in winner's delivery address. Same checks and follow-up as /prize/claim. */
+export async function myPrizeClaimRoute(req: Request, mail: Mailer = resend) {
+  const body = (await req.json().catch(() => null)) as Record<string, unknown> | null;
+  if (!body) return bad("bad request");
+  const { user, prize } = await ownPrize(req);
+  if (!user) return json({ ok: false, error: "unauthorised" }, 401);
+  if (!prize) return json({ ok: false, error: "closed" }, 409);
+  if (prize.row && prize.row.status !== "offered") return json({ ok: false, error: "already-claimed" }, 409);
+  const checked = checkAddress(body);
+  if (!checked.ok) return json({ ok: false, error: "invalid", fields: checked.errors }, 400);
+  const a = checked.address;
+  const w = prize.winner;
+  // One row per month: a new row is created claimed, or a row the run offered to this
+  // same user is claimed. Either way the run will never award the month again.
+  const updated = await sql()`insert into tippetuppen.prizes as p (month, user_id, username, rank, points, status, offered_at, claimed_at,
+      ship_name, ship_street, ship_postcode, ship_city)
+    values (${prize.month}, ${user.id}, ${w.username}, ${w.rank}, ${w.points}, 'claimed', now(), now(), ${a.name}, ${a.street}, ${a.postcode}, ${a.city})
+    on conflict (month) do update set status = 'claimed', claimed_at = now(), token_hash = null,
+      ship_name = excluded.ship_name, ship_street = excluded.ship_street, ship_postcode = excluded.ship_postcode, ship_city = excluded.ship_city
+    where p.status = 'offered' and p.user_id = ${user.id}
+    returning month`;
+  if (!updated.length) return json({ ok: false, error: "closed" }, 409);
+  const order = await placeOrder(prize.month, a);
+  const err = await prizeMail(mail)("admin", adminClaimMail({ username: w.username, month: prize.month, rank: w.rank, address: a, siteUrl: site(), order }));
+  await sql()`insert into tippetuppen.admin_audit (action, details)
+    values ('prize_claimed', ${sql().json({ month: prize.month, username: w.username, via: "profil", order: order.kind, adminEmailed: !err, error: err })}::jsonb)`;
   return json({ ok: true });
 }
 

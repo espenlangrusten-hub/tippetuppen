@@ -99,6 +99,33 @@ export function prizeMonthFor(today: string): string | null {
   return prev >= FIRST_PRIZE_MONTH ? prev : null;
 }
 
+/**
+ * Months whose winner may claim the prize while logged in, without the emailed link: the
+ * October 2026 winner had no email on his profile, so the daily run could never reach
+ * him. Only listed months are open, and only while the month is the previous one.
+ */
+export const SELF_CLAIM_MONTHS: readonly string[] = [FIRST_PRIZE_MONTH];
+
+/** The month a logged-in winner may claim on `today` (Oslo date), or null. */
+export function selfClaimMonth(today: string): string | null {
+  const month = prizeMonthFor(today);
+  return month && SELF_CLAIM_MONTHS.includes(month) ? month : null;
+}
+
+/**
+ * Who may claim a self-claim month: the top of the table, as /liga and the gold name show
+ * it, skipping only excluded accounts. No email is needed, since the claim is made while
+ * logged in.
+ */
+export function selfClaimWinner(table: Standing[], excluded: Set<string>): (Standing & { rank: number }) | null {
+  for (let i = 0; i < table.length; i++) {
+    const s = table[i];
+    if (excluded.has(s.username.toLowerCase()) || s.points <= 0) continue;
+    return { ...s, rank: i + 1 };
+  }
+  return null;
+}
+
 export type PrizeState = {
   status: PrizeStatus;
   offeredAt: Date;
@@ -318,6 +345,22 @@ export async function runPrizes(store: PrizeStore, mail: PrizeMail, now: Date, t
   return log;
 }
 
+
+/**
+ * Only the address deletion, for days the prize run is switched off (PRIZE_ENABLED is not
+ * "true"): an address given through the logged-in claim must still be deleted
+ * ADDRESS_RETENTION_DAYS after the prize is sent. Nothing is awarded, mailed or passed on.
+ */
+export async function runRetention(store: Pick<PrizeStore, "open" | "deleteAddress">, now: Date): Promise<RunLog> {
+  const log: RunLog = [];
+  for (const row of await store.open()) {
+    if (prizeStep(row, now) === "delete-address") {
+      await store.deleteAddress(row.month, now);
+      log.push(`${row.month}: adressen slettet`);
+    }
+  }
+  return log;
+}
 
 /** The last day (Oslo date) of a "YYYY-MM" month: 31. oktober for the first prize. */
 export function lastDayOf(month: string): string {

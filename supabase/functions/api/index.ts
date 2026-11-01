@@ -27,6 +27,7 @@
  *   POST /admin/report/send    send it now, for testing (requires x-admin-key)
  *   POST /prize/run            Månedens premie: award, remind, pass on (see prize-routes.ts)
  *   POST /prize/claim[/info]   the winner's address from /premie
+ *   GET|POST /prize/mine       logged in: the winner's own prize and address, from /profil
  *   GET  /admin/prizes         prizes and addresses (requires x-admin-key)
  *   POST /admin/prizes/status  mark a prize ordered or sent (requires x-admin-key)
  *   GET  /admin/users?q=       registered users, newest first (requires x-admin-key)
@@ -53,7 +54,7 @@ import { kjappenRoute } from "../_shared/kjappen-routes.ts";
 import { contactInbox, contactRoute } from "../_shared/contact-routes.ts";
 import { adminReportPreview, adminReportSend, dailyReportRoute } from "../_shared/daily-report-routes.ts";
 import { adminResetLinkRoute, forgotPasswordRoute, resetPasswordRoute } from "../_shared/password-reset-routes.ts";
-import { adminPrizes, adminPrizeStatus, prizeClaimInfoRoute, prizeClaimRoute, prizeRunRoute } from "../_shared/prize-routes.ts";
+import { adminPrizes, adminPrizeStatus, myPrizeClaimRoute, myPrizeRoute, prizeClaimInfoRoute, prizeClaimRoute, prizeRunRoute } from "../_shared/prize-routes.ts";
 import { adminUserDelete, adminUsers, adminUserUpdate } from "../_shared/admin-user-routes.ts";
 import type { ManglerXiPayload, MaalloesPayload, FinnSpillerenPayload } from "../_shared/types.ts";
 
@@ -494,6 +495,8 @@ Deno.serve(async (req) => {
 
     if (req.method === "POST" && route === "/report/daily") return await dailyReportRoute();
     if (req.method === "POST" && route === "/prize/run") return await prizeRunRoute();
+    if (req.method === "GET" && route === "/prize/mine") return await myPrizeRoute(req);
+    if (req.method === "POST" && route === "/prize/mine") return await myPrizeClaimRoute(req);
 
     // The prize form: same rate limit as login, so links cannot be guessed.
     if (req.method === "POST" && (route === "/prize/claim" || route === "/prize/claim/info")) {
