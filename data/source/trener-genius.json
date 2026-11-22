@@ -5404,5 +5404,2179 @@
         "url": "https://no.wikipedia.org/wiki/Gunder_Bengtsson"
       }
     ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-2",
+    "expectedAnswer": "Bo Johansson",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "Tommy Söderberg",
+      "Lars Lagerbäck",
+      "Sven-Göran Eriksson"
+    ],
+    "fact": "Første sluttspill med ham var VM 2002, der Danmark røk ut mot England i åttendedelsfinalen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sepp-piontek-1",
+    "expectedAnswer": "Danish Dynamite",
+    "difficulty": 1,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Olsen-banden",
+      "Danish Delight",
+      "De røde djevler"
+    ],
+    "fact": "Navnet kom fra en konkurranse om Danmarks offisielle EM-sang i 1984.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sepp Piontek – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sepp_Piontek"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-age-hareide-17",
+    "expectedAnswer": "Island",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Finland",
+      "Færøyene",
+      "Estland"
+    ],
+    "fact": "Dagen etter at han gikk av, la han opp som trener.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Åge Hareide – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/%C3%85ge_Hareide"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-richard-moller-nielsen-5",
+    "expectedAnswer": "OB",
+    "difficulty": 2,
+    "category": "Trenerhistorie",
+    "distractors": [
+      "AaB",
+      "Brøndby",
+      "Vejle"
+    ],
+    "fact": "Han spilte hele seniorkarrieren sin for klubben.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Richard Møller Nielsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tommy-svensson-2",
+    "expectedAnswer": "Tromsø",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Bodø/Glimt",
+      "Lillestrøm",
+      "Viking"
+    ],
+    "fact": "Han kom tilbake og trente klubben igjen i 2001.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Tommy Svensson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tommy_Svensson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-10",
+    "expectedAnswer": "Fulham",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Tottenham Hotspur",
+      "West Ham United",
+      "Arsenal"
+    ],
+    "fact": "Laget tapte finalen 1–2 for Atlético Madrid.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-3",
+    "expectedAnswer": "Chelsea",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Tottenham Hotspur",
+      "Everton",
+      "Leicester City"
+    ],
+    "fact": "Han fikk sparken i april 2023, med laget på 11. plass.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-1",
+    "expectedAnswer": "Stabæk",
+    "difficulty": 1,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Vålerenga",
+      "Lillestrøm",
+      "Strømsgodset"
+    ],
+    "fact": "Han var den første amerikaneren som trente en klubb i en europeisk toppdivisjon.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-4",
+    "expectedAnswer": "85",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "64",
+      "101",
+      "120"
+    ],
+    "fact": "Han fikk sparken etter 1–4 mot West Ham, etter 11 kamper.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-1",
+    "expectedAnswer": "Arsenal",
+    "difficulty": 1,
+    "category": "Europacupen",
+    "distractors": [
+      "Tottenham Hotspur",
+      "Manchester United",
+      "Liverpool"
+    ],
+    "fact": "Östersund røk likevel ut med 2–4 sammenlagt.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-2",
+    "expectedAnswer": "USA",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Canada",
+      "Mexico",
+      "Costa Rica"
+    ],
+    "fact": "Laget vant Gold Cup i 2007 og nådde åttedelsfinalen i VM 2010.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-5",
+    "expectedAnswer": "Le Havre",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Nancy",
+      "Auxerre",
+      "Lens"
+    ],
+    "fact": "Laget endte på poeng med Metz, men gikk glipp av opprykk på antall scorede mål.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-1",
+    "expectedAnswer": "Ajax",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "PSV",
+      "Feyenoord",
+      "Twente"
+    ],
+    "fact": "Han fikk sparken i desember 1998.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-hege-riise-4",
+    "expectedAnswer": "Gullballen",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Gullstøvelen",
+      "Gullhansken",
+      "Fair play-prisen"
+    ],
+    "fact": "Hun ble turneringens nest mestscorende spiller.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Hege Riise – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Hege_Riise"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sepp-piontek-4",
+    "expectedAnswer": "Uruguay",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Paraguay",
+      "Chile",
+      "Argentina"
+    ],
+    "fact": "I åttedelsfinalen tapte Danmark 1–5 for Spania.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sepp Piontek – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sepp_Piontek"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-18",
+    "expectedAnswer": "Ståle Salvatore",
+    "difficulty": 2,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Ståle Stålmann",
+      "Grue-Ståle",
+      "Kong Ståle"
+    ],
+    "fact": "Navnet spiller på «gjenoppstandelsen» hans og «frelsen» av HamKam.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-houghton-3",
+    "expectedAnswer": "Kina",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Japan",
+      "Sør-Korea",
+      "Thailand"
+    ],
+    "fact": "I løpet av få uker kunne han navnene på alle spillerne.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Houghton – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Houghton"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-6",
+    "expectedAnswer": "Morten Olsen",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Richard Møller Nielsen",
+      "Sepp Piontek",
+      "Åge Hareide"
+    ],
+    "fact": "Sammen tok de Danmark til utslagsrunden i VM 2002.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-heimir-hallgrimsson-2",
+    "expectedAnswer": "Lars Lagerbäck",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Tommy Söderberg",
+      "Sven-Göran Eriksson",
+      "Janne Andersson"
+    ],
+    "fact": "Etter EM ble Heimir alene om jobben, mens svensken ble Norges landslagssjef.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Heimir Hallgrímsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-7",
+    "expectedAnswer": "Ebbe Skovdahl",
+    "difficulty": 3,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Richard Møller Nielsen",
+      "Sepp Piontek",
+      "Tom Køhlert"
+    ],
+    "fact": "Faren hans, Finn Laudrup, spilte selv på det danske landslaget.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-4",
+    "expectedAnswer": "Sverige",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Norge",
+      "Ungarn",
+      "Ukraina"
+    ],
+    "fact": "Kontrakten hans ble avsluttet rett etter tapet i november 2015.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jon-dahl-tomasson-4",
+    "expectedAnswer": "Blackburn Rovers",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Middlesbrough",
+      "Sunderland",
+      "Stoke City"
+    ],
+    "fact": "Første sesong endte laget på sjuendeplass og gikk glipp av playoff på målforskjell.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-eirik-horneland-3",
+    "expectedAnswer": "Rosenborg",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Molde",
+      "Vålerenga",
+      "Odd"
+    ],
+    "fact": "Han trakk seg i juni 2020 etter svake resultater.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Eirik Horneland – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eirik_Horneland"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-4",
+    "expectedAnswer": "Lazio",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Juventus",
+      "Parma",
+      "Inter"
+    ],
+    "fact": "Det var bare andre gang i historien at Roma-klubben vant det italienske mesterskapet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-1",
+    "expectedAnswer": "England",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Skottland",
+      "Wales",
+      "Irland"
+    ],
+    "fact": "Debuten var 3–0 over Spania på Villa Park.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-eirik-horneland-1",
+    "expectedAnswer": "Brann",
+    "difficulty": 1,
+    "category": "Cupgullet",
+    "distractors": [
+      "Molde",
+      "Viking",
+      "Odd"
+    ],
+    "fact": "Samme år røk laget ut på straffer mot AZ Alkmaar i playoff til Conference League.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Eirik Horneland – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Eirik_Horneland"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-5",
+    "expectedAnswer": "Brøndby",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "AGF",
+      "OB",
+      "Lyngby"
+    ],
+    "fact": "Det var hans første trenerjobb, fra januar 1990.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-markku-kanerva-3",
+    "expectedAnswer": "IF Elfsborg",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Halmstads BK",
+      "Örgryte IS",
+      "GAIS"
+    ],
+    "fact": "Samtidig jobbet han som gymlærer på en barneskole i Borås.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Markku Kanerva – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Markku_Kanerva"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jon-dahl-tomasson-2",
+    "expectedAnswer": "Milan",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Juventus",
+      "Inter",
+      "Lazio"
+    ],
+    "fact": "Han er delt toppscorer for Danmark med 52 landslagsmål.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-4",
+    "expectedAnswer": "Getafe",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Sevilla",
+      "Villarreal",
+      "Espanyol"
+    ],
+    "fact": "Laget tapte cupfinalen mot Valencia og røk ut mot Bayern München etter ekstraomganger.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kjetil-knutsen-9",
+    "expectedAnswer": "Lazio",
+    "difficulty": 1,
+    "category": "Europacupen",
+    "distractors": [
+      "Juventus",
+      "Napoli",
+      "Fiorentina"
+    ],
+    "fact": "Glimt ble første norske lag i en semifinale i en stor europacup.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kjetil Knutsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kjetil_Knutsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-markku-kanerva-2",
+    "expectedAnswer": "Rive",
+    "difficulty": 2,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Zico",
+      "Kaká",
+      "Sókrates"
+    ],
+    "fact": "Navnet stammer fra løkkefotballen i Pukinmäki i Helsingfors på 1970-tallet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Markku Kanerva – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Markku_Kanerva"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-11",
+    "expectedAnswer": "Crystal Palace",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Charlton Athletic",
+      "Millwall",
+      "Queens Park Rangers"
+    ],
+    "fact": "Der slo han Bobby Robsons rekord som eldste manager i Premier League.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henrik-larsson-3",
+    "expectedAnswer": "Falkenberg",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Halmstads BK",
+      "Gefle IF",
+      "Åtvidabergs FF"
+    ],
+    "fact": "Han berget plassen, men fortsatte ikke i 2015.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Henrik Larsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Henrik_Larsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-11",
+    "expectedAnswer": "Villarreal",
+    "difficulty": 1,
+    "category": "Europacupen",
+    "distractors": [
+      "Sevilla",
+      "Real Sociedad",
+      "Ajax"
+    ],
+    "fact": "Han fikk sparken i november samme år.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-janne-andersson-2",
+    "expectedAnswer": "IFK Norrköping",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "AIK",
+      "Djurgården",
+      "Hammarby"
+    ],
+    "fact": "Gullet ble sikret med seier borte mot regjerende mester Malmö FF i siste runde.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Janne Andersson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Janne_Andersson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jon-dahl-tomasson-3",
+    "expectedAnswer": "Malmö FF",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "AIK",
+      "Djurgården",
+      "Hammarby"
+    ],
+    "fact": "I 2021 tok han også laget til gruppespillet i Champions League.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-2",
+    "expectedAnswer": "IFK Norrköping",
+    "difficulty": 2,
+    "category": "Cupgullet",
+    "distractors": [
+      "Malmö FF",
+      "AIK",
+      "IFK Göteborg"
+    ],
+    "fact": "Cupgullet ga Östersund plass i kvaliken til Europaligaen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-11",
+    "expectedAnswer": "Club Brugge",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Anderlecht",
+      "Genk",
+      "Gent"
+    ],
+    "fact": "Han gikk før sluttspillet om det belgiske mesterskapet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-5",
+    "expectedAnswer": "Milan",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Juventus",
+      "Bayern München",
+      "Marseille"
+    ],
+    "fact": "Året etter vant Benfica det portugisiske seriegullet med ham.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-16",
+    "expectedAnswer": "Italia",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Nederland",
+      "Spania",
+      "Tyrkia"
+    ],
+    "fact": "Norge vant alle de åtte kampene i kvalifiseringsgruppen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sepp-piontek-5",
+    "expectedAnswer": "AaB",
+    "difficulty": 3,
+    "category": "Europacupen",
+    "distractors": [
+      "Brøndby",
+      "OB",
+      "FC København"
+    ],
+    "fact": "Klubben kom med etter at Dynamo Kyiv ble utestengt i en korrupsjonssak.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sepp Piontek – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sepp_Piontek"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sepp-piontek-2",
+    "expectedAnswer": "Haiti",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Jamaica",
+      "Trinidad og Tobago",
+      "Cuba"
+    ],
+    "fact": "Med Haiti var han nær ved å kvalifisere seg til VM 1978.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sepp Piontek – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sepp_Piontek"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-15",
+    "expectedAnswer": "Brasil",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Argentina",
+      "Frankrike",
+      "Tyskland"
+    ],
+    "fact": "Det var første gang Norge nådde kvartfinalen i et VM.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henrik-larsson-5",
+    "expectedAnswer": "Ronald Koeman",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Frank de Boer",
+      "Louis van Gaal",
+      "Erik ten Hag"
+    ],
+    "fact": "Larsson forsvant fra Barcelona da hovedtreneren fikk sparken i oktober 2021.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Henrik Larsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Henrik_Larsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-12",
+    "expectedAnswer": "Atlanta United",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "LA Galaxy",
+      "Inter Miami",
+      "Seattle Sounders"
+    ],
+    "fact": "Han fikk sparken i oktober 2025.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-stale-solbakken-17",
+    "expectedAnswer": "England",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Frankrike",
+      "Spania",
+      "Argentina"
+    ],
+    "fact": "I 32-delsfinalen hadde Norge slått Elfenbenskysten 2–1.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ståle Solbakken – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/St%C3%A5le_Solbakken"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-13",
+    "expectedAnswer": "West Bromwich Albion",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Aston Villa",
+      "Birmingham City",
+      "Stoke City"
+    ],
+    "fact": "I 2011/12 endte laget på tiendeplass, klubbens beste plassering i toppdivisjonen siden 1981.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-eirik-horneland-5",
+    "expectedAnswer": "Kåre Ingebrigtsen",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Ronny Deila",
+      "Kjetil Rekdal",
+      "Tom Nordlie"
+    ],
+    "fact": "Brann rykket ned etter kvalik samme høst, men kom rett tilbake.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Eirik Horneland – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eirik_Horneland"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-5",
+    "expectedAnswer": "Polen",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Wales",
+      "Tsjekkia",
+      "Slovakia"
+    ],
+    "fact": "I semifinalen scoret Viktor Gyökeres hat trick mot Ukraina.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-even-pellerud-4",
+    "expectedAnswer": "5",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "3",
+      "4",
+      "6"
+    ],
+    "fact": "Tre EM-finaler og to VM-finaler, alle med Norges kvinnelandslag.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Even Pellerud – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Even_Pellerud"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-heimir-hallgrimsson-3",
+    "expectedAnswer": "Jamaica",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Haiti",
+      "Trinidad og Tobago",
+      "Costa Rica"
+    ],
+    "fact": "Han gikk av etter at laget gjorde det dårlig i Copa América.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Heimir Hallgrímsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-11",
+    "expectedAnswer": "Willi Railo",
+    "difficulty": 3,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Frode Moen",
+      "Anne Marte Pensgaard",
+      "Britt Tajet-Foxell"
+    ],
+    "fact": "Samarbeidet ga blant annet boka «Fotbollens insida: om det mentala spelet» fra 2000.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-hege-riise-2",
+    "expectedAnswer": "LSK Kvinner",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Vålerenga",
+      "Rosenborg",
+      "Stabæk"
+    ],
+    "fact": "Klubben vant også fem cupgull i samme periode.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Hege Riise – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Hege_Riise"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henrik-larsson-4",
+    "expectedAnswer": "Helsingborg",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Kalmar FF",
+      "Örebro SK",
+      "Östersunds FK"
+    ],
+    "fact": "Etter kampen ble både han og sønnen Jordan angrepet av en liten gruppe hjemmefans.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Henrik Larsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Henrik_Larsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-6",
+    "expectedAnswer": "West Ham United",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Everton",
+      "Fulham",
+      "Wolverhampton"
+    ],
+    "fact": "Han hadde tatt over etter Julen Lopetegui i januar 2025.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-6",
+    "expectedAnswer": "Morten Olsen",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Richard Møller Nielsen",
+      "Sepp Piontek",
+      "Åge Hareide"
+    ],
+    "fact": "Som spiller ble han den første dansken med 100 landskamper, i 1989.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-8",
+    "expectedAnswer": "Mallorca",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Las Palmas",
+      "Tenerife",
+      "Real Betis"
+    ],
+    "fact": "Han gikk etter at assistenten hans, Erik Larsen, fikk sparken.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-janne-andersson-4",
+    "expectedAnswer": "Italia",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Spania",
+      "Frankrike",
+      "Uruguay"
+    ],
+    "fact": "Det var Sveriges første VM på tolv år.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Janne Andersson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Janne_Andersson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-houghton-2",
+    "expectedAnswer": "India",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "Nepal",
+      "Sri Lanka",
+      "Bangladesh"
+    ],
+    "fact": "Laget slo Tadsjikistan 4–1 i finalen og kom med i Asiacupen 2011.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Houghton – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Houghton"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-1",
+    "expectedAnswer": "Swansea City",
+    "difficulty": 1,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Cardiff City",
+      "Wrexham",
+      "Newport County"
+    ],
+    "fact": "Han var den første dansken som manager i Premier League.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-6",
+    "expectedAnswer": "Chicago Fire",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "LA Galaxy",
+      "Columbus Crew",
+      "New England Revolution"
+    ],
+    "fact": "Han ble kåret til årets trener i MLS samme år.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-5",
+    "expectedAnswer": "Spartak Moskva",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "CSKA Moskva",
+      "Zenit",
+      "Lokomotiv Moskva"
+    ],
+    "fact": "Sparken kom etter 0–3 mot Dynamo Moskva i cupkvartfinalen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-eirik-horneland-2",
+    "expectedAnswer": "Saint-Étienne",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Lens",
+      "Lyon",
+      "Nantes"
+    ],
+    "fact": "Den første seriekampen var 3–1 over Reims i januar 2025.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Eirik Horneland – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Eirik_Horneland"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-12",
+    "expectedAnswer": "Royson",
+    "difficulty": 3,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Kung Roy",
+      "Hodgy",
+      "Rolle"
+    ],
+    "fact": "Han ledet Malmö til fem strake seriemesterskap.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-eirik-horneland-4",
+    "expectedAnswer": "Vard Haugesund",
+    "difficulty": 3,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Djerv 1919",
+      "Kopervik",
+      "Skjold"
+    ],
+    "fact": "Han debuterte på A-laget som 17-åring i 1993.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Eirik Horneland – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Eirik_Horneland"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-richard-moller-nielsen-2",
+    "expectedAnswer": "Argentina",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Brasil",
+      "Mexico",
+      "Saudi-Arabia"
+    ],
+    "fact": "Peter Schmeichel var ikke med på grunn av forpliktelser i Manchester United.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Richard Møller Nielsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-heimir-hallgrimsson-1",
+    "expectedAnswer": "Tannlege",
+    "difficulty": 1,
+    "category": "Utenfor banen",
+    "distractors": [
+      "Fisker",
+      "Lege",
+      "Prest"
+    ],
+    "fact": "En gang satte han en utslått tann på plass på en spiller under en kvinnekamp han så på.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Heimir Hallgrímsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-13",
+    "expectedAnswer": "Argentina",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Frankrike",
+      "Tyskland",
+      "Italia"
+    ],
+    "fact": "I kvartfinalen tapte England 1–2 for Brasil, som vant VM.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ole-gunnar-solskjaer-12",
+    "expectedAnswer": "Barcelona",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Juventus",
+      "Real Madrid",
+      "Ajax"
+    ],
+    "fact": "United vant bare to av ti kamper resten av sesongen etter at han fikk fast jobb.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ole Gunnar Solskjær – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ole_Gunnar_Solskj%C3%A6r"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henrik-larsson-1",
+    "expectedAnswer": "Celtic",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Rangers",
+      "Aberdeen",
+      "Hearts"
+    ],
+    "fact": "I 2001 vant han Gullstøvelen som Europas toppscorer.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Henrik Larsson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Henrik_Larsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kasper-hjulmand-2",
+    "expectedAnswer": "Nordsjælland",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "Midtjylland",
+      "Randers",
+      "OB"
+    ],
+    "fact": "Klubben hadde et av de laveste budsjettene i ligaen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kasper Hjulmand – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-hege-riise-3",
+    "expectedAnswer": "Japan",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Spania",
+      "Sverige",
+      "USA"
+    ],
+    "fact": "Norge åpnet VM med 0–1 mot vertsnasjonen New Zealand.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Hege Riise – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Hege_Riise"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-even-pellerud-1",
+    "expectedAnswer": "VM",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "EM",
+      "OL",
+      "Algarve Cup"
+    ],
+    "fact": "Norge vant alle kampene og slo Tyskland i finalen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Even Pellerud – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Even_Pellerud"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-2",
+    "expectedAnswer": "Barcelona",
+    "difficulty": 1,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Milan",
+      "Marseille",
+      "PSV"
+    ],
+    "fact": "Han var en del av Johan Cruyffs «Dream Team».",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-2",
+    "expectedAnswer": "Svennis",
+    "difficulty": 1,
+    "category": "Kallenavnet",
+    "distractors": [
+      "Svenne",
+      "Göran",
+      "Sigge"
+    ],
+    "fact": "Navnet kom fra lillebroren Lars-Eriks forsøk på å uttale navnet hans.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-12",
+    "expectedAnswer": "Degerfors IF",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Örebro SK",
+      "Åtvidabergs FF",
+      "IF Elfsborg"
+    ],
+    "fact": "Han hadde vært assistent for Tord Grip i klubben året før.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-hege-riise-1",
+    "expectedAnswer": "England",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Sverige",
+      "Skottland",
+      "Irland"
+    ],
+    "fact": "Hun ledet også Storbritannia i OL, der laget tapte kvartfinalen 3–4 for Australia etter ekstraomganger.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Hege Riise – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Hege_Riise"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jorn-andersen-4",
+    "expectedAnswer": "Hakan Çalhanoğlu",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Mesut Özil",
+      "İlkay Gündoğan",
+      "Emre Can"
+    ],
+    "fact": "Like før hadde han vært trener i greske AEL i bare 24 dager.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jørn Andersen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/J%C3%B8rn_Andersen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kasper-hjulmand-3",
+    "expectedAnswer": "Thomas Tuchel",
+    "difficulty": 3,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Jürgen Klopp",
+      "Ralf Rangnick",
+      "Lucien Favre"
+    ],
+    "fact": "Han fikk sparken i februar 2015 etter bare én seier på 13 kamper.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kasper Hjulmand – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kasper-hjulmand-4",
+    "expectedAnswer": "Bayer Leverkusen",
+    "difficulty": 2,
+    "category": "Utenlandseventyret",
+    "distractors": [
+      "Wolfsburg",
+      "Borussia Mönchengladbach",
+      "VfB Stuttgart"
+    ],
+    "fact": "Han fikk sparken etter sesongen, da laget endte på sjetteplass.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kasper Hjulmand – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-heimir-hallgrimsson-4",
+    "expectedAnswer": "Irland",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Skottland",
+      "Wales",
+      "Nord-Irland"
+    ],
+    "fact": "I november 2024 tapte laget 0–5 for England på Wembley, rekordtap mot naboen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Heimir Hallgrímsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-9",
+    "expectedAnswer": "Elfenbenskysten",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Kamerun",
+      "Nigeria",
+      "Ghana"
+    ],
+    "fact": "Laget spilte 0–0 mot Portugal og tapte 1–3 for Brasil i gruppespillet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      },
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-ronny-deila-13",
+    "expectedAnswer": "Vålerenga",
+    "difficulty": 2,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Lillestrøm",
+      "Sarpsborg 08",
+      "Stabæk"
+    ],
+    "fact": "Laget endte på åttendeplass i 2017 og sjetteplass i 2018.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Ronny Deila – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Ronny_Deila"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-even-pellerud-2",
+    "expectedAnswer": "Canada",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "USA",
+      "Sverige",
+      "Australia"
+    ],
+    "fact": "Fjerdeplassen i VM 2003 ga ham prisen for årets idrettsbragd i landet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Even Pellerud – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Even_Pellerud"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-8",
+    "expectedAnswer": "Blackburn Rovers",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Aston Villa",
+      "Newcastle United",
+      "Tottenham Hotspur"
+    ],
+    "fact": "Klubben ansatte i stedet Roy Hodgson.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tommy-svensson-1",
+    "expectedAnswer": "Bronse",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Gull",
+      "Sølv",
+      "Ingen medalje"
+    ],
+    "fact": "Laget hans nådde også semifinalen i EM 1992.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Tommy Svensson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tommy_Svensson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kasper-hjulmand-1",
+    "expectedAnswer": "Danmark",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Sverige",
+      "Norge",
+      "Finland"
+    ],
+    "fact": "Laget tapte semifinalen 1–2 for England etter ekstraomganger.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kasper Hjulmand – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-3",
+    "expectedAnswer": "IFK Göteborg",
+    "difficulty": 1,
+    "category": "Europacupen",
+    "distractors": [
+      "Malmö FF",
+      "Östers IF",
+      "AIK"
+    ],
+    "fact": "IFK slo Hamburger SV 4–0 sammenlagt i finalen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-richard-moller-nielsen-3",
+    "expectedAnswer": "Finland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Sverige",
+      "Norge",
+      "Island"
+    ],
+    "fact": "Etterpå ble han landslagssjef for Israel.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Richard Møller Nielsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-graham-potter-4",
+    "expectedAnswer": "Galatasaray",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Fenerbahçe",
+      "Beşiktaş",
+      "Trabzonspor"
+    ],
+    "fact": "Östersund vant 3–1 sammenlagt og gikk senere helt til gruppespillet.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Graham Potter – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Graham_Potter"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-7",
+    "expectedAnswer": "Middlesbrough",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Chelsea",
+      "Liverpool",
+      "Arsenal"
+    ],
+    "fact": "Laget hans endte likevel på niende plass.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-markku-kanerva-1",
+    "expectedAnswer": "Finland",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Estland",
+      "Island",
+      "Færøyene"
+    ],
+    "fact": "Han fikk sparken etter at laget tapte alle seks kampene i Nations League 2024–25.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Markku Kanerva – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Markku_Kanerva"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-even-pellerud-3",
+    "expectedAnswer": "Arne Erlandsen",
+    "difficulty": 3,
+    "category": "Mannen på benken",
+    "distractors": [
+      "Tom Nordlie",
+      "Uwe Rösler",
+      "Tom Lund"
+    ],
+    "fact": "Lillestrøm endte på tiendeplass i 1997.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Even Pellerud – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Even_Pellerud"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jon-dahl-tomasson-5",
+    "expectedAnswer": "Excelsior",
+    "difficulty": 3,
+    "category": "Trenerruten",
+    "distractors": [
+      "Sparta Rotterdam",
+      "NAC Breda",
+      "Willem II"
+    ],
+    "fact": "Han hadde vært assistent i klubben siden han la opp i 2011.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-bradley-3",
+    "expectedAnswer": "Egypt",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Tunisia",
+      "Marokko",
+      "Algerie"
+    ],
+    "fact": "Laget vant de seks første kampene i VM-kvaliken, men tapte klart for Ghana i playoff.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Bradley – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Bradley"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-janne-andersson-1",
+    "expectedAnswer": "England",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Kroatia",
+      "Belgia",
+      "Frankrike"
+    ],
+    "fact": "Sverige hadde vunnet gruppen foran Sør-Korea, Mexico og Tyskland.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Janne Andersson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Janne_Andersson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-michael-laudrup-3",
+    "expectedAnswer": "Brøndby",
+    "difficulty": 2,
+    "category": "Gullåret",
+    "distractors": [
+      "FC København",
+      "AaB",
+      "OB"
+    ],
+    "fact": "Han ble kåret til årets trener i Danmark for andre gang.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Michael Laudrup – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Michael_Laudrup"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-kasper-hjulmand-5",
+    "expectedAnswer": "Tyskland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Spania",
+      "England",
+      "Sveits"
+    ],
+    "fact": "Han trakk seg som landslagssjef 19. juli 2024.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Kasper Hjulmand – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jorn-andersen-1",
+    "expectedAnswer": "Nord-Korea",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Sør-Korea",
+      "Kina",
+      "Japan"
+    ],
+    "fact": "Etterpå trente han den sørkoreanske klubben Incheon United.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jørn Andersen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/J%C3%B8rn_Andersen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-6",
+    "expectedAnswer": "Tyskland",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Hellas",
+      "Albania",
+      "Finland"
+    ],
+    "fact": "Tyskerne hadde ledet etter seks minutter.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-henrik-larsson-2",
+    "expectedAnswer": "Landskrona BoIS",
+    "difficulty": 2,
+    "category": "Trenerruten",
+    "distractors": [
+      "Trelleborgs FF",
+      "Halmstads BK",
+      "Mjällby AIF"
+    ],
+    "fact": "Første sesong endte laget på femteplass i Superettan.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Henrik Larsson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Henrik_Larsson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jon-dahl-tomasson-1",
+    "expectedAnswer": "Sverige",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Norge",
+      "Island",
+      "Finland"
+    ],
+    "fact": "Han fikk sparken etter 0–1 hjemme mot Kosovo.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      },
+      {
+        "title": "Jon Dahl Tomasson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sepp-piontek-3",
+    "expectedAnswer": "Tyrkia",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "Østerrike",
+      "Hellas",
+      "Sveits"
+    ],
+    "fact": "Det var læremesteren hans, Jupp Derwall, som anbefalte jobben.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sepp Piontek – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Sepp_Piontek"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-richard-moller-nielsen-4",
+    "expectedAnswer": "Horst Wohlers",
+    "difficulty": 3,
+    "category": "Landslaget",
+    "distractors": [
+      "Berti Vogts",
+      "Jupp Derwall",
+      "Otto Rehhagel"
+    ],
+    "fact": "Tyskeren fikk ikke løs kontrakten sin med Bayer Uerdingen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Richard Møller Nielsen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-sven-goran-eriksson-10",
+    "expectedAnswer": "Mexico",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "USA",
+      "Costa Rica",
+      "Jamaica"
+    ],
+    "fact": "Han var ansatt fra juni 2008 til april 2009.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Sven-Göran Eriksson – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jorn-andersen-3",
+    "expectedAnswer": "Eintracht Frankfurt",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Bayern München",
+      "1. FC Köln",
+      "Werder Bremen"
+    ],
+    "fact": "Han scoret 18 mål den sesongen.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jørn Andersen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/J%C3%B8rn_Andersen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-tommy-svensson-3",
+    "expectedAnswer": "Östers IF",
+    "difficulty": 2,
+    "category": "Spillerdagene",
+    "distractors": [
+      "Malmö FF",
+      "IFK Göteborg",
+      "Åtvidabergs FF"
+    ],
+    "fact": "Han spilte også for Standard Liège i Belgia.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Tommy Svensson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tommy_Svensson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-morten-olsen-3",
+    "expectedAnswer": "15",
+    "difficulty": 2,
+    "category": "Landslaget",
+    "distractors": [
+      "10",
+      "12",
+      "18"
+    ],
+    "fact": "Ingen har vært dansk landslagssjef lenger.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Morten Olsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Morten_Olsen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-janne-andersson-3",
+    "expectedAnswer": "Halmstads BK",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "Helsingborgs IF",
+      "Kalmar FF",
+      "IF Elfsborg"
+    ],
+    "fact": "Sporting hadde spilt UEFA-cupfinale året før.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Janne Andersson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Janne_Andersson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-roy-hodgson-9",
+    "expectedAnswer": "Island",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "Wales",
+      "Portugal",
+      "Belgia"
+    ],
+    "fact": "England hadde gått videre fra gruppen som toer bak Wales.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Roy Hodgson – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Roy_Hodgson"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-jorn-andersen-2",
+    "expectedAnswer": "Mainz 05",
+    "difficulty": 2,
+    "category": "Opprykket",
+    "distractors": [
+      "FC St. Pauli",
+      "SC Freiburg",
+      "1. FC Köln"
+    ],
+    "fact": "Han fikk tilbudet bare to dager etter at han hadde rykket ned med Kickers Offenbach.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Jørn Andersen – Wikipedia",
+        "url": "https://no.wikipedia.org/wiki/J%C3%B8rn_Andersen"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-bob-houghton-1",
+    "expectedAnswer": "Malmö FF",
+    "difficulty": 2,
+    "category": "Europacupen",
+    "distractors": [
+      "IFK Göteborg",
+      "Östers IF",
+      "AIK"
+    ],
+    "fact": "Laget tapte finalen 0–1 for Nottingham Forest.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Bob Houghton – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Bob_Houghton"
+      }
+    ]
+  },
+  {
+    "sourceId": "tq-richard-moller-nielsen-1",
+    "expectedAnswer": "EM",
+    "difficulty": 1,
+    "category": "Landslaget",
+    "distractors": [
+      "VM",
+      "OL",
+      "Nordisk mesterskap"
+    ],
+    "fact": "Det var Danmarks første store internasjonale tittel.",
+    "reviewedAt": "2026-11-22",
+    "sources": [
+      {
+        "title": "Richard Møller Nielsen – Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+      }
+    ]
   }
 ]
