@@ -2401,5 +2401,836 @@
     "verify": {
       "subject": "Lars Lagerbäck"
     }
+  },
+  {
+    "id": "sven-goran-eriksson",
+    "name": "Sven-Göran Eriksson",
+    "nicknames": [
+      "Svennis"
+    ],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Degerfors",
+        "from": 1977,
+        "to": 1978
+      },
+      {
+        "club": "IFK Göteborg",
+        "from": 1979,
+        "to": 1982
+      },
+      {
+        "club": "Benfica",
+        "from": 1982,
+        "to": 1984
+      },
+      {
+        "club": "Roma",
+        "from": 1984,
+        "to": 1987
+      },
+      {
+        "club": "Fiorentina",
+        "from": 1987,
+        "to": 1989
+      },
+      {
+        "club": "Benfica",
+        "from": 1989,
+        "to": 1992
+      },
+      {
+        "club": "Sampdoria",
+        "from": 1992,
+        "to": 1997
+      },
+      {
+        "club": "Lazio",
+        "from": 1997,
+        "to": 2001
+      },
+      {
+        "club": "Manchester City",
+        "from": 2007,
+        "to": 2008
+      },
+      {
+        "club": "Leicester City",
+        "from": 2010,
+        "to": 2011
+      },
+      {
+        "club": "Guangzhou R&F",
+        "from": 2013,
+        "to": 2014
+      },
+      {
+        "club": "Shanghai SIPG",
+        "from": 2014,
+        "to": 2016
+      },
+      {
+        "club": "Shenzhen",
+        "from": 2016,
+        "to": 2017
+      }
+    ],
+    "honours": [
+      "UEFA-cupen med IFK Göteborg 1982",
+      "Cupvinnercupen med Lazio 1999",
+      "Serie A med Lazio 2000"
+    ],
+    "episodes": [
+      "Englands landslagssjef 2001–2006",
+      "Mexicos landslagssjef 2008–2009",
+      "Elfenbenskysten i VM 2010",
+      "Filippinenes landslagssjef 2018–2019"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson",
+      "https://en.wikipedia.org/wiki/Sven-G%C3%B6ran_Eriksson"
+    ],
+    "verify": {
+      "subject": "Sven-Göran Eriksson"
+    }
+  },
+  {
+    "id": "michael-laudrup",
+    "name": "Michael Laudrup",
+    "nicknames": [],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "Brøndby",
+        "from": 2002,
+        "to": 2006
+      },
+      {
+        "club": "Getafe",
+        "from": 2007,
+        "to": 2008
+      },
+      {
+        "club": "Spartak Moskva",
+        "from": 2008,
+        "to": 2009
+      },
+      {
+        "club": "Mallorca",
+        "from": 2010,
+        "to": 2011
+      },
+      {
+        "club": "Swansea City",
+        "from": 2012,
+        "to": 2014
+      },
+      {
+        "club": "Lekhwiya",
+        "from": 2014,
+        "to": 2015
+      }
+    ],
+    "honours": [
+      "Seriegull og cupgull med Brøndby 2005",
+      "Ligacupen med Swansea 2013"
+    ],
+    "episodes": [
+      "Assistent for Morten Olsen på Danmarks landslag fra 2000",
+      "Al Rayyan fra oktober 2016"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Michael_Laudrup",
+      "https://en.wikipedia.org/wiki/Michael_Laudrup"
+    ],
+    "verify": {
+      "subject": "Michael Laudrup"
+    }
+  },
+  {
+    "id": "morten-olsen",
+    "name": "Morten Olsen",
+    "nicknames": [],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "Brøndby",
+        "from": 1990,
+        "to": 1992
+      },
+      {
+        "club": "1. FC Köln",
+        "from": 1993,
+        "to": 1995
+      },
+      {
+        "club": "Ajax",
+        "from": 1997,
+        "to": 1998
+      }
+    ],
+    "honours": [
+      "To danske seriegull med Brøndby",
+      "Seriegull og cupgull med Ajax 1998"
+    ],
+    "episodes": [
+      "Danmarks landslagssjef 2000–2015"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Morten_Olsen",
+      "https://en.wikipedia.org/wiki/Morten_Olsen"
+    ],
+    "verify": {
+      "subject": "Morten Olsen"
+    }
+  },
+  {
+    "id": "kasper-hjulmand",
+    "name": "Kasper Hjulmand",
+    "nicknames": [],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "Lyngby",
+        "from": 2006,
+        "to": 2008
+      },
+      {
+        "club": "Nordsjælland",
+        "from": 2011,
+        "to": 2014
+      },
+      {
+        "club": "Mainz 05",
+        "from": 2014,
+        "to": 2015
+      },
+      {
+        "club": "Nordsjælland",
+        "from": 2016,
+        "to": 2019
+      },
+      {
+        "club": "Bayer Leverkusen",
+        "from": 2025,
+        "to": 2026
+      }
+    ],
+    "honours": [
+      "Seriegull med Nordsjælland 2012"
+    ],
+    "episodes": [
+      "Danmarks landslagssjef 2020–2024, semifinale i EM 2020"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Kasper_Hjulmand",
+      "https://en.wikipedia.org/wiki/Kasper_Hjulmand"
+    ],
+    "verify": {
+      "subject": "Kasper Hjulmand"
+    }
+  },
+  {
+    "id": "henrik-larsson",
+    "name": "Henrik Larsson",
+    "nicknames": [
+      "Henke"
+    ],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Landskrona BoIS",
+        "from": 2010,
+        "to": 2012
+      },
+      {
+        "club": "Falkenberg",
+        "from": 2014,
+        "to": 2014
+      },
+      {
+        "club": "Helsingborg",
+        "from": 2015,
+        "to": 2016
+      },
+      {
+        "club": "Helsingborg",
+        "from": 2019,
+        "to": 2019
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Assistent for Ronald Koeman i Barcelona 2020–2021"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Henrik_Larsson",
+      "https://en.wikipedia.org/wiki/Henrik_Larsson"
+    ],
+    "verify": {
+      "subject": "Henrik Larsson"
+    }
+  },
+  {
+    "id": "jon-dahl-tomasson",
+    "name": "Jon Dahl Tomasson",
+    "nicknames": [],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "Excelsior",
+        "from": 2013,
+        "to": 2013
+      },
+      {
+        "club": "Roda JC",
+        "from": 2014,
+        "to": 2014
+      },
+      {
+        "club": "Malmö FF",
+        "from": 2020,
+        "to": 2021
+      },
+      {
+        "club": "Blackburn Rovers",
+        "from": 2022,
+        "to": 2024
+      }
+    ],
+    "honours": [
+      "Seriegull med Malmö FF 2020 og 2021"
+    ],
+    "episodes": [
+      "Sveriges landslagssjef 2024–2025"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Jon_Dahl_Tomasson",
+      "https://en.wikipedia.org/wiki/Jon_Dahl_Tomasson"
+    ],
+    "verify": {
+      "subject": "Jon Dahl Tomasson"
+    }
+  },
+  {
+    "id": "graham-potter",
+    "name": "Graham Potter",
+    "nicknames": [],
+    "nationality": "ENG",
+    "spells": [
+      {
+        "club": "Östersund",
+        "from": 2011,
+        "to": 2018
+      },
+      {
+        "club": "Swansea City",
+        "from": 2018,
+        "to": 2019
+      },
+      {
+        "club": "Brighton",
+        "from": 2019,
+        "to": 2022
+      },
+      {
+        "club": "Chelsea",
+        "from": 2022,
+        "to": 2023
+      },
+      {
+        "club": "West Ham United",
+        "from": 2025,
+        "to": 2025
+      }
+    ],
+    "honours": [
+      "Svenska Cupen med Östersund 2017"
+    ],
+    "episodes": [
+      "Sveriges landslagssjef fra oktober 2025"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Graham_Potter",
+      "https://en.wikipedia.org/wiki/Graham_Potter"
+    ],
+    "verify": {
+      "subject": "Graham Potter"
+    }
+  },
+  {
+    "id": "bob-bradley",
+    "name": "Bob Bradley",
+    "nicknames": [],
+    "nationality": "USA",
+    "spells": [
+      {
+        "club": "Stabæk",
+        "from": 2014,
+        "to": 2015
+      },
+      {
+        "club": "Le Havre",
+        "from": 2015,
+        "to": 2016
+      },
+      {
+        "club": "Swansea City",
+        "from": 2016,
+        "to": 2016
+      },
+      {
+        "club": "Stabæk",
+        "from": 2023,
+        "to": 2024
+      }
+    ],
+    "honours": [
+      "Gold Cup med USA 2007"
+    ],
+    "episodes": [
+      "Første trener i Chicago Fire, 1998",
+      "USAs landslagssjef 2006–2011",
+      "Egypts landslagssjef 2011–2013"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Bob_Bradley",
+      "https://en.wikipedia.org/wiki/Bob_Bradley"
+    ],
+    "verify": {
+      "subject": "Bob Bradley"
+    }
+  },
+  {
+    "id": "jorn-andersen",
+    "name": "Jørn Andersen",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Rot-Weiß Oberhausen",
+        "from": 2003,
+        "to": 2004
+      },
+      {
+        "club": "Kickers Offenbach",
+        "from": 2007,
+        "to": 2008
+      },
+      {
+        "club": "Mainz 05",
+        "from": 2008,
+        "to": 2009
+      },
+      {
+        "club": "AEL",
+        "from": 2010,
+        "to": 2011
+      },
+      {
+        "club": "Karlsruher SC",
+        "from": 2011,
+        "to": 2012
+      },
+      {
+        "club": "Austria Salzburg",
+        "from": 2015,
+        "to": 2015
+      },
+      {
+        "club": "Incheon United",
+        "from": 2018,
+        "to": 2019
+      }
+    ],
+    "honours": [
+      "Opprykk til Bundesliga med Mainz 2009"
+    ],
+    "episodes": [
+      "Nord-Koreas landslagssjef 2016–2018",
+      "Toppscorer i Bundesliga 1990 for Eintracht Frankfurt"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/J%C3%B8rn_Andersen",
+      "https://en.wikipedia.org/wiki/J%C3%B8rn_Andersen"
+    ],
+    "verify": {
+      "subject": "Jørn Andersen"
+    }
+  },
+  {
+    "id": "eirik-horneland",
+    "name": "Eirik Horneland",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Haugesund",
+        "from": 2016,
+        "to": 2018
+      },
+      {
+        "club": "Rosenborg",
+        "from": 2019,
+        "to": 2020
+      },
+      {
+        "club": "Brann",
+        "from": 2021,
+        "to": 2024
+      },
+      {
+        "club": "Saint-Étienne",
+        "from": 2024,
+        "to": 2026
+      },
+      {
+        "club": "Brann",
+        "from": 2026,
+        "to": null
+      }
+    ],
+    "honours": [
+      "Cupgull med Brann 2023",
+      "Opprykk med Brann 2022"
+    ],
+    "episodes": [
+      "Spilte tolv år for Vard Haugesund"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Eirik_Horneland",
+      "https://en.wikipedia.org/wiki/Eirik_Horneland"
+    ],
+    "verify": {
+      "subject": "Eirik Horneland"
+    }
+  },
+  {
+    "id": "richard-moller-nielsen",
+    "name": "Richard Møller Nielsen",
+    "nicknames": [
+      "Ricardo"
+    ],
+    "nationality": "DEN",
+    "spells": [
+      {
+        "club": "OB",
+        "from": 1977,
+        "to": 1983
+      },
+      {
+        "club": "Kolding FC",
+        "from": 2003,
+        "to": 2003
+      }
+    ],
+    "honours": [
+      "EM-gull med Danmark 1992",
+      "Confederations Cup med Danmark 1995"
+    ],
+    "episodes": [
+      "Danmarks landslagssjef 1990–1996",
+      "Finlands landslagssjef 1996–1999",
+      "Israels landslagssjef 2000–2002"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen",
+      "https://en.wikipedia.org/wiki/Richard_M%C3%B8ller_Nielsen"
+    ],
+    "verify": {
+      "subject": "Richard Møller Nielsen"
+    }
+  },
+  {
+    "id": "sepp-piontek",
+    "name": "Sepp Piontek",
+    "nicknames": [],
+    "nationality": "GER",
+    "spells": [
+      {
+        "club": "Werder Bremen",
+        "from": 1971,
+        "to": 1975
+      },
+      {
+        "club": "Fortuna Düsseldorf",
+        "from": 1975,
+        "to": 1976
+      },
+      {
+        "club": "St. Pauli",
+        "from": 1978,
+        "to": 1979
+      },
+      {
+        "club": "AaB",
+        "from": 1995,
+        "to": 1996
+      },
+      {
+        "club": "Silkeborg",
+        "from": 1996,
+        "to": 1999
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Haitis landslagssjef 1976",
+      "Danmarks landslagssjef 1979–1990, «Danish Dynamite»",
+      "Tyrkias landslagssjef 1990–1993"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Sepp_Piontek",
+      "https://en.wikipedia.org/wiki/Sepp_Piontek"
+    ],
+    "verify": {
+      "subject": "Sepp Piontek"
+    }
+  },
+  {
+    "id": "tommy-svensson",
+    "name": "Tommy Svensson",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Östers IF",
+        "from": 1977,
+        "to": 1981
+      },
+      {
+        "club": "Tromsø",
+        "from": 2001,
+        "to": 2001
+      }
+    ],
+    "honours": [
+      "VM-bronse med Sverige 1994"
+    ],
+    "episodes": [
+      "Sveriges landslagssjef 1991–1997",
+      "Vellykket periode i Tromsø før landslagsjobben"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Tommy_Svensson",
+      "https://en.wikipedia.org/wiki/Tommy_Svensson"
+    ],
+    "verify": {
+      "subject": "Tommy Svensson"
+    }
+  },
+  {
+    "id": "janne-andersson",
+    "name": "Janne Andersson",
+    "nicknames": [],
+    "nationality": "SWE",
+    "spells": [
+      {
+        "club": "Halmstads BK",
+        "from": 2004,
+        "to": 2009
+      },
+      {
+        "club": "Örgryte",
+        "from": 2010,
+        "to": 2010
+      },
+      {
+        "club": "IFK Norrköping",
+        "from": 2011,
+        "to": 2016
+      }
+    ],
+    "honours": [
+      "Seriegull med IFK Norrköping 2015"
+    ],
+    "episodes": [
+      "Sveriges landslagssjef 2016–2023, kvartfinale i VM 2018"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Janne_Andersson",
+      "https://en.wikipedia.org/wiki/Janne_Andersson"
+    ],
+    "verify": {
+      "subject": "Janne Andersson"
+    }
+  },
+  {
+    "id": "markku-kanerva",
+    "name": "Markku Kanerva",
+    "nicknames": [
+      "Rive"
+    ],
+    "nationality": "FIN",
+    "spells": [
+      {
+        "club": "FC Viikingit",
+        "from": 2003,
+        "to": 2003
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Finlands landslagssjef 2016–2024, første EM-sluttspill i 2021"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Markku_Kanerva",
+      "https://en.wikipedia.org/wiki/Markku_Kanerva"
+    ],
+    "verify": {
+      "subject": "Markku Kanerva"
+    }
+  },
+  {
+    "id": "heimir-hallgrimsson",
+    "name": "Heimir Hallgrímsson",
+    "nicknames": [],
+    "nationality": "ISL",
+    "spells": [
+      {
+        "club": "ÍBV",
+        "from": 2006,
+        "to": 2011
+      },
+      {
+        "club": "Al-Arabi",
+        "from": 2018,
+        "to": 2021
+      }
+    ],
+    "honours": [],
+    "episodes": [
+      "Delte Island-jobben med Lars Lagerbäck til EM 2016",
+      "Islands landslagssjef i VM 2018",
+      "Jamaicas landslagssjef 2022–2024",
+      "Irlands landslagssjef fra 2024"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson",
+      "https://en.wikipedia.org/wiki/Heimir_Hallgr%C3%ADmsson"
+    ],
+    "verify": {
+      "subject": "Heimir Hallgrímsson"
+    }
+  },
+  {
+    "id": "even-pellerud",
+    "name": "Even Pellerud",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Lillestrøm",
+        "from": 1997,
+        "to": 1997
+      }
+    ],
+    "honours": [
+      "VM-gull med Norges kvinnelandslag 1995"
+    ],
+    "episodes": [
+      "Norges kvinnelandslag 1989–1996 og 2012–2015",
+      "Canadas kvinnelandslag 1999–2008"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Even_Pellerud",
+      "https://en.wikipedia.org/wiki/Even_Pellerud"
+    ],
+    "verify": {
+      "subject": "Even Pellerud"
+    }
+  },
+  {
+    "id": "hege-riise",
+    "name": "Hege Riise",
+    "nicknames": [],
+    "nationality": "NOR",
+    "spells": [
+      {
+        "club": "Team Strømmen",
+        "from": 2007,
+        "to": 2008
+      },
+      {
+        "club": "LSK Kvinner",
+        "from": 2017,
+        "to": 2020
+      }
+    ],
+    "honours": [
+      "Sju seriegull med LSK Kvinner"
+    ],
+    "episodes": [
+      "Englands kvinnelandslag 2021",
+      "Norges kvinnelandslag 2022–2023"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://no.wikipedia.org/wiki/Hege_Riise",
+      "https://en.wikipedia.org/wiki/Hege_Riise"
+    ],
+    "verify": {
+      "subject": "Hege Riise"
+    }
+  },
+  {
+    "id": "bob-houghton",
+    "name": "Bob Houghton",
+    "nicknames": [],
+    "nationality": "ENG",
+    "spells": [
+      {
+        "club": "Malmö FF",
+        "from": 1974,
+        "to": 1980
+      },
+      {
+        "club": "Bristol City",
+        "from": 1980,
+        "to": 1982
+      },
+      {
+        "club": "FC Zürich",
+        "from": 1994,
+        "to": 1995
+      },
+      {
+        "club": "Colorado Rapids",
+        "from": 1996,
+        "to": 1996
+      }
+    ],
+    "honours": [
+      "Finale i serievinnercupen med Malmö FF 1979"
+    ],
+    "episodes": [
+      "Kinas landslagssjef 1997–1999",
+      "Indias landslagssjef 2006–2011"
+    ],
+    "status": "recall",
+    "leads": [
+      "https://en.wikipedia.org/wiki/Bob_Houghton"
+    ],
+    "verify": {
+      "subject": "Bob Houghton"
+    }
   }
 ]

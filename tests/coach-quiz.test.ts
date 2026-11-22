@@ -8,7 +8,7 @@ const ds = loadDataset();
 
 describe("trenerdatabasen og trenerquizen", () => {
   it("har 400 spørsmål på alle tre nivåene", () => {
-    expect(ds.coachQuiz).toHaveLength(518);
+    expect(ds.coachQuiz).toHaveLength(632);
     const levels = new Set(ds.coachQuiz.map((q) => q.difficulty));
     expect([...levels].sort()).toEqual([1, 2, 3]);
   });

@@ -86,6 +86,31 @@ coach's numbering), and 23 reuse existing `recall` entries. Four coaches were ad
 The next extension again needs easy questions: all 31 new easy entries are used. 2 medium
 and 24 hard reviewed entries are left over.
 
+**Extension, 22 November.** 114 more reviewed entries (32 easy, 64 medium, 18 hard)
+give 96 rounds, to about 28 December. Rounds 1–64 are unchanged (byte-identical
+`buildGeniusPuzzles()` output before and after); new entries are appended in hash order.
+The 2 medium and 24 hard entries left over on 9 October are used first, in rounds 65–96.
+- All 114 are new bank entries; no `recall` entries were reused. 19 coaches were added to
+  `trenere.json` to get enough easy questions: Sven-Göran Eriksson, Michael Laudrup,
+  Morten Olsen, Kasper Hjulmand, Henrik Larsson, Jon Dahl Tomasson, Graham Potter,
+  Bob Bradley, Jørn Andersen, Eirik Horneland, Richard Møller Nielsen, Sepp Piontek,
+  Tommy Svensson, Janne Andersson, Markku Kanerva, Heimir Hallgrímsson, Even Pellerud,
+  Hege Riise and Bob Houghton. Their spells are `recall`, like the rest of the file.
+- Every answer, wrong-answer premise and fact was checked against a sentence in one
+  Norwegian or English Wikipedia article fetched 22 November. The sentence is quoted in
+  the bank entry's source `note`; the build script fails if a quote is not in the article.
+  Status is `single_source`, checked by Grok Bot and not by a person.
+- The rules from 25 September and 9 October still apply: match questions say who lost
+  («tapte 1–2 for»), no prompt contains its own answer or an alias, and no prompt or fact
+  gives away the answer to another new question.
+- Entries from 2025–26 describe recent events and should be checked again if anything
+  changes: Norway at the 2026 World Cup (Brazil, England, Italy), Graham Potter and Sweden
+  (West Ham, the 2026 play-off final against Poland), Hjulmand at Leverkusen, Tomasson
+  sacked by Sweden, Deila at Atlanta, Hareide's last job with Iceland.
+
+The next extension again needs easy questions: all 32 new easy entries are used. 2 medium
+and 10 hard reviewed entries are left over.
+
 Unreviewed bank entries are deliberately excluded. If no daily round exists, the
 screen says the round is not ready; it does not silently repeat questions.
 
